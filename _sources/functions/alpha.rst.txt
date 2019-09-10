@@ -6,14 +6,12 @@ Alphabetical
 
    math/abs
    logical/and
-   streamsheet/amqppublish
    math/arccos
    math/arcsin
    math/arctan
    math/arctan2
    streamsheet/array
    statistical/average
-   streamsheet/azureamqppublish
    drawing/bar
    engineering/bin2dec
    engineering/bin2hex
@@ -147,6 +145,10 @@ Alphabetical
    .. olap/olapslicedelete
    .. drawing/onclick
    .. drawing/ondoubleclick
+   streamsheet/opcuaread
+   streamsheet/opcuarespond
+   streamsheet/opcuavariables
+   streamsheet/opcuawrite
    logical/or
    streamsheet/outbox
    streamsheet/outboxdata
@@ -205,7 +207,6 @@ Alphabetical
    text/unicode
    lookup/vlookup
    date/weekday
-   streamsheet/udp
    .. streamsheet/webpage
    streamsheet/write
    date/year

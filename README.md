@@ -1,2 +1,0 @@
-# streamsheets-documentation
-Streamsheets documentation
