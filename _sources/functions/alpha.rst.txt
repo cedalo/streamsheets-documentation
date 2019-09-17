@@ -44,7 +44,6 @@ Alphabetical
    streamsheet/delete
    streamsheet/deletecells
    .. drawing/deletedrawing
-   streamsheet/detectchange
    streamsheet/dictionary
    database/dmax
    database/dmin
@@ -145,10 +144,6 @@ Alphabetical
    .. olap/olapslicedelete
    .. drawing/onclick
    .. drawing/ondoubleclick
-   streamsheet/opcuaread
-   streamsheet/opcuarespond
-   streamsheet/opcuavariables
-   streamsheet/opcuawrite
    logical/or
    streamsheet/outbox
    streamsheet/outboxdata
@@ -191,6 +186,7 @@ Alphabetical
    stack/stackfind
    stack/stackrotate
    stack/stacksort
+   statistical/stdev
    streamsheet/store
    text/substitute
    streamsheet/subtree

@@ -104,7 +104,6 @@
 <li class="toctree-l3"><a class="reference internal" href="counter.html">COUNTER</a></li>
 <li class="toctree-l3"><a class="reference internal" href="delete.html">DELETE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="deletecells.html">DELETECELLS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="detectchange.html">DETECTCHANGE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dictionary.html">DICTIONARY</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">EDGE.DETECT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="execute.html">EXECUTE</a></li>
@@ -245,6 +244,7 @@ that if the condition immediately evaluates to TRUE, this function returns TRUE.
 On the other hand <em>Delay</em> specifes for how long this function returns FALSE, after a change was detected. The default
 value of both parameters is 0, meaning they have no effect. If both parameters are set and greater zero, <em>Period</em> starts
 after <em>Delay</em>.</p>
+<p>It is not recommended to use EDGE.DETECT within another function.</p>
 <p><strong>Syntax</strong></p>
 <p>=EDGE.DETECT(Condition, [Period], [Delay])</p>
 <p><strong>Arguments</strong></p>

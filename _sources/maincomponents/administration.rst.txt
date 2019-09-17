@@ -31,9 +31,6 @@
 .. |Consumer2| image:: /images/OPCUAConsumer.JPG
         :scale: 10 %
         :align: middle
-.. |Consumer3| image:: /images/FileConsumer.JPG
-        :scale: 10 %
-        :align: middle
 .. |Consumer4| image:: /images/RestServerConsumer.JPG
         :scale: 11 %
         :align: middle
@@ -114,7 +111,7 @@ Connectors serve the base definition of streams. They contain the information to
 
 *other Connector examples:*
 
-|Connector1| |Connector2| |Connector3| |Connector4| |Connector5| |Connector6| |Connector7| |Connector8|
+|Connector1| |Connector2| |Connector3| |Connector4| |Connector7| |Connector8|
 
 ..   |Connector9| |Connector10|
 
@@ -130,7 +127,7 @@ Consumers are the Stream resource to specify data streams which serve as the inp
 
 *other Consumer examples:*
 
-|Consumer1| |Consumer2| |Consumer3| |Consumer4| |Consumer5| |Consumer6| |Consumer7|
+|Consumer1| |Consumer2| |Consumer4| |Consumer7|
 
 ..   |Consumer8| |Consumer9| |Consumer10|
 
@@ -142,7 +139,7 @@ Producers are very similar to :ref:`Consumers` but instead of defining an input 
 
 *other Producer examples:*
 
-|Producer1| |Producer2| |Producer3| |Producer4| |Producer5| |Producer6| |Producer7|
+|Producer1| |Producer2| |Producer3| |Producer4| |Producer6| |Producer7|
 
 ..   |Producer8| |Producer9| |Producer10|
 

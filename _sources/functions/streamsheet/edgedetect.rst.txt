@@ -16,6 +16,8 @@ On the other hand *Delay* specifes for how long this function returns FALSE, aft
 value of both parameters is 0, meaning they have no effect. If both parameters are set and greater zero, *Period* starts
 after *Delay*.
 
+It is not recommended to use EDGE.DETECT within another function.
+
 
 **Syntax**
 
