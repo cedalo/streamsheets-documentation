@@ -158,25 +158,25 @@
 <p><strong>Syntax</strong></p>
 <p>=CHARTAXIS(Drawing, Name, AxisId[, ScaleType, Minimum, Maximum, Step, Font, Title, TitleFont])</p>
 <p><strong>Arguments</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
+<col width="20%" />
+<col width="80%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Description</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>Drawing</p></td>
-<td><p>Name of drawing to display the chart in.</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>Drawing</td>
+<td>Name of drawing to display the chart in.</td>
 </tr>
-<tr class="row-odd"><td><p>ChartName</p></td>
-<td><p>Name of chart</p></td>
+<tr class="row-odd"><td>ChartName</td>
+<td>Name of chart</td>
 </tr>
-<tr class="row-even"><td><p>AxisId</p></td>
-<td><div class="line-block">
+<tr class="row-even"><td>AxisId</td>
+<td><div class="first last line-block">
 <div class="line">Id of the axis to change</div>
 <div class="line"><br /></div>
 <div class="line">- “X” : Apply changes to X Axis</div>
@@ -184,8 +184,8 @@
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p>ScaleType</p></td>
-<td><div class="line-block">
+<tr class="row-odd"><td>ScaleType</td>
+<td><div class="first last line-block">
 <div class="line">Scale Type to apply:</div>
 <div class="line"><br /></div>
 <div class="line">“category” : Category Axis</div>
@@ -194,45 +194,45 @@
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p>Minimum</p></td>
-<td><p>Minimum axis value</p></td>
+<tr class="row-even"><td>Minimum</td>
+<td>Minimum axis value</td>
 </tr>
-<tr class="row-odd"><td><p>Maximum</p></td>
-<td><p>Maximum axis value</p></td>
+<tr class="row-odd"><td>Maximum</td>
+<td>Maximum axis value</td>
 </tr>
-<tr class="row-even"><td><p>Step</p></td>
-<td><p>Step to use for axis increment</p></td>
+<tr class="row-even"><td>Step</td>
+<td>Step to use for axis increment</td>
 </tr>
-<tr class="row-odd"><td><p>Font</p></td>
-<td><p>Optional. JSON Font Definition (see FONTFORMAT)</p></td>
+<tr class="row-odd"><td>Font</td>
+<td>Optional. JSON Font Definition (see FONTFORMAT)</td>
 </tr>
-<tr class="row-even"><td><p>Title</p></td>
-<td><p>Optional. Axis title string</p></td>
+<tr class="row-even"><td>Title</td>
+<td>Optional. Axis title string</td>
 </tr>
-<tr class="row-odd"><td><p>TitleFont</p></td>
-<td><p>Optional. JSON Font Definition for axis title (see FONTFORMAT)</p></td>
+<tr class="row-odd"><td>TitleFont</td>
+<td>Optional. JSON Font Definition for axis title (see FONTFORMAT)</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
 <p>TRUE, if axis definition is valid.</p>
 <p><strong>Example</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 45%" />
-<col style="width: 10%" />
-<col style="width: 45%" />
+<col width="45%" />
+<col width="10%" />
+<col width="45%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Function</p></th>
-<th class="head"><p>Result</p></th>
-<th class="head"><p>Comment</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Result</th>
+<th class="head">Comment</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>=CHARTAXIS(“Drawing”, “LineChart”, “X”, “linear”, 0, 100, 10, FONTFORMAT(“Arial”, 10), “AxisTitle”)</p></td>
-<td><p>TRUE</p></td>
-<td><p>Define a linear axis with a fixed range from 0 to 100 incremented by 10 units and showing an axis title.</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>=CHARTAXIS(“Drawing”, “LineChart”, “X”, “linear”, 0, 100, 10, FONTFORMAT(“Arial”, 10), “AxisTitle”)</td>
+<td>TRUE</td>
+<td>Define a linear axis with a fixed range from 0 to 100 incremented by 10 units and showing an axis title.</td>
 </tr>
 </tbody>
 </table>
@@ -269,13 +269,21 @@
   
 
 	
-		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+		<script type="text/javascript">
+			var DOCUMENTATION_OPTIONS = {
+				URL_ROOT:'../../',
+				VERSION:'1.0.0',
+				LANGUAGE:'None',
+				COLLAPSE_INDEX:false,
+				FILE_SUFFIX:'.html',
+				HAS_SOURCE:  true,
+				SOURCELINK_SUFFIX: '.txt'
+			};
+		</script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-			<script type="text/javascript" src="../../_static/language_data.js"></script>
-			<script type="text/javascript" src="../../_static/contentui.js"></script>
-		
+	
 
   
 

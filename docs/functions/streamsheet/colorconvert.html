@@ -104,7 +104,6 @@
 <li class="toctree-l3"><a class="reference internal" href="counter.html">COUNTER</a></li>
 <li class="toctree-l3"><a class="reference internal" href="delete.html">DELETE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="deletecells.html">DELETECELLS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="detectchange.html">DETECTCHANGE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dictionary.html">DICTIONARY</a></li>
 <li class="toctree-l3"><a class="reference internal" href="edgedetect.html">EDGE.DETECT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="execute.html">EXECUTE</a></li>
@@ -239,51 +238,51 @@
 <p><strong>Syntax</strong></p>
 <p>=COLOR.CONVERT(Color, FromColor, ToColor)</p>
 <p><strong>Arguments</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
+<col width="20%" />
+<col width="80%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Description</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>Color</p></td>
-<td><p>A string specifying the color value to convert.</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>Color</td>
+<td>A string specifying the color value to convert.</td>
 </tr>
-<tr class="row-odd"><td><p>FromColor</p></td>
-<td><p>A color format string which matchs given color value. One of CMYK, HEX, HSL, HSV or RGB.</p></td>
+<tr class="row-odd"><td>FromColor</td>
+<td>A color format string which matchs given color value. One of CMYK, HEX, HSL, HSV or RGB.</td>
 </tr>
-<tr class="row-even"><td><p>ToColor</p></td>
-<td><p>A color format string which defines resulting color value. One of CMYK, HEX, HSL, HSV or RGB.</p></td>
+<tr class="row-even"><td>ToColor</td>
+<td>A color format string which defines resulting color value. One of CMYK, HEX, HSL, HSV or RGB.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
 <p>String, the converted color value.</p>
 <p><strong>Example</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 10%" />
-<col style="width: 40%" />
+<col width="50%" />
+<col width="10%" />
+<col width="40%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Function</p></th>
-<th class="head"><p>Result</p></th>
-<th class="head"><p>Comment</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Result</th>
+<th class="head">Comment</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>=COLOR.CONVERT(“128,128,128”, “RGB”, “CMYK”)</p></td>
-<td><p>“0,0,0,50”</p></td>
-<td><p>CMYK color value</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>=COLOR.CONVERT(“128,128,128”, “RGB”, “CMYK”)</td>
+<td>“0,0,0,50”</td>
+<td>CMYK color value</td>
 </tr>
-<tr class="row-odd"><td><p>=COLOR.CONVERT(“0CF030”, “HEX”, “HSV”)</p></td>
-<td><p>“129,95,94”</p></td>
-<td><p>HSV color value</p></td>
+<tr class="row-odd"><td>=COLOR.CONVERT(“0CF030”, “HEX”, “HSV”)</td>
+<td>“129,95,94”</td>
+<td>HSV color value</td>
 </tr>
 </tbody>
 </table>
@@ -329,13 +328,21 @@
   
 
 	
-		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+		<script type="text/javascript">
+			var DOCUMENTATION_OPTIONS = {
+				URL_ROOT:'../../',
+				VERSION:'1.0.0',
+				LANGUAGE:'None',
+				COLLAPSE_INDEX:false,
+				FILE_SUFFIX:'.html',
+				HAS_SOURCE:  true,
+				SOURCELINK_SUFFIX: '.txt'
+			};
+		</script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-			<script type="text/javascript" src="../../_static/language_data.js"></script>
-			<script type="text/javascript" src="../../_static/contentui.js"></script>
-		
+	
 
   
 
