@@ -1,4 +1,6 @@
-ONCLICK
+.. _attributes:
+
+ATTRIBUTES
 -----------
 
 Assign a function, that will be executed, if the user clicks on a drawing or drawing item. The event handling is only active, if the
@@ -6,7 +8,7 @@ process is running.
 
 **Syntax**
 
-ONCLICK(Function)
+ATTRIBUTES()
 
 **Arguments**
 

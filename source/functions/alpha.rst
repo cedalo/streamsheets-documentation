@@ -11,17 +11,13 @@ Alphabetical
    math/arctan
    math/arctan2
    streamsheet/array
+   drawing/attributes
    statistical/average
    drawing/bar
    engineering/bin2dec
    engineering/bin2hex
    engineering/bin2oct
    text/char
-   .. drawing/chart
-   .. drawing/chartaxis
-   .. drawing/chartlegend
-   .. drawing/chartseries
-   .. drawing/charttitle
    lookup/choose
    drawing/classifypoint
    text/clean
@@ -44,25 +40,24 @@ Alphabetical
    math/degrees
    streamsheet/delete
    streamsheet/deletecells
-   .. drawing/deletedrawing
    streamsheet/dictionary
    database/dmax
    database/dmin
-   .. drawing/drawing
+   drawing/drawbutton
+   drawing/drawchart
    database/dsum
    streamsheet/edgedetect
-   .. drawing/ellipse
-   .. drawing/ellipser
    math/even
+   drawing/events
    streamsheet/execute
    date/excel2jsontime
    streamsheet/feedinbox
    streamsheet/filewrite
    text/find
-   .. drawing/filllineargradient
-   .. drawing/fillpattern
-   .. drawing/fillradialgradient
-   .. drawing/fontformat
+   drawing/filllineargradient
+   drawing/fillpattern
+   drawing/fillradialgradient
+   drawing/fontformat
    statistical/forecast
    math/frac
    streamsheet/getcycle
@@ -90,13 +85,9 @@ Alphabetical
    streamsheet/kafkacommand
    streamsheet/kafkapublish
    streamsheet/kafkaquery
-   .. drawing/label
-   .. drawing/labelr
    text/left
    text/len
-   .. drawing/line
-   .. drawing/lineformat
-   .. drawing/lines
+   drawing/lineformat
    streamsheet/loopcount
    streamsheet/loopindex
    streamsheet/mailsend
@@ -144,23 +135,21 @@ Alphabetical
    .. olap/olapsetdata
    .. olap/olapslice
    .. olap/olapslicedelete
-   .. drawing/onclick
-   .. drawing/ondoubleclick
+   drawing/onclick
+   drawing/ondoubleclick
+   drawing/onmousedown
+   drawing/onmouseup
    logical/or
    streamsheet/outbox
    streamsheet/outboxdata
    math/pi
-   .. drawing/polygon
-   .. drawing/polygonr
    math/power
    streamsheet/produce
-   .. drawing/qrcode
+   drawing/qrcode
    math/radians
    math/randbetween
    text/randid
    streamsheet/read
-   .. drawing/rect
-   .. drawing/rectr
    text/replace
    text/rept
    streamsheet/request
@@ -171,7 +160,6 @@ Alphabetical
    streamsheet/return
    text/right
    math/round
-   .. drawing/savedrawing
    text/search
    date/second
    streamsheet/select
@@ -208,7 +196,7 @@ Alphabetical
    .. streamsheet/webpage
    streamsheet/write
    date/year
-   
-   
-   
-   
+
+
+
+

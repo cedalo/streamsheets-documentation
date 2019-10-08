@@ -1,3 +1,5 @@
+.. _fontformat:
+
 FONTFORMAT
 ----------
 
@@ -5,7 +7,7 @@ Create a font format description from the given arguments.
 
 **Syntax**
 
-FONTFORMAT(Name, Size[, Style, Color,Alignment])
+FONTFORMAT(Name, Size[, Style, Color, HorizontalAlignment])
 
 **Arguments**
 
@@ -23,7 +25,7 @@ FONTFORMAT(Name, Size[, Style, Color,Alignment])
      - Optional. Style of font. Allowed values are 0 (normal), 1 (bold) and 2 (italic)
    * - Color
      - Optional. Hexadecimal color value.
-   * - Alignment
+   * - HorizontalAlignment
      - 0, 1 or 2 changes the alignment of the text to left, center or right.
 
 
@@ -42,7 +44,6 @@ JSON String, which defines the font format and can be used in drawing functions.
      - Comment
    * - FONTFORMAT("Verdana", 10)
      -
-     -
+     - Use Verdana font family and a font size of 10pt.
 
-TODO result JSON
 

@@ -1,3 +1,5 @@
+.. _lineformat:
+
 LINEFORMAT
 ----------
 
@@ -47,7 +49,9 @@ JSON String, which defines the line format and can be used in drawing functions.
 
    * - Function
      - Result
+     - Comment
    * - LINEFORMAT("#FF0000", 1, 3)
      - {"color":"#FF0000", "style":1,"width":3}
+     - Draw a solid red line using a line width of 3 Pixel.
 
 

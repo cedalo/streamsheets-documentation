@@ -1,8 +1,7 @@
 ONMOUSEUP
 -----------
 
-Assign a function, that will be executed, if the user releases the mouse button on a drawing or drawing item. This function can only
-be applied as the last parameter of the various drawing functions. The event handling is only active, if the
+Assign a function, that will be executed, if the user releases the mouse button on a drawing item. The event handling is only active, if the
 process is running.
 
 **Syntax**
@@ -33,6 +32,6 @@ TRUE.
 
    * - Function
      - Comment
-   * - RECT("Drawing", "Rect", 1000, 1000, 3000, 3000, "#000000", "#FFFFFF", ONMOUSEUP(DELETECELLS(A1:C1))
-     - If the the mouse button is released on the rectangle, created by RECT, the cell range A1:C1 will be deleted.
+   * - DRAW.RECTANGLE("ID1", "", "Rect1", 1000, 1000, 3000, 3000,,,, EVENTS(ONMOUSEUP(DELETECELLS(A1:C1)))
+     - If the releases the mouse on the rectangle the cell range A1:C1 will be deleted.
 

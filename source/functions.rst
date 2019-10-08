@@ -9,7 +9,7 @@ Functions
    functions/alpha
    functions/database
    functions/date
-   .. functions/drawing
+   functions/drawing
    functions/engineering
    functions/info
    functions/logical

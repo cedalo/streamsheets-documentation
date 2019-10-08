@@ -1,3 +1,5 @@
+.. _filllineargradient:
+
 FILLLINEARGRADIENT
 ------------------
 
@@ -39,4 +41,3 @@ JSON String, which defines the fill format and can be used in drawing functions.
      -
      - Draw a linear gradient with an angle of 60 degrees.
 
-TODO result JSON
