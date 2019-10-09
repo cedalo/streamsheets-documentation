@@ -1,12 +1,12 @@
 
-DRAW.BUTTON
------------
+DRAW.POLYGON
+------------
 
-Define a graphical button on a given drawing.
+Define a graphical polygon.
 
 **Syntax**
 
-=DRAW.BUTTON(UnqiueId, Container, Name, X, Y, Width, Height, LineFormat, FillFormat, Attributes, Events, RotCenter, Label[, LabelFont, Value])
+=DRAW.POLYGON(UnqiueId, Container, Name, X, Y, Width, Height, LineFormat, FillFormat, Attributes, Events, RotCenter, PointRange, Close)
 
 **Arguments**
 
@@ -46,13 +46,14 @@ Define a graphical button on a given drawing.
      - Optional. JSON String created using :ref:`attributes`
    * - Events
      - Optional. JSON String created using :ref:`events`
-   * - Label
-     - Label to display on button.
-   * - Font
-     - Optional. JSON String created using :ref:`fontformat`
-   * - Value
-     - Optional. Current state of the button. TRUE for pushed and FALSE for released. If a cell reference is used, a value change from user
-       interaction will be pushed into that cell.
+   * - PointRange
+     - Optional. Cell Range with coordinates. A coordinate is defined by a fraction of the width and height of the polygon ranging
+       from 0 to 1. 1 would place the coordinate at the bottom or right corner of the object. The range must have 2 columns. The
+       left column contains the x coordinates and the right column the y coordinates. If the object was drawn using the mouse or
+       one of the predefined objects was used, the given coordinates will be used, as long as no coordinates are defined using this
+       parameter.
+   * - Close
+     - Optional. Close polygon by connecting the first and last point (Default: FALSE)
 
 **Return Value**
 
@@ -61,13 +62,13 @@ TRUE, if button could be created.
 **Example**
 
 .. list-table::
-   :widths: 73 7 20
+   :widths: 53 7 40
    :header-rows: 1
 
    * - Function
      - Result
      - Comment
-   * - =DRAW.BUTTON("ID1", "", "Button1", 1000, 1000, 3000, 3000,,,,,,,"Click Me!", FONTFORMAT("Arial", 10))
+   * - =DRAW.POLYGON("ID8",,"Polygon2",3990,12754,4868,3519,,,,,,,C31:D33,FALSE)
      - TRUE
-     - Draw a button using 'Click Me!' as a label with an 'Arial 10' font.
+     - Draw a polygon using the given coordinates. The coordinates must be given as fractions of 1.
 

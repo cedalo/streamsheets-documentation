@@ -1,12 +1,12 @@
 
-DRAW.BUTTON
+DRAW.CHECKBOX
 -----------
 
-Define a graphical button on a given drawing.
+Define a graphical checkbox button on a given drawing.
 
 **Syntax**
 
-=DRAW.BUTTON(UnqiueId, Container, Name, X, Y, Width, Height, LineFormat, FillFormat, Attributes, Events, RotCenter, Label[, LabelFont, Value])
+=DRAW.CHECKBOX(UnqiueId, Container, Name, X, Y, Width, Height, LineFormat, FillFormat, Attributes, Events, RotCenter, Label[, LabelFont, Value])
 
 **Arguments**
 
@@ -51,12 +51,12 @@ Define a graphical button on a given drawing.
    * - Font
      - Optional. JSON String created using :ref:`fontformat`
    * - Value
-     - Optional. Current state of the button. TRUE for pushed and FALSE for released. If a cell reference is used, a value change from user
+     - Optional. Current state of the checkbox. TRUE for checked and FALSE for unchecked. If a cell reference is used, a value change from user
        interaction will be pushed into that cell.
 
 **Return Value**
 
-TRUE, if button could be created.
+TRUE, if checkbox could be created.
 
 **Example**
 
@@ -67,7 +67,7 @@ TRUE, if button could be created.
    * - Function
      - Result
      - Comment
-   * - =DRAW.BUTTON("ID1", "", "Button1", 1000, 1000, 3000, 3000,,,,,,,"Click Me!", FONTFORMAT("Arial", 10))
+   * - =DRAW.CHECKBOX("ID1", "", "Checkbox1", 1000, 1000, 3000, 3000,,,,,,,"Click Me!", FONTFORMAT("Arial", 9))
      - TRUE
-     - Draw a button using 'Click Me!' as a label with an 'Arial 10' font.
+     - Draw a checkbox using 'Click Me!' as a label with an 'Arial 9' font.
 

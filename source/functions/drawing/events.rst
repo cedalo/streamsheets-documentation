@@ -9,7 +9,7 @@ to handle events as described below.
 
 **Syntax**
 
-EVENTS([EventHandler1,EventHandler2,...])
+=EVENTS([EventHandler1,EventHandler2,...])
 
 **Arguments**
 
@@ -35,11 +35,11 @@ TRUE.
 **Example**
 
 .. list-table::
-   :widths: 45 55
+   :widths: 75 25
    :header-rows: 1
 
    * - Function
      - Comment
-   * - DRAW.RECTANGLE("ID1", "", "Rect1", 1000, 1000, 3000, 3000,,,, EVENTS(ONCLICK(DELETECELLS(A1:C1)))
+   * - =DRAW.RECTANGLE("ID1", "", "Rect1", 1000, 1000, 3000, 3000,,,, EVENTS(ONCLICK(DELETECELLS(A1:C1)))
      - If the user clicks on the rectangle the cell range A1:C1 will be deleted.
 

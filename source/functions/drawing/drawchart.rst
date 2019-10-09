@@ -76,7 +76,7 @@ TRUE, if chart could be created.
 **Example**
 
 .. list-table::
-   :widths: 45 10 45
+   :widths: 73 7 20
    :header-rows: 1
 
    * - Function

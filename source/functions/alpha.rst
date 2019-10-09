@@ -45,6 +45,13 @@ Alphabetical
    database/dmin
    drawing/drawbutton
    drawing/drawchart
+   drawing/drawcheckbox
+   drawing/drawellipse
+   drawing/drawlabel
+   drawing/drawline
+   drawing/drawpolygon
+   drawing/drawrectangle
+   drawing/drawslider
    database/dsum
    streamsheet/edgedetect
    math/even

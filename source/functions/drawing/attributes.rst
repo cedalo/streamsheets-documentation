@@ -7,7 +7,7 @@ Create an attribute description to assign attributes to a graphical object.
 
 **Syntax**
 
-ATTRIBUTES(Visible, Container, Clip, Selectable)
+=ATTRIBUTES(Visible, Container, Clip, Selectable)
 
 **Arguments**
 
@@ -42,8 +42,8 @@ JSON String to describe attributes.
 
    * - Function
      - Comment
-   * - DRAW.RECTANGLE("ID1", "", "Rect1", 1000, 1000, 3000, 3000,,,ATTRIBUTES(FALSE))
+   * - =DRAW.RECTANGLE("ID1", "", "Rect1", 1000, 1000, 3000, 3000,,,ATTRIBUTES(FALSE))
      - Hides the object.
-   * - DRAW.RECTANGLE("ID1", "", "Rect1", 1000, 1000, 3000, 3000,,,ATTRIBUTES(,,,FALSE))
+   * - =DRAW.RECTANGLE("ID1", "", "Rect1", 1000, 1000, 3000, 3000,,,ATTRIBUTES(,,,FALSE))
      - Makes the object unselectable.
 

@@ -1,12 +1,12 @@
 
-DRAW.BUTTON
------------
+DRAW.RECTANGLE
+--------------
 
-Define a graphical button on a given drawing.
+Define a rectangle on a given drawing.
 
 **Syntax**
 
-=DRAW.BUTTON(UnqiueId, Container, Name, X, Y, Width, Height, LineFormat, FillFormat, Attributes, Events, RotCenter, Label[, LabelFont, Value])
+=DRAW.RECTANGLE(UnqiueId, Container, Name, X, Y, Width, Height, LineFormat, FillFormat, Attributes, Events, RotCenter)
 
 **Arguments**
 
@@ -46,28 +46,21 @@ Define a graphical button on a given drawing.
      - Optional. JSON String created using :ref:`attributes`
    * - Events
      - Optional. JSON String created using :ref:`events`
-   * - Label
-     - Label to display on button.
-   * - Font
-     - Optional. JSON String created using :ref:`fontformat`
-   * - Value
-     - Optional. Current state of the button. TRUE for pushed and FALSE for released. If a cell reference is used, a value change from user
-       interaction will be pushed into that cell.
 
 **Return Value**
 
-TRUE, if button could be created.
+TRUE, if rectangle could be created.
 
 **Example**
 
 .. list-table::
-   :widths: 73 7 20
+   :widths: 53 7 40
    :header-rows: 1
 
    * - Function
      - Result
      - Comment
-   * - =DRAW.BUTTON("ID1", "", "Button1", 1000, 1000, 3000, 3000,,,,,,,"Click Me!", FONTFORMAT("Arial", 10))
+   * - =DRAW.RECTANGLE("ID1", "", "Rectangle1", 1000, 1000, 2000, 3000)
      - TRUE
-     - Draw a button using 'Click Me!' as a label with an 'Arial 10' font.
+     - Draw a rectangle, having a size of 2 by 3 cm at the position 1cm, 1cm.
 

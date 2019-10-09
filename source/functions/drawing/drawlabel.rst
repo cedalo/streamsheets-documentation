@@ -1,12 +1,12 @@
 
-DRAW.BUTTON
+DRAW.LABEL
 -----------
 
-Define a graphical button on a given drawing.
+Define a graphical text object.
 
 **Syntax**
 
-=DRAW.BUTTON(UnqiueId, Container, Name, X, Y, Width, Height, LineFormat, FillFormat, Attributes, Events, RotCenter, Label[, LabelFont, Value])
+=DRAW.LABEL(UnqiueId, Container, Name, X, Y, Width, Height, LineFormat, FillFormat, Attributes, Events, RotCenter, Text[, Font])
 
 **Arguments**
 
@@ -46,17 +46,14 @@ Define a graphical button on a given drawing.
      - Optional. JSON String created using :ref:`attributes`
    * - Events
      - Optional. JSON String created using :ref:`events`
-   * - Label
-     - Label to display on button.
+   * - Text
+     - Text to display.
    * - Font
      - Optional. JSON String created using :ref:`fontformat`
-   * - Value
-     - Optional. Current state of the button. TRUE for pushed and FALSE for released. If a cell reference is used, a value change from user
-       interaction will be pushed into that cell.
 
 **Return Value**
 
-TRUE, if button could be created.
+TRUE, if label could be created.
 
 **Example**
 
@@ -67,7 +64,7 @@ TRUE, if button could be created.
    * - Function
      - Result
      - Comment
-   * - =DRAW.BUTTON("ID1", "", "Button1", 1000, 1000, 3000, 3000,,,,,,,"Click Me!", FONTFORMAT("Arial", 10))
+   * - =DRAW.LABEL("ID1", "", "Label1", 1000, 1000, 3000, 3000,,,,,,,"Hello World", FONTFORMAT("Arial", 12))
      - TRUE
-     - Draw a button using 'Click Me!' as a label with an 'Arial 10' font.
+     - Draw a text object with an 'Arial 12' font.
 
