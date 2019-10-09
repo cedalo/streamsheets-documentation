@@ -139,6 +139,7 @@ Alphabetical
    drawing/ondoubleclick
    drawing/onmousedown
    drawing/onmouseup
+   drawing/onvaluechange
    logical/or
    streamsheet/outbox
    streamsheet/outboxdata

@@ -20,7 +20,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Streamsheets Documentation'
-copyright = '2018, Cedalo AG'
+copyright = '2019, Cedalo AG'
 author = 'Cedalo AG'
 
 # The short X.Y version

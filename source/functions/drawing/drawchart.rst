@@ -1,6 +1,6 @@
 
 DRAW.CHART
------
+----------
 
 Define a chart on a given drawing. The drawing must have been created before using this function.
 
@@ -35,17 +35,17 @@ Define a chart on a given drawing. The drawing must have been created before usi
        |
        | - "None" for no line
        | - Hexadecimal color value ("#FF0000" for Red)
-       | - JSON String (see LINEFORMAT)
+       | - JSON String created using :ref:`lineformat`
    * - FillFormat
      - | Optional. Options:
        |
        | - "None" for no fill.
        | - Hexadecimal color value ("#FF0000" for Red)
-       | - JSON String (see FILLFORMAT)
+       | - JSON String created using :ref:`fillpattern`, :ref:`filllineargradient`, :ref:`fillradialgradient`
    * - Attributes
-     - Optional. JSON String (see ATTRIBUTES)
+     - Optional. JSON String created using :ref:`attributes`
    * - Events
-     - Optional. JSON String (see EVENTS)
+     - Optional. JSON String created using :ref:`events`
    * - ChartType
      - Valid types are: "line", "column", ""bar", "radar", "polar", ""doughnut", "pie", "scatter", "scatterLine" and "bubble" .
    * - RotCenter

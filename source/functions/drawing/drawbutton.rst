@@ -1,6 +1,6 @@
 
 DRAW.BUTTON
------
+-----------
 
 Define a graphical button on a given drawing.
 
@@ -35,21 +35,21 @@ Define a graphical button on a given drawing.
        |
        | - "None" for no line
        | - Hexadecimal color value ("#FF0000" for Red)
-       | - JSON String (see :ref:`LINEFORMAT <lineformat>`\ )
+       | - JSON String created using :ref:`lineformat`
    * - FillFormat
      - | Optional. Options:
        |
        | - "None" for no fill.
        | - Hexadecimal color value ("#FF0000" for Red)
-       | - JSON String (see :ref:`FILLPATTERN <fillpattern>`\ , :ref:`FILLLINEARGRADIENT <filllineargradient>`\ , :ref:`FILLRADIALGRADIENT <fillradialgradient>`\ )
+       | - JSON String created using :ref:`fillpattern`, :ref:`filllineargradient`, :ref:`fillradialgradient`
    * - Attributes
-     - Optional. JSON String (see :ref:`ATTRIBUTES <attributes>`\ )
+     - Optional. JSON String created using :ref:`attributes`
    * - Events
-     - Optional. JSON String (see :ref:`EVENTS <events>`\ )
+     - Optional. JSON String created using :ref:`events`
    * - Label
      - Label to display on button.
    * - Font
-     - Optional. Font to use for label (see :ref:`FONTFORMAT <fontformat>`\)
+     - Optional. JSON String created using :ref:`fontformat`
    * - Value
      - Optional. Current state of the button. TRUE for pushed and FALSE for released.
 
@@ -68,5 +68,5 @@ TRUE, if button could be created.
      - Comment
    * - =DRAW.BUTTON("ID1", "", "Button1", 1000, 1000, 3000, 3000,,,,,,,"Click Me!", FONTFORMAT("Arial", 12))
      - TRUE
-     - Draw a button.
+     - Draw a button using 'Click Me!' as a label with an 'Arial 10' font.
 

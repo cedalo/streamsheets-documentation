@@ -1,3 +1,5 @@
+.. _onmouseup:
+
 ONMOUSEUP
 -----------
 
