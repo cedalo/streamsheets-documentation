@@ -5,6 +5,16 @@ We will never stop improving our :term:`Streamsheet`\ s. Stay up to date with ou
 
 .. _currently: 
 
+1.4
+-----------------
+**(released October 16, 2019)**
+
+| **Changes:**
+| + **We are now Open Source!** Check out our Git-Hub Page (https://github.com/cedalo/streamsheets)
+| + **Version control:** We now distinguish between Professional and Open Source Features (https://cedalo.com/download/)
+| + **Raspberry PI:** The Rasberry Pi Version is part of the Open Source Release.
+| + **Performance:** Performance improvements server side
+
 1.3
 --------------------
 **(released July 12, 2019)**
@@ -14,6 +24,7 @@ We will never stop improving our :term:`Streamsheet`\ s. Stay up to date with ou
 | + **Bug fixes**
 | + **Charts:** Fixed Chart Bugs.
 | + **Documentation:** Updated documentation and added tutorials.
+| + **Raspberry Pi Version:** Open Beta
 
 | **Features:**
 | + **Events:** Added mouse events for objects and shapes.

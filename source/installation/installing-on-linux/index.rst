@@ -12,7 +12,7 @@ To run Streamsheets you need Docker 18.09 or higher. To set up Docker on Linux, 
 Setting up Docker Compose
 --------------------------
 
-To run Streamsheets you need Docker Compose 1.23 or higher. To set up Docker Compose on Linux, `follow the installation instructions <https://docs.docker.com/compose/install/>`_ for the Linux distribution of your choice.
+To run Streamsheets you need Docker Compose 1.23 or higher. To set up Docker Compose on Linux, `follow these installation instructions <https://docs.docker.com/compose/install/>`_ for the Linux distribution of your choice.
 
 Setting up Streamsheets
 ------------------------
@@ -26,7 +26,7 @@ Setting up Streamsheets
 2. Next run the following command to execute the installer for Streamsheets. Replace ``<PATH_TO_INSTALL_DIRECTORY>`` with the name of the installation directory and ``<VERSION>`` with the Streamsheets version to install (current version: \ :ref:`currently`\ ).
 
     | Command: ``docker run -v <PATH_TO_INSTALL_DIRECTORY>:/streamsheets cedalo/streamsheets-installer:<VERSION>-linux``
-    | Example: ``docker run -v ~/streamsheets:/streamsheets cedalo/streamsheets-installer:1.3-linux``
+    | Example: ``docker run -v ~/streamsheets:/streamsheets cedalo/streamsheets-installer:1.4-linux``
 
 
 Starting Streamsheets
