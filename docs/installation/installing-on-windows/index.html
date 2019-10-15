@@ -172,7 +172,7 @@
             
   <div class="section" id="installing-on-windows">
 <h1>Installing on Windows<a class="headerlink" href="#installing-on-windows" title="Permalink to this headline">¶</a></h1>
-<p>The Streamsheet installation requires a license. If you do not have one please <a class="reference external" href="https://cedalo.com/kontakt-en/">contact</a> us for further information and prices.</p>
+<p>In order to install Streamsheets you need to follow 3 steps: Install Docker, set up Docker Compose and, then, deploy the Streamsheet Platform.</p>
 <div class="section" id="setting-up-docker">
 <h2>Setting up Docker<a class="headerlink" href="#setting-up-docker" title="Permalink to this headline">¶</a></h2>
 <p>To run Streamsheets you need Docker 18.09 or higher. To set up “Docker for Windows”, <a class="reference external" href="https://docs.docker.com/docker-for-windows/install/">follow the installation instructions</a>.</p>
@@ -184,7 +184,7 @@
 <div class="section" id="setting-up-streamsheets">
 <h2>Setting up Streamsheets<a class="headerlink" href="#setting-up-streamsheets" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">In order to install Streamsheets, first create a target folder for the installation. Manually add the folder or use:</p>
+<li><p>In order to install Streamsheets, first create a target folder for the installation. Manually add the folder or use:</p>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Command:    <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">&lt;PATH_TO_INSTALL_DIRECTORY&gt;</span></code></div>
@@ -192,11 +192,11 @@
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Next run the following command to execute the installer for Streamsheets. Replace <code class="docutils literal notranslate"><span class="pre">&lt;PATH_TO_INSTALL_DIRECTORY&gt;</span></code> with the absolute path to the installation directory and <code class="docutils literal notranslate"><span class="pre">&lt;VERSION&gt;</span></code> with the Streamsheets version to install (current version: <a class="reference internal" href="../../releasenotes.html#currently"><span class="std std-ref">1.3</span></a>).</p>
+<li><p>Next run the following command to execute the installer for Streamsheets. Replace <code class="docutils literal notranslate"><span class="pre">&lt;PATH_TO_INSTALL_DIRECTORY&gt;</span></code> with the absolute path to the installation directory and <code class="docutils literal notranslate"><span class="pre">&lt;VERSION&gt;</span></code> with the Streamsheets version to install (current version: <a class="reference internal" href="../../releasenotes.html#currently"><span class="std std-ref">1.4</span></a>).</p>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Command:    <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-v</span> <span class="pre">&lt;PATH_TO_INSTALL_DIRECTORY&gt;:/streamsheets</span> <span class="pre">cedalo/streamsheets-installer:&lt;VERSION&gt;-win</span></code></div>
-<div class="line">Example:      <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-v</span> <span class="pre">C:\Streamsheets:/streamsheets</span> <span class="pre">cedalo/streamsheets-installer:1.3-win</span></code></div>
+<div class="line">Example:      <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-v</span> <span class="pre">C:\Streamsheets:/streamsheets</span> <span class="pre">cedalo/streamsheets-installer:1.4-win</span></code></div>
 </div>
 </div></blockquote>
 </li>
@@ -205,13 +205,13 @@
 <div class="section" id="starting-streamsheets">
 <h2>Starting Streamsheets<a class="headerlink" href="#starting-streamsheets" title="Permalink to this headline">¶</a></h2>
 <div class="admonition hint">
-<p class="first admonition-title">Hint</p>
-<p class="last">There has to be a valid license in the folder “services/docker-compose/license”. If you do not have one please <a class="reference external" href="https://cedalo.com/kontakt-en/">contact</a> us.</p>
+<p class="admonition-title">Hint</p>
+<p>There has to be a valid license in the folder “services/docker-compose/license”. If you do not have one please <a class="reference external" href="https://cedalo.com/kontakt-en/">contact</a> us.</p>
 </div>
 <p><strong>A:</strong></p>
 <blockquote>
 <div><ol class="arabic">
-<li><p class="first">Navigate into the following directory:</p>
+<li><p>Navigate into the following directory:</p>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Command: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">&lt;PATH_TO_INSTALL_DIRECTORY&gt;/services/scripts/win</span></code></div>
@@ -221,9 +221,10 @@
 </li>
 </ol>
 <blockquote>
-<div>This directory contains several shell scripts (and Docker Compose files) to run predefined configurations of Streamsheets.</div></blockquote>
+<div><p>This directory contains several shell scripts (and Docker Compose files) to run predefined configurations of Streamsheets.</p>
+</div></blockquote>
 <ol class="arabic" start="2">
-<li><p class="first">To start the default configuration, run the following command:</p>
+<li><p>To start the default configuration, run the following command:</p>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Command: <code class="docutils literal notranslate"><span class="pre">start.bat</span></code></div>
@@ -270,7 +271,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Cedalo AG
+        &copy; Copyright 2019, Cedalo AG, Streamsheet™ is a registered trademark of the Cedalo AG.
 
     </p>
   </div>
@@ -290,21 +291,13 @@
   
 
 	
-		<script type="text/javascript">
-			var DOCUMENTATION_OPTIONS = {
-				URL_ROOT:'../../',
-				VERSION:'1.0.0',
-				LANGUAGE:'None',
-				COLLAPSE_INDEX:false,
-				FILE_SUFFIX:'.html',
-				HAS_SOURCE:  true,
-				SOURCELINK_SUFFIX: '.txt'
-			};
-		</script>
+		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-	
+			<script type="text/javascript" src="../../_static/language_data.js"></script>
+			<script type="text/javascript" src="../../_static/contentui.js"></script>
+		
 
   
 

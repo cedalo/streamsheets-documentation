@@ -1,7 +1,7 @@
 Installing on macOS
 ======================
 
-The Streamsheet installation requires a license. If you do not have one please `contact <https://cedalo.com/kontakt-en/>`_ us for further information and prices.
+In order to install Streamsheets you need to follow 3 steps: Install Docker, set up Docker Compose and, then, deploy the Streamsheet Platform.
 
 Setting up Docker
 ----------------------

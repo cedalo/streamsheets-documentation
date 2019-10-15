@@ -1,3 +1,5 @@
+.. _fillradialgradient:
+
 FILLRADIALGRADIENT
 ------------------
 
@@ -38,5 +40,3 @@ JSON String, which defines the fill format and can be used in drawing functions.
    * - FILLRADIALGRADIENT("#000000", "#FFFFFF", 50, 50)
      -
      - Draw a radial gradient starting at the center of the drawing object.
-
-TODO result JSON

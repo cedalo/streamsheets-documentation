@@ -44,7 +44,7 @@ JSON String, which defines the line format and can be used in drawing functions.
 **Example**
 
 .. list-table::
-   :widths: 45 55
+   :widths: 45 55 50
    :header-rows: 1
 
    * - Function

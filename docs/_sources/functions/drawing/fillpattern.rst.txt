@@ -1,3 +1,5 @@
+.. _fillpattern:
+
 FILLPATTERN
 ------------
 
@@ -17,10 +19,6 @@ FILLPATTERN(Image[, Style])
      - Description
    * - Image
      - Image URL or URI
-   * - Style
-     - | Optional. Defines, how the images is used to fill the object:
-       |
-       | 0: Stretch image to fill object
 
 **Return Value**
 

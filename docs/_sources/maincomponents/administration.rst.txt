@@ -133,7 +133,7 @@ Consumers are the Stream resource to specify data streams which serve as the inp
 
 Producers
 -----------
-Producers are very similar to :ref:`Consumers` but instead of defining an input data stream, they define an outgoing data stream.
+Producers are very similar to :ref:`Consumers` but instead of defining an input data stream, they define an outgoing data stream. They are used within all producing functions. 
 
 |PSettings|
 
