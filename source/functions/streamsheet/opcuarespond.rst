@@ -1,6 +1,11 @@
 OPCUA.RESPOND
 -----------------------------
 
+.. |star| image:: /images/star.svg
+        
+
+|star| This is a `Streamsheets Professional <https://cedalo.com/download/>`_ feature.
+
 Sends a response directly, i.e. without any Consumer, to an :term:`OPC UA` service. The data to be send can be either arbitrary 
 :term:`JSON` data or a message from the outbox or :ref:`inbox`. Usually this function is used to respond to a previously received
 *request*-message. 

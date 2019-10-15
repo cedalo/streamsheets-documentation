@@ -6,6 +6,11 @@
 OPCUA.WRITE
 -----------------------------
 
+.. |star| image:: /images/star.svg
+        
+
+|star| This is a `Streamsheets Professional <https://cedalo.com/download/>`_ feature.
+
 Sends a write request of a value to an :term:`OPC UA` Server. The Server will respond, if the write was successful or not.
 You can use the :ref:`Function Wizard <functionwizard>` for this function. 
 

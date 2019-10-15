@@ -1,6 +1,11 @@
 KAFKA.QUERY
 -----------------------------
 
+.. |star| image:: /images/star.svg
+        
+
+|star| This is a `Streamsheets Professional <https://cedalo.com/download/>`_ feature.
+
 Allows KSQL queries to be used. You can use the :ref:`Function Wizard <functionwizard>` for this function. 
 
 

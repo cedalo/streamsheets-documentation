@@ -36,6 +36,7 @@ The differences are that with a "POST" information is transmitted from the REST 
 To add a :ref:`restrequest` function to a :term:`Streamsheet` you will need a :term:`Connector` and a :term:`Producer`, based on the REST Client Provider. Start by creating the Connector in the Connector Dashboard in the :ref:`Administration` Menu. You can leave all fields empty to be able to utilize this Connector for any URL. If you want to create specific Connectors for every webpage, type in the Base URL. Same goes for the Producer. Create a Producer based on the just created Connector and leave it empty.  We can now select the Producer within the :ref:`Function Wizard <functionwizard>`. 
 
 |RCP| 
+
 *Creating Streams for REST*
 
 **1. Method "Post":**
@@ -48,6 +49,7 @@ Now we can start building an App in Streamsheets. Create a new :term:`Stream Mac
 Create a REST Request function over the Function Wizard and select "POST" as the method. Add the created URL and select the JSON Range as the body. Choose a Target (e.g. :ref:`OUTBOX`\ ()) for  the response message of the server. Now with every new Step, the Stream Machine will send your message to Slack 😊 
 
 |RRP|
+
 *REST Request with method "POST"*
 
 **2. Method "GET":**
@@ -60,6 +62,7 @@ So lets again create a new Stream Machine. Add a REST Request Function with the 
 After starting the Stream Machine the requested information will now appear in the Target Range. 
 
 |RRG1|
+
 *REST Request with method "GET"*
 
 
@@ -70,6 +73,7 @@ This simple Tutorial shows how to read information of an :term:`OPC UA` Server.
 To begin with we have to create Streams, which are connected the OPC UA Server of our choice. 
 
 |OPCUACPC|
+
 *Create Streams for OPC UA*
 
 Open up the Administration Menu and create a new OPC UA :term:`Connector`. Enter the URL of the Server you want to connect to. In this tutorial the OPC UA Server is in the local network. You will need your own OPC UA Server or go to http://opcuaserver.com/ where you can find a series of open OPC UA Server. 
@@ -85,12 +89,14 @@ A second way to receive OPC UA Messages in a :term:`Streamsheet` is over the :re
 With every new calculation step an :ref:`OPCUA.READ <opcuaread>` will prompt a new message in the :ref:`Inbox`. 
 
 |OPCUAGif|
+
 *Recieve OPC UA Data over Inbox Consumer and OPCUA.READ* 
 
 **OPCUA.WRITE:**
 It is also possible to update existing OPC UA Variables with the OPCUA.WRITE formular. Similiar to before, use the Function Wizard and select OPCUA.WRITE. Choose the right Producer, add the NODE Id and Target Range.
 
 |OPCUAWrite|
+
 *Change a node value on a OPC UA server with OPCUA.WRITE*
 
 History
@@ -103,6 +109,7 @@ Often it is important to not only work with single real-time data points in the 
 The cell at the very bottom references to the data input and the cells above the reference to the cell below. As higher cells are calculated first, they fetch the values of lower cells before these are calculated. In the end the last cells take the latest data input. Effectively it looks as if new values enter the history at the bottom and move up before leaving the series at the top.
 
 |history|
+
 *Create data history in a Streamsheet*
 
  
@@ -131,6 +138,7 @@ MONGO.AGGREGATE offeres a wider range of operations to choose from. Different ag
 More query operators can be found `here <https://docs.mongodb.com/manual/reference/operator/query/>`_.
 
 |MongoDemo|
+
 *All five Mongo functions used in one GIF.*
 
 .. _influx:
@@ -160,6 +168,7 @@ To create a database it is sufficient to execute the REST.REQUEST once.
 | Finally you have to add the "Json" Parameter with FALSE as value. That`s it! 
 
 |influx|
+
 *Write Data in InfluxDB with the REQUEST function*
 
 | **Query Data:**
@@ -178,6 +187,7 @@ In This Tutorial we will send E-Mails to a Mail Account from our :term:`Streamsh
 First of all, create an SMTP_Connector. Therefore click on the :ref:`Administration<administration>` Menu and navigate to :term:`Connectors <Connector>` to create a new Connector, with a “SMTP Provider”. To be able to use the SMTP_Connector, the Host-address, the Port and the Security Protocoll of the Mail Service that is used, needs to be typed in. For example the host-address for Gmail is “smtp.gmail.com”, the Port is 465 and the Security is SSL/TLS. (This may differ from other Mail-Services, their access data can be find on the internet)
 
 |SMTP1|
+
 *Create SMTP_Connector*
 
 For the next Step change to :term:`Producers<Producer>` and create a new Producer, using the previously created Connector. Now enter the sender mail address as User name and add the password below.
@@ -189,6 +199,7 @@ Now we are ready to switch to a Streamsheet. To insert the “\ :ref:`MAIL.SEND<
 To prevent spam we recommend adding a condition to the MAIL.SEND function 😄
 
 |SMTP2|
+
 *Sending mail`s with a condition*
 
 Forum 

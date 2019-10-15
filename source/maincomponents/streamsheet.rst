@@ -19,6 +19,7 @@ Streamsheet
 Streamsheet
 ````````````
 | |Streamsheet1|
+
 Streamsheets are the main components to create the logic for your use cases. Here you model how a :term:`Stream Machine` works and, thus, how data streams are processed, analysed, visualized, combined and controlled or even simulated.
 
 | **To connect a data stream to a Streamsheet you can:**

@@ -3,6 +3,11 @@
 OPCUA.VARIABLES
 -----------------------------
 
+.. |star| image:: /images/star.svg
+        
+
+|star| This is a `Streamsheets Professional <https://cedalo.com/download/>`_ feature.
+
 Creates variables on an :term:`OPC UA` Server. You are able to create singel or multiple variables and if needed arrange them in a folder structure.
 
 **Syntax**
