@@ -1,6 +1,6 @@
 
 DRAW.CHECKBOX
------------
+---------------
 
 Define a graphical checkbox button on a given drawing.
 
