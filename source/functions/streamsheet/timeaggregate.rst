@@ -1,3 +1,5 @@
+.. _timeaggregate:
+
 TIMEAGGREGATE
 -----------------------------
 
@@ -61,7 +63,7 @@ TIMEAGGREGATE(DataCell, [Period, AggregationMethod, TimeSerial, Interval, Target
      - Calculates the product of all received values.
    * - 7
      - STDEV.S
-     - Currently **not available**!!
+     - Calculates the standard deviation of all recieved values. 
    * - 8
      - STDEV.P
      - Currently **not available**!!
