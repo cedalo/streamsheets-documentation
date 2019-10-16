@@ -12,13 +12,15 @@ We will never stop improving our :term:`Streamsheet`\ s. Stay up to date with ou
 | **Changes:**
 | + **We are now Open Source!** Check out our Git-Hub Page (https://github.com/cedalo/streamsheets)
 | + **Version control:** We now distinguish between Professional and Open Source Features (https://cedalo.com/download/)
-| + **Raspberry PI:** The Raspberry Pi Version is part of the Open Source Release.
+| + **Raspberry PI:** Release of the Raspberry Pi Version.
 | + **Performance:** Performance improvements server side
+| + **Bug fixes**
 
 
 | **Features:**
 |
 | + **Shapes**: Added Open Beta for dynamic shape feature. (Use :ref:`drawing`\ functions and/or check the "Experimental Features" in the "Info" settings to activate the Shape Icon) 
+| + **Functions:** :ref:`STDEV.S`\ (); :ref:`CORREL`\ (); :ref:`FORECAST`\ (); added Method 7 to :ref:`TIMEAGGREGATE`\() 
 
 1.3
 --------------------
