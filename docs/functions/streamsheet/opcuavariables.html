@@ -240,19 +240,19 @@
 <p><strong>Syntax</strong></p>
 <p>=OPCUA.VARIABLES(Range)</p>
 <p><strong>Arguments</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
+<col width="20%" />
+<col width="80%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Description</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>Range</p></td>
-<td><div class="line-block">
+<tbody valign="top">
+<tr class="row-even"><td>Range</td>
+<td><div class="first last line-block">
 <div class="line">An OPCUA.<a class="reference internal" href="../../glossary.html#term-json"><span class="xref std std-term">JSON</span></a> range covering the variables and folders, which should be hosted by the OPCUA Server.</div>
 <div class="line">OPCUA Variables have the following parameters (2 optional): key, value, [datatype, typedefinition].</div>
 <div class="line">Datatype example: “String”, “Int32” etc.</div>
@@ -265,22 +265,22 @@
 <p><strong>Return Value</strong></p>
 <p>The OPCUA.VARIABLES function always switch to blue, if the inserted range is accepted. Otherwise to red with an <a class="reference internal" href="../../others.html#error"><span class="std std-ref">error code</span></a>.</p>
 <p><strong>Examples</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 45%" />
-<col style="width: 15%" />
-<col style="width: 40%" />
+<col width="45%" />
+<col width="15%" />
+<col width="40%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Function</p></th>
-<th class="head"><p>Result</p></th>
-<th class="head"><p>Comment</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Result</th>
+<th class="head">Comment</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>=OPCUA.VARIABLES(OPCUA.JSON(A1:B7)</p></td>
-<td><p>“TRUE”</p></td>
-<td><p>The two rows are needed to define the variable name and its value. The amount of columns is flexible, depending on the amount and structure of the variables needed. The Range will automatically assume a structure and settings.</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>=OPCUA.VARIABLES(OPCUA.JSON(A1:B7)</td>
+<td>“TRUE”</td>
+<td>The two rows are needed to define the variable name and its value. The amount of columns is flexible, depending on the amount and structure of the variables needed. The Range will automatically assume a structure and settings.</td>
 </tr>
 </tbody>
 </table>
@@ -326,13 +326,21 @@
   
 
 	
-		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+		<script type="text/javascript">
+			var DOCUMENTATION_OPTIONS = {
+				URL_ROOT:'../../',
+				VERSION:'1.0.0',
+				LANGUAGE:'None',
+				COLLAPSE_INDEX:false,
+				FILE_SUFFIX:'.html',
+				HAS_SOURCE:  true,
+				SOURCELINK_SUFFIX: '.txt'
+			};
+		</script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-			<script type="text/javascript" src="../../_static/language_data.js"></script>
-			<script type="text/javascript" src="../../_static/contentui.js"></script>
-		
+	
 
   
 
