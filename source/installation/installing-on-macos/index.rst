@@ -31,26 +31,16 @@ Setting up Streamsheets
 Starting Streamsheets
 ----------------------
 
-**A:**  
+1. Navigate into the following directory:
 
-    1. Navigate into the following directory:
+	| Command: ``cd <PATH_TO_INSTALL_DIRECTORY>/services/scripts/macos``
+	| Example: ``cd ~/streamsheets/services/scripts/macos`` 
 
-        | Command: ``cd <PATH_TO_INSTALL_DIRECTORY>/services/scripts/macos``
-        | Example: ``cd ~/streamsheets/services/scripts/macos`` 
+	This directory contains several shell scripts (and Docker Compose files) to run predefined configurations of Streamsheets. 
 
-      This directory contains several shell scripts (and Docker Compose files) to run predefined configurations of Streamsheets. 
+2. To start the default configuration, run the following command:
 
-    2. To start the default configuration, run the following command:
-
-        | Command: ``sh start.sh``
-
-**B:**  
-   
-    Alternatively, close the terminal window, open your repository and navigate into the folder. Once, you are in the “win” folder, simply double-click on “Start”.
-
-        | Example: ``~/streamsheets/services/scripts/macos``
- 
- 
+	| Command: ``sh start.sh``
 
 The web interface for Streamsheets is locally available under: http://localhost:8081/ or in the local network under <your_ip_adress>:8081  (e.g. 192.168.178.90:8081).
 
