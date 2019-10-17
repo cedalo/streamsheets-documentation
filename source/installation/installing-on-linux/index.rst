@@ -32,8 +32,6 @@ Setting up Streamsheets
 Starting Streamsheets
 -------------------------
 
-.. hint:: There has to be a valid license, named "license.lic", in the folder "services/docker-compose/license". If you do not have one please `contact <https://cedalo.com/kontakt-en/>`_ us. 
-
 **A:**  
 
     1. Navigate into the following directory:
@@ -57,7 +55,7 @@ Starting Streamsheets
 
 The web interface for Streamsheets is locally available under: http://localhost:8081/ or in the local network under <your_ip_adress>:8081  (e.g. 192.168.178.90:8081).
 
-Open a browser on another computer in the same local network and type the address. On first usage you will have to accpet the license agreement, before you can login to Streamsheets. The standard username and password is:
+Open a browser on another computer in the same local network and type the address. On first usage you will have to accept the license agreement, before you can login to Streamsheets. The standard username and password is:
 
 **User:** admin
 **Password:** 1234
