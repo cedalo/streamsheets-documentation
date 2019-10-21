@@ -30,7 +30,7 @@ The standard Raspberry Pi hostname is “raspberrypi”, which results in:
     | **Standard hostname adress:** raspberrypi:8081
 
 
-Open a browser on another computer in the same local network and type the address. On first usage you will have to accpet the license agreement, before you can login to Streamsheets.
+Open a browser on another computer in the same local network and type the address. On first usage you will have to accept the license agreement, before you can login to Streamsheets.
 The standard username and password is: 
 
 	| **User:** admin
