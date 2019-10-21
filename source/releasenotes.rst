@@ -18,7 +18,6 @@ We will never stop improving our :term:`Streamsheet`\ s. Stay up to date with ou
 
 
 | **Features:**
-|
 | + **Shapes**: Added Open Beta for dynamic shape feature. (Use :ref:`drawing`\ functions and/or check the "Experimental Features" in the "Info" settings to activate the Shape Icon) 
 | + **Functions:** :ref:`STDEV.S`\ (); :ref:`CORREL`\ (); :ref:`FORECAST`\ (); added Method 7 to :ref:`TIMEAGGREGATE`\() 
 
