@@ -1,3 +1,8 @@
+.. |Git| image:: /images/Git.png 
+    :scale: 30%
+.. _Git: https://github.com/cedalo/streamsheets
+
+
 .. Streamsheets documentation master file, created by
    sphinx-quickstart on Tue Apr 10 15:03:42 2018.
    You can adapt this file completely to your liking, but it should at least
@@ -24,7 +29,8 @@ of Streamsheets by providing specific information for the tasks, that need to be
 If you are new to Streamsheets, you should start with the :doc:`introduction` guide to get a quick overview of
 the core concept. Once this is clear, we provide tutorials for the most common tasks in defining a Streamsheet process.
 
-Visit us on our `website`_ or check out the `Streamsheets Forum`_.
+Streamsheets is an open source project. Check out our |Git|_ `GitHub <https://github.com/cedalo/streamsheets>`_ and leave us a star! 😊
+More information about us on our `website`_ or check out the `Streamsheets Forum`_.
 
 .. _website: https://cedalo.com/
 .. _Streamsheets Forum: https://forum.streamsheets.com/
@@ -32,7 +38,7 @@ Visit us on our `website`_ or check out the `Streamsheets Forum`_.
 Below you will find a list of all available topics of our documentation.
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: User Documentation
 
    installation
