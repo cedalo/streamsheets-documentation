@@ -68,6 +68,10 @@ Streamsheet Keyboard Commands
      - Copy selected cells to clipboard and remove cells after paste
    * - Ctrl Scroll
      - Zoom in / out
+   * - Ctrl J
+     - Create JSON RANGE
+   * - Ctrl + alt J
+     - Delete JSON RANGE
    * - Delete
      - Delete selected cells
    * - Enter
