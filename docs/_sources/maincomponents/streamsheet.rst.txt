@@ -13,6 +13,8 @@ Streamsheet
     :scale: 50%
 .. |StreamSettings| image:: /images/StreamSettings.jpg
     :scale: 50%
+.. |StreamsheetsArchitecture| image:: /images/StreamsheetsArchitecture.PNG
+    :scale: 0 %  
 
 .. _Streamsheets:
 
