@@ -119,6 +119,7 @@
 <li class="toctree-l3"><a class="reference internal" href="inbox.html">INBOX</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inboxdata.html">INBOXDATA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inboxmetadata.html">INBOXMETADATA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json.html">JSON</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kafkacommand.html">KAFKA.COMMAND</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kafkapublish.html">KAFKA.PUBLISH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kafkaquery.html">KAFKA.QUERY</a></li>
@@ -220,8 +221,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/functions/streamsheet/mailsend.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -233,78 +232,78 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="mail-send">
-<span id="mailsend"></span><h1>MAIL.SEND<a class="headerlink" href="#mail-send" title="Permalink to this headline">¶</a></h1>
+  <span class="target" id="mailsend"></span><div class="section" id="mail-send">
+<h1>MAIL.SEND<a class="headerlink" href="#mail-send" title="Permalink to this headline">¶</a></h1>
 <p>Send a mail using the given <a class="reference internal" href="../../glossary.html#term-producer"><span class="xref std std-term">producer</span></a> and parameters. You can use the <a class="reference internal" href="../../tutorials/uielements.html#functionwizard"><span class="std std-ref">Function Wizard</span></a> for this function.</p>
 <p><strong>Syntax</strong></p>
 <p>=MAIL.SEND(Producer, Message, Subject, TO, CC, BCC, Attachments  )</p>
 <p><strong>Arguments</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
+<col width="20%" />
+<col width="80%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Description</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>Producer</p></td>
-<td><p>Mail Producer to use for sending mail.</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>Producer</td>
+<td>Mail Producer to use for sending mail.</td>
 </tr>
-<tr class="row-odd"><td><p>Message</p></td>
-<td><p>Simple text used as content of the mail</p></td>
+<tr class="row-odd"><td>Message</td>
+<td>Simple text used as content of the mail</td>
 </tr>
-<tr class="row-even"><td><p>Subject</p></td>
-<td><p>Simple text</p></td>
+<tr class="row-even"><td>Subject</td>
+<td>Simple text</td>
 </tr>
-<tr class="row-odd"><td><p>TO</p></td>
-<td><p>Single mail address or range of mail adresses.</p></td>
+<tr class="row-odd"><td>TO</td>
+<td>Single mail address or range of mail adresses.</td>
 </tr>
-<tr class="row-even"><td><p>CC</p></td>
-<td><p>Single mail address or range of mail adresses.</p></td>
+<tr class="row-even"><td>CC</td>
+<td>Single mail address or range of mail adresses.</td>
 </tr>
-<tr class="row-odd"><td><p>BCC</p></td>
-<td><p>Single mail address or range of mail adresses.</p></td>
+<tr class="row-odd"><td>BCC</td>
+<td>Single mail address or range of mail adresses.</td>
 </tr>
-<tr class="row-even"><td><p>Attachments</p></td>
-<td><p>Range of Attachments, see example below.</p></td>
+<tr class="row-even"><td>Attachments</td>
+<td>Range of Attachments, see example below.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
 <p>TRUE, if successful.</p>
 <p><strong>Examples</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 45%" />
-<col style="width: 15%" />
-<col style="width: 40%" />
+<col width="45%" />
+<col width="15%" />
+<col width="40%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Function</p></th>
-<th class="head"><p>Result</p></th>
-<th class="head"><p>Comment</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Result</th>
+<th class="head">Comment</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>=MAIL.SEND(“Mail Produer”, “Message”, “Subject”, “<a class="reference external" href="mailto:user&#37;&#52;&#48;example&#46;org">user<span>&#64;</span>example<span>&#46;</span>org</a>”)</p></td>
-<td><p>TRUE</p></td>
-<td><p>Send a mail with the content “Message” and the subject “Subject” to “<a class="reference external" href="mailto:user&#37;&#52;&#48;example&#46;org">user<span>&#64;</span>example<span>&#46;</span>org</a>” using the “Mail Producer”</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>=MAIL.SEND(“Mail Produer”, “Message”, “Subject”, “<a class="reference external" href="mailto:user&#37;&#52;&#48;example&#46;org">user<span>&#64;</span>example<span>&#46;</span>org</a>”)</td>
+<td>TRUE</td>
+<td>Send a mail with the content “Message” and the subject “Subject” to “<a class="reference external" href="mailto:user&#37;&#52;&#48;example&#46;org">user<span>&#64;</span>example<span>&#46;</span>org</a>” using the “Mail Producer”</td>
 </tr>
-<tr class="row-odd"><td><p>=MAIL.SEND(“Mail Producer”, “Message”, “Subject”, A1:B2, “user2&#64;example.org”, “user3&#64;example.org”)</p></td>
-<td><p>TRUE</p></td>
-<td><p>Send a mail with the content “Message” and the subject “Subject” to all mail addresses in the A1:B2 range and with “user2&#64;example.org” in CC and “user3&#64;example.org” in BCC using the “Mail Producer”.</p></td>
+<tr class="row-odd"><td>=MAIL.SEND(“Mail Producer”, “Message”, “Subject”, A1:B2, “user2&#64;example.org”, “user3&#64;example.org”)</td>
+<td>TRUE</td>
+<td>Send a mail with the content “Message” and the subject “Subject” to all mail addresses in the A1:B2 range and with “user2&#64;example.org” in CC and “user3&#64;example.org” in BCC using the “Mail Producer”.</td>
 </tr>
-<tr class="row-even"><td><p>=MAIL.SEND(“Mail Prodcuer”, “Message”, “Subject”, “<a class="reference external" href="mailto:user&#37;&#52;&#48;example&#46;org">user<span>&#64;</span>example<span>&#46;</span>org</a>”, , , <span class="blue">A3:D4</span>)</p>
-<div class="line-block">
+<tr class="row-even"><td><p class="first">=MAIL.SEND(“Mail Prodcuer”, “Message”, “Subject”, “<a class="reference external" href="mailto:user&#37;&#52;&#48;example&#46;org">user<span>&#64;</span>example<span>&#46;</span>org</a>”, , , <span class="blue">A3:D4</span>)</p>
+<div class="last line-block">
 <div class="line"><a class="reference internal" href="../../_images/MAIL.SEND.PNG"><img alt="MAIL.SEND" src="../../_images/MAIL.SEND.PNG" style="width: 350.7px; height: 89.6px;" /></a></div>
 </div>
 </td>
-<td><p>TRUE</p></td>
-<td><p>Send a mail with two attachments. The first attachment is text file name “file.txt” with “A text” as content. The second attachment is an image named “image.jpeg” with the base64 value of the image as content.
-The encoding defaults to “utf-8” and could be omitted for “file.txt”. The “Content-Type” column is optional and not required in most cases since the Content-Type will be determined from the file extension.</p></td>
+<td>TRUE</td>
+<td>Send a mail with two attachments. The first attachment is text file name “file.txt” with “A text” as content. The second attachment is an image named “image.jpeg” with the base64 value of the image as content.
+The encoding defaults to “utf-8” and could be omitted for “file.txt”. The “Content-Type” column is optional and not required in most cases since the Content-Type will be determined from the file extension.</td>
 </tr>
 </tbody>
 </table>
@@ -350,13 +349,21 @@ The encoding defaults to “utf-8” and could be omitted for “file.txt”. Th
   
 
 	
-		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+		<script type="text/javascript">
+			var DOCUMENTATION_OPTIONS = {
+				URL_ROOT:'../../',
+				VERSION:'1.0.0',
+				LANGUAGE:'None',
+				COLLAPSE_INDEX:false,
+				FILE_SUFFIX:'.html',
+				HAS_SOURCE:  true,
+				SOURCELINK_SUFFIX: '.txt'
+			};
+		</script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-			<script type="text/javascript" src="../../_static/language_data.js"></script>
-			<script type="text/javascript" src="../../_static/contentui.js"></script>
-		
+	
 
   
 

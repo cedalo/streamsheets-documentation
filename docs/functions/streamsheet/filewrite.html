@@ -119,6 +119,7 @@
 <li class="toctree-l3"><a class="reference internal" href="inbox.html">INBOX</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inboxdata.html">INBOXDATA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inboxmetadata.html">INBOXMETADATA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json.html">JSON</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kafkacommand.html">KAFKA.COMMAND</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kafkapublish.html">KAFKA.PUBLISH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kafkaquery.html">KAFKA.QUERY</a></li>
@@ -220,8 +221,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/functions/streamsheet/filewrite.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -239,66 +238,66 @@
 <p><strong>Syntax</strong></p>
 <p>=FILE.WRITE(<a class="reference internal" href="../../glossary.html#term-producer"><span class="xref std std-term">Producer</span></a>, Range, Filename, [Directory, Mode, Separator])</p>
 <p><strong>Arguments</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
+<col width="20%" />
+<col width="80%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Description</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>Producer</p></td>
-<td><p>File Producer to use for writing the file.</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>Producer</td>
+<td>File Producer to use for writing the file.</td>
 </tr>
-<tr class="row-odd"><td><p>Range</p></td>
-<td><p>The range to write to a file. Can also be a single value.</p></td>
+<tr class="row-odd"><td>Range</td>
+<td>The range to write to a file. Can also be a single value.</td>
 </tr>
-<tr class="row-even"><td><p>Filename</p></td>
-<td><p>Name of the file that is written.</p></td>
+<tr class="row-even"><td>Filename</td>
+<td>Name of the file that is written.</td>
 </tr>
-<tr class="row-odd"><td><p>Directory</p></td>
-<td><p>Optional. The directory of the file that is written. Defaults to the root directory of the File Producer.</p></td>
+<tr class="row-odd"><td>Directory</td>
+<td>Optional. The directory of the file that is written. Defaults to the root directory of the File Producer.</td>
 </tr>
-<tr class="row-even"><td><p>Mode</p></td>
-<td><p>Optional. Has to be “create” or “append”. Defaults to “append”. “create” replaces an existing file with the same name, “append” appends instead.</p></td>
+<tr class="row-even"><td>Mode</td>
+<td>Optional. Has to be “create” or “append”. Defaults to “append”. “create” replaces an existing file with the same name, “append” appends instead.</td>
 </tr>
-<tr class="row-odd"><td><p>Separator</p></td>
-<td><p>Optional. Separator to use when writing range to file. Defaults to “,”.</p></td>
+<tr class="row-odd"><td>Separator</td>
+<td>Optional. Separator to use when writing range to file. Defaults to “,”.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
 <p>TRUE, if successful.</p>
 <p><strong>Examples</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 45%" />
-<col style="width: 15%" />
-<col style="width: 40%" />
+<col width="45%" />
+<col width="15%" />
+<col width="40%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Function</p></th>
-<th class="head"><p>Result</p></th>
-<th class="head"><p>Comment</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Result</th>
+<th class="head">Comment</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>=FILE.WRITE(“File Producer”, “Message”, “file.csv”, “directory”)</p></td>
-<td><p>TRUE</p></td>
-<td><p>Write the text “Message” to the file located at “{rootDirectory}/directory/file.csv” using the “File Producer”</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>=FILE.WRITE(“File Producer”, “Message”, “file.csv”, “directory”)</td>
+<td>TRUE</td>
+<td>Write the text “Message” to the file located at “{rootDirectory}/directory/file.csv” using the “File Producer”</td>
 </tr>
-<tr class="row-odd"><td><p>=FILE.WRITE(“File Producer”, A2:C3, “file.csv”, ,”create”, “;”)</p>
-<div class="line-block">
+<tr class="row-odd"><td><p class="first">=FILE.WRITE(“File Producer”, A2:C3, “file.csv”, ,”create”, “;”)</p>
+<div class="last line-block">
 <div class="line"><a class="reference internal" href="../../_images/FILE.WRITE.PNG"><img alt="FILE.WRITE" src="../../_images/FILE.WRITE.PNG" style="width: 368.5px; height: 102.0px;" /></a></div>
 </div>
 </td>
-<td><p>TRUE</p></td>
-<td><p>Writes the content of the range A2:C3 to the fiel located at “{rootDirectory}/file.csv” using “;” as separator and replacing an already existing file with the same name.
+<td>TRUE</td>
+<td><p class="first">Writes the content of the range A2:C3 to the fiel located at “{rootDirectory}/file.csv” using “;” as separator and replacing an already existing file with the same name.
 The resulting content of the file is:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Example1</span><span class="p">;</span><span class="n">Example2</span><span class="p">;</span><span class="n">Example3</span>
+<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Example1</span><span class="p">;</span><span class="n">Example2</span><span class="p">;</span><span class="n">Example3</span>
 <span class="n">Example4</span><span class="p">;</span><span class="n">Example5</span><span class="p">;</span><span class="n">Example6</span>
 </pre></div>
 </div>
@@ -348,13 +347,21 @@ The resulting content of the file is:</p>
   
 
 	
-		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+		<script type="text/javascript">
+			var DOCUMENTATION_OPTIONS = {
+				URL_ROOT:'../../',
+				VERSION:'1.0.0',
+				LANGUAGE:'None',
+				COLLAPSE_INDEX:false,
+				FILE_SUFFIX:'.html',
+				HAS_SOURCE:  true,
+				SOURCELINK_SUFFIX: '.txt'
+			};
+		</script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-			<script type="text/javascript" src="../../_static/language_data.js"></script>
-			<script type="text/javascript" src="../../_static/contentui.js"></script>
-		
+	
 
   
 

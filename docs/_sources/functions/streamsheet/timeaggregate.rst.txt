@@ -43,6 +43,9 @@ TIMEAGGREGATE(DataCell, [Period, AggregationMethod, TimeSerial, Interval, Target
    * - Number
      - Method
      - Description
+   * - 0
+     - NONE
+     - No aggregation is performed and the last valid value of specified DataCell is returned.
    * - 1
      - AVERAGE
      - Calculates the average of all received values.

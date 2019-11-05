@@ -119,6 +119,7 @@
 <li class="toctree-l3"><a class="reference internal" href="inbox.html">INBOX</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inboxdata.html">INBOXDATA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inboxmetadata.html">INBOXMETADATA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json.html">JSON</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kafkacommand.html">KAFKA.COMMAND</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kafkapublish.html">KAFKA.PUBLISH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kafkaquery.html">KAFKA.QUERY</a></li>
@@ -220,8 +221,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/functions/streamsheet/mqttpublish.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -240,32 +239,32 @@ outbox use the <a class="reference internal" href="outbox.html#outbox"><span cla
 <p><strong>Syntax</strong></p>
 <p>=<a class="reference internal" href="../../glossary.html#term-mqtt"><span class="xref std std-term">MQTT</span></a>.PUBLISH(Producer, MessageOrValue, Topic [, QoS, User Properties])</p>
 <p><strong>Arguments</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
+<col width="20%" />
+<col width="80%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Description</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>Producer</p></td>
-<td><p>Producer to use for publishing.</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>Producer</td>
+<td>Producer to use for publishing.</td>
 </tr>
-<tr class="row-odd"><td><p>MessageOrValue</p></td>
-<td><p>Either an existing message from the outbox or a value to publish.</p></td>
+<tr class="row-odd"><td>MessageOrValue</td>
+<td>Either an existing message from the outbox or a value to publish.</td>
 </tr>
-<tr class="row-even"><td><p>Topic</p></td>
-<td><p>Topic that is appended to the base topic defined in the <a class="reference internal" href="../../glossary.html#term-connector"><span class="xref std std-term">Connector</span></a>.</p></td>
+<tr class="row-even"><td>Topic</td>
+<td>Topic that is appended to the base topic defined in the <a class="reference internal" href="../../glossary.html#term-connector"><span class="xref std std-term">Connector</span></a>.</td>
 </tr>
-<tr class="row-odd"><td><p>QoS</p></td>
-<td><p>Optional. Quality of Service. This option defines the reliability of the publish operation. It depends on
-the used protocol.</p></td>
+<tr class="row-odd"><td>QoS</td>
+<td>Optional. Quality of Service. This option defines the reliability of the publish operation. It depends on
+the used protocol.</td>
 </tr>
-<tr class="row-even"><td><p>User Properties</p></td>
-<td><p>Optional. Define Metadata.</p></td>
+<tr class="row-even"><td>User Properties</td>
+<td>Optional. Define Metadata.</td>
 </tr>
 </tbody>
 </table>
@@ -273,30 +272,30 @@ the used protocol.</p></td>
 <p>TRUE, if successful.</p>
 <p><strong>Examples</strong></p>
 <p>All examples assume a base topic with the value “/cedalo” in the connector.</p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 45%" />
-<col style="width: 15%" />
-<col style="width: 40%" />
+<col width="45%" />
+<col width="15%" />
+<col width="40%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Function</p></th>
-<th class="head"><p>Result</p></th>
-<th class="head"><p>Comment</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Result</th>
+<th class="head">Comment</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>=MQTT.PUBLISH(“MQTT Producer”, “Message”, “test”)</p></td>
-<td><p>TRUE</p></td>
-<td><p>This publishes the string value “Message” using the “MQTT Producer” under the topic “cedalo/test”</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>=MQTT.PUBLISH(“MQTT Producer”, “Message”, “test”)</td>
+<td>TRUE</td>
+<td>This publishes the string value “Message” using the “MQTT Producer” under the topic “cedalo/test”</td>
 </tr>
-<tr class="row-odd"><td><p>=MQTT.PUBLISH(“MQTT Producer”, <a class="reference internal" href="outbox.html#outbox"><span class="std std-ref">OUTBOX</span></a>(“Message”), “test”)</p></td>
-<td><p>TRUE</p></td>
-<td><p>This publishes the outbox message with id “Message” using the “MQTT Producer” and topic “cedalo/test”</p></td>
+<tr class="row-odd"><td>=MQTT.PUBLISH(“MQTT Producer”, <a class="reference internal" href="outbox.html#outbox"><span class="std std-ref">OUTBOX</span></a>(“Message”), “test”)</td>
+<td>TRUE</td>
+<td>This publishes the outbox message with id “Message” using the “MQTT Producer” and topic “cedalo/test”</td>
 </tr>
-<tr class="row-even"><td><p>=MQTT.PUBLISH(“MQTT Producer”, <span class="xref std std-ref">JSON</span>(A1:C2), “test”)</p></td>
-<td><p>TRUE</p></td>
-<td><p>This publishes a <a class="reference internal" href="../../glossary.html#term-json"><span class="xref std std-term">JSON</span></a> object created by the json function using the “MQTT Producer” and topic “cedalo/test”</p></td>
+<tr class="row-even"><td>=MQTT.PUBLISH(“MQTT Producer”, <span class="xref std std-ref">JSON</span>(A1:C2), “test”)</td>
+<td>TRUE</td>
+<td>This publishes a <a class="reference internal" href="../../glossary.html#term-json"><span class="xref std std-term">JSON</span></a> object created by the json function using the “MQTT Producer” and topic “cedalo/test”</td>
 </tr>
 </tbody>
 </table>
@@ -342,13 +341,21 @@ the used protocol.</p></td>
   
 
 	
-		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+		<script type="text/javascript">
+			var DOCUMENTATION_OPTIONS = {
+				URL_ROOT:'../../',
+				VERSION:'1.0.0',
+				LANGUAGE:'None',
+				COLLAPSE_INDEX:false,
+				FILE_SUFFIX:'.html',
+				HAS_SOURCE:  true,
+				SOURCELINK_SUFFIX: '.txt'
+			};
+		</script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-			<script type="text/javascript" src="../../_static/language_data.js"></script>
-			<script type="text/javascript" src="../../_static/contentui.js"></script>
-		
+	
 
   
 
