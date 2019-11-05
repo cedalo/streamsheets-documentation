@@ -239,58 +239,58 @@
 <p><strong>Syntax</strong></p>
 <p>=SETVALUE([Condition], Value, TargetCell [, OverwriteFormula])</p>
 <p><strong>Arguments</strong></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col style="width: 20%" />
+<col style="width: 80%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Name</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Condition</td>
-<td>Optional. Condition to check for action. Defaults to FALSE if no condition is given.</td>
+<tbody>
+<tr class="row-even"><td><p>Condition</p></td>
+<td><p>Optional. Condition to check for action. Defaults to FALSE if no condition is given.</p></td>
 </tr>
-<tr class="row-odd"><td>Value</td>
-<td>Value to write to target cell, if condition evaluates to TRUE.</td>
+<tr class="row-odd"><td><p>Value</p></td>
+<td><p>Value to write to target cell, if condition evaluates to TRUE.</p></td>
 </tr>
-<tr class="row-even"><td>TargetCell</td>
-<td>Cell to put value into.</td>
+<tr class="row-even"><td><p>TargetCell</p></td>
+<td><p>Cell to put value into.</p></td>
 </tr>
-<tr class="row-odd"><td>OverwriteFormula</td>
-<td>Optional. Set to TRUE remove any cell formula. Defaults to FALSE.</td>
+<tr class="row-odd"><td><p>OverwriteFormula</p></td>
+<td><p>Optional. Set to TRUE remove any cell formula. Defaults to FALSE.</p></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
 <p>TRUE</p>
 <p><strong>Example</strong></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="45%" />
-<col width="10%" />
-<col width="45%" />
+<col style="width: 45%" />
+<col style="width: 10%" />
+<col style="width: 45%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Function</th>
-<th class="head">Result</th>
-<th class="head">Comment</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Result</p></th>
+<th class="head"><p>Comment</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>=SETVALUE(2&gt;1, 42, B1)</td>
-<td>TRUE</td>
-<td>Will put value 42 in cell B1, but keeps possible cell formula</td>
+<tbody>
+<tr class="row-even"><td><p>=SETVALUE(2&gt;1, 42, B1)</p></td>
+<td><p>TRUE</p></td>
+<td><p>Will put value 42 in cell B1, but keeps possible cell formula</p></td>
 </tr>
-<tr class="row-odd"><td>=SETVALUE(2&gt;1, 42, B1, TRUE)</td>
-<td>TRUE</td>
-<td>Same as before, but overwrites possible cell formula so that 42 is returned on subsequent machine steps</td>
+<tr class="row-odd"><td><p>=SETVALUE(2&gt;1, 42, B1, TRUE)</p></td>
+<td><p>TRUE</p></td>
+<td><p>Same as before, but overwrites possible cell formula so that 42 is returned on subsequent machine steps</p></td>
 </tr>
-<tr class="row-even"><td>=SETVALUE(, 42, B1)</td>
-<td>TRUE</td>
-<td>Does nothing because no condition is specified</td>
+<tr class="row-even"><td><p>=SETVALUE(, 42, B1)</p></td>
+<td><p>TRUE</p></td>
+<td><p>Does nothing because no condition is specified</p></td>
 </tr>
 </tbody>
 </table>
@@ -316,7 +316,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, Cedalo AG, Streamsheet™ is a registered trademark of the Cedalo AG.
+        &copy; Copyright 2019, Cedalo AG, Streamsheet™ is a trademark of the Cedalo AG.
 
     </p>
   </div>
@@ -336,21 +336,13 @@
   
 
 	
-		<script type="text/javascript">
-			var DOCUMENTATION_OPTIONS = {
-				URL_ROOT:'../../',
-				VERSION:'1.0.0',
-				LANGUAGE:'None',
-				COLLAPSE_INDEX:false,
-				FILE_SUFFIX:'.html',
-				HAS_SOURCE:  true,
-				SOURCELINK_SUFFIX: '.txt'
-			};
-		</script>
+		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-	
+			<script type="text/javascript" src="../../_static/language_data.js"></script>
+			<script type="text/javascript" src="../../_static/contentui.js"></script>
+		
 
   
 

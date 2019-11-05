@@ -49,7 +49,7 @@ TRUE, if no error occurred, otherwise :ref:`error <error>` value.
 
    * - Function
      - Result
-   * - =STACKADD(:blue:`A5:D9`,2,\ :red:`A2:D3`)
+   * - =STACKADD(:blue:`A5:D9`,\ :red:`A2:D3`,TRUE)
 
        | |STACKADD1|
 

@@ -177,10 +177,10 @@
 <div class="line"><strong>Stream Machine Characteristics</strong></div>
 </div>
 <ul class="simple">
-<li>Stream Machines contain one or up to four Streamsheets.</li>
-<li>Stream Machines run on servers. Hence, once you start them, they keep running until they are being stopped or the server is shut down, even if you turn off the client. That means you can turn off the device you are using to access the Streamsheet platform, e.g. your computer, and the Stream Machines keep running.</li>
-<li>Stream Machines have a cycle time. This serves as its general calculation speed and could be seen as its internal clock.</li>
-<li>Each Stream Machine is a <a class="reference internal" href="../glossary.html#term-microservice"><span class="xref std std-term">microservice</span></a>.</li>
+<li><p>Stream Machines contain one or up to four Streamsheets.</p></li>
+<li><p>Stream Machines run on servers. Hence, once you start them, they keep running until they are being stopped or the server is shut down, even if you turn off the client. That means you can turn off the device you are using to access the Streamsheet platform, e.g. your computer, and the Stream Machines keep running.</p></li>
+<li><p>Stream Machines have a cycle time. This serves as its general calculation speed and could be seen as its internal clock.</p></li>
+<li><p>Each Stream Machine is a <a class="reference internal" href="../glossary.html#term-microservice"><span class="xref std std-term">microservice</span></a>.</p></li>
 </ul>
 <div class="section" id="menu-settings">
 <h2>Menu &amp; Settings<a class="headerlink" href="#menu-settings" title="Permalink to this headline">¶</a></h2>
@@ -197,10 +197,10 @@
 <p><a class="reference internal" href="../_images/StartBig.jpg"><img alt="StartBig" src="../_images/StartBig.jpg" style="width: 883.2px; height: 49.68px;" /></a></p>
 <p>With these 4 buttons a machine´s state is controlled. A machine can either be started, paused, stopped or calculated step-by-step.</p>
 <ul class="simple">
-<li>Stop: This button stops the Stream Machine and sets its calculation-step-count to 0. Additionally, the step-counts and the inbox queues of its Streamsheets are reset.</li>
-<li>Pause: This pauses the Stream Machine. Step-counts are not reset. However, the biggest difference to “stop” is that messages are queued in the inboxes of Streamsheets.</li>
-<li>Play: This button starts a machine if it is paused or stopped. Message streams are only processed or produced if a machine is set to “play”.</li>
-<li>Execute 1 step: Clicking this button triggers one machine calculation step.</li>
+<li><p>Stop: This button stops the Stream Machine and sets its calculation-step-count to 0. Additionally, the step-counts and the inbox queues of its Streamsheets are reset.</p></li>
+<li><p>Pause: This pauses the Stream Machine. Step-counts are not reset. However, the biggest difference to “stop” is that messages are queued in the inboxes of Streamsheets.</p></li>
+<li><p>Play: This button starts a machine if it is paused or stopped. Message streams are only processed or produced if a machine is set to “play”.</p></li>
+<li><p>Execute 1 step: Clicking this button triggers one machine calculation step.</p></li>
 </ul>
 </div>
 <div class="section" id="cycle-time">
@@ -211,8 +211,8 @@
 <p><a class="reference internal" href="../_images/CycleTime2.JPG"><img alt="CycleTime2" src="../_images/CycleTime2.JPG" style="width: 484.0px; height: 602.0px;" /></a></p>
 <p>In the screenshot the cycle time is set to 1000 ms. Thus, the machine performs one recalculation aka one machine-step per second. The Update Interval is set to 10. Consequently, the visualization of the machine and its Streamsheets is updated in your browser only every 10th step that is to say in this case every 10 seconds. The gauges show how many steps are calculated on the server and how many are visualized on the client (your browser).</p>
 <div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p class="last">The Calculation Setting “On Message” in the Stream Sheet Settings ignores the cycle time and calculates on every incoming message.</p>
+<p class="admonition-title">Tip</p>
+<p>The Calculation Setting “On Message” in the Stream Sheet Settings ignores the cycle time and calculates on every incoming message.</p>
 </div>
 </div>
 <div class="section" id="tool-bar">
@@ -224,9 +224,9 @@
 <div class="line">Tools especially worth mentioning are:</div>
 </div>
 <ul class="simple">
-<li><strong>Insert Producer Function:</strong> This tool opens a wizard containing all functions you can use to save and send data, essentially to produce a data stream. Most of the functions serve the purpose of creating an outgoing data stream. However, some, such as <a class="reference internal" href="../functions/streamsheet/restrequest.html#restrequest"><span class="std std-ref">REST.REQUEST</span></a> or <a class="reference internal" href="../functions/streamsheet/mongoquery.html#mongoquery"><span class="std std-ref">MONGO.QUERY</span></a>, can also be used to bring data into the Streamsheet. Simply choose a producer function and complete the arguments. The default option is called <a class="reference internal" href="../functions/streamsheet/mqttpublish.html#mqttpublish"><span class="std std-ref">MQTT.PUBLISH</span></a>. This is also the most common formula to send data from one Stream Machine to another.</li>
-<li><strong>Insert Drawing Shape:</strong> This tool offers you a variety of shapes to use in your Streamsheets. Insert a shape and have a look at the formula bar. You will see that every shape is created by a DRAW formula. Link the position parameters to cells and the shape starts moving.</li>
-<li><strong>Insert Chart:</strong> Similarly to other Spreadsheet solutions, charts can be created by selecting a cell range and choosing a chart type. However, as Streamsheets are recalculated automatically, charts change dynamically according to their input.</li>
+<li><p><strong>Insert Producer Function:</strong> This tool opens a wizard containing all functions you can use to save and send data, essentially to produce a data stream. Most of the functions serve the purpose of creating an outgoing data stream. However, some, such as <a class="reference internal" href="../functions/streamsheet/restrequest.html#restrequest"><span class="std std-ref">REST.REQUEST</span></a> or <a class="reference internal" href="../functions/streamsheet/mongoquery.html#mongoquery"><span class="std std-ref">MONGO.QUERY</span></a>, can also be used to bring data into the Streamsheet. Simply choose a producer function and complete the arguments. The default option is called <a class="reference internal" href="../functions/streamsheet/mqttpublish.html#mqttpublish"><span class="std std-ref">MQTT.PUBLISH</span></a>. This is also the most common formula to send data from one Stream Machine to another.</p></li>
+<li><p><strong>Insert Drawing Shape:</strong> This tool offers you a variety of shapes to use in your Streamsheets. Insert a shape and have a look at the formula bar. You will see that every shape is created by a DRAW formula. Link the position parameters to cells and the shape starts moving.</p></li>
+<li><p><strong>Insert Chart:</strong> Similarly to other Spreadsheet solutions, charts can be created by selecting a cell range and choosing a chart type. However, as Streamsheets are recalculated automatically, charts change dynamically according to their input.</p></li>
 </ul>
 </div>
 </div>
@@ -251,7 +251,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, Cedalo AG, Streamsheet™ is a registered trademark of the Cedalo AG.
+        &copy; Copyright 2019, Cedalo AG, Streamsheet™ is a trademark of the Cedalo AG.
 
     </p>
   </div>
@@ -271,21 +271,13 @@
   
 
 	
-		<script type="text/javascript">
-			var DOCUMENTATION_OPTIONS = {
-				URL_ROOT:'../',
-				VERSION:'1.0.0',
-				LANGUAGE:'None',
-				COLLAPSE_INDEX:false,
-				FILE_SUFFIX:'.html',
-				HAS_SOURCE:  true,
-				SOURCELINK_SUFFIX: '.txt'
-			};
-		</script>
+		<script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
 			<script type="text/javascript" src="../_static/jquery.js"></script>
 			<script type="text/javascript" src="../_static/underscore.js"></script>
 			<script type="text/javascript" src="../_static/doctools.js"></script>
-	
+			<script type="text/javascript" src="../_static/language_data.js"></script>
+			<script type="text/javascript" src="../_static/contentui.js"></script>
+		
 
   
 

@@ -202,59 +202,59 @@ Passing an index is optional. If not specified the first part is returned. The S
 <p><strong>Syntax</strong></p>
 <p>=SPLIT(Text, Separator, Index)</p>
 <p><strong>Arguments</strong></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col style="width: 20%" />
+<col style="width: 80%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Name</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Text</td>
-<td>Text to split.</td>
+<tbody>
+<tr class="row-even"><td><p>Text</p></td>
+<td><p>Text to split.</p></td>
 </tr>
-<tr class="row-odd"><td>Separator</td>
-<td>Separator used to split text.</td>
+<tr class="row-odd"><td><p>Separator</p></td>
+<td><p>Separator used to split text.</p></td>
 </tr>
-<tr class="row-even"><td>Index</td>
-<td>Optional. Number which specifies the part to return. Defaults to 1.</td>
+<tr class="row-even"><td><p>Index</p></td>
+<td><p>Optional. Number which specifies the part to return. Defaults to 1.</p></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
 <p>The part of text at specified index.</p>
 <p><strong>Example</strong></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="45%" />
-<col width="10%" />
-<col width="45%" />
+<col style="width: 45%" />
+<col style="width: 10%" />
+<col style="width: 45%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Function</th>
-<th class="head">Result</th>
-<th class="head">Comment</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Result</p></th>
+<th class="head"><p>Comment</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>=SPLIT(“cedalo/topic”, “/”, 2)</td>
-<td>topic</td>
-<td>Returns the second part of splitted text.</td>
+<tbody>
+<tr class="row-even"><td><p>=SPLIT(“cedalo/topic”, “/”, 2)</p></td>
+<td><p>topic</p></td>
+<td><p>Returns the second part of splitted text.</p></td>
 </tr>
-<tr class="row-odd"><td>=SPLIT(“cedalo/topic”, “/”)</td>
-<td>cedalo</td>
-<td>No index is given so first part is returned by default.</td>
+<tr class="row-odd"><td><p>=SPLIT(“cedalo/topic”, “/”)</p></td>
+<td><p>cedalo</p></td>
+<td><p>No index is given so first part is returned by default.</p></td>
 </tr>
-<tr class="row-even"><td>=SPLIT(“cedalo/test/topic”, “/”, 5)</td>
-<td>topic</td>
-<td>Index exceeds number of parts, so return last one.</td>
+<tr class="row-even"><td><p>=SPLIT(“cedalo/test/topic”, “/”, 5)</p></td>
+<td><p>topic</p></td>
+<td><p>Index exceeds number of parts, so return last one.</p></td>
 </tr>
-<tr class="row-odd"><td>=SPLIT(“cedalo/test/topic”, “+”, 2)</td>
-<td>cedalo/test/topic</td>
-<td>Separator is not contained within text, so return complete text.</td>
+<tr class="row-odd"><td><p>=SPLIT(“cedalo/test/topic”, “+”, 2)</p></td>
+<td><p>cedalo/test/topic</p></td>
+<td><p>Separator is not contained within text, so return complete text.</p></td>
 </tr>
 </tbody>
 </table>
@@ -280,7 +280,7 @@ Passing an index is optional. If not specified the first part is returned. The S
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, Cedalo AG, Streamsheet™ is a registered trademark of the Cedalo AG.
+        &copy; Copyright 2019, Cedalo AG, Streamsheet™ is a trademark of the Cedalo AG.
 
     </p>
   </div>
@@ -300,21 +300,13 @@ Passing an index is optional. If not specified the first part is returned. The S
   
 
 	
-		<script type="text/javascript">
-			var DOCUMENTATION_OPTIONS = {
-				URL_ROOT:'../../',
-				VERSION:'1.0.0',
-				LANGUAGE:'None',
-				COLLAPSE_INDEX:false,
-				FILE_SUFFIX:'.html',
-				HAS_SOURCE:  true,
-				SOURCELINK_SUFFIX: '.txt'
-			};
-		</script>
+		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-	
+			<script type="text/javascript" src="../../_static/language_data.js"></script>
+			<script type="text/javascript" src="../../_static/contentui.js"></script>
+		
 
   
 

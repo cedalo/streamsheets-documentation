@@ -182,17 +182,17 @@
 <div class="line"><strong>To connect a data stream to a Streamsheet you can:</strong></div>
 </div>
 <ul class="simple">
-<li>Select a <a class="reference internal" href="../glossary.html#term-consumer"><span class="xref std std-term">Consumer</span></a> (This is the most common case; however, a Consumer must be created in the <span class="xref std std-ref">administration</span> first)</li>
-<li>Use specific functions, e.g. <a class="reference internal" href="../functions/streamsheet/opcuaread.html#opcuaread"><span class="std std-ref">OPCUA.READ</span></a> or <a class="reference internal" href="../functions/streamsheet/restrequest.html#restrequest"><span class="std std-ref">REST.REQUEST</span></a> with GET-Method</li>
+<li><p>Select a <a class="reference internal" href="../glossary.html#term-consumer"><span class="xref std std-term">Consumer</span></a> (This is the most common case; however, a Consumer must be created in the <a class="reference internal" href="administration.html#administration"><span class="std std-ref">Administration</span></a> first)</p></li>
+<li><p>Use specific functions, e.g. <a class="reference internal" href="../functions/streamsheet/opcuaread.html#opcuaread"><span class="std std-ref">OPCUA.READ</span></a> or <a class="reference internal" href="../functions/streamsheet/restrequest.html#restrequest"><span class="std std-ref">REST.REQUEST</span></a> with GET-Method</p></li>
 </ul>
 <div class="line-block">
 <div class="line"><strong>To create an outgoing data stream or make data available you have several options:</strong></div>
 </div>
 <ul class="simple">
-<li>Choose a Producer function, e.g. <a class="reference internal" href="../functions/streamsheet/mqttpublish.html#mqttpublish"><span class="std std-ref">MQTT.PUBLISH</span></a> or <a class="reference internal" href="../functions/streamsheet/kafkapublish.html#kafkapublish"><span class="std std-ref">KAFKA.PUBLISH</span></a></li>
-<li>Choose a posting function, e.g. <a class="reference internal" href="../functions/streamsheet/opcuawrite.html#opcuawrite"><span class="std std-ref">OPCUA.WRITE</span></a> or <a class="reference internal" href="../functions/streamsheet/restrequest.html#restrequest"><span class="std std-ref">REST.REQUEST</span></a> with POST-Method</li>
-<li>Expose the Stream Machine as <a class="reference internal" href="../glossary.html#term-opc-ua"><span class="xref std std-term">OPC UA</span></a> or <a class="reference internal" href="../glossary.html#term-rest"><span class="xref std std-term">REST</span></a> Server so that other services can access its data</li>
-<li>Store the data in a database, e.g. by using <a class="reference internal" href="../functions/streamsheet/mongostore.html#mongostore"><span class="std std-ref">MONGO.STORE</span></a></li>
+<li><p>Choose a Producer function, e.g. <a class="reference internal" href="../functions/streamsheet/mqttpublish.html#mqttpublish"><span class="std std-ref">MQTT.PUBLISH</span></a> or <a class="reference internal" href="../functions/streamsheet/kafkapublish.html#kafkapublish"><span class="std std-ref">KAFKA.PUBLISH</span></a></p></li>
+<li><p>Choose a posting function, e.g. <a class="reference internal" href="../functions/streamsheet/opcuawrite.html#opcuawrite"><span class="std std-ref">OPCUA.WRITE</span></a> or <a class="reference internal" href="../functions/streamsheet/restrequest.html#restrequest"><span class="std std-ref">REST.REQUEST</span></a> with POST-Method</p></li>
+<li><p>Expose the Stream Machine as <a class="reference internal" href="../glossary.html#term-opc-ua"><span class="xref std std-term">OPC UA</span></a> or <a class="reference internal" href="../glossary.html#term-rest"><span class="xref std std-term">REST</span></a> Server so that other services can access its data</p></li>
+<li><p>Store the data in a database, e.g. by using <a class="reference internal" href="../functions/streamsheet/mongostore.html#mongostore"><span class="std std-ref">MONGO.STORE</span></a></p></li>
 </ul>
 <p>Often, a Streamsheet consumes and produces streams. Nonetheless, neither an incoming nor an outgoing data stream are mandatory. For instance, Streamsheets which are calculated repeatedly and only produce streams are great for simulating sensors, machines, APIs and other data sources. On the other hand, sheets with pure dashboard and visualization functionality typically only consume streams without generating one on their own.</p>
 <p>Each Streamsheet consists of an Inbox and a Grid.</p>
@@ -210,25 +210,22 @@ Message streams are connected to a Streamsheet by selecting a Consumer in the In
 <p>In this settings menu you decide which data streams a Streamsheet consumes and also its recalculation mode.
 The settings explained point by point:</p>
 <ul>
-<li><p class="first">“<a class="reference internal" href="../glossary.html#term-consumer"><span class="xref std std-term">Consumer</span></a>” lists all available Consumers. Choose the one which delivers the desired data streams. To define new or adjust existing Consumers, please go to the Administration Menu.</p>
-</li>
-<li><p class="first">“Calculate Streamsheet” defines the recalculation mode of a Streamsheet:</p>
+<li><p>“<a class="reference internal" href="../glossary.html#term-consumer"><span class="xref std std-term">Consumer</span></a>” lists all available Consumers. Choose the one which delivers the desired data streams. To define new or adjust existing Consumers, please go to the Administration Menu.</p></li>
+<li><p>“Calculate Streamsheet” defines the recalculation mode of a Streamsheet:</p>
 <blockquote>
 <div><ul class="simple">
-<li>“<strong>Continuously</strong>”: The Streamsheet is recalculated continuously and cyclically until the machine is stopped - also if NO messages are received. The sheet´s cycle time is the cycle time of the Stream Machine. (This is the default setting)</li>
-<li>“<strong>On Message Arrival</strong>”: Every time a message is received, the sheet is calculated immediately. In this mode message queues are not formed because the sheet is recalculated irrespective of the cycle time of the Stream Machine.</li>
-<li>“<strong>On EXECUTE Formula</strong>”: The calculation of a Streamsheet is triggered by another Streamsheet which contains an <a class="reference internal" href="../functions/streamsheet/execute.html#execute"><span class="std std-ref">EXECUTE</span></a> formula. This triggering sheet must be in the same Stream Machine. Note: The sheet triggering the execution will pause its calculation in the cell containing EXECUTE, wait until the triggered sheet has completed its calculation and, then, resume its calculation.</li>
-<li>“<strong>On Machine Start</strong>”: The Streamsheet calculates once when the Stream Machine is started.</li>
-<li>“<strong>On Machine Stop</strong>”: The Streamsheet calculates when the Machine is being stopped.</li>
-<li>“<strong>On Time</strong>”: A date and time for the calculation can be defined. Additionally, a sheet-specific interval can be set to recalculate the sheet cyclically. This interval only applies to this sheet and overwrites the cycle time of its Stream Machine.</li>
-<li>“<strong>On Random</strong>”: A date and time for the calculation and additionally an interval for the recalculation can be defined. In this respect it is similar to “On Time”, however, the calculation will not be triggered at the beginning of each interval but randomly during the interval. This mode provides a way for introducing randomness, which can be interesting when simulating data sources, for instance.</li>
+<li><p>“<strong>Continuously</strong>”: The Streamsheet is recalculated continuously and cyclically until the machine is stopped - also if NO messages are received. The sheet´s cycle time is the cycle time of the Stream Machine. (This is the default setting)</p></li>
+<li><p>“<strong>On Message Arrival</strong>”: Every time a message is received, the sheet is calculated immediately. In this mode message queues are not formed because the sheet is recalculated irrespective of the cycle time of the Stream Machine.</p></li>
+<li><p>“<strong>On EXECUTE Formula</strong>”: The calculation of a Streamsheet is triggered by another Streamsheet which contains an <a class="reference internal" href="../functions/streamsheet/execute.html#execute"><span class="std std-ref">EXECUTE</span></a> formula. This triggering sheet must be in the same Stream Machine. Note: The sheet triggering the execution will pause its calculation in the cell containing EXECUTE, wait until the triggered sheet has completed its calculation and, then, resume its calculation.</p></li>
+<li><p>“<strong>On Machine Start</strong>”: The Streamsheet calculates once when the Stream Machine is started.</p></li>
+<li><p>“<strong>On Machine Stop</strong>”: The Streamsheet calculates when the Machine is being stopped.</p></li>
+<li><p>“<strong>On Time</strong>”: A date and time for the calculation can be defined. Additionally, a sheet-specific interval can be set to recalculate the sheet cyclically. This interval only applies to this sheet and overwrites the cycle time of its Stream Machine.</p></li>
+<li><p>“<strong>On Random</strong>”: A date and time for the calculation and additionally an interval for the recalculation can be defined. In this respect it is similar to “On Time”, however, the calculation will not be triggered at the beginning of each interval but randomly during the interval. This mode provides a way for introducing randomness, which can be interesting when simulating data sources, for instance.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">Loop through array (one calculation per array element): This comes in handy if your messages contain information through which you want to loop, e.g. a list of ordered products. If this option is checked, an array element within incoming messages can be selected. Then, the Streamsheet loops through all elements which are subsumed under this array element. As a result, not one message per calculation is processed but only one element under the array element. The easiest way to set a loop element is to right-click on it in the inbox-payload and choose this option. Alternatively, you can define it and its superelement by listing the respective keys.</p>
-</li>
-<li><p class="first">„<strong>Hide unprocessed Messages</strong>”: If this option is checked, a queue of messages is not displayed in the inbox. Only the next message to be processed is displayed.</p>
-</li>
+<li><p>Loop through array (one calculation per array element): This comes in handy if your messages contain information through which you want to loop, e.g. a list of ordered products. If this option is checked, an array element within incoming messages can be selected. Then, the Streamsheet loops through all elements which are subsumed under this array element. As a result, not one message per calculation is processed but only one element under the array element. The easiest way to set a loop element is to right-click on it in the inbox-payload and choose this option. Alternatively, you can define it and its superelement by listing the respective keys.</p></li>
+<li><p>„<strong>Hide unprocessed Messages</strong>”: If this option is checked, a queue of messages is not displayed in the inbox. Only the next message to be processed is displayed.</p></li>
 </ul>
 <p>Quick remarks:
 + A Consumer delivers messages to a Streamsheet.
@@ -242,8 +239,8 @@ Streamsheets offer familiar spreadsheet formulas, as e.g. known from MS Excel or
 The recalculation of a Streamsheet can be triggered in various ways, e.g. always when a new message arrives, at specific points in time or cyclically. (Jump to <a class="reference internal" href="#inbox-settings"><span class="std std-ref">Inbox Settings</span></a> to see all calculation modes) However when a Streamsheet is calculated, this always happens cell by cell from left to right and from top to bottom thus maximizing transparency over what is happening in which order.
 Special columns</p>
 <ul class="simple">
-<li><strong>IF-Column:</strong> This is the first column right before “A”. Cells in this column take conditions and based on the state of these conditions, the respective rows are being calculated or not. As a result, IF-cells switch the calculation of entire rows and their cells on and off. The default value of IF-cells is TRUE. Thus, if IF-cells are empty, the rows are calculated.</li>
-<li><strong>COMMENT-Column:</strong> Even further to the left of the IF-column is the COMMENT column which is hidden by default. This column is intended for documenting what your model does.</li>
+<li><p><strong>IF-Column:</strong> This is the first column right before “A”. Cells in this column take conditions and based on the state of these conditions, the respective rows are being calculated or not. As a result, IF-cells switch the calculation of entire rows and their cells on and off. The default value of IF-cells is TRUE. Thus, if IF-cells are empty, the rows are calculated.</p></li>
+<li><p><strong>COMMENT-Column:</strong> Even further to the left of the IF-column is the COMMENT column which is hidden by default. This column is intended for documenting what your model does.</p></li>
 </ul>
 <div class="line-block">
 <div class="line"><a class="reference internal" href="../_images/GRID.PNG"><img alt="GRID" src="../_images/GRID.PNG" style="width: 776.04px; height: 581.74px;" /></a></div>
@@ -255,21 +252,21 @@ Special columns</p>
 <p>In this menu you find the settings for the basic structure and appearance of a Streamsheet.</p>
 <p><strong>Settings:</strong></p>
 <ul class="simple">
-<li><strong>Name</strong>: A Streamsheet can be renamed.</li>
-<li><strong>Columns</strong>: Set the number of columns (Max: 50)</li>
-<li><strong>Rows</strong>: Set the number of rows (Max: 200)</li>
-<li><strong>Protect sheet</strong>: No interaction with grid or the Inbox is possible</li>
-<li><strong>Show Grid</strong>: Display the grid or do not</li>
-<li><strong>Show Headers</strong>: Display column and row titles or do not</li>
-<li><strong>Show Formulas</strong>: Decide whether you want to see the formulas or the current values of cells in the sheet.</li>
-<li><strong>Show Inbox</strong>: Display the Inbox or do not</li>
-<li><strong>Paint IF Rows with transparency</strong>: If this box is checked, the content of rows which contain a statement in the IF-column are transparent. This improves transparency and helps you to immediately identify the rows which are being switch on and off when the machine is running.</li>
+<li><p><strong>Name</strong>: A Streamsheet can be renamed.</p></li>
+<li><p><strong>Columns</strong>: Set the number of columns (Max: 50)</p></li>
+<li><p><strong>Rows</strong>: Set the number of rows (Max: 200)</p></li>
+<li><p><strong>Protect sheet</strong>: No interaction with grid or the Inbox is possible</p></li>
+<li><p><strong>Show Grid</strong>: Display the grid or do not</p></li>
+<li><p><strong>Show Headers</strong>: Display column and row titles or do not</p></li>
+<li><p><strong>Show Formulas</strong>: Decide whether you want to see the formulas or the current values of cells in the sheet.</p></li>
+<li><p><strong>Show Inbox</strong>: Display the Inbox or do not</p></li>
+<li><p><strong>Paint IF Rows with transparency</strong>: If this box is checked, the content of rows which contain a statement in the IF-column are transparent. This improves transparency and helps you to immediately identify the rows which are being switch on and off when the machine is running.</p></li>
 </ul>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<ul class="last simple">
-<li>Streamsheets are always calculated from left to right and then from top to bottom.</li>
-<li>Depending on the condition in the IF column, the calculation of whole rows can be switched on and off.</li>
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Streamsheets are always calculated from left to right and then from top to bottom.</p></li>
+<li><p>Depending on the condition in the IF column, the calculation of whole rows can be switched on and off.</p></li>
 </ul>
 </div>
 </div>
@@ -278,19 +275,19 @@ Special columns</p>
 <p>In the Streamsheet environment, all messages are <a class="reference internal" href="../glossary.html#term-json"><span class="xref std std-term">JSON</span></a> objects. In case the original data format is not JSON, but e.g. csv, xml or a text file, the format is automatically converted to JSON.</p>
 <p><strong>JSON</strong></p>
 <ul class="simple">
-<li>Json objects are a hierarchy of key-value pairs. This means that any value, e.g. a number or a string, is identified by its key. You could think of the key as the name or the title of its value. In order not to just have a flat list of key-value pairs, these can be ordered and subsumed, e.g. in the <a class="reference internal" href="#inbox-picture"><span class="std std-ref">Inbox</span></a> the key-value pair “Temperature: 34” is subsumed under the top-element “Data”.</li>
+<li><p>Json objects are a hierarchy of key-value pairs. This means that any value, e.g. a number or a string, is identified by its key. You could think of the key as the name or the title of its value. In order not to just have a flat list of key-value pairs, these can be ordered and subsumed, e.g. in the <a class="reference internal" href="#inbox-picture"><span class="std std-ref">Inbox</span></a> the key-value pair “Temperature: 34” is subsumed under the top-element “Data”.</p></li>
 </ul>
 <p><strong>Connect message content to the Grid</strong></p>
 <ul class="simple">
-<li>To link data elements of an incoming stream to the grid, simply drag-and-drop the respective elements. You can also link all elements under a top-element at once by drag-and-dropping their top-element. If you hit Strg or Cmd while you are doing this, the drag-and-drop range turns by 90°.</li>
-<li>Of course, Streamsheets offer the possibility to use a function to read incoming data. This function is called READ and it is also automatically created when you drag-and-drop elements into the sheet.</li>
+<li><p>To link data elements of an incoming stream to the grid, simply drag-and-drop the respective elements. You can also link all elements under a top-element at once by drag-and-dropping their top-element. If you hit Strg or Cmd while you are doing this, the drag-and-drop range turns by 90°.</p></li>
+<li><p>Of course, Streamsheets offer the possibility to use a function to read incoming data. This function is called READ and it is also automatically created when you drag-and-drop elements into the sheet.</p></li>
 </ul>
 <p><strong>Generate message content aka a JSON object in the sheet</strong></p>
 <p>In order to send data, you need to create a JSON object and then use a producer or posting function.</p>
 <ul class="simple">
-<li>You can convert any coherent cell range consisting of two columns and an arbitrary number of rows into a JSON object. Simply select the range, then, right-click it and choose “Define JSON Range”. This generates a flat JSON object, that is to say that all keys are in the first column, the respective values are in the second column and the object is not hierarchically structured. To build a hierarchy, select the elements you want to subsume and hit “tab” on your keyboard. If you want to undo this operation, just hit “tab” and “shift” at the same time.</li>
-<li>If you turn more than 2 columns into a single JSON range, the first column will contain the keys whereas the remaining columns accommodate the values. Example: A range of 4 columns is turned into a JSON range. The first column contains the keys which all value-columns will share. Each value-column will automatically assume the keys in the first column to build key-value pairs.</li>
-<li>To send messages or make JSON ranges available choose one of the ways mentioned under <a class="reference internal" href="#streamsheets"><span class="std std-ref">Streamsheet</span></a></li>
+<li><p>You can convert any coherent cell range consisting of two columns and an arbitrary number of rows into a JSON object. Simply select the range, then, right-click it and choose “Define JSON Range”. This generates a flat JSON object, that is to say that all keys are in the first column, the respective values are in the second column and the object is not hierarchically structured. To build a hierarchy, select the elements you want to subsume and hit “tab” on your keyboard. If you want to undo this operation, just hit “tab” and “shift” at the same time.</p></li>
+<li><p>If you turn more than 2 columns into a single JSON range, the first column will contain the keys whereas the remaining columns accommodate the values. Example: A range of 4 columns is turned into a JSON range. The first column contains the keys which all value-columns will share. Each value-column will automatically assume the keys in the first column to build key-value pairs.</p></li>
+<li><p>To send messages or make JSON ranges available choose one of the ways mentioned under <a class="reference internal" href="#streamsheets"><span class="std std-ref">Streamsheet</span></a></p></li>
 </ul>
 </div>
 </div>
@@ -315,7 +312,7 @@ Special columns</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, Cedalo AG, Streamsheet™ is a registered trademark of the Cedalo AG.
+        &copy; Copyright 2019, Cedalo AG, Streamsheet™ is a trademark of the Cedalo AG.
 
     </p>
   </div>
@@ -335,21 +332,13 @@ Special columns</p>
   
 
 	
-		<script type="text/javascript">
-			var DOCUMENTATION_OPTIONS = {
-				URL_ROOT:'../',
-				VERSION:'1.0.0',
-				LANGUAGE:'None',
-				COLLAPSE_INDEX:false,
-				FILE_SUFFIX:'.html',
-				HAS_SOURCE:  true,
-				SOURCELINK_SUFFIX: '.txt'
-			};
-		</script>
+		<script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
 			<script type="text/javascript" src="../_static/jquery.js"></script>
 			<script type="text/javascript" src="../_static/underscore.js"></script>
 			<script type="text/javascript" src="../_static/doctools.js"></script>
-	
+			<script type="text/javascript" src="../_static/language_data.js"></script>
+			<script type="text/javascript" src="../_static/contentui.js"></script>
+		
 
   
 
