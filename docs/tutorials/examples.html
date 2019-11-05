@@ -174,7 +174,7 @@
 <span id="resttutorial"></span><h2>REST Request<a class="headerlink" href="#rest-request" title="Permalink to this headline">¶</a></h2>
 <p>This tutorial covers two different kind of REST Calls one is <strong>POST</strong> and the other is <strong>GET</strong>.
 The differences are that with a “POST” information is transmitted from the REST Client to a server and a “GET” transmits information to the REST Client from the server.
-To add a <span class="xref std std-ref">restrequest</span> function to a <a class="reference internal" href="../glossary.html#term-streamsheet"><span class="xref std std-term">Streamsheet</span></a> you will need a <a class="reference internal" href="../glossary.html#term-connector"><span class="xref std std-term">Connector</span></a> and a <a class="reference internal" href="../glossary.html#term-producer"><span class="xref std std-term">Producer</span></a>, based on the REST Client Provider. Start by creating the Connector in the Connector Dashboard in the <span class="xref std std-ref">Administration</span> Menu. You can leave all fields empty to be able to utilize this Connector for any URL. If you want to create specific Connectors for every webpage, type in the Base URL. Same goes for the Producer. Create a Producer based on the just created Connector and leave it empty.  We can now select the Producer within the <a class="reference internal" href="uielements.html#functionwizard"><span class="std std-ref">Function Wizard</span></a>.</p>
+To add a <a class="reference internal" href="../functions/streamsheet/restrequest.html#restrequest"><span class="std std-ref">REST.REQUEST</span></a> function to a <a class="reference internal" href="../glossary.html#term-streamsheet"><span class="xref std std-term">Streamsheet</span></a> you will need a <a class="reference internal" href="../glossary.html#term-connector"><span class="xref std std-term">Connector</span></a> and a <a class="reference internal" href="../glossary.html#term-producer"><span class="xref std std-term">Producer</span></a>, based on the REST Client Provider. Start by creating the Connector in the Connector Dashboard in the <a class="reference internal" href="../maincomponents/administration.html#administration"><span class="std std-ref">Administration</span></a> Menu. You can leave all fields empty to be able to utilize this Connector for any URL. If you want to create specific Connectors for every webpage, type in the Base URL. Same goes for the Producer. Create a Producer based on the just created Connector and leave it empty.  We can now select the Producer within the <a class="reference internal" href="uielements.html#functionwizard"><span class="std std-ref">Function Wizard</span></a>.</p>
 <p><a class="reference internal" href="../_images/RestRequestGif.gif"><img alt="RCP" src="../_images/RestRequestGif.gif" style="width: 832.0px; height: 468.0px;" /></a></p>
 <p><em>Creating Streams for REST</em></p>
 <p><strong>1. Method “Post”:</strong>
@@ -199,6 +199,7 @@ After starting the Stream Machine the requested information will now appear in t
 </div>
 <div class="section" id="opc-ua">
 <h2>OPC UA<a class="headerlink" href="#opc-ua" title="Permalink to this headline">¶</a></h2>
+<p><img alt="star" src="../_images/star.svg" /> This is a <a class="reference external" href="https://cedalo.com/download/">Streamsheets Professional</a> feature.</p>
 <p>This simple Tutorial shows how to read information of an <a class="reference internal" href="../glossary.html#term-opc-ua"><span class="xref std std-term">OPC UA</span></a> Server.
 To begin with we have to create Streams, which are connected the OPC UA Server of our choice.</p>
 <p><a class="reference internal" href="../_images/OPCUAGif.gif"><img alt="OPCUACPC" src="../_images/OPCUAGif.gif" style="width: 832.0px; height: 468.0px;" /></a></p>
@@ -222,8 +223,8 @@ It is also possible to update existing OPC UA Variables with the OPCUA.WRITE for
 <p>Often it is important to not only work with single real-time data points in the moment, but to build a history and work with a series of values. The following example shows how to create a short (stepwise) data history.</p>
 <blockquote>
 <div><div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Every <a class="reference internal" href="../glossary.html#term-streamsheet"><span class="xref std std-term">sheet</span></a> is calculated from left to right and from top to bottom. Consequently, cell A1 is calculated first followed by B1, C1 etc. proceding in the next rows in the same manner. Thanks to this concept, we can use references to create a history of values.</p>
+<p class="admonition-title">Note</p>
+<p>Every <a class="reference internal" href="../glossary.html#term-streamsheet"><span class="xref std std-term">sheet</span></a> is calculated from left to right and from top to bottom. Consequently, cell A1 is calculated first followed by B1, C1 etc. proceding in the next rows in the same manner. Thanks to this concept, we can use references to create a history of values.</p>
 </div>
 </div></blockquote>
 <p>The cell at the very bottom references to the data input and the cells above the reference to the cell below. As higher cells are calculated first, they fetch the values of lower cells before these are calculated. In the end the last cells take the latest data input. Effectively it looks as if new values enter the history at the bottom and move up before leaving the series at the top.</p>
@@ -251,7 +252,7 @@ More query operators can be found <a class="reference external" href="https://do
 </div>
 <div class="section" id="influxdb">
 <span id="influx"></span><h2>InfluxDB<a class="headerlink" href="#influxdb" title="Permalink to this headline">¶</a></h2>
-<p>To store data and retrieve information <span class="xref std std-term">Streamsheets</span> are able to connect to a <a class="reference internal" href="../glossary.html#term-influx"><span class="xref std std-term">InfluxDB</span></a>. <a class="reference internal" href="addons.html#influxdb"><span class="std std-ref">Here</span></a> you can learn how to add a InfluxDB to your current Streamsheets installation.</p>
+<p>To store data and retrieve information Streamsheets are able to connect to a <a class="reference internal" href="../glossary.html#term-influx"><span class="xref std std-term">InfluxDB</span></a>. <a class="reference internal" href="addons.html#influxdb"><span class="std std-ref">Here</span></a> you can learn how to add a InfluxDB to your current Streamsheets installation.</p>
 <p>First of all we start by providing a <a class="reference internal" href="../glossary.html#term-rest"><span class="xref std std-term">REST</span></a> Client <a class="reference internal" href="../glossary.html#term-connector"><span class="xref std std-term">Connector</span></a> and the corresponding <a class="reference internal" href="../glossary.html#term-producer"><span class="xref std std-term">Producer</span></a>. If these are not yet available, go to the <a class="reference internal" href="../maincomponents/administration.html#administration"><span class="std std-ref">Administration</span></a> menu and create a new Connector and Producer. If you have any questions we recommend to have a look at the <a class="reference internal" href="#resttutorial"><span class="std std-ref">REST.REQUEST tutorial</span></a>.</p>
 <div class="line-block">
 <div class="line"><strong>Create a Database:</strong></div>
@@ -282,7 +283,7 @@ More query operators can be found <a class="reference external" href="https://do
 <p><em>Write Data in InfluxDB with the REQUEST function</em></p>
 <div class="line-block">
 <div class="line"><strong>Query Data:</strong></div>
-<div class="line">To Query Data we use the <span class="xref std std-ref">restrequest</span> function with the GET Method and write the <a class="reference internal" href="../glossary.html#term-query"><span class="xref std std-term">query</span></a> into the <a class="reference internal" href="../glossary.html#term-url"><span class="xref std std-term">URL</span></a>. There are plenty ways to query your Data. You can have a look at them <a class="reference external" href="https://docs.influxdata.com/influxdb/v1.7/query_language/data_exploration/">here</a>. In our simple example we query all data of the last minute from our h2o_feet measurement.</div>
+<div class="line">To Query Data we use the <a class="reference internal" href="../functions/streamsheet/restrequest.html#restrequest"><span class="std std-ref">REST.REQUEST</span></a> function with the GET Method and write the <a class="reference internal" href="../glossary.html#term-query"><span class="xref std std-term">query</span></a> into the <a class="reference internal" href="../glossary.html#term-url"><span class="xref std std-term">URL</span></a>. There are plenty ways to query your Data. You can have a look at them <a class="reference external" href="https://docs.influxdata.com/influxdb/v1.7/query_language/data_exploration/">here</a>. In our simple example we query all data of the last minute from our h2o_feet measurement.</div>
 </div>
 <blockquote>
 <div><div class="line-block">
@@ -352,21 +353,12 @@ To access and work with larger series of data connecting to and using a database
   
 
 	
-		<script type="text/javascript">
-			var DOCUMENTATION_OPTIONS = {
-				URL_ROOT:'../',
-				VERSION:'1.0.0',
-				LANGUAGE:'None',
-				COLLAPSE_INDEX:false,
-				FILE_SUFFIX:'.html',
-				HAS_SOURCE:  true,
-				SOURCELINK_SUFFIX: '.txt'
-			};
-		</script>
+		<script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
 			<script type="text/javascript" src="../_static/jquery.js"></script>
 			<script type="text/javascript" src="../_static/underscore.js"></script>
 			<script type="text/javascript" src="../_static/doctools.js"></script>
-	
+			<script type="text/javascript" src="../_static/language_data.js"></script>
+		
 
   
 

@@ -5,7 +5,7 @@ Returns the hour of the date value.
 
 **Syntax**
 
-=HOUR(time)
+=HOUR(DateValue)
 
 **Arguments**
 

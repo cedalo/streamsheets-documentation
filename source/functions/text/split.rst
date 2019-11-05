@@ -1,9 +1,8 @@
 SPLIT
 -----------------------------
 
-Splits a given text by using specified separator and returns the part at given optional index.
-If the text does not contain the specified separator the complete text is returned.
-Passing an index is optional. If not specified the first part is returned. The Separator split a text in parts. 1 reurns the first part, 2 the second part, 3 the third and so on.
+Splits a given text by using a specified separator and returns the part at given optional index.
+If the text does not contain the specified separator, the complete text is returned.The index parameter is optional. If not specified, the first part is returned. The Separator splits a text in parts. 1 returns the first part, 2 the second part, 3 the third and so on.
 
 **Syntax**
 

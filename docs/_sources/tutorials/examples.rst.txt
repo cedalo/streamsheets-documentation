@@ -69,6 +69,12 @@ After starting the Stream Machine the requested information will now appear in t
 
 OPC UA
 -------
+
+.. |star| image:: /images/star.svg
+        
+
+|star| This is a `Streamsheets Professional <https://cedalo.com/download/>`_ feature. 
+
 This simple Tutorial shows how to read information of an :term:`OPC UA` Server.
 To begin with we have to create Streams, which are connected the OPC UA Server of our choice. 
 
@@ -146,7 +152,7 @@ More query operators can be found `here <https://docs.mongodb.com/manual/referen
 InfluxDB
 --------
 
-To store data and retrieve information :term:`Streamsheets <Streamsheets>` are able to connect to a :term:`InfluxDB<Influx>`. :ref:`Here<influxdb>` you can learn how to add a InfluxDB to your current Streamsheets installation. 
+To store data and retrieve information Streamsheets are able to connect to a :term:`InfluxDB<Influx>`. :ref:`Here<influxdb>` you can learn how to add a InfluxDB to your current Streamsheets installation. 
 
 First of all we start by providing a :term:`REST` Client :term:`Connector` and the corresponding :term:`Producer`. If these are not yet available, go to the :ref:`Administration <administration>` menu and create a new Connector and Producer. If you have any questions we recommend to have a look at the :ref:`REST.REQUEST tutorial <resttutorial>`.
 
