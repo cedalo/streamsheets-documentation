@@ -205,19 +205,19 @@ to handle events as described below.</p>
 <p><strong>Syntax</strong></p>
 <p>=EVENTS([EventHandler1,EventHandler2,…])</p>
 <p><strong>Arguments</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
+<col width="20%" />
+<col width="80%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Description</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>EventHandler1..N</p></td>
-<td><div class="line-block">
+<tbody valign="top">
+<tr class="row-even"><td>EventHandler1..N</td>
+<td><div class="first last line-block">
 <div class="line">Eventhandler defining the event and the action to be executed. Valid handlers are:</div>
 <div class="line"><br /></div>
 <div class="line"><a class="reference internal" href="onclick.html#onclick"><span class="std std-ref">ONCLICK</span></a></div>
@@ -233,19 +233,19 @@ to handle events as described below.</p>
 <p><strong>Return Value</strong></p>
 <p>TRUE.</p>
 <p><strong>Example</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 75%" />
-<col style="width: 25%" />
+<col width="75%" />
+<col width="25%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Function</p></th>
-<th class="head"><p>Comment</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Comment</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>=DRAW.RECTANGLE(“ID1”, “”, “Rect1”, 1000, 1000, 3000, 3000,,,, EVENTS(ONCLICK(DELETECELLS(A1:C1)))</p></td>
-<td><p>If the user clicks on the rectangle the cell range A1:C1 will be deleted.</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>=DRAW.RECTANGLE(“ID1”, “”, “Rect1”, 1000, 1000, 3000, 3000,,,, EVENTS(ONCLICK(DELETECELLS(A1:C1)))</td>
+<td>If the user clicks on the rectangle the cell range A1:C1 will be deleted.</td>
 </tr>
 </tbody>
 </table>
@@ -291,12 +291,21 @@ to handle events as described below.</p>
   
 
 	
-		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+		<script type="text/javascript">
+			var DOCUMENTATION_OPTIONS = {
+				URL_ROOT:'../../',
+				VERSION:'1.0.0',
+				LANGUAGE:'None',
+				COLLAPSE_INDEX:false,
+				FILE_SUFFIX:'.html',
+				HAS_SOURCE:  true,
+				SOURCELINK_SUFFIX: '.txt'
+			};
+		</script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-			<script type="text/javascript" src="../../_static/language_data.js"></script>
-		
+	
 
   
 

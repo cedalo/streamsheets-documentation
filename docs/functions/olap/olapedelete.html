@@ -156,56 +156,56 @@
 <p><strong>Syntax</strong></p>
 <p>OLAPEDELETE(Token, Database, Dimension, Element)</p>
 <p><strong>Arguments</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
+<col width="20%" />
+<col width="80%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Description</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>Token</p></td>
-<td><p>Token received from <a class="reference internal" href="olaplogin.html"><span class="doc">OLAPLOGIN</span></a></p></td>
+<tbody valign="top">
+<tr class="row-even"><td>Token</td>
+<td>Token received from <a class="reference internal" href="olaplogin.html"><span class="doc">OLAPLOGIN</span></a></td>
 </tr>
-<tr class="row-odd"><td><p>Database</p></td>
-<td><p>Name of database.</p></td>
+<tr class="row-odd"><td>Database</td>
+<td>Name of database.</td>
 </tr>
-<tr class="row-even"><td><p>Dimension</p></td>
-<td><p>Name of dimension.</p></td>
+<tr class="row-even"><td>Dimension</td>
+<td>Name of dimension.</td>
 </tr>
-<tr class="row-odd"><td><p>Element</p></td>
-<td><p>Name of element to delete.</p></td>
+<tr class="row-odd"><td>Element</td>
+<td>Name of element to delete.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
 <p>TRUE, if successful, otherwise error string from OLAP server.</p>
 <p><strong>Example</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 45%" />
-<col style="width: 10%" />
-<col style="width: 45%" />
+<col width="45%" />
+<col width="10%" />
+<col width="45%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Function</p></th>
-<th class="head"><p>Result</p></th>
-<th class="head"><p>Comment</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Result</th>
+<th class="head">Comment</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>OLAPEDELETE(A1, “DBSample”, “Year”, “2012”)</p></td>
-<td><p>TRUE</p></td>
-<td><p>A1 contains the token from OLAPLOGIN.</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>OLAPEDELETE(A1, “DBSample”, “Year”, “2012”)</td>
+<td>TRUE</td>
+<td>A1 contains the token from OLAPLOGIN.</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>All OLAP Functions interrupt the calculation to wait for the OLAP server result. This is necessary, as
+<p class="first admonition-title">Warning</p>
+<p class="last">All OLAP Functions interrupt the calculation to wait for the OLAP server result. This is necessary, as
 following calls to OLAP Functions might depend on the success of the previous function. Calculation continues
 with the next cycle.</p>
 </div>
@@ -242,12 +242,21 @@ with the next cycle.</p>
   
 
 	
-		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+		<script type="text/javascript">
+			var DOCUMENTATION_OPTIONS = {
+				URL_ROOT:'../../',
+				VERSION:'1.0.0',
+				LANGUAGE:'None',
+				COLLAPSE_INDEX:false,
+				FILE_SUFFIX:'.html',
+				HAS_SOURCE:  true,
+				SOURCELINK_SUFFIX: '.txt'
+			};
+		</script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-			<script type="text/javascript" src="../../_static/language_data.js"></script>
-		
+	
 
   
 
