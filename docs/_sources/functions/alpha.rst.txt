@@ -185,7 +185,6 @@ Alphabetical
    stack/stackrotate
    stack/stacksort
    statistical/stdev
-   streamsheet/store
    text/substitute
    streamsheet/subtree
    math/sum

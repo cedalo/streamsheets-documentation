@@ -152,7 +152,6 @@
 <li class="toctree-l3"><a class="reference internal" href="setcycletime.html">SETCYCLETIME</a></li>
 <li class="toctree-l3"><a class="reference internal" href="setphase.html">SETPHASE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="setvalue.html">SETVALUE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="store.html">STORE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="subtree.html">SUBTREE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="swapvalues.html">SWAPVALUES</a></li>
 <li class="toctree-l3"><a class="reference internal" href="timeaggregate.html">TIMEAGGREGATE</a></li>
@@ -242,47 +241,47 @@ Or using <a class="reference internal" href="execute.html#execute"><span class="
 <p><strong>Syntax</strong></p>
 <p>=FEEDINBOX(<a class="reference internal" href="../../glossary.html#term-json"><span class="xref std std-term">JSON</span></a>, Target)</p>
 <p><strong>Arguments</strong></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col style="width: 20%" />
+<col style="width: 80%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Name</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>JSON</td>
-<td>A key to a json object, defined by <span class="xref std std-ref">JSON</span>, <span class="xref std std-ref">DICTIONARY</span>, <a class="reference internal" href="read.html#read"><span class="std std-ref">READ</span></a>, <a class="reference internal" href="subtree.html#subtree"><span class="std std-ref">SUBTREE</span></a>, <a class="reference internal" href="inbox.html#inboxf"><span class="std std-ref">INBOX</span></a> or <a class="reference internal" href="outbox.html#outbox"><span class="std std-ref">OUTBOX</span></a>.</td>
+<tbody>
+<tr class="row-even"><td><p>JSON</p></td>
+<td><p>A key to a json object, defined by <a class="reference internal" href="json.html#json"><span class="std std-ref">JSON</span></a>, <a class="reference internal" href="dictionary.html#dictionary"><span class="std std-ref">DICTIONARY</span></a>, <a class="reference internal" href="read.html#read"><span class="std std-ref">READ</span></a>, <a class="reference internal" href="subtree.html#subtree"><span class="std std-ref">SUBTREE</span></a>, <a class="reference internal" href="inbox.html#inboxf"><span class="std std-ref">INBOX</span></a> or <a class="reference internal" href="outbox.html#outbox"><span class="std std-ref">OUTBOX</span></a>.</p></td>
 </tr>
-<tr class="row-odd"><td>Target</td>
-<td>A location sheet name where the JSON will be placed in the inbox.</td>
+<tr class="row-odd"><td><p>Target</p></td>
+<td><p>A location sheet name where the JSON will be placed in the inbox.</p></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
 <p>TRUE, if successful.</p>
 <p><strong>Example</strong></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="50%" />
-<col width="50%" />
+<col style="width: 50%" />
+<col style="width: 50%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Function</th>
-<th class="head">Comment</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Comment</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><div class="first last line-block">
-<div class="line">=FEEDINBOX(<span class="xref std std-ref">DICTIONARY</span>(<span class="blue">A2:B5</span>), “S1”)</div>
+<tbody>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">=FEEDINBOX(<a class="reference internal" href="dictionary.html#dictionary"><span class="std std-ref">DICTIONARY</span></a>(<span class="blue">A2:B5</span>), “S1”)</div>
 <div class="line"><br /></div>
 <div class="line"><a class="reference internal" href="../../_images/FEEDINBOX1.PNG"><img alt="FEEDINBOX1" src="../../_images/FEEDINBOX1.PNG" style="width: 363.0px; height: 206.0px;" /></a></div>
 </div>
 </td>
-<td><p class="first">Appending an object to a message. The message content will look as follows</p>
-<div class="last line-block">
+<td><p>Appending an object to a message. The message content will look as follows</p>
+<div class="line-block">
 <div class="line"><a class="reference internal" href="../../_images/FEEDINBOX2.PNG"><img alt="FEEDINBOX2" src="../../_images/FEEDINBOX2.PNG" style="width: 223.79999999999998px; height: 235.2px;" /></a></div>
 </div>
 </td>
@@ -331,21 +330,12 @@ Or using <a class="reference internal" href="execute.html#execute"><span class="
   
 
 	
-		<script type="text/javascript">
-			var DOCUMENTATION_OPTIONS = {
-				URL_ROOT:'../../',
-				VERSION:'1.0.0',
-				LANGUAGE:'None',
-				COLLAPSE_INDEX:false,
-				FILE_SUFFIX:'.html',
-				HAS_SOURCE:  true,
-				SOURCELINK_SUFFIX: '.txt'
-			};
-		</script>
+		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-	
+			<script type="text/javascript" src="../../_static/language_data.js"></script>
+		
 
   
 

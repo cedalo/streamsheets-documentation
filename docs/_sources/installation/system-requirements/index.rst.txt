@@ -18,3 +18,6 @@ Raspberry Pi
 --------------
 * Minimum: Raspberry Pi 3b
 * Recommended: Rasberry Pi 3b+ or higher
+
+
+.. hint:: It is recommended to use Google Chrome while working with Streamsheets

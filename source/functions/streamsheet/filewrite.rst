@@ -6,6 +6,7 @@ FILE.WRITE
 -----------------------------
 
 Write a given range as comma separeted values to a file. You can use the :ref:`Function Wizard <functionwizard>` for this function. 
+The mounted root path is set in the .YML file. E.g.: `C:\ \\rootfolder:/filefeeder` Add /filefeeder to the "Root Directory" field in the Connector to connect it to the root folder. 
  
 
 **Syntax**

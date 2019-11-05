@@ -12,7 +12,7 @@ TIMEAGGREGATE(DataCell, [Period, AggregationMethod, TimeSerial, Interval, Target
 **Arguments**
 
 .. list-table::
-   :widths: 20 80
+   :widths: 20 80 
    :header-rows: 1
 
    * - Name
@@ -26,10 +26,7 @@ TIMEAGGREGATE(DataCell, [Period, AggregationMethod, TimeSerial, Interval, Target
    * - TimeSerial
      - Optional. A serial number to use as key for each aggregated value. Defaults to :ref:`now`.
    * - Interval
-     - | Optional. An interval in seconds at which values should be aggregated. Defaults to the specified period. To not loose any data, an Interval should always be a divisor of the Period.
-       | Note: Default Interval collects a different TargetRange as a handwritten equal Period. 
-       - Default Interval: collects all values within the specified Period. 
-       - Interval equals Period: aggregates all values to one value.
+     - Optional. An interval in seconds at which values should be aggregated. Defaults to the specified period. To not loose any data, an Interval should always be a divisor of the Period. Note: Default Interval collects a different TargetRange as a handwritten equal Period. Default Interval: collects all values within the specified Period. Interval equals Period: aggregates all values to one value.
    * - TargetRange
      - Optional. A cell range to write the aggregated values to. Collects aggregation intervals and displays them. Differs if interval is left blank (see interval).
 

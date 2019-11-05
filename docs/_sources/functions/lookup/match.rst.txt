@@ -51,7 +51,7 @@ Returns relative position of in cell-range for given value or :ref:`#NA <error>`
        | |MATCH|
 
    
-     - | 1. 2
-       | 2. 1
+     - | 1. --> 2
+       | 2. --> 1
      - The index of the cell with the searched value is returned.
 
