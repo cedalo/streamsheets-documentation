@@ -53,7 +53,7 @@ Define a graphical polygon.
        one of the predefined objects was used, the given coordinates will be used, as long as no coordinates are defined using this
        parameter.
    * - Close
-     - Optional. Close polygon by connecting the first and last point (Default: FALSE)
+     - Optional. Close polygon by connecting the first and last point (Default: TRUE)
 
 **Return Value**
 
