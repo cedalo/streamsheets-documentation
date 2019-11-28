@@ -88,6 +88,7 @@ Alphabetical
    info/iseven
    info/isna
    info/isodd
+   info/na
    date/jsontime2excel
    streamsheet/kafkacommand
    streamsheet/kafkapublish
