@@ -48,6 +48,7 @@ Alphabetical
    drawing/drawchart
    drawing/drawcheckbox
    drawing/drawellipse
+   drawing/drawknob
    drawing/drawlabel
    drawing/drawline
    drawing/drawpolygon
