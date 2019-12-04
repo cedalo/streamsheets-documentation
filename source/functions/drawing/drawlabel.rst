@@ -6,7 +6,7 @@ Define a graphical text object.
 
 **Syntax**
 
-=DRAW.LABEL(UnqiueId, Container, Name, X, Y, Width, Height, LineFormat, FillFormat, Attributes, Events, RotCenter, Text[, Font])
+=DRAW.LABEL(UnqiueId, Container, Name, X, Y, Width, Height, LineFormat, FillFormat, Attributes, Events, Angle, RotCenter, Text[, Font])
 
 **Arguments**
 
@@ -46,6 +46,20 @@ Define a graphical text object.
      - Optional. JSON String created using :ref:`attributes`
    * - Events
      - Optional. JSON String created using :ref:`events`
+   * - Angle
+     - Optional. Angle in radians.
+   * - RotCenter
+     - | Optional. This defines, where the object rotates around:
+       |
+       | 0: Top left corner
+       | 1: Top center
+       | 2: Top right corner
+       | 3: Left center
+       | 4: Center (default)
+       | 5: Right center
+       | 6: Bottom left corner
+       | 7: Bottom center
+       | 8: Bottom right corner
    * - Text
      - Text to display.
    * - Font

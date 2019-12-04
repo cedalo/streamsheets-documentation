@@ -6,7 +6,7 @@ Define a graphical button on a given drawing.
 
 **Syntax**
 
-=DRAW.BUTTON(UnqiueId, Container, Name, X, Y, Width, Height, LineFormat, FillFormat, Attributes, Events, RotCenter, Label[, LabelFont, Value])
+=DRAW.BUTTON(UnqiueId, Container, Name, X, Y, Width, Height, LineFormat, FillFormat, Attributes, Events, Angle, RotCenter, Label[, LabelFont, Value])
 
 **Arguments**
 
@@ -46,6 +46,20 @@ Define a graphical button on a given drawing.
      - Optional. JSON String created using :ref:`attributes`
    * - Events
      - Optional. JSON String created using :ref:`events`
+   * - Angle
+     - Optional. Angle in radians.
+   * - RotCenter
+     - | Optional. This defines, where the object rotates around:
+       |
+       | 0: Top left corner
+       | 1: Top center
+       | 2: Top right corner
+       | 3: Left center
+       | 4: Center (default)
+       | 5: Right center
+       | 6: Bottom left corner
+       | 7: Bottom center
+       | 8: Bottom right corner
    * - Label
      - Label to display on button.
    * - Font
