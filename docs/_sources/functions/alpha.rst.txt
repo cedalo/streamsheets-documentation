@@ -17,6 +17,7 @@ Alphabetical
    engineering/bin2dec
    engineering/bin2hex
    engineering/bin2oct
+   streamsheet/calc
    text/char
    lookup/choose
    drawing/classifypoint
@@ -88,6 +89,7 @@ Alphabetical
    info/iseven
    info/isna
    info/isodd
+   info/na
    date/jsontime2excel
    streamsheet/kafkacommand
    streamsheet/kafkapublish
@@ -181,7 +183,7 @@ Alphabetical
    math/sqrt
    stack/stackadd
    stack/stackdrop
-   stack/stackfind
+   stack/stackfindgit
    stack/stackrotate
    stack/stacksort
    statistical/stdev
@@ -195,6 +197,7 @@ Alphabetical
    date/time
    streamsheet/timeaggregate
    date/timevalue
+   streamsheet/triggerstep
    math/trunc
    text/unichar
    text/unicode
