@@ -17,6 +17,7 @@ Alphabetical
    engineering/bin2dec
    engineering/bin2hex
    engineering/bin2oct
+   streamsheet/calc
    text/char
    lookup/choose
    drawing/classifypoint
@@ -196,6 +197,7 @@ Alphabetical
    date/time
    streamsheet/timeaggregate
    date/timevalue
+   streamsheet/triggerstep
    math/trunc
    text/unichar
    text/unicode
