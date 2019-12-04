@@ -111,6 +111,7 @@ Alphabetical
    streamsheet/movevalues
    streamsheet/mqttpublish
    date/mstoserial
+   info/na
    logical/not
    date/now
    engineering/oct2bin
