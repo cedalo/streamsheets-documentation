@@ -28,7 +28,7 @@ Returns a relative position number of a matching cell inside a specified cell ra
    * - Type
      - | Optional. Search type with the following options:
        |
-       | 1: Find the largest value in cell range which is less than or equal to specified value (Default). Table must be in ascending order.
+       | 1: (Default) Find the largest value in cell range which is less than or equal to specified value. Table must be in ascending order.
        | 0: Find the first value which match exactly specified value. Here the wildcards ? and * are supported.
        | -1: Find the smallest value in cell range which is greater or equal to specified value. Table must be in descending order.
 
