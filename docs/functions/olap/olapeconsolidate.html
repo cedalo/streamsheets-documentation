@@ -156,65 +156,65 @@
 <p><strong>Syntax</strong></p>
 <p>OLAPECONSOLIDATE(Token, Database, Dimension, Element, Children, Weights)</p>
 <p><strong>Arguments</strong></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col style="width: 20%" />
+<col style="width: 80%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Name</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Token</td>
-<td>Token received from <a class="reference internal" href="olaplogin.html"><span class="doc">OLAPLOGIN</span></a></td>
+<tbody>
+<tr class="row-even"><td><p>Token</p></td>
+<td><p>Token received from <a class="reference internal" href="olaplogin.html"><span class="doc">OLAPLOGIN</span></a></p></td>
 </tr>
-<tr class="row-odd"><td>Database</td>
-<td>Name of database.</td>
+<tr class="row-odd"><td><p>Database</p></td>
+<td><p>Name of database.</p></td>
 </tr>
-<tr class="row-even"><td>Dimension</td>
-<td>Name of dimension.</td>
+<tr class="row-even"><td><p>Dimension</p></td>
+<td><p>Name of dimension.</p></td>
 </tr>
-<tr class="row-odd"><td>Element</td>
-<td>Name of element.</td>
+<tr class="row-odd"><td><p>Element</p></td>
+<td><p>Name of element.</p></td>
 </tr>
-<tr class="row-even"><td>Children</td>
-<td>Names of elements, that need to be consolidated into the above given element. Multiple names must
-be separated by commas.</td>
+<tr class="row-even"><td><p>Children</p></td>
+<td><p>Names of elements, that need to be consolidated into the above given element. Multiple names must
+be separated by commas.</p></td>
 </tr>
-<tr class="row-odd"><td>Element</td>
-<td>Weights, which define, with which factor or weight, elements are consolidated into the parent element.
-Multiple weights must be separated by commas.</td>
+<tr class="row-odd"><td><p>Element</p></td>
+<td><p>Weights, which define, with which factor or weight, elements are consolidated into the parent element.
+Multiple weights must be separated by commas.</p></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
 <p>TRUE, if successful, otherwise error string from OLAP server.</p>
 <p><strong>Example</strong></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="45%" />
-<col width="10%" />
-<col width="45%" />
+<col style="width: 45%" />
+<col style="width: 10%" />
+<col style="width: 45%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Function</th>
-<th class="head">Result</th>
-<th class="head">Comment</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Result</p></th>
+<th class="head"><p>Comment</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>OLAPECONSOLIDATE(A1, “DBSample”, “Month”, “1.Qtr”, “Jan,Feb,Mar”, “1,1,1”)</td>
-<td>TRUE</td>
-<td>A1 contains the token from OLAPLOGIN. Here the elements for “Jan”, “Feb” and “Mar” are consolidated
-into the “1.Qtr” element.</td>
+<tbody>
+<tr class="row-even"><td><p>OLAPECONSOLIDATE(A1, “DBSample”, “Month”, “1.Qtr”, “Jan,Feb,Mar”, “1,1,1”)</p></td>
+<td><p>TRUE</p></td>
+<td><p>A1 contains the token from OLAPLOGIN. Here the elements for “Jan”, “Feb” and “Mar” are consolidated
+into the “1.Qtr” element.</p></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">All OLAP Functions interrupt the calculation to wait for the OLAP server result. This is necessary, as
+<p class="admonition-title">Warning</p>
+<p>All OLAP Functions interrupt the calculation to wait for the OLAP server result. This is necessary, as
 following calls to OLAP Functions might depend on the success of the previous function. Calculation continues
 with the next cycle.</p>
 </div>
@@ -251,21 +251,12 @@ with the next cycle.</p>
   
 
 	
-		<script type="text/javascript">
-			var DOCUMENTATION_OPTIONS = {
-				URL_ROOT:'../../',
-				VERSION:'1.0.0',
-				LANGUAGE:'None',
-				COLLAPSE_INDEX:false,
-				FILE_SUFFIX:'.html',
-				HAS_SOURCE:  true,
-				SOURCELINK_SUFFIX: '.txt'
-			};
-		</script>
+		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-	
+			<script type="text/javascript" src="../../_static/language_data.js"></script>
+		
 
   
 

@@ -27,7 +27,7 @@ Returns the value of a cell within a specified cell range in a choosen row and c
      - Relative index to the column of the identified row, to retrieve the return value from.
    * - ExactMatch
      - Optional. A value to specify exact or approximate match with wildcards. Specify TRUE for an approximate match,
-       FALSE for an exact one. Default is FALSE.
+       FALSE for an exact one. Default is TRUE.
 
 
 **Return Value**

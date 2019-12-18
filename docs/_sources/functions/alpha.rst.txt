@@ -48,6 +48,7 @@ Alphabetical
    drawing/drawchart
    drawing/drawcheckbox
    drawing/drawellipse
+   drawing/drawknob
    drawing/drawlabel
    drawing/drawline
    drawing/drawpolygon
@@ -89,7 +90,6 @@ Alphabetical
    info/iseven
    info/isna
    info/isodd
-   info/na
    date/jsontime2excel
    streamsheet/kafkacommand
    streamsheet/kafkapublish
@@ -113,6 +113,7 @@ Alphabetical
    streamsheet/movevalues
    streamsheet/mqttpublish
    date/mstoserial
+   info/na
    logical/not
    date/now
    engineering/oct2bin
@@ -183,7 +184,7 @@ Alphabetical
    math/sqrt
    stack/stackadd
    stack/stackdrop
-   stack/stackfindgit
+   stack/stackfind
    stack/stackrotate
    stack/stacksort
    statistical/stdev
