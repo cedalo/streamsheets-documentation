@@ -84,6 +84,7 @@ Alphabetical
    streamsheet/inboxdata
    streamsheet/inboxmetadata
    lookup/index
+   lookup/indirect
    math/int
    info/iserr
    info/iserror
