@@ -11,7 +11,7 @@ It generally defines how long the system pauses between calculation cycles (in m
 
 **Arguments**
 
-None.
+Cycletime in milliseconds. Has to be a number.
 
 **Return Value**
 
