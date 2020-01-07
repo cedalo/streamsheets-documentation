@@ -101,7 +101,7 @@ Manually Install Streamsheets
             | Command:  ``mkdir <PATH_TO_INSTALL_DIRECTORY>`` 
             | Example:  ``mkdir ~/cedalo``
 
-        2. Next run the following command to execute the installer for Streamsheets. Replace ``<PATH_TO_INSTALL_DIRECTORY>`` with the name of the installation directory and ``<VERSION>`` with the Streamsheets version to install (current version: \ :ref:`currently`\ ).
+        2. Next run the following command to execute the installer for Streamsheets. Replace ``<PATH_TO_INSTALL_DIRECTORY>`` with the name of the installation directory and ``<VERSION>`` with the Streamsheets version to install (current version: \ :ref:`currently`\ (version 1.4 is not existant for the RaspberryPi)).
 
             | Command: ``sudo docker run -v <PATH_TO_INSTALL_DIRECTORY>:/streamsheets cedalo/streamsheets-installer:<VERSION>-rpi``
             | Example: ``sudo docker run -v ~/cedalo:/streamsheets cedalo/streamsheets-installer:1.3-rpi``

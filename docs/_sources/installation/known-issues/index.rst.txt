@@ -2,6 +2,10 @@
 Known issues
 ===================
 
+**Performance:**
+The performance of the STreamsheets is dependend on the amount and speed of the running machines. You can increase the resources assigned to docker and/or install Streamsheets on a faster system to increase the performance.
+
+
 **Docker will prompt an Error message if:**
 
 + The YML file has the wrong path to connect to the local directory. Change the directory for the "filefeeder" in the YML to an existing path.
