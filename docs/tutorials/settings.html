@@ -206,15 +206,15 @@ Add another <code class="docutils literal notranslate"><span class="pre">-p</spa
 <p><strong>When do I need to change ports?</strong></p>
 <p>Sometimes you already have installed other programs blocking certain ports. Then you encounter error messages like this:</p>
 <blockquote>
-<div><p>ERROR: for streamsheets-service-feeders  Cannot start service streamsheets-service-feeders: driver failed programming external connectivity on endpoint streamsheets-service-feeders (3c98f65b49d5c5ad961c9fde5ef145f21bf385b5edc077e204a9b877834185be): Bind for 0.0.0.0:8083 failed: port is already allocated</p>
+<div><p><em>ERROR: for streamsheets-service-feeders  Cannot start service streamsheets-service-feeders: driver failed programming external connectivity on endpoint streamsheets-service-feeders (3c98f65b49d5c5ad961c9fde5ef145f21bf385b5edc077e204a9b877834185be): Bind for 0.0.0.0:8083 failed: port is already allocated</em></p>
 </div></blockquote>
 <p>Changing either the port of the Streamsheets or the port of the other program is then the only option, if you want to run both at the same time on this host system.</p>
 </div>
 <div class="section" id="mosquitto-broker">
 <h2>Mosquitto Broker<a class="headerlink" href="#mosquitto-broker" title="Permalink to this headline">¶</a></h2>
 <p>Streamsheets comes with 2 different Mosquitto Broker.
-Within  the Streamsheets installation directory in the folder “settings” you can find the mosquitto folder. Here the randomly generated password of your Broker is stored for you to see. To change this use the password manager tool of the mosquitto broker “mosquitto_passwd”.
-You can find it here: <a class="reference external" href="https://mosquitto.org/man/mosquitto_passwd-1.html">https://mosquitto.org/man/mosquitto_passwd-1.html</a></p>
+Within  the Streamsheets installation directory in the folder “settings” you can find the mosquitto folder. Here the randomly generated password of your Broker is stored. To change this use the password manager tool of the mosquitto broker “mosquitto_passwd”.
+You can find it <a class="reference external" href="https://mosquitto.org/man/mosquitto_passwd-1.html">here</a> :</p>
 </div>
 </div>
 

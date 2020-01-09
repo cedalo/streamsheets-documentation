@@ -73,7 +73,7 @@ Changing the port to 8082 would look like this:
 
 Sometimes you already have installed other programs blocking certain ports. Then you encounter error messages like this:
 
-    ERROR: for streamsheets-service-feeders  Cannot start service streamsheets-service-feeders: driver failed programming external connectivity on endpoint streamsheets-service-feeders (3c98f65b49d5c5ad961c9fde5ef145f21bf385b5edc077e204a9b877834185be): Bind for 0.0.0.0:8083 failed: port is already allocated
+    *ERROR: for streamsheets-service-feeders  Cannot start service streamsheets-service-feeders: driver failed programming external connectivity on endpoint streamsheets-service-feeders (3c98f65b49d5c5ad961c9fde5ef145f21bf385b5edc077e204a9b877834185be): Bind for 0.0.0.0:8083 failed: port is already allocated*
 
 Changing either the port of the Streamsheets or the port of the other program is then the only option, if you want to run both at the same time on this host system.
 
@@ -83,5 +83,5 @@ Mosquitto Broker
 ----------------------
 
 Streamsheets comes with 2 different Mosquitto Broker.  
-Within  the Streamsheets installation directory in the folder "settings" you can find the mosquitto folder. Here the randomly generated password of your Broker is stored for you to see. To change this use the password manager tool of the mosquitto broker "mosquitto_passwd". 
-You can find it here: https://mosquitto.org/man/mosquitto_passwd-1.html 
+Within  the Streamsheets installation directory in the folder "settings" you can find the mosquitto folder. Here the randomly generated password of your Broker is stored. To change this use the password manager tool of the mosquitto broker "mosquitto_passwd". 
+You can find it `here <https://mosquitto.org/man/mosquitto_passwd-1.html>`_ :
