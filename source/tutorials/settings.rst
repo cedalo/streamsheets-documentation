@@ -55,9 +55,7 @@ Add another ``-p port:port`` for every port that needs adjustment.
 
 **YML file**
 
-If you don´t use the open source version or have an older version, the port mapping is done via a .yml file in your Installer folder. 
-
-*<INSTALLATION_PATH>\services\docker-compose*
+If you don´t use the open source version or have an older version, the port mapping is done via a .yml file in your Installer directory in the "docker-compose" folder. 
 
 
 To change each port individually open the .yml file and search for the "ports" parameter of the service.
@@ -83,3 +81,7 @@ Changing either the port of the Streamsheets or the port of the other program is
 
 Mosquitto Broker
 ----------------------
+
+Streamsheets comes with 2 different Mosquitto Broker.  
+Within  the Streamsheets installation directory in the folder "settings" you can find the mosquitto folder. Here the randomly generated password of your Broker is stored for you to see. To change this use the password manager tool of the mosquitto broker "mosquitto_passwd". 
+You can find it here: https://mosquitto.org/man/mosquitto_passwd-1.html 

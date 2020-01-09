@@ -28,7 +28,9 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Functions" href="../functions.html" />
+    <link rel="prev" title="Add-Ons" href="addons.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -78,12 +80,22 @@
             
             
               <p class="caption"><span class="caption-text">User Documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../maincomponents.html">Main Components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gettingstarted.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="uielements.html">UI Elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="addons.html">Add-Ons</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mosquitto-broker">Mosquitto Broker</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../functions.html">Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../others.html">Other</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
@@ -133,6 +145,8 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
+          <li><a href="../tutorials.html">Tutorials</a> &raquo;</li>
+        
       <li>Settings</li>
     
     
@@ -181,8 +195,7 @@
 <p>The parameter <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">port:port</span></code> defines the port allocation. In the example above the 1883 port of the MQTT Broker was mapped to use the port 1885.
 Add another <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">port:port</span></code> for every port that needs adjustment.</p>
 <p><strong>YML file</strong></p>
-<p>If you don´t use the open source version or have an older version, the port mapping is done via a .yml file in your Installer folder.</p>
-<p><em>&lt;INSTALLATION_PATH&gt;servicesdocker-compose</em></p>
+<p>If you don´t use the open source version or have an older version, the port mapping is done via a .yml file in your Installer directory in the “docker-compose” folder.</p>
 <p>To change each port individually open the .yml file and search for the “ports” parameter of the service.</p>
 <p>The command and the .yml file always use the structure <em>port:port</em>. This is because we map internal docker ports to the ports of the host system. The port on the left represent the port of the host system and the port on the right represents the internal docker port. The one that interests you, is the one of the host system.</p>
 <p><a class="reference internal" href="../_images/portex.png"><img alt="PEX" src="../_images/portex.png" style="width: 673.2px; height: 215.55px;" /></a></p>
@@ -199,6 +212,9 @@ Add another <code class="docutils literal notranslate"><span class="pre">-p</spa
 </div>
 <div class="section" id="mosquitto-broker">
 <h2>Mosquitto Broker<a class="headerlink" href="#mosquitto-broker" title="Permalink to this headline">¶</a></h2>
+<p>Streamsheets comes with 2 different Mosquitto Broker.
+Within  the Streamsheets installation directory in the folder “settings” you can find the mosquitto folder. Here the randomly generated password of your Broker is stored for you to see. To change this use the password manager tool of the mosquitto broker “mosquitto_passwd”.
+You can find it here: <a class="reference external" href="https://mosquitto.org/man/mosquitto_passwd-1.html">https://mosquitto.org/man/mosquitto_passwd-1.html</a></p>
 </div>
 </div>
 
@@ -207,6 +223,15 @@ Add another <code class="docutils literal notranslate"><span class="pre">-p</spa
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../functions.html" class="btn btn-neutral float-right" title="Functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="addons.html" class="btn btn-neutral" title="Add-Ons" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

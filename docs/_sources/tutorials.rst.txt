@@ -13,5 +13,6 @@ that introduces the basis of the Streamsheet functionality. But even more experi
    tutorials/uielements
    tutorials/examples
    tutorials/addons
+   tutorials/settings
 
 

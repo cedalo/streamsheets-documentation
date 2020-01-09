@@ -3,7 +3,7 @@ Known issues
 ===================
 
 **Performance:**
-The performance of the STreamsheets is dependend on the amount and speed of the running machines. You can increase the resources assigned to docker and/or install Streamsheets on a faster system to increase the performance.
+The performance of the Streamsheets is dependend on the amount and speed of the running machines. You can increase the resources assigned to docker and/or install Streamsheets on a faster system to increase the performance.
 
 
 **Docker will prompt an Error message if:**

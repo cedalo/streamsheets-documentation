@@ -41,8 +41,8 @@ Below you will find a list of all available topics of our documentation.
    :maxdepth: 2
    :caption: User Documentation
 
-   installation
    introduction
+   installation
    maincomponents
    gettingstarted
    tutorials
