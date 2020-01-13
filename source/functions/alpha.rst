@@ -106,11 +106,11 @@ Alphabetical
    streamsheet/loopindex
    streamsheet/mailsend
    lookup/match
-   math/max
+   statistical/max
    statistical/maxif
    statistical/maxifs
    text/mid
-   math/min
+   statistical/min
    statistical/minifs
    date/minute
    math/mod
