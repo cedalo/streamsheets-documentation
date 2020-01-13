@@ -13,6 +13,8 @@ Alphabetical
    streamsheet/array
    drawing/attributes
    statistical/average
+   statistical/averageif
+   statistical/averageifs
    drawing/bar
    engineering/bin2dec
    engineering/bin2hex
@@ -29,6 +31,8 @@ Alphabetical
    math/cos
    statistical/correl
    statistical/count
+   statistical/countif
+   statistical/countifs
    streamsheet/counter
    date/date
    date/datevalue
@@ -103,8 +107,11 @@ Alphabetical
    streamsheet/mailsend
    lookup/match
    math/max
+   statistical/maxif
+   statistical/maxifs
    text/mid
    math/min
+   statistical/minifs
    date/minute
    math/mod
    date/month
@@ -192,6 +199,8 @@ Alphabetical
    text/substitute
    streamsheet/subtree
    math/sum
+   math/sumif
+   math/sumifs
    streamsheet/swapvalues
    logical/switch
    math/tan
