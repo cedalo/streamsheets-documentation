@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2100e23-455d-41ab-9757-98c59aa2986d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/source/functions/drawing/drawpolygon.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/functions/drawing/drawpolygon.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/functions/drawing/drawchartstate.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/conf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/functions/alpha.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/functions/alpha.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/functions/drawing/drawslider.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/functions/drawing/drawslider.rst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,6 +15,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="JsBowerSettings">
     <node-interpreter value="project" />
@@ -27,7 +32,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="C:/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/source/functions/drawing" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="" />
@@ -35,6 +40,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="C:/Program Files/nodejs/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\streamsheets-documentation\source\functions\drawing" />
+    </key>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -58,21 +68,75 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574856255729</updated>
-      <workItem from="1574856257150" duration="39000" />
+      <workItem from="1574856257150" duration="670000" />
+      <workItem from="1575471801822" duration="2551000" />
+      <workItem from="1575977780367" duration="106000" />
+      <workItem from="1576665655449" duration="1544000" />
+      <workItem from="1579184155209" duration="2659000" />
     </task>
+    <task id="LOCAL-00001" summary="update close parameter default">
+      <created>1574856348630</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574856348630</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add angle and rotation parameters description">
+      <created>1575472867265</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1575472867265</updated>
+    </task>
+    <task id="LOCAL-00003" summary="provide docu for DRAW.KNOB">
+      <created>1575474290621</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1575474290621</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update container parameter">
+      <created>1576666328200</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1576666328200</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update close parameter default" />
+    <MESSAGE value="add angle and rotation parameters description" />
+    <MESSAGE value="provide docu for DRAW.KNOB" />
+    <MESSAGE value="update container parameter" />
+    <option name="LAST_COMMIT_MESSAGE" value="update container parameter" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="1720" y="512" width="1068" height="755" key="find.popup" timestamp="1574856287276">
+    <state x="1651" y="369" key="CommitChangelistDialog2" timestamp="1576666327130">
       <screen x="0" y="0" width="3072" height="1698" />
     </state>
-    <state x="1720" y="512" width="1068" height="755" key="find.popup/0.0.3072.1698/378.2160.2133.1169@0.0.3072.1698" timestamp="1574856287276" />
-    <state x="1689" y="370" width="672" height="678" key="search.everywhere.popup" timestamp="1574856265791">
+    <state x="1651" y="369" key="CommitChangelistDialog2/0.0.3072.1698/378.2160.2133.1169@0.0.3072.1698" timestamp="1576666327130" />
+    <state x="1619" y="508" key="Vcs.Push.Dialog.v2" timestamp="1576666329891">
       <screen x="0" y="0" width="3072" height="1698" />
     </state>
-    <state x="1689" y="370" width="672" height="678" key="search.everywhere.popup/0.0.3072.1698/378.2160.2133.1169@0.0.3072.1698" timestamp="1574856265791" />
+    <state x="1619" y="508" key="Vcs.Push.Dialog.v2/0.0.3072.1698/378.2160.2133.1169@0.0.3072.1698" timestamp="1576666329891" />
+    <state x="451" y="-1570" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579187428266">
+      <screen x="-368" y="-2160" width="2560" height="1409" />
+    </state>
+    <state x="451" y="-1570" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2133.1169/-368.-2160.2560.1409@-368.-2160.2560.1409" timestamp="1579187428266" />
+    <state x="845" y="-2031" width="1104" height="971" key="find.popup" timestamp="1579184286048">
+      <screen x="-368" y="-2160" width="2560" height="1409" />
+    </state>
+    <state x="845" y="-2031" width="1104" height="971" key="find.popup/0.0.2133.1169/-368.-2160.2560.1409@-368.-2160.2560.1409" timestamp="1579184286048" />
+    <state x="1455" y="156" width="1324" height="1170" key="find.popup/0.0.3072.1698/378.2160.2133.1169@0.0.3072.1698" timestamp="1576666957242" />
+    <state x="1040" y="-1853" width="672" height="563" key="search.everywhere.popup" timestamp="1579186426358">
+      <screen x="-368" y="-2160" width="2560" height="1409" />
+    </state>
+    <state x="1040" y="-1853" width="672" height="563" key="search.everywhere.popup/0.0.2133.1169/-368.-2160.2560.1409@-368.-2160.2560.1409" timestamp="1579186426358" />
+    <state x="1689" y="370" width="672" height="678" key="search.everywhere.popup/0.0.3072.1698/378.2160.2133.1169@0.0.3072.1698" timestamp="1576666794531" />
   </component>
 </project>

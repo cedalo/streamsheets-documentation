@@ -50,6 +50,7 @@ Alphabetical
    database/dmin
    drawing/drawbutton
    drawing/drawchart
+   drawing/drawchartstate
    drawing/drawcheckbox
    drawing/drawellipse
    drawing/drawknob

@@ -95,7 +95,7 @@ Define a graphical slider on a given drawing.
 
 **Return Value**
 
-TRUE, if button could be created.
+TRUE, if slider could be created.
 
 **Example**
 
