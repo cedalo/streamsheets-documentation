@@ -70,7 +70,8 @@
       <workItem from="1575977780367" duration="106000" />
       <workItem from="1576665655449" duration="1544000" />
       <workItem from="1579184155209" duration="2758000" />
-      <workItem from="1579268978982" duration="785000" />
+      <workItem from="1579268978982" duration="810000" />
+      <workItem from="1579277542822" duration="65000" />
     </task>
     <task id="LOCAL-00001" summary="update close parameter default">
       <created>1574856348630</created>
@@ -107,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579187477465</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update DRAW.CHARTSTATE docs">
+      <created>1579273952855</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1579273952855</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,19 +127,20 @@
     <MESSAGE value="provide docu for DRAW.KNOB" />
     <MESSAGE value="update container parameter" />
     <MESSAGE value="add DRAW.CHARTSTATE docs" />
-    <option name="LAST_COMMIT_MESSAGE" value="add DRAW.CHARTSTATE docs" />
+    <MESSAGE value="update DRAW.CHARTSTATE docs" />
+    <option name="LAST_COMMIT_MESSAGE" value="update DRAW.CHARTSTATE docs" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1008" y="-1854" key="CommitChangelistDialog2" timestamp="1579187476431">
-      <screen x="-368" y="-2160" width="2560" height="1409" />
+    <state x="1651" y="369" key="CommitChangelistDialog2" timestamp="1579273951574">
+      <screen x="0" y="0" width="3072" height="1698" />
     </state>
     <state x="1008" y="-1854" key="CommitChangelistDialog2/0.0.2133.1169/-368.-2160.2560.1409@-368.-2160.2560.1409" timestamp="1579187476431" />
-    <state x="1651" y="369" key="CommitChangelistDialog2/0.0.3072.1698/378.2160.2133.1169@0.0.3072.1698" timestamp="1576666327130" />
-    <state x="981" y="-1738" key="Vcs.Push.Dialog.v2" timestamp="1579187479657">
-      <screen x="-368" y="-2160" width="2560" height="1409" />
+    <state x="1651" y="369" key="CommitChangelistDialog2/0.0.3072.1698/378.2160.2133.1169@0.0.3072.1698" timestamp="1579273951574" />
+    <state x="1619" y="508" key="Vcs.Push.Dialog.v2" timestamp="1579273954850">
+      <screen x="0" y="0" width="3072" height="1698" />
     </state>
     <state x="981" y="-1738" key="Vcs.Push.Dialog.v2/0.0.2133.1169/-368.-2160.2560.1409@-368.-2160.2560.1409" timestamp="1579187479657" />
-    <state x="1619" y="508" key="Vcs.Push.Dialog.v2/0.0.3072.1698/378.2160.2133.1169@0.0.3072.1698" timestamp="1576666329891" />
+    <state x="1619" y="508" key="Vcs.Push.Dialog.v2/0.0.3072.1698/378.2160.2133.1169@0.0.3072.1698" timestamp="1579273954850" />
     <state x="451" y="-1570" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579187428266">
       <screen x="-368" y="-2160" width="2560" height="1409" />
     </state>
@@ -141,10 +150,10 @@
     </state>
     <state x="845" y="-2031" width="1104" height="971" key="find.popup/0.0.2133.1169/-368.-2160.2560.1409@-368.-2160.2560.1409" timestamp="1579184286048" />
     <state x="1455" y="156" width="1324" height="1170" key="find.popup/0.0.3072.1698/378.2160.2133.1169@0.0.3072.1698" timestamp="1576666957242" />
-    <state x="1040" y="-1853" width="672" height="563" key="search.everywhere.popup" timestamp="1579186426358">
-      <screen x="-368" y="-2160" width="2560" height="1409" />
+    <state x="1689" y="370" width="672" height="678" key="search.everywhere.popup" timestamp="1579277571469">
+      <screen x="0" y="0" width="3072" height="1698" />
     </state>
     <state x="1040" y="-1853" width="672" height="563" key="search.everywhere.popup/0.0.2133.1169/-368.-2160.2560.1409@-368.-2160.2560.1409" timestamp="1579186426358" />
-    <state x="1689" y="370" width="672" height="678" key="search.everywhere.popup/0.0.3072.1698/378.2160.2133.1169@0.0.3072.1698" timestamp="1576666794531" />
+    <state x="1689" y="370" width="672" height="678" key="search.everywhere.popup/0.0.3072.1698/378.2160.2133.1169@0.0.3072.1698" timestamp="1579277571469" />
   </component>
 </project>

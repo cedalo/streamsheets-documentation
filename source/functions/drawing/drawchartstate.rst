@@ -75,7 +75,8 @@ Define a state diagram on a given drawing. A state diagram display vertical bars
    * - Max
      - Optional. Maximum value for the horizontal axis. Default is now.
    * - StepType
-     - Optional. Time Step type for the horizontal axis. Allowed values are 'second', 'minute' and 'hour'. Default is 'minute'.
+     - Optional. Time Step type for the horizontal axis labels. Allowed values are 'second', 'minute', 'hour' and 'none. Default is 'minute'.
+       'none' will not display any axis label.
    * - Step
      - Optional. Time Step for the horizontal axis. Default is 1.
 
