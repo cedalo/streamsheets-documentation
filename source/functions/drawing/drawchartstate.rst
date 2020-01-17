@@ -5,7 +5,7 @@ DRAW.CHARTSTATE
 Define a state diagram on a given drawing. A state diagram display vertical bars within a given period in a given color.
 
 **Syntax**
-=DRAW.CHARTSTATE(UniqueID, Container, Name, X, Y, Width, Height, LineFormat, FillFormat, Attributes, Events, Angle, RotCenter, Title, TitleFont, ChartType, DataRange, LegendRange, Min, Max, Step)
+=DRAW.CHARTSTATE(UniqueID, Container, Name, X, Y, Width, Height, LineFormat, FillFormat, Attributes, Events, Angle, RotCenter, Title, TitleFont, ChartType, DataRange, LegendRange, Min, Max, StepType, Step)
 
 **Arguments**
 
@@ -71,11 +71,13 @@ Define a state diagram on a given drawing. A state diagram display vertical bars
    * - LegendRange
      - Range that defines the legend entries for the state chart.
    * - Min
-     - Minimum value for the horizontal axis.
+     - Optional. Minimum value for the horizontal axis. Default is the minimum value.
    * - Max
-     - Maximum value for the horizontal axis.
+     - Optional. Maximum value for the horizontal axis. Default is now.
+   * - StepType
+     - Optional. Time Step type for the horizontal axis. Allowed values are 'second', 'minute' and 'hour'. Default is 'minute'.
    * - Step
-     - Time Step for the horizontal axis. Allowed values are 'second', 'minute' and 'hour'
+     - Optional. Time Step for the horizontal axis. Default is 1.
 
 **Return Value**
 
