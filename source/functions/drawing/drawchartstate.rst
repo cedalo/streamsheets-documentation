@@ -5,7 +5,7 @@ DRAW.CHARTSTATE
 Define a state diagram on a given drawing. A state diagram display vertical bars within a given period in a given color.
 
 **Syntax**
-=DRAW.CHARTSTATE(UniqueID, Container, Name, X, Y, Width, Height, LineFormat, FillFormat, Attributes, Events, Angle, RotCenter, Title, TitleFont, ChartType, DataRange, LegendRange, Min, Max, StepType, Step)
+=DRAW.CHARTSTATE(UniqueID, Container, Name, X, Y, Width, Height, LineFormat, FillFormat, Attributes, Events, Angle, RotCenter, Title, TitleFont, ChartType, DataRange, LegendRange, Min, Max, StepType, Step, ScaleFont)
 
 **Arguments**
 
@@ -79,6 +79,8 @@ Define a state diagram on a given drawing. A state diagram display vertical bars
        'none' will not display any axis label.
    * - Step
      - Optional. Time Step for the horizontal axis. Default is 1.
+   * - ScaleFont
+     - Optional. Font to use for scale. JSON String created using :ref:`fontformat`
 
 **Return Value**
 
