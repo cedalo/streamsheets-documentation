@@ -80,7 +80,7 @@ Changing either the port of the Streamsheets or the port of the other program is
 
 
 Mosquitto Broker
-----------------------
+-----------------------
 
 Streamsheets comes with 2 different Mosquitto Broker.  
 Within  the Streamsheets installation directory in the folder "settings" you can find the mosquitto folder. Here the randomly generated password of your Broker is stored. To change this use the password manager tool of the mosquitto broker "mosquitto_passwd". 
