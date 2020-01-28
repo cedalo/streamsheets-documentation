@@ -34,10 +34,10 @@ Starting Streamsheets
 
 **A:**  
 
-    1. Navigate into the following directory:
+    1. Navigate into the install directory:
 
-        | Command: ``cd <PATH_TO_INSTALL_DIRECTORY>/services/scripts/win``
-        | Example: ``cd C:\Streamsheets/services/scripts/win`` 
+        | Command: ``cd <INSTALL_DIRECTORY>/services/scripts/win``
+        | Example: ``cd C:\Streamsheets`` 
 
       This directory contains several shell scripts (and Docker Compose files) to run predefined configurations of Streamsheets. 
 
@@ -47,9 +47,9 @@ Starting Streamsheets
 
 **B:**  
    
-    Alternatively, close the terminal window, open your repository and navigate into the folder. Once, you are in the “win” folder, simply double-click on “start”.
+    Alternatively, close the terminal window, open your repository and navigate into the folder. Simply double-click the “start” file.
 
-        | Example: ``C:\Streamsheets/services/scripts/win``
+        | Example: ``C:\Streamsheets``
  
 
 The web interface for Streamsheets is locally available under: http://localhost:8081/ or in the local network under <your_ip_adress>:8081  (e.g. 192.168.178.90:8081).

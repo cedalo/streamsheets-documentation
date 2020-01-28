@@ -81,6 +81,7 @@
             
               <p class="caption"><span class="caption-text">User Documentation</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../installation.html">Installation</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../system-requirements/index.html">System requirements</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Installing on Linux</a><ul>
@@ -96,7 +97,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../installing-raspian/index.html">Installing Raspian</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../maincomponents.html">Main Components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../gettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
@@ -190,7 +190,7 @@
 </div>
 </div></blockquote>
 </li>
-<li><p>Next run the following command to execute the installer for Streamsheets. Replace <code class="docutils literal notranslate"><span class="pre">&lt;PATH_TO_INSTALL_DIRECTORY&gt;</span></code> with the name of the installation directory and <code class="docutils literal notranslate"><span class="pre">&lt;VERSION&gt;</span></code> with the Streamsheets version to install (current version: <a class="reference internal" href="../../releasenotes.html#currently"><span class="std std-ref">1.4</span></a>).</p>
+<li><p>Next run the following command to execute the installer for Streamsheets. Replace <code class="docutils literal notranslate"><span class="pre">&lt;PATH_TO_INSTALL_DIRECTORY&gt;</span></code> with the name of the installation directory and <code class="docutils literal notranslate"><span class="pre">&lt;VERSION&gt;</span></code> with the Streamsheets version to install (current version: <a class="reference internal" href="../../releasenotes.html#currently"><span class="std std-ref">1.5</span></a>).</p>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Command: <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-v</span> <span class="pre">&lt;PATH_TO_INSTALL_DIRECTORY&gt;:/streamsheets</span> <span class="pre">cedalo/streamsheets-installer:&lt;VERSION&gt;-linux</span></code></div>
@@ -203,11 +203,11 @@
 <div class="section" id="starting-streamsheets">
 <h2>Starting Streamsheets<a class="headerlink" href="#starting-streamsheets" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p>Navigate into the following directory:</p>
+<li><p>Navigate into the install directory:</p>
 <blockquote>
 <div><div class="line-block">
-<div class="line">Command: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">&lt;PATH_TO_INSTALL_DIRECTORY&gt;/services/scripts/linux</span></code></div>
-<div class="line">Example: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/streamsheets/services/scripts/linux</span></code></div>
+<div class="line">Command: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">&lt;INSTALL_DIRECTORY&gt;</span></code></div>
+<div class="line">Example: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/streamsheets</span></code></div>
 </div>
 <p>This directory contains several shell scripts (and Docker Compose files) to run predefined configurations of Streamsheets.</p>
 </div></blockquote>

@@ -60,7 +60,7 @@ Manually Install Streamsheets
 ------------------------------------
 
 .. toggle-header::
-    :header: An alternative to the fast install script. **Show/Hide manual**
+    :header: An alternative to the fast install script. **Click here to Show/Hide manual**
     
          
         **Setting up Docker**
@@ -101,7 +101,7 @@ Manually Install Streamsheets
             | Command:  ``mkdir <PATH_TO_INSTALL_DIRECTORY>`` 
             | Example:  ``mkdir ~/cedalo``
 
-        2. Next run the following command to execute the installer for Streamsheets. Replace ``<PATH_TO_INSTALL_DIRECTORY>`` with the name of the installation directory and ``<VERSION>`` with the Streamsheets version to install (current version: \ :ref:`currently`\  (version 1.4 is not existant for the RaspberryPi)).
+        2. Next run the following command to execute the installer for Streamsheets. Replace ``<PATH_TO_INSTALL_DIRECTORY>`` with the name of the installation directory and ``<VERSION>`` with the Streamsheets version to install (current version: 1.3).
 
             | Command: ``sudo docker run -v <PATH_TO_INSTALL_DIRECTORY>:/streamsheets cedalo/streamsheets-installer:<VERSION>-rpi``
             | Example: ``sudo docker run -v ~/cedalo:/streamsheets cedalo/streamsheets-installer:1.3-rpi``
@@ -111,7 +111,7 @@ Manually Install Streamsheets
             | Command: ``cd <PATH_TO_INSTALL_DIRECTORY>/streamsheets/scripts/``
             | Example: ``cd ~/cedalo/streamsheets/scripts/``
 
-        This directory contains several shell scripts (and Docker Compose files) to run predefined configiurations of Streamsheets. 
+        This directory contains several shell scripts (and Docker Compose files) to run predefined configurations of Streamsheets. 
 
         **Starting Streamsheets**
         
@@ -123,8 +123,8 @@ Manually Install Streamsheets
 
         Now you are able to open Streamsheets from anywhere in your network, by typing in the IP-adress/hostname of your Pi together with the port 8081. The standard Raspberry Pi hostname is “raspberrypi”, which results in:
 
-        Standard hostname adress: raspberrypi:8081
-        Open a browser on another computer in the same local network and type the address. On first usage you will have to accpet the license agreement, before you can login to Streamsheets. The standard username and password is:
+        Standard host name adress: raspberrypi:8081
+        Open a browser on another computer in the same local network and type the address. On first usage you will have to accept the license agreement, before you can login to Streamsheets. The standard username and password is:
 
         User: admin
         Password: 1234

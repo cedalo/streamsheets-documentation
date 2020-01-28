@@ -32,10 +32,10 @@ Setting up Streamsheets
 Starting Streamsheets
 -------------------------
 
-1. Navigate into the following directory:
+1. Navigate into the install directory:
 
-	| Command: ``cd <PATH_TO_INSTALL_DIRECTORY>/services/scripts/linux``
-	| Example: ``cd ~/streamsheets/services/scripts/linux`` 
+	| Command: ``cd <INSTALL_DIRECTORY>``
+	| Example: ``cd ~/streamsheets`` 
 
 	This directory contains several shell scripts (and Docker Compose files) to run predefined configurations of Streamsheets. 
 

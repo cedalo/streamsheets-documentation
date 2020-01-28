@@ -14,7 +14,7 @@ Optionally it deletes all found records after the extract operation (remaining r
 
 **Syntax**
 
-=STACKFIND(StackRange, CriteriaRange [, TargetRange, Drop])
+=STACKFIND(StackRange, CriteriaRange [, TargetRange, Drop, Unique])
 
 **Arguments**
 
@@ -35,6 +35,8 @@ Optionally it deletes all found records after the extract operation (remaining r
        | Note: TargetRange can have more than 2 rows. If it has more than 2 rows the additional rows can take the additional hits of the the filter extract.
    * - Drop
      - Optional. If set to TRUE it drops the selected rows from the stack. Drop defaults to FALSE.
+   * - Unique
+     - Optional. If set to TRUE it drops or copies equal rows only once. Two rows are equal if they have same value in each column. Unique defaults to FALSE.
 
 **Return Value**
 
