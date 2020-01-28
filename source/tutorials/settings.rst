@@ -29,11 +29,11 @@ These are all used ports:
 * 1884 - Internal MQTT Broker
 * 8080 - Gateway
 * 8081 - Reverseproxy
-* 8083 - Feeder Service
+* 8083 - Streams Service
 * 8088 - Gateway WebSocket API
-* 8090 - Repository HTTP API
+* 8090 - Gateway HTTP API
 * 9000 - WebUI
-* 40000-40100 - Feeder Service (UDP)
+* 40000-40100 - Streams Service (UDP)
 * 4840 - OPC UA
 * 6379 - Redis
 * 27017 - Internal MongoDB
