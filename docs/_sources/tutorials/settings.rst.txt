@@ -9,8 +9,8 @@ Settings
 
 
 
-Ports
------------
+Port Allocation
+-----------------
 
 **What are ports?**
 
@@ -46,7 +46,7 @@ Depending on your installed version, there are different ways to adjust the port
 
 **Command**
 
-Starting with versionn 1.5 of the Streamsheets open source release you can add the port changes to the ``docker run`` command used in the installation process:
+Starting with version 1.5 of the Streamsheets open source release you can add the port changes to the ``docker run`` command used in the installation process:
 
 ``docker run  -p 8081:8081  -p 1885:1883  -v /tmp/db:/var/lib/mongodb  cedalo/streamsheets:1.5``
 
@@ -71,7 +71,7 @@ Changing the port to 8082 would look like this:
 
 **When do I need to change ports?**
 
-Sometimes you already have installed other programs blocking certain ports. Then you encounter error messages like this:
+Sometimes other programs are blocking certain ports. Then you encounter error messages like this:
 
     *ERROR: for streamsheets-service-feeders  Cannot start service streamsheets-service-feeders: driver failed programming external connectivity on endpoint streamsheets-service-feeders (3c98f65b49d5c5ad961c9fde5ef145f21bf385b5edc077e204a9b877834185be): Bind for 0.0.0.0:8083 failed: port is already allocated*
 
@@ -82,6 +82,8 @@ Changing either the port of the Streamsheets or the port of the other program is
 Mosquitto Broker
 -----------------------
 
-Streamsheets comes with 2 different Mosquitto Broker.  
-Within  the Streamsheets installation directory in the folder "settings" you can find the mosquitto folder. Here the randomly generated password of your Broker is stored. To change this use the password manager tool of the mosquitto broker "mosquitto_passwd". 
-You can find it `here <https://mosquitto.org/man/mosquitto_passwd-1.html>`_ :
+Streamsheets comes with the MQTT `Mosquitto Broker <https://mosquitto.org/>`_.  
+
+**Find Password:**  Within  the Streamsheets installation directory in the folder "settings" you can find the "mosquitto" folder. Open the "pw_clear.txt" file to access your password. 
+
+**Change Password:** To change the broker password stop Streamsheets, delete the "pw.txt" file and restart again. The new password will be generated and again written into the "mosquitto" folder. Don´t forget to change the password in your Streamsheets connector!
