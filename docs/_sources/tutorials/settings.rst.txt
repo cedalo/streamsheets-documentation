@@ -83,4 +83,4 @@ Streamsheets comes with the MQTT `Mosquitto Broker <https://mosquitto.org/>`_.
 
 **Find Password:**  Within  the Streamsheets installation directory in the folder "settings" you can find the "mosquitto" folder. Open the "pw_clear.txt" file to access your password. 
 
-**Change Password:** To change the broker password stop Streamsheets, delete the "pw.txt" file and restart again. The new password will be generated and again written into the "mosquitto" folder. Don´t forget to change the password in your Streamsheets connector!
+**Change Password:** To change the broker password stop Streamsheets, delete the "pw.txt" & "pw_clear.txt" file and restart again. The new password will be generated and again written into the "mosquitto" folder. Don´t forget to change the password in your Streamsheets connector!
