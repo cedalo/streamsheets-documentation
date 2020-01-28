@@ -44,7 +44,7 @@ These are all used ports:
 
 Depending on your installed version, there are different ways to adjust the ports. 
 
-**Command**
+**Open Source:**
 
 Starting with version 1.5 of the Streamsheets open source release you can add the port changes to the ``docker run`` command used in the installation process:
 
@@ -53,14 +53,10 @@ Starting with version 1.5 of the Streamsheets open source release you can add th
 The parameter ``-p port:port`` defines the port allocation. In the example above the 1883 port of the MQTT Broker was mapped to use the port 1885. 
 Add another ``-p port:port`` for every port that needs adjustment.
 
-**YML file**
+**Streamsheets Premium** (and Open Source versions older v1.5) **:**
 
 If you don´t use the open source version or have an older version, the port mapping is done via a .yml file in your Installer directory in the "docker-compose" folder. 
-
-
 To change each port individually open the .yml file and search for the "ports" parameter of the service.
-
-
 The command and the .yml file always use the structure *port:port*. This is because we map internal docker ports to the ports of the host system. The port on the left represent the port of the host system and the port on the right represents the internal docker port. The one that interests you, is the one of the host system.
 
 |PEX|

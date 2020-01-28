@@ -189,15 +189,15 @@
 </ul>
 <p><strong>How can I change ports?</strong></p>
 <p>Depending on your installed version, there are different ways to adjust the ports.</p>
-<p><strong>Command</strong></p>
+<p><strong>Open Source:</strong></p>
 <p>Starting with version 1.5 of the Streamsheets open source release you can add the port changes to the <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code> command used in the installation process:</p>
 <p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span>&#160; <span class="pre">-p</span> <span class="pre">8081:8081</span>&#160; <span class="pre">-p</span> <span class="pre">1885:1883</span>&#160; <span class="pre">-v</span> <span class="pre">/tmp/db:/var/lib/mongodb</span>&#160; <span class="pre">cedalo/streamsheets:1.5</span></code></p>
 <p>The parameter <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">port:port</span></code> defines the port allocation. In the example above the 1883 port of the MQTT Broker was mapped to use the port 1885.
 Add another <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">port:port</span></code> for every port that needs adjustment.</p>
-<p><strong>YML file</strong></p>
-<p>If you don´t use the open source version or have an older version, the port mapping is done via a .yml file in your Installer directory in the “docker-compose” folder.</p>
-<p>To change each port individually open the .yml file and search for the “ports” parameter of the service.</p>
-<p>The command and the .yml file always use the structure <em>port:port</em>. This is because we map internal docker ports to the ports of the host system. The port on the left represent the port of the host system and the port on the right represents the internal docker port. The one that interests you, is the one of the host system.</p>
+<p><strong>Streamsheets Premium</strong> (and Open Source versions older v1.5) <strong>:</strong></p>
+<p>If you don´t use the open source version or have an older version, the port mapping is done via a .yml file in your Installer directory in the “docker-compose” folder.
+To change each port individually open the .yml file and search for the “ports” parameter of the service.
+The command and the .yml file always use the structure <em>port:port</em>. This is because we map internal docker ports to the ports of the host system. The port on the left represent the port of the host system and the port on the right represents the internal docker port. The one that interests you, is the one of the host system.</p>
 <p><a class="reference internal" href="../_images/portex.png"><img alt="PEX" src="../_images/portex.png" style="width: 673.2px; height: 215.55px;" /></a></p>
 <p>Changing the port to 8082 would look like this:</p>
 <blockquote>
