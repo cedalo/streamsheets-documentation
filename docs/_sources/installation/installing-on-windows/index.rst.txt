@@ -26,7 +26,7 @@ Setting up Streamsheets
 2. Next run the following command to execute the installer for Streamsheets. Replace ``<PATH_TO_INSTALL_DIRECTORY>`` with the absolute path to the installation directory and ``<VERSION>`` with the Streamsheets version to install (current version: \ :ref:`currently`\ ).
 
     | Command:    ``docker run -v <PATH_TO_INSTALL_DIRECTORY>:/streamsheets cedalo/streamsheets-installer:<VERSION>-win``
-    | Example:      ``docker run -v C:\Streamsheets:/streamsheets cedalo/streamsheets-installer:1.4-win``    
+    | Example:      ``docker run -v C:\Streamsheets:/streamsheets cedalo/streamsheets-installer:1.5-win``    
 
 
 Starting Streamsheets
@@ -36,7 +36,7 @@ Starting Streamsheets
 
     1. Navigate into the install directory:
 
-        | Command: ``cd <INSTALL_DIRECTORY>/services/scripts/win``
+        | Command: ``cd <INSTALL_DIRECTORY>``
         | Example: ``cd C:\Streamsheets`` 
 
       This directory contains several shell scripts (and Docker Compose files) to run predefined configurations of Streamsheets. 

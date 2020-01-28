@@ -49,8 +49,8 @@ Stopping & Starting Streamsheets
 
     **Starting Streamsheets:**  
                             
-                            | Navigate into the folder "~/cedalo/streamsheets/scripts" either with your shell or with the file manager. 
-                            | If you are using the shell: enter ``sh start.sh``.
+                            | Navigate into the folder "~/cedalo" with your shell or with the file manager. 
+                            | If you are using the shell: enter ``sudo sh start.sh``.
                             | If you are using the filemanager: double click the start.sh file and run it in the terminal. 
 
 
@@ -104,12 +104,12 @@ Manually Install Streamsheets
         2. Next run the following command to execute the installer for Streamsheets. Replace ``<PATH_TO_INSTALL_DIRECTORY>`` with the name of the installation directory and ``<VERSION>`` with the Streamsheets version to install (current version: 1.3).
 
             | Command: ``sudo docker run -v <PATH_TO_INSTALL_DIRECTORY>:/streamsheets cedalo/streamsheets-installer:<VERSION>-rpi``
-            | Example: ``sudo docker run -v ~/cedalo:/streamsheets cedalo/streamsheets-installer:1.3-rpi``
+            | Example: ``sudo docker run -v ~/cedalo:/streamsheets cedalo/streamsheets-installer:1.5-rpi``
 
         3. Navigate into the following directory:
 
-            | Command: ``cd <PATH_TO_INSTALL_DIRECTORY>/streamsheets/scripts/``
-            | Example: ``cd ~/cedalo/streamsheets/scripts/``
+            | Command: ``cd <PATH_TO_INSTALL_DIRECTORY>``
+            | Example: ``cd ~/cedalo``
 
         This directory contains several shell scripts (and Docker Compose files) to run predefined configurations of Streamsheets. 
 
