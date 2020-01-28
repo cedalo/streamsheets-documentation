@@ -196,8 +196,8 @@
 Add another <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">port:port</span></code> for every port that needs adjustment.</p>
 <p><strong>Streamsheets Premium</strong> (and Open Source versions older v1.5) <strong>:</strong></p>
 <p>If you don´t use the open source version or have an older version, the port mapping is done via a .yml file in your Installer directory in the “docker-compose” folder.
-To change each port individually open the .yml file and search for the “ports” parameter of the service.
-The command and the .yml file always use the structure <em>port:port</em>. This is because we map internal docker ports to the ports of the host system. The port on the left represent the port of the host system and the port on the right represents the internal docker port. The one that interests you, is the one of the host system.</p>
+To change each port individually open the .yml file and search for the “ports” parameter of the service.</p>
+<p><strong>Port Mapping:</strong> The command and the .yml file always use the structure <em>port:port</em> to adjust ports. This is because we map internal docker ports to the ports of the host system. The port on the left represent the port of the host system and the port on the right represents the internal docker port. The one that interests you, is the one of the host system.</p>
 <p><a class="reference internal" href="../_images/portex.png"><img alt="PEX" src="../_images/portex.png" style="width: 673.2px; height: 215.55px;" /></a></p>
 <p>Changing the port to 8082 would look like this:</p>
 <blockquote>

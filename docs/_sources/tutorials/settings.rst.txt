@@ -57,7 +57,8 @@ Add another ``-p port:port`` for every port that needs adjustment.
 
 If you don´t use the open source version or have an older version, the port mapping is done via a .yml file in your Installer directory in the "docker-compose" folder. 
 To change each port individually open the .yml file and search for the "ports" parameter of the service.
-The command and the .yml file always use the structure *port:port*. This is because we map internal docker ports to the ports of the host system. The port on the left represent the port of the host system and the port on the right represents the internal docker port. The one that interests you, is the one of the host system.
+
+**Port Mapping:** The command and the .yml file always use the structure *port:port* to adjust ports. This is because we map internal docker ports to the ports of the host system. The port on the left represent the port of the host system and the port on the right represents the internal docker port. The one that interests you, is the one of the host system.
 
 |PEX|
 
