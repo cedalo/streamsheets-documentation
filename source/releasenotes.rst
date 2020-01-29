@@ -15,10 +15,11 @@ We will never stop improving our :term:`Streamsheet`\ s. Stay up to date with ou
 | + **Professional:** Implemented further Pro features 
 | + **Performance:** Performance improvements Server/Client side
 | + **User Management:** started rework of user administration
-| + **Docker:** Streamsheets now runs in only one docker container
+| + **Docker:** Streamsheets now runs in only one docker container. 
 | + **Sample Machines:** Added two sample machines
 | + **Bug fixes**
-| + **Mosquitto Broker:** Added randomly generated password. For more iformations click `here <https://docs.cedalo.com/tutorials/settings.html#mosquitto-broker>`_.
+| + **Mosquitto Broker:** Added randomly generated password. For more informations click `here <https://docs.cedalo.com/tutorials/settings.html#mosquitto-broker>`_.
+| + **Database:** We had some structural changes in the database. This is why we urge user, upgrading from version 1.3 or older, to download a databse dump in the administration menu and restore it in the 1.5.
 
 | **Features:**
 | + **Added Preview Mode**
