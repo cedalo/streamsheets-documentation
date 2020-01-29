@@ -18,6 +18,7 @@ We will never stop improving our :term:`Streamsheet`\ s. Stay up to date with ou
 | + **Docker:** Streamsheets now runs in only one docker container
 | + **Sample Machines:** Added two sample machines
 | + **Bug fixes**
+| + **Mosquitto Broker:** Added randomly generated password. For more iformations click `here <https://docs.cedalo.com/tutorials/settings.html#mosquitto-broker>`_.
 
 | **Features:**
 | + **Added Preview Mode**

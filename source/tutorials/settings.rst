@@ -79,7 +79,7 @@ Changing either the port of the Streamsheets or the port of the other program is
 Mosquitto Broker
 -----------------------
 
-Streamsheets comes with the MQTT `Mosquitto Broker <https://mosquitto.org/>`_.  
+Streamsheets comes with the MQTT `Mosquitto Broker <https://mosquitto.org/>`_.  The password will be randomly generated on installation and set once in the standard "MQTT Connector". 
 
 **Find Password:**  Within  the Streamsheets installation directory in the folder "settings" you can find the "mosquitto" folder. Open the "pw_clear.txt" file to access your password. 
 
