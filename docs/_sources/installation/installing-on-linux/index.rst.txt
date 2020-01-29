@@ -47,8 +47,10 @@ The web interface for Streamsheets is locally available under: http://localhost:
 
 Open a browser on another computer in the same local network and type the address. On first usage you will have to accept the license agreement, before you can login to Streamsheets. The standard username and password is:
 
-**User:** admin
-**Password:** 1234
+**Login:**
+
+User: ``admin``
+Password: ``1234``
 
 We strongly suggest changing the password after your first login.
 
