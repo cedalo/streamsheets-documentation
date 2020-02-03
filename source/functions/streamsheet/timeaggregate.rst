@@ -31,6 +31,8 @@ TIMEAGGREGATE(DataCell, [Period, AggregationMethod, TimeSerial, Interval, Target
      - Optional. A cell range to write the aggregated values to. Collects aggregation intervals and displays them. Differs if interval is left blank (see interval).
    * - Sort
      - Optional. Set to TRUE if values should be sorted by time. Most usefull if a custom TimeSerial parameter is provided. Defaults to FALSE.
+   * - Limit
+     - Optional. Specifies the maximum number of values stored. If limit is reached the function returns a #LIMIT error. Defaults to 1000.
 
 
 **Aggregation Methods**
