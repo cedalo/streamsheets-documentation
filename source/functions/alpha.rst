@@ -94,6 +94,10 @@ Alphabetical
    streamsheet/inboxmetadata
    lookup/index
    lookup/indirect
+   streamsheet/influxdrop
+   streamsheet/influxselect
+   streamsheet/influxshow
+   streamsheet/influxstore
    math/int
    info/iserr
    info/iserror
