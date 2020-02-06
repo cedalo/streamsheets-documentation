@@ -81,8 +81,8 @@
             
               <p class="caption"><span class="caption-text">User Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../maincomponents.html">Main Components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Tutorials</a><ul class="current">
@@ -98,6 +98,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="addons.html">Add-Ons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings.html">Settings</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../functions.html">Functions</a></li>
@@ -234,21 +235,87 @@ It is also possible to update existing OPC UA Variables with the OPCUA.WRITE for
 <div class="section" id="mongodb">
 <h2>MongoDB<a class="headerlink" href="#mongodb" title="Permalink to this headline">¶</a></h2>
 <p>To store data and retrieve information Streamsheets are able to connect to a <a class="reference internal" href="../glossary.html#term-mongo"><span class="xref std std-term">MongoDB</span></a>. <a class="reference internal" href="addons.html#mongodb"><span class="std std-ref">Here</span></a> you can learn how to add a MongoDB to your current Streamsheets installation.</p>
-<p>Start connecting the MongoDB to your Streamsheets by setting up a MongoDB Connector in the <a class="reference internal" href="../maincomponents/administration.html#administration"><span class="std std-ref">Administration</span></a>.Check the “External Host” checkbox and enter the URL (or if working with Mongo for Docker the container name) in the Host(s) field. All other settings are optional.
+<p>Start connecting the MongoDB to your Streamsheets by setting up a MongoDB Connector in the <a class="reference internal" href="../maincomponents/administration.html#administration"><span class="std std-ref">Administration</span></a>.Enter the URL (or if working with Mongo for Docker the container name) in the Host(s) field. All other settings are optional.
 Streamsheets offers five Mongo specific functions within the <a class="reference internal" href="uielements.html#functionwizard"><span class="std std-ref">Function Wizard</span></a>: <a class="reference internal" href="../functions/streamsheet/mongostore.html#mongostore"><span class="std std-ref">MONGO.STORE()</span></a>, <a class="reference internal" href="../functions/streamsheet/mongocount.html#mongocount"><span class="std std-ref">MONGO.COUNT()</span></a>, <a class="reference internal" href="../functions/streamsheet/mongodelete.html#mongodelete"><span class="std std-ref">MONGO.DELETE()</span></a>, <a class="reference internal" href="../functions/streamsheet/mongoquery.html#mongoquery"><span class="std std-ref">MONGO.QUERY()</span></a> and <a class="reference internal" href="../functions/streamsheet/mongoaggregate.html#mongoaggregate"><span class="std std-ref">MONGO.AGGREGATE()</span></a>.
 Setup a Producer on top of the just created Connector and you are ready to go.</p>
-<p><strong>MONGO.STORE:</strong>
-To add new key value pairs to the database open up a Stream Machine and use the function MONGO.STORE. Select the just created Producer and type in any collection name you want. (If the collection is not existent it will automatically create one.) In the “document” field add a JSON Range of your choice to store in the collection.</p>
-<p><strong>MONGO.DELETE:</strong>
-To delete key value pairs from the database use the function MONGO.DELETE. The elements defined in the query will be deleted.</p>
-<p><strong>MONGO.QUERY, MONGO.COUNT &amp; MONGO.AGGREGATE:</strong>
-These three functions all have similar tasks. They all retrieve information from a collection.
-MONGO.QUERY is used to get raw information.
-MONGO.COUNT counts all entries in a collection depending on the inserted JSON Range.
-MONGO.AGGREGATE offeres a wider range of operations to choose from. Different aggregation methods can be used to summerize data. Mongo offeres a variety of operations e.g. covering comparative methods  (“equal” or “greater than”) or logical methods (“and” or “not”), which all can be incooperated in the Aggregate JSON.
-More query operators can be found <a class="reference external" href="https://docs.mongodb.com/manual/reference/operator/query/">here</a>.</p>
-<p><a class="reference internal" href="../_images/MongoDemo.gif"><img alt="MongoDemo" src="../_images/MongoDemo.gif" style="width: 832.0px; height: 468.0px;" /></a></p>
-<p><em>All five Mongo functions used in one GIF.</em></p>
+<p>In a Streamsheet open the “Function Wizard” to gain convenient access to the MongoDB functions.</p>
+<p><strong>MONGO.STORE():</strong></p>
+<p><em>=MONGO.STORE(“Stream”,”Collection”,”Document”)</em></p>
+<p>As soon as your MongoDB Connector and Producer is set up you can start storing data.
+Click on a cell, open the function wizard and select MONGO.STORE. Remember the calculation order of a Streamsheet (top to bottom, left to right), this might play a role in the structure of your logic.</p>
+<p><em>Stream:</em>
+The “Function Wizard” automatically selects a stream. Make sure the right one is selected.</p>
+<p><em>Collection:</em>
+MongoDB has different places to store data at. These are called collections. Type in a name of a collection. The collection will automatically be created, if not already existing.</p>
+<p><em>Document:</em>
+The document contains your data. It is a simple cell range of key and value pairs. It is also possible to order them in a hierarchy.</p>
+<p>With every calculation one document will be stored in the selected collection.</p>
+<p><strong>MONGO.QUERY():</strong></p>
+<p><em>=MONGO.QUERY(“Stream”,”Collection”,”Query”,”Target”,”ResultKeys”,”PageSize”,”Page”,”Sort”,”Timeout”)</em></p>
+<p>To lookup data from a MongoDB collection use the function MONGO.QUERY. It is possible to access either all stored documents or a subset of them.</p>
+<p><em>Stream:</em>
+Again select the right Producer to connect to the right database.</p>
+<p><em>Collection:</em>
+Type in the collection you used in the MONGO.STORE function.</p>
+<p><em>Query:</em>
+The query filters the data and only gives back documents, which are match or are composed of the query. Define one or more key value pairs the documents you are searching for have to contain. E.g. you have saved a lot of customer information and now need the information for all customer with the name “Julia”, define a horizontal cell range containing “name” on the left and “Julia” on the right.
+To access all data just leave this section empty.</p>
+<p><em>Target:</em>
+Define where the response of the database should be displayed. Choose a cell range or =INBOX(); =OUTBOX() as a target. Be careful, the cell range maybe to small to display all information.</p>
+<p><em>Result Keys:</em>
+The Query always gives back all the information saved in a document. If you are only interested in a subset write each key in a cell and enter the cell/ cell range in the Result Key field.</p>
+<p><em>Page Size:</em>
+The Page Size defines how many results will be shown in the response of your query per page. As a default, page 1 will be returned.</p>
+<p><em>Page:</em>
+Select the page you want to get back. Example: Enter page size = 5 and page = 2. The query will return entry 6-10.</p>
+<p><em>Sort:</em>
+You can either sort by time using 1 and -1 or you can sort alphabetically by using a cell range with the key to sort with and a 1 or -1.  1 = descending; -1 = ascending.</p>
+<p><em>Timeout:</em>
+Tells the function how long to wait for a response from the database(in ms).</p>
+<p><strong>MONGO.DELETE():</strong></p>
+<p><em>=MONGO.DELETE(“Stream”,”Collection”,”Query”,”Target”,”Timeout”)</em></p>
+<p>Delete documents in a collection.</p>
+<p><em>Stream:</em>
+Select the Stream of connected to your MongoDB.</p>
+<p><em>Collection:</em>
+Enter the collection you want to adjust entries in.</p>
+<p><em>Query:</em>
+All documents with the defined key value pair/s will be deleted from the collection.</p>
+<p><em>Target:</em>
+MONGO.DELETE returns the amount of objects that have been deleted. To get this information define either a cell range of at least 2x2 or enter =INBOX()/=OUTBOX().</p>
+<p><em>Timeout:</em>
+Tells the function how long to wait for a response from the database(in ms).</p>
+<p><strong>MONGO.COUNT():</strong></p>
+<p><em>=MONGO.COUNT(“Stream”,”Collection”,”Query”,”Target”,”Timeout”)</em></p>
+<p>If you are interested in the amount of documents stored in a collection use MONGO.COUNT().</p>
+<p><em>Stream:</em>
+Select the Stream of connected to your MongoDB.</p>
+<p><em>Collection:</em>
+Enter the collection you want to count entries in.</p>
+<p><em>Query:</em>
+Enter a cell range of key value pairs. All documents with the defined key value pair/s will be counted.</p>
+<p><em>Target:</em>
+MONGO.COUNT returns the amount of objects that have been counted. To get this information define either a cell range of at least 1x2 or enter =INBOX()/=OUTBOX().</p>
+<p><em>Timeout:</em>
+Tells the function how long to wait for a response from the database(in ms).</p>
+<p><strong>MONGO.REPLACE():</strong></p>
+<p><em>=MONGO.REPLACE(“Stream”,”Collection”,”Query”,”Document”,”Upsert”)</em></p>
+<p>To replace data in a collection, use the MONGO.REPLACE() function.</p>
+<p><em>Stream:</em>
+Select the Stream of connected to your MongoDB.</p>
+<p><em>Collection:</em>
+Enter the collection you want to replace entries in.</p>
+<p><em>Query:</em>
+The query searches for documents within a collection to replace.</p>
+<p><em>Document:</em>
+Define a document to replace existing data with and enter the cell range here.</p>
+<p><em>Upsert:</em>
+TRUE or FALSE. Upsert decides, if, when a query can´t be found, the document is added to the collection or dismissed.</p>
+<p>Here is a small example:</p>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="../_images/MongoDemo.gif"><img alt="MongoDemo" src="../_images/MongoDemo.gif" style="width: 832.0px; height: 468.0px;" /></a></div>
+<div class="line"><em>All five Mongo functions used in one GIF.</em></div>
+</div>
 </div>
 <div class="section" id="influxdb">
 <span id="influx"></span><h2>InfluxDB<a class="headerlink" href="#influxdb" title="Permalink to this headline">¶</a></h2>
