@@ -1,6 +1,11 @@
 
-DRAW.CHARTSTATE
+DRAW.CHARTSTATE  
 -----------
+
+.. |star| image:: /images/star.svg
+        
+
+|star| This is a `Streamsheets Professional <https://cedalo.com/download/>`_ feature.
 
 Define a state diagram on a given drawing. A state diagram display vertical bars within a given period in a given color.
 

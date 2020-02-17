@@ -81,8 +81,8 @@
             
               <p class="caption"><span class="caption-text">User Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../maincomponents.html">Main Components</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="streammachine.html">Stream Machine</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streamsheet.html">Streamsheet</a></li>
@@ -94,14 +94,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#producers">Producers</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#security">Security</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#users">Users</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#roles">Roles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#policies">Policies</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="#security">Security</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#organization">Organization</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#labels">Labels</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#database">Database</a></li>
 </ul>
 </li>
@@ -220,33 +214,12 @@ There is a hierarchy to these resources in which Connectors form the foundation 
 </div>
 <div class="section" id="security">
 <span id="id3"></span><h2>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h2>
-<p>This section contains tools to organize user-related aspects, such as user, their roles and policies which define a role.</p>
-<div class="section" id="users">
-<h3>Users<a class="headerlink" href="#users" title="Permalink to this headline">¶</a></h3>
-<p>Here you can add, modify and delete user and set their role and security settings.
-A user must have one role but can also have several.
-The “admin” user has full control and is inseperable of its “admin role”.</p>
-</div>
-<div class="section" id="roles">
-<h3>Roles<a class="headerlink" href="#roles" title="Permalink to this headline">¶</a></h3>
-<p>Roles bundle policies and are assigned to users. If a user does not have a role, he/she is not allowed to do anything.
-The “Admin Role” is inseperable from the “admin” user and the “AdminAllPolicy”.</p>
-</div>
-<div class="section" id="policies">
-<h3>Policies<a class="headerlink" href="#policies" title="Permalink to this headline">¶</a></h3>
-<p>Policies determine what users are allowed to do. Per default users are not allowed to do anything, but policies can be granted to them.
-There are different policy categories covering “Machines”, “Streams”, “Security” and “Label”. Adjust the switches to grant or revoke rights.
-Adding a Label constrains a policy. It hereafter only impacts objects, which also have been assigned the corresponding Label.</p>
-</div>
+<p>This section contains tools to organize user-related aspects, such as user and their rights within Streamsheets.</p>
+<p>We are currently reworking this feature!</p>
 </div>
 <div class="section" id="organization">
 <span id="id4"></span><h2>Organization<a class="headerlink" href="#organization" title="Permalink to this headline">¶</a></h2>
-<p>In the Organization menu it is possible administer the label hirachy and download or restore the current database.</p>
-<div class="section" id="labels">
-<h3>Labels<a class="headerlink" href="#labels" title="Permalink to this headline">¶</a></h3>
-<p>In the Labelmanager it is possible to create, structure and assign Lable to a variety of objects. These objects include Stream Machines, Streams, Users, Roles and Policies.
-They can be used to manage authentificaion of users and further serve as a filtering mechanic in the dashboards.</p>
-</div>
+<p>In the Organization menu it is possible download or restore the current database.</p>
 <div class="section" id="database">
 <h3>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h3>
 <p>Downloading a Database saves the current version of your Streamsheets installation. All Stream Machines, Streams, users, user roles, policies and labels are being saved in one big <a class="reference internal" href="../glossary.html#term-json"><span class="xref std std-term">JSON</span></a> file.

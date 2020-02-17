@@ -148,39 +148,18 @@ Producers are very similar to :ref:`Consumers` but instead of defining an input 
 
 Security
 ````````
-This section contains tools to organize user-related aspects, such as user, their roles and policies which define a role.
+This section contains tools to organize user-related aspects, such as user and their rights within Streamsheets. 
 
-Users
---------
+We are currently reworking this feature!
 
-Here you can add, modify and delete user and set their role and security settings.
-A user must have one role but can also have several.
-The "admin" user has full control and is inseperable of its "admin role".
 
-Roles
-------
-
-Roles bundle policies and are assigned to users. If a user does not have a role, he/she is not allowed to do anything.
-The "Admin Role" is inseperable from the "admin" user and the "AdminAllPolicy".
-
-Policies
----------
-
-Policies determine what users are allowed to do. Per default users are not allowed to do anything, but policies can be granted to them.
-There are different policy categories covering "Machines", "Streams", "Security" and "Label". Adjust the switches to grant or revoke rights.
-Adding a Label constrains a policy. It hereafter only impacts objects, which also have been assigned the corresponding Label.
 
 .. _Organization:
 
 Organization
 ``````````````
-In the Organization menu it is possible administer the label hirachy and download or restore the current database.
+In the Organization menu it is possible download or restore the current database.
 
-Labels
--------
-
-In the Labelmanager it is possible to create, structure and assign Lable to a variety of objects. These objects include Stream Machines, Streams, Users, Roles and Policies.
-They can be used to manage authentificaion of users and further serve as a filtering mechanic in the dashboards.
 
 Database
 ---------
