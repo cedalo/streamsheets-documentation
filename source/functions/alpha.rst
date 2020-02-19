@@ -17,6 +17,7 @@ Alphabetical
    statistical/averageifs
    drawing/bar
    engineering/bin2dec
+   engineering/bin2float
    engineering/bin2hex
    engineering/bin2oct
    streamsheet/calc
@@ -71,6 +72,8 @@ Alphabetical
    drawing/filllineargradient
    drawing/fillpattern
    drawing/fillradialgradient
+   engineering/float2bin
+   engineering/float2hex
    drawing/fontformat
    statistical/forecast
    math/frac
@@ -81,6 +84,7 @@ Alphabetical
    streamsheet/goto
    engineering/hex2bin
    engineering/hex2dec
+   engineering/hex2float
    engineering/hex2oct
    date/hour
    logical/if
