@@ -16,6 +16,22 @@ Find out more about Streamsheets, Stream Machines and how Streams are configured
 
 A :term:`Streamsheet` runs in a :term:`Stream Machine`, processes a data stream and publishes a new stream.
 
+Protocols
+----------
+
+Streamsheets support a number of external connections. These connections can either be leveraged to consume or produce data:
+
++ MQTT
++ OPCUA
++ REST
++ SMPTP/IPOP3 (Mail)
++ MongoDB
++ InfluxDB
++ AMQP
++ UPD 
++ Kafka
++ local storage
+
 Use Cases
 ---------
 
