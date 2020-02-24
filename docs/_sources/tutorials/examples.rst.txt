@@ -17,12 +17,23 @@
     :scale: 65 %  
 .. |MongoDemo| image:: /images/MongoDemo.gif
     :scale: 65 %  
+.. |MongoS| image:: /images/MongoStore.png
+    :scale: 80 %  
+.. |MongoQ| image:: /images/MongoQuery.png
+    :scale: 80 %
+.. |MongoD| image:: /images/MongoDelete.png
+    :scale: 80 %
+.. |MongoC| image:: /images/MongoCount.png
+    :scale: 80 %
+.. |MongoR| image:: /images/MongoReplace.png
+    :scale: 80 %
 .. |influx| image:: /images/InfluxDB-Demo.gif
     :scale: 65 %  
 .. |SMTP1| image:: /images/smtp_connector.gif
     :scale: 65 %  
 .. |SMTP2| image:: /images/Loom-speedup.gif
     :scale: 65 %  
+
 
 Examples
 =========
@@ -46,7 +57,7 @@ Slack is a messenger, which offers the possibility to add self-made applications
 To begin create such an `App in Slack <https://api.slack.com/apps/>`_
 and add an Incoming `Webhook <https://api.slack.com/incoming-webhooks/>`_. This generates the REST.Request URL we will be posting information to. Choose a Channel on Slack to add your Application to. This is where we will post the information to. 
 Now we can start building an App in Streamsheets. Create a new :term:`Stream Machine` and create a :term:`JSON` Range with the key Value being “text” and the Value being any message you would like to send. 
-Create a REST Request function over the Function Wizard and select "POST" as the method. Add the created URL and select the JSON Range as the body. Choose a Target (e.g. :ref:`OUTBOX`\ ()) for  the response message of the server. Now with every new Step, the Stream Machine will send your message to Slack 😊 
+Create a REST Request function over the Function Wizard and select "POST" as the method. Add the created URL and select the JSON Range as the body. Choose a Target (e.g. a cell range) for  the response message of the server. Now with every new Step, the Stream Machine will send your message to Slack 😊 
 
 |RRP|
 
@@ -135,6 +146,8 @@ In a Streamsheet open the “Function Wizard” to gain convenient access to the
 
 *=MONGO.STORE("Stream","Collection","Document")*
 
+|MongoS|
+
 As soon as your MongoDB Connector and Producer is set up you can start storing data.
 Click on a cell, open the function wizard and select MONGO.STORE. Remember the calculation order of a Streamsheet (top to bottom, left to right), this might play a role in the structure of your logic.
 
@@ -152,6 +165,8 @@ With every calculation one document will be stored in the selected collection.
 **MONGO.QUERY():**
 
 *=MONGO.QUERY("Stream","Collection","Query","Target","ResultKeys","PageSize","Page","Sort","Timeout")*
+
+|MongoQ|
 
 To lookup data from a MongoDB collection use the function MONGO.QUERY. It is possible to access either all stored documents or a subset of them.
 
@@ -187,10 +202,12 @@ Tells the function how long to wait for a response from the database(in ms).
 
 *=MONGO.DELETE("Stream","Collection","Query","Target","Timeout")*
 
+|MongoD|
+
 Delete documents in a collection.
 
 *Stream:*
-Select the Stream of connected to your MongoDB. 
+Select the Stream connected to your MongoDB. 
 
 *Collection:*
 Enter the collection you want to adjust entries in. 
@@ -208,10 +225,12 @@ Tells the function how long to wait for a response from the database(in ms).
 
 *=MONGO.COUNT("Stream","Collection","Query","Target","Timeout")*
 
+|MongoC|
+
 If you are interested in the amount of documents stored in a collection use MONGO.COUNT().
 
 *Stream:*
-Select the Stream of connected to your MongoDB. 
+Select the Stream connected to your MongoDB. 
 
 *Collection:*
 Enter the collection you want to count entries in. 
@@ -229,10 +248,12 @@ Tells the function how long to wait for a response from the database(in ms).
 
 *=MONGO.REPLACE("Stream","Collection","Query","Document","Upsert")*
 
+|MongoR|
+
 To replace data in a collection, use the MONGO.REPLACE() function.
 
 *Stream:*
-Select the Stream of connected to your MongoDB. 
+Select the Stream connected to your MongoDB. 
 
 *Collection:*
 Enter the collection you want to replace entries in. 

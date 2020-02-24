@@ -185,6 +185,7 @@
 <li class="toctree-l2"><a class="reference internal" href="functions/statistical/averageifs.html">AVERAGEIFS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/bar.html">BAR</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/engineering/bin2dec.html">BIN2DEC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions/engineering/bin2float.html">BIN2FLOAT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/engineering/bin2hex.html">BIN2HEX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/engineering/bin2oct.html">BIN2OCT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/streamsheet/calc.html">CALC</a></li>
@@ -239,6 +240,8 @@
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/filllineargradient.html">FILLLINEARGRADIENT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/fillpattern.html">FILLPATTERN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/fillradialgradient.html">FILLRADIALGRADIENT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions/engineering/float2bin.html">FLOAT2BIN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions/engineering/float2hex.html">FLOAT2HEX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/fontformat.html">FONTFORMAT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/statistical/forecast.html">FORECAST</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/math/frac.html">FRAC</a></li>
@@ -249,6 +252,7 @@
 <li class="toctree-l2"><a class="reference internal" href="functions/streamsheet/goto.html">GOTO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/engineering/hex2bin.html">HEX2BIN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/engineering/hex2dec.html">HEX2DEC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions/engineering/hex2float.html">HEX2FLOAT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/engineering/hex2oct.html">HEX2OCT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/date/hour.html">HOUR</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/logical/if.html">IF</a></li>
@@ -258,6 +262,10 @@
 <li class="toctree-l2"><a class="reference internal" href="functions/streamsheet/inboxmetadata.html">INBOXMETADATA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/lookup/index.html">INDEX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/lookup/indirect.html">INDIRECT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions/streamsheet/influxdrop.html">INFLUX.DROP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions/streamsheet/influxselect.html">INFLUX.SELECT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions/streamsheet/influxshow.html">INFLUX.SHOW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions/streamsheet/influxstore.html">INFLUX.STORE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/math/int.html">INT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/info/iserr.html">ISERR</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/info/iserror.html">ISERROR</a></li>
@@ -420,13 +428,17 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="functions/engineering.html">Engineering</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="functions/engineering/bin2dec.html">BIN2DEC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions/engineering/bin2float.html">BIN2FLOAT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/engineering/bin2hex.html">BIN2HEX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/engineering/bin2oct.html">BIN2OCT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/engineering/dec2bin.html">DEC2BIN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/engineering/dec2hex.html">DEC2HEX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/engineering/dec2oct.html">DEC2OCT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions/engineering/float2bin.html">FLOAT2BIN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions/engineering/float2hex.html">FLOAT2HEX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/engineering/hex2bin.html">HEX2BIN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/engineering/hex2dec.html">HEX2DEC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions/engineering/hex2float.html">HEX2FLOAT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/engineering/hex2oct.html">HEX2OCT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/engineering/oct2bin.html">OCT2BIN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/engineering/oct2dec.html">OCT2DEC</a></li>
@@ -534,6 +546,10 @@
 <li class="toctree-l2"><a class="reference internal" href="functions/streamsheet/inbox.html">INBOX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/streamsheet/inboxdata.html">INBOXDATA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/streamsheet/inboxmetadata.html">INBOXMETADATA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions/streamsheet/influxdrop.html">INFLUX.DROP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions/streamsheet/influxselect.html">INFLUX.SELECT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions/streamsheet/influxshow.html">INFLUX.SHOW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions/streamsheet/influxstore.html">INFLUX.STORE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/streamsheet/json.html">JSON</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/streamsheet/kafkacommand.html">KAFKA.COMMAND</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/streamsheet/kafkapublish.html">KAFKA.PUBLISH</a></li>

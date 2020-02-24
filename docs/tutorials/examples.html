@@ -184,7 +184,7 @@ Slack is a messenger, which offers the possibility to add self-made applications
 <p>To begin create such an <a class="reference external" href="https://api.slack.com/apps/">App in Slack</a>
 and add an Incoming <a class="reference external" href="https://api.slack.com/incoming-webhooks/">Webhook</a>. This generates the REST.Request URL we will be posting information to. Choose a Channel on Slack to add your Application to. This is where we will post the information to.
 Now we can start building an App in Streamsheets. Create a new <a class="reference internal" href="../glossary.html#term-stream-machine"><span class="xref std std-term">Stream Machine</span></a> and create a <a class="reference internal" href="../glossary.html#term-json"><span class="xref std std-term">JSON</span></a> Range with the key Value being “text” and the Value being any message you would like to send.
-Create a REST Request function over the Function Wizard and select “POST” as the method. Add the created URL and select the JSON Range as the body. Choose a Target (e.g. <a class="reference internal" href="../functions/streamsheet/outbox.html#outbox"><span class="std std-ref">OUTBOX</span></a>()) for  the response message of the server. Now with every new Step, the Stream Machine will send your message to Slack 😊</p>
+Create a REST Request function over the Function Wizard and select “POST” as the method. Add the created URL and select the JSON Range as the body. Choose a Target (e.g. a cell range) for  the response message of the server. Now with every new Step, the Stream Machine will send your message to Slack 😊</p>
 <p><a class="reference internal" href="../_images/RestRequestPost.gif"><img alt="RRP" src="../_images/RestRequestPost.gif" style="width: 832.0px; height: 468.0px;" /></a></p>
 <p><em>REST Request with method “POST”</em></p>
 <p><strong>2. Method “GET”:</strong>
@@ -241,6 +241,7 @@ Setup a Producer on top of the just created Connector and you are ready to go.</
 <p>In a Streamsheet open the “Function Wizard” to gain convenient access to the MongoDB functions.</p>
 <p><strong>MONGO.STORE():</strong></p>
 <p><em>=MONGO.STORE(“Stream”,”Collection”,”Document”)</em></p>
+<p><a class="reference internal" href="../_images/MongoStore.png"><img alt="MongoS" src="../_images/MongoStore.png" style="width: 303.2px; height: 135.20000000000002px;" /></a></p>
 <p>As soon as your MongoDB Connector and Producer is set up you can start storing data.
 Click on a cell, open the function wizard and select MONGO.STORE. Remember the calculation order of a Streamsheet (top to bottom, left to right), this might play a role in the structure of your logic.</p>
 <p><em>Stream:</em>
@@ -252,6 +253,7 @@ The document contains your data. It is a simple cell range of key and value pair
 <p>With every calculation one document will be stored in the selected collection.</p>
 <p><strong>MONGO.QUERY():</strong></p>
 <p><em>=MONGO.QUERY(“Stream”,”Collection”,”Query”,”Target”,”ResultKeys”,”PageSize”,”Page”,”Sort”,”Timeout”)</em></p>
+<p><a class="reference internal" href="../_images/MongoQuery.png"><img alt="MongoQ" src="../_images/MongoQuery.png" style="width: 452.8px; height: 105.60000000000001px;" /></a></p>
 <p>To lookup data from a MongoDB collection use the function MONGO.QUERY. It is possible to access either all stored documents or a subset of them.</p>
 <p><em>Stream:</em>
 Again select the right Producer to connect to the right database.</p>
@@ -274,9 +276,10 @@ You can either sort by time using 1 and -1 or you can sort alphabetically by usi
 Tells the function how long to wait for a response from the database(in ms).</p>
 <p><strong>MONGO.DELETE():</strong></p>
 <p><em>=MONGO.DELETE(“Stream”,”Collection”,”Query”,”Target”,”Timeout”)</em></p>
+<p><a class="reference internal" href="../_images/MongoDelete.png"><img alt="MongoD" src="../_images/MongoDelete.png" style="width: 353.6px; height: 102.4px;" /></a></p>
 <p>Delete documents in a collection.</p>
 <p><em>Stream:</em>
-Select the Stream of connected to your MongoDB.</p>
+Select the Stream connected to your MongoDB.</p>
 <p><em>Collection:</em>
 Enter the collection you want to adjust entries in.</p>
 <p><em>Query:</em>
@@ -287,9 +290,10 @@ MONGO.DELETE returns the amount of objects that have been deleted. To get this i
 Tells the function how long to wait for a response from the database(in ms).</p>
 <p><strong>MONGO.COUNT():</strong></p>
 <p><em>=MONGO.COUNT(“Stream”,”Collection”,”Query”,”Target”,”Timeout”)</em></p>
+<p><a class="reference internal" href="../_images/MongoCount.png"><img alt="MongoC" src="../_images/MongoCount.png" style="width: 345.6px; height: 88.80000000000001px;" /></a></p>
 <p>If you are interested in the amount of documents stored in a collection use MONGO.COUNT().</p>
 <p><em>Stream:</em>
-Select the Stream of connected to your MongoDB.</p>
+Select the Stream connected to your MongoDB.</p>
 <p><em>Collection:</em>
 Enter the collection you want to count entries in.</p>
 <p><em>Query:</em>
@@ -300,9 +304,10 @@ MONGO.COUNT returns the amount of objects that have been counted. To get this in
 Tells the function how long to wait for a response from the database(in ms).</p>
 <p><strong>MONGO.REPLACE():</strong></p>
 <p><em>=MONGO.REPLACE(“Stream”,”Collection”,”Query”,”Document”,”Upsert”)</em></p>
+<p><a class="reference internal" href="../_images/MongoReplace.png"><img alt="MongoR" src="../_images/MongoReplace.png" style="width: 410.40000000000003px; height: 154.4px;" /></a></p>
 <p>To replace data in a collection, use the MONGO.REPLACE() function.</p>
 <p><em>Stream:</em>
-Select the Stream of connected to your MongoDB.</p>
+Select the Stream connected to your MongoDB.</p>
 <p><em>Collection:</em>
 Enter the collection you want to replace entries in.</p>
 <p><em>Query:</em>
