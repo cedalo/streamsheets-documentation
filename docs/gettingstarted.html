@@ -81,8 +81,8 @@
             
               <p class="caption"><span class="caption-text">User Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="maincomponents.html">Main Components</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
@@ -176,8 +176,8 @@
 </div>
 <div class="line-block">
 <div class="line">Now, this cell range is not only a range in the sheet but also a JSON object which is continuously built with every calculation step of the sheet.</div>
+<div class="line">To send these JSON objects and this way create an outgoing data stream, we need Step 3.</div>
 </div>
-<p>To send these JSON objects and this way create an outgoing data stream, we need Step 3.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><strong>Step 3: Create a Consumer and Producer</strong></div>
@@ -206,6 +206,7 @@
 <div class="line"><strong>Step 4: Produce a Message stream</strong></div>
 <div class="line"><br /></div>
 <div class="line"><a class="reference internal" href="_images/Step4.gif"><img alt="Step4" src="_images/Step4.gif" style="width: 832.0px; height: 468.0px;" /></a></div>
+<div class="line"><em>Note: In version 1.5 the icon for the stream functions was changed</em> <a class="reference internal" href="_images/Streamfunction.png"><img alt="StreamF" src="_images/Streamfunction.png" style="width: 22.5px; height: 21.75px;" /></a></div>
 <div class="line"><br /></div>
 <div class="line">Now, we switch back to our Stream Machine. Should you have closed the tab, just go to the dashboard via the burger menu and open it again.</div>
 <div class="line">To send the JSON Range, we select a cell beneath the range and click “Insert Stream Function” in the tool bar (it is the arrowhead). Choose <a class="reference internal" href="functions/streamsheet/mqttpublish.html#mqttpublish"><span class="std std-ref">MQTT.PUBLISH</span></a> and as Stream the Producer you just created. The message parameter should already be prefilled referencing to the JSON Range above. If that is not the case, select the JSON range. To complete =MQTT.PUBLISH() enter the MQTT topic you listed in the Consumer, possibly “catsanddogs”, and click OK. Then, start the Stream Machine by clicking “Play” in the blue bar on the top.</div>

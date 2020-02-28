@@ -33,6 +33,8 @@
     :scale: 65 %  
 .. |SMTP2| image:: /images/Loom-speedup.gif
     :scale: 65 %  
+.. |StreamF| image:: /images/Streamfunction.png
+    :scale: 75%
 
 
 Examples
@@ -59,9 +61,9 @@ and add an Incoming `Webhook <https://api.slack.com/incoming-webhooks/>`_. This 
 Now we can start building an App in Streamsheets. Create a new :term:`Stream Machine` and create a :term:`JSON` Range with the key Value being “text” and the Value being any message you would like to send. 
 Create a REST Request function over the Function Wizard and select "POST" as the method. Add the created URL and select the JSON Range as the body. Choose a Target (e.g. a cell range) for  the response message of the server. Now with every new Step, the Stream Machine will send your message to Slack 😊 
 
-|RRP|
-
-*REST Request with method "POST"*
+| |RRP|
+| *REST Request with method "POST"*
+| *Note: In version 1.5 the icon for the stream functions was changed* |StreamF|
 
 **2. Method "GET":**
 The "GET" method is very similar to the "POST" method, but in this case we do not need to define any message, because we will be consuming messages. 
@@ -72,9 +74,9 @@ It displays all information regarding Jon Snow in a JSON-Object.
 So lets again create a new Stream Machine. Add a REST Request Function with the help of the Function Wizard. Enter the URL, select "GET" as the method and chose the Target, where the information should be displayed (e.g. :ref:`INBOX <inboxf>`\ ()). Confirm your input by clicking “OK”.
 After starting the Stream Machine the requested information will now appear in the Target Range. 
 
-|RRG1|
-
-*REST Request with method "GET"*
+| |RRG1|
+| *REST Request with method "GET"*
+| *Note: In version 1.5 the icon for the stream functions was changed* |StreamF|
 
 
 
@@ -105,16 +107,16 @@ A second way to receive OPC UA Messages in a :term:`Streamsheet` is over the :re
 
 With every new calculation step an :ref:`OPCUA.READ <opcuaread>` will prompt a new message in the :ref:`Inbox`. 
 
-|OPCUAGif|
-
-*Recieve OPC UA Data over Inbox Consumer and OPCUA.READ* 
+| |OPCUAGif|
+| *Note: In version 1.5 the icon for the stream functions was changed* |StreamF|
+| *Recieve OPC UA Data over Inbox Consumer and OPCUA.READ* 
 
 **OPCUA.WRITE:**
 It is also possible to update existing OPC UA Variables with the OPCUA.WRITE formular. Similiar to before, use the Function Wizard and select OPCUA.WRITE. Choose the right Producer, add the NODE Id and Target Range.
 
-|OPCUAWrite|
-
-*Change a node value on a OPC UA server with OPCUA.WRITE*
+| |OPCUAWrite|
+| *Note: In version 1.5 the icon for the stream functions was changed* |StreamF|
+| *Change a node value on a OPC UA server with OPCUA.WRITE*
 
 History
 --------
@@ -273,6 +275,7 @@ Here is a small example:
 
 | |MongoDemo|
 | *All five Mongo functions used in one GIF.*
+| *Note: In version 1.5 the icon for the stream functions was changed* |StreamF|
 
 .. _influx:
 
@@ -331,9 +334,9 @@ Now we are ready to switch to a Streamsheet. To insert the “\ :ref:`MAIL.SEND<
 
 To prevent spam we recommend adding a condition to the MAIL.SEND function 😄
 
-|SMTP2|
-
-*Sending mail`s with a condition*
+| |SMTP2|
+| *Sending mail`s with a condition*
+| *Note: In version 1.5 the icon for the stream functions was changed* |StreamF|
 
 Forum 
 ------

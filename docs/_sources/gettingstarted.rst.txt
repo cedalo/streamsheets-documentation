@@ -10,6 +10,8 @@
     :scale: 65 %  
 .. |optionalstep| image:: /images/optionalstep.gif
     :scale: 65 %
+.. |StreamF| image:: /images/Streamfunction.png
+    :scale: 75%
 
 Getting Started
 ===============
@@ -32,7 +34,7 @@ Getting Started
 | Since we do not have a real data streams connected to our application yet, we simulate some to work with. A simple way to do this is to use the function =\ :ref:`RANDBETWEEN`\ (). It creates random values between a minimum and a maximum. Let´s create two values, one beneath the other and name them. Write the names left of the values, e.g. “Cats” and “Dogs”. Then, select all four cells, right-click and define them as a :term:`JSON` Range. A JSON is essentially a number of key-value pairs in which the keys can be thought of as the names for the respective values
 
 | Now, this cell range is not only a range in the sheet but also a JSON object which is continuously built with every calculation step of the sheet.
-To send these JSON objects and this way create an outgoing data stream, we need Step 3.
+| To send these JSON objects and this way create an outgoing data stream, we need Step 3.
 
 |
 | **Step 3: Create a Consumer and Producer**
@@ -57,6 +59,7 @@ To send these JSON objects and this way create an outgoing data stream, we need 
 | **Step 4: Produce a Message stream**
 |
 | |Step4|
+| *Note: In version 1.5 the icon for the stream functions was changed* |StreamF|
 |
 | Now, we switch back to our Stream Machine. Should you have closed the tab, just go to the dashboard via the burger menu and open it again. 
 | To send the JSON Range, we select a cell beneath the range and click “Insert Stream Function” in the tool bar (it is the arrowhead). Choose :ref:`MQTT.PUBLISH <mqttpublish>` and as Stream the Producer you just created. The message parameter should already be prefilled referencing to the JSON Range above. If that is not the case, select the JSON range. To complete =MQTT.PUBLISH() enter the MQTT topic you listed in the Consumer, possibly “catsanddogs”, and click OK. Then, start the Stream Machine by clicking “Play” in the blue bar on the top.
