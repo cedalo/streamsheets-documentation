@@ -32,7 +32,7 @@ Performs a STORE query on your Influx database. You can use the :ref:`Function W
    * - Target
      - Optional. Defines a cell range to show the query result (key/value-pairs). Currently only the fully qualified measurement name is returned.
    * - Duration
-     - Optional. Defines how long stored values should be kept. Duration is a number plus a time unit. Valid units are  "ms" for milliseconds, "s" for second, "m" for minute, "h" for hour, "d" for day and "w" for week. To specifiy infinity use "INF". Defaults to 1h.
+     - Optional. Defines how long stored values should be kept. Duration is a number plus a time unit. Valid units are  "ms" for milliseconds, "s" for second, "m" for minute, "h" for hour, "d" for day and "w" for week. To specifiy infinity use "INF". Minimum value is one hour.
    * - Timeout
      - Optional. Defines Timeout to perform query. 
 
@@ -49,6 +49,6 @@ TRUE, if successful.
    * - Function
      - Result
      - Comment
-   * - =INFLUX.STORE("Producer", "measures", { v1: "hello" },,D1:E1)
+   * - =INFLUX.STORE("Producer", "measures", { v1: "hello" },,D1:E1,"1h")
      - TRUE
      - Stores "hello" under v1 to "measures". Its fully qualified name ("1h.measures") will be written to cell E1.
