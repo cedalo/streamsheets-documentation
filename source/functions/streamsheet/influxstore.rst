@@ -32,7 +32,7 @@ Performs a STORE query on your Influx database. You can use the :ref:`Function W
    * - Target
      - Optional. Defines a cell range to show the query result (key/value-pairs). Currently only the fully qualified measurement name is returned.
    * - Duration
-     - Optional. Defines how long stored values should be kept. Duration is a number plus a time unit. Valid units are  "ms" for milliseconds, "s" for second, "m" for minute, "h" for hour, "d" for day and "w" for week. To specifiy infinity use "INF". Minimum value is one hour.
+     - Optional. Defines how long stored values should be kept. Duration is a number plus a time unit. Valid units are  "ms" for milliseconds, "s" for second, "m" for minute, "h" for hour, "d" for day and "w" for week. To specifiy infinity use "INF". Minimum value is one hour. Default value is "INF".
    * - Timeout
      - Optional. Defines Timeout to perform query. 
 
