@@ -42,7 +42,7 @@ A query json consist of following clauses:
    * - select
      - Defines the values to query. Multiple values are separated by comma. The wildcard * will select all values.
    * - aggregate
-     - Optional. Defines the aggregation method to use for each value separted by comma. Must match the number of values in select clause. See below for a complete list of defined aggregation methods. Defaults to 0.
+     - Optional. Defines the aggregation method to use for each value separted by comma. Must match the number of values in select clause. See below for a complete list of defined aggregation methods. Defaults to none.
    * - where
      - Optional. Only values which fulfill the conditiondefined by the where clause are taken. To compare values >, >=, <, <=, = != are supported. Use AND and OR to combine conditions.
 
@@ -62,7 +62,7 @@ A query json consist of following clauses:
      - JSON(A1:B3)
    * - 2
      - aggregate
-     - 9
+     - sum
      - will sum up all values of v1
    * - 3
      - where
@@ -78,7 +78,7 @@ A query json consist of following clauses:
      - JSON(A5:B6)
    * - 6
      - aggregate
-     - 9, 4
+     - sum, max
      - will sum up v1 and determine maximum of v2
    * - 7
      - 
@@ -90,7 +90,7 @@ A query json consist of following clauses:
      - JSON(A8:B10)
    * - 9
      - aggregate
-     - 1
+     - avg
      - will calculate the avarage of all values
    * - 10
      - where
@@ -101,41 +101,30 @@ A query json consist of following clauses:
 **Aggregation Methods**
 
 .. list-table::
-   :widths: 10 15 75
+   :widths: 20 80
    :header-rows: 1
 
-   * - Number
-     - Method
+   * - Method
      - Description
-   * - 0
-     - NONE
+   * - none
      - No aggregation is performed and the last valid value of specified DataCell is returned.
-   * - 1
-     - AVERAGE
+   * - avg
      - Calculates the average of all received values.
-   * - 2
-     - COUNT
-     - Counts the number of received values.
-   * - 3
-     - COUNTA
+   * - count
+     - Counts the number of received number values.
+   * - counta
      - Counts all values which are not zero.
-   * - 4
-     - MAX
+   * - max
      - Determines the maximum of all received values.
-   * - 5
-     - MIN
+   * - min
      - Determines the minimum of all received values.
-   * - 6
-     - PRODUCT
+   * - product
      - Calculates the product of all received values.
-   * - 7
-     - STDEV.S
+   * - stdevs
      - Calculates the standard deviation of all recieved values. 
-   * - 8
-     - STDEV.P
+   * - stdevp
      - Currently **not available**!!
-   * - 9
-     - SUM
+   * - sum
      - Calculates the sum of all received values.
 
 
