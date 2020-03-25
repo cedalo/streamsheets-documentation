@@ -206,8 +206,6 @@ Alphabetical
    stack/stacksort
    statistical/stdev
    text/substitute
-   timeseries/timestore
-   timeseries/timequery
    streamsheet/subtree
    math/sum
    math/sumif
@@ -217,7 +215,9 @@ Alphabetical
    math/tan
    text/text
    date/time
-   streamsheet/timeaggregate
+   timeseries/timeaggregate
+   timeseries/timestore
+   timeseries/timequery
    date/timevalue
    streamsheet/triggerstep
    math/trunc
