@@ -23,7 +23,7 @@ Gets data from your Mongo database. You can use the :ref:`Function Wizard <funct
    * - Collection
      - Choose an existing collection, where the item is stored.
    * - QueryJSON
-     - Define a query using a :term:`JSON` cell range, which defines the object(s) to be deleted.
+     - Define a query using a :term:`JSON` cell range, which defines the object(s) to searched for.
    * - Target
      - Defines a place to show query result.
    * - ResultKeys

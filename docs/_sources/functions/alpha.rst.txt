@@ -215,7 +215,9 @@ Alphabetical
    math/tan
    text/text
    date/time
-   streamsheet/timeaggregate
+   timeseries/timeaggregate
+   timeseries/timestore
+   timeseries/timequery
    date/timevalue
    streamsheet/triggerstep
    math/trunc

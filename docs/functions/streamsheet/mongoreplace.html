@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>MONGO.AGGREGATE &mdash; Streamsheets Documentation 1.0.0 documentation</title>
+  <title>MONGO.REPLACE &mdash; Streamsheets Documentation 1.0.0 documentation</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="../../_static/theme_override.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="MONGO.COUNT" href="mongocount.html" />
-    <link rel="prev" title="JSON" href="json.html" /> 
+    <link rel="next" title="OPCUA.READ" href="opcuaread.html" />
+    <link rel="prev" title="MONGO.COUNT" href="mongocount.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -131,10 +131,11 @@
 <li class="toctree-l3"><a class="reference internal" href="loopcount.html">LOOPCOUNT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="loopindex.html">LOOPINDEX</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mailsend.html">MAIL.SEND</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">MONGO.AGGREGATE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mongoaggregate.html">MONGO.AGGREGATE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mongocount.html">MONGO.COUNT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mongodelete.html">MONGO.DELETE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mongoquery.html">MONGO.QUERY</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">MONGO.REPLACE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mongostore.html">MONGO.STORE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="movevalues.html">MOVEVALUES</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mqttpublish.html">MQTT.PUBLISH</a></li>
@@ -220,7 +221,7 @@
         
           <li><a href="../streamsheet.html">Streamsheet</a> &raquo;</li>
         
-      <li>MONGO.AGGREGATE</li>
+      <li>MONGO.REPLACE</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -237,11 +238,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="mongo-aggregate">
-<span id="mongoaggregate"></span><h1>MONGO.AGGREGATE<a class="headerlink" href="#mongo-aggregate" title="Permalink to this headline">¶</a></h1>
-<p>Gets aggregated data from your Mongo database. You can use the <a class="reference internal" href="../../tutorials/uielements.html#functionwizard"><span class="std std-ref">Function Wizard</span></a> for this function.</p>
+  <div class="section" id="mongo-replace">
+<span id="mongoreplace"></span><h1>MONGO.REPLACE<a class="headerlink" href="#mongo-replace" title="Permalink to this headline">¶</a></h1>
+<p>Replaces elements in a Mongo database. You can use the <a class="reference internal" href="../../tutorials/uielements.html#functionwizard"><span class="std std-ref">Function Wizard</span></a> for this function. Only replaces one entry at a time.</p>
 <p><strong>Syntax</strong></p>
-<p>=<a class="reference internal" href="../../glossary.html#term-mongo"><span class="xref std std-term">MONGO</span></a>.AGGREGATE(<a class="reference internal" href="../../glossary.html#term-producer"><span class="xref std std-term">Producer</span></a>, Collection, Aggregate JSON, Target[, Result Keys, Timeout])</p>
+<p>=<a class="reference internal" href="../../glossary.html#term-mongo"><span class="xref std std-term">MONGO</span></a>.REPLACE(<a class="reference internal" href="../../glossary.html#term-producer"><span class="xref std std-term">Producer</span></a>, Collection, Query, Document[, Upsert])</p>
 <p><strong>Arguments</strong></p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -255,28 +256,44 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Producer</p></td>
-<td><p>Producer to use for aggregating. The database name is configured in the affiliated <a class="reference internal" href="../../glossary.html#term-connector"><span class="xref std std-term">Connector</span></a>.</p></td>
+<td><p>Producer to use for counting. The database name is configured in the affiliated <a class="reference internal" href="../../glossary.html#term-connector"><span class="xref std std-term">Connector</span></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Collection</p></td>
-<td><p>Choose an existing collection, where the items are stored.</p></td>
+<td><p>Choose an existing collection, where the item is stored.</p></td>
 </tr>
-<tr class="row-even"><td><p>Aggregate JSON</p></td>
-<td><p>Define an aggregation using a <a class="reference internal" href="../../glossary.html#term-json"><span class="xref std std-term">JSON</span></a> cell range.</p></td>
+<tr class="row-even"><td><p>Query</p></td>
+<td><p>Define a query using a <a class="reference internal" href="../../glossary.html#term-json"><span class="xref std std-term">JSON</span></a> cell range, which defines the document to be replaced.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Target</p></td>
-<td><p>Defines a place to show aggregation result.</p></td>
+<tr class="row-odd"><td><p>Document</p></td>
+<td><p>Defines the key-value pair(s) to be replacing the old entry.</p></td>
 </tr>
-<tr class="row-even"><td><p>Result Keys</p></td>
-<td><p>Optional. Filter the result.</p></td>
-</tr>
-<tr class="row-odd"><td><p>Timeout</p></td>
-<td><p>Optional. Define Timeout.</p></td>
+<tr class="row-even"><td><p>Upsert</p></td>
+<td><p>Optional Parameter to define, if a new document will be created when the query can not find a document to be replaced.  Default = FALSE</p></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
 <p>TRUE, if successful.</p>
 <p><strong>Examples</strong></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 45%" />
+<col style="width: 15%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Result</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>=MONGO.REPLACE(“Producer”, “TestCollection”, <a class="reference internal" href="json.html#json"><span class="std std-ref">JSON</span></a>(A1:B4), <a class="reference internal" href="json.html#json"><span class="std std-ref">JSON</span></a>(C1:D4))</p></td>
+<td><p>TRUE</p></td>
+<td><p>The Query looks for a document in the collection which matches the A1:B4 key-value pairs. The found document will be deleted and the new document takes its place. If nothing is found to be replaced, no action will occur.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 
 
@@ -287,10 +304,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mongocount.html" class="btn btn-neutral float-right" title="MONGO.COUNT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="opcuaread.html" class="btn btn-neutral float-right" title="OPCUA.READ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="json.html" class="btn btn-neutral" title="JSON" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mongocount.html" class="btn btn-neutral" title="MONGO.COUNT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

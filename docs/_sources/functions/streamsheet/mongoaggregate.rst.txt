@@ -19,7 +19,7 @@ Gets aggregated data from your Mongo database. You can use the :ref:`Function Wi
    * - Name
      - Description
    * - Producer
-     - Producer to use for deleting. The database name is configured in the affiliated :term:`Connector`.
+     - Producer to use for aggregating. The database name is configured in the affiliated :term:`Connector`.
    * - Collection
      - Choose an existing collection, where the items are stored.
    * - Aggregate JSON

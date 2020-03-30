@@ -43,7 +43,7 @@ The last part of the key of the data value to write.
    * - Function
      - Result
      - Comment
-   * - =WRITE(:ref:`OUTBOXDATA`\ ("Message","Customer", "Name"), "Maier", "String")
+   * - | =WRITE(:ref:`OUTBOXDATA`\ ("Message","Customer", "Name"), "Maier", "String")
      - | Outbox Message:
        | |WRITE|
      - | Example to write a value to a JSON object in the outbox. 
@@ -52,7 +52,7 @@ The last part of the key of the data value to write.
        | |ArrayIn|
      - | Outbox Message: 
        | |ArrayOut|
-     -  You can also direct data directly from the Inbox into the Outbox. In this example the "Units" array from the Inbox is automatically transfered to the outbox.
+     -  You can also direct data from the Inbox into the Outbox. In this example the "Units" array from the Inbox is automatically transfered to the Outbox.
 
 
 
