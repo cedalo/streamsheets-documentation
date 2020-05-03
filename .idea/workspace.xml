@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2100e23-455d-41ab-9757-98c59aa2986d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/source/functions/drawing/axis.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/functions/drawing/series.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/functions/drawing/seriestime.rst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/functions/drawing/drawchartstate.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/functions/drawing/drawchartstate.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/functions/alpha.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/functions/alpha.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/functions/drawing/drawchart.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/functions/drawing/drawstreamchart.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/functions/drawing/drawchartstate.rst" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +27,6 @@
   <component name="ProjectId" id="1RvPZu0k3l2zVBEteVZr6rWkLWL" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -34,7 +38,7 @@
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="" />
     <property name="node.js.selected.package.standard" value="" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="C:/Program Files/nodejs/node" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="$PROJECT_DIR$/../Program Files/nodejs/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
   </component>
@@ -42,18 +46,6 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\streamsheets-documentation\source\functions\drawing" />
     </key>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -73,7 +65,9 @@
       <workItem from="1579268978982" duration="810000" />
       <workItem from="1579277542822" duration="83000" />
       <workItem from="1579529829096" duration="134000" />
-      <workItem from="1579616451364" duration="23000" />
+      <workItem from="1579616451364" duration="83000" />
+      <workItem from="1588422090115" duration="474000" />
+      <workItem from="1588499445552" duration="1350000" />
     </task>
     <task id="LOCAL-00001" summary="update close parameter default">
       <created>1574856348630</created>
@@ -124,11 +118,18 @@
       <option name="project" value="LOCAL" />
       <updated>1579277618904</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add scale font parameter for DRAW.CHARTSTATE">
+      <created>1579616502011</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1579616502011</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update close parameter default" />
@@ -137,32 +138,17 @@
     <MESSAGE value="update container parameter" />
     <MESSAGE value="add DRAW.CHARTSTATE docs" />
     <MESSAGE value="update DRAW.CHARTSTATE docs" />
-    <option name="LAST_COMMIT_MESSAGE" value="update DRAW.CHARTSTATE docs" />
+    <MESSAGE value="add scale font parameter for DRAW.CHARTSTATE" />
+    <option name="LAST_COMMIT_MESSAGE" value="add scale font parameter for DRAW.CHARTSTATE" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1651" y="369" key="CommitChangelistDialog2" timestamp="1579277617873">
-      <screen x="0" y="0" width="3072" height="1698" />
+    <state x="773" y="318" width="1029" height="733" key="find.popup" timestamp="1588422381522">
+      <screen x="0" y="0" width="2133" height="1169" />
     </state>
-    <state x="1008" y="-1854" key="CommitChangelistDialog2/0.0.2133.1169/-368.-2160.2560.1409@-368.-2160.2560.1409" timestamp="1579187476431" />
-    <state x="1651" y="369" key="CommitChangelistDialog2/0.0.3072.1698/378.2160.2133.1169@0.0.3072.1698" timestamp="1579277617873" />
-    <state x="1619" y="508" key="Vcs.Push.Dialog.v2" timestamp="1579277620572">
-      <screen x="0" y="0" width="3072" height="1698" />
+    <state x="773" y="318" width="1029" height="733" key="find.popup/0.0.2133.1169@0.0.2133.1169" timestamp="1588422381522" />
+    <state x="730" y="258" width="672" height="678" key="search.everywhere.popup" timestamp="1588422185457">
+      <screen x="0" y="0" width="2133" height="1169" />
     </state>
-    <state x="981" y="-1738" key="Vcs.Push.Dialog.v2/0.0.2133.1169/-368.-2160.2560.1409@-368.-2160.2560.1409" timestamp="1579187479657" />
-    <state x="1619" y="508" key="Vcs.Push.Dialog.v2/0.0.3072.1698/378.2160.2133.1169@0.0.3072.1698" timestamp="1579277620572" />
-    <state x="451" y="-1570" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579187428266">
-      <screen x="-368" y="-2160" width="2560" height="1409" />
-    </state>
-    <state x="451" y="-1570" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2133.1169/-368.-2160.2560.1409@-368.-2160.2560.1409" timestamp="1579187428266" />
-    <state x="845" y="-2031" width="1104" height="971" key="find.popup" timestamp="1579184286048">
-      <screen x="-368" y="-2160" width="2560" height="1409" />
-    </state>
-    <state x="845" y="-2031" width="1104" height="971" key="find.popup/0.0.2133.1169/-368.-2160.2560.1409@-368.-2160.2560.1409" timestamp="1579184286048" />
-    <state x="1455" y="156" width="1324" height="1170" key="find.popup/0.0.3072.1698/378.2160.2133.1169@0.0.3072.1698" timestamp="1576666957242" />
-    <state x="1689" y="370" width="672" height="678" key="search.everywhere.popup" timestamp="1579529838483">
-      <screen x="0" y="0" width="3072" height="1698" />
-    </state>
-    <state x="1040" y="-1853" width="672" height="563" key="search.everywhere.popup/0.0.2133.1169/-368.-2160.2560.1409@-368.-2160.2560.1409" timestamp="1579186426358" />
-    <state x="1689" y="370" width="672" height="678" key="search.everywhere.popup/0.0.3072.1698/378.2160.2133.1169@0.0.3072.1698" timestamp="1579529838483" />
+    <state x="730" y="258" width="672" height="678" key="search.everywhere.popup/0.0.2133.1169@0.0.2133.1169" timestamp="1588422185457" />
   </component>
 </project>
