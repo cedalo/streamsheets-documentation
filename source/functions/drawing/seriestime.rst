@@ -2,7 +2,7 @@
 SERIESTIME
 -----------
 
-Defines the data source settings for a chart series based on time series created by TIMEAGGREGATE and INFLUX.QUERY. These functions
+Defines the data source settings for a chart series based on time series created by TIMEAGGREGATE, TIME.QUERY and INFLUX.QUERY. These functions
 create a table with field and values that can be used in the chart series.
 
 **Syntax**
