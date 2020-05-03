@@ -18,6 +18,7 @@ Alphabetical
    drawing/axis
    drawing/bar
    engineering/bin2dec
+   engineering/bin2float
    engineering/bin2hex
    engineering/bin2oct
    streamsheet/calc
@@ -71,6 +72,8 @@ Alphabetical
    drawing/filllineargradient
    drawing/fillpattern
    drawing/fillradialgradient
+   engineering/float2bin
+   engineering/float2hex
    drawing/fontformat
    statistical/forecast
    math/frac
@@ -81,6 +84,7 @@ Alphabetical
    streamsheet/goto
    engineering/hex2bin
    engineering/hex2dec
+   engineering/hex2float
    engineering/hex2oct
    date/hour
    logical/if
@@ -90,6 +94,10 @@ Alphabetical
    streamsheet/inboxmetadata
    lookup/index
    lookup/indirect
+   streamsheet/influxdrop
+   streamsheet/influxselect
+   streamsheet/influxshow
+   streamsheet/influxstore
    math/int
    info/iserr
    info/iserror
@@ -209,7 +217,9 @@ Alphabetical
    math/tan
    text/text
    date/time
-   streamsheet/timeaggregate
+   timeseries/timeaggregate
+   timeseries/timestore
+   timeseries/timequery
    date/timevalue
    streamsheet/triggerstep
    math/trunc

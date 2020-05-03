@@ -81,8 +81,8 @@
             
               <p class="caption"><span class="caption-text">User Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../maincomponents.html">Main Components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
@@ -120,6 +120,10 @@
 <li class="toctree-l3"><a class="reference internal" href="streamsheet/inbox.html">INBOX</a></li>
 <li class="toctree-l3"><a class="reference internal" href="streamsheet/inboxdata.html">INBOXDATA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="streamsheet/inboxmetadata.html">INBOXMETADATA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="streamsheet/influxdrop.html">INFLUX.DROP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="streamsheet/influxselect.html">INFLUX.SELECT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="streamsheet/influxshow.html">INFLUX.SHOW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="streamsheet/influxstore.html">INFLUX.STORE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="streamsheet/json.html">JSON</a></li>
 <li class="toctree-l3"><a class="reference internal" href="streamsheet/kafkacommand.html">KAFKA.COMMAND</a></li>
 <li class="toctree-l3"><a class="reference internal" href="streamsheet/kafkapublish.html">KAFKA.PUBLISH</a></li>
@@ -131,6 +135,7 @@
 <li class="toctree-l3"><a class="reference internal" href="streamsheet/mongocount.html">MONGO.COUNT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="streamsheet/mongodelete.html">MONGO.DELETE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="streamsheet/mongoquery.html">MONGO.QUERY</a></li>
+<li class="toctree-l3"><a class="reference internal" href="streamsheet/mongoreplace.html">MONGO.REPLACE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="streamsheet/mongostore.html">MONGO.STORE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="streamsheet/movevalues.html">MOVEVALUES</a></li>
 <li class="toctree-l3"><a class="reference internal" href="streamsheet/mqttpublish.html">MQTT.PUBLISH</a></li>
@@ -155,13 +160,13 @@
 <li class="toctree-l3"><a class="reference internal" href="streamsheet/setvalue.html">SETVALUE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="streamsheet/subtree.html">SUBTREE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="streamsheet/swapvalues.html">SWAPVALUES</a></li>
-<li class="toctree-l3"><a class="reference internal" href="streamsheet/timeaggregate.html">TIMEAGGREGATE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="streamsheet/triggerstep.html">TRIGGERSTEP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="streamsheet/webpage.html">WEBPAGE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="streamsheet/write.html">WRITE</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html">Timeseries</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../others.html">Other</a></li>
@@ -256,6 +261,10 @@
 <li class="toctree-l1"><a class="reference internal" href="streamsheet/inbox.html">INBOX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streamsheet/inboxdata.html">INBOXDATA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streamsheet/inboxmetadata.html">INBOXMETADATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streamsheet/influxdrop.html">INFLUX.DROP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streamsheet/influxselect.html">INFLUX.SELECT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streamsheet/influxshow.html">INFLUX.SHOW</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streamsheet/influxstore.html">INFLUX.STORE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streamsheet/json.html">JSON</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streamsheet/kafkacommand.html">KAFKA.COMMAND</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streamsheet/kafkapublish.html">KAFKA.PUBLISH</a></li>
@@ -267,6 +276,7 @@
 <li class="toctree-l1"><a class="reference internal" href="streamsheet/mongocount.html">MONGO.COUNT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streamsheet/mongodelete.html">MONGO.DELETE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streamsheet/mongoquery.html">MONGO.QUERY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streamsheet/mongoreplace.html">MONGO.REPLACE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streamsheet/mongostore.html">MONGO.STORE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streamsheet/movevalues.html">MOVEVALUES</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streamsheet/mqttpublish.html">MQTT.PUBLISH</a></li>
@@ -291,7 +301,6 @@
 <li class="toctree-l1"><a class="reference internal" href="streamsheet/setvalue.html">SETVALUE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streamsheet/subtree.html">SUBTREE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streamsheet/swapvalues.html">SWAPVALUES</a></li>
-<li class="toctree-l1"><a class="reference internal" href="streamsheet/timeaggregate.html">TIMEAGGREGATE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streamsheet/triggerstep.html">TRIGGERSTEP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streamsheet/webpage.html">WEBPAGE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streamsheet/write.html">WRITE</a></li>

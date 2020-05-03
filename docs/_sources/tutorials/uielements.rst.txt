@@ -6,6 +6,8 @@
         :scale: 65 %
 .. |CHART| image:: /images/CHART.gif
         :scale: 65 %
+.. |StreamF| image:: /images/Streamfunction.png
+    :scale: 75%
 
 UI Elements
 ===============
@@ -37,8 +39,10 @@ Now first select the Stream Function followed by the Stream. Depending on the ch
 
 When finished click “Ok” to eventually create the function.
 
-|FWDemo|
-*Create a MQTT.PUBLISH function with the Function Wizard*
+*Note: In version 1.5 the icon for the stream functions was changed* |StreamF|
+
+| |FWDemo|
+| *Create a MQTT.PUBLISH function with the Function Wizard*
 
 
 JSON Range

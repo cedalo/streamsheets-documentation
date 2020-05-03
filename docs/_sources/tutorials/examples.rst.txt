@@ -17,12 +17,25 @@
     :scale: 65 %  
 .. |MongoDemo| image:: /images/MongoDemo.gif
     :scale: 65 %  
+.. |MongoS| image:: /images/MongoStore.png
+    :scale: 80 %  
+.. |MongoQ| image:: /images/MongoQuery.png
+    :scale: 80 %
+.. |MongoD| image:: /images/MongoDelete.png
+    :scale: 80 %
+.. |MongoC| image:: /images/MongoCount.png
+    :scale: 80 %
+.. |MongoR| image:: /images/MongoReplace.png
+    :scale: 80 %
 .. |influx| image:: /images/InfluxDB-Demo.gif
     :scale: 65 %  
 .. |SMTP1| image:: /images/smtp_connector.gif
     :scale: 65 %  
 .. |SMTP2| image:: /images/Loom-speedup.gif
     :scale: 65 %  
+.. |StreamF| image:: /images/Streamfunction.png
+    :scale: 75%
+
 
 Examples
 =========
@@ -46,11 +59,11 @@ Slack is a messenger, which offers the possibility to add self-made applications
 To begin create such an `App in Slack <https://api.slack.com/apps/>`_
 and add an Incoming `Webhook <https://api.slack.com/incoming-webhooks/>`_. This generates the REST.Request URL we will be posting information to. Choose a Channel on Slack to add your Application to. This is where we will post the information to. 
 Now we can start building an App in Streamsheets. Create a new :term:`Stream Machine` and create a :term:`JSON` Range with the key Value being “text” and the Value being any message you would like to send. 
-Create a REST Request function over the Function Wizard and select "POST" as the method. Add the created URL and select the JSON Range as the body. Choose a Target (e.g. :ref:`OUTBOX`\ ()) for  the response message of the server. Now with every new Step, the Stream Machine will send your message to Slack 😊 
+Create a REST Request function over the Function Wizard and select "POST" as the method. Add the created URL and select the JSON Range as the body. Choose a Target (e.g. a cell range) for  the response message of the server. Now with every new Step, the Stream Machine will send your message to Slack 😊 
 
-|RRP|
-
-*REST Request with method "POST"*
+| |RRP|
+| *REST Request with method "POST"*
+| *Note: In version 1.5 the icon for the stream functions was changed* |StreamF|
 
 **2. Method "GET":**
 The "GET" method is very similar to the "POST" method, but in this case we do not need to define any message, because we will be consuming messages. 
@@ -61,9 +74,9 @@ It displays all information regarding Jon Snow in a JSON-Object.
 So lets again create a new Stream Machine. Add a REST Request Function with the help of the Function Wizard. Enter the URL, select "GET" as the method and chose the Target, where the information should be displayed (e.g. :ref:`INBOX <inboxf>`\ ()). Confirm your input by clicking “OK”.
 After starting the Stream Machine the requested information will now appear in the Target Range. 
 
-|RRG1|
-
-*REST Request with method "GET"*
+| |RRG1|
+| *REST Request with method "GET"*
+| *Note: In version 1.5 the icon for the stream functions was changed* |StreamF|
 
 
 
@@ -94,16 +107,16 @@ A second way to receive OPC UA Messages in a :term:`Streamsheet` is over the :re
 
 With every new calculation step an :ref:`OPCUA.READ <opcuaread>` will prompt a new message in the :ref:`Inbox`. 
 
-|OPCUAGif|
-
-*Recieve OPC UA Data over Inbox Consumer and OPCUA.READ* 
+| |OPCUAGif|
+| *Note: In version 1.5 the icon for the stream functions was changed* |StreamF|
+| *Recieve OPC UA Data over Inbox Consumer and OPCUA.READ* 
 
 **OPCUA.WRITE:**
 It is also possible to update existing OPC UA Variables with the OPCUA.WRITE formular. Similiar to before, use the Function Wizard and select OPCUA.WRITE. Choose the right Producer, add the NODE Id and Target Range.
 
-|OPCUAWrite|
-
-*Change a node value on a OPC UA server with OPCUA.WRITE*
+| |OPCUAWrite|
+| *Note: In version 1.5 the icon for the stream functions was changed* |StreamF|
+| *Change a node value on a OPC UA server with OPCUA.WRITE*
 
 History
 --------
@@ -125,27 +138,144 @@ MongoDB
 
 To store data and retrieve information Streamsheets are able to connect to a :term:`MongoDB<Mongo>`. :ref:`Here<mongodb>` you can learn how to add a MongoDB to your current Streamsheets installation. 
 
-Start connecting the MongoDB to your Streamsheets by setting up a MongoDB Connector in the :ref:`Administration<administration>`.Check the "External Host" checkbox and enter the URL (or if working with Mongo for Docker the container name) in the Host(s) field. All other settings are optional.
+Start connecting the MongoDB to your Streamsheets by setting up a MongoDB Connector in the :ref:`Administration<administration>`.Enter the URL (or if working with Mongo for Docker the container name) in the Host(s) field. All other settings are optional.
 Streamsheets offers five Mongo specific functions within the :ref:`Function Wizard<functionwizard>`: :ref:`MONGO.STORE() <mongostore>`, :ref:`MONGO.COUNT() <mongocount>`, :ref:`MONGO.DELETE() <mongodelete>`, :ref:`MONGO.QUERY() <mongoquery>` and :ref:`MONGO.AGGREGATE() <mongoaggregate>`.
 Setup a Producer on top of the just created Connector and you are ready to go. 
 
-**MONGO.STORE:**
-To add new key value pairs to the database open up a Stream Machine and use the function MONGO.STORE. Select the just created Producer and type in any collection name you want. (If the collection is not existent it will automatically create one.) In the "document" field add a JSON Range of your choice to store in the collection. 
+In a Streamsheet open the “Function Wizard” to gain convenient access to the MongoDB functions.
+
+**MONGO.STORE():**
+
+*=MONGO.STORE("Stream","Collection","Document")*
+
+|MongoS|
+
+As soon as your MongoDB Connector and Producer is set up you can start storing data.
+Click on a cell, open the function wizard and select MONGO.STORE. Remember the calculation order of a Streamsheet (top to bottom, left to right), this might play a role in the structure of your logic.
+
+*Stream:*
+The “Function Wizard” automatically selects a stream. Make sure the right one is selected.
+
+*Collection:*
+MongoDB has different places to store data at. These are called collections. Type in a name of a collection. The collection will automatically be created, if not already existing.
+
+*Document:*
+The document contains your data. It is a simple cell range of key and value pairs. It is also possible to order them in a hierarchy.
+
+With every calculation one document will be stored in the selected collection.
+
+**MONGO.QUERY():**
+
+*=MONGO.QUERY("Stream","Collection","Query","Target","ResultKeys","PageSize","Page","Sort","Timeout")*
+
+|MongoQ|
+
+To lookup data from a MongoDB collection use the function MONGO.QUERY. It is possible to access either all stored documents or a subset of them.
+
+*Stream:*
+Again select the right Producer to connect to the right database.
+
+*Collection:*
+Type in the collection you used in the MONGO.STORE function.
+
+*Query:*
+The query filters the data and only gives back documents, which are match or are composed of the query. Define one or more key value pairs the documents you are searching for have to contain. E.g. you have saved a lot of customer information and now need the information for all customer with the name “Julia”, define a horizontal cell range containing “name” on the left and “Julia” on the right.
+To access all data just leave this section empty.
+
+*Target:*
+Define where the response of the database should be displayed. Choose a cell range or =INBOX(); =OUTBOX() as a target. Be careful, the cell range maybe to small to display all information.
+
+*Result Keys:*
+The Query always gives back all the information saved in a document. If you are only interested in a subset write each key in a cell and enter the cell/ cell range in the Result Key field.
+
+*Page Size:*
+The Page Size defines how many results will be shown in the response of your query per page. As a default, page 1 will be returned.
+
+*Page:*
+Select the page you want to get back. Example: Enter page size = 5 and page = 2. The query will return entry 6-10.
+
+*Sort:*
+You can either sort by time using 1 and -1 or you can sort alphabetically by using a cell range with the key to sort with and a 1 or -1.  1 = descending; -1 = ascending.
+
+*Timeout:*
+Tells the function how long to wait for a response from the database(in ms).
+
+**MONGO.DELETE():**
+
+*=MONGO.DELETE("Stream","Collection","Query","Target","Timeout")*
+
+|MongoD|
+
+Delete documents in a collection.
+
+*Stream:*
+Select the Stream connected to your MongoDB. 
+
+*Collection:*
+Enter the collection you want to adjust entries in. 
+
+*Query:*
+All documents with the defined key value pair/s will be deleted from the collection.
+
+*Target:*
+MONGO.DELETE returns the amount of objects that have been deleted. To get this information define either a cell range of at least 2x2 or enter =INBOX()/=OUTBOX().
+
+*Timeout:*
+Tells the function how long to wait for a response from the database(in ms).
+
+**MONGO.COUNT():**
+
+*=MONGO.COUNT("Stream","Collection","Query","Target","Timeout")*
+
+|MongoC|
+
+If you are interested in the amount of documents stored in a collection use MONGO.COUNT().
+
+*Stream:*
+Select the Stream connected to your MongoDB. 
+
+*Collection:*
+Enter the collection you want to count entries in. 
+
+*Query:*
+Enter a cell range of key value pairs. All documents with the defined key value pair/s will be counted.
+
+*Target:*
+MONGO.COUNT returns the amount of objects that have been counted. To get this information define either a cell range of at least 1x2 or enter =INBOX()/=OUTBOX().
+
+*Timeout:*
+Tells the function how long to wait for a response from the database(in ms).
+
+**MONGO.REPLACE():**
+
+*=MONGO.REPLACE("Stream","Collection","Query","Document","Upsert")*
+
+|MongoR|
+
+To replace data in a collection, use the MONGO.REPLACE() function.
+
+*Stream:*
+Select the Stream connected to your MongoDB. 
+
+*Collection:*
+Enter the collection you want to replace entries in. 
+
+*Query:*
+The query searches for documents within a collection to replace.
+
+*Document:*
+Define a document to replace existing data with and enter the cell range here. 
+
+*Upsert:*
+TRUE or FALSE. Upsert decides, if, when a query can´t be found, the document is added to the collection or dismissed.
 
 
-**MONGO.DELETE:**
-To delete key value pairs from the database use the function MONGO.DELETE. The elements defined in the query will be deleted. 
 
-**MONGO.QUERY, MONGO.COUNT & MONGO.AGGREGATE:**
-These three functions all have similar tasks. They all retrieve information from a collection. 
-MONGO.QUERY is used to get raw information.
-MONGO.COUNT counts all entries in a collection depending on the inserted JSON Range. 
-MONGO.AGGREGATE offeres a wider range of operations to choose from. Different aggregation methods can be used to summerize data. Mongo offeres a variety of operations e.g. covering comparative methods  ("equal" or "greater than") or logical methods ("and" or "not"), which all can be incooperated in the Aggregate JSON. 
-More query operators can be found `here <https://docs.mongodb.com/manual/reference/operator/query/>`_.
+Here is a small example:
 
-|MongoDemo|
-
-*All five Mongo functions used in one GIF.*
+| |MongoDemo|
+| *All five Mongo functions used in one GIF.*
+| *Note: In version 1.5 the icon for the stream functions was changed* |StreamF|
 
 .. _influx:
 
@@ -204,9 +334,9 @@ Now we are ready to switch to a Streamsheet. To insert the “\ :ref:`MAIL.SEND<
 
 To prevent spam we recommend adding a condition to the MAIL.SEND function 😄
 
-|SMTP2|
-
-*Sending mail`s with a condition*
+| |SMTP2|
+| *Sending mail`s with a condition*
+| *Note: In version 1.5 the icon for the stream functions was changed* |StreamF|
 
 Forum 
 ------

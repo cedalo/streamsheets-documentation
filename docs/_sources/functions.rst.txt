@@ -20,4 +20,5 @@ Functions
    functions/statistical
    functions/streamsheet
    functions/text
+   functions/timeseries
 

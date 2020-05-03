@@ -1,6 +1,9 @@
 .. _write:
 .. |WRITE| image:: /images/WRITE.PNG
         :scale: 65%
+.. |ArrayIn| image:: /images/ArrayIn.PNG
+.. |ArrayOut| image:: /images/ArrayOut.PNG
+
 
 WRITE
 -----------------------------
@@ -34,14 +37,22 @@ The last part of the key of the data value to write.
 **Example**
 
 .. list-table::
-   :widths: 45 15 40
+   :widths: 45 40 30
    :header-rows: 1
 
    * - Function
      - Result
      - Comment
-   * - =WRITE(:ref:`OUTBOXDATA`\ ("Customer", "Name"), "Maier", "String")
-     - "Customer"
-     - | Example to write a value to a JSON object in the outbox. The Message content will look as follows:
+   * - | =WRITE(:ref:`OUTBOXDATA`\ ("Message","Customer", "Name"), "Maier", "String")
+     - | Outbox Message:
        | |WRITE|
+     - | Example to write a value to a JSON object in the outbox. 
+   * - | =WRITE(:ref:`OUTBOXDATA`\ ("Message","Units"),READ(INBOXDATA(,,"Units")))
+       | Inbox Message: 
+       | |ArrayIn|
+     - | Outbox Message: 
+       | |ArrayOut|
+     -  You can also direct data from the Inbox into the Outbox. In this example the "Units" array from the Inbox is automatically transfered to the Outbox.
+
+
 

@@ -26,16 +26,16 @@ Setting up Streamsheets
 2. Next run the following command to execute the installer for Streamsheets. Replace ``<PATH_TO_INSTALL_DIRECTORY>`` with the name of the installation directory and ``<VERSION>`` with the Streamsheets version to install (current version: \ :ref:`currently`\ ).
 
     | Command: ``docker run -v <PATH_TO_INSTALL_DIRECTORY>:/streamsheets cedalo/streamsheets-installer:<VERSION>-linux``
-    | Example: ``docker run -v ~/streamsheets:/streamsheets cedalo/streamsheets-installer:1.4-linux``
+    | Example: ``docker run -v ~/streamsheets:/streamsheets cedalo/streamsheets-installer:1.5-linux``
 
 
 Starting Streamsheets
 -------------------------
 
-1. Navigate into the following directory:
+1. Navigate into the install directory:
 
-	| Command: ``cd <PATH_TO_INSTALL_DIRECTORY>/services/scripts/linux``
-	| Example: ``cd ~/streamsheets/services/scripts/linux`` 
+	| Command: ``cd <INSTALL_DIRECTORY>``
+	| Example: ``cd ~/streamsheets`` 
 
 	This directory contains several shell scripts (and Docker Compose files) to run predefined configurations of Streamsheets. 
 
@@ -47,8 +47,10 @@ The web interface for Streamsheets is locally available under: http://localhost:
 
 Open a browser on another computer in the same local network and type the address. On first usage you will have to accept the license agreement, before you can login to Streamsheets. The standard username and password is:
 
-**User:** admin
-**Password:** 1234
+**Login:**
+
+User: ``admin``
+Password: ``1234``
 
 We strongly suggest changing the password after your first login.
 

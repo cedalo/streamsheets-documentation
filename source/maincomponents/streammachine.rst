@@ -15,6 +15,8 @@ Stream Machine
     :scale: 23%
 .. |SettingsMenu| image:: /images/SettingsMenu.jpg
     :scale: 23%
+.. |StreamF| image:: /images/Streamfunction.png
+    :scale: 75%
 
 | :term:`Streamsheet`\ s are bundled in one functional entity which processes data streams, a so-called :term:`Stream Machine`. The behaviour of a Stream Machine and the way it processes data streams is defined through its Streamsheets. All Stream Machines are listed in the “Dashboard”. You can access the Dashboard by opening the burger menu in the top-left corner and selecting “Dashboard” towards the end of the list. The Dashboard is also the start screen.
 | 
@@ -70,13 +72,14 @@ In the screenshot the cycle time is set to 1000 ms. Thus, the machine performs o
 
 Tool bar
 ...........
-|ETools|
+| |ETools|
+| *Note: In version 1.5 the icon for the stream functions was changed* |StreamF|
 
 | Here you find many tools to insert functions, shapes and charts as well as to format cells in the Streamsheet grid.
 | 
 | Tools especially worth mentioning are:
 
-+ **Insert Producer Function:** This tool opens a wizard containing all functions you can use to save and send data, essentially to produce a data stream. Most of the functions serve the purpose of creating an outgoing data stream. However, some, such as :ref:`REST.REQUEST <restrequest>` or :ref:`MONGO.QUERY <mongoquery>`, can also be used to bring data into the Streamsheet. Simply choose a producer function and complete the arguments. The default option is called :ref:`MQTT.PUBLISH <mqttpublish>`. This is also the most common formula to send data from one Stream Machine to another.
++ **Insert Stream Function:** This tool opens a wizard containing all functions you can use to save and send data, essentially to produce a data stream. Most of the functions serve the purpose of creating an outgoing data stream. However, some, such as :ref:`REST.REQUEST <restrequest>` or :ref:`MONGO.QUERY <mongoquery>`, can also be used to bring data into the Streamsheet. Simply choose a stream function and complete the arguments. The default option is called :ref:`MQTT.PUBLISH <mqttpublish>`. This is also the most common formula to send data from one Stream Machine to another.
 + **Insert Drawing Shape:** This tool offers you a variety of shapes to use in your Streamsheets. Insert a shape and have a look at the formula bar. You will see that every shape is created by a DRAW formula. Link the position parameters to cells and the shape starts moving.
 + **Insert Chart:** Similarly to other Spreadsheet solutions, charts can be created by selecting a cell range and choosing a chart type. However, as Streamsheets are recalculated automatically, charts change dynamically according to their input.  
 

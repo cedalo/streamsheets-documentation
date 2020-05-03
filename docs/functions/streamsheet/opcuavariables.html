@@ -81,8 +81,8 @@
             
               <p class="caption"><span class="caption-text">User Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../maincomponents.html">Main Components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../gettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
@@ -237,6 +237,12 @@
 <span id="opcuavariables"></span><h1>OPCUA.VARIABLES<a class="headerlink" href="#opcua-variables" title="Permalink to this headline">¶</a></h1>
 <p><img alt="star" src="../../_images/star.svg" /> This is a <a class="reference external" href="https://cedalo.com/download/">Streamsheets Professional</a> feature.</p>
 <p>Creates variables on an <a class="reference internal" href="../../glossary.html#term-opc-ua"><span class="xref std std-term">OPC UA</span></a> Server. You are able to create singel or multiple variables and if needed arrange them in a folder structure.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before using OPCUA.VARIABLES() enable OPCUA Server in Stream Machine settings. Only one OPCUA.VARIABLES() per Streamsheet possible. Always use a parent element in the OPCUA.JSON() Range.</p>
+</div>
+</div></blockquote>
 <p><strong>Syntax</strong></p>
 <p>=OPCUA.VARIABLES(Range)</p>
 <p><strong>Arguments</strong></p>

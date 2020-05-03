@@ -26,7 +26,7 @@ Setting up Streamsheets
 2. Next run the following command to execute the installer for Streamsheets. Replace ``<PATH_TO_INSTALL_DIRECTORY>`` with the absolute path to the installation directory and ``<VERSION>`` with the Streamsheets version to install (current version: \ :ref:`currently`\ ).
 
     | Command:    ``docker run -v <PATH_TO_INSTALL_DIRECTORY>:/streamsheets cedalo/streamsheets-installer:<VERSION>-win``
-    | Example:      ``docker run -v C:\Streamsheets:/streamsheets cedalo/streamsheets-installer:1.4-win``    
+    | Example:      ``docker run -v C:\Streamsheets:/streamsheets cedalo/streamsheets-installer:1.5-win``    
 
 
 Starting Streamsheets
@@ -34,10 +34,10 @@ Starting Streamsheets
 
 **A:**  
 
-    1. Navigate into the following directory:
+    1. Navigate into the install directory:
 
-        | Command: ``cd <PATH_TO_INSTALL_DIRECTORY>/services/scripts/win``
-        | Example: ``cd C:\Streamsheets/services/scripts/win`` 
+        | Command: ``cd <INSTALL_DIRECTORY>``
+        | Example: ``cd C:\Streamsheets`` 
 
       This directory contains several shell scripts (and Docker Compose files) to run predefined configurations of Streamsheets. 
 
@@ -47,17 +47,19 @@ Starting Streamsheets
 
 **B:**  
    
-    Alternatively, close the terminal window, open your repository and navigate into the folder. Once, you are in the “win” folder, simply double-click on “start”.
+    Alternatively, close the terminal window, open your repository and navigate into the folder. Simply double-click the “start” file.
 
-        | Example: ``C:\Streamsheets/services/scripts/win``
+        | Example: ``C:\Streamsheets``
  
 
 The web interface for Streamsheets is locally available under: http://localhost:8081/ or in the local network under <your_ip_adress>:8081  (e.g. 192.168.178.90:8081).
 
 Open a browser on another computer in the same local network and type the address. On first usage you will have to accept the license agreement, before you can login to Streamsheets. The standard username and password is:
 
-**User:** admin
-**Password:** 1234
+**Login:**
+
+User: ``admin``
+Password: ``1234``
 
 We strongly suggest changing the password after your first login.
 

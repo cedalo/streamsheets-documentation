@@ -5,6 +5,28 @@ We will never stop improving our :term:`Streamsheet`\ s. Stay up to date with ou
 
 .. _currently: 
 
+
+1.5
+------------
+
+**(released Januar 20, 2020)**
+
+| **Changes:**
+| + **Professional:** Implemented further Pro features 
+| + **Performance:** Performance improvements Server/Client side
+| + **User Management:** started rework of user administration
+| + **Docker:** Streamsheets now runs in only one docker container. 
+| + **Sample Machines:** Added two sample machines
+| + **Bug fixes**
+| + **Mosquitto Broker:** Added randomly generated password. For more informations click `here <https://docs.cedalo.com/tutorials/settings.html#mosquitto-broker>`_.
+| + **Database:** We had some structural changes in the database. This is why we urge user, upgrading from version 1.3 or older, to download a databse dump in the administration menu and restore it in the 1.5.
+
+| **Features:**
+| + **Added Preview Mode**
+| + **Functions:** :ref:`NA`\ (); :ref:`INDIRECT`\ ()
+| + **Shapes:** Removed shapes from experimental mode; added further shapes
+| + **Charts:** Added more chart settings 
+
 1.4
 -----------------
 **(released October 16, 2019)**
