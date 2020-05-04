@@ -11,7 +11,7 @@ Performs a STORE query on your Influx database. You can use the :ref:`Function W
 
 **Syntax**
 
-=\ :term:`INFLUX`\ .STORE(:term:`Producer`, Measurement, Values-JSON [, Tags-JSON, Target, Duration, Timeout])
+=\ :term:`INFLUX`\ .STORE(:term:`Producer`, Measurement, Values-JSON [, Tags-JSON, Target, Duration, Instant, Timeout])
 
 **Arguments**
 
@@ -33,6 +33,8 @@ Performs a STORE query on your Influx database. You can use the :ref:`Function W
      - Optional. Defines a cell range to show the query result (key/value-pairs). Currently only the fully qualified measurement name is returned.
    * - Duration
      - Optional. Defines how long stored values should be kept. Duration is a number plus a time unit. Valid units are  "ms" for milliseconds, "s" for second, "m" for minute, "h" for hour, "d" for day and "w" for week. To specifiy infinity use "INF". Minimum value is one hour. Default value is "INF".
+   * - Instant
+     - Optional. If set to true the store query is immediately performed. Note: use with care, since this can overload InfluxDB very quickly. Default is false.
    * - Timeout
      - Optional. Defines Timeout to perform query. 
 
