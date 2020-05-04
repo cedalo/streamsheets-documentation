@@ -15,6 +15,7 @@ Alphabetical
    statistical/average
    statistical/averageif
    statistical/averageifs
+   drawing/axis
    drawing/bar
    engineering/bin2dec
    engineering/bin2float
@@ -50,8 +51,6 @@ Alphabetical
    database/dmax
    database/dmin
    drawing/drawbutton
-   drawing/drawchart
-   drawing/drawchartstate
    drawing/drawcheckbox
    drawing/drawellipse
    drawing/drawknob
@@ -60,6 +59,7 @@ Alphabetical
    drawing/drawpolygon
    drawing/drawrectangle
    drawing/drawslider
+   drawing/drawstreamchart
    database/dsum
    streamsheet/edgedetect
    math/even
@@ -192,6 +192,8 @@ Alphabetical
    date/second
    streamsheet/select
    date/serialtoms
+   drawing/series
+   drawing/seriestime
    streamsheet/setcycletime
    streamsheet/setphase
    streamsheet/setvalue
