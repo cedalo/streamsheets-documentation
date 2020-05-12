@@ -103,6 +103,7 @@ Alphabetical
    info/iserror
    info/iseven
    info/isna
+   info/isobject
    info/isodd
    date/jsontime2excel
    streamsheet/kafkacommand
