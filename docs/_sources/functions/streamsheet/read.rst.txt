@@ -23,9 +23,9 @@ Reads the values from a :term:`JSON` object using the given key. Mainly used to 
        JSON object. Each path element is surrounded by brackets, Depending on the used utility function, you
        can retrieve data from different sources (e.g. Inbox or Outbox).
    * - TargetCell or Range
-     - Target cell or range to write the resulting value into.
+     - Optional. Target cell or range to write the resulting value into.
    * - Type
-     - Type of Value. Allowed types are String, Number, Boolean, Array, Dictionary. The type defines the color the cell.
+     - Optional. Type of Value. Allowed types are String, Number, Boolean, Array, Dictionary. The type defines the color the cell.
    * - Direction
      - Optional. Direction how data will be aligned, if a dictionary is read. FALSE aligns the keys
        vertically, TRUE aligns the keys horizontally. By default the function tries to conclude from the size of the

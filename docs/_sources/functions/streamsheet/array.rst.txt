@@ -5,7 +5,13 @@
         :scale: 50%   
         :align: middle 
 
-.. role:: blue
+.. |nested| image:: /images/nested.PNG 
+
+.. |nestedout| image:: /images/nestedout.PNG 
+
+
+.. role:: blue 
+.. role:: red
 
 ARRAY
 -----------------------------
@@ -32,11 +38,12 @@ subarray) will be created.
    * - Range
      - Source Range to retrieve data from
    * - Nest
-     - Optional. Direction on how to nest items, if range has more than one row or column.
-       FALSE to nest by column and TRUE to nest by row.
+     - Optional. Direction on how to nest items, if range has more than one row or column. FALSE to nest by column and TRUE to nest by row. Default is TRUE.
    * - Flat
-     - Optional. Specify 'flat' to create a flat list if range has more than one row or column.
-       By default returned array is nested.
+     - Optional. If this Argument is supplied (any value works!) the returned Array is always nested, even if only one row or column is specified.  If Argument is missing than the returned array is only nested if their are more than one row or column.
+
+
+
 
 **Return Value**
 
@@ -49,18 +56,26 @@ Comma separated list of array items.
    :header-rows: 1
 
    * - Function
-     - Result
+     - Outbox Result
      - Comment
    * - | =\ :ref:`WRITE`\ (:ref:`OUTBOXDATA`\ ("Message", "NewItem"),ARRAY(:blue:`A2:B5`, FALSE), "Array")
        | with the following cell content:
 
        | |ARRAY1|
 
-     - | Outbox: |ARRAY2|
+     - | |ARRAY2|
 
      - | Appending an array to a message. Since Nest is set to FALSE, the array
         items are created by columns leading to two array entries. The two
         entries contain the elements from the rows top to bottom. The message content will look as follows
+   * - | =\ :ref:`WRITE`\ (:ref:`OUTBOXDATA`\ ("Message","NewItem"),ARRAY(:blue:`A2:A5`,FALSE),"Array")
+       | =\ :ref:`WRITE`\ (:ref:`OUTBOXDATA`\ ("Message","NewItem2"),ARRAY(:red:`B2:B5`,FALSE,TRUE),"Array")
+
+       | |nested|
+
+     - |nestedout|
+     - Example usage of the nested parameter. 
+
       
         
 

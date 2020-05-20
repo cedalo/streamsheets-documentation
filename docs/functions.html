@@ -81,8 +81,8 @@
             
               <p class="caption"><span class="caption-text">User Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="maincomponents.html">Main Components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
@@ -106,6 +106,7 @@
 <li class="toctree-l1"><a class="reference internal" href="others.html">Other</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="releasenotes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://www.cedalo.com">Cedalo</a></li>
 </ul>
 
             
@@ -184,6 +185,7 @@
 <li class="toctree-l2"><a class="reference internal" href="functions/statistical/average.html">AVERAGE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/statistical/averageif.html">AVERAGEIF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/statistical/averageifs.html">AVERAGEIFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions/drawing/axis.html">AXIS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/bar.html">BAR</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/engineering/bin2dec.html">BIN2DEC</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/engineering/bin2float.html">BIN2FLOAT</a></li>
@@ -219,8 +221,6 @@
 <li class="toctree-l2"><a class="reference internal" href="functions/database/dmax.html">DMAX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/database/dmin.html">DMIN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/drawbutton.html">DRAW.BUTTON</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functions/drawing/drawchart.html">DRAW.CHART</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functions/drawing/drawchartstate.html">DRAW.CHARTSTATE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/drawcheckbox.html">DRAW.CHECKBOX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/drawellipse.html">DRAW.ELLIPSE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/drawknob.html">DRAW.KNOB</a></li>
@@ -229,6 +229,7 @@
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/drawpolygon.html">DRAW.POLYGON</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/drawrectangle.html">DRAW.RECTANGLE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/drawslider.html">DRAW.SLIDER</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions/drawing/drawstreamchart.html">DRAW.STREAMCHART</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/database/dsum.html">DSUM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/streamsheet/edgedetect.html">EDGE.DETECT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/math/even.html">EVEN</a></li>
@@ -272,6 +273,7 @@
 <li class="toctree-l2"><a class="reference internal" href="functions/info/iserror.html">ISERROR</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/info/iseven.html">ISEVEN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/info/isna.html">ISNA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions/info/isobject.html">ISOBJECT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/info/isodd.html">ISODD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/date/jsontime2excel.html">JSONTIME2EXCEL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/streamsheet/kafkacommand.html">KAFKA.COMMAND</a></li>
@@ -336,6 +338,8 @@
 <li class="toctree-l2"><a class="reference internal" href="functions/date/second.html">SECOND</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/streamsheet/select.html">SELECT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/date/serialtoms.html">SERIALTOMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions/drawing/series.html">SERIES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions/drawing/seriestime.html">SERIESTIME</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/streamsheet/setcycletime.html">SETCYCLETIME</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/streamsheet/setphase.html">SETPHASE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/streamsheet/setvalue.html">SETVALUE</a></li>
@@ -402,11 +406,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="functions/drawing.html">Drawing</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/attributes.html">ATTRIBUTES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions/drawing/axis.html">AXIS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/bar.html">BAR</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/classifypoint.html">CLASSIFYPOINT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/drawbutton.html">DRAW.BUTTON</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functions/drawing/drawchart.html">DRAW.CHART</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functions/drawing/drawchartstate.html">DRAW.CHARTSTATE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/drawcheckbox.html">DRAW.CHECKBOX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/drawellipse.html">DRAW.ELLIPSE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/drawknob.html">DRAW.KNOB</a></li>
@@ -415,6 +418,7 @@
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/drawpolygon.html">DRAW.POLYGON</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/drawrectangle.html">DRAW.RECTANGLE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/drawslider.html">DRAW.SLIDER</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions/drawing/drawstreamchart.html">DRAW.STREAMCHART</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/events.html">EVENTS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/filllineargradient.html">FILLLINEARGRADIENT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/fillpattern.html">FILLPATTERN</a></li>
@@ -427,6 +431,8 @@
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/onmouseup.html">ONMOUSEUP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/onvaluechange.html">ONVALUECHANGE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/drawing/qrcode.html">QRCODE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions/drawing/series.html">SERIES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions/drawing/seriestime.html">SERIESTIME</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="functions/engineering.html">Engineering</a><ul>
@@ -454,6 +460,7 @@
 <li class="toctree-l2"><a class="reference internal" href="functions/info/iserror.html">ISERROR</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/info/iseven.html">ISEVEN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/info/isna.html">ISNA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions/info/isobject.html">ISOBJECT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/info/isodd.html">ISODD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions/info/na.html">NA</a></li>
 </ul>

@@ -41,8 +41,8 @@ Below you will find a list of all available topics of our documentation.
    :maxdepth: 2
    :caption: User Documentation
 
-   introduction
    installation
+   introduction
    maincomponents
    gettingstarted
    tutorials
@@ -50,5 +50,6 @@ Below you will find a list of all available topics of our documentation.
    others
    glossary
    releasenotes
+   Cedalo <http://www.cedalo.com>
 
 

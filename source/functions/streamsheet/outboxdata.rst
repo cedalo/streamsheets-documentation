@@ -1,4 +1,5 @@
 .. _outboxdata:
+.. |inc| image:: /images/increment.PNG
 
 OUTBOXDATA
 -----------------------------
@@ -30,7 +31,7 @@ A string key to provide a path within a message.
 **Example**
 
 .. list-table::
-   :widths: 45 10 45
+   :widths: 45 50 45
    :header-rows: 1
 
    * - Function
@@ -46,5 +47,8 @@ A string key to provide a path within a message.
      - Name
      - The WRITE function returns the last part of the JSON Path. The value in C7 will be written into the Message
        at the given JSON Path.
+   * - | =WRITE(OUTBOXDATA("Message","Output",-1),JSON(J22:K24),)
+     - | |inc|
+     - | Pro tipp: If you want to create an array in the Outbox, use -1 as the last OUTBOXDATA() parameter. This way the array will automatically increment starting from 0.
 
 

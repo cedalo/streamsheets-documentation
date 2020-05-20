@@ -11,7 +11,7 @@ Performs a SELECT query on your Influx database. You can use the :ref:`Function 
 
 **Syntax**
 
-=\ :term:`INFLUX`\ .SELECT(:term:`Producer`, JSON [, Target, XValue, Timeout])
+=\ :term:`INFLUX`\ .SELECT(:term:`Producer`, JSON [, Target, XValue, Instant, Timeout])
 
 **Arguments**
 
@@ -29,6 +29,8 @@ Performs a SELECT query on your Influx database. You can use the :ref:`Function 
      - Optional. Defines a cell range to show the query result. Might not be necessary if result is visualized by a chart.
    * - XValue
      - Optional. Name of the value which should be used for the x-axis if result is visualized by a chart. Defaults to "time".
+   * - Instant
+     - Optional. If set to true the select query is immediately performed. Note: use with care, since this can overload InfluxDB very quickly. Default is false.
    * - Timeout
      - Optional. Defines Timeout to perform query. 
 

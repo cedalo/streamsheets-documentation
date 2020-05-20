@@ -6,6 +6,23 @@ We will never stop improving our :term:`Streamsheet`\ s. Stay up to date with ou
 .. _currently: 
 
 
+v1.6-milestone
+---------------
+
+**(released April 30, 2020)**
+First milestone for eclipse release. 
+
+| **Changes:**
+| + **Performance:** Performance improvments client side
+| + **User Management:** Removed from OS version to professional version
+| + **Bug fixes**
+| + **Functions:** REST.RESPOND() was moved to the professional version; REST.REQUEST()/REST.RESPOND() now called HTTP.REQUEST()/HTTP.RESPOND()
+
+| **Features:**
+| + **Professionel:** Added Workspaces, new user management, Share Link Feature, PDF Generator, InfluxDB Connector, TIMESCALEDB Functions
+| + **Charts:** New Chart Module.
+| + **Functions:**  TIME.STORE(); TIME.QUERY()
+
 1.5
 ------------
 
@@ -70,11 +87,9 @@ We will never stop improving our :term:`Streamsheet`\ s. Stay up to date with ou
 
 | **Features:**
 | + **Raspberry Pi:** Pi image is available
-| + **Forum:** Join our Streamsheet Forum `here`_
+| + **Forum:** Join our Streamsheet Forum
 | + **Function Helper:** implemented a function helper
 | + **"None" Format:** None means that in the color selection in the toolbar,  in Fill and also in the selection of the line color, 'without color' is offered.
-
-.. _here: https://forum.streamsheets.com/
 
 
 1.1 

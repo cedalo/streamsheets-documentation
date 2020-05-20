@@ -120,6 +120,10 @@
 <li class="toctree-l3"><a class="reference internal" href="inbox.html">INBOX</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inboxdata.html">INBOXDATA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inboxmetadata.html">INBOXMETADATA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="influxdrop.html">INFLUX.DROP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="influxselect.html">INFLUX.SELECT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="influxshow.html">INFLUX.SHOW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="influxstore.html">INFLUX.STORE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="json.html">JSON</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kafkacommand.html">KAFKA.COMMAND</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kafkapublish.html">KAFKA.PUBLISH</a></li>
@@ -131,6 +135,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mongocount.html">MONGO.COUNT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mongodelete.html">MONGO.DELETE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mongoquery.html">MONGO.QUERY</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mongoreplace.html">MONGO.REPLACE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mongostore.html">MONGO.STORE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="movevalues.html">MOVEVALUES</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mqttpublish.html">MQTT.PUBLISH</a></li>
@@ -155,18 +160,19 @@
 <li class="toctree-l3"><a class="reference internal" href="setvalue.html">SETVALUE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="subtree.html">SUBTREE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="swapvalues.html">SWAPVALUES</a></li>
-<li class="toctree-l3"><a class="reference internal" href="timeaggregate.html">TIMEAGGREGATE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="triggerstep.html">TRIGGERSTEP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="webpage.html">WEBPAGE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="write.html">WRITE</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../timeseries.html">Timeseries</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../others.html">Other</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../releasenotes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://www.cedalo.com">Cedalo</a></li>
 </ul>
 
             
@@ -257,10 +263,10 @@ JSON object. Each path element is surrounded by brackets, Depending on the used 
 can retrieve data from different sources (e.g. Inbox or Outbox).</p></td>
 </tr>
 <tr class="row-odd"><td><p>TargetCell or Range</p></td>
-<td><p>Target cell or range to write the resulting value into.</p></td>
+<td><p>Optional. Target cell or range to write the resulting value into.</p></td>
 </tr>
 <tr class="row-even"><td><p>Type</p></td>
-<td><p>Type of Value. Allowed types are String, Number, Boolean, Array, Dictionary. The type defines the color the cell.</p></td>
+<td><p>Optional. Type of Value. Allowed types are String, Number, Boolean, Array, Dictionary. The type defines the color the cell.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Direction</p></td>
 <td><p>Optional. Direction how data will be aligned, if a dictionary is read. FALSE aligns the keys
