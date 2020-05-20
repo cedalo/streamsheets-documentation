@@ -171,16 +171,33 @@
 First milestone for eclipse release.</p>
 <div class="line-block">
 <div class="line"><strong>Changes:</strong></div>
-<div class="line">+ <strong>Performance:</strong> Performance improvments client side</div>
-<div class="line">+ <strong>User Management:</strong> Removed from OS version to professional version</div>
+<div class="line">+ <strong>Performance:</strong> Performance improvements client side</div>
+<div class="line">* <strong>User Management:</strong> Improvement of premium UM</div>
 <div class="line">+ <strong>Bug fixes</strong></div>
-<div class="line">+ <strong>Functions:</strong> REST.RESPOND() was moved to the professional version; REST.REQUEST()/REST.RESPOND() now called HTTP.REQUEST()/HTTP.RESPOND()</div>
+<div class="line">+ <strong>Functions:</strong> REST.REQUEST()/REST.RESPOND() now called HTTP.REQUEST()/HTTP.RESPOND()</div>
+<div class="line">+ <strong>Import Improved:</strong> Reworked the import feature to be easier to use</div>
+<div class="line">+ <strong>GraphQL API Improved:</strong> Extended GraphQL API to allow better integration of external systems</div>
+<div class="line">+ <strong>Stream Connect Improved</strong>: Improved the reconnect logic for connections</div>
+<div class="line">+ <strong>Started code migration to TypeScript:</strong> Some components were migrated to TypeScript.</div>
+<div class="line">+ <strong>Webhooks improved:</strong> Define Webhooks in Streamsheets that can be called from external applications or services via HTTP.</div>
 </div>
 <div class="line-block">
 <div class="line"><strong>Features:</strong></div>
-<div class="line">+ <strong>Professionel:</strong> Added Workspaces, new user management, Share Link Feature, PDF Generator, InfluxDB Connector, TIMESCALEDB Functions</div>
-<div class="line">+ <strong>Charts:</strong> New Chart Module.</div>
-<div class="line">+ <strong>Functions:</strong>  TIME.STORE(); TIME.QUERY()</div>
+<div class="line">+ <strong>User Roles:</strong> Users can be assigned admin, developer and viewer roles; Admins can manage users and their roles; Admins &amp; Developers can create, modify and delete stream machines and streams; Viewers can view but not edit stream machines. <em>Premium</em></div>
+<div class="line">+ <strong>Workspaces:</strong> Added Workspaces; Each user can be assigned to several Workspace as well as given a roles within these Workspaces;  <em>Premium</em></div>
+<div class="line">+ <strong>InfluxDB Support:</strong> Connect to influx databases and store data as well as query data using the new functions: INFLUX.STORE() and INFLUX.SELECT() <em>Premium</em></div>
+<div class="line">+ <strong>InfluxDB Export:</strong> Selcet data from an influx database and save to disk. This data can then also be downloaded as a csv file via the export button of the machine toolbar. <em>Premium</em></div>
+<div class="line">+ <strong>PDF Generation (basic):</strong> Take a screenshot of the current stream machine and download it as pdf. <em>Premium</em></div>
+<div class="line">+ <strong>Sending of SMS:</strong> With SMS.SEND() a streamsheet can send a notification via an SMS. <em>Premium</em></div>
+<div class="line">+ <strong>Chart Module Refactoring:</strong> New Chart Module.</div>
+<div class="line">+ <strong>Sending of emails without connector:</strong> With EMAIL.SEND() a streamsheet can send a notification via an email (without the need to previously create an E-Mail connector). <em>Premium</em></div>
+<div class="line">+ <strong>Sharing machines via link:</strong> The toolbar got a new button to share a machine with others. With this link any user can open and view, but not edit, the machine. The link can also be an expiration date. <em>Premium</em></div>
+<div class="line">+ <strong>Custom User Function:</strong> Implement your own Streamsheets functions in JavaScript and Node.js. <em>Premium</em></div>
+<div class="line">+ <strong>Custom Machine Tile Images:</strong> Give your stream machines custom images to represent them in the tile view in the dashboard.</div>
+<div class="line">+ <strong>Unpersistent query functions:</strong>  TIME.STORE(); TIME.QUERY()</div>
+<div class="line">+ <strong>JSON.PROCESS():</strong> This function allows you to process large messages more effectively. This is especially true  if looping at at the granular key-value pair level is not an option. <em>Premium</em></div>
+<div class="line">+ <strong>Extendable Gateway:</strong> New plugin system to further customize the user management</div>
+<div class="line">+ <strong>Additional Chart Types:</strong> Improvement of premium Charts</div>
 </div>
 </div>
 <div class="section" id="id1">
@@ -188,7 +205,7 @@ First milestone for eclipse release.</p>
 <p><strong>(released Januar 20, 2020)</strong></p>
 <div class="line-block">
 <div class="line"><strong>Changes:</strong></div>
-<div class="line">+ <strong>Professional:</strong> Implemented further Pro features</div>
+<div class="line">+ <strong>Premium:</strong> Implemented further Pro features</div>
 <div class="line">+ <strong>Performance:</strong> Performance improvements Server/Client side</div>
 <div class="line">+ <strong>User Management:</strong> started rework of user administration</div>
 <div class="line">+ <strong>Docker:</strong> Streamsheets now runs in only one docker container.</div>
