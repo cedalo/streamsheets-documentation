@@ -1,7 +1,7 @@
 MSTOSERIAL
 -----------------------------
 
-Converts the given elapsed milliseconds to a date value.
+Converts the given elapsed milliseconds, since UNIX epoch time, to a serial date value.
 
 **Syntax**
 
@@ -16,7 +16,7 @@ Converts the given elapsed milliseconds to a date value.
    * - Name
      - Description
    * - TimeValue
-     - Milliseconds to convert to timevalue.
+     - Milliseconds since UNIX epoch time (1st of January 1970).
 
 **Return Value**
 
