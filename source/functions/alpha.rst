@@ -112,6 +112,7 @@ Alphabetical
    text/left
    text/len
    drawing/lineformat
+   math/log
    streamsheet/loopcount
    streamsheet/loopindex
    streamsheet/mailsend
