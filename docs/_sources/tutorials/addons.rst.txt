@@ -59,45 +59,45 @@ More can be found `here <https://hub.docker.com/_/mongo>`_.
 
 .. _influxdb:
 
-InfluxDB 
----------
+.. InfluxDB 
+.. ---------
 
-As with MongoDB, it is also possible to connect an InfluxDB. Even the Setup process is pretty similiar. If you do not have a InfluxDB yet, it is fairly simple to setup. While Streamsheets run with docker, the same possibility exists for MongoDB and InfluxDB.
+.. As with MongoDB, it is also possible to connect an InfluxDB. Even the Setup process is pretty similiar. If you do not have a InfluxDB yet, it is fairly simple to setup. While Streamsheets run with docker, the same possibility exists for MongoDB and InfluxDB.
+..
+.. **required**
+..
+.. Streamsheets Version 1.3.2 or higher
 
-**required**
+.. **Setup Influx Database**
 
-Streamsheets Version 1.3.2 or higher
+.. Open a terminal of your choice and enter:
 
-**Setup Influx Database**
+..  | Command: ``docker pull influxdb:1.7``
 
-Open a terminal of your choice and enter:
+..  | Command: ``docker run --name <container-name> --net streamsheets influxdb`` 
+..  | Example: ``docker run --name myinfluxdb --net streamsheets influxdb``
+..
+.. Those commands download the Version 1.7.7 InfluxDB image and runs it in a container named <container-name> in the docker network "streamsheets". It is important that the container name does not contain capital letters! First step done!
 
-  | Command: ``docker pull influxdb:1.7``
+.. **Setup Influx Database for RaspberryPi Version**
 
-  | Command: ``docker run --name <container-name> --net streamsheets influxdb`` 
-  | Example: ``docker run --name myinfluxdb --net streamsheets influxdb``
+.. Open a terminal and enter:
 
-Those commands download the Version 1.7.7 InfluxDB image and runs it in a container named <container-name> in the docker network "streamsheets". It is important that the container name does not contain capital letters! First step done!
-
-**Setup Influx Database for RaspberryPi Version**
-
-Open a terminal and enter:
-
-  | Command: ``docker pull hypriot/rpi-influxdb``
+..  | Command: ``docker pull hypriot/rpi-influxdb``
   
-  | Command: ``docker run --name <container-name> --net streamsheets hypriot/rpi-influxdb``
-  | Example: ``docker run --name myinfluxdb --net streamsheets hypriot/rpi-influxdb``
+..  | Command: ``docker run --name <container-name> --net streamsheets hypriot/rpi-influxdb``
+..  | Example: ``docker run --name myinfluxdb --net streamsheets hypriot/rpi-influxdb``
 
 
-**Start Stop InfluxDB**
+.. **Start Stop InfluxDB**
 
-To properly stop and start your created container enter: 
+.. To properly stop and start your created container enter: 
 
-  | Command: ``docker stop <container-name>`` ``docker start <container-name>`` 
-  | Example: ``docker stop myinfluxdb`` ``docker start myinfluxdb``
+..  | Command: ``docker stop <container-name>`` ``docker start <container-name>`` 
+..  | Example: ``docker stop myinfluxdb`` ``docker start myinfluxdb``
 
-More can be found `here <https://hub.docker.com/_/influxdb>`_.
+.. More can be found `here <https://hub.docker.com/_/influxdb>`_.
 
-Take a look :ref:`here <influx>` for an example use case!
+.. Take a look :ref:`here <influx>` for an example use case!
 
 

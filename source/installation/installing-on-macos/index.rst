@@ -25,7 +25,7 @@ Setting up Streamsheets
 2. Next run the following command to execute the installer for Streamsheets. Replace ``<PATH_TO_INSTALL_DIRECTORY>`` with the name of the installation directory and ``<VERSION>`` with the Streamsheets version to install (current version: \ :ref:`currently`\ ).
 
     | Command: ``docker run -v <PATH_TO_INSTALL_DIRECTORY>:/streamsheets cedalo/streamsheets-installer:<VERSION>-macos``
-    | Example: ``docker run -v ~/streamsheets:/streamsheets cedalo/streamsheets-installer:v1.6-milestone-macos``
+    | Example: ``docker run -v ~/streamsheets:/streamsheets cedalo/streamsheets-installer:1.6-milestone-macos``
 
 
 Starting Streamsheets

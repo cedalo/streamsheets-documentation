@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>CORREL &mdash; Streamsheets Documentation 1.0.0 documentation</title>
+  <title>LOG &mdash; Streamsheets Documentation 1.0.0 documentation</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="../../_static/theme_override.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="COUNT" href="count.html" />
-    <link rel="prev" title="COS" href="../math/cos.html" /> 
+    <link rel="next" title="LOOPCOUNT" href="../streamsheet/loopcount.html" />
+    <link rel="prev" title="LINEFORMAT" href="../drawing/lineformat.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -95,23 +95,46 @@
 <li class="toctree-l2"><a class="reference internal" href="../info.html">Info</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../logical.html">Logical</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lookup.html">Lookup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../math.html">Math</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../stack.html">Stack</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../statistical.html">Statistical</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="average.html">AVERAGE</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">CORREL</a></li>
-<li class="toctree-l3"><a class="reference internal" href="count.html">COUNT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="forecast.html">FORECAST</a></li>
-<li class="toctree-l3"><a class="reference internal" href="stdev.html">STDEV.S</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../math.html">Math</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="abs.html">ABS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arccos.html">ARCCOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcsin.html">ARCSIN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arctan.html">ARCTAN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arctan2.html">ARCTAN2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cos.html">COS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="degrees.html">DEGREES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="even.html">EVEN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="frac.html">FRAC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="int.html">INT</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">LOG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mod.html">MOD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="odd.html">ODD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pi.html">PI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="power.html">POWER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="radians.html">RADIANS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randbetween.html">RANDBETWEEN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="round.html">ROUND</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sign.html">SIGN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sin.html">SIN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sqrt.html">SQRT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sum.html">SUM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sumif.html">SUMIF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sumifs.html">SUMIFS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tan.html">TAN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trunc.html">TRUNC</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../stack.html">Stack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../statistical.html">Statistical</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../streamsheet.html">Streamsheet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../timeseries.html">Timeseries</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../others.html">Other</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../releasenotes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://www.cedalo.com">Cedalo</a></li>
 </ul>
 
             
@@ -161,7 +184,7 @@
         
           <li><a href="../alpha.html">Alphabetical</a> &raquo;</li>
         
-      <li>CORREL</li>
+      <li>LOG</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -178,11 +201,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="correl">
-<span id="id1"></span><h1>CORREL<a class="headerlink" href="#correl" title="Permalink to this headline">¶</a></h1>
-<p>Returns the correlation coefficient of two cell ranges.</p>
+  <div class="section" id="log">
+<h1>LOG<a class="headerlink" href="#log" title="Permalink to this headline">¶</a></h1>
+<p>Returns the logarithm of given number to a specified base.</p>
 <p><strong>Syntax</strong></p>
-<p>=CORREL(CellRange1, CellRange2)</p>
+<p>=LOG(Number, Base)</p>
 <p><strong>Arguments</strong></p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -195,16 +218,16 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>CellRange1</p></td>
-<td><p>A cell range which defines x numbers. No number values are ignored.</p></td>
+<tr class="row-even"><td><p>Number</p></td>
+<td><p>The number for which the logarithm should be calculated.</p></td>
 </tr>
-<tr class="row-odd"><td><p>CellRange2</p></td>
-<td><p>A cell range which defines y numbers. No number values are ignored.</p></td>
+<tr class="row-odd"><td><p>Base</p></td>
+<td><p>Optional. The base of the logarithm. Defaults to 10.</p></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
-<p>A number representing the correlation between all x and y values.</p>
+<p>The logarithm of given number.</p>
 <p><strong>Example</strong></p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -219,17 +242,13 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>=CORREL(A2:A6,B2:B6)</p></td>
-<td><p>0.997054486</p></td>
-<td><p>with cell values A2: 3, A3: 2, A4: 4, A5: 5, A6: 6 and B2: 9, B3: 7, B4: 12, B5: 15, B6: 17</p></td>
+<tr class="row-even"><td><p>=LOG(10)</p></td>
+<td><p>1</p></td>
+<td><p>No base specified so 10 is used and hence it must be raised only one time.</p></td>
 </tr>
-<tr class="row-odd"><td><p>=CORREL(A2:A4,B2:B6)</p></td>
-<td><p>#NA!</p></td>
-<td><p>number of of given x and y values are not equal</p></td>
-</tr>
-<tr class="row-even"><td><p>=CORREL(A7:A12,B2:B6)</p></td>
-<td><p>#DIV0!</p></td>
-<td><p>no x or y values</p></td>
+<tr class="row-odd"><td><p>=LOG(8, 2)</p></td>
+<td><p>3</p></td>
+<td><p>The base value must be raised three times.</p></td>
 </tr>
 </tbody>
 </table>
@@ -243,10 +262,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="count.html" class="btn btn-neutral float-right" title="COUNT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../streamsheet/loopcount.html" class="btn btn-neutral float-right" title="LOOPCOUNT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../math/cos.html" class="btn btn-neutral" title="COS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../drawing/lineformat.html" class="btn btn-neutral" title="LINEFORMAT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
