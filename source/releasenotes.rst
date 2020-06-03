@@ -6,7 +6,7 @@ We will never stop improving our :term:`Streamsheet`\ s. Stay up to date with ou
 .. _currently: 
 
 
-v1.6-milestone
+1.6-milestone
 ---------------
 
 **(released April 30, 2020)**
