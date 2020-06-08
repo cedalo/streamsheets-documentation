@@ -21,7 +21,7 @@ array items to a message.
 Creates a :term:`JSON` array entry using the given keys and values. If the range
 has one row or column, one array entry for each cell is created. If
 there are two columns or rows, a nested array (array containing a
-subarray) will be created. 
+subarray) will be created. Note that if both nest and flat parameters are set to true one can use :ref:`range` instead.
 
 **Syntax**
 

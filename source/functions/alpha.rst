@@ -179,6 +179,7 @@ Alphabetical
    math/radians
    math/randbetween
    text/randid
+   streamsheet/range
    streamsheet/read
    text/replace
    text/rept
