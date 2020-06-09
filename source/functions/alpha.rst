@@ -209,6 +209,7 @@ Alphabetical
    stack/stackfind
    stack/stackrotate
    stack/stacksort
+   stack/stackupsert
    statistical/stdev
    text/substitute
    streamsheet/subtree

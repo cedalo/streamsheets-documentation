@@ -1,3 +1,4 @@
+.. _stackadd:
 .. |STACKADD1| image:: /images/STACKADD1.PNG
         :scale: 28%
 .. |STACKADD2| image:: /images/STACKADD2.PNG

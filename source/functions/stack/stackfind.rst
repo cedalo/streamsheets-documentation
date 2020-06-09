@@ -1,3 +1,4 @@
+.. _stackfind:
 .. |STACKFIND1| image:: /images/STACKFIND1.PNG
         :scale: 30%
 .. |STACKFIND2| image:: /images/STACKFIND2.PNG
@@ -31,7 +32,6 @@ Optionally it deletes all found records after the extract operation (remaining r
        | Settings in the same row are combined using AND, multiple rows are OR.
    * - TargetRange
      - | Optional. If specified, TargetRange must have two rows minimum, the first row has labels also found in StackRange (not necessarily all and maybe not in the same order!). The result of the filter is copied to the matching columns in the TargetRange.
-    
        | Note: TargetRange can have more than 2 rows. If it has more than 2 rows the additional rows can take the additional hits of the the filter extract.
    * - Drop
      - Optional. If set to TRUE it drops the selected rows from the stack. Drop defaults to FALSE.
