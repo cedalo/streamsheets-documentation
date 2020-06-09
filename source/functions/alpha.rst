@@ -29,6 +29,7 @@ Alphabetical
    text/code
    streamsheet/colorconvert
    text/concat
+   streamsheet/continue
    streamsheet/copyvalues
    math/cos
    statistical/correl
@@ -81,7 +82,6 @@ Alphabetical
    streamsheet/getcycletime
    streamsheet/getmachinestep
    streamsheet/getstep
-   streamsheet/goto
    engineering/hex2bin
    engineering/hex2dec
    engineering/hex2float
