@@ -29,6 +29,7 @@ Alphabetical
    text/code
    streamsheet/colorconvert
    text/concat
+   streamsheet/continue
    streamsheet/copyvalues
    math/cos
    statistical/correl
@@ -81,7 +82,6 @@ Alphabetical
    streamsheet/getcycletime
    streamsheet/getmachinestep
    streamsheet/getstep
-   streamsheet/goto
    engineering/hex2bin
    engineering/hex2dec
    engineering/hex2float
@@ -181,6 +181,7 @@ Alphabetical
    math/radians
    math/randbetween
    text/randid
+   streamsheet/range
    streamsheet/read
    text/replace
    text/rept
@@ -210,6 +211,7 @@ Alphabetical
    stack/stackfind
    stack/stackrotate
    stack/stacksort
+   stack/stackupsert
    statistical/stdev
    text/substitute
    streamsheet/subtree
