@@ -38,9 +38,9 @@ Alphabetical
    streamsheet/counter
    date/date
    date/datevalue
-   database/daverage
+   lookup/daverage
    date/day
-   database/dcount
+   lookup/dcount
    engineering/dec2bin
    engineering/dec2hex
    engineering/dec2oct
@@ -48,8 +48,8 @@ Alphabetical
    streamsheet/delete
    streamsheet/deletecells
    streamsheet/dictionary
-   database/dmax
-   database/dmin
+   lookup/dmax
+   lookup/dmin
    drawing/drawbutton
    drawing/drawcheckbox
    drawing/drawellipse
@@ -60,7 +60,7 @@ Alphabetical
    drawing/drawrectangle
    drawing/drawslider
    drawing/drawstreamchart
-   database/dsum
+   lookup/dsum
    streamsheet/edgedetect
    math/even
    drawing/events
@@ -87,6 +87,8 @@ Alphabetical
    engineering/hex2float
    engineering/hex2oct
    date/hour
+   streamsheet/httprequest
+   streamsheet/httprespond
    logical/if
    info/iferror
    streamsheet/inbox
@@ -94,10 +96,10 @@ Alphabetical
    streamsheet/inboxmetadata
    lookup/index
    lookup/indirect
-   streamsheet/influxdrop
-   streamsheet/influxselect
-   streamsheet/influxshow
-   streamsheet/influxstore
+   database/influxdrop
+   database/influxselect
+   database/influxshow
+   database/influxstore
    math/int
    info/iserr
    info/iserror
@@ -126,11 +128,11 @@ Alphabetical
    date/minute
    math/mod
    date/month
-   streamsheet/mongodelete
-   streamsheet/mongoquery
-   streamsheet/mongostore
-   streamsheet/movevalues
-   streamsheet/mqttpublish
+   database/mongodelete
+   database/mongoquery
+   database/mongostore
+   database/movevalues
+   database/mqttpublish
    date/mstoserial
    info/na
    logical/not

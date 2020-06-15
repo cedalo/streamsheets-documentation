@@ -42,40 +42,41 @@ Examples
 
 .. _resttutorial:
 
-REST Request
--------------
-This tutorial covers two different kind of REST Calls one is **POST** and the other is **GET**. 
-The differences are that with a "POST" information is transmitted from the REST Client to a server and a "GET" transmits information to the REST Client from the server. 
-To add a :ref:`restrequest` function to a :term:`Streamsheet` you will need a :term:`Connector` and a :term:`Producer`, based on the REST Client Provider. Start by creating the Connector in the Connector Dashboard in the :ref:`Administration` Menu. You can leave all fields empty to be able to utilize this Connector for any URL. If you want to create specific Connectors for every webpage, type in the Base URL. Same goes for the Producer. Create a Producer based on the just created Connector and leave it empty.  We can now select the Producer within the :ref:`Function Wizard <functionwizard>`. 
+HTTP/REST Request
+-----------------
+
+This tutorial covers two different kind of HTTP/REST Calls one is **POST** and the other is **GET**. (In older versions of Streamsheets we use the term REST, which is changed to HTTP starting v1.6)
+The differences are that with a "POST" information is transmitted from the HTTP Client to a server and a "GET" transmits information to the HTTP Client from the server. 
+To add a HTTP function to a :term:`Streamsheet` you will need a :term:`Connector` and a :term:`Producer`, based on the HTTP Client Provider. Start by creating the Connector in the Connector Dashboard in the :ref:`Administration` Menu. You can leave all fields empty to be able to utilize this Connector for any URL. If you want to create specific Connectors for every webpage, type in the Base URL. Same goes for the Producer. Create a Producer based on the just created Connector and leave it empty.  We can now select the Producer within the :ref:`Function Wizard <functionwizard>`. 
 
 |RCP| 
 
-*Creating Streams for REST*
+*Creating Streams for HTTP/REST*
 
 **1. Method "Post":**
-As an example, for a REST Request with the method "POST", we will create an alert service for Slack.
+As an example, for a HTTP Request with the method "POST", we will create an alert service for Slack.
 Slack is a messenger, which offers the possibility to add self-made applications. This option will be used to add an Alert Application to a Slack channel, posting status updates. 
 
 To begin create such an `App in Slack <https://api.slack.com/apps/>`_
-and add an Incoming `Webhook <https://api.slack.com/incoming-webhooks/>`_. This generates the REST.Request URL we will be posting information to. Choose a Channel on Slack to add your Application to. This is where we will post the information to. 
+and add an Incoming `Webhook <https://api.slack.com/incoming-webhooks/>`_. This generates the HTTP.Request URL we will be posting information to. Choose a Channel on Slack to add your Application to. This is where we will post the information to. 
 Now we can start building an App in Streamsheets. Create a new :term:`Stream Machine` and create a :term:`JSON` Range with the key Value being “text” and the Value being any message you would like to send. 
-Create a REST Request function over the Function Wizard and select "POST" as the method. Add the created URL and select the JSON Range as the body. Choose a Target (e.g. a cell range) for  the response message of the server. Now with every new Step, the Stream Machine will send your message to Slack 😊 
+Create a HTTP Request function over the Function Wizard and select "POST" as the method. Add the created URL and select the JSON Range as the body. Choose a Target (e.g. a cell range) for  the response message of the server. Now with every new Step, the Stream Machine will send your message to Slack 😊 
 
 | |RRP|
-| *REST Request with method "POST"*
+| *HTTP Request with method "POST"*
 | *Note: In version 1.5 the icon for the stream functions was changed* |StreamF|
 
 **2. Method "GET":**
 The "GET" method is very similar to the "POST" method, but in this case we do not need to define any message, because we will be consuming messages. 
-A good example is the “API of Ice and Fire” https://anapioficeandfire.com/. It is an REST Request based online wiki for Game of Thrones related information. 
+A good example is the “API of Ice and Fire” https://anapioficeandfire.com/. It is an HTTP Request based online wiki for Game of Thrones related information. 
 Depending on the URL, different Information can be accessed and displayed. 
 Lets choose the following URL: https://anapioficeandfire.com/api/characters/583
 It displays all information regarding Jon Snow in a JSON-Object. 
-So lets again create a new Stream Machine. Add a REST Request Function with the help of the Function Wizard. Enter the URL, select "GET" as the method and chose the Target, where the information should be displayed (e.g. :ref:`INBOX <inboxf>`\ ()). Confirm your input by clicking “OK”.
+So lets again create a new Stream Machine. Add a HTTP Request Function with the help of the Function Wizard. Enter the URL, select "GET" as the method and chose the Target, where the information should be displayed (e.g. :ref:`INBOX <inboxf>`\ ()). Confirm your input by clicking “OK”.
 After starting the Stream Machine the requested information will now appear in the Target Range. 
 
 | |RRG1|
-| *REST Request with method "GET"*
+| *HTTP Request with method "GET"*
 | *Note: In version 1.5 the icon for the stream functions was changed* |StreamF|
 
 
