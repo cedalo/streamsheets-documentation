@@ -3,7 +3,7 @@
 .. _Git: https://github.com/cedalo/streamsheets
 
 
-Community Edition
+Cedalo Community Platform
 ===========================
 
 The Streamsheets community edition is open source & free to use. All code can be found in our GitHub repository.

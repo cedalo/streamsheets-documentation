@@ -3,8 +3,8 @@
 .. _Git: https://github.com/cedalo/streamsheets
 
 
-Premium Edition
-======================
+Cedalo Pemium Platform
+========================
 
 
 
