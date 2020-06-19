@@ -28,10 +28,11 @@ Setting up Streamsheets
     | Command:    ``docker run -v <PATH_TO_INSTALL_DIRECTORY>:/streamsheets cedalo/streamsheets-installer-pro:<VERSION>-win``
     | Example:      ``docker run -v C:\Streamsheets:/streamsheets cedalo/streamsheets-installer-pro:1.6-milestone-win`` 
 
-3. Add the license file in the license folder. If you do not own a license you can order a test license at license@cedalo.com.
+3. Add the license file in the license folder. 
 
-    | ``.../streamsheets/license``   
+    | ``.../streamsheets/license``
 
+                If you do not own a license you can order a test license at license@cedalo.com. Please only use business e-mail adresses.
 
 Starting Streamsheets
 ----------------------
