@@ -1,4 +1,4 @@
-Installing on Kubernetes
+Installing  on Kubernetes
 ============
 
 TBD

@@ -1,6 +1,6 @@
 .. _Installing Raspian:
 
-Installing Raspian
+Installing  Raspian
 ================================
 
 Raspian is the official operating system for the Raspberry Pi. You will need a microSD Card and a computer with a SD card reader to install the image.

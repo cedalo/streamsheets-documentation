@@ -1,4 +1,4 @@
-System requirements
+System  requirements
 ======================
 
 CPUs

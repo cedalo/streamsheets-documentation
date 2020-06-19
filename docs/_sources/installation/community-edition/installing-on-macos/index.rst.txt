@@ -1,5 +1,5 @@
-Installing on macOS
-======================
+Installing  on macOS
+======================================
 
 In order to install Streamsheets you need to follow 3 steps: Install Docker, set up Docker Compose and, then, deploy the Streamsheet Platform.
 

@@ -1,5 +1,5 @@
 
-Installing on a Raspberry Pi 
+Installing on a  Raspberry Pi 
 ================================
 
 Streamsheets can be installed on a Raspberry Pi (we recommend model 3B+ or higher). If not already done, set up your Raspberry Pi with the operating system Raspian (Stretch or higher). If you don´t know how to do this follow the instructions in :ref:`Installing Raspian`. 
