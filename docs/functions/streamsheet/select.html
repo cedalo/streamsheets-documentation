@@ -100,7 +100,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../statistical.html">Statistical</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../streamsheet.html">Streamsheet</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="array.html">ARRAY</a></li>
-<li class="toctree-l3"><a class="reference internal" href="calc.html">CALC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="colorconvert.html">COLOR.CONVERT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="copyvalues.html">COPYVALUES</a></li>
 <li class="toctree-l3"><a class="reference internal" href="counter.html">COUNTER</a></li>
@@ -156,7 +155,6 @@
 <li class="toctree-l3"><a class="reference internal" href="subtree.html">SUBTREE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="swapvalues.html">SWAPVALUES</a></li>
 <li class="toctree-l3"><a class="reference internal" href="timeaggregate.html">TIMEAGGREGATE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="triggerstep.html">TRIGGERSTEP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="webpage.html">WEBPAGE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="write.html">WRITE</a></li>
 </ul>
@@ -241,44 +239,44 @@ Value, when an item in the list is selected. The actual value will also be the i
 <p><strong>Syntax</strong></p>
 <p>=SELECT(ListRange, ActualValue)</p>
 <p><strong>Arguments</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
+<col width="20%" />
+<col width="80%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Description</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>ListRange</p></td>
-<td><p>Range with the values to display in the pick list..</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>ListRange</td>
+<td>Range with the values to display in the pick list..</td>
 </tr>
-<tr class="row-odd"><td><p>ActualValue</p></td>
-<td><p>Value to select in the pick list.</p></td>
+<tr class="row-odd"><td>ActualValue</td>
+<td>Value to select in the pick list.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
 <p>Current selected value.</p>
 <p><strong>Example</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 45%" />
-<col style="width: 10%" />
-<col style="width: 45%" />
+<col width="45%" />
+<col width="10%" />
+<col width="45%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Function</p></th>
-<th class="head"><p>Result</p></th>
-<th class="head"><p>Comment</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Result</th>
+<th class="head">Comment</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>=SELECT(B1:D1,”Germany”)</p></td>
-<td><p>The selected value.</p></td>
-<td><p>If you click on the cell with the SELECT function, a list would display the values in the cell range B1:D1.</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>=SELECT(B1:D1,”Germany”)</td>
+<td>The selected value.</td>
+<td>If you click on the cell with the SELECT function, a list would display the values in the cell range B1:D1.</td>
 </tr>
 </tbody>
 </table>
@@ -324,13 +322,21 @@ Value, when an item in the list is selected. The actual value will also be the i
   
 
 	
-		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+		<script type="text/javascript">
+			var DOCUMENTATION_OPTIONS = {
+				URL_ROOT:'../../',
+				VERSION:'1.0.0',
+				LANGUAGE:'None',
+				COLLAPSE_INDEX:false,
+				FILE_SUFFIX:'.html',
+				HAS_SOURCE:  true,
+				SOURCELINK_SUFFIX: '.txt'
+			};
+		</script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-			<script type="text/javascript" src="../../_static/language_data.js"></script>
-			<script type="text/javascript" src="../../_static/contentui.js"></script>
-		
+	
 
   
 

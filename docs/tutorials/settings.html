@@ -81,8 +81,8 @@
             
               <p class="caption"><span class="caption-text">User Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../maincomponents.html">Main Components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Tutorials</a><ul class="current">
@@ -100,6 +100,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../others.html">Other</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://www.cedalo.com">Cedalo</a></li>
 </ul>
 
             
@@ -174,18 +175,18 @@
 <p>Streamsheets allocate a number of ports.</p>
 <p>These are all used ports:</p>
 <ul class="simple">
-<li><p>1883 - MQTT Broker</p></li>
-<li><p>1884 - Internal MQTT Broker</p></li>
-<li><p>8080 - Gateway</p></li>
-<li><p>8081 - Reverseproxy</p></li>
-<li><p>8083 - Streams Service</p></li>
-<li><p>8088 - Gateway WebSocket API</p></li>
-<li><p>8090 - Gateway HTTP API</p></li>
-<li><p>9000 - WebUI</p></li>
-<li><p>40000-40100 - Streams Service (UDP)</p></li>
-<li><p>4840 - OPC UA</p></li>
-<li><p>6379 - Redis</p></li>
-<li><p>27017 - Internal MongoDB</p></li>
+<li>1883 - MQTT Broker</li>
+<li>1884 - Internal MQTT Broker</li>
+<li>8080 - Gateway</li>
+<li>8081 - Reverseproxy</li>
+<li>8083 - Streams Service</li>
+<li>8088 - Gateway WebSocket API</li>
+<li>8090 - Gateway HTTP API</li>
+<li>9000 - WebUI</li>
+<li>40000-40100 - Streams Service (UDP)</li>
+<li>4840 - OPC UA</li>
+<li>6379 - Redis</li>
+<li>27017 - Internal MongoDB</li>
 </ul>
 <p><strong>How can I change ports?</strong></p>
 <p>Depending on your installed version, there are different ways to adjust the ports.</p>
@@ -201,13 +202,11 @@ To change each port individually open the .yml file and search for the â€œportsâ
 <p><a class="reference internal" href="../_images/portex.png"><img alt="PEX" src="../_images/portex.png" style="width: 673.2px; height: 215.55px;" /></a></p>
 <p>Changing the port to 8082 would look like this:</p>
 <blockquote>
-<div><p>8082:8081</p>
-</div></blockquote>
+<div>8082:8081</div></blockquote>
 <p><strong>When do I need to change ports?</strong></p>
 <p>Sometimes other programs are blocking certain ports. Then you encounter error messages like this:</p>
 <blockquote>
-<div><p><em>ERROR: for streamsheets-service-feeders  Cannot start service streamsheets-service-feeders: driver failed programming external connectivity on endpoint streamsheets-service-feeders (3c98f65b49d5c5ad961c9fde5ef145f21bf385b5edc077e204a9b877834185be): Bind for 0.0.0.0:8083 failed: port is already allocated</em></p>
-</div></blockquote>
+<div><em>ERROR: for streamsheets-service-feeders  Cannot start service streamsheets-service-feeders: driver failed programming external connectivity on endpoint streamsheets-service-feeders (3c98f65b49d5c5ad961c9fde5ef145f21bf385b5edc077e204a9b877834185be): Bind for 0.0.0.0:8083 failed: port is already allocated</em></div></blockquote>
 <p>Changing either the port of the Streamsheets or the port of the other program is then the only option, if you want to run both at the same time on this host system.</p>
 </div>
 <div class="section" id="mosquitto-broker">
@@ -258,13 +257,21 @@ To change each port individually open the .yml file and search for the â€œportsâ
   
 
 	
-		<script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+		<script type="text/javascript">
+			var DOCUMENTATION_OPTIONS = {
+				URL_ROOT:'../',
+				VERSION:'1.0.0',
+				LANGUAGE:'None',
+				COLLAPSE_INDEX:false,
+				FILE_SUFFIX:'.html',
+				HAS_SOURCE:  true,
+				SOURCELINK_SUFFIX: '.txt'
+			};
+		</script>
 			<script type="text/javascript" src="../_static/jquery.js"></script>
 			<script type="text/javascript" src="../_static/underscore.js"></script>
 			<script type="text/javascript" src="../_static/doctools.js"></script>
-			<script type="text/javascript" src="../_static/language_data.js"></script>
-			<script type="text/javascript" src="../_static/contentui.js"></script>
-		
+	
 
   
 

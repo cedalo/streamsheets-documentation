@@ -120,6 +120,10 @@
 <li class="toctree-l3"><a class="reference internal" href="inbox.html">INBOX</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inboxdata.html">INBOXDATA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inboxmetadata.html">INBOXMETADATA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="influxdrop.html">INFLUX.DROP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="influxselect.html">INFLUX.SELECT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="influxshow.html">INFLUX.SHOW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="influxstore.html">INFLUX.STORE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="json.html">JSON</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kafkacommand.html">KAFKA.COMMAND</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kafkapublish.html">KAFKA.PUBLISH</a></li>
@@ -131,6 +135,7 @@
 <li class="toctree-l3"><a class="reference internal" href="mongocount.html">MONGO.COUNT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mongodelete.html">MONGO.DELETE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mongoquery.html">MONGO.QUERY</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mongoreplace.html">MONGO.REPLACE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mongostore.html">MONGO.STORE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="movevalues.html">MOVEVALUES</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mqttpublish.html">MQTT.PUBLISH</a></li>
@@ -155,18 +160,19 @@
 <li class="toctree-l3"><a class="reference internal" href="setvalue.html">SETVALUE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="subtree.html">SUBTREE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="swapvalues.html">SWAPVALUES</a></li>
-<li class="toctree-l3"><a class="reference internal" href="timeaggregate.html">TIMEAGGREGATE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="triggerstep.html">TRIGGERSTEP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="webpage.html">WEBPAGE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="write.html">WRITE</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../timeseries.html">Timeseries</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../others.html">Other</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../releasenotes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://www.cedalo.com">Cedalo</a></li>
 </ul>
 
             
@@ -286,13 +292,21 @@ functions, e.g. like <a class="reference internal" href="../drawing/onclick.html
   
 
 	
-		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+		<script type="text/javascript">
+			var DOCUMENTATION_OPTIONS = {
+				URL_ROOT:'../../',
+				VERSION:'1.0.0',
+				LANGUAGE:'None',
+				COLLAPSE_INDEX:false,
+				FILE_SUFFIX:'.html',
+				HAS_SOURCE:  true,
+				SOURCELINK_SUFFIX: '.txt'
+			};
+		</script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-			<script type="text/javascript" src="../../_static/language_data.js"></script>
-			<script type="text/javascript" src="../../_static/contentui.js"></script>
-		
+	
 
   
 
