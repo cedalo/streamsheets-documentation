@@ -15,6 +15,8 @@ Alphabetical
    statistical/average
    statistical/averageif
    statistical/averageifs
+   streamsheet/await
+   streamsheet/awaitone
    drawing/axis
    drawing/bar
    engineering/bin2dec
