@@ -32,7 +32,7 @@ Setting up Streamsheets
 
     | ``.../streamsheets/license``
 
-                If you do not own a license you can order a test license at license@cedalo.com. Please only use business e-mail adresses.
+                If you do not own a license you can order a **14-day evaluation license** at license@cedalo.com. Please only use business e-mail adresses.
 
 Starting Streamsheets
 ----------------------
