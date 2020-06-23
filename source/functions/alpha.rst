@@ -206,6 +206,7 @@ Alphabetical
    streamsheet/setvalue
    math/sign
    math/sin
+   streamsheet/sleep
    text/split
    math/sqrt
    stack/stackadd
