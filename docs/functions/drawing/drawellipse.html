@@ -92,10 +92,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../date.html">Date</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../drawing.html">Drawing</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="attributes.html">ATTRIBUTES</a></li>
-<li class="toctree-l3"><a class="reference internal" href="axis.html">AXIS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bar.html">BAR</a></li>
 <li class="toctree-l3"><a class="reference internal" href="classifypoint.html">CLASSIFYPOINT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="drawbutton.html">DRAW.BUTTON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="drawchart.html">DRAW.CHART</a></li>
 <li class="toctree-l3"><a class="reference internal" href="drawcheckbox.html">DRAW.CHECKBOX</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">DRAW.ELLIPSE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="drawknob.html">DRAW.KNOB</a></li>
@@ -104,7 +104,6 @@
 <li class="toctree-l3"><a class="reference internal" href="drawpolygon.html">DRAW.POLYGON</a></li>
 <li class="toctree-l3"><a class="reference internal" href="drawrectangle.html">DRAW.RECTANGLE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="drawslider.html">DRAW.SLIDER</a></li>
-<li class="toctree-l3"><a class="reference internal" href="drawstreamchart.html">DRAW.STREAMCHART</a></li>
 <li class="toctree-l3"><a class="reference internal" href="events.html">EVENTS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="filllineargradient.html">FILLLINEARGRADIENT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="fillpattern.html">FILLPATTERN</a></li>
@@ -117,8 +116,6 @@
 <li class="toctree-l3"><a class="reference internal" href="onmouseup.html">ONMOUSEUP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="onvaluechange.html">ONVALUECHANGE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="qrcode.html">QRCODE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="series.html">SERIES</a></li>
-<li class="toctree-l3"><a class="reference internal" href="seriestime.html">SERIESTIME</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../engineering.html">Engineering</a></li>
@@ -130,13 +127,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../statistical.html">Statistical</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../streamsheet.html">Streamsheet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../text.html">Text</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../timeseries.html">Timeseries</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../others.html">Other</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../releasenotes.html">Release Notes</a></li>
-<li class="toctree-l1"><a class="reference external" href="http://www.cedalo.com">Cedalo</a></li>
 </ul>
 
             
@@ -209,40 +204,40 @@
 <p><strong>Syntax</strong></p>
 <p>=DRAW.ELLIPSE(UnqiueId, Container, Name, X, Y, Width, Height, LineFormat, FillFormat, Attributes, Events, Angle, RotCenter)</p>
 <p><strong>Arguments</strong></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col style="width: 20%" />
+<col style="width: 80%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Name</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>UniqueId</td>
-<td>Unique Id of drawing object. Should not be modified and must be unique.</td>
+<tbody>
+<tr class="row-even"><td><p>UniqueId</p></td>
+<td><p>Unique Id of drawing object. Should not be modified and must be unique.</p></td>
 </tr>
-<tr class="row-odd"><td>Container</td>
-<td>Optional. Name of the container object this object is placed within. Coordinates are relative then.</td>
+<tr class="row-odd"><td><p>Container</p></td>
+<td><p>Optional. Name of the container object this object is placed within. Coordinates are relative then.</p></td>
 </tr>
-<tr class="row-even"><td>Name</td>
-<td>Name of drawing object. Must be unique.</td>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>Name of drawing object. Must be unique.</p></td>
 </tr>
-<tr class="row-odd"><td>X</td>
-<td>X Coordinate in 1/100th mm</td>
+<tr class="row-odd"><td><p>X</p></td>
+<td><p>X Coordinate in 1/100th mm</p></td>
 </tr>
-<tr class="row-even"><td>Y</td>
-<td>Y Coordinate in 1/100th mm.</td>
+<tr class="row-even"><td><p>Y</p></td>
+<td><p>Y Coordinate in 1/100th mm.</p></td>
 </tr>
-<tr class="row-odd"><td>Width</td>
-<td>Width in 1/100th mm</td>
+<tr class="row-odd"><td><p>Width</p></td>
+<td><p>Width in 1/100th mm</p></td>
 </tr>
-<tr class="row-even"><td>Height</td>
-<td>Height in 1/100th mm</td>
+<tr class="row-even"><td><p>Height</p></td>
+<td><p>Height in 1/100th mm</p></td>
 </tr>
-<tr class="row-odd"><td>LineFormat</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p>LineFormat</p></td>
+<td><div class="line-block">
 <div class="line">Optional. Options:</div>
 <div class="line"><br /></div>
 <div class="line">- “None” for no line</div>
@@ -251,8 +246,8 @@
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>FillFormat</td>
-<td><div class="first last line-block">
+<tr class="row-even"><td><p>FillFormat</p></td>
+<td><div class="line-block">
 <div class="line">Optional. Options:</div>
 <div class="line"><br /></div>
 <div class="line">- “None” for no fill.</div>
@@ -261,17 +256,17 @@
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>Attributes</td>
-<td>Optional. JSON String created using <a class="reference internal" href="attributes.html#attributes"><span class="std std-ref">ATTRIBUTES</span></a></td>
+<tr class="row-odd"><td><p>Attributes</p></td>
+<td><p>Optional. JSON String created using <a class="reference internal" href="attributes.html#attributes"><span class="std std-ref">ATTRIBUTES</span></a></p></td>
 </tr>
-<tr class="row-even"><td>Events</td>
-<td>Optional. JSON String created using <a class="reference internal" href="events.html#events"><span class="std std-ref">EVENTS</span></a></td>
+<tr class="row-even"><td><p>Events</p></td>
+<td><p>Optional. JSON String created using <a class="reference internal" href="events.html#events"><span class="std std-ref">EVENTS</span></a></p></td>
 </tr>
-<tr class="row-odd"><td>Angle</td>
-<td>Optional. Angle in radians.</td>
+<tr class="row-odd"><td><p>Angle</p></td>
+<td><p>Optional. Angle in radians.</p></td>
 </tr>
-<tr class="row-even"><td>RotCenter</td>
-<td><div class="first last line-block">
+<tr class="row-even"><td><p>RotCenter</p></td>
+<td><div class="line-block">
 <div class="line">Optional. This defines, where the object rotates around:</div>
 <div class="line"><br /></div>
 <div class="line">0: Top left corner</div>
@@ -291,22 +286,22 @@
 <p><strong>Return Value</strong></p>
 <p>TRUE, if ellipse could be created.</p>
 <p><strong>Example</strong></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="73%" />
-<col width="7%" />
-<col width="20%" />
+<col style="width: 73%" />
+<col style="width: 7%" />
+<col style="width: 20%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Function</th>
-<th class="head">Result</th>
-<th class="head">Comment</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Result</p></th>
+<th class="head"><p>Comment</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>=DRAW.ELLIPSE(“ID1”, “”, “Ellipse1”, 1000, 1000, 2000, 3000)</td>
-<td>TRUE</td>
-<td>Draw an ellipse, having a size of 2 by 3 cm at the position 1cm, 1cm.</td>
+<tbody>
+<tr class="row-even"><td><p>=DRAW.ELLIPSE(“ID1”, “”, “Ellipse1”, 1000, 1000, 2000, 3000)</p></td>
+<td><p>TRUE</p></td>
+<td><p>Draw an ellipse, having a size of 2 by 3 cm at the position 1cm, 1cm.</p></td>
 </tr>
 </tbody>
 </table>
@@ -352,21 +347,13 @@
   
 
 	
-		<script type="text/javascript">
-			var DOCUMENTATION_OPTIONS = {
-				URL_ROOT:'../../',
-				VERSION:'1.0.0',
-				LANGUAGE:'None',
-				COLLAPSE_INDEX:false,
-				FILE_SUFFIX:'.html',
-				HAS_SOURCE:  true,
-				SOURCELINK_SUFFIX: '.txt'
-			};
-		</script>
+		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-	
+			<script type="text/javascript" src="../../_static/language_data.js"></script>
+			<script type="text/javascript" src="../../_static/contentui.js"></script>
+		
 
   
 

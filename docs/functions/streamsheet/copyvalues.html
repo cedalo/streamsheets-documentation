@@ -100,6 +100,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../statistical.html">Statistical</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../streamsheet.html">Streamsheet</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="array.html">ARRAY</a></li>
+<li class="toctree-l3"><a class="reference internal" href="calc.html">CALC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="colorconvert.html">COLOR.CONVERT</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">COPYVALUES</a></li>
 <li class="toctree-l3"><a class="reference internal" href="counter.html">COUNTER</a></li>
@@ -155,6 +156,7 @@
 <li class="toctree-l3"><a class="reference internal" href="subtree.html">SUBTREE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="swapvalues.html">SWAPVALUES</a></li>
 <li class="toctree-l3"><a class="reference internal" href="timeaggregate.html">TIMEAGGREGATE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="triggerstep.html">TRIGGERSTEP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="webpage.html">WEBPAGE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="write.html">WRITE</a></li>
 </ul>
@@ -239,46 +241,46 @@ source values.</p>
 <p><strong>Syntax</strong></p>
 <p>=COPYVALUES(SourceRange, TargetRange)</p>
 <p><strong>Arguments</strong></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col style="width: 20%" />
+<col style="width: 80%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Name</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>SourceRange</td>
-<td>Source Range to retrieve data from</td>
+<tbody>
+<tr class="row-even"><td><p>SourceRange</p></td>
+<td><p>Source Range to retrieve data from</p></td>
 </tr>
-<tr class="row-odd"><td>TargetRange</td>
-<td>Target Range to copy values to. If Range smaller or bigger as Source Range values will be added accordingly (less input or multiple input).</td>
+<tr class="row-odd"><td><p>TargetRange</p></td>
+<td><p>Target Range to copy values to. If Range smaller or bigger as Source Range values will be added accordingly (less input or multiple input).</p></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
 <p>TRUE, if successful.</p>
 <p><strong>Example</strong></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="50%" />
-<col width="50%" />
+<col style="width: 50%" />
+<col style="width: 50%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Function</th>
-<th class="head">Result</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Result</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><div class="first last line-block">
+<tbody>
+<tr class="row-even"><td><div class="line-block">
 <div class="line">=COPYVALUES(<span class="blue">A2:B2</span>,<span class="red">A4:B4</span>)</div>
 <div class="line"><br /></div>
 <div class="line"><a class="reference internal" href="../../_images/COPYVALUES1.PNG"><img alt="COPYVALUES1" src="../../_images/COPYVALUES1.PNG" style="width: 362.5px; height: 172.0px;" /></a></div>
 </div>
 </td>
-<td><div class="first last line-block">
+<td><div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><br /></div>
 <div class="line"><a class="reference internal" href="../../_images/COPYVALUES2.PNG"><img alt="COPYVALUES2" src="../../_images/COPYVALUES2.PNG" style="width: 362.0px; height: 170.0px;" /></a></div>
@@ -288,8 +290,8 @@ source values.</p>
 </tbody>
 </table>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Only the values will be moved. Formulas will be removed.</p>
+<p class="admonition-title">Warning</p>
+<p>Only the values will be moved. Formulas will be removed.</p>
 </div>
 </div>
 
@@ -333,21 +335,13 @@ source values.</p>
   
 
 	
-		<script type="text/javascript">
-			var DOCUMENTATION_OPTIONS = {
-				URL_ROOT:'../../',
-				VERSION:'1.0.0',
-				LANGUAGE:'None',
-				COLLAPSE_INDEX:false,
-				FILE_SUFFIX:'.html',
-				HAS_SOURCE:  true,
-				SOURCELINK_SUFFIX: '.txt'
-			};
-		</script>
+		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-	
+			<script type="text/javascript" src="../../_static/language_data.js"></script>
+			<script type="text/javascript" src="../../_static/contentui.js"></script>
+		
 
   
 
