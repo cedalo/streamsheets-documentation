@@ -24,8 +24,7 @@ JSON(DataRangeOrText,ResultAsText)
    * - Name
      - Description
    * - DataRangeOrText
-     - A data range over at least two columns, only interpreting the first and last column into the JSON Object. Or a 
-     text which will be evaluated to JSON.
+     - A data range over at least two columns, only interpreting the first and last column into the JSON Object. Or a text which will be evaluated to JSON.
    * - ResultAsText
      - Optional. Set to TRUE to return a textual representation of resulting JSON object. Defaults to FALSE.
 
