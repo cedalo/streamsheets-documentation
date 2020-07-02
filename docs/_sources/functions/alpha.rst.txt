@@ -109,7 +109,9 @@ Alphabetical
    info/isna
    info/isobject
    info/isodd
+   streamsheet/json
    date/jsontime2excel
+   streamsheet/jsonvalue
    streamsheet/kafkacommand
    streamsheet/kafkapublish
    streamsheet/kafkaquery
