@@ -1,11 +1,11 @@
-JSONVALUE
+JSON.VALUE
 -----------------------------
 
 Returns a value from a JSON object. The value to return corresponds to the path specified by given keys.
 
 **Syntax**
 
-=JSONVALUE(JSON, Key1, Key2, ...)
+=JSON.VALUE(JSON, Key1, Key2, ...)
 
 **Arguments**
 
@@ -35,13 +35,13 @@ Below examples assumes following text in A1: {"Customer": {"Name": "Peter", "Kid
    * - Function
      - Result
      - Comment
-   * - =JSONVALUE(JSON(A1),"Customer","Name")
+   * - =JSON.VALUE(JSON(A1),"Customer","Name")
      - Peter
      - Value at Customer.Name
-   * - =JSONVALUE(JSON(A1),"Customer","Kids", 1)
+   * - =JSON.VALUE(JSON(A1),"Customer","Kids", 1)
      - Mary
      - Value at Customer.Kids[1]
-   * - =JSONVALUE(JSON(A1),"Customer","Kids", "Name")
+   * - =JSON.VALUE(JSON(A1),"Customer","Kids", "Name")
      - #NA
      - Invalid json path
    
