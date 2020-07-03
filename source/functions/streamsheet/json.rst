@@ -24,14 +24,14 @@ JSON(DataRangeOrText,ResultAsText)
    * - Name
      - Description
    * - DataRangeOrText
-     - A data range over at least two columns, only interpreting the first and last column into the JSON Object. Or a text which will be evaluated to JSON.
+     - A data range over at least two columns, only interpreting the first and last column into the JSON object. Or a text which will be evaluated to JSON.
    * - ResultAsText
      - Optional. Set to TRUE to return a textual representation of resulting JSON object. Defaults to FALSE.
 
 
 **Return Value**
 
-{JSON Object} as a placeholder for JSON object or a textual representation, if successful.
+{ JSON } as a placeholder for JSON object or a textual representation, if successful.
 
 **Example**
 
@@ -43,14 +43,14 @@ JSON(DataRangeOrText,ResultAsText)
      - Result
      - Comment
    * - =JSON(B6:C8)
-     - { JSON Object }
-     - This is the representation of a cell filled with a JSON Object.
+     - { JSON }
+     - This is the representation of a cell filled with JSON data.
    * - =JSON(B6:C8, TRUE)
      - {"values":{"temperature":16918,"CO2":49}}
-     - The textual representation of resulting JSON Object.
+     - The textual representation of resulting JSON data.
    * - =JSON(C4) with following text in C4: {"values":{"temperature":16918,"CO2":49}}
-     - { JSON Object }
-     - This is the representation of a cell filled with a JSON Object.
+     - { JSON }
+     - This is the representation of a cell filled with JSON data.
    * - =FEEDINBOX(B11,"S1") with B11 JSON(B6:C8)
      - In Streamsheet S1 the Inbox will be filled with the JSON gathered by B11
      - |JSON|
