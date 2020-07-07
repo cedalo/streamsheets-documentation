@@ -95,6 +95,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="dashboard.html">Dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="streams.html">Streams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="administration.html">Administration</a></li>
 </ul>
 </li>
@@ -104,6 +105,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../others.html">Other</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://www.cedalo.com">Cedalo</a></li>
 </ul>
 
             
@@ -181,16 +183,16 @@
 </div>
 <ul class="simple">
 <li><p>Select a <a class="reference internal" href="../glossary.html#term-consumer"><span class="xref std std-term">Consumer</span></a> (This is the most common case; however, a Consumer must be created in the <a class="reference internal" href="administration.html#administration"><span class="std std-ref">Administration</span></a> first)</p></li>
-<li><p>Use specific functions, e.g. <a class="reference internal" href="../functions/streamsheet/opcuaread.html#opcuaread"><span class="std std-ref">OPCUA.READ</span></a> or <a class="reference internal" href="../functions/streamsheet/restrequest.html#restrequest"><span class="std std-ref">REST.REQUEST</span></a> with GET-Method</p></li>
+<li><p>Use specific functions, e.g. <a class="reference internal" href="../functions/streamsheet/opcuaread.html#opcuaread"><span class="std std-ref">OPCUA.READ</span></a> or <a class="reference internal" href="../functions/streamsheet/httprequest.html#restrequest"><span class="std std-ref">REST.REQUEST</span></a> with GET-Method</p></li>
 </ul>
 <div class="line-block">
 <div class="line"><strong>To create an outgoing data stream or make data available you have several options:</strong></div>
 </div>
 <ul class="simple">
 <li><p>Choose a Producer function, e.g. <a class="reference internal" href="../functions/streamsheet/mqttpublish.html#mqttpublish"><span class="std std-ref">MQTT.PUBLISH</span></a> or <a class="reference internal" href="../functions/streamsheet/kafkapublish.html#kafkapublish"><span class="std std-ref">KAFKA.PUBLISH</span></a></p></li>
-<li><p>Choose a posting function, e.g. <a class="reference internal" href="../functions/streamsheet/opcuawrite.html#opcuawrite"><span class="std std-ref">OPCUA.WRITE</span></a> or <a class="reference internal" href="../functions/streamsheet/restrequest.html#restrequest"><span class="std std-ref">REST.REQUEST</span></a> with POST-Method</p></li>
+<li><p>Choose a posting function, e.g. <a class="reference internal" href="../functions/streamsheet/opcuawrite.html#opcuawrite"><span class="std std-ref">OPCUA.WRITE</span></a> or <a class="reference internal" href="../functions/streamsheet/httprequest.html#restrequest"><span class="std std-ref">REST.REQUEST</span></a> with POST-Method</p></li>
 <li><p>Expose the Stream Machine as <a class="reference internal" href="../glossary.html#term-opc-ua"><span class="xref std std-term">OPC UA</span></a> or <a class="reference internal" href="../glossary.html#term-rest"><span class="xref std std-term">REST</span></a> Server so that other services can access its data</p></li>
-<li><p>Store the data in a database, e.g. by using <a class="reference internal" href="../functions/streamsheet/mongostore.html#mongostore"><span class="std std-ref">MONGO.STORE</span></a></p></li>
+<li><p>Store the data in a database, e.g. by using <a class="reference internal" href="../functions/database/mongostore.html#mongostore"><span class="std std-ref">MONGO.STORE</span></a></p></li>
 </ul>
 <p>Often, a Streamsheet consumes and produces streams. Nonetheless, neither an incoming nor an outgoing data stream are mandatory. For instance, Streamsheets which are calculated repeatedly and only produce streams are great for simulating sensors, machines, APIs and other data sources. On the other hand, sheets with pure dashboard and visualization functionality typically only consume streams without generating one on their own.</p>
 <p>Each Streamsheet consists of an Inbox and a Grid.</p>
@@ -199,7 +201,7 @@
 <span id="inbox-picture"></span><span id="id3"></span><h2>Inbox<a class="headerlink" href="#inbox" title="Permalink to this headline">¶</a></h2>
 <p>As in a mail service, the Inbox marks the point where new messages arrive and queue in order of their arrival time before they are processed. Although the Inbox only displays up to a maximum of 100 messages on your client (your browser), an unlimited amount can be queued on the server.
 The structure and content of a message is given in full detail and presented as a <a class="reference internal" href="../glossary.html#term-json"><span class="xref std std-term">JSON</span></a> Object in the <a class="reference internal" href="../glossary.html#term-payload"><span class="xref std std-term">Payload</span></a> section. Should the original data format not be JSON, the format is automatically converted. Via drag and drop some or all payload elements of incoming messages can be linked to the grid. Now, every time a new message arrives and the <a class="reference internal" href="../glossary.html#term-streamsheet"><span class="xref std std-term">Streamsheet</span></a> is calculated, the respective cells are updated.
-Message streams are connected to a Streamsheet by selecting a Consumer in the Inbox Settings. The name of the selected Consumer is then also shown above the Inbox. Consumers define incoming data streams (More on them under <a class="reference internal" href="administration.html#consumers"><span class="std std-ref">Consumers</span></a>).</p>
+Message streams are connected to a Streamsheet by selecting a Consumer in the Inbox Settings. The name of the selected Consumer is then also shown above the Inbox. Consumers define incoming data streams (More on them under <a class="reference internal" href="streams.html#consumers"><span class="std std-ref">Consumers</span></a>).</p>
 <p><a class="reference internal" href="../_images/Inbox.JPG"><img alt="Inbox" src="../_images/Inbox.JPG" style="width: 272.25px; height: 506.7px;" /></a></p>
 <p>The inbox above holds two messages. The first has the Message-IDs HJFG5rEDV and holds one data element as content, a temperature measurement.</p>
 </div>
