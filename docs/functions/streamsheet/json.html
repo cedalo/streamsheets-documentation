@@ -194,7 +194,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../info/isodd.html">ISODD</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">JSON</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../date/jsontime2excel.html">JSONTIME2EXCEL</a></li>
-<li class="toctree-l3"><a class="reference internal" href="jsonvalue.html">JSONVALUE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsonvalue.html">JSON.VALUE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kafkacommand.html">KAFKA.COMMAND</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kafkapublish.html">KAFKA.PUBLISH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kafkaquery.html">KAFKA.QUERY</a></li>
@@ -405,7 +405,7 @@ This function is mostly used within publish functions like:<a class="reference i
 </thead>
 <tbody>
 <tr class="row-even"><td><p>DataRangeOrText</p></td>
-<td><p>A data range over at least two columns, only interpreting the first and last column into the JSON Object. Or a text which will be evaluated to JSON.</p></td>
+<td><p>A data range over at least two columns, only interpreting the first and last column into the JSON object. Or a text which will be evaluated to JSON.</p></td>
 </tr>
 <tr class="row-odd"><td><p>ResultAsText</p></td>
 <td><p>Optional. Set to TRUE to return a textual representation of resulting JSON object. Defaults to FALSE.</p></td>
@@ -413,7 +413,7 @@ This function is mostly used within publish functions like:<a class="reference i
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
-<p>{JSON Object} as a placeholder for JSON object or a textual representation, if successful.</p>
+<p>{ JSON } as a placeholder for JSON object or a textual representation, if successful.</p>
 <p><strong>Example</strong></p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -429,16 +429,16 @@ This function is mostly used within publish functions like:<a class="reference i
 </thead>
 <tbody>
 <tr class="row-even"><td><p>=JSON(B6:C8)</p></td>
-<td><p>{ JSON Object }</p></td>
-<td><p>This is the representation of a cell filled with a JSON Object.</p></td>
+<td><p>{ JSON }</p></td>
+<td><p>This is the representation of a cell filled with JSON data.</p></td>
 </tr>
 <tr class="row-odd"><td><p>=JSON(B6:C8, TRUE)</p></td>
 <td><p>{“values”:{“temperature”:16918,”CO2”:49}}</p></td>
-<td><p>The textual representation of resulting JSON Object.</p></td>
+<td><p>The textual representation of resulting JSON data.</p></td>
 </tr>
 <tr class="row-even"><td><p>=JSON(C4) with following text in C4: {“values”:{“temperature”:16918,”CO2”:49}}</p></td>
-<td><p>{ JSON Object }</p></td>
-<td><p>This is the representation of a cell filled with a JSON Object.</p></td>
+<td><p>{ JSON }</p></td>
+<td><p>This is the representation of a cell filled with JSON data.</p></td>
 </tr>
 <tr class="row-odd"><td><p>=FEEDINBOX(B11,”S1”) with B11 JSON(B6:C8)</p></td>
 <td><p>In Streamsheet S1 the Inbox will be filled with the JSON gathered by B11</p></td>
