@@ -178,6 +178,7 @@ Alphabetical
    logical/or
    streamsheet/outbox
    streamsheet/outboxdata
+   streamsheet/outboxgetids
    math/pi
    math/power
    streamsheet/produce
