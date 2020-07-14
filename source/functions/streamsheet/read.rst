@@ -7,7 +7,7 @@ Reads the values from a :term:`JSON` object using the given key. Mainly used to 
 
 **Syntax**
 
-=READ(Key, TargetCell, Type[, Direction, ReturnPossibleError])
+=READ(Key, TargetCell, Type[, Direction, ReturnErrorHint])
 
 **Arguments**
 
@@ -30,7 +30,7 @@ Reads the values from a :term:`JSON` object using the given key. Mainly used to 
      - Optional. Direction how data will be aligned, if a dictionary is read. FALSE aligns the keys
        vertically, TRUE aligns the keys horizontally. By default the function tries to conclude from the size of the
        target range, which direction is used. So defining this is only necessary if rows and columns are equal.
-   * - ReturnPossibleError
+   * - ReturnErrorHint
      - Optional. If this is set to TRUE #NA! will be returned if no data is available. If set to FALSE last read value
        will be returned or a default value if none was read before. Default is FALSE.
 
