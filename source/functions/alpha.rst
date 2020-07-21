@@ -226,6 +226,7 @@ Alphabetical
    math/sumifs
    streamsheet/swapvalues
    logical/switch
+   streamsheet/tableupdate
    math/tan
    text/text
    date/time
