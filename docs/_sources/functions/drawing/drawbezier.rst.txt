@@ -1,12 +1,12 @@
 
-DRAW.POLYGON
+DRAW.BEZIER
 ------------
 
-Define a graphical polygon.
+Define a graphical bezier curve. The control points are created automatically.
 
 **Syntax**
 
-=DRAW.POLYGON(UnqiueId, Container, Name, X, Y, Width, Height, LineFormat, FillFormat, Attributes, Events, Angle, RotCenter, PointRange, Close)
+=DRAW.BEZIER(UnqiueId, Container, Name, X, Y, Width, Height, LineFormat, FillFormat, Attributes, Events, Angle, RotCenter, PointRange, Close)
 
 **Arguments**
 
@@ -61,17 +61,17 @@ Define a graphical polygon.
        | 7: Bottom center
        | 8: Bottom right corner
    * - PointRange
-     - Optional. Cell Range with coordinates. A coordinate is defined by a fraction of the width and height of the polygon ranging
+     - Optional. Cell Range with coordinates. A coordinate is defined by a fraction of the width and height of the bezier ranging
        from 0 to 1. 1 would place the coordinate at the bottom or right corner of the object. The range must have 2 columns. The
        left column contains the x coordinates and the right column the y coordinates. If the object was drawn using the mouse or
        one of the predefined objects was used, the given coordinates will be used, as long as no coordinates are defined using this
        parameter.
    * - Close
-     - Optional. Close polygon by connecting the first and last point (Default: TRUE)
+     - Optional. Close bezier curve by connecting the first and last point (Default: TRUE)
 
 **Return Value**
 
-TRUE, if polygon could be created.
+TRUE, if bezier curve could be created.
 
 **Example**
 
@@ -82,7 +82,7 @@ TRUE, if polygon could be created.
    * - Function
      - Result
      - Comment
-   * - =DRAW.POLYGON("ID8",,"Polygon2",3990,12754,4868,3519,,,,,,,C31:D33,FALSE)
+   * - =DRAW.BEZIER("ID8",,"Bezier1",3990,12754,4868,3519,,,,,,,C31:D33,FALSE)
      - TRUE
-     - Draw a polygon using the given coordinates. The coordinates must be given as fractions of 1.
+     - Draw a bezier using the given coordinates. The coordinates must be given as fractions of 1.
 

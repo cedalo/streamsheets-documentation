@@ -30,7 +30,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="REPLACE" href="../text/replace.html" />
-    <link rel="prev" title="RANDID" href="../text/randid.html" /> 
+    <link rel="prev" title="RANGE" href="range.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -100,8 +100,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../statistical.html">Statistical</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../streamsheet.html">Streamsheet</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="array.html">ARRAY</a></li>
+<li class="toctree-l3"><a class="reference internal" href="await.html">AWAIT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="awaitone.html">AWAIT.ONE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="calc.html">CALC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="colorconvert.html">COLOR.CONVERT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="continue.html">CONTINUE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="copyvalues.html">COPYVALUES</a></li>
 <li class="toctree-l3"><a class="reference internal" href="counter.html">COUNTER</a></li>
 <li class="toctree-l3"><a class="reference internal" href="delete.html">DELETE</a></li>
@@ -116,27 +119,20 @@
 <li class="toctree-l3"><a class="reference internal" href="getexecutestep.html">GETEXECUTESTEP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="getmachinestep.html">GETMACHINESTEP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="getstep.html">GETSTEP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="goto.html">GOTO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="httprequest.html">HTTP.REQUEST</a></li>
+<li class="toctree-l3"><a class="reference internal" href="httprespond.html">HTTP.RESPOND</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inbox.html">INBOX</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inboxdata.html">INBOXDATA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inboxmetadata.html">INBOXMETADATA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="influxdrop.html">INFLUX.DROP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="influxselect.html">INFLUX.SELECT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="influxshow.html">INFLUX.SHOW</a></li>
-<li class="toctree-l3"><a class="reference internal" href="influxstore.html">INFLUX.STORE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="json.html">JSON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsonvalue.html">JSON.VALUE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kafkacommand.html">KAFKA.COMMAND</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kafkapublish.html">KAFKA.PUBLISH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kafkaquery.html">KAFKA.QUERY</a></li>
 <li class="toctree-l3"><a class="reference internal" href="loopcount.html">LOOPCOUNT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="loopindex.html">LOOPINDEX</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mailsend.html">MAIL.SEND</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mongoaggregate.html">MONGO.AGGREGATE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mongocount.html">MONGO.COUNT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mongodelete.html">MONGO.DELETE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mongoquery.html">MONGO.QUERY</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mongoreplace.html">MONGO.REPLACE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mongostore.html">MONGO.STORE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="movevalues.html">MOVEVALUES</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mqttpublish.html">MQTT.PUBLISH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="opcuaread.html">OPCUA.READ</a></li>
@@ -145,7 +141,9 @@
 <li class="toctree-l3"><a class="reference internal" href="opcuawrite.html">OPCUA.WRITE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="outbox.html">OUTBOX</a></li>
 <li class="toctree-l3"><a class="reference internal" href="outboxdata.html">OUTBOXDATA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="outboxgetids.html">OUTBOX.GETIDS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="produce.html">PRODUCE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="range.html">RANGE</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">READ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="repeatindex.html">REPEATINDEX</a></li>
 <li class="toctree-l3"><a class="reference internal" href="request.html">REQUEST</a></li>
@@ -158,8 +156,10 @@
 <li class="toctree-l3"><a class="reference internal" href="setcycletime.html">SETCYCLETIME</a></li>
 <li class="toctree-l3"><a class="reference internal" href="setphase.html">SETPHASE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="setvalue.html">SETVALUE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sleep.html">SLEEP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="subtree.html">SUBTREE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="swapvalues.html">SWAPVALUES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tableupdate.html">TABLE.UPDATE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="triggerstep.html">TRIGGERSTEP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="webpage.html">WEBPAGE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="write.html">WRITE</a></li>
@@ -243,7 +243,7 @@
 <span id="id1"></span><h1>READ<a class="headerlink" href="#read" title="Permalink to this headline">¶</a></h1>
 <p>Reads the values from a <a class="reference internal" href="../../glossary.html#term-json"><span class="xref std std-term">JSON</span></a> object using the given key. Mainly used to read <a class="reference internal" href="../../maincomponents/streamsheet.html#inbox"><span class="std std-ref">Inbox</span></a> <a class="reference internal" href="../../glossary.html#term-payload"><span class="xref std std-term">payload</span></a>s.</p>
 <p><strong>Syntax</strong></p>
-<p>=READ(Key, TargetCell, Type[,Direction, CacheLastValue])</p>
+<p>=READ(Key, TargetCell, Type[, Direction, ErrorOnMissing])</p>
 <p><strong>Arguments</strong></p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -273,9 +273,9 @@ can retrieve data from different sources (e.g. Inbox or Outbox).</p></td>
 vertically, TRUE aligns the keys horizontally. By default the function tries to conclude from the size of the
 target range, which direction is used. So defining this is only necessary if rows and columns are equal.</p></td>
 </tr>
-<tr class="row-even"><td><p>CacheLastValue</p></td>
-<td><p>Optional. If this is set to TRUE #NA! will be returned if no data is available. To return last read value or a
-default value if none was read before specify FALSE. Default is FALSE.</p></td>
+<tr class="row-even"><td><p>ErrorOnMissing</p></td>
+<td><p>Optional. If this is set to TRUE #NA! will be returned if no data is available. If set to FALSE last read value
+will be returned or a default value if none was read before. Default is FALSE.</p></td>
 </tr>
 </tbody>
 </table>
@@ -318,7 +318,7 @@ default value if none was read before specify FALSE. Default is FALSE.</p></td>
         <a href="../text/replace.html" class="btn btn-neutral float-right" title="REPLACE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../text/randid.html" class="btn btn-neutral" title="RANDID" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="range.html" class="btn btn-neutral" title="RANGE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

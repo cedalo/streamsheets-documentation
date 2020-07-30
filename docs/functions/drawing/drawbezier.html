@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>DRAW.POLYGON &mdash; Streamsheets Documentation 1.0.0 documentation</title>
+  <title>DRAW.BEZIER &mdash; Streamsheets Documentation 1.0.0 documentation</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="../../_static/theme_override.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="DRAW.RECTANGLE" href="drawrectangle.html" />
-    <link rel="prev" title="DRAW.LINE" href="drawline.html" /> 
+    <link rel="next" title="DRAW.BUTTON" href="drawbutton.html" />
+    <link rel="prev" title="DMIN" href="../lookup/dmin.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -95,14 +95,14 @@
 <li class="toctree-l3"><a class="reference internal" href="axis.html">AXIS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bar.html">BAR</a></li>
 <li class="toctree-l3"><a class="reference internal" href="classifypoint.html">CLASSIFYPOINT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="drawbezier.html">DRAW.BEZIER</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">DRAW.BEZIER</a></li>
 <li class="toctree-l3"><a class="reference internal" href="drawbutton.html">DRAW.BUTTON</a></li>
 <li class="toctree-l3"><a class="reference internal" href="drawcheckbox.html">DRAW.CHECKBOX</a></li>
 <li class="toctree-l3"><a class="reference internal" href="drawellipse.html">DRAW.ELLIPSE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="drawknob.html">DRAW.KNOB</a></li>
 <li class="toctree-l3"><a class="reference internal" href="drawlabel.html">DRAW.LABEL</a></li>
 <li class="toctree-l3"><a class="reference internal" href="drawline.html">DRAW.LINE</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">DRAW.POLYGON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="drawpolygon.html">DRAW.POLYGON</a></li>
 <li class="toctree-l3"><a class="reference internal" href="drawrectangle.html">DRAW.RECTANGLE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="drawslider.html">DRAW.SLIDER</a></li>
 <li class="toctree-l3"><a class="reference internal" href="drawstreamchart.html">DRAW.STREAMCHART</a></li>
@@ -187,7 +187,7 @@
         
           <li><a href="../alpha.html">Alphabetical</a> &raquo;</li>
         
-      <li>DRAW.POLYGON</li>
+      <li>DRAW.BEZIER</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -204,11 +204,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="draw-polygon">
-<h1>DRAW.POLYGON<a class="headerlink" href="#draw-polygon" title="Permalink to this headline">¶</a></h1>
-<p>Define a graphical polygon.</p>
+  <div class="section" id="draw-bezier">
+<h1>DRAW.BEZIER<a class="headerlink" href="#draw-bezier" title="Permalink to this headline">¶</a></h1>
+<p>Define a graphical bezier curve. The control points are created automatically.</p>
 <p><strong>Syntax</strong></p>
-<p>=DRAW.POLYGON(UnqiueId, Container, Name, X, Y, Width, Height, LineFormat, FillFormat, Attributes, Events, Angle, RotCenter, PointRange, Close)</p>
+<p>=DRAW.BEZIER(UnqiueId, Container, Name, X, Y, Width, Height, LineFormat, FillFormat, Attributes, Events, Angle, RotCenter, PointRange, Close)</p>
 <p><strong>Arguments</strong></p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -288,19 +288,19 @@
 </td>
 </tr>
 <tr class="row-odd"><td><p>PointRange</p></td>
-<td><p>Optional. Cell Range with coordinates. A coordinate is defined by a fraction of the width and height of the polygon ranging
+<td><p>Optional. Cell Range with coordinates. A coordinate is defined by a fraction of the width and height of the bezier ranging
 from 0 to 1. 1 would place the coordinate at the bottom or right corner of the object. The range must have 2 columns. The
 left column contains the x coordinates and the right column the y coordinates. If the object was drawn using the mouse or
 one of the predefined objects was used, the given coordinates will be used, as long as no coordinates are defined using this
 parameter.</p></td>
 </tr>
 <tr class="row-even"><td><p>Close</p></td>
-<td><p>Optional. Close polygon by connecting the first and last point (Default: TRUE)</p></td>
+<td><p>Optional. Close bezier curve by connecting the first and last point (Default: TRUE)</p></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
-<p>TRUE, if polygon could be created.</p>
+<p>TRUE, if bezier curve could be created.</p>
 <p><strong>Example</strong></p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -315,9 +315,9 @@ parameter.</p></td>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>=DRAW.POLYGON(“ID8”,,”Polygon2”,3990,12754,4868,3519,,,,,,,C31:D33,FALSE)</p></td>
+<tr class="row-even"><td><p>=DRAW.BEZIER(“ID8”,,”Bezier1”,3990,12754,4868,3519,,,,,,,C31:D33,FALSE)</p></td>
 <td><p>TRUE</p></td>
-<td><p>Draw a polygon using the given coordinates. The coordinates must be given as fractions of 1.</p></td>
+<td><p>Draw a bezier using the given coordinates. The coordinates must be given as fractions of 1.</p></td>
 </tr>
 </tbody>
 </table>
@@ -331,10 +331,10 @@ parameter.</p></td>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="drawrectangle.html" class="btn btn-neutral float-right" title="DRAW.RECTANGLE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="drawbutton.html" class="btn btn-neutral float-right" title="DRAW.BUTTON" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="drawline.html" class="btn btn-neutral" title="DRAW.LINE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../lookup/dmin.html" class="btn btn-neutral" title="DMIN" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -53,6 +53,7 @@ Alphabetical
    streamsheet/dictionary
    lookup/dmax
    lookup/dmin
+   drawing/drawbezier
    drawing/drawbutton
    drawing/drawcheckbox
    drawing/drawellipse
@@ -178,6 +179,7 @@ Alphabetical
    logical/or
    streamsheet/outbox
    streamsheet/outboxdata
+   streamsheet/outboxgetids
    math/pi
    math/power
    streamsheet/produce
@@ -225,6 +227,7 @@ Alphabetical
    math/sumifs
    streamsheet/swapvalues
    logical/switch
+   streamsheet/tableupdate
    math/tan
    text/text
    date/time

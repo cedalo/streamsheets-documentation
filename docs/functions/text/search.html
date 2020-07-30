@@ -121,11 +121,13 @@
 <li class="toctree-l3"><a class="reference internal" href="value.html">VALUE</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../timeseries.html">Timeseries</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../others.html">Other</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../releasenotes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://www.cedalo.com">Cedalo</a></li>
 </ul>
 
             
@@ -210,7 +212,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>TextToSearch</p></td>
-<td><p>Text to search for.</p></td>
+<td><p>Text to search for. <strong>Note:</strong> wildcards like * or ? are supported.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Text</p></td>
 <td><p>Text to search inside.</p></td>
@@ -236,6 +238,9 @@
 <tbody>
 <tr class="row-even"><td><p>=SEARCH(“me”, “Search me now”)</p></td>
 <td><p>8</p></td>
+</tr>
+<tr class="row-odd"><td><p>=SEARCH(“a*c”, “abc”)</p></td>
+<td><p>1</p></td>
 </tr>
 </tbody>
 </table>
