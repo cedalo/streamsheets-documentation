@@ -1,0 +1,424 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>STACKUPSERT &mdash; Streamsheets Documentation 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_override.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="STDEV.S" href="../statistical/stdev.html" />
+    <link rel="prev" title="STACKSORT" href="stacksort.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Streamsheets Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../maincomponents.html">Main Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../functions.html">Functions</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../alpha.html">Alphabetical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../date.html">Date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../drawing.html">Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../engineering.html">Engineering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../info.html">Info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logical.html">Logical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lookup.html">Lookup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../math.html">Math</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../stack.html">Stack</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="stackadd.html">STACKADD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stackdrop.html">STACKDROP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stackfind.html">STACKFIND</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stackrotate.html">STACKROTATE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stacksort.html">STACKSORT</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">STACKUPSERT</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../statistical.html">Statistical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../streamsheet.html">Streamsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../timeseries.html">Timeseries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../others.html">Other</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../releasenotes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://www.cedalo.com">Cedalo</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Streamsheets Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../functions.html">Functions</a> &raquo;</li>
+        
+          <li><a href="../alpha.html">Alphabetical</a> &raquo;</li>
+        
+      <li>STACKUPSERT</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="stackupsert">
+<h1>STACKUPSERT<a class="headerlink" href="#stackupsert" title="Permalink to this headline">¶</a></h1>
+<p>The STACKUPSERT function is like a combination of <a class="reference internal" href="stackadd.html#stackadd"><span class="std std-ref">STACKADD</span></a> and <a class="reference internal" href="stackfind.html#stackfind"><span class="std std-ref">STACKFIND</span></a>, i.e. it can add and update matching cell values from a given SourceRange.
+Like STACKADD cell values are copied from SourceRange to a specified StackRange if they are not already contained, otherwise they are updated. Anaolog to STACKFIND, a CriteriaRange
+is used to determine the cell values to copy or update.
+Updating is done either by replacing the cell value or by using a simple text based arithmetic rule, like “+1” or by specifing an arbitrary formula.</p>
+<p><strong>Syntax</strong></p>
+<p>=STACKUPSERT(StackRange, SourceRange, CriteriaRange [, AddIfNotFound, Direction, Unique, TargetRange])</p>
+<p><strong>Arguments</strong></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>StackRange</p></td>
+<td><div class="line-block">
+<div class="line">Cell range, to copy SourceRange cells to or to update matching cells. The first row of the StackRange always contains the cell labels and remains unchanged.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>SourceRange</p></td>
+<td><div class="line-block">
+<div class="line">Cell range, where the source data or update rules are taken from. Analog to StackRange the first row contains the cell labels and remains unchanged.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>CriteriaRange</p></td>
+<td><div class="line-block">
+<div class="line">The CriteriaRange has at least 2 rows, the first one is the labels row with labels also found in StackRange and SourceRange (not necessarily all and maybe not in the same order!), the second to nth row contain filter settings.</div>
+<div class="line">Settings in the same row are combined using AND, multiple rows are OR.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>AddIfNotFound</p></td>
+<td><div class="line-block">
+<div class="line">Optional. If a matching source row is not found in StackRange it will be added. Specify FALSE to prevent this behaviour.</div>
+<div class="line">Defaults to TRUE.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Direction</p></td>
+<td><div class="line-block">
+<div class="line">Optional. If you set Direction to TRUE the new data is added behind the last empty row on the StackRange.</div>
+<div class="line">If the StackRange is full, the first row (after the columns row) is dropped from the stack and all rows move up to make room for the new data in the last row. Analog, if Direction is set to FALSE rows are added at top of the stack and dropped from the bottom.</div>
+<div class="line">By default Direction is TRUE.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Unique</p></td>
+<td><div class="line-block">
+<div class="line">Optional. If set to TRUE equal rows are updated or added only once to StackRange. Two rows are equal if they have same value in each column.</div>
+<div class="line">Unique defaults to FALSE.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>TargetRange</p></td>
+<td><div class="line-block">
+<div class="line">Optional. If TargetRange is specified and if a row has to be dropped, the row is copied to the TargetRange.</div>
+<div class="line">TargetRange must have two rows, the first row has labels also found in StackRange (not necessarily all and maybe not in the same order!). The dropped values are copied to the matching columns in the TargetRange.
+If no row is dropped, the values in the second row of TargetRange are blanked out.</div>
+<div class="line"><strong>Important:</strong> Before copying to the TargetRange all existing values in TargetRange are deleted (not the labels row!)</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Update Rules</strong></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>+</p></td>
+<td><div class="line-block">
+<div class="line">Add specified number to current value in matching StackRange cell</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>-</p></td>
+<td><div class="line-block">
+<div class="line">Subtract specified number from current value in matching StackRange cell</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>=</p></td>
+<td><div class="line-block">
+<div class="line">Specifies initial value of matching StackRange cell. Applied only on first add.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>formula</p></td>
+<td><div class="line-block">
+<div class="line">its also possible to use any sheet formula to update matching StackRange cell.</div>
+<div class="line"><strong>Note:</strong> if formula references cells from SourceRange which uses text arithmetic it is fully ok if formula returns an error value.</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Return Value</strong></p>
+<p>TRUE, if no error occurred, otherwise an <a class="reference internal" href="../../others.html#error"><span class="std std-ref">error</span></a> value.</p>
+<p><strong>Example</strong>
+Below examples assumes following SourceRange:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>C</p></th>
+<th class="head"><p>D</p></th>
+<th class="head"><p>E</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>ItemNumber</p></td>
+<td><p>Quantity</p></td>
+<td><p>Price</p></td>
+<td><p>VAT</p></td>
+<td><p>Total</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>1234</p></td>
+<td><p>+1</p></td>
+<td><p>=23</p></td>
+<td><p>0.19</p></td>
+<td><p>=B5 * C5 * (1 + D5)</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>=STACKUPSERT(A1:E3,A5:E5,A4:A5)</p></td>
+<td><div class="line-block">
+<div class="line">After calling STACKUPSERT the first time the row in A1 will contains following values:</div>
+<div class="line">1234, 1, 23, 0.19, 27.37</div>
+<div class="line">i.e. Quantity is initialized with 1 and Price with 23 and the Total value is 27.37 which was calculated by specified formula.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>=STACKUPSERT(A1:E3,A5:E5,A4:A5)</p></td>
+<td><div class="line-block">
+<div class="line">Calling STACKUPSERT again will update the row in A1 to following values:</div>
+<div class="line">1234, 2, 23, 0.19, 54.74</div>
+<div class="line">i.e. +1 is used to update Quantity. The Price remains unchanged since it already exists. And again the Total value is calculated by a formula and results to 54.74.</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../statistical/stdev.html" class="btn btn-neutral float-right" title="STDEV.S" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="stacksort.html" class="btn btn-neutral" title="STACKSORT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Cedalo AG, Streamsheet™ is a trademark of the Cedalo AG.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+	
+		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+			<script type="text/javascript" src="../../_static/jquery.js"></script>
+			<script type="text/javascript" src="../../_static/underscore.js"></script>
+			<script type="text/javascript" src="../../_static/doctools.js"></script>
+			<script type="text/javascript" src="../../_static/language_data.js"></script>
+			<script type="text/javascript" src="../../_static/contentui.js"></script>
+		
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

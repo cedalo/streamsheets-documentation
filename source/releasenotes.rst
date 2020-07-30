@@ -6,13 +6,49 @@ We will never stop improving our :term:`Streamsheet`\ s. Stay up to date with ou
 .. _currently: 
 
 
+1.6-milestone
+---------------
+
+**(released April 30, 2020)**
+First milestone for eclipse release. 
+
+| **Changes:**
+| + **Performance:** Performance improvements client side
+| * **User Management:** Improvement of premium UM  
+| + **Bug fixes**
+| + **Functions:** REST.REQUEST()/REST.RESPOND() now called HTTP.REQUEST()/HTTP.RESPOND()
+| + **Import Improved:** Reworked the import feature to be easier to use
+| + **GraphQL API Improved:** Extended GraphQL API to allow better integration of external systems
+| + **Stream Connect Improved**: Improved the reconnect logic for connections
+| + **Started code migration to TypeScript:** Some components were migrated to TypeScript.
+| + **Webhooks improved:** Define Webhooks in Streamsheets that can be called from external applications or services via HTTP.
+
+
+| **Features:**
+| + **User Roles:** Users can be assigned admin, developer and viewer roles; Admins can manage users and their roles; Admins & Developers can create, modify and delete stream machines and streams; Viewers can view but not edit stream machines. *Premium*
+| + **Workspaces:** Added Workspaces; Each user can be assigned to several Workspace as well as given a roles within these Workspaces;  *Premium*
+| + **InfluxDB Support:** Connect to influx databases and store data as well as query data using the new functions: INFLUX.STORE() and INFLUX.SELECT() *Premium*
+| + **InfluxDB Export:** Selcet data from an influx database and save to disk. This data can then also be downloaded as a csv file via the export button of the machine toolbar. *Premium*
+| + **PDF Generation (basic):** Take a screenshot of the current stream machine and download it as pdf. *Premium*
+| + **Sending of SMS:** With SMS.SEND() a streamsheet can send a notification via an SMS. *Premium*
+| + **Chart Module Refactoring:** New Chart Module.
+| + **Sending of emails without connector:** With EMAIL.SEND() a streamsheet can send a notification via an email (without the need to previously create an E-Mail connector). *Premium*
+| + **Sharing machines via link:** The toolbar got a new button to share a machine with others. With this link any user can open and view, but not edit, the machine. The link can also be an expiration date. *Premium*
+| + **Custom User Function:** Implement your own Streamsheets functions in JavaScript and Node.js. *Premium*
+| + **Custom Machine Tile Images:** Give your stream machines custom images to represent them in the tile view in the dashboard.
+| + **Unpersistent query functions:**  TIME.STORE(); TIME.QUERY()
+| + **JSON.PROCESS():** This function allows you to process large messages more effectively. This is especially true  if looping at at the granular key-value pair level is not an option. *Premium*
+| + **Extendable Gateway:** New plugin system to further customize the user management 
+| + **Additional Chart Types:** Improvement of premium Charts
+
+
 1.5
 ------------
 
 **(released Januar 20, 2020)**
 
 | **Changes:**
-| + **Professional:** Implemented further Pro features 
+| + **Premium:** Implemented further Pro features 
 | + **Performance:** Performance improvements Server/Client side
 | + **User Management:** started rework of user administration
 | + **Docker:** Streamsheets now runs in only one docker container. 
@@ -70,11 +106,9 @@ We will never stop improving our :term:`Streamsheet`\ s. Stay up to date with ou
 
 | **Features:**
 | + **Raspberry Pi:** Pi image is available
-| + **Forum:** Join our Streamsheet Forum `here`_
+| + **Forum:** Join our Streamsheet Forum
 | + **Function Helper:** implemented a function helper
 | + **"None" Format:** None means that in the color selection in the toolbar,  in Fill and also in the selection of the line color, 'without color' is offered.
-
-.. _here: https://forum.streamsheets.com/
 
 
 1.1 

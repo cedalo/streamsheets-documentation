@@ -15,9 +15,6 @@ Check out our |Git|_ `GitHub <https://github.com/cedalo/streamsheets>`_.
    :glob:
    :titlesonly:
 
-   installation/system-requirements/*
-   installation/installing-on-linux/*
-   installation/installing-on-windows/*
-   installation/installing-on-macos/*
-   installation/installing-on-raspberry-pi/*
-   installation/installing-raspian/*
+   installation/community-edition
+   installation/premium-edition
+

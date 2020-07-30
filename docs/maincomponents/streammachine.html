@@ -81,8 +81,8 @@
             
               <p class="caption"><span class="caption-text">User Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../maincomponents.html">Main Components</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Stream Machine</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#menu-settings">Menu &amp; Settings</a></li>
@@ -94,6 +94,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="streamsheet.html">Streamsheet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dashboard.html">Dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="streams.html">Streams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="administration.html">Administration</a></li>
 </ul>
 </li>
@@ -103,6 +104,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../others.html">Other</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://www.cedalo.com">Cedalo</a></li>
 </ul>
 
             
@@ -225,7 +227,7 @@
 <div class="line">Tools especially worth mentioning are:</div>
 </div>
 <ul class="simple">
-<li><p><strong>Insert Stream Function:</strong> This tool opens a wizard containing all functions you can use to save and send data, essentially to produce a data stream. Most of the functions serve the purpose of creating an outgoing data stream. However, some, such as <a class="reference internal" href="../functions/streamsheet/restrequest.html#restrequest"><span class="std std-ref">REST.REQUEST</span></a> or <a class="reference internal" href="../functions/streamsheet/mongoquery.html#mongoquery"><span class="std std-ref">MONGO.QUERY</span></a>, can also be used to bring data into the Streamsheet. Simply choose a stream function and complete the arguments. The default option is called <a class="reference internal" href="../functions/streamsheet/mqttpublish.html#mqttpublish"><span class="std std-ref">MQTT.PUBLISH</span></a>. This is also the most common formula to send data from one Stream Machine to another.</p></li>
+<li><p><strong>Insert Stream Function:</strong> This tool opens a wizard containing all functions you can use to save and send data, essentially to produce a data stream. Most of the functions serve the purpose of creating an outgoing data stream. However, some, such as <a class="reference internal" href="../functions/streamsheet/httprequest.html#restrequest"><span class="std std-ref">REST.REQUEST</span></a> or <a class="reference internal" href="../functions/database/mongoquery.html#mongoquery"><span class="std std-ref">MONGO.QUERY</span></a>, can also be used to bring data into the Streamsheet. Simply choose a stream function and complete the arguments. The default option is called <a class="reference internal" href="../functions/streamsheet/mqttpublish.html#mqttpublish"><span class="std std-ref">MQTT.PUBLISH</span></a>. This is also the most common formula to send data from one Stream Machine to another.</p></li>
 <li><p><strong>Insert Drawing Shape:</strong> This tool offers you a variety of shapes to use in your Streamsheets. Insert a shape and have a look at the formula bar. You will see that every shape is created by a DRAW formula. Link the position parameters to cells and the shape starts moving.</p></li>
 <li><p><strong>Insert Chart:</strong> Similarly to other Spreadsheet solutions, charts can be created by selecting a cell range and choosing a chart type. However, as Streamsheets are recalculated automatically, charts change dynamically according to their input.</p></li>
 </ul>

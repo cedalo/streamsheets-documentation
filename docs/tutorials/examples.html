@@ -81,14 +81,14 @@
             
               <p class="caption"><span class="caption-text">User Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../maincomponents.html">Main Components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Tutorials</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="uielements.html">UI Elements</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Examples</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#rest-request">REST Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#http-rest-request">HTTP/REST Request</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#opc-ua">OPC UA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#history">History</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#mongodb">MongoDB</a></li>
@@ -105,6 +105,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../others.html">Other</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://www.cedalo.com">Cedalo</a></li>
 </ul>
 
             
@@ -171,36 +172,36 @@
             
   <div class="section" id="examples">
 <h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="rest-request">
-<span id="resttutorial"></span><h2>REST Request<a class="headerlink" href="#rest-request" title="Permalink to this headline">¶</a></h2>
-<p>This tutorial covers two different kind of REST Calls one is <strong>POST</strong> and the other is <strong>GET</strong>.
-The differences are that with a “POST” information is transmitted from the REST Client to a server and a “GET” transmits information to the REST Client from the server.
-To add a <a class="reference internal" href="../functions/streamsheet/restrequest.html#restrequest"><span class="std std-ref">REST.REQUEST</span></a> function to a <a class="reference internal" href="../glossary.html#term-streamsheet"><span class="xref std std-term">Streamsheet</span></a> you will need a <a class="reference internal" href="../glossary.html#term-connector"><span class="xref std std-term">Connector</span></a> and a <a class="reference internal" href="../glossary.html#term-producer"><span class="xref std std-term">Producer</span></a>, based on the REST Client Provider. Start by creating the Connector in the Connector Dashboard in the <a class="reference internal" href="../maincomponents/administration.html#administration"><span class="std std-ref">Administration</span></a> Menu. You can leave all fields empty to be able to utilize this Connector for any URL. If you want to create specific Connectors for every webpage, type in the Base URL. Same goes for the Producer. Create a Producer based on the just created Connector and leave it empty.  We can now select the Producer within the <a class="reference internal" href="uielements.html#functionwizard"><span class="std std-ref">Function Wizard</span></a>.</p>
+<div class="section" id="http-rest-request">
+<span id="resttutorial"></span><h2>HTTP/REST Request<a class="headerlink" href="#http-rest-request" title="Permalink to this headline">¶</a></h2>
+<p>This tutorial covers two different kind of HTTP/REST Calls one is <strong>POST</strong> and the other is <strong>GET</strong>. (In older versions of Streamsheets we use the term REST, which is changed to HTTP starting v1.6)
+The differences are that with a “POST” information is transmitted from the HTTP Client to a server and a “GET” transmits information to the HTTP Client from the server.
+To add a HTTP function to a <a class="reference internal" href="../glossary.html#term-streamsheet"><span class="xref std std-term">Streamsheet</span></a> you will need a <a class="reference internal" href="../glossary.html#term-connector"><span class="xref std std-term">Connector</span></a> and a <a class="reference internal" href="../glossary.html#term-producer"><span class="xref std std-term">Producer</span></a>, based on the HTTP Client Provider. Start by creating the Connector in the Connector Dashboard in the <a class="reference internal" href="../maincomponents/administration.html#administration"><span class="std std-ref">Administration</span></a> Menu. You can leave all fields empty to be able to utilize this Connector for any URL. If you want to create specific Connectors for every webpage, type in the Base URL. Same goes for the Producer. Create a Producer based on the just created Connector and leave it empty.  We can now select the Producer within the <a class="reference internal" href="uielements.html#functionwizard"><span class="std std-ref">Function Wizard</span></a>.</p>
 <p><a class="reference internal" href="../_images/RestRequestGif.gif"><img alt="RCP" src="../_images/RestRequestGif.gif" style="width: 832.0px; height: 468.0px;" /></a></p>
-<p><em>Creating Streams for REST</em></p>
+<p><em>Creating Streams for HTTP/REST</em></p>
 <p><strong>1. Method “Post”:</strong>
-As an example, for a REST Request with the method “POST”, we will create an alert service for Slack.
+As an example, for a HTTP Request with the method “POST”, we will create an alert service for Slack.
 Slack is a messenger, which offers the possibility to add self-made applications. This option will be used to add an Alert Application to a Slack channel, posting status updates.</p>
 <p>To begin create such an <a class="reference external" href="https://api.slack.com/apps/">App in Slack</a>
-and add an Incoming <a class="reference external" href="https://api.slack.com/incoming-webhooks/">Webhook</a>. This generates the REST.Request URL we will be posting information to. Choose a Channel on Slack to add your Application to. This is where we will post the information to.
+and add an Incoming <a class="reference external" href="https://api.slack.com/incoming-webhooks/">Webhook</a>. This generates the HTTP.Request URL we will be posting information to. Choose a Channel on Slack to add your Application to. This is where we will post the information to.
 Now we can start building an App in Streamsheets. Create a new <a class="reference internal" href="../glossary.html#term-stream-machine"><span class="xref std std-term">Stream Machine</span></a> and create a <a class="reference internal" href="../glossary.html#term-json"><span class="xref std std-term">JSON</span></a> Range with the key Value being “text” and the Value being any message you would like to send.
-Create a REST Request function over the Function Wizard and select “POST” as the method. Add the created URL and select the JSON Range as the body. Choose a Target (e.g. a cell range) for  the response message of the server. Now with every new Step, the Stream Machine will send your message to Slack 😊</p>
+Create a HTTP Request function over the Function Wizard and select “POST” as the method. Add the created URL and select the JSON Range as the body. Choose a Target (e.g. a cell range) for  the response message of the server. Now with every new Step, the Stream Machine will send your message to Slack 😊</p>
 <div class="line-block">
 <div class="line"><a class="reference internal" href="../_images/RestRequestPost.gif"><img alt="RRP" src="../_images/RestRequestPost.gif" style="width: 832.0px; height: 468.0px;" /></a></div>
-<div class="line"><em>REST Request with method “POST”</em></div>
+<div class="line"><em>HTTP Request with method “POST”</em></div>
 <div class="line"><em>Note: In version 1.5 the icon for the stream functions was changed</em> <a class="reference internal" href="../_images/Streamfunction.png"><img alt="StreamF" src="../_images/Streamfunction.png" style="width: 22.5px; height: 21.75px;" /></a></div>
 </div>
 <p><strong>2. Method “GET”:</strong>
 The “GET” method is very similar to the “POST” method, but in this case we do not need to define any message, because we will be consuming messages.
-A good example is the “API of Ice and Fire” <a class="reference external" href="https://anapioficeandfire.com/">https://anapioficeandfire.com/</a>. It is an REST Request based online wiki for Game of Thrones related information.
+A good example is the “API of Ice and Fire” <a class="reference external" href="https://anapioficeandfire.com/">https://anapioficeandfire.com/</a>. It is an HTTP Request based online wiki for Game of Thrones related information.
 Depending on the URL, different Information can be accessed and displayed.
 Lets choose the following URL: <a class="reference external" href="https://anapioficeandfire.com/api/characters/583">https://anapioficeandfire.com/api/characters/583</a>
 It displays all information regarding Jon Snow in a JSON-Object.
-So lets again create a new Stream Machine. Add a REST Request Function with the help of the Function Wizard. Enter the URL, select “GET” as the method and chose the Target, where the information should be displayed (e.g. <a class="reference internal" href="../functions/streamsheet/inbox.html#inboxf"><span class="std std-ref">INBOX</span></a>()). Confirm your input by clicking “OK”.
+So lets again create a new Stream Machine. Add a HTTP Request Function with the help of the Function Wizard. Enter the URL, select “GET” as the method and chose the Target, where the information should be displayed (e.g. <a class="reference internal" href="../functions/streamsheet/inbox.html#inboxf"><span class="std std-ref">INBOX</span></a>()). Confirm your input by clicking “OK”.
 After starting the Stream Machine the requested information will now appear in the Target Range.</p>
 <div class="line-block">
 <div class="line"><a class="reference internal" href="../_images/RestRequestGet1.gif"><img alt="RRG1" src="../_images/RestRequestGet1.gif" style="width: 832.0px; height: 468.0px;" /></a></div>
-<div class="line"><em>REST Request with method “GET”</em></div>
+<div class="line"><em>HTTP Request with method “GET”</em></div>
 <div class="line"><em>Note: In version 1.5 the icon for the stream functions was changed</em> <a class="reference internal" href="../_images/Streamfunction.png"><img alt="StreamF" src="../_images/Streamfunction.png" style="width: 22.5px; height: 21.75px;" /></a></div>
 </div>
 </div>
@@ -248,7 +249,7 @@ It is also possible to update existing OPC UA Variables with the OPCUA.WRITE for
 <h2>MongoDB<a class="headerlink" href="#mongodb" title="Permalink to this headline">¶</a></h2>
 <p>To store data and retrieve information Streamsheets are able to connect to a <a class="reference internal" href="../glossary.html#term-mongo"><span class="xref std std-term">MongoDB</span></a>. <a class="reference internal" href="addons.html#mongodb"><span class="std std-ref">Here</span></a> you can learn how to add a MongoDB to your current Streamsheets installation.</p>
 <p>Start connecting the MongoDB to your Streamsheets by setting up a MongoDB Connector in the <a class="reference internal" href="../maincomponents/administration.html#administration"><span class="std std-ref">Administration</span></a>.Enter the URL (or if working with Mongo for Docker the container name) in the Host(s) field. All other settings are optional.
-Streamsheets offers five Mongo specific functions within the <a class="reference internal" href="uielements.html#functionwizard"><span class="std std-ref">Function Wizard</span></a>: <a class="reference internal" href="../functions/streamsheet/mongostore.html#mongostore"><span class="std std-ref">MONGO.STORE()</span></a>, <a class="reference internal" href="../functions/streamsheet/mongocount.html#mongocount"><span class="std std-ref">MONGO.COUNT()</span></a>, <a class="reference internal" href="../functions/streamsheet/mongodelete.html#mongodelete"><span class="std std-ref">MONGO.DELETE()</span></a>, <a class="reference internal" href="../functions/streamsheet/mongoquery.html#mongoquery"><span class="std std-ref">MONGO.QUERY()</span></a> and <a class="reference internal" href="../functions/streamsheet/mongoaggregate.html#mongoaggregate"><span class="std std-ref">MONGO.AGGREGATE()</span></a>.
+Streamsheets offers five Mongo specific functions within the <a class="reference internal" href="uielements.html#functionwizard"><span class="std std-ref">Function Wizard</span></a>: <a class="reference internal" href="../functions/database/mongostore.html#mongostore"><span class="std std-ref">MONGO.STORE()</span></a>, <a class="reference internal" href="../functions/database/mongocount.html#mongocount"><span class="std std-ref">MONGO.COUNT()</span></a>, <a class="reference internal" href="../functions/database/mongodelete.html#mongodelete"><span class="std std-ref">MONGO.DELETE()</span></a>, <a class="reference internal" href="../functions/database/mongoquery.html#mongoquery"><span class="std std-ref">MONGO.QUERY()</span></a> and <a class="reference internal" href="../functions/database/mongoaggregate.html#mongoaggregate"><span class="std std-ref">MONGO.AGGREGATE()</span></a>.
 Setup a Producer on top of the just created Connector and you are ready to go.</p>
 <p>In a Streamsheet open the “Function Wizard” to gain convenient access to the MongoDB functions.</p>
 <p><strong>MONGO.STORE():</strong></p>
@@ -368,7 +369,7 @@ TRUE or FALSE. Upsert decides, if, when a query can´t be found, the document is
 <p><em>Write Data in InfluxDB with the REQUEST function</em></p>
 <div class="line-block">
 <div class="line"><strong>Query Data:</strong></div>
-<div class="line">To Query Data we use the <a class="reference internal" href="../functions/streamsheet/restrequest.html#restrequest"><span class="std std-ref">REST.REQUEST</span></a> function with the GET Method and write the <a class="reference internal" href="../glossary.html#term-query"><span class="xref std std-term">query</span></a> into the <a class="reference internal" href="../glossary.html#term-url"><span class="xref std std-term">URL</span></a>. There are plenty ways to query your Data. You can have a look at them <a class="reference external" href="https://docs.influxdata.com/influxdb/v1.7/query_language/data_exploration/">here</a>. In our simple example we query all data of the last minute from our h2o_feet measurement.</div>
+<div class="line">To Query Data we use the <a class="reference internal" href="../functions/streamsheet/httprequest.html#restrequest"><span class="std std-ref">HTTP.REQUEST</span></a> function with the GET Method and write the <a class="reference internal" href="../glossary.html#term-query"><span class="xref std std-term">query</span></a> into the <a class="reference internal" href="../glossary.html#term-url"><span class="xref std std-term">URL</span></a>. There are plenty ways to query your Data. You can have a look at them <a class="reference external" href="https://docs.influxdata.com/influxdb/v1.7/query_language/data_exploration/">here</a>. In our simple example we query all data of the last minute from our h2o_feet measurement.</div>
 </div>
 <blockquote>
 <div><div class="line-block">

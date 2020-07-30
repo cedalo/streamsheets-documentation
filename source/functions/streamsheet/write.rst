@@ -3,6 +3,7 @@
         :scale: 65%
 .. |ArrayIn| image:: /images/ArrayIn.PNG
 .. |ArrayOut| image:: /images/ArrayOut.PNG
+.. |inc| image:: /images/increment.PNG
 
 
 WRITE
@@ -12,7 +13,7 @@ Adds the key and value to a :term:`JSON` object in the outbox. The path to the k
 
 **Syntax**
 
-=WRITE(Key, Value, Type)
+=WRITE(Key, Value, Type, TTL)
 
 **Arguments**
 
@@ -28,7 +29,9 @@ Adds the key and value to a :term:`JSON` object in the outbox. The path to the k
    * - Value
      - Value to assign to key.
    * - Type
-     - Type of Value. Allowed types are String, Number, Boolean, Array, Dictionary. The type defines the color of the cell.
+     - Optional. Type of Value. Allowed types are String, Number, Boolean, Array, Dictionary. The type defines the color of the cell.
+   * - TTL
+     - Optional. The "time to live" period in seconds. If the specified period expires the corresponding message will be removed from the outbox.
 
 **Return Value**
 
@@ -53,6 +56,11 @@ The last part of the key of the data value to write.
      - | Outbox Message: 
        | |ArrayOut|
      -  You can also direct data from the Inbox into the Outbox. In this example the "Units" array from the Inbox is automatically transfered to the Outbox.
+   * - | =WRITE(OUTBOXDATA("Message","Output",-1),JSON(J22:K24),)
+     - | |inc|
+     - | Pro tipp: If you want to automatically create an array, use -1 as the last OUTBOXDATA() parameter. This way the array will increment starting from 0. 
+
+
 
 
 

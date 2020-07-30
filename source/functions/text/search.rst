@@ -16,7 +16,7 @@ Return the index of the search text within the text. The search starts at index.
    * - Name
      - Description
    * - TextToSearch
-     - Text to search for.
+     - Text to search for. **Note:** wildcards like * or ? are supported.
    * - Text
      - Text to search inside.
    * - StartAt
@@ -36,4 +36,6 @@ Position, where the text is found, otherwise #VALUE.
      - Result
    * - =SEARCH("me", "Search me now")
      - 8
+   * - =SEARCH("a*c", "abc")
+     - 1
 
