@@ -50,6 +50,7 @@ Alphabetical
    streamsheet/dictionary
    database/dmax
    database/dmin
+   drawing/drawbezier
    drawing/drawbutton
    drawing/drawcheckbox
    drawing/drawellipse
