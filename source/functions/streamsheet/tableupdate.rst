@@ -8,7 +8,7 @@ can be automatically added to the left or right.
 
 **Syntax**
 
-=TABLE.UPDATE(CellRange, Value [, RowIndex, ColumnIndex, PushRowAt, PushColumnAt])
+=TABLE.UPDATE(CellRange, Value [, RowIndex, ColumnIndex, PushRowAt, PushColumnAt, AggregationMethod])
 
 **Arguments**
 
@@ -30,6 +30,48 @@ can be automatically added to the left or right.
      - Optional. Defines where to insert a new row index. Should be either 1, -1, or 0. To insert new row at the bottom specfiy 1, -1 will insert it at the top and 0 will not insert at all. Defaults to 0.
    * - PushColumnAt
      - Optional. Defines where to insert a new column index. Should be either 1, -1, or 0. To insert new column to the right specfiy 1, -1 will insert it to the left and 0 will not insert at all. Defaults to 0.
+   * - AggregationMethod
+     - Optional. One of the predefined numbers which specifies the aggregation method to use for specified table cell. Defaults to 0.
+
+**Aggregation Methods**
+
+.. list-table::
+   :widths: 10 15 75
+   :header-rows: 1
+
+   * - Number
+     - Method
+     - Description
+   * - 0
+     - NONE
+     - No aggregation is performed and the last valid value is returned.
+   * - 1
+     - AVERAGE
+     - Calculates the average of all received values.
+   * - 2
+     - COUNT
+     - Counts the number of received values.
+   * - 3
+     - COUNTA
+     - Counts all values which are not zero.
+   * - 4
+     - MAX
+     - Determines the maximum of all received values.
+   * - 5
+     - MIN
+     - Determines the minimum of all received values.
+   * - 6
+     - PRODUCT
+     - Calculates the product of all received values.
+   * - 7
+     - STDEV.S
+     - Calculates the standard deviation of all recieved values. 
+   * - 8
+     - STDEV.P
+     - Currently **not available**!!
+   * - 9
+     - SUM
+     - Calculates the sum of all received values.
 
 **Return Value**
 
