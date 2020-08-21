@@ -18,6 +18,7 @@ You are able to adjust the view of your Dashboard with the icon next to the "+",
 
 
 
+
 On the top right you find two buttons. One leads you to our documentation and the other gives you the possibility to adjust your personal settings. 
 On the top left you find another button opening the side menu.
 

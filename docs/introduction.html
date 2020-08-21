@@ -30,7 +30,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Main Components" href="maincomponents.html" />
-    <link rel="prev" title="Installing Raspian" href="installation/installing-raspian/index.html" /> 
+    <link rel="prev" title="Installing on macOS" href="installation/premium-edition/installing-on-macos/index.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -162,9 +162,9 @@
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="quick-overview">
 <h2>Quick Overview<a class="headerlink" href="#quick-overview" title="Permalink to this headline">¶</a></h2>
-<p>Streamsheets are server-based spreadsheets that consume, process and produce data streams. Data streams can originate from many sources, such as sensors, machines, websites, data bases, applications and many more. How incoming data streams are processed, analysed, visualized and combined as well as which outgoing data streams are produced is modelled entirely with spreadsheet formulas and especially without writing a single line of program code.
-One important characteristic of Streamsheets is that they are recalculated automatically, e.g. every time a new message arrives or continuously with a certain cycle time (can be as small as a few Milliseconds). Consequently, conditions and formulas are considered continuously and based on these decisions are taken and visualizations are updated dynamically. All of this is happening in real-time.
-What´s more, Streamsheets allow you to send, publish, store or provide data, hence, they not only consume data streams but produce them as well.
+<p>Streamsheets are server-based spreadsheets that consume, process and produce data streams. Data streams can originate from many sources, such as sensors, machines, websites, data bases, applications and many more. How incoming data streams are processed, analysed, visualized and combined as well as which outgoing data streams are produced is modelled entirely with spreadsheet formulas and especially without writing a single line of program code.</p>
+<p>One important characteristic of Streamsheets is that they are recalculated automatically, e.g. every time a new message arrives or continuously with a certain cycle time (can be as small as a few Milliseconds). Consequently, conditions and formulas are considered continuously and based on these decisions are taken and visualizations are updated dynamically. All of this is happening in real-time.</p>
+<p>What´s more, Streamsheets allow you to send, publish, store or provide data, hence, they not only consume data streams but produce them as well.
 In a similar way as Excel worksheets form part of a workbook, Streamsheets run in Stream Machines.
 Find out more about Streamsheets, Stream Machines and how Streams are configured under <a class="reference internal" href="maincomponents.html#main-components"><span class="std std-ref">Main Components</span></a>.</p>
 <p><a class="reference internal" href="_images/StSIntro.jpg"><img alt="StSIntro" src="_images/StSIntro.jpg" style="width: 757.0px; height: 550.0px;" /></a></p>
@@ -174,38 +174,38 @@ Find out more about Streamsheets, Stream Machines and how Streams are configured
 <h2>Protocols<a class="headerlink" href="#protocols" title="Permalink to this headline">¶</a></h2>
 <p>Streamsheets support a number of external connections. These connections can either be leveraged to consume or produce data:</p>
 <ul class="simple">
-<li>MQTT</li>
-<li>OPCUA</li>
-<li>REST</li>
-<li>SMPTP/IPOP3 (Mail)</li>
-<li>MongoDB</li>
-<li>InfluxDB</li>
-<li>AMQP</li>
-<li>UPD</li>
-<li>Kafka</li>
-<li>local storage</li>
+<li><p>MQTT</p></li>
+<li><p>OPCUA</p></li>
+<li><p>REST</p></li>
+<li><p>SMPTP/IPOP3 (Mail)</p></li>
+<li><p>MongoDB</p></li>
+<li><p>InfluxDB</p></li>
+<li><p>AMQP</p></li>
+<li><p>UPD</p></li>
+<li><p>Kafka</p></li>
+<li><p>local storage</p></li>
 </ul>
 </div>
 <div class="section" id="use-cases">
 <h2>Use Cases<a class="headerlink" href="#use-cases" title="Permalink to this headline">¶</a></h2>
 <p>Streamsheets can be used for many different scenarios and use cases. Among the most common are the following:</p>
 <ul class="simple">
-<li>Data stream analytics and data stream synchronization</li>
-<li>Rule Engines, conditional alerting &amp; actions as well as soft PLCs</li>
-<li>Monitoring and real-time dashboards</li>
-<li>Edge-cloud and cloud-cloud connectivity</li>
-<li>Protocol conversion and Semantic Mappings (e.g. <a class="reference internal" href="glossary.html#term-mqtt"><span class="xref std std-term">MQTT</span></a> ↔ <a class="reference internal" href="glossary.html#term-opc-ua"><span class="xref std std-term">OPC UA</span></a>)</li>
-<li>Pre-processing on the edge</li>
-<li>Pre-Processing for AI-Systems</li>
-<li>Simulation of data sources and devices</li>
-<li>Automation of Workflows</li>
+<li><p>Data stream analytics and data stream synchronization</p></li>
+<li><p>Rule Engines, conditional alerting &amp; actions as well as soft PLCs</p></li>
+<li><p>Monitoring and real-time dashboards</p></li>
+<li><p>Edge-cloud and cloud-cloud connectivity</p></li>
+<li><p>Protocol conversion and Semantic Mappings (e.g. <a class="reference internal" href="glossary.html#term-mqtt"><span class="xref std std-term">MQTT</span></a> ↔ <a class="reference internal" href="glossary.html#term-opc-ua"><span class="xref std std-term">OPC UA</span></a>)</p></li>
+<li><p>Pre-processing on the edge</p></li>
+<li><p>Pre-Processing for AI-Systems</p></li>
+<li><p>Simulation of data sources and devices</p></li>
+<li><p>Automation of Workflows</p></li>
 </ul>
 <p><strong>Examples videos</strong></p>
 <ul class="simple">
-<li><a class="reference external" href="https://www.youtube.com/watch?v=TdefETldLbA">A first introduction</a></li>
-<li><a class="reference external" href="https://www.youtube.com/watch?v=fNJcIVSneH4&amp;t=1s">Windmill Cockpit</a></li>
-<li><a class="reference external" href="https://www.youtube.com/watch?v=nFQ7yAoDZr0&amp;t=3s">Merging MQTT streams and expose them as OPC UA server</a></li>
-<li><a class="reference external" href="https://www.youtube.com/watch?v=8Psom4xRarU">Real-Time Quality Control</a> (German)</li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=TdefETldLbA">A first introduction</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=fNJcIVSneH4&amp;t=1s">Windmill Cockpit</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=nFQ7yAoDZr0&amp;t=3s">Merging MQTT streams and expose them as OPC UA server</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=8Psom4xRarU">Real-Time Quality Control</a> (German)</p></li>
 </ul>
 </div>
 </div>
@@ -221,7 +221,7 @@ Find out more about Streamsheets, Stream Machines and how Streams are configured
         <a href="maincomponents.html" class="btn btn-neutral float-right" title="Main Components" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="installation/installing-raspian/index.html" class="btn btn-neutral" title="Installing Raspian" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="installation/premium-edition/installing-on-macos/index.html" class="btn btn-neutral" title="Installing on macOS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -250,21 +250,13 @@ Find out more about Streamsheets, Stream Machines and how Streams are configured
   
 
 	
-		<script type="text/javascript">
-			var DOCUMENTATION_OPTIONS = {
-				URL_ROOT:'./',
-				VERSION:'1.0.0',
-				LANGUAGE:'None',
-				COLLAPSE_INDEX:false,
-				FILE_SUFFIX:'.html',
-				HAS_SOURCE:  true,
-				SOURCELINK_SUFFIX: '.txt'
-			};
-		</script>
+		<script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
 			<script type="text/javascript" src="_static/jquery.js"></script>
 			<script type="text/javascript" src="_static/underscore.js"></script>
 			<script type="text/javascript" src="_static/doctools.js"></script>
-	
+			<script type="text/javascript" src="_static/language_data.js"></script>
+			<script type="text/javascript" src="_static/contentui.js"></script>
+		
 
   
 

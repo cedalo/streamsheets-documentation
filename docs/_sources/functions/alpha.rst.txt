@@ -15,6 +15,8 @@ Alphabetical
    statistical/average
    statistical/averageif
    statistical/averageifs
+   streamsheet/await
+   streamsheet/awaitone
    drawing/axis
    drawing/bar
    engineering/bin2dec
@@ -51,6 +53,7 @@ Alphabetical
    streamsheet/dictionary
    lookup/dmax
    lookup/dmin
+   drawing/drawbezier
    drawing/drawbutton
    drawing/drawcheckbox
    drawing/drawellipse
@@ -107,7 +110,9 @@ Alphabetical
    info/isna
    info/isobject
    info/isodd
+   streamsheet/json
    date/jsontime2excel
+   streamsheet/jsonvalue
    streamsheet/kafkacommand
    streamsheet/kafkapublish
    streamsheet/kafkaquery
@@ -174,6 +179,7 @@ Alphabetical
    logical/or
    streamsheet/outbox
    streamsheet/outboxdata
+   streamsheet/outboxgetids
    math/pi
    math/power
    streamsheet/produce
@@ -204,6 +210,7 @@ Alphabetical
    streamsheet/setvalue
    math/sign
    math/sin
+   streamsheet/sleep
    text/split
    math/sqrt
    stack/stackadd
@@ -220,6 +227,7 @@ Alphabetical
    math/sumifs
    streamsheet/swapvalues
    logical/switch
+   streamsheet/tableupdate
    math/tan
    text/text
    date/time

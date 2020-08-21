@@ -7,7 +7,9 @@ Introduction
 Quick Overview
 ---------------
 Streamsheets are server-based spreadsheets that consume, process and produce data streams. Data streams can originate from many sources, such as sensors, machines, websites, data bases, applications and many more. How incoming data streams are processed, analysed, visualized and combined as well as which outgoing data streams are produced is modelled entirely with spreadsheet formulas and especially without writing a single line of program code. 
+
 One important characteristic of Streamsheets is that they are recalculated automatically, e.g. every time a new message arrives or continuously with a certain cycle time (can be as small as a few Milliseconds). Consequently, conditions and formulas are considered continuously and based on these decisions are taken and visualizations are updated dynamically. All of this is happening in real-time.
+
 What´s more, Streamsheets allow you to send, publish, store or provide data, hence, they not only consume data streams but produce them as well. 
 In a similar way as Excel worksheets form part of a workbook, Streamsheets run in Stream Machines. 
 Find out more about Streamsheets, Stream Machines and how Streams are configured under :ref:`Main Components`.

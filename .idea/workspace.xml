@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2100e23-455d-41ab-9757-98c59aa2986d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/source/functions/drawing/axis.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/functions/drawing/series.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/functions/drawing/seriestime.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/functions/drawing/drawbezier.rst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/functions/alpha.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/functions/alpha.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/functions/drawing/drawchart.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/functions/drawing/drawstreamchart.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/functions/drawing/drawchartstate.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/functions/drawing/drawpolygon.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/functions/drawing/drawpolygon.rst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +64,10 @@
       <workItem from="1579529829096" duration="134000" />
       <workItem from="1579616451364" duration="83000" />
       <workItem from="1588422090115" duration="474000" />
-      <workItem from="1588499445552" duration="1350000" />
+      <workItem from="1588499445552" duration="1571000" />
+      <workItem from="1589890094298" duration="127000" />
+      <workItem from="1589969106386" duration="612000" />
+      <workItem from="1590166629997" duration="371000" />
     </task>
     <task id="LOCAL-00001" summary="update close parameter default">
       <created>1574856348630</created>
@@ -125,7 +125,21 @@
       <option name="project" value="LOCAL" />
       <updated>1579616502011</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="update function documentation for new chart implementation">
+      <created>1588500882732</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1588500882732</updated>
+    </task>
+    <task id="LOCAL-00010" summary="update function documentation for new chart implementation">
+      <created>1588500967130</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1588500967130</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,9 +153,22 @@
     <MESSAGE value="add DRAW.CHARTSTATE docs" />
     <MESSAGE value="update DRAW.CHARTSTATE docs" />
     <MESSAGE value="add scale font parameter for DRAW.CHARTSTATE" />
-    <option name="LAST_COMMIT_MESSAGE" value="add scale font parameter for DRAW.CHARTSTATE" />
+    <MESSAGE value="update function documentation for new chart implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="update function documentation for new chart implementation" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="691" y="154" key="CommitChangelistDialog2" timestamp="1588500966366">
+      <screen x="0" y="0" width="2133" height="1169" />
+    </state>
+    <state x="691" y="154" key="CommitChangelistDialog2/0.0.2133.1169@0.0.2133.1169" timestamp="1588500966366" />
+    <state x="957" y="453" width="386" height="263" key="MultipleFileMergeDialog" timestamp="1588500909377">
+      <screen x="0" y="0" width="2133" height="1169" />
+    </state>
+    <state x="957" y="453" width="386" height="263" key="MultipleFileMergeDialog/0.0.2133.1169@0.0.2133.1169" timestamp="1588500909377" />
+    <state x="660" y="318" key="Vcs.Push.Dialog.v2" timestamp="1588500970245">
+      <screen x="0" y="0" width="2133" height="1169" />
+    </state>
+    <state x="660" y="318" key="Vcs.Push.Dialog.v2/0.0.2133.1169@0.0.2133.1169" timestamp="1588500970245" />
     <state x="773" y="318" width="1029" height="733" key="find.popup" timestamp="1588422381522">
       <screen x="0" y="0" width="2133" height="1169" />
     </state>

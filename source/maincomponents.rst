@@ -19,4 +19,5 @@ Stream Machines consume and produce streams. A Machine´s Streamsheets define ho
     maincomponents/streammachine       
     maincomponents/streamsheet
     maincomponents/dashboard
+    maincomponents/streams
     maincomponents/administration

@@ -84,3 +84,4 @@ Tool bar
 + **Insert Chart:** Similarly to other Spreadsheet solutions, charts can be created by selecting a cell range and choosing a chart type. However, as Streamsheets are recalculated automatically, charts change dynamically according to their input.  
 
 
+

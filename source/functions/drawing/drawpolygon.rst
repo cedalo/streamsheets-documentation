@@ -71,7 +71,7 @@ Define a graphical polygon.
 
 **Return Value**
 
-TRUE, if button could be created.
+TRUE, if polygon could be created.
 
 **Example**
 

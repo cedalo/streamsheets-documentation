@@ -19,11 +19,11 @@ inside an outbox.
    * - Name
      - Description
    * - Message
-     - Message name to identify. A wildcard can be used to reference all messages.
+     - Optional. ID of Message to identify. If left empty, the current message in the outbox is used.
 
 **Return Value**
 
-A key to identify messages.
+A key to identify message.
 
 **Example**
 
