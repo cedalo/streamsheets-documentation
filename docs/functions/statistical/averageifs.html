@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="../../_static/theme_override.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="BAR" href="../drawing/bar.html" />
+    <link rel="next" title="AXIS" href="../drawing/axis.html" />
     <link rel="prev" title="AVERAGEIF" href="averageif.html" /> 
 
   
@@ -81,8 +81,8 @@
             
               <p class="caption"><span class="caption-text">User Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../maincomponents.html">Main Components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../gettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
@@ -115,11 +115,13 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../streamsheet.html">Streamsheet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../timeseries.html">Timeseries</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../others.html">Other</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../releasenotes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://www.cedalo.com">Cedalo</a></li>
 </ul>
 
             
@@ -192,108 +194,108 @@
 <p><strong>Syntax</strong></p>
 <p>=AVERAGEIFS(AverageRange, CriterionRange1, Criterion1, [CriterionRange2, Criterion2], …)</p>
 <p><strong>Arguments</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
+<col width="20%" />
+<col width="80%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Description</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>AverageRange</p></td>
-<td><p>Cell-range to calculate average for.</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>AverageRange</td>
+<td>Cell-range to calculate average for.</td>
 </tr>
-<tr class="row-odd"><td><p>CriterionRange1</p></td>
-<td><p>The cell-range which is checked against the criterion.</p></td>
+<tr class="row-odd"><td>CriterionRange1</td>
+<td>The cell-range which is checked against the criterion.</td>
 </tr>
-<tr class="row-even"><td><p>Criterion1</p></td>
-<td><p>The criterion each cell of CriterionRange1 has to fulfill.</p></td>
+<tr class="row-even"><td>Criterion1</td>
+<td>The criterion each cell of CriterionRange1 has to fulfill.</td>
 </tr>
-<tr class="row-odd"><td><p>CriterionRange2,…</p></td>
-<td><p>Optional. Additional cell-range which is checked against next criterion.</p></td>
+<tr class="row-odd"><td>CriterionRange2,…</td>
+<td>Optional. Additional cell-range which is checked against next criterion.</td>
 </tr>
-<tr class="row-even"><td><p>Criterion2,…</p></td>
-<td><p>Optional. Additional criterion each cell of CriterionRange2 has to fulfill.</p></td>
+<tr class="row-even"><td>Criterion2,…</td>
+<td>Optional. Additional criterion each cell of CriterionRange2 has to fulfill.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
 <p>The average over all cell values which meet all specified criteria.</p>
 <p><strong>Example</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 4%" />
-<col style="width: 24%" />
-<col style="width: 24%" />
-<col style="width: 24%" />
-<col style="width: 24%" />
+<col width="4%" />
+<col width="24%" />
+<col width="24%" />
+<col width="24%" />
+<col width="24%" />
 </colgroup>
-<tbody>
-<tr class="row-odd"><td></td>
-<td><p>A</p></td>
-<td><p>B</p></td>
-<td><p>C</p></td>
-<td><p>D</p></td>
+<tbody valign="top">
+<tr class="row-odd"><td>&#160;</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
 </tr>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>230000</p></td>
-<td><p>Freiburg</p></td>
-<td><p>3</p></td>
-<td><p>No</p></td>
+<tr class="row-even"><td>1</td>
+<td>230000</td>
+<td>Freiburg</td>
+<td>3</td>
+<td>No</td>
 </tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>197000</p></td>
-<td><p>Cologne</p></td>
-<td><p>2</p></td>
-<td><p>Yes</p></td>
+<tr class="row-odd"><td>2</td>
+<td>197000</td>
+<td>Cologne</td>
+<td>2</td>
+<td>Yes</td>
 </tr>
-<tr class="row-even"><td><p>3</p></td>
-<td><p>345678</p></td>
-<td><p>Cologne</p></td>
-<td><p>4</p></td>
-<td><p>Yes</p></td>
+<tr class="row-even"><td>3</td>
+<td>345678</td>
+<td>Cologne</td>
+<td>4</td>
+<td>Yes</td>
 </tr>
-<tr class="row-odd"><td><p>4</p></td>
-<td><p>321900</p></td>
-<td><p>Freiburg</p></td>
-<td><p>2</p></td>
-<td><p>Yes</p></td>
+<tr class="row-odd"><td>4</td>
+<td>321900</td>
+<td>Freiburg</td>
+<td>2</td>
+<td>Yes</td>
 </tr>
-<tr class="row-even"><td><p>5</p></td>
-<td><p>203000</p></td>
-<td><p>Cologne</p></td>
-<td><p>3</p></td>
-<td><p>No</p></td>
+<tr class="row-even"><td>5</td>
+<td>203000</td>
+<td>Cologne</td>
+<td>3</td>
+<td>No</td>
 </tr>
 </tbody>
 </table>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 45%" />
-<col style="width: 10%" />
-<col style="width: 45%" />
+<col width="45%" />
+<col width="10%" />
+<col width="45%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Function</p></th>
-<th class="head"><p>Result</p></th>
-<th class="head"><p>Comment</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Result</th>
+<th class="head">Comment</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>AVERAGEIFS(<span class="blue">A1:A5</span>, <span class="orange">B1:B5</span>, <span class="green">“Cologne”</span>, <span class="orange">C1:C5</span>, <span class="green">“&gt;2”</span>)</p></td>
-<td><p>200000</p></td>
-<td><p>Average price of houses in Cologne that have at least 3 rooms.</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>AVERAGEIFS(<span class="blue">A1:A5</span>, <span class="orange">B1:B5</span>, <span class="green">“Cologne”</span>, <span class="orange">C1:C5</span>, <span class="green">“&gt;2”</span>)</td>
+<td>200000</td>
+<td>Average price of houses in Cologne that have at least 3 rooms.</td>
 </tr>
-<tr class="row-odd"><td><p>AVERAGEIFS(<span class="blue">A1:A5</span>, <span class="orange">C1:C5</span>, <span class="green">“&gt;=4”</span>)</p></td>
-<td><p>345678</p></td>
-<td><p>Average price of houses with 4 or more rooms.</p></td>
+<tr class="row-odd"><td>AVERAGEIFS(<span class="blue">A1:A5</span>, <span class="orange">C1:C5</span>, <span class="green">“&gt;=4”</span>)</td>
+<td>345678</td>
+<td>Average price of houses with 4 or more rooms.</td>
 </tr>
-<tr class="row-even"><td><p>AVERAGEIFS(<span class="blue">A1:A5</span>, <span class="orange">C1:C5</span>, <span class="green">“&gt;4”</span>)</p></td>
-<td><p><span class="red">#DIV/0!</span></p></td>
-<td><p>No cell fulfills given criterion.</p></td>
+<tr class="row-even"><td>AVERAGEIFS(<span class="blue">A1:A5</span>, <span class="orange">C1:C5</span>, <span class="green">“&gt;4”</span>)</td>
+<td><span class="red">#DIV/0!</span></td>
+<td>No cell fulfills given criterion.</td>
 </tr>
 </tbody>
 </table>
@@ -307,7 +309,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../drawing/bar.html" class="btn btn-neutral float-right" title="BAR" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../drawing/axis.html" class="btn btn-neutral float-right" title="AXIS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="averageif.html" class="btn btn-neutral" title="AVERAGEIF" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -339,13 +341,21 @@
   
 
 	
-		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+		<script type="text/javascript">
+			var DOCUMENTATION_OPTIONS = {
+				URL_ROOT:'../../',
+				VERSION:'1.0.0',
+				LANGUAGE:'None',
+				COLLAPSE_INDEX:false,
+				FILE_SUFFIX:'.html',
+				HAS_SOURCE:  true,
+				SOURCELINK_SUFFIX: '.txt'
+			};
+		</script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-			<script type="text/javascript" src="../../_static/language_data.js"></script>
-			<script type="text/javascript" src="../../_static/contentui.js"></script>
-		
+	
 
   
 

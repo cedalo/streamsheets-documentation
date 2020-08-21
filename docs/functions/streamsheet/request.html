@@ -100,7 +100,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../statistical.html">Statistical</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../streamsheet.html">Streamsheet</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="array.html">ARRAY</a></li>
-<li class="toctree-l3"><a class="reference internal" href="calc.html">CALC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="colorconvert.html">COLOR.CONVERT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="copyvalues.html">COPYVALUES</a></li>
 <li class="toctree-l3"><a class="reference internal" href="counter.html">COUNTER</a></li>
@@ -156,7 +155,6 @@
 <li class="toctree-l3"><a class="reference internal" href="subtree.html">SUBTREE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="swapvalues.html">SWAPVALUES</a></li>
 <li class="toctree-l3"><a class="reference internal" href="timeaggregate.html">TIMEAGGREGATE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="triggerstep.html">TRIGGERSTEP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="webpage.html">WEBPAGE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="write.html">WRITE</a></li>
 </ul>
@@ -241,31 +239,31 @@ added to the <a class="reference internal" href="../../maincomponents/streamshee
 <p><strong>Syntax</strong></p>
 <p>=REQUEST(<a class="reference internal" href="../../glossary.html#term-producer"><span class="xref std std-term">Producer</span></a>, ParameterJSON, Target[,ResultKeys, Timeout])</p>
 <p><strong>Arguments</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
+<col width="20%" />
+<col width="80%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Description</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>Producer</p></td>
-<td><p>Producer to use for submitting the request.</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>Producer</td>
+<td>Producer to use for submitting the request.</td>
 </tr>
-<tr class="row-odd"><td><p>ParameterJSON</p></td>
-<td><p>Message with <a class="reference internal" href="../../glossary.html#term-json"><span class="xref std std-term">JSON</span></a> Structure defining the request parameters.</p></td>
+<tr class="row-odd"><td>ParameterJSON</td>
+<td>Message with <a class="reference internal" href="../../glossary.html#term-json"><span class="xref std std-term">JSON</span></a> Structure defining the request parameters.</td>
 </tr>
-<tr class="row-even"><td><p>Target</p></td>
-<td><p><a class="reference internal" href="inbox.html#inboxf"><span class="std std-ref">INBOX</span></a>(), <a class="reference internal" href="outbox.html#outbox"><span class="std std-ref">OUTBOX</span></a>(“MsgID”) or a cell range where the result will be placed.</p></td>
+<tr class="row-even"><td>Target</td>
+<td><a class="reference internal" href="inbox.html#inboxf"><span class="std std-ref">INBOX</span></a>(), <a class="reference internal" href="outbox.html#outbox"><span class="std std-ref">OUTBOX</span></a>(“MsgID”) or a cell range where the result will be placed.</td>
 </tr>
-<tr class="row-odd"><td><p>ResultKeys</p></td>
-<td><p>Optional. Limit the result to the specified JSON Keys</p></td>
+<tr class="row-odd"><td>ResultKeys</td>
+<td>Optional. Limit the result to the specified JSON Keys</td>
 </tr>
-<tr class="row-even"><td><p>Timeout</p></td>
-<td><p>Optional. Number of ms after the request times out and an error is returned.</p></td>
+<tr class="row-even"><td>Timeout</td>
+<td>Optional. Number of ms after the request times out and an error is returned.</td>
 </tr>
 </tbody>
 </table>
@@ -273,23 +271,23 @@ added to the <a class="reference internal" href="../../maincomponents/streamshee
 <p>The function REQUEST() always returns a unique random request ID, which is automatically generated when
 the service is called.</p>
 <p><strong>Example</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 45%" />
-<col style="width: 10%" />
-<col style="width: 45%" />
+<col width="45%" />
+<col width="10%" />
+<col width="45%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Function</p></th>
-<th class="head"><p>Result</p></th>
-<th class="head"><p>Comment</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Result</th>
+<th class="head">Comment</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>=REQUEST(“Rest”, <a class="reference internal" href="outbox.html#outbox"><span class="std std-ref">OUTBOX</span></a>(“Message”), <a class="reference internal" href="inbox.html#inboxf"><span class="std std-ref">INBOX</span></a>(“S2”))</p></td>
-<td><p>generated Request id</p></td>
-<td><p>The message must exist before calling REQUEST. It is created like a normal message, which
-you would like to publish, using the <a class="reference internal" href="write.html#write"><span class="std std-ref">WRITE</span></a> formula.</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>=REQUEST(“Rest”, <a class="reference internal" href="outbox.html#outbox"><span class="std std-ref">OUTBOX</span></a>(“Message”), <a class="reference internal" href="inbox.html#inboxf"><span class="std std-ref">INBOX</span></a>(“S2”))</td>
+<td>generated Request id</td>
+<td>The message must exist before calling REQUEST. It is created like a normal message, which
+you would like to publish, using the <span class="xref std std-ref">WRITE</span> formula.</td>
 </tr>
 </tbody>
 </table>
@@ -335,13 +333,21 @@ you would like to publish, using the <a class="reference internal" href="write.h
   
 
 	
-		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+		<script type="text/javascript">
+			var DOCUMENTATION_OPTIONS = {
+				URL_ROOT:'../../',
+				VERSION:'1.0.0',
+				LANGUAGE:'None',
+				COLLAPSE_INDEX:false,
+				FILE_SUFFIX:'.html',
+				HAS_SOURCE:  true,
+				SOURCELINK_SUFFIX: '.txt'
+			};
+		</script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-			<script type="text/javascript" src="../../_static/language_data.js"></script>
-			<script type="text/javascript" src="../../_static/contentui.js"></script>
-		
+	
 
   
 

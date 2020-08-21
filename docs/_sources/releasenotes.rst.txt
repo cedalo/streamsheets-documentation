@@ -5,12 +5,17 @@ We will never stop improving our :term:`Streamsheet`\ s. Stay up to date with ou
 
 .. _currently: 
 
+2.0-milestone
+---------------
+
+**(released August 21, 2020)**
+2.0 milestone for Eclipse release. 
 
 1.6-milestone
 ---------------
 
 **(released April 30, 2020)**
-First milestone for eclipse release. 
+First milestone for Eclipse release. 
 
 | **Changes:**
 | + **Performance:** Performance improvements client side
