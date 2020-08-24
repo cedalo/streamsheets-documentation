@@ -19,7 +19,7 @@ Reads the values from a :term:`JSON` object using the given key. Mainly used to 
      - Description
    * - Key
      - A key to a data item, that should be read. The key is usually created by using utility functions
-       like :ref:`INBOXDATA`, :ref:`INBOXMETADATA` or :ref:`OUTBOXDATA`. The key consists of the path to the item within the
+       like :ref:`INBOXDATA`, :ref:`INBOXMETADATA`, :ref:`OUTBOXMETADATA` or :ref:`OUTBOXDATA`. The key consists of the path to the item within the
        JSON object. Each path element is surrounded by brackets, Depending on the used utility function, you
        can retrieve data from different sources (e.g. Inbox or Outbox).
    * - TargetCell or Range
