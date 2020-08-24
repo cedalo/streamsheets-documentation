@@ -4,12 +4,30 @@ Release Notes
 We will never stop improving our :term:`Streamsheet`\ s. Stay up to date with our release notes.
 
 .. _currently: 
+.. |star| image:: /images/star.svg
+    :scale: 50%
+
+|star| *= premium feature*
 
 2.0-milestone
 ---------------
 
 **(released August 21, 2020)**
 2.0 milestone for Eclipse release. 
+
+| **Changes:**
+| + **UI:** New User Interface Design
+| + **Menu Structure:** Streams are now part of the main Dashboard
+| + **Wording:** "Stream Machines" --> "Apps & Services" 
+| + **Bug fixes**
+| + **Touch displays:** better touch experience
+
+| **Features:**
+| + **Stream Wizard:** Streams can now be added/adjusted without leaving the Streamsheet
+| + **New Functions:** :ref:`JSON.VALUE`\ (); :ref:`AWAIT`\ (); :ref:`SLEEP`\ (); :ref:`OUTBOX.GETIDS`\ ()
+| + **New Charts:** Added stock, funnel and combination charts |star|
+| + **Colors:** Opacity now supported
+| + **Outbox:** Time-to-live for WRITE() now supported
 
 1.6-milestone
 ---------------
@@ -19,7 +37,7 @@ First milestone for Eclipse release.
 
 | **Changes:**
 | + **Performance:** Performance improvements client side
-| * **User Management:** Improvement of premium UM  
+| + **User Management:** Improvement of premium UM   
 | + **Bug fixes**
 | + **Functions:** REST.REQUEST()/REST.RESPOND() now called HTTP.REQUEST()/HTTP.RESPOND()
 | + **Import Improved:** Reworked the import feature to be easier to use
@@ -30,19 +48,19 @@ First milestone for Eclipse release.
 
 
 | **Features:**
-| + **User Roles:** Users can be assigned admin, developer and viewer roles; Admins can manage users and their roles; Admins & Developers can create, modify and delete stream machines and streams; Viewers can view but not edit stream machines. *Premium*
-| + **Workspaces:** Added Workspaces; Each user can be assigned to several Workspace as well as given a roles within these Workspaces;  *Premium*
-| + **InfluxDB Support:** Connect to influx databases and store data as well as query data using the new functions: INFLUX.STORE() and INFLUX.SELECT() *Premium*
-| + **InfluxDB Export:** Selcet data from an influx database and save to disk. This data can then also be downloaded as a csv file via the export button of the machine toolbar. *Premium*
-| + **PDF Generation (basic):** Take a screenshot of the current stream machine and download it as pdf. *Premium*
-| + **Sending of SMS:** With SMS.SEND() a streamsheet can send a notification via an SMS. *Premium*
+| + **User Roles:** Users can be assigned admin, developer and viewer roles; Admins can manage users and their roles; Admins & Developers can create, modify and delete stream machines and streams; Viewers can view but not edit stream machines. |star|
+| + **Workspaces:** Added Workspaces; Each user can be assigned to several Workspace as well as given a roles within these Workspaces;  |star|
+| + **InfluxDB Support:** Connect to influx databases and store/query data using the new functions: INFLUX.STORE() and INFLUX.SELECT() |star|
+| + **InfluxDB Export:** Selcet data from an influx database and save to disk. This data can then also be downloaded as a csv file via the export button of the machine toolbar. |star|
+| + **PDF Generation (basic):** Take a screenshot of the current stream machine and download it as pdf. |star|
+| + **Sending of SMS:** With SMS.SEND() a streamsheet can send a notification via an SMS. |star|
 | + **Chart Module Refactoring:** New Chart Module.
-| + **Sending of emails without connector:** With EMAIL.SEND() a streamsheet can send a notification via an email (without the need to previously create an E-Mail connector). *Premium*
-| + **Sharing machines via link:** The toolbar got a new button to share a machine with others. With this link any user can open and view, but not edit, the machine. The link can also be an expiration date. *Premium*
-| + **Custom User Function:** Implement your own Streamsheets functions in JavaScript and Node.js. *Premium*
+| + **Sending of emails without connector:** With EMAIL.SEND() a streamsheet can send a notification via an email (without the need to previously create an E-Mail connector). |star|
+| + **Sharing machines via link:** The toolbar got a new button to share a machine with others. With this link any user can open and view, but not edit, the machine. The link can also be an expiration date. |star|
+| + **Custom User Function:** Implement your own Streamsheets functions in JavaScript and Node.js. |star|
 | + **Custom Machine Tile Images:** Give your stream machines custom images to represent them in the tile view in the dashboard.
 | + **Unpersistent query functions:**  TIME.STORE(); TIME.QUERY()
-| + **JSON.PROCESS():** This function allows you to process large messages more effectively. This is especially true  if looping at at the granular key-value pair level is not an option. *Premium*
+| + **JSON.PROCESS():** This function allows you to process large messages more effectively. This is especially true  if looping at at the granular key-value pair level is not an option. |star|
 | + **Extendable Gateway:** New plugin system to further customize the user management 
 | + **Additional Chart Types:** Improvement of premium Charts
 

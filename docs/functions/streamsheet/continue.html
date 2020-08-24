@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>CONTINUE &mdash; Streamsheets Documentation 1.0.0 documentation</title>
+  <title>CONTINUE &mdash; Streamsheets Documentation 2.0.0 documentation</title>
   
 
   
@@ -100,6 +100,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../statistical.html">Statistical</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../streamsheet.html">Streamsheet</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="array.html">ARRAY</a></li>
+<li class="toctree-l3"><a class="reference internal" href="await.html">AWAIT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="awaitone.html">AWAIT.ONE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="calc.html">CALC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="colorconvert.html">COLOR.CONVERT</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">CONTINUE</a></li>
@@ -124,6 +126,7 @@
 <li class="toctree-l3"><a class="reference internal" href="inboxmetadata.html">INBOXMETADATA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="influxdrop.html">INFLUX.DROP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="json.html">JSON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsonvalue.html">JSON.VALUE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kafkacommand.html">KAFKA.COMMAND</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kafkapublish.html">KAFKA.PUBLISH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kafkaquery.html">KAFKA.QUERY</a></li>
@@ -138,6 +141,7 @@
 <li class="toctree-l3"><a class="reference internal" href="opcuawrite.html">OPCUA.WRITE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="outbox.html">OUTBOX</a></li>
 <li class="toctree-l3"><a class="reference internal" href="outboxdata.html">OUTBOXDATA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="outboxgetids.html">OUTBOX.GETIDS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="produce.html">PRODUCE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="range.html">RANGE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="read.html">READ</a></li>
@@ -152,8 +156,10 @@
 <li class="toctree-l3"><a class="reference internal" href="setcycletime.html">SETCYCLETIME</a></li>
 <li class="toctree-l3"><a class="reference internal" href="setphase.html">SETPHASE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="setvalue.html">SETVALUE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sleep.html">SLEEP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="subtree.html">SUBTREE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="swapvalues.html">SWAPVALUES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tableupdate.html">TABLE.UPDATE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="triggerstep.html">TRIGGERSTEP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="webpage.html">WEBPAGE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="write.html">WRITE</a></li>
@@ -240,47 +246,47 @@ Normally a Streamsheet is calculated from left to right and top to bottom. Using
 <p><strong>Syntax</strong></p>
 <p>=CONTINUE(Cell)</p>
 <p><strong>Arguments</strong></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col style="width: 20%" />
+<col style="width: 80%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Name</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Cell</td>
-<td>Target cell of CONTINUE.</td>
+<tbody>
+<tr class="row-even"><td><p>Cell</p></td>
+<td><p>Target cell of CONTINUE.</p></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
 <p>TRUE, if successful, otherwise error code.</p>
 <p><strong>Example</strong></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="45%" />
-<col width="10%" />
-<col width="45%" />
+<col style="width: 45%" />
+<col style="width: 10%" />
+<col style="width: 45%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Function</th>
-<th class="head">Result</th>
-<th class="head">Comment</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Result</p></th>
+<th class="head"><p>Comment</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>=CONTINUE(B1)</td>
-<td>TRUE</td>
-<td>The step stops at the CONTINUE() function, jumps back to B1 and starts the next step at B1.</td>
+<tbody>
+<tr class="row-even"><td><p>=CONTINUE(B1)</p></td>
+<td><p>TRUE</p></td>
+<td><p>The step stops at the CONTINUE() function, jumps back to B1 and starts the next step at B1.</p></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Be careful, when using CONTINUE, as you can define an endless loop using this function.</p>
+<p class="admonition-title">Warning</p>
+<p>Be careful, when using CONTINUE, as you can define an endless loop using this function.</p>
 </div>
 </div>
 
@@ -324,21 +330,13 @@ Normally a Streamsheet is calculated from left to right and top to bottom. Using
   
 
 	
-		<script type="text/javascript">
-			var DOCUMENTATION_OPTIONS = {
-				URL_ROOT:'../../',
-				VERSION:'1.0.0',
-				LANGUAGE:'None',
-				COLLAPSE_INDEX:false,
-				FILE_SUFFIX:'.html',
-				HAS_SOURCE:  true,
-				SOURCELINK_SUFFIX: '.txt'
-			};
-		</script>
+		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-	
+			<script type="text/javascript" src="../../_static/language_data.js"></script>
+			<script type="text/javascript" src="../../_static/contentui.js"></script>
+		
 
   
 

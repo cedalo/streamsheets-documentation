@@ -1,3 +1,5 @@
+.. _outbox.getids:
+
 OUTBOX.GETIDS
 -----------------------------
 

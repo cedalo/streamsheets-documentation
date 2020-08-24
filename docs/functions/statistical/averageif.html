@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>AVERAGEIF &mdash; Streamsheets Documentation 1.0.0 documentation</title>
+  <title>AVERAGEIF &mdash; Streamsheets Documentation 2.0.0 documentation</title>
   
 
   
@@ -195,88 +195,88 @@ To specify multiple criteria please use <a class="reference internal" href="aver
 <p><strong>Syntax</strong></p>
 <p>=AVERAGEIF(DataRange, Criterion, [AverageRange])</p>
 <p><strong>Arguments</strong></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col style="width: 20%" />
+<col style="width: 80%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Name</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>DataRange</td>
-<td>Cell-range to calculate average for.</td>
+<tbody>
+<tr class="row-even"><td><p>DataRange</p></td>
+<td><p>Cell-range to calculate average for.</p></td>
 </tr>
-<tr class="row-odd"><td>Criterion</td>
-<td>The criterion each cell has to fulfill.</td>
+<tr class="row-odd"><td><p>Criterion</p></td>
+<td><p>The criterion each cell has to fulfill.</p></td>
 </tr>
-<tr class="row-even"><td>AverageRange</td>
-<td>Optional. If given these cells are used to calculate average. If ommitted DataRange is used.</td>
+<tr class="row-even"><td><p>AverageRange</p></td>
+<td><p>Optional. If given these cells are used to calculate average. If ommitted DataRange is used.</p></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
 <p>The average over all cell values which meet criterion.</p>
 <p><strong>Example</strong></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="4%" />
-<col width="48%" />
-<col width="48%" />
+<col style="width: 4%" />
+<col style="width: 48%" />
+<col style="width: 48%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>&#160;</td>
-<td>A</td>
-<td>B</td>
+<tbody>
+<tr class="row-odd"><td></td>
+<td><p>A</p></td>
+<td><p>B</p></td>
 </tr>
-<tr class="row-even"><td>1</td>
-<td>100000</td>
-<td>200</td>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>100000</p></td>
+<td><p>200</p></td>
 </tr>
-<tr class="row-odd"><td>2</td>
-<td>200000</td>
-<td>400</td>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>200000</p></td>
+<td><p>400</p></td>
 </tr>
-<tr class="row-even"><td>3</td>
-<td>300000</td>
-<td>400</td>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>300000</p></td>
+<td><p>400</p></td>
 </tr>
-<tr class="row-odd"><td>4</td>
-<td>North</td>
-<td>600</td>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>North</p></td>
+<td><p>600</p></td>
 </tr>
-<tr class="row-even"><td>5</td>
-<td>East</td>
-<td>800</td>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>East</p></td>
+<td><p>800</p></td>
 </tr>
-<tr class="row-odd"><td>6</td>
-<td>South</td>
-<td>1000</td>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>South</p></td>
+<td><p>1000</p></td>
 </tr>
 </tbody>
 </table>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="45%" />
-<col width="10%" />
-<col width="45%" />
+<col style="width: 45%" />
+<col style="width: 10%" />
+<col style="width: 45%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Function</th>
-<th class="head">Result</th>
-<th class="head">Comment</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Result</p></th>
+<th class="head"><p>Comment</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>AVERAGEIF(<span class="blue">A1:A3</span>, <span class="orange">“&lt;250000”</span>)</td>
-<td>150000</td>
-<td>Only cells A1 and A2 match given criterion</td>
+<tbody>
+<tr class="row-even"><td><p>AVERAGEIF(<span class="blue">A1:A3</span>, <span class="orange">“&lt;250000”</span>)</p></td>
+<td><p>150000</p></td>
+<td><p>Only cells A1 and A2 match given criterion</p></td>
 </tr>
-<tr class="row-odd"><td>AVERAGEIF(<span class="blue">A1:A6</span>, <span class="orange">“=*th”</span>, <span class="green">B1:B6</span>)</td>
-<td>800</td>
-<td>Take cells from colum A which end with “th” and average corresponding values from column B</td>
+<tr class="row-odd"><td><p>AVERAGEIF(<span class="blue">A1:A6</span>, <span class="orange">“=*th”</span>, <span class="green">B1:B6</span>)</p></td>
+<td><p>800</p></td>
+<td><p>Take cells from colum A which end with “th” and average corresponding values from column B</p></td>
 </tr>
 </tbody>
 </table>
@@ -322,21 +322,13 @@ To specify multiple criteria please use <a class="reference internal" href="aver
   
 
 	
-		<script type="text/javascript">
-			var DOCUMENTATION_OPTIONS = {
-				URL_ROOT:'../../',
-				VERSION:'1.0.0',
-				LANGUAGE:'None',
-				COLLAPSE_INDEX:false,
-				FILE_SUFFIX:'.html',
-				HAS_SOURCE:  true,
-				SOURCELINK_SUFFIX: '.txt'
-			};
-		</script>
+		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-	
+			<script type="text/javascript" src="../../_static/language_data.js"></script>
+			<script type="text/javascript" src="../../_static/contentui.js"></script>
+		
 
   
 

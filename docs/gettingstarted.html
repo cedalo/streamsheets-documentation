@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Getting Started &mdash; Streamsheets Documentation 1.0.0 documentation</title>
+  <title>Getting Started &mdash; Streamsheets Documentation 2.0.0 documentation</title>
   
 
   
@@ -213,8 +213,8 @@
 <div class="line">To send the JSON Range, we select a cell beneath the range and click “Insert Stream Function” in the tool bar (it is the arrowhead). Choose <a class="reference internal" href="functions/streamsheet/mqttpublish.html#mqttpublish"><span class="std std-ref">MQTT.PUBLISH</span></a> and as Stream the Producer you just created. The message parameter should already be prefilled referencing to the JSON Range above. If that is not the case, select the JSON range. To complete =MQTT.PUBLISH() enter the MQTT topic you listed in the Consumer, possibly “catsanddogs”, and click OK. Then, start the Stream Machine by clicking “Play” in the blue bar on the top.</div>
 </div>
 <div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p class="last">Streamsheets calculate from <strong>left to right</strong> and from <strong>top to bottom</strong>. This means, first, row 1 is calculated from left to right, then, row 2 followed by row 3 … until the end of the sheet is reached. As a consequence, you typically <strong>place a stream function behind the cells you want to send/produce</strong>. Placing the stream function before these cells will send the values of the previous calculation step.</p>
+<p class="admonition-title">Tip</p>
+<p>Streamsheets calculate from <strong>left to right</strong> and from <strong>top to bottom</strong>. This means, first, row 1 is calculated from left to right, then, row 2 followed by row 3 … until the end of the sheet is reached. As a consequence, you typically <strong>place a stream function behind the cells you want to send/produce</strong>. Placing the stream function before these cells will send the values of the previous calculation step.</p>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -285,21 +285,13 @@
   
 
 	
-		<script type="text/javascript">
-			var DOCUMENTATION_OPTIONS = {
-				URL_ROOT:'./',
-				VERSION:'1.0.0',
-				LANGUAGE:'None',
-				COLLAPSE_INDEX:false,
-				FILE_SUFFIX:'.html',
-				HAS_SOURCE:  true,
-				SOURCELINK_SUFFIX: '.txt'
-			};
-		</script>
+		<script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
 			<script type="text/javascript" src="_static/jquery.js"></script>
 			<script type="text/javascript" src="_static/underscore.js"></script>
 			<script type="text/javascript" src="_static/doctools.js"></script>
-	
+			<script type="text/javascript" src="_static/language_data.js"></script>
+			<script type="text/javascript" src="_static/contentui.js"></script>
+		
 
   
 

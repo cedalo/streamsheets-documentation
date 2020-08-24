@@ -10,7 +10,7 @@ data range have to be structured, in order for a Stream Machine to interpret the
 together to a key and value pair using the JSON Syntax. Alternatively it is possible to specify a text which will be
 parsed to JSON or use one of the various INBOX/OUTBOX functions to reference an element from a message stored in inbox or
 outbox respectively. The optional second parameter can be used to convert the resulting JSON object to a textual representation.
-This function is mostly used within publish functions like::ref:`mqttpublish`.
+This function is mostly used within publish functions like::ref:`mqttpublish`. The JSON structure supports quotes "". eg. {"Key":"value"}
 
 **Syntax**
 

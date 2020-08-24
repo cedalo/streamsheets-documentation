@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>TIMESTORE &mdash; Streamsheets Documentation 1.0.0 documentation</title>
+  <title>TIMESTORE &mdash; Streamsheets Documentation 2.0.0 documentation</title>
   
 
   
@@ -184,72 +184,72 @@
 <p><strong>Syntax</strong></p>
 <p>TIMESTORE(Json, [Period, TimeSerial, Limit])</p>
 <p><strong>Arguments</strong></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col style="width: 20%" />
+<col style="width: 80%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Name</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Json</td>
-<td>A JSON object which contains the key-value pairs to store.</td>
+<tbody>
+<tr class="row-even"><td><p>Json</p></td>
+<td><p>A JSON object which contains the key-value pairs to store.</p></td>
 </tr>
-<tr class="row-odd"><td>Period</td>
-<td>Optional. The time period in seconds over which data is collected. Older data is dropped. Defaults to 60 seconds.</td>
+<tr class="row-odd"><td><p>Period</p></td>
+<td><p>Optional. The time period in seconds over which data is collected. Older data is dropped. Defaults to 60 seconds.</p></td>
 </tr>
-<tr class="row-even"><td>TimeSerial</td>
-<td>Optional. A serial number to use as key for each stored value. Note: data is always sorted according to its corresponding timestamp. Defaults to <a class="reference internal" href="../date/now.html#now"><span class="std std-ref">NOW</span></a>.</td>
+<tr class="row-even"><td><p>TimeSerial</p></td>
+<td><p>Optional. A serial number to use as key for each stored value. Note: data is always sorted according to its corresponding timestamp. Defaults to <a class="reference internal" href="../date/now.html#now"><span class="std std-ref">NOW</span></a>.</p></td>
 </tr>
-<tr class="row-odd"><td>Limit</td>
-<td>Optional. Specifies the maximum number of values stored. If limit is reached the function returns a #LIMIT error. Defaults to 1000.</td>
+<tr class="row-odd"><td><p>Limit</p></td>
+<td><p>Optional. Specifies the maximum number of values stored. If limit is reached the function returns a #LIMIT error. Defaults to 1000.</p></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
 <p>TRUE, if successful.</p>
 <p><strong>Example Sheet</strong></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="40%" />
-<col width="40%" />
+<col style="width: 20%" />
+<col style="width: 40%" />
+<col style="width: 40%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>&#160;</td>
-<td>A</td>
-<td>B</td>
+<tbody>
+<tr class="row-odd"><td></td>
+<td><p>A</p></td>
+<td><p>B</p></td>
 </tr>
-<tr class="row-even"><td>1</td>
-<td>v1</td>
-<td>=A1 + 1</td>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>v1</p></td>
+<td><p>=A1 + 1</p></td>
 </tr>
-<tr class="row-odd"><td>2</td>
-<td>v2</td>
-<td>=RANDBETWEEN(0, 100)</td>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>v2</p></td>
+<td><p>=RANDBETWEEN(0, 100)</p></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="45%" />
-<col width="55%" />
+<col style="width: 45%" />
+<col style="width: 55%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Function</th>
-<th class="head">Comment</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Comment</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>=TIMESTORE(JSON(A1:B2))</td>
-<td>Stores the values for v1 and v2 on each step.</td>
+<tbody>
+<tr class="row-even"><td><p>=TIMESTORE(JSON(A1:B2))</p></td>
+<td><p>Stores the values for v1 and v2 on each step.</p></td>
 </tr>
-<tr class="row-odd"><td>=TIMESTORE(JSON(A1:B2), 100, , 10)</td>
-<td>Same as before but stores only over a period of 100 seconds and limits number of stored values to 10</td>
+<tr class="row-odd"><td><p>=TIMESTORE(JSON(A1:B2), 100, , 10)</p></td>
+<td><p>Same as before but stores only over a period of 100 seconds and limits number of stored values to 10</p></td>
 </tr>
 </tbody>
 </table>
@@ -295,21 +295,13 @@
   
 
 	
-		<script type="text/javascript">
-			var DOCUMENTATION_OPTIONS = {
-				URL_ROOT:'../../',
-				VERSION:'1.0.0',
-				LANGUAGE:'None',
-				COLLAPSE_INDEX:false,
-				FILE_SUFFIX:'.html',
-				HAS_SOURCE:  true,
-				SOURCELINK_SUFFIX: '.txt'
-			};
-		</script>
+		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-	
+			<script type="text/javascript" src="../../_static/language_data.js"></script>
+			<script type="text/javascript" src="../../_static/contentui.js"></script>
+		
 
   
 

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>MOVEVALUES &mdash; Streamsheets Documentation 1.0.0 documentation</title>
+  <title>MOVEVALUES &mdash; Streamsheets Documentation 2.0.0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="MQTT.PUBLISH" href="mqttpublish.html" />
-    <link rel="prev" title="MONGO.STORE" href="mongostore.html" /> 
+    <link rel="prev" title="INFLUX.DROP" href="influxdrop.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -100,7 +100,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../statistical.html">Statistical</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../streamsheet.html">Streamsheet</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="array.html">ARRAY</a></li>
+<li class="toctree-l3"><a class="reference internal" href="await.html">AWAIT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="awaitone.html">AWAIT.ONE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="calc.html">CALC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="colorconvert.html">COLOR.CONVERT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="continue.html">CONTINUE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="copyvalues.html">COPYVALUES</a></li>
 <li class="toctree-l3"><a class="reference internal" href="counter.html">COUNTER</a></li>
 <li class="toctree-l3"><a class="reference internal" href="delete.html">DELETE</a></li>
@@ -115,22 +119,20 @@
 <li class="toctree-l3"><a class="reference internal" href="getexecutestep.html">GETEXECUTESTEP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="getmachinestep.html">GETMACHINESTEP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="getstep.html">GETSTEP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="goto.html">GOTO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="httprequest.html">HTTP.REQUEST</a></li>
+<li class="toctree-l3"><a class="reference internal" href="httprespond.html">HTTP.RESPOND</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inbox.html">INBOX</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inboxdata.html">INBOXDATA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inboxmetadata.html">INBOXMETADATA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="influxdrop.html">INFLUX.DROP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="json.html">JSON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsonvalue.html">JSON.VALUE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kafkacommand.html">KAFKA.COMMAND</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kafkapublish.html">KAFKA.PUBLISH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kafkaquery.html">KAFKA.QUERY</a></li>
 <li class="toctree-l3"><a class="reference internal" href="loopcount.html">LOOPCOUNT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="loopindex.html">LOOPINDEX</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mailsend.html">MAIL.SEND</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mongoaggregate.html">MONGO.AGGREGATE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mongocount.html">MONGO.COUNT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mongodelete.html">MONGO.DELETE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mongoquery.html">MONGO.QUERY</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mongostore.html">MONGO.STORE</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">MOVEVALUES</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mqttpublish.html">MQTT.PUBLISH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="opcuaread.html">OPCUA.READ</a></li>
@@ -139,7 +141,9 @@
 <li class="toctree-l3"><a class="reference internal" href="opcuawrite.html">OPCUA.WRITE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="outbox.html">OUTBOX</a></li>
 <li class="toctree-l3"><a class="reference internal" href="outboxdata.html">OUTBOXDATA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="outboxgetids.html">OUTBOX.GETIDS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="produce.html">PRODUCE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="range.html">RANGE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="read.html">READ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="repeatindex.html">REPEATINDEX</a></li>
 <li class="toctree-l3"><a class="reference internal" href="request.html">REQUEST</a></li>
@@ -152,19 +156,23 @@
 <li class="toctree-l3"><a class="reference internal" href="setcycletime.html">SETCYCLETIME</a></li>
 <li class="toctree-l3"><a class="reference internal" href="setphase.html">SETPHASE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="setvalue.html">SETVALUE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sleep.html">SLEEP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="subtree.html">SUBTREE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="swapvalues.html">SWAPVALUES</a></li>
-<li class="toctree-l3"><a class="reference internal" href="timeaggregate.html">TIMEAGGREGATE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tableupdate.html">TABLE.UPDATE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="triggerstep.html">TRIGGERSTEP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="webpage.html">WEBPAGE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="write.html">WRITE</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../timeseries.html">Timeseries</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../others.html">Other</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../releasenotes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://www.cedalo.com">Cedalo</a></li>
 </ul>
 
             
@@ -212,7 +220,7 @@
         
           <li><a href="../../functions.html">Functions</a> &raquo;</li>
         
-          <li><a href="../alpha.html">Alphabetical</a> &raquo;</li>
+          <li><a href="../streamsheet.html">Streamsheet</a> &raquo;</li>
         
       <li>MOVEVALUES</li>
     
@@ -237,46 +245,46 @@
 <p><strong>Syntax</strong></p>
 <p>=MOVEVALUES(SourceRange, TargetRange)</p>
 <p><strong>Arguments</strong></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col style="width: 20%" />
+<col style="width: 80%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Name</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>SourceRange</td>
-<td>Range to get values to move from.</td>
+<tbody>
+<tr class="row-even"><td><p>SourceRange</p></td>
+<td><p>Range to get values to move from.</p></td>
 </tr>
-<tr class="row-odd"><td>TargetRange</td>
-<td>Range to move values to. Smaller Target Range leads to the removal of all Source Values, but not in the writing of all. Bigger does not have any further consequences.</td>
+<tr class="row-odd"><td><p>TargetRange</p></td>
+<td><p>Range to move values to. Smaller Target Range leads to the removal of all Source Values, but not in the writing of all. Bigger does not have any further consequences.</p></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
 <p>TRUE, if no error.</p>
 <p><strong>Example</strong></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="50%" />
-<col width="50%" />
+<col style="width: 50%" />
+<col style="width: 50%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Function</th>
-<th class="head">Result</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Result</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><div class="first last line-block">
+<tbody>
+<tr class="row-even"><td><div class="line-block">
 <div class="line">=MOVEVALUES(<span class="blue">A2:B2</span>,<span class="red">A4:B4</span>)</div>
 <div class="line"><br /></div>
 <div class="line"><a class="reference internal" href="../../_images/MOVEVALUES1.PNG"><img alt="MOVEVALUES1" src="../../_images/MOVEVALUES1.PNG" style="width: 380.79999999999995px; height: 179.89999999999998px;" /></a></div>
 </div>
 </td>
-<td><div class="first last line-block">
+<td><div class="line-block">
 <div class="line">After MOVEVALUES</div>
 <div class="line"><br /></div>
 <div class="line"><a class="reference internal" href="../../_images/MOVEVALUES2.PNG"><img alt="MOVEVALUES2" src="../../_images/MOVEVALUES2.PNG" style="width: 378.0px; height: 179.89999999999998px;" /></a></div>
@@ -286,8 +294,8 @@
 </tbody>
 </table>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Only the values will be moved. Formulas will be removed.</p>
+<p class="admonition-title">Warning</p>
+<p>Only the values will be moved. Formulas will be removed.</p>
 </div>
 </div>
 
@@ -302,7 +310,7 @@
         <a href="mqttpublish.html" class="btn btn-neutral float-right" title="MQTT.PUBLISH" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mongostore.html" class="btn btn-neutral" title="MONGO.STORE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="influxdrop.html" class="btn btn-neutral" title="INFLUX.DROP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -331,21 +339,13 @@
   
 
 	
-		<script type="text/javascript">
-			var DOCUMENTATION_OPTIONS = {
-				URL_ROOT:'../../',
-				VERSION:'1.0.0',
-				LANGUAGE:'None',
-				COLLAPSE_INDEX:false,
-				FILE_SUFFIX:'.html',
-				HAS_SOURCE:  true,
-				SOURCELINK_SUFFIX: '.txt'
-			};
-		</script>
+		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-	
+			<script type="text/javascript" src="../../_static/language_data.js"></script>
+			<script type="text/javascript" src="../../_static/contentui.js"></script>
+		
 
   
 
