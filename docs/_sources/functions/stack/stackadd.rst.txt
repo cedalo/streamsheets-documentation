@@ -11,7 +11,7 @@ STACKADD
 
 This function adds the cells in a SourceRange to a StackRange.The Stack range is a range of cells on the :term:`sheet <Streamsheet>`,
 which will be filled by using STACKADD. If the range is filled with cells, the existing cells will be moved defined
-by the direction parameter and the new cells will be added to the list.
+by the direction parameter and the new cells will be added to the list. Values added to the StackRange have to use identical headers in both the Stack- and SourceRange. The STACKADD function automatically indexes the added items in the correct columns. 
 
 **Syntax**
 

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>TABLE.UPDATE &mdash; Streamsheets Documentation 2.0.0 documentation</title>
+  <title>TABLE.UPDATE &mdash; Streamsheets 2.0.0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="TAN" href="../math/tan.html" />
-    <link rel="prev" title="SWITCH" href="../logical/switch.html" /> 
+    <link rel="prev" title="TABLE.GET" href="tableget.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -49,7 +49,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> Streamsheets Documentation
+            <a href="../../index.html" class="icon icon-home"> Streamsheets
           
 
           
@@ -142,6 +142,7 @@
 <li class="toctree-l3"><a class="reference internal" href="outbox.html">OUTBOX</a></li>
 <li class="toctree-l3"><a class="reference internal" href="outboxdata.html">OUTBOXDATA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="outboxgetids.html">OUTBOX.GETIDS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="outboxmetadata.html">OUTBOXMETADATA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="produce.html">PRODUCE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="range.html">RANGE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="read.html">READ</a></li>
@@ -159,6 +160,7 @@
 <li class="toctree-l3"><a class="reference internal" href="sleep.html">SLEEP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="subtree.html">SUBTREE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="swapvalues.html">SWAPVALUES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tableget.html">TABLE.GET</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">TABLE.UPDATE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="triggerstep.html">TRIGGERSTEP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="webpage.html">WEBPAGE</a></li>
@@ -187,7 +189,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Streamsheets Documentation</a>
+          <a href="../../index.html">Streamsheets</a>
         
       </nav>
 
@@ -240,11 +242,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="table-update">
-<h1>TABLE.UPDATE<a class="headerlink" href="#table-update" title="Permalink to this headline">¶</a></h1>
+<span id="tableupdate"></span><h1>TABLE.UPDATE<a class="headerlink" href="#table-update" title="Permalink to this headline">¶</a></h1>
 <p>Creates and updates a defined cell range in a table like manner. The first row and first column of specifeid cell range
-defines the indices used to reference a table cell. To set or update a cell its corresponding row and column indices must be given.
-If a row index does not exist in current range, it can be automatically added to top or bottom. The same applies for a column index which
-can be automatically added to the left or right.</p>
+defines the indices used to reference a table cell. To set or update a cell its corresponding row and column indices must
+be given. If a row index does not exist in current range, it can be automatically added to top or bottom. The same applies
+for a column index which can be automatically added to the left or right.</p>
+<p>To simply read values from a table cell refer to <a class="reference internal" href="tableget.html#tableget"><span class="std std-ref">TABLE.GET</span></a></p>
 <p><strong>Syntax</strong></p>
 <p>=TABLE.UPDATE(CellRange, Value [, RowIndex, ColumnIndex, PushRowAt, PushColumnAt, AggregationMethod])</p>
 <p><strong>Arguments</strong></p>
@@ -403,7 +406,7 @@ Below examples assumes following cells in range <strong>A3:D5</strong></p>
         <a href="../math/tan.html" class="btn btn-neutral float-right" title="TAN" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../logical/switch.html" class="btn btn-neutral" title="SWITCH" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tableget.html" class="btn btn-neutral" title="TABLE.GET" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

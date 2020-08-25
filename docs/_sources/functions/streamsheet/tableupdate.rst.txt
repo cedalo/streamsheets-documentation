@@ -1,10 +1,14 @@
+.. _tableupdate:
+
 TABLE.UPDATE
 -----------------------------
 
 Creates and updates a defined cell range in a table like manner. The first row and first column of specifeid cell range
-defines the indices used to reference a table cell. To set or update a cell its corresponding row and column indices must be given. 
-If a row index does not exist in current range, it can be automatically added to top or bottom. The same applies for a column index which
-can be automatically added to the left or right.
+defines the indices used to reference a table cell. To set or update a cell its corresponding row and column indices must
+be given. If a row index does not exist in current range, it can be automatically added to top or bottom. The same applies
+for a column index which can be automatically added to the left or right.
+
+To simply read values from a table cell refer to :ref:`TABLE.GET <tableget>`
 
 **Syntax**
 

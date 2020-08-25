@@ -180,6 +180,7 @@ Alphabetical
    streamsheet/outbox
    streamsheet/outboxdata
    streamsheet/outboxgetids
+   streamsheet/outboxmetadata
    math/pi
    math/power
    streamsheet/produce
@@ -227,6 +228,7 @@ Alphabetical
    math/sumifs
    streamsheet/swapvalues
    logical/switch
+   streamsheet/tableget
    streamsheet/tableupdate
    math/tan
    text/text

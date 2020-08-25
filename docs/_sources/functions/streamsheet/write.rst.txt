@@ -24,7 +24,7 @@ Adds the key and value to a :term:`JSON` object in the outbox. The path to the k
    * - Name
      - Description
    * - Key
-     - A key to a data item, that should be written. The key is usually created by using the :ref:`OUTBOXDATA` utility function. 
+     - A key to a data item, that should be written. The key is usually created by using the :ref:`OUTBOXMETADATA` or :ref:`OUTBOXDATA` utility functions. 
        The key consists of the path to the item within the JSON object. 
    * - Value
      - Value to assign to key.

@@ -4,7 +4,7 @@ DELETE
 -----------------------------
 
 Delete a message or message content based on the key. The key is provided by using one of the following
-functions. :ref:`INBOX <inboxf>`\ , :ref:`OUTBOX`, :ref:`INBOXDATA`, :ref:`INBOXMETADATA`, :ref:`OUTBOXDATA`.
+functions. :ref:`INBOX <inboxf>`\ , :ref:`OUTBOX`, :ref:`INBOXDATA`, :ref:`INBOXMETADATA`, :ref:`OUTBOXMETADATA`, :ref:`OUTBOXDATA`.
 
 **Syntax**
 
