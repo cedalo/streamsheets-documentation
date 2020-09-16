@@ -3,14 +3,17 @@ Release Notes
 
 We will never stop improving our :term:`Streamsheet`\ s. Stay up to date with our release notes.
 
-.. _currently: 
+
 .. |star| image:: /images/star.svg
     :scale: 50%
 
 |star| *= premium feature*
 
+.. _currently: 
+
 2.0-milestone
 ---------------
+
 
 **(released August 21, 2020)**
 2.0 milestone for Eclipse release. 

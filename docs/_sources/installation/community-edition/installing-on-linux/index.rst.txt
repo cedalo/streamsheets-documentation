@@ -23,7 +23,7 @@ Setting up Streamsheets
     | Command: ``mkdir <PATH_TO_INSTALL_DIRECTORY>``
     | Example: ``mkdir ~/streamsheets`` 
 
-2. Next run the following command to execute the installer for Streamsheets. Replace ``<PATH_TO_INSTALL_DIRECTORY>`` with the name of the installation directory and ``<VERSION>`` with the Streamsheets version to install (current version: \ :ref:`currently`\ ).
+2. Next run the following command to execute the installer for Streamsheets. Replace ``<PATH_TO_INSTALL_DIRECTORY>`` with the name of the installation directory and ``<VERSION>`` with the Streamsheets version to install (current version: \ :ref:`currently` \ ).
 
     | Command: ``docker run -v <PATH_TO_INSTALL_DIRECTORY>:/streamsheets cedalo/streamsheets-installer:<VERSION>-linux``
     | Example: ``docker run -v ~/streamsheets:/streamsheets cedalo/streamsheets-installer:2.0-milestone-linux``

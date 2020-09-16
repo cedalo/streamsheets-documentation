@@ -229,6 +229,7 @@ Alphabetical
    streamsheet/swapvalues
    logical/switch
    streamsheet/tableget
+   streamsheet/tableordercolumn
    streamsheet/tableupdate
    math/tan
    text/text
