@@ -20,7 +20,7 @@ Returns the numeric code for first character of given string.
    * - Text
      - A string for which to return the code of its first character.
    * - CharacterSet
-     - Optional. A string which specifies the character set to use for converting the character. Following two sets are currently supported: 'ansi' alias 'cp1252' and 'mac' alias 'roman'. If no character-set is specified 'ansi' is used by default.
+     - Optional. A string which specifies the character set to use for converting the character. Only the 'ansi' alias 'cp1252' set is currently supported. If no character-set is specified 'ansi' is used by default.
 
 **Return Value**
 
@@ -39,6 +39,4 @@ The numeric code of first character of specified text.
    * - =CODE("€")
      - 128
    * - =CODE("€", "ansi")
-     - 128
-   * - =CODE("Ä", "mac")
      - 128
