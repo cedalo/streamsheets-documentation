@@ -1,6 +1,10 @@
+.. _timeseries:
+
 ==========
 Timeseries
 ==========
+
+
 
 .. toctree::
    :glob:

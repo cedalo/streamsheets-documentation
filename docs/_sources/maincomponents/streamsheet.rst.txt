@@ -8,7 +8,7 @@ Streamsheet
 .. |GRID| image:: /images/GRID.PNG
     :scale: 58 %  
 .. |Inbox| image:: /images/Inbox.JPG
-    :scale: 45 %
+    :scale: 100 %
 .. |SheetSettings| image:: /images/SheetSettings.jpg
     :scale: 50%
 .. |StreamSettings| image:: /images/StreamSettings.jpg
@@ -23,7 +23,7 @@ Streamsheet
 ````````````
 | |Streamsheet1|
 
-Streamsheets are the main components to create the logic for your use cases. Here you model how a :term:`Stream Machine` works and, thus, how data streams are processed, analysed, visualized, combined and controlled or even simulated.
+Streamsheets are the main components to create the logic for your use cases. Here you model how an :term:`App` works and, thus, how data streams are processed, analysed, visualized, combined and controlled or even simulated.
 
 | **To connect a data stream to a Streamsheet you can:**
 
@@ -34,7 +34,7 @@ Streamsheets are the main components to create the logic for your use cases. Her
 
 + Choose a Producer function, e.g. :ref:`MQTT.PUBLISH <mqttpublish>` or :ref:`KAFKA.PUBLISH <kafkapublish>`
 + Choose a posting function, e.g. :ref:`OPCUA.WRITE <opcuawrite>` or :ref:`REST.REQUEST <restrequest>` with POST-Method
-+ Expose the Stream Machine as :term:`OPC UA` or :term:`REST` Server so that other services can access its data
++ Expose the App as :term:`OPC UA` or :term:`REST` Server so that other services can access its data
 + Store the data in a database, e.g. by using :ref:`MONGO.STORE <mongostore>`
 
 Often, a Streamsheet consumes and produces streams. Nonetheless, neither an incoming nor an outgoing data stream are mandatory. For instance, Streamsheets which are calculated repeatedly and only produce streams are great for simulating sensors, machines, APIs and other data sources. On the other hand, sheets with pure dashboard and visualization functionality typically only consume streams without generating one on their own.
@@ -72,12 +72,12 @@ The settings explained point by point:
 
 + “Calculate Streamsheet” defines the recalculation mode of a Streamsheet:
 
-    + “**Continuously**”: The Streamsheet is recalculated continuously and cyclically until the machine is stopped - also if NO messages are received. The sheet´s cycle time is the cycle time of the Stream Machine. (This is the default setting)
-    + “**On Message Arrival**”: Every time a message is received, the sheet is calculated immediately. In this mode message queues are not formed because the sheet is recalculated irrespective of the cycle time of the Stream Machine.
-    + “**On EXECUTE Formula**”: The calculation of a Streamsheet is triggered by another Streamsheet which contains an :ref:`EXECUTE` formula. This triggering sheet must be in the same Stream Machine. Note: The sheet triggering the execution will pause its calculation in the cell containing EXECUTE, wait until the triggered sheet has completed its calculation and, then, resume its calculation.
-    + “**On Machine Start**”: The Streamsheet calculates once when the Stream Machine is started. 
-    + “**On Machine Stop**”: The Streamsheet calculates when the Machine is being stopped.
-    + “**On Time**”: A date and time for the calculation can be defined. Additionally, a sheet-specific interval can be set to recalculate the sheet cyclically. This interval only applies to this sheet and overwrites the cycle time of its Stream Machine.
+    + “**Continuously**”: The Streamsheet is recalculated continuously and cyclically until the App is stopped - also if NO messages are received. The sheet´s cycle time is the cycle time of the App. (This is the default setting)
+    + “**On Message Arrival**”: Every time a message is received, the sheet is calculated immediately. In this mode message queues are not formed because the sheet is recalculated irrespective of the cycle time of the App.
+    + “**On EXECUTE Formula**”: The calculation of a Streamsheet is triggered by another Streamsheet which contains an :ref:`EXECUTE` formula. This triggering sheet must be in the same App. Note: The sheet triggering the execution will pause its calculation in the cell containing EXECUTE, wait until the triggered sheet has completed its calculation and, then, resume its calculation.
+    + “**On App Start**”: The Streamsheet calculates once when the App is started. 
+    + “**On App Stop**”: The Streamsheet calculates when the App is being stopped.
+    + “**On Time**”: A date and time for the calculation can be defined. Additionally, a sheet-specific interval can be set to recalculate the sheet cyclically. This interval only applies to this sheet and overwrites the cycle time of its App.
     + “**On Random**”: A date and time for the calculation and additionally an interval for the recalculation can be defined. In this respect it is similar to “On Time”, however, the calculation will not be triggered at the beginning of each interval but randomly during the interval. This mode provides a way for introducing randomness, which can be interesting when simulating data sources, for instance.  
 
 + Loop through array (one calculation per array element): This comes in handy if your messages contain information through which you want to loop, e.g. a list of ordered products. If this option is checked, an array element within incoming messages can be selected. Then, the Streamsheet loops through all elements which are subsumed under this array element. As a result, not one message per calculation is processed but only one element under the array element. The easiest way to set a loop element is to right-click on it in the inbox-payload and choose this option. Alternatively, you can define it and its superelement by listing the respective keys.
@@ -102,7 +102,7 @@ Special columns
 
 | |GRID|
 
-In the left corner above the grid, the name of the Streamsheet is given and how many times it has been calculated since the last Stream Machine stop (Note: Pausing a Stream Machine will not reset the Step Counter). On the right, you can maximize, minimize and delete a sheet or open its settings.
+In the left corner above the grid, the name of the Streamsheet is given and how many times it has been calculated since the last App stop (Note: Pausing an App will not reset the Step Counter). On the right, you can maximize, minimize and delete a sheet or open its settings.
 
 Streamsheets Settings
 ``````````````````````
@@ -118,7 +118,7 @@ In this menu you find the settings for the basic structure and appearance of a S
 + **Show Headers**: Display column and row titles or do not
 + **Show Formulas**: Decide whether you want to see the formulas or the current values of cells in the sheet.
 + **Show Inbox**: Display the Inbox or do not  
-+ **Paint IF Rows with transparency**: If this box is checked, the content of rows which contain a statement in the IF-column are transparent. This improves transparency and helps you to immediately identify the rows which are being switch on and off when the machine is running.
++ **Paint IF Rows with transparency**: If this box is checked, the content of rows which contain a statement in the IF-column are transparent. This improves transparency and helps you to immediately identify the rows which are being switch on and off when the App is running.
 
 .. note:: + Streamsheets are always calculated from left to right and then from top to bottom.
           + Depending on the condition in the IF column, the calculation of whole rows can be switched on and off.

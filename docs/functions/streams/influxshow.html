@@ -1,0 +1,333 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>INFLUX.SHOW &mdash; Streamsheets 2.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_override.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="INFLUX.STORE" href="influxstore.html" />
+    <link rel="prev" title="INFLUX.SELECT" href="influxselect.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Streamsheets
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../maincomponents.html">Main Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../functions.html">Functions</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../chart.html">Chart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../date.html">Date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../engineering.html">Engineering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events.html">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../info.html">Info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logical.html">Logical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lookup.html">Lookup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../math.html">Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shape.html">Shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stack.html">Stack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../statistical.html">Statistical</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../streams.html">Streams</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="filewrite.html">FILE.WRITE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="httprequest.html">HTTP.REQUEST</a></li>
+<li class="toctree-l3"><a class="reference internal" href="httprespond.html">HTTP.RESPOND</a></li>
+<li class="toctree-l3"><a class="reference internal" href="influxdrop.html">INFLUX.DROP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="influxselect.html">INFLUX.SELECT</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">INFLUX.SHOW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="influxstore.html">INFLUX.STORE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafkacommand.html">KAFKA.COMMAND</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafkapublish.html">KAFKA.PUBLISH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafkaquery.html">KAFKA.QUERY</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mailsend.html">MAIL.SEND</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mongoaggregate.html">MONGO.AGGREGATE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mongocount.html">MONGO.COUNT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mongodelete.html">MONGO.DELETE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mongoquery.html">MONGO.QUERY</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mongoreplace.html">MONGO.REPLACE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mongostore.html">MONGO.STORE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mqttpublish.html">MQTT.PUBLISH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opcuaread.html">OPCUA.READ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opcuarespond.html">OPCUA.RESPOND</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opcuavariables.html">OPCUA.VARIABLES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opcuawrite.html">OPCUA.WRITE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="produce.html">PRODUCE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="request.html">REQUEST</a></li>
+<li class="toctree-l3"><a class="reference internal" href="requestinfo.html">REQUESTINFO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="respond.html">RESPOND</a></li>
+<li class="toctree-l3"><a class="reference internal" href="restrequest.html">REST.REQUEST</a></li>
+<li class="toctree-l3"><a class="reference internal" href="restrespond.html">REST.RESPOND</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timescalecreatetable.html">TIMESCALE.CREATE_TABLE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timescaledroptable.html">TIMESCALE.DROP_TABLE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timescaleexport.html">TIMESCALE.EXPORT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timescaleinsert.html">TIMESCALE.INSERT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timescaleselect.html">TIMESCALE.SELECT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timescaleshowtables.html">TIMESCALE.SHOW_TABLES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../streamsheet.html">Streamsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../timeseries.html">Timeseries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../alpha.html">Alphabetical</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../others.html">Other</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../releasenotes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://www.cedalo.com">Cedalo</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://forum.cedalo.com/">Forum</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Streamsheets</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../functions.html">Functions</a> &raquo;</li>
+        
+          <li><a href="../streams.html">Streams</a> &raquo;</li>
+        
+      <li>INFLUX.SHOW</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="influx-show">
+<h1>INFLUX.SHOW<a class="headerlink" href="#influx-show" title="Permalink to this headline">¶</a></h1>
+<p><img alt="star" src="../../_images/star.svg" /> This is a <a class="reference external" href="https://cedalo.com/download/">Streamsheets Professional</a> feature.</p>
+<p>Performs a SHOW query on your Influx database. You can use the <a class="reference internal" href="../../tutorials/uielements.html#functionwizard"><span class="std std-ref">Function Wizard</span></a> for this function.</p>
+<p><strong>Syntax</strong></p>
+<p>=<a class="reference internal" href="../../glossary.html#term-influx"><span class="xref std std-term">INFLUX</span></a>.SHOW(<a class="reference internal" href="../../glossary.html#term-producer"><span class="xref std std-term">Producer</span></a>, Type, Target, [, Measurement, Timeout])</p>
+<p><strong>Arguments</strong></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Producer</p></td>
+<td><p>Producer to use for querying. The database name is configured in the affiliated <a class="reference internal" href="../../glossary.html#term-connector"><span class="xref std std-term">Connector</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Type</p></td>
+<td><p>Defines what to show. Must be one of following constants “Continuous Queries”, “Measurements”, “Series”, “Retention Policies”.</p></td>
+</tr>
+<tr class="row-even"><td><p>Target</p></td>
+<td><p>Defines a cell range to show the query result.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Measurement</p></td>
+<td><p>Optional. Only applies to type “Series”. A fully qualified name of the measurement to show its series of.</p></td>
+</tr>
+<tr class="row-even"><td><p>Timeout</p></td>
+<td><p>Optional. Defines Timeout to perform query.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Return Value</strong></p>
+<p>TRUE, if successful.</p>
+<p><strong>Examples</strong></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 45%" />
+<col style="width: 15%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Result</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>=INFLUX.SHOW(“Producer”, “Retention Policies”, D1:D10)</p></td>
+<td><p>TRUE</p></td>
+<td><p>Shows all existing retention policies.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="influxstore.html" class="btn btn-neutral float-right" title="INFLUX.STORE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="influxselect.html" class="btn btn-neutral" title="INFLUX.SELECT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Cedalo AG, Streamsheet™ is a trademark of the Cedalo AG.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+	
+		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+			<script type="text/javascript" src="../../_static/jquery.js"></script>
+			<script type="text/javascript" src="../../_static/underscore.js"></script>
+			<script type="text/javascript" src="../../_static/doctools.js"></script>
+			<script type="text/javascript" src="../../_static/language_data.js"></script>
+			<script type="text/javascript" src="../../_static/contentui.js"></script>
+		
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

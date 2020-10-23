@@ -3,10 +3,10 @@
 GETMACHINESTEP
 -----------------------------
 
-Returns the current machine step.
+Returns the current step.
 
 The machine step is increased either on each machine cycle, i.e. when a machine runs, or on each manually triggered step,
-i.e. if a :term:`machine <Stream Machine>` is stopped or paused. To get the steps for a Streamsheet refer to :ref:`getstep`.
+i.e. if an :term:`App <App>` is stopped or paused. To get the steps for a Streamsheet refer to :ref:`getstep`.
 
 **Syntax**
 
@@ -18,7 +18,7 @@ None.
 
 **Return Value**
 
-Current machine step.
+Current step.
 
 **Example**
 

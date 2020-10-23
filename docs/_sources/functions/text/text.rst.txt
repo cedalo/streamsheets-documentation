@@ -33,7 +33,7 @@ Formats a number and converts it to text.
 
    * - Locale
      - | Optional. An locale code. Currently only “en” and “de” are supported. 
-       | Defaults to current machine locale.
+       | Defaults to current App locale.
 
   
   
@@ -50,5 +50,5 @@ A formatted string representation of given number value.
    * - Function
      - Result
    * - =TEXT(3456, "#,##0.00")
-     - 3,456.00 (assuming the machine language is set to english)
+     - 3,456.00 (assuming the App language is set to english)
 

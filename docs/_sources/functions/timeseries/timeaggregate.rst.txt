@@ -1,9 +1,16 @@
+.. |TA| image:: /images/TS/TA.png
+
+
+
+
 .. _timeaggregate:
+
+
 
 TIMEAGGREGATE
 -----------------------------
 
-Aggregates number values over a specified time period. Timeaggregate saves the aggregated interval values in a TargetRange. The returned value in the cell is aggregated over all numbers within the periode.
+Aggregates number values over a specified time period. Timeaggregate saves the raw values in the cell and/or in a TargetRange. The returned value in the cell is aggregated over all numbers within the periode.
 
 **Syntax**
 
@@ -94,3 +101,7 @@ A number value aggregated over all values within specified period.
    * - =TIMEAGGREGATE(C2, 20, 1,,2, D4:E14)
      - Calculates the average each 2 seconds and writes roughly 10 values to target range D4:E14
 
+
+
+| |TA|
+| *The image shows all methods in action. Eight TIMEAGGREGATE functions watch over the values from either the parameter "Berlin", "Paris" or "London". E.g. "TIMEAGGREGATE(B6,,1)"*

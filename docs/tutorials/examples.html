@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Examples &mdash; Streamsheets 2.0.0 documentation</title>
+  <title>Create &amp; Use Streams &mdash; Streamsheets 2.0.0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Add-Ons" href="addons.html" />
-    <link rel="prev" title="UI Elements" href="uielements.html" /> 
+    <link rel="prev" title="Tools &amp; Tricks" href="uielements.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -86,19 +86,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../maincomponents.html">Main Components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Tutorials</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="uielements.html">UI Elements</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="uielements.html">Tools &amp; Tricks</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Create &amp; Use Streams</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#http-rest-request">HTTP/REST Request</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#opc-ua">OPC UA</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#history">History</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#mongodb">MongoDB</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#influxdb">InfluxDB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#timescaledb">TimescaleDB</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#mail-send">MAIL.SEND</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#forum">Forum</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="addons.html">Add-Ons</a></li>
-<li class="toctree-l2"><a class="reference internal" href="settings.html">Settings</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../functions.html">Functions</a></li>
@@ -106,6 +104,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference external" href="http://www.cedalo.com">Cedalo</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://forum.cedalo.com/">Forum</a></li>
 </ul>
 
             
@@ -153,7 +152,7 @@
         
           <li><a href="../tutorials.html">Tutorials</a> &raquo;</li>
         
-      <li>Examples</li>
+      <li>Create &amp; Use Streams</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -170,86 +169,53 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="examples">
-<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="create-use-streams">
+<span id="createstream"></span><h1>Create &amp; Use Streams<a class="headerlink" href="#create-use-streams" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="http-rest-request">
 <span id="resttutorial"></span><h2>HTTP/REST Request<a class="headerlink" href="#http-rest-request" title="Permalink to this headline">¶</a></h2>
-<p>This tutorial covers two different kind of HTTP/REST Calls one is <strong>POST</strong> and the other is <strong>GET</strong>. (In older versions of Streamsheets we use the term REST, which is changed to HTTP starting v1.6)
+<p>This tutorial covers two different kind of HTTP/REST Calls, one is <strong>POST</strong> and the other is <strong>GET</strong>. (In older versions of Streamsheets we use the term REST, which is changed to HTTP starting v1.6)
 The differences are that with a “POST” information is transmitted from the HTTP Client to a server and a “GET” transmits information to the HTTP Client from the server.
-To add a HTTP function to a <a class="reference internal" href="../glossary.html#term-streamsheet"><span class="xref std std-term">Streamsheet</span></a> you will need a <a class="reference internal" href="../glossary.html#term-connector"><span class="xref std std-term">Connector</span></a> and a <a class="reference internal" href="../glossary.html#term-producer"><span class="xref std std-term">Producer</span></a>, based on the HTTP Client Provider. Start by creating the Connector in the Connector Dashboard in the <a class="reference internal" href="../maincomponents/administration.html#administration"><span class="std std-ref">Administration</span></a> Menu. You can leave all fields empty to be able to utilize this Connector for any URL. If you want to create specific Connectors for every webpage, type in the Base URL. Same goes for the Producer. Create a Producer based on the just created Connector and leave it empty.  We can now select the Producer within the <a class="reference internal" href="uielements.html#functionwizard"><span class="std std-ref">Function Wizard</span></a>.</p>
-<p><a class="reference internal" href="../_images/RestRequestGif.gif"><img alt="RCP" src="../_images/RestRequestGif.gif" style="width: 832.0px; height: 468.0px;" /></a></p>
-<p><em>Creating Streams for HTTP/REST</em></p>
+To add a HTTP function to a <a class="reference internal" href="../glossary.html#term-streamsheet"><span class="xref std std-term">Streamsheet</span></a> you will need a <a class="reference internal" href="../glossary.html#term-connector"><span class="xref std std-term">Connector</span></a> and a <a class="reference internal" href="../glossary.html#term-producer"><span class="xref std std-term">Producer</span></a>, based on the HTTP Client Provider. Start by creating the Connector in the Stream Tab of your Dashboard. You can leave all fields empty to be able to utilize this Connector for any URL. If you want to create specific Connectors for every webpage, type in the Base URL. Same goes for the Producer. Create a Producer based on the just created Connector and leave it empty.  We can now select the Producer within the <a class="reference internal" href="uielements.html#functionwizard"><span class="std std-ref">Function Wizard</span></a>.</p>
 <p><strong>1. Method “Post”:</strong>
 As an example, for a HTTP Request with the method “POST”, we will create an alert service for Slack.
 Slack is a messenger, which offers the possibility to add self-made applications. This option will be used to add an Alert Application to a Slack channel, posting status updates.</p>
 <p>To begin create such an <a class="reference external" href="https://api.slack.com/apps/">App in Slack</a>
 and add an Incoming <a class="reference external" href="https://api.slack.com/incoming-webhooks/">Webhook</a>. This generates the HTTP.Request URL we will be posting information to. Choose a Channel on Slack to add your Application to. This is where we will post the information to.
-Now we can start building an App in Streamsheets. Create a new <a class="reference internal" href="../glossary.html#term-stream-machine"><span class="xref std std-term">Stream Machine</span></a> and create a <a class="reference internal" href="../glossary.html#term-json"><span class="xref std std-term">JSON</span></a> Range with the key Value being “text” and the Value being any message you would like to send.
-Create a HTTP Request function over the Function Wizard and select “POST” as the method. Add the created URL and select the JSON Range as the body. Choose a Target (e.g. a cell range) for  the response message of the server. Now with every new Step, the Stream Machine will send your message to Slack 😊</p>
-<div class="line-block">
-<div class="line"><a class="reference internal" href="../_images/RestRequestPost.gif"><img alt="RRP" src="../_images/RestRequestPost.gif" style="width: 832.0px; height: 468.0px;" /></a></div>
-<div class="line"><em>HTTP Request with method “POST”</em></div>
-<div class="line"><em>Note: In version 1.5 the icon for the stream functions was changed</em> <a class="reference internal" href="../_images/Streamfunction.png"><img alt="StreamF" src="../_images/Streamfunction.png" style="width: 22.5px; height: 21.75px;" /></a></div>
-</div>
+Now we can start building an App in Streamsheets. Create a new <a class="reference internal" href="../glossary.html#term-app"><span class="xref std std-term">App</span></a> and create a <a class="reference internal" href="../glossary.html#term-json"><span class="xref std std-term">JSON</span></a> Range with the key Value being “text” and the Value being any message you would like to send.
+Create a HTTP Request function over the Function Wizard and select “POST” as the method. Add the created URL and select the JSON Range as the body. Choose a Target (e.g. a cell range) for  the response message of the server. Now with every new Step, the App will send your message to Slack 😊</p>
 <p><strong>2. Method “GET”:</strong>
 The “GET” method is very similar to the “POST” method, but in this case we do not need to define any message, because we will be consuming messages.
 A good example is the “API of Ice and Fire” <a class="reference external" href="https://anapioficeandfire.com/">https://anapioficeandfire.com/</a>. It is an HTTP Request based online wiki for Game of Thrones related information.
 Depending on the URL, different Information can be accessed and displayed.
 Lets choose the following URL: <a class="reference external" href="https://anapioficeandfire.com/api/characters/583">https://anapioficeandfire.com/api/characters/583</a>
 It displays all information regarding Jon Snow in a JSON-Object.
-So lets again create a new Stream Machine. Add a HTTP Request Function with the help of the Function Wizard. Enter the URL, select “GET” as the method and chose the Target, where the information should be displayed (e.g. <a class="reference internal" href="../functions/streamsheet/inbox.html#inboxf"><span class="std std-ref">INBOX</span></a>()). Confirm your input by clicking “OK”.
-After starting the Stream Machine the requested information will now appear in the Target Range.</p>
-<div class="line-block">
-<div class="line"><a class="reference internal" href="../_images/RestRequestGet1.gif"><img alt="RRG1" src="../_images/RestRequestGet1.gif" style="width: 832.0px; height: 468.0px;" /></a></div>
-<div class="line"><em>HTTP Request with method “GET”</em></div>
-<div class="line"><em>Note: In version 1.5 the icon for the stream functions was changed</em> <a class="reference internal" href="../_images/Streamfunction.png"><img alt="StreamF" src="../_images/Streamfunction.png" style="width: 22.5px; height: 21.75px;" /></a></div>
-</div>
+So lets again create a new App. Add a HTTP Request Function with the help of the Function Wizard. Enter the URL, select “GET” as the method and chose the Target, where the information should be displayed (e.g. <a class="reference internal" href="../functions/streamsheet/inbox.html#inboxf"><span class="std std-ref">INBOX</span></a>()). Confirm your input by clicking “OK”.
+After starting the App the requested information will now appear in the Target Range.</p>
 </div>
 <div class="section" id="opc-ua">
 <h2>OPC UA<a class="headerlink" href="#opc-ua" title="Permalink to this headline">¶</a></h2>
 <p><img alt="star" src="../_images/star.svg" /> This is a <a class="reference external" href="https://cedalo.com/download/">Streamsheets Professional</a> feature.</p>
 <p>This simple Tutorial shows how to read information of an <a class="reference internal" href="../glossary.html#term-opc-ua"><span class="xref std std-term">OPC UA</span></a> Server.
 To begin with we have to create Streams, which are connected the OPC UA Server of our choice.</p>
-<p><a class="reference internal" href="../_images/OPCUAGif.gif"><img alt="OPCUACPC" src="../_images/OPCUAGif.gif" style="width: 832.0px; height: 468.0px;" /></a></p>
-<p><em>Create Streams for OPC UA</em></p>
-<p>Open up the Administration Menu and create a new OPC UA <a class="reference internal" href="../glossary.html#term-connector"><span class="xref std std-term">Connector</span></a>. Enter the URL of the Server you want to connect to. In this tutorial the OPC UA Server is in the local network. You will need your own OPC UA Server or go to <a class="reference external" href="http://opcuaserver.com/">http://opcuaserver.com/</a> where you can find a series of open OPC UA Server.</p>
-<p><strong>OPC UA Consumer:</strong>
-Open up the <a class="reference internal" href="../glossary.html#term-consumer"><span class="xref std std-term">Consumer</span></a> Dashboard and create a new Consumer, based on the created Connector. Enter the Node ID you want receive and safe your changes (the polling interval defines the interval where the Consumer requests new data from the server). Switch to the <a class="reference internal" href="../glossary.html#term-producer"><span class="xref std std-term">Producer</span></a> Dashboard and create a Producer, again based on the newly created Connector.</p>
-<p>Now we are ready to receive and send messages. Create a new Stream Machine and select the newly created Consumer. Just start the machine and the Consumer will instantly forward messages into the Inbox.</p>
-<p><strong>OPCUA.READ:</strong>
-A second way to receive OPC UA Messages in a <a class="reference internal" href="../glossary.html#term-streamsheet"><span class="xref std std-term">Streamsheet</span></a> is over the <a class="reference internal" href="../functions/streamsheet/opcuaread.html#opcuaread"><span class="std std-ref">OPCUA.READ</span></a> function. Create a new Streamsheet by clicking the plus sign in the bottom right corner and select a cell. Open up the Function Wizard, select the <a class="reference internal" href="../functions/streamsheet/opcuaread.html#opcuaread"><span class="std std-ref">OPCUA.READ</span></a> function and the created Producer. Enter the Node ID and the Target (e.g. <a class="reference internal" href="../functions/streamsheet/inbox.html#inboxf"><span class="std std-ref">INBOX</span></a>()) and confirm your input by clicking “OK”.</p>
-<p>With every new calculation step an <a class="reference internal" href="../functions/streamsheet/opcuaread.html#opcuaread"><span class="std std-ref">OPCUA.READ</span></a> will prompt a new message in the <a class="reference internal" href="../maincomponents/streamsheet.html#inbox"><span class="std std-ref">Inbox</span></a>.</p>
-<div class="line-block">
-<div class="line"><a class="reference internal" href="../_images/OPCUAREAD.gif"><img alt="OPCUAGif" src="../_images/OPCUAREAD.gif" style="width: 832.0px; height: 468.0px;" /></a></div>
-<div class="line"><em>Note: In version 1.5 the icon for the stream functions was changed</em> <a class="reference internal" href="../_images/Streamfunction.png"><img alt="StreamF" src="../_images/Streamfunction.png" style="width: 22.5px; height: 21.75px;" /></a></div>
-<div class="line"><em>Recieve OPC UA Data over Inbox Consumer and OPCUA.READ</em></div>
+<p>Open up the Stream Tab of your Dashboard and create a new OPC UA <a class="reference internal" href="../glossary.html#term-connector"><span class="xref std std-term">Connector</span></a>. Enter the URL of the Server you want to connect to. In this tutorial the OPC UA Server is in the local network. You will need your own OPC UA Server or go to <a class="reference external" href="http://opcuaserver.com/">http://opcuaserver.com/</a> where you can find a series of open OPC UA Server.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To connect to the Streamsheets internal OPC UA server use <em>streamsheets-service-opcua</em> as host name and <em>api/v1.0/OPCUA/cedalo/machineserver</em> as the resource path.</p>
 </div>
+<p><strong>OPC UA Consumer &amp; Producer:</strong>
+Create a new Consumer, based on the created Connector. Enter the Node ID you want receive and safe your changes (the polling interval defines the interval where the Consumer requests new data from the server). Create a Producer, again based on the newly created Connector.</p>
+<p>Now we are ready to poll and send information to the specified server. Create a new App and select the newly created Consumer. Just start the App and the Consumer will instantly forward messages into the Inbox.</p>
+<p><strong>OPCUA.READ:</strong>
+A second way to receive OPC UA Messages in a <a class="reference internal" href="../glossary.html#term-streamsheet"><span class="xref std std-term">Streamsheet</span></a> is over the <a class="reference internal" href="../functions/streams/opcuaread.html#opcuaread"><span class="std std-ref">OPCUA.READ</span></a> function. Create a new Streamsheet by clicking the plus sign in the bottom right corner and select a cell. Open up the Function Wizard, select the <a class="reference internal" href="../functions/streams/opcuaread.html#opcuaread"><span class="std std-ref">OPCUA.READ</span></a> function and the created Producer. Enter the Node ID and the Target (e.g. <a class="reference internal" href="../functions/streamsheet/inbox.html#inboxf"><span class="std std-ref">INBOX</span></a>()) and confirm your input by clicking “OK”.</p>
+<p>With every new calculation step an <a class="reference internal" href="../functions/streams/opcuaread.html#opcuaread"><span class="std std-ref">OPCUA.READ</span></a> will prompt a new message in the <a class="reference internal" href="../maincomponents/streamsheet.html#inbox"><span class="std std-ref">Inbox</span></a>.</p>
 <p><strong>OPCUA.WRITE:</strong>
 It is also possible to update existing OPC UA Variables with the OPCUA.WRITE formular. Similiar to before, use the Function Wizard and select OPCUA.WRITE. Choose the right Producer, add the NODE Id and Target Range.</p>
-<div class="line-block">
-<div class="line"><a class="reference internal" href="../_images/OPCUAWrite.gif"><img alt="OPCUAWrite" src="../_images/OPCUAWrite.gif" style="width: 832.0px; height: 468.0px;" /></a></div>
-<div class="line"><em>Note: In version 1.5 the icon for the stream functions was changed</em> <a class="reference internal" href="../_images/Streamfunction.png"><img alt="StreamF" src="../_images/Streamfunction.png" style="width: 22.5px; height: 21.75px;" /></a></div>
-<div class="line"><em>Change a node value on a OPC UA server with OPCUA.WRITE</em></div>
-</div>
-</div>
-<div class="section" id="history">
-<h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
-<p>Often it is important to not only work with single real-time data points in the moment, but to build a history and work with a series of values. The following example shows how to create a short (stepwise) data history.</p>
-<blockquote>
-<div><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Every <a class="reference internal" href="../glossary.html#term-streamsheet"><span class="xref std std-term">sheet</span></a> is calculated from left to right and from top to bottom. Consequently, cell A1 is calculated first followed by B1, C1 etc. proceding in the next rows in the same manner. Thanks to this concept, we can use references to create a history of values.</p>
-</div>
-</div></blockquote>
-<p>The cell at the very bottom references to the data input and the cells above the reference to the cell below. As higher cells are calculated first, they fetch the values of lower cells before these are calculated. In the end the last cells take the latest data input. Effectively it looks as if new values enter the history at the bottom and move up before leaving the series at the top.</p>
-<p><a class="reference internal" href="../_images/History.gif"><img alt="history" src="../_images/History.gif" style="width: 832.0px; height: 468.0px;" /></a></p>
-<p><em>Create data history in a Streamsheet</em></p>
 </div>
 <div class="section" id="mongodb">
 <h2>MongoDB<a class="headerlink" href="#mongodb" title="Permalink to this headline">¶</a></h2>
 <p>To store data and retrieve information Streamsheets are able to connect to a <a class="reference internal" href="../glossary.html#term-mongo"><span class="xref std std-term">MongoDB</span></a>. <a class="reference internal" href="addons.html#mongodb"><span class="std std-ref">Here</span></a> you can learn how to add a MongoDB to your current Streamsheets installation.</p>
-<p>Start connecting the MongoDB to your Streamsheets by setting up a MongoDB Connector in the <a class="reference internal" href="../maincomponents/administration.html#administration"><span class="std std-ref">Administration</span></a>.Enter the URL (or if working with Mongo for Docker the container name) in the Host(s) field. All other settings are optional.
-Streamsheets offers five Mongo specific functions within the <a class="reference internal" href="uielements.html#functionwizard"><span class="std std-ref">Function Wizard</span></a>: <a class="reference internal" href="../functions/database/mongostore.html#mongostore"><span class="std std-ref">MONGO.STORE()</span></a>, <a class="reference internal" href="../functions/database/mongocount.html#mongocount"><span class="std std-ref">MONGO.COUNT()</span></a>, <a class="reference internal" href="../functions/database/mongodelete.html#mongodelete"><span class="std std-ref">MONGO.DELETE()</span></a>, <a class="reference internal" href="../functions/database/mongoquery.html#mongoquery"><span class="std std-ref">MONGO.QUERY()</span></a> and <a class="reference internal" href="../functions/database/mongoaggregate.html#mongoaggregate"><span class="std std-ref">MONGO.AGGREGATE()</span></a>.
+<p>Start connecting the MongoDB to your Streamsheets by setting up a MongoDB Connector. Enter the URL (or if working with Mongo for Docker the container name) in the Host(s) field. All other settings are optional.
+Streamsheets offers five Mongo specific functions within the <a class="reference internal" href="uielements.html#functionwizard"><span class="std std-ref">Function Wizard</span></a>: <a class="reference internal" href="../functions/streams/mongostore.html#mongostore"><span class="std std-ref">MONGO.STORE()</span></a>, <a class="reference internal" href="../functions/streams/mongocount.html#mongocount"><span class="std std-ref">MONGO.COUNT()</span></a>, <a class="reference internal" href="../functions/streams/mongodelete.html#mongodelete"><span class="std std-ref">MONGO.DELETE()</span></a>, <a class="reference internal" href="../functions/streams/mongoquery.html#mongoquery"><span class="std std-ref">MONGO.QUERY()</span></a> and <a class="reference internal" href="../functions/streams/mongoaggregate.html#mongoaggregate"><span class="std std-ref">MONGO.AGGREGATE()</span></a>.
 Setup a Producer on top of the just created Connector and you are ready to go.</p>
 <p>In a Streamsheet open the “Function Wizard” to gain convenient access to the MongoDB functions.</p>
 <p><strong>MONGO.STORE():</strong></p>
@@ -342,7 +308,7 @@ TRUE or FALSE. Upsert decides, if, when a query can´t be found, the document is
 <p>First of all we start by providing a <a class="reference internal" href="../glossary.html#term-rest"><span class="xref std std-term">REST</span></a> Client <a class="reference internal" href="../glossary.html#term-connector"><span class="xref std std-term">Connector</span></a> and the corresponding <a class="reference internal" href="../glossary.html#term-producer"><span class="xref std std-term">Producer</span></a>. If these are not yet available, go to the <a class="reference internal" href="../maincomponents/administration.html#administration"><span class="std std-ref">Administration</span></a> menu and create a new Connector and Producer. If you have any questions we recommend to have a look at the <a class="reference internal" href="#resttutorial"><span class="std std-ref">REST.REQUEST tutorial</span></a>.</p>
 <div class="line-block">
 <div class="line"><strong>Create a Database:</strong></div>
-<div class="line">Create a database using the REST.REQUEST function. Click on the <a class="reference internal" href="uielements.html#functionwizard"><span class="std std-ref">Function Wizard</span></a>, select the right Producer and use the POST Method. Add the desired database name at the end of the URL.</div>
+<div class="line">Create a database using the REST.REQUEST function. Click on the <a class="reference internal" href="uielements.html#functionwizard"><span class="std std-ref">Stream Function Wizard</span></a>, select the right Producer and use the POST Method. Add the desired database name at the end of the URL.</div>
 </div>
 <blockquote>
 <div><div class="line-block">
@@ -353,7 +319,7 @@ TRUE or FALSE. Upsert decides, if, when a query can´t be found, the document is
 <p>To create a database it is sufficient to execute the REST.REQUEST once.</p>
 <div class="line-block">
 <div class="line"><strong>Write Data:</strong></div>
-<div class="line">To write data into the InfluxDB, we have to use the <a class="reference internal" href="../functions/streamsheet/request.html#request"><span class="std std-ref">REQUEST</span></a> function. The ParameterJSON range of the function contains 4 parameters. The first is the <a class="reference internal" href="../glossary.html#term-url"><span class="xref std std-term">URL</span></a> which must contain the name of the database. It`s also possible to add a password, precision etc. The second one is the method which is POST when writing the data into the InfluxDB. Third is the body in which the data is located. To successfully parse and write Data in InfluxDB you have to use the <a class="reference internal" href="../glossary.html#term-line-protocol"><span class="xref std std-term">line protocol</span></a>! The InfluxDB line protocol is a text based format for writing points to the database. A single line of text in line protocol format represents one data point in InfluxDB. It informs InfluxDB of the point’s measurement, tag set, field set, and timestamp. Tag set and timestamp are optional. It is important that the spaces and commas are set correctly!</div>
+<div class="line">To write data into the InfluxDB, we have to use the <a class="reference internal" href="../functions/streams/request.html#request"><span class="std std-ref">REQUEST</span></a> function. The ParameterJSON range of the function contains 4 parameters. The first is the <a class="reference internal" href="../glossary.html#term-url"><span class="xref std std-term">URL</span></a> which must contain the name of the database. It`s also possible to add a password, precision etc. The second one is the method which is POST when writing the data into the InfluxDB. Third is the body in which the data is located. To successfully parse and write Data in InfluxDB you have to use the <a class="reference internal" href="../glossary.html#term-line-protocol"><span class="xref std std-term">line protocol</span></a>! The InfluxDB line protocol is a text based format for writing points to the database. A single line of text in line protocol format represents one data point in InfluxDB. It informs InfluxDB of the point’s measurement, tag set, field set, and timestamp. Tag set and timestamp are optional. It is important that the spaces and commas are set correctly!</div>
 </div>
 <blockquote>
 <div><div class="line-block">
@@ -369,7 +335,7 @@ TRUE or FALSE. Upsert decides, if, when a query can´t be found, the document is
 <p><em>Write Data in InfluxDB with the REQUEST function</em></p>
 <div class="line-block">
 <div class="line"><strong>Query Data:</strong></div>
-<div class="line">To Query Data we use the <a class="reference internal" href="../functions/streamsheet/restrequest.html#restrequest"><span class="std std-ref">REST.REQUEST</span></a> function with the GET Method and write the <a class="reference internal" href="../glossary.html#term-query"><span class="xref std std-term">query</span></a> into the <a class="reference internal" href="../glossary.html#term-url"><span class="xref std std-term">URL</span></a>. There are plenty ways to query your Data. You can have a look at them <a class="reference external" href="https://docs.influxdata.com/influxdb/v1.7/query_language/data_exploration/">here</a>. In our simple example we query all data of the last minute from our h2o_feet measurement.</div>
+<div class="line">To Query Data we use the <a class="reference internal" href="../functions/streams/restrequest.html#restrequest"><span class="std std-ref">REST.REQUEST</span></a> function with the GET Method and write the <a class="reference internal" href="../glossary.html#term-query"><span class="xref std std-term">query</span></a> into the <a class="reference internal" href="../glossary.html#term-url"><span class="xref std std-term">URL</span></a>. There are plenty ways to query your Data. You can have a look at them <a class="reference external" href="https://docs.influxdata.com/influxdb/v1.7/query_language/data_exploration/">here</a>. In our simple example we query all data of the last minute from our h2o_feet measurement.</div>
 </div>
 <blockquote>
 <div><div class="line-block">
@@ -379,26 +345,50 @@ TRUE or FALSE. Upsert decides, if, when a query can´t be found, the document is
 </div></blockquote>
 <p>Thats it! Now you receive the Data in your payload. It`s time to process the Data in this or another Streamsheet!</p>
 </div>
+<div class="section" id="timescaledb">
+<h2>TimescaleDB<a class="headerlink" href="#timescaledb" title="Permalink to this headline">¶</a></h2>
+<p><img alt="star" src="../_images/star.svg" />  This is a <a class="reference external" href="https://cedalo.com/download/">Streamsheets Professional</a> feature.</p>
+<p>The TimescaleDB is a timeseries database based on PostgreSQL. To learn more check their <a class="reference external" href="https://docs.timescale.com/latest/main">website</a> .</p>
+<p>As of right now, the usage of the timescaledb is limited to the internal timescaledb of Streamsheets. We are working on allowing the creation of custom Streams.
+Until then the creation of timescaledb Streams is dispensable. When using timescaledb functions simply leave the Stream parameter empty and Streamsheets takes care of the rest.</p>
+<p><strong>TIMESCALE.INSERT():</strong></p>
+<p><em>=TIMESCALE.INSERT(Stream, TableName, ValuesJSON, [Target, TableSchemaJSON])</em></p>
+<p><a class="reference internal" href="../_images/TI.png"><img alt="TI" src="../_images/TI.png" style="width: 331.0px; height: 156.5px;" /></a></p>
+<p>To store information in the timescaledb add a TIMESCALE.INSERT function.</p>
+<p><em>Stream:</em> Leave empty for now.</p>
+<p><em>TableName:</em> Define the name of the table to store the data in.</p>
+<p><em>ValuesJSON:</em> A JSON Range over all key value pairs to be stored.</p>
+<p><em>Target:</em> Optinal. To get feedback about the request status, define a target range or use INBOX().</p>
+<p><em>TableSchemaJSON:</em> Optional. A JSON Range to setup a schema for the used table. If you have not already used setup your table via TIMESCALE.CREATE_TABLE() add the schema in this parameter to automatically create a table.</p>
+<p><strong>TIMESCALE.SELECT():</strong></p>
+<p><em>=TIMESCALE.SELECT(Stream, SelectJSON [, Target, XValue,])</em></p>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="../_images/TSA.png"><img alt="TSA" src="../_images/TSA.png" style="width: 449.5px; height: 221.5px;" /></a></div>
+<div class="line"><em>Select all from table “TimescaleDbTable”, but limit response to 10.</em></div>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="../_images/TSAVG.png"><img alt="TSAVG" src="../_images/TSAVG.png" style="width: 665.5px; height: 116.0px;" /></a></div>
+<div class="line"><em>Select the maximum time value and the average of the parameter “Cats” from the table “TimescaleDbTable”.</em></div>
+</div>
+<p>To access stored information use the TIMESCALE.SELECT function.</p>
+<p><em>Stream:</em> Leave empty for now.</p>
+<p><em>SelectJSON:</em> JSON Range with a specified select statement. For every statement use another key value pair in the sheet. E.g. Select: x; from: y; where: z; group by: a; order by: b; limit: c</p>
+<p><em>Target:</em> Optional. It is not necessary to select a target, if left empty the data is hold with the cell. This is convinient, if you are interested in displaying the data in a chart and don´t want to waste space on the Streamsheet. You can reference the select query as the chart source.</p>
+<p><em>XValue:</em> Optional. If you would like to use the data in a chart, set a key parameter as XValue to define the X axis.</p>
+</div>
 <div class="section" id="mail-send">
 <h2>MAIL.SEND<a class="headerlink" href="#mail-send" title="Permalink to this headline">¶</a></h2>
 <p>In This Tutorial we will send E-Mails to a Mail Account from our <a class="reference internal" href="../glossary.html#term-streamsheet"><span class="xref std std-term">Streamsheet</span></a>, using an SMTP Client.</p>
 <p>First of all, create an SMTP_Connector. Therefore click on the <a class="reference internal" href="../maincomponents/administration.html#administration"><span class="std std-ref">Administration</span></a> Menu and navigate to <a class="reference internal" href="../glossary.html#term-connector"><span class="xref std std-term">Connectors</span></a> to create a new Connector, with a “SMTP Provider”. To be able to use the SMTP_Connector, the Host-address, the Port and the Security Protocoll of the Mail Service that is used, needs to be typed in. For example the host-address for Gmail is “smtp.gmail.com”, the Port is 465 and the Security is SSL/TLS. (This may differ from other Mail-Services, their access data can be find on the internet)</p>
-<p><a class="reference internal" href="../_images/smtp_connector.gif"><img alt="SMTP1" src="../_images/smtp_connector.gif" style="width: 832.0px; height: 468.0px;" /></a></p>
-<p><em>Create SMTP_Connector</em></p>
 <p>For the next Step change to <a class="reference internal" href="../glossary.html#term-producer"><span class="xref std std-term">Producers</span></a> and create a new Producer, using the previously created Connector. Now enter the sender mail address as User name and add the password below.</p>
 <p>Even if the whole Setup is correct, there is a high chance that it will fail! For instance Gmail is blocking the access of this app, because it’s using a “low” security level. To give Streamsheets access to Gmail, enable “allow low security applications” manually on the Gmail website. After that the Connector and the Producer should be connected!</p>
-<p>Now we are ready to switch to a Streamsheet. To insert the “<a class="reference internal" href="../functions/streamsheet/mailsend.html#mailsend"><span class="std std-ref">MAIL.SEND</span></a>” function in the Streamsheet, use the Function Wizard and select “MAIL.SEND” as the function and the previously created Producer as Stream. For “Text, Subject, TO” etc. either type it in directly or refer to a cell on the sheet. That`s it!</p>
+<p>Now we are ready to switch to a Streamsheet. To insert the “<a class="reference internal" href="../functions/streams/mailsend.html#mailsend"><span class="std std-ref">MAIL.SEND</span></a>” function in the Streamsheet, use the Function Wizard and select “MAIL.SEND” as the function and the previously created Producer as Stream. For “Text, Subject, TO” etc. either type it in directly or refer to a cell on the sheet. That`s it!</p>
 <p>To prevent spam we recommend adding a condition to the MAIL.SEND function 😄</p>
 <div class="line-block">
 <div class="line"><a class="reference internal" href="../_images/Loom-speedup.gif"><img alt="SMTP2" src="../_images/Loom-speedup.gif" style="width: 832.0px; height: 468.0px;" /></a></div>
 <div class="line"><em>Sending mail`s with a condition</em></div>
 <div class="line"><em>Note: In version 1.5 the icon for the stream functions was changed</em> <a class="reference internal" href="../_images/Streamfunction.png"><img alt="StreamF" src="../_images/Streamfunction.png" style="width: 22.5px; height: 21.75px;" /></a></div>
 </div>
-</div>
-<div class="section" id="forum">
-<h2>Forum<a class="headerlink" href="#forum" title="Permalink to this headline">¶</a></h2>
-<p>To see even more possibilities of data histories (based on steps and based on time) take a look at our <a class="reference external" href="https://forum.streamsheets.com/t/how-to-save-incoming-messages-in-a-history/28">Streamsheet Forum</a>.
-To access and work with larger series of data connecting to and using a database is usually the best approach.</p>
 </div>
 </div>
 
@@ -413,7 +403,7 @@ To access and work with larger series of data connecting to and using a database
         <a href="addons.html" class="btn btn-neutral float-right" title="Add-Ons" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="uielements.html" class="btn btn-neutral" title="UI Elements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="uielements.html" class="btn btn-neutral" title="Tools &amp; Tricks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

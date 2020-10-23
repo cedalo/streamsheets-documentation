@@ -1,3 +1,5 @@
+.. _setvalue:
+
 SETVALUE
 -----------------------------
 
@@ -42,7 +44,7 @@ TRUE
      - Will put value 42 in cell B1, but keeps possible cell formula
    * - =SETVALUE(2>1, 42, B1, TRUE)
      - TRUE
-     - Same as before, but overwrites possible cell formula so that 42 is returned on subsequent machine steps
+     - Same as before, but overwrites possible cell formula so that 42 is returned on subsequent App steps
    * - =SETVALUE(, 42, B1)
      - TRUE
      - Does nothing because no condition is specified

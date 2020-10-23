@@ -4,13 +4,17 @@
         :scale: 60%
 .. role:: blue
 
+
+
+.. _feedinbox:
+
 FEEDINBOX
 -----------------------------
 
-This function feeds the :ref:`inbox` of a :term:`Streamsheet` within the same :term:`machine <Stream Machine>`.
+This function feeds the :ref:`inbox` of a :term:`Streamsheet` within the same :term:`App`.
 The Streamsheet Settings must be set to "On Data Arrival", to trigger the calculation.
 This way a dependent Streamsheet can be triggered in two different ways. Either using the FEEDINBOX() function, which
-leads to an "asynchronous" call, since the message is just added to the inbox and waits for the next machine step.
+leads to an "asynchronous" call, since the message is just added to the inbox and waits for the next step.
 Or using :ref:`EXECUTE`\ (), which will lead to a direct execution (synchronous).
 
 **Syntax**

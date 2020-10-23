@@ -1,136 +1,80 @@
 .. streams:
 .. |Administration| image:: /images/AdministrationC.PNG
-        :scale: 55 %
-.. |Connector1| image:: /images/MyMongoDBConnector.JPG
-        :scale: 9 %
-        :align: middle
-.. |Connector2| image:: /images/OPCUAConnector.JPG
-        :scale: 10 %
-        :align: middle
-.. |Connector3| image:: /images/FileConnector.JPG
-        :scale: 10 %
-        :align: middle
-.. |Connector4| image:: /images/RestServerConnector.JPG
-        :scale: 10 %
-        :align: middle
-.. |Connector7| image:: /images/RestClient Connector.JPG
-        :scale: 9 %
-        :align: middle
-.. |Connector8| image:: /images/KafkaConnector.JPG
-        :scale: 7 %
-        :align: middle
-.. |Connector9| image:: /images/AdministrationC.PNG
-        :scale: 10 %
-        :align: middle
-.. |Connector10| image:: /images/AdministrationC.PNG
-        :scale: 10 %
-        :align: middle
-.. |Consumer1| image:: /images/MyMongoDBConsumer.JPG
-        :scale: 11 %
-        :align: middle
-.. |Consumer2| image:: /images/OPCUAConsumer.JPG
-        :scale: 10 %
-        :align: middle
-.. |Consumer4| image:: /images/RestServerConsumer.JPG
-        :scale: 11 %
-        :align: middle
-.. |Consumer7| image:: /images/KafkaConsumer.jpg
-        :scale: 7 %
-        :align: middle
-.. |Consumer8| image:: /images/AdministrationC.PNG
-        :scale: 10 %
-        :align: middle
-.. |Consumer9| image:: /images/AdministrationC.PNG
-        :scale: 10 %
-        :align: middle
-.. |Consumer10| image:: /images/AdministrationC.PNG
-        :scale: 10 %
-        :align: middle
-.. |Producer1| image:: /images/MyMongoDBProducer.JPG
-        :scale: 10 %
-        :align: middle
-.. |Producer2| image:: /images/OPCUAProducer.JPG
-        :scale: 10 %
-        :align: middle
-.. |Producer3| image:: /images/FileProducer.JPG
-        :scale: 10 %
-        :align: middle
-.. |Producer4| image:: /images/AMQPProducer.jpg
-        :scale: 8 %
-        :align: middle
-.. |Producer6| image:: /images/RestClientProducer.JPG
-        :scale: 10 %
-        :align: middle
-.. |Producer7| image:: /images/KafkaProducer.jpg
-        :scale: 7 %
-        :align: middle
-.. |Producer8| image:: /images/AdministrationC.PNG
-        :scale: 10 %
-        :align: middle
-.. |Producer9| image:: /images/AdministrationC.PNG
-        :scale: 10 %
-        :align: middle
-.. |Producer10| image:: /images/AdministrationC.PNG
-        :scale: 10 %
-        :align: middle
-.. |CSettings| image:: /images/MosquittoConnector.JPG
-        :scale: 55 %
-.. |PSettings| image:: /images/MosquittoProducer.JPG
-        :scale: 55 %
-.. |ConsumerSettings| image:: /images/MosquittoConsumer.JPG
-        :scale: 54 %
-
+        :scale: 75 %
 
 .. _Stream:
 
 Streams
 ==========
 
+Streams can be found next to the App Dashboard in another Tab. 
+
+|Administration|
+
 The Stream-resources :term:`Consumer`\ s, :term:`Producer`\ s and :term:`Connector`\ s serve the purpose of defining data streams.
 There is a hierarchy to these resources in which Connectors form the foundation for Consumers and Producers. Hence, the definition of a data stream consists either of a Connector-Consumer pair or a Connector-Producer pair. Each Consumer and each Producer runs on exactly one connector. Connectors, on the other hand, can have many consumers and producers.
 
 + As the name suggests, Connectors take information on overall connection parameters, such as addresses and authentication details. Especially if several message streams are on a broker, server or other “data space”, Connectors contain information which can be shared by Consumers and Producers. Consequently, shared information has to be defined only once in one place.
-+ Consumers are used to define the input message stream of Streamsheets.
-+ Producers are used to define outgoing message streams.
-
-Connectors
-------------
-Connectors serve the base definition of streams. They contain the information to connect to brokers, servers, clusters and other data spaces. This includes usually addresses and authentication information, such as username and password or certificates.
-
-|CSettings|
-
-*other Connector examples:*
-
-|Connector1| |Connector2| |Connector3| |Connector4| |Connector7| |Connector8|
-
-..   |Connector9| |Connector10|
++ Consumers are used to define the input message stream of Streamsheets. They are added to the Inbox of a Streamsheet
++ Producers are used to define outgoing message streams. They are referenced in stream functions like MQTT.PUBLISH(). 
 
 
+In the following we will use MQTT as an example stream:
 
-.. _Consumers:
+Connector
+---------
 
-Consumers
-------------
-Consumers are the Stream resource to specify data streams which serve as the input for Streamsheets, thus, they deliver messages to a sheet. You must first choose a Connector and then add the missing information to complete the definition of a data stream.
+A Connector is always the foundation of our communication architecture. Consumer and Producer reference to a Connector and define the details. The connector itself "connects" the Streamsheet to a provider, you can choose from a preconfigured list. Once a provider is choosen, there are a variety of settings, which can be applied to define the details of your data stream.
 
-|ConsumerSettings|
+MQTT Connector
+``````````````
+The MQTT Connector has the following possible settings.
 
-*other Consumer examples:*
 
-|Consumer1| |Consumer2| |Consumer4| |Consumer7|
++ **Name:** The Name of your Connector
++ **Provider:** you can´t change the provider. You choose it while creating the connector.
++ **URL:** Choose the MQTT Broke you want to use. If you want to use our own broker, which is hosted by the Stream Sheet Server, type in ``broker``
++ **Port:** Choose the port you will be using to transfer the data.
++ **User Name & Password:** If your URL needs identification, you can type in your credentials. For local usage not neccessary.
++ **Base Topic:** The Base topic describes where the connector will be connected to.
++ **Retain Message:**
++ **QoS:** Stands for quality of service. You have the choice between: At most once, At least once, Exactly once.
++ **Protocol Versio:** MQTT Broker can run on different protocols. 
 
-..   |Consumer8| |Consumer9| |Consumer10|
+Producer
+--------
 
-Producers
------------
-Producers are very similar to :ref:`Consumers` but instead of defining an input data stream, they define an outgoing data stream. They are used within all producing functions. 
+A Producer is used in a Function. It directs the data stream out of the Stream Sheet. The Function together with the Producer defines where your data will be heading. A Producer is always connected to a Connector, which serves as the foundation of a Producer.
+Once the Connector is choosen, there are some additional settings within the Producer.
 
-|PSettings|
+MQTT Producer
+`````````````
+The MQTT Producer has the following possible settings:
 
-*other Producer examples:*
 
-|Producer1| |Producer2| |Producer3| |Producer4| |Producer6| |Producer7|
++ **Name:** The Name of your Producer.
++ **Connector:** Choose the connected Connector.
++ **Data Format:** Choose the Data Format a Producer will publish the Messages in.
++ **Topic:** Extend the Base Topic of the Connector. The Message will be sent to the full topic branch defined through Connector, Producer and Function (ConnectorTopic/ProducerTopic/FunctionTopic).
++ **Clean:** turn on clean session
++ **Static Client ID:** set a static client ID if needed
 
-..   |Producer8| |Producer9| |Producer10|
+Consumer
+--------
+
+A Consumer is always connected to the Inbox of a Stream Sheet. It defines the details of the data stream comming into a Stream Sheet. A Consumer is always connected to a Connector. Once the Connector is choosen, there are some additional settings within the Consumer.
+
+
+MQTT Consumer
+`````````````
+The MQTT Consumer has the following Settings:
+
+
++ **Name:** The Name of your Consumer.
++ **Data Format:** Choose the Data Format you wish to accept in the Inbox.
++ **Static Client ID:** set a static client ID if needed
++ **Topics:** Choose one or more topics the Consumer will listen to. The topics always extend the Connector Base Topic.
++ **Clean:** turn on clean session
+
 
 

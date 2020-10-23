@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="../../_static/theme_override.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="FILE.WRITE" href="filewrite.html" />
-    <link rel="prev" title="EXCEL2JSONTIME" href="../date/excel2jsontime.html" /> 
+    <link rel="next" title="GETCYCLE" href="getcycle.html" />
+    <link rel="prev" title="EXECUTE" href="execute.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -87,17 +87,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../../gettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../functions.html">Functions</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../alpha.html">Alphabetical</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chart.html">Chart</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../date.html">Date</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../drawing.html">Drawing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../engineering.html">Engineering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events.html">Events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../info.html">Info</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../logical.html">Logical</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lookup.html">Lookup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../math.html">Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shape.html">Shape</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../stack.html">Stack</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../statistical.html">Statistical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../streams.html">Streams</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../streamsheet.html">Streamsheet</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="array.html">ARRAY</a></li>
 <li class="toctree-l3"><a class="reference internal" href="await.html">AWAIT</a></li>
@@ -113,44 +114,27 @@
 <li class="toctree-l3"><a class="reference internal" href="edgedetect.html">EDGE.DETECT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="execute.html">EXECUTE</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">FEEDINBOX</a></li>
-<li class="toctree-l3"><a class="reference internal" href="filewrite.html">FILE.WRITE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="getcycle.html">GETCYCLE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="getcycletime.html">GETCYCLETIME</a></li>
 <li class="toctree-l3"><a class="reference internal" href="getexecutestep.html">GETEXECUTESTEP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="getmachinestep.html">GETMACHINESTEP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="getstep.html">GETSTEP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="httprequest.html">HTTP.REQUEST</a></li>
-<li class="toctree-l3"><a class="reference internal" href="httprespond.html">HTTP.RESPOND</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inbox.html">INBOX</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inboxdata.html">INBOXDATA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inboxmetadata.html">INBOXMETADATA</a></li>
-<li class="toctree-l3"><a class="reference internal" href="influxdrop.html">INFLUX.DROP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="json.html">JSON</a></li>
 <li class="toctree-l3"><a class="reference internal" href="jsonvalue.html">JSON.VALUE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kafkacommand.html">KAFKA.COMMAND</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kafkapublish.html">KAFKA.PUBLISH</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kafkaquery.html">KAFKA.QUERY</a></li>
 <li class="toctree-l3"><a class="reference internal" href="loopcount.html">LOOPCOUNT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="loopindex.html">LOOPINDEX</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mailsend.html">MAIL.SEND</a></li>
 <li class="toctree-l3"><a class="reference internal" href="movevalues.html">MOVEVALUES</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mqttpublish.html">MQTT.PUBLISH</a></li>
-<li class="toctree-l3"><a class="reference internal" href="opcuaread.html">OPCUA.READ</a></li>
-<li class="toctree-l3"><a class="reference internal" href="opcuarespond.html">OPCUA.RESPOND</a></li>
-<li class="toctree-l3"><a class="reference internal" href="opcuavariables.html">OPCUA.VARIABLES</a></li>
-<li class="toctree-l3"><a class="reference internal" href="opcuawrite.html">OPCUA.WRITE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openurl.html">OPENURL</a></li>
 <li class="toctree-l3"><a class="reference internal" href="outbox.html">OUTBOX</a></li>
 <li class="toctree-l3"><a class="reference internal" href="outboxdata.html">OUTBOXDATA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="outboxgetids.html">OUTBOX.GETIDS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="produce.html">PRODUCE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="outboxmetadata.html">OUTBOXMETADATA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="range.html">RANGE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="read.html">READ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="repeatindex.html">REPEATINDEX</a></li>
-<li class="toctree-l3"><a class="reference internal" href="request.html">REQUEST</a></li>
-<li class="toctree-l3"><a class="reference internal" href="requestinfo.html">REQUESTINFO</a></li>
-<li class="toctree-l3"><a class="reference internal" href="respond.html">RESPOND</a></li>
-<li class="toctree-l3"><a class="reference internal" href="restrequest.html">REST.REQUEST</a></li>
-<li class="toctree-l3"><a class="reference internal" href="restrespond.html">REST.RESPOND</a></li>
 <li class="toctree-l3"><a class="reference internal" href="return.html">RETURN</a></li>
 <li class="toctree-l3"><a class="reference internal" href="select.html">SELECT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="setcycletime.html">SETCYCLETIME</a></li>
@@ -159,6 +143,8 @@
 <li class="toctree-l3"><a class="reference internal" href="sleep.html">SLEEP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="subtree.html">SUBTREE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="swapvalues.html">SWAPVALUES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tableget.html">TABLE.GET</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tableordercolumn.html">TABLE.ORDERCOLUMN</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tableupdate.html">TABLE.UPDATE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="triggerstep.html">TRIGGERSTEP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="webpage.html">WEBPAGE</a></li>
@@ -167,12 +153,14 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../text.html">Text</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../timeseries.html">Timeseries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../alpha.html">Alphabetical</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../others.html">Other</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../releasenotes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference external" href="http://www.cedalo.com">Cedalo</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://forum.cedalo.com/">Forum</a></li>
 </ul>
 
             
@@ -220,7 +208,7 @@
         
           <li><a href="../../functions.html">Functions</a> &raquo;</li>
         
-          <li><a href="../alpha.html">Alphabetical</a> &raquo;</li>
+          <li><a href="../streamsheet.html">Streamsheet</a> &raquo;</li>
         
       <li>FEEDINBOX</li>
     
@@ -240,11 +228,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="feedinbox">
-<h1>FEEDINBOX<a class="headerlink" href="#feedinbox" title="Permalink to this headline">¶</a></h1>
-<p>This function feeds the <a class="reference internal" href="../../maincomponents/streamsheet.html#inbox"><span class="std std-ref">Inbox</span></a> of a <a class="reference internal" href="../../glossary.html#term-streamsheet"><span class="xref std std-term">Streamsheet</span></a> within the same <a class="reference internal" href="../../glossary.html#term-stream-machine"><span class="xref std std-term">machine</span></a>.
+<span id="id1"></span><h1>FEEDINBOX<a class="headerlink" href="#feedinbox" title="Permalink to this headline">¶</a></h1>
+<p>This function feeds the <a class="reference internal" href="../../maincomponents/streamsheet.html#inbox"><span class="std std-ref">Inbox</span></a> of a <a class="reference internal" href="../../glossary.html#term-streamsheet"><span class="xref std std-term">Streamsheet</span></a> within the same <a class="reference internal" href="../../glossary.html#term-app"><span class="xref std std-term">App</span></a>.
 The Streamsheet Settings must be set to “On Data Arrival”, to trigger the calculation.
 This way a dependent Streamsheet can be triggered in two different ways. Either using the FEEDINBOX() function, which
-leads to an “asynchronous” call, since the message is just added to the inbox and waits for the next machine step.
+leads to an “asynchronous” call, since the message is just added to the inbox and waits for the next step.
 Or using <a class="reference internal" href="execute.html#execute"><span class="std std-ref">EXECUTE</span></a>(), which will lead to a direct execution (synchronous).</p>
 <p><strong>Syntax</strong></p>
 <p>=FEEDINBOX(<a class="reference internal" href="../../glossary.html#term-json"><span class="xref std std-term">JSON</span></a>, Target)</p>
@@ -306,10 +294,10 @@ Or using <a class="reference internal" href="execute.html#execute"><span class="
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="filewrite.html" class="btn btn-neutral float-right" title="FILE.WRITE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="getcycle.html" class="btn btn-neutral float-right" title="GETCYCLE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../date/excel2jsontime.html" class="btn btn-neutral" title="EXCEL2JSONTIME" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="execute.html" class="btn btn-neutral" title="EXECUTE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

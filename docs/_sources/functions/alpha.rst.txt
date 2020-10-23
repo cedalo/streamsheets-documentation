@@ -11,14 +11,14 @@ Alphabetical
    math/arctan
    math/arctan2
    streamsheet/array
-   drawing/attributes
+   shape/attributes
    statistical/average
    statistical/averageif
    statistical/averageifs
    streamsheet/await
    streamsheet/awaitone
-   drawing/axis
-   drawing/bar
+   chart/axis
+   shape/bar
    engineering/bin2dec
    engineering/bin2float
    engineering/bin2hex
@@ -26,7 +26,7 @@ Alphabetical
    streamsheet/calc
    text/char
    lookup/choose
-   drawing/classifypoint
+   shape/classifypoint
    text/clean
    text/code
    streamsheet/colorconvert
@@ -53,32 +53,32 @@ Alphabetical
    streamsheet/dictionary
    lookup/dmax
    lookup/dmin
-   drawing/drawbezier
-   drawing/drawbutton
-   drawing/drawcheckbox
-   drawing/drawellipse
-   drawing/drawknob
-   drawing/drawlabel
-   drawing/drawline
-   drawing/drawpolygon
-   drawing/drawrectangle
-   drawing/drawslider
-   drawing/drawstreamchart
+   shape/drawbezier
+   shape/drawbutton
+   shape/drawcheckbox
+   shape/drawellipse
+   shape/drawknob
+   shape/drawlabel
+   shape/drawline
+   shape/drawpolygon
+   shape/drawrectangle
+   shape/drawslider
+   chart/drawstreamchart
    lookup/dsum
    streamsheet/edgedetect
    math/even
-   drawing/events
+   events/events
    streamsheet/execute
    date/excel2jsontime
    streamsheet/feedinbox
-   streamsheet/filewrite
+   streams/filewrite
    text/find
-   drawing/filllineargradient
-   drawing/fillpattern
-   drawing/fillradialgradient
+   shape/filllineargradient
+   shape/fillpattern
+   shape/fillradialgradient
    engineering/float2bin
    engineering/float2hex
-   drawing/fontformat
+   shape/fontformat
    statistical/forecast
    math/frac
    streamsheet/getcycle
@@ -90,8 +90,8 @@ Alphabetical
    engineering/hex2float
    engineering/hex2oct
    date/hour
-   streamsheet/httprequest
-   streamsheet/httprespond
+   streams/httprequest
+   streams/httprespond
    logical/if
    info/iferror
    streamsheet/inbox
@@ -99,10 +99,10 @@ Alphabetical
    streamsheet/inboxmetadata
    lookup/index
    lookup/indirect
-   database/influxdrop
-   database/influxselect
-   database/influxshow
-   database/influxstore
+   streams/influxdrop
+   streams/influxselect
+   streams/influxshow
+   streams/influxstore
    math/int
    info/iserr
    info/iserror
@@ -113,16 +113,16 @@ Alphabetical
    streamsheet/json
    date/jsontime2excel
    streamsheet/jsonvalue
-   streamsheet/kafkacommand
-   streamsheet/kafkapublish
-   streamsheet/kafkaquery
+   streams/kafkacommand
+   streams/kafkapublish
+   streams/kafkaquery
    text/left
    text/len
-   drawing/lineformat
+   shape/lineformat
    math/log
    streamsheet/loopcount
    streamsheet/loopindex
-   streamsheet/mailsend
+   streams/mailsend
    lookup/match
    statistical/max
    statistical/maxif
@@ -133,11 +133,11 @@ Alphabetical
    date/minute
    math/mod
    date/month
-   database/mongodelete
-   database/mongoquery
-   database/mongostore
-   database/movevalues
-   database/mqttpublish
+   streams/mongodelete
+   streams/mongoquery
+   streams/mongostore
+   streams/movevalues
+   streams/mqttpublish
    date/mstoserial
    info/na
    logical/not
@@ -171,11 +171,15 @@ Alphabetical
    .. olap/olapsetdata
    .. olap/olapslice
    .. olap/olapslicedelete
-   drawing/onclick
-   drawing/ondoubleclick
-   drawing/onmousedown
-   drawing/onmouseup
-   drawing/onvaluechange
+   events/onclick
+   events/ondoubleclick
+   events/onmousedown
+   events/onmouseup
+   events/onvaluechange
+   streams/opcuaread
+   streams/opcuarespond
+   streams/opcuavariables
+   streams/opcuawrite
    logical/or
    streamsheet/outbox
    streamsheet/outboxdata
@@ -184,7 +188,7 @@ Alphabetical
    math/pi
    math/power
    streamsheet/produce
-   drawing/qrcode
+   shape/qrcode
    math/radians
    math/randbetween
    text/randid
@@ -192,11 +196,11 @@ Alphabetical
    streamsheet/read
    text/replace
    text/rept
-   streamsheet/request
-   streamsheet/requestinfo
-   streamsheet/respond
-   streamsheet/restrequest
-   streamsheet/restrespond
+   streams/request
+   streams/requestinfo
+   streams/respond
+   streams/restrequest
+   streams/restrespond
    streamsheet/return
    text/right
    math/round
@@ -204,8 +208,8 @@ Alphabetical
    date/second
    streamsheet/select
    date/serialtoms
-   drawing/series
-   drawing/seriestime
+   chart/series
+   chart/seriestime
    streamsheet/setcycletime
    streamsheet/setphase
    streamsheet/setvalue

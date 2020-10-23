@@ -2,7 +2,7 @@ SETCYCLETIME
 -----------------------------
 
 Set the current :ref:`Cycle Time`. The Cycle Time
-is an overall setting in a :term:`machine <Stream Machine>` that applies to each :term:`Streamsheet` in the machine.
+is an overall setting in an :term:`App <App>` that applies to each :term:`Streamsheet` in the App.
 It generally defines how long the system pauses between calculation cycles (in ms).
 
 **Syntax**

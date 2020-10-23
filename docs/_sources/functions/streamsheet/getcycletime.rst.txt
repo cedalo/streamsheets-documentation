@@ -2,7 +2,7 @@ GETCYCLETIME
 -----------------------------
 
 Returns the current cycle time. The Cycle Time
-is an overall setting in a :term:`machine <Stream Machine>` that applies to each Streamsheet in the machine.
+is an overall setting in an :term:`App <App>` that applies to each Streamsheet within the App.
 It generally defines how long the system pauses between calculation cycles (in ms).
 
 **Syntax**
@@ -28,5 +28,5 @@ Current cycle time in milliseconds.
      - Comment
    * - =GETCYCLETIME()
      - 1000
-     - The machine is running every second.
+     - The App is calculating every second.
 

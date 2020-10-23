@@ -1,5 +1,5 @@
-.. |StSIntro| image:: /images/StSIntro.jpg
-         :scale: 100%
+.. |StSIntro| image:: /images/StSIntro.png 
+         :scale: 50%
 
 Introduction
 ============
@@ -11,12 +11,12 @@ Streamsheets are server-based spreadsheets that consume, process and produce dat
 One important characteristic of Streamsheets is that they are recalculated automatically, e.g. every time a new message arrives or continuously with a certain cycle time (can be as small as a few Milliseconds). Consequently, conditions and formulas are considered continuously and based on these decisions are taken and visualizations are updated dynamically. All of this is happening in real-time.
 
 What´s more, Streamsheets allow you to send, publish, store or provide data, hence, they not only consume data streams but produce them as well. 
-In a similar way as Excel worksheets form part of a workbook, Streamsheets run in Stream Machines. 
-Find out more about Streamsheets, Stream Machines and how Streams are configured under :ref:`Main Components`.
+In a similar way as Excel worksheets form part of a workbook, Streamsheets run in Apps. 
+Find out more about Streamsheets, Apps and how Streams are configured under :ref:`Main Components`.
 
 |StSIntro|
 
-A :term:`Streamsheet` runs in a :term:`Stream Machine`, processes a data stream and publishes a new stream.
+A :term:`Streamsheet` runs in an :term:`App`, processes and publishes data streams.
 
 Protocols
 ----------
@@ -24,15 +24,18 @@ Protocols
 Streamsheets support a number of external connections. These connections can either be leveraged to consume or produce data:
 
 + MQTT
-+ OPCUA
++ OPCUA*
 + REST
 + SMPTP/IPOP3 (Mail)
 + MongoDB
-+ InfluxDB
-+ AMQP
-+ UPD 
++ InfluxDB*
++ AMQP*
++ UPD* 
 + Kafka
++ TimescaleDB*
 + local storage
+
+*only available in the premium version
 
 Use Cases
 ---------

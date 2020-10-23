@@ -18,7 +18,7 @@ Converts a textual number representation to a number.
    * - Text
      - A string representing a number value.
    * - Locale
-     - An optional locale code. Currently only "en" and "de" are supported. Defaults to current machine locale.
+     - An optional locale code. Currently only "en" and "de" are supported. Defaults to current App locale.
 
 **Return Value**
 

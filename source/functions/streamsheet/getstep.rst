@@ -6,9 +6,9 @@ GETSTEP
 Returns the current Streamsheet step.
 
 .. Note:: A Streamsheet step is increased only if the Streamsheet is processed, which is not necessarily the case on each 
-            machine step. 
+            App step. 
 
-To get the steps for a machine refer to :ref:`getmachinestep` and to get the steps for Streamsheets which are repeatedly
+To get the steps for an App refer to :ref:`getmachinestep` and to get the steps for Streamsheets which are repeatedly
 triggered by :ref:`execute` refer to :ref:`repeatindex`.
 
 **Syntax**

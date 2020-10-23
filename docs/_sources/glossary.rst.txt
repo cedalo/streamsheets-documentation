@@ -13,6 +13,11 @@ Glossary
         The defining features of AMQP are message orientation, queuing, routing (including point-to-point and :term:`publish and subscribe`), 
         reliability and security.
 
+    App
+        An App contains a set of :term:`Streamsheet`\ s and provides an outbox. The App executes the
+        Streamsheets, when it runs. The behaviour of an App and the way it processes data streams is defined through
+        its Streamsheets.  Click :ref:`here <streammachine>` for further informations.
+
     Base Topic
         The Base Topic of an MQTT Connector sets the highest element in the topic hierarchy. This entry is optional. 
 
@@ -136,15 +141,10 @@ Glossary
         It allows to automate and dynamically calculate sensor, actuator, device and application data
         within a data stream architecture. The streamsheet subscribes a specific data source,
         receives event data, analyses, processes or forwards this data by publishing new stream data or messages
-        on the same or different data source. Multiple streamsheets within one machine can be used to
+        on the same or different data source. Multiple streamsheets within one app can be used to
         execute a sequential or parallel order of stream processes continuously and in real-time. A streamsheet can
         be compared to a :term:`microservice` within a stream based architecture.
         Click :ref:`here <streamsheet>` for further informations.
-
-    Stream Machine
-        A Stream Machine contains a set of :term:`Streamsheet`\ s and provides an outbox. The Stream Machine executes the
-        Streamsheets, when it runs. The behaviour of a Stream Machine and the way it processes data streams is defined through
-        its Streamsheets.  Click :ref:`here <streammachine>` for further informations.
 
     TLS 
         Transport Layer Security (TLS), and its now-deprecated predecessor, Secure Sockets Layer (SSL), are cryptographic protocols designed to provide communications security over a computer network.

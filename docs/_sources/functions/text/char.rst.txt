@@ -20,7 +20,7 @@ Returns the character represented by given number.
    * - Number
      - A number between 1 and 255 which specifies the character to return.
    * - CharacterSet
-     - Optional. A string which specifies the character set to use for converting the number. Following two sets are currently supported: 'ansi' alias 'cp1252' and 'mac' alias 'roman'. If no character-set is specified 'ansi' is used by default.
+     - Optional. A string which specifies the character set to use for converting the number. Only the 'ansi' alias 'cp1252' set is currently supported. If no character-set is specified 'ansi' is used by default.
 
 **Return Value**
 
@@ -40,5 +40,3 @@ The character as specified by given number.
      - €
    * - =CHAR(128, "ansi")
      - €
-   * - =CHAR(128, "mac")
-     - Ä

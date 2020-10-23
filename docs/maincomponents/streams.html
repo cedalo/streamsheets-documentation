@@ -84,13 +84,22 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../maincomponents.html">Main Components</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="streammachine.html">Stream Machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app.html">App</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streamsheet.html">Streamsheet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dashboard.html">Dashboard</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Streams</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#connectors">Connectors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#consumers">Consumers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#producers">Producers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connector">Connector</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mqtt-connector">MQTT Connector</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#producer">Producer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mqtt-producer">MQTT Producer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#consumer">Consumer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mqtt-consumer">MQTT Consumer</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="administration.html">Administration</a></li>
@@ -103,6 +112,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference external" href="http://www.cedalo.com">Cedalo</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://forum.cedalo.com/">Forum</a></li>
 </ul>
 
             
@@ -169,33 +179,66 @@
             
   <div class="section" id="streams">
 <span id="stream"></span><h1>Streams<a class="headerlink" href="#streams" title="Permalink to this headline">¶</a></h1>
+<p>Streams can be found next to the App Dashboard in another Tab.</p>
+<p><a class="reference internal" href="../_images/AdministrationC.PNG"><img alt="Administration" src="../_images/AdministrationC.PNG" style="width: 951.75px; height: 492.75px;" /></a></p>
 <p>The Stream-resources <a class="reference internal" href="../glossary.html#term-consumer"><span class="xref std std-term">Consumer</span></a>s, <a class="reference internal" href="../glossary.html#term-producer"><span class="xref std std-term">Producer</span></a>s and <a class="reference internal" href="../glossary.html#term-connector"><span class="xref std std-term">Connector</span></a>s serve the purpose of defining data streams.
 There is a hierarchy to these resources in which Connectors form the foundation for Consumers and Producers. Hence, the definition of a data stream consists either of a Connector-Consumer pair or a Connector-Producer pair. Each Consumer and each Producer runs on exactly one connector. Connectors, on the other hand, can have many consumers and producers.</p>
 <ul class="simple">
 <li><p>As the name suggests, Connectors take information on overall connection parameters, such as addresses and authentication details. Especially if several message streams are on a broker, server or other “data space”, Connectors contain information which can be shared by Consumers and Producers. Consequently, shared information has to be defined only once in one place.</p></li>
-<li><p>Consumers are used to define the input message stream of Streamsheets.</p></li>
-<li><p>Producers are used to define outgoing message streams.</p></li>
+<li><p>Consumers are used to define the input message stream of Streamsheets. They are added to the Inbox of a Streamsheet</p></li>
+<li><p>Producers are used to define outgoing message streams. They are referenced in stream functions like MQTT.PUBLISH().</p></li>
 </ul>
-<div class="section" id="connectors">
-<h2>Connectors<a class="headerlink" href="#connectors" title="Permalink to this headline">¶</a></h2>
-<p>Connectors serve the base definition of streams. They contain the information to connect to brokers, servers, clusters and other data spaces. This includes usually addresses and authentication information, such as username and password or certificates.</p>
-<p><a class="reference internal" href="../_images/MosquittoConnector.JPG"><img alt="CSettings" src="../_images/MosquittoConnector.JPG" style="width: 584.1px; height: 390.50000000000006px;" /></a></p>
-<p><em>other Connector examples:</em></p>
-<p><a class="reference internal" href="../_images/MyMongoDBConnector.JPG"><img alt="Connector1" class="align-middle" src="../_images/MyMongoDBConnector.JPG" style="width: 96.03px; height: 80.64px;" /></a> <a class="reference internal" href="../_images/OPCUAConnector.JPG"><img alt="Connector2" class="align-middle" src="../_images/OPCUAConnector.JPG" style="width: 106.4px; height: 76.5px;" /></a> <a class="reference internal" href="../_images/FileConnector.JPG"><img alt="Connector3" class="align-middle" src="../_images/FileConnector.JPG" style="width: 106.0px; height: 68.9px;" /></a> <a class="reference internal" href="../_images/RestServerConnector.JPG"><img alt="Connector4" class="align-middle" src="../_images/RestServerConnector.JPG" style="width: 106.5px; height: 62.1px;" /></a> <a class="reference internal" href="../_images/RestClientConnector.JPG"><img alt="Connector7" class="align-middle" src="../_images/RestClientConnector.JPG" style="width: 95.39999999999999px; height: 55.53px;" /></a> <a class="reference internal" href="../_images/KafkaConnector.JPG"><img alt="Connector8" class="align-middle" src="../_images/KafkaConnector.JPG" style="width: 106.54px; height: 78.75000000000001px;" /></a></p>
+<p>In the following we will use MQTT as an example stream:</p>
+<div class="section" id="connector">
+<h2>Connector<a class="headerlink" href="#connector" title="Permalink to this headline">¶</a></h2>
+<p>A Connector is always the foundation of our communication architecture. Consumer and Producer reference to a Connector and define the details. The connector itself “connects” the Streamsheet to a provider, you can choose from a preconfigured list. Once a provider is choosen, there are a variety of settings, which can be applied to define the details of your data stream.</p>
+<div class="section" id="mqtt-connector">
+<h3>MQTT Connector<a class="headerlink" href="#mqtt-connector" title="Permalink to this headline">¶</a></h3>
+<p>The MQTT Connector has the following possible settings.</p>
+<ul class="simple">
+<li><p><strong>Name:</strong> The Name of your Connector</p></li>
+<li><p><strong>Provider:</strong> you can´t change the provider. You choose it while creating the connector.</p></li>
+<li><p><strong>URL:</strong> Choose the MQTT Broke you want to use. If you want to use our own broker, which is hosted by the Stream Sheet Server, type in <code class="docutils literal notranslate"><span class="pre">broker</span></code></p></li>
+<li><p><strong>Port:</strong> Choose the port you will be using to transfer the data.</p></li>
+<li><p><strong>User Name &amp; Password:</strong> If your URL needs identification, you can type in your credentials. For local usage not neccessary.</p></li>
+<li><p><strong>Base Topic:</strong> The Base topic describes where the connector will be connected to.</p></li>
+<li><p><strong>Retain Message:</strong></p></li>
+<li><p><strong>QoS:</strong> Stands for quality of service. You have the choice between: At most once, At least once, Exactly once.</p></li>
+<li><p><strong>Protocol Versio:</strong> MQTT Broker can run on different protocols.</p></li>
+</ul>
 </div>
-<div class="section" id="consumers">
-<span id="id1"></span><h2>Consumers<a class="headerlink" href="#consumers" title="Permalink to this headline">¶</a></h2>
-<p>Consumers are the Stream resource to specify data streams which serve as the input for Streamsheets, thus, they deliver messages to a sheet. You must first choose a Connector and then add the missing information to complete the definition of a data stream.</p>
-<p><a class="reference internal" href="../_images/MosquittoConsumer.JPG"><img alt="ConsumerSettings" src="../_images/MosquittoConsumer.JPG" style="width: 575.1px; height: 347.76000000000005px;" /></a></p>
-<p><em>other Consumer examples:</em></p>
-<p><a class="reference internal" href="../_images/MyMongoDBConsumer.JPG"><img alt="Consumer1" class="align-middle" src="../_images/MyMongoDBConsumer.JPG" style="width: 116.6px; height: 54.89px;" /></a> <a class="reference internal" href="../_images/OPCUAConsumer.JPG"><img alt="Consumer2" class="align-middle" src="../_images/OPCUAConsumer.JPG" style="width: 106.30000000000001px; height: 69.9px;" /></a> <a class="reference internal" href="../_images/RestServerConsumer.JPG"><img alt="Consumer4" class="align-middle" src="../_images/RestServerConsumer.JPG" style="width: 116.82000000000001px; height: 61.160000000000004px;" /></a> <a class="reference internal" href="../_images/KafkaConsumer.jpg"><img alt="Consumer7" class="align-middle" src="../_images/KafkaConsumer.jpg" style="width: 116.20000000000002px; height: 72.03px;" /></a></p>
 </div>
-<div class="section" id="producers">
-<h2>Producers<a class="headerlink" href="#producers" title="Permalink to this headline">¶</a></h2>
-<p>Producers are very similar to <a class="reference internal" href="#consumers"><span class="std std-ref">Consumers</span></a> but instead of defining an input data stream, they define an outgoing data stream. They are used within all producing functions.</p>
-<p><a class="reference internal" href="../_images/MosquittoProducer.JPG"><img alt="PSettings" src="../_images/MosquittoProducer.JPG" style="width: 585.75px; height: 318.45000000000005px;" /></a></p>
-<p><em>other Producer examples:</em></p>
-<p><a class="reference internal" href="../_images/MyMongoDBProducer.JPG"><img alt="Producer1" class="align-middle" src="../_images/MyMongoDBProducer.JPG" style="width: 106.30000000000001px; height: 47.7px;" /></a> <a class="reference internal" href="../_images/OPCUAProducer.JPG"><img alt="Producer2" class="align-middle" src="../_images/OPCUAProducer.JPG" style="width: 106.4px; height: 40.1px;" /></a> <a class="reference internal" href="../_images/FileProducer.JPG"><img alt="Producer3" class="align-middle" src="../_images/FileProducer.JPG" style="width: 106.2px; height: 40.2px;" /></a> <a class="reference internal" href="../_images/AMQPProducer.jpg"><img alt="Producer4" class="align-middle" src="../_images/AMQPProducer.jpg" style="width: 132.96px; height: 59.44px;" /></a> <a class="reference internal" href="../_images/RestClientProducer.JPG"><img alt="Producer6" class="align-middle" src="../_images/RestClientProducer.JPG" style="width: 106.30000000000001px; height: 40.400000000000006px;" /></a> <a class="reference internal" href="../_images/KafkaProducer.jpg"><img alt="Producer7" class="align-middle" src="../_images/KafkaProducer.jpg" style="width: 116.06000000000002px; height: 59.99000000000001px;" /></a></p>
+<div class="section" id="producer">
+<h2>Producer<a class="headerlink" href="#producer" title="Permalink to this headline">¶</a></h2>
+<p>A Producer is used in a Function. It directs the data stream out of the Stream Sheet. The Function together with the Producer defines where your data will be heading. A Producer is always connected to a Connector, which serves as the foundation of a Producer.
+Once the Connector is choosen, there are some additional settings within the Producer.</p>
+<div class="section" id="mqtt-producer">
+<h3>MQTT Producer<a class="headerlink" href="#mqtt-producer" title="Permalink to this headline">¶</a></h3>
+<p>The MQTT Producer has the following possible settings:</p>
+<ul class="simple">
+<li><p><strong>Name:</strong> The Name of your Producer.</p></li>
+<li><p><strong>Connector:</strong> Choose the connected Connector.</p></li>
+<li><p><strong>Data Format:</strong> Choose the Data Format a Producer will publish the Messages in.</p></li>
+<li><p><strong>Topic:</strong> Extend the Base Topic of the Connector. The Message will be sent to the full topic branch defined through Connector, Producer and Function (ConnectorTopic/ProducerTopic/FunctionTopic).</p></li>
+<li><p><strong>Clean:</strong> turn on clean session</p></li>
+<li><p><strong>Static Client ID:</strong> set a static client ID if needed</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="consumer">
+<h2>Consumer<a class="headerlink" href="#consumer" title="Permalink to this headline">¶</a></h2>
+<p>A Consumer is always connected to the Inbox of a Stream Sheet. It defines the details of the data stream comming into a Stream Sheet. A Consumer is always connected to a Connector. Once the Connector is choosen, there are some additional settings within the Consumer.</p>
+<div class="section" id="mqtt-consumer">
+<h3>MQTT Consumer<a class="headerlink" href="#mqtt-consumer" title="Permalink to this headline">¶</a></h3>
+<p>The MQTT Consumer has the following Settings:</p>
+<ul class="simple">
+<li><p><strong>Name:</strong> The Name of your Consumer.</p></li>
+<li><p><strong>Data Format:</strong> Choose the Data Format you wish to accept in the Inbox.</p></li>
+<li><p><strong>Static Client ID:</strong> set a static client ID if needed</p></li>
+<li><p><strong>Topics:</strong> Choose one or more topics the Consumer will listen to. The topics always extend the Connector Base Topic.</p></li>
+<li><p><strong>Clean:</strong> turn on clean session</p></li>
+</ul>
+</div>
 </div>
 </div>
 

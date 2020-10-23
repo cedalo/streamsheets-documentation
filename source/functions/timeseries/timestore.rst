@@ -1,3 +1,5 @@
+.. |TS| image:: /images/TS/TS.png
+
 .. _timestore:
 
 TIMESTORE
@@ -62,3 +64,7 @@ TRUE, if successful.
    * - =TIMESTORE(JSON(A1:B2), 100, , 10)
      - Same as before but stores only over a period of 100 seconds and limits number of stored values to 10
 
+
+
+| |TS|
+| *Storing data from Berlin, Paris and London. Now a TIMEQUERY can be used to access the stored values*

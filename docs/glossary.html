@@ -91,6 +91,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="releasenotes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference external" href="http://www.cedalo.com">Cedalo</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://forum.cedalo.com/">Forum</a></li>
 </ul>
 
             
@@ -161,6 +162,10 @@
 <dt id="term-amqp">AMQP</dt><dd><p>The Advanced Message Queuing Protocol (AMQP) is an open standard application layer protocol for message-oriented middleware.
 The defining features of AMQP are message orientation, queuing, routing (including point-to-point and <a class="reference internal" href="#term-publish-and-subscribe"><span class="xref std std-term">publish and subscribe</span></a>),
 reliability and security.</p>
+</dd>
+<dt id="term-app">App</dt><dd><p>An App contains a set of <a class="reference internal" href="#term-streamsheet"><span class="xref std std-term">Streamsheet</span></a>s and provides an outbox. The App executes the
+Streamsheets, when it runs. The behaviour of an App and the way it processes data streams is defined through
+its Streamsheets.  Click <a class="reference internal" href="maincomponents/app.html#streammachine"><span class="std std-ref">here</span></a> for further informations.</p>
 </dd>
 <dt id="term-application-properties">Application Properties</dt><dd><p>The application-properties section is a part of the bare message used for structured application data. Intermediaries can use the data within this structure for the purposes of filtering or routing.
 The keys of this map are restricted to be of type string (which excludes the possibility of a null key) and the values are restricted to be of simple types only, that is, excluding map, list, and array types.
@@ -309,15 +314,11 @@ Web services (RWS), provide interoperability between computer systems on the Int
 </dd>
 <dt id="term-status-code">Status Code</dt><dd><p>REST APIs use the Status-Line part of an HTTP response message to inform clients of their request’s overarching result. HTTP defines forty standard status codes that can be used to convey the results of a client’s request. E.g. Code: 200 = “OK”</p>
 </dd>
-<dt id="term-stream-machine">Stream Machine</dt><dd><p>A Stream Machine contains a set of <a class="reference internal" href="#term-streamsheet"><span class="xref std std-term">Streamsheet</span></a>s and provides an outbox. The Stream Machine executes the
-Streamsheets, when it runs. The behaviour of a Stream Machine and the way it processes data streams is defined through
-its Streamsheets.  Click <a class="reference internal" href="maincomponents/streammachine.html#streammachine"><span class="std std-ref">here</span></a> for further informations.</p>
-</dd>
 <dt id="term-streamsheet">Streamsheet</dt><dd><p>A Streamsheet is a spreadsheet extended by capabilities to easily allow real-time data stream processing.
 It allows to automate and dynamically calculate sensor, actuator, device and application data
 within a data stream architecture. The streamsheet subscribes a specific data source,
 receives event data, analyses, processes or forwards this data by publishing new stream data or messages
-on the same or different data source. Multiple streamsheets within one machine can be used to
+on the same or different data source. Multiple streamsheets within one app can be used to
 execute a sequential or parallel order of stream processes continuously and in real-time. A streamsheet can
 be compared to a <a class="reference internal" href="#term-microservice"><span class="xref std std-term">microservice</span></a> within a stream based architecture.
 Click <a class="reference internal" href="maincomponents/streamsheet.html#streamsheet"><span class="std std-ref">here</span></a> for further informations.</p>
@@ -328,7 +329,7 @@ Click <a class="reference internal" href="maincomponents/streamsheet.html#stream
 </dd>
 <dt id="term-url">URL</dt><dd><p>Uniform Resource Locator (URL) identifies and localizes a resource within a network. URLs are a sub group of the Uniform Resource Identifiers (URI) and are the most common.</p>
 </dd>
-<dt id="term-user-properties">User Properties</dt><dd><p>User properties on <a class="reference internal" href="functions/streamsheet/mqttpublish.html#mqttpublish"><span class="std std-ref">MQTT.PUBLISH</span></a> are forwarded with the message and are defined by the client applications. They are forwarded by the server to the receiver of the message. Use it to define the Metadata!</p>
+<dt id="term-user-properties">User Properties</dt><dd><p>User properties on <a class="reference internal" href="functions/streams/mqttpublish.html#mqttpublish"><span class="std std-ref">MQTT.PUBLISH</span></a> are forwarded with the message and are defined by the client applications. They are forwarded by the server to the receiver of the message. Use it to define the Metadata!</p>
 </dd>
 </dl>
 </div>

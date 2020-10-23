@@ -42,4 +42,4 @@ Depends on condition. TRUE or FALSE
      - Will put text "Test" in cell B1, as 2 is always larger than 1.
    * - =SETPHASE(2>1, "Test", B1, TRUE)
      - TRUE
-     - Same as before, but overwrites possible cell formula so that "Test" is returned on subsequent machine steps
+     - Same as before, but overwrites possible cell formula so that "Test" is returned on subsequent App steps

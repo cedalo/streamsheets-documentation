@@ -1,11 +1,11 @@
 Tutorials
 ============
 
-Following you will find a list of tutorials, which are offered, to guide you through different aspects of
+Here you find a list of tutorials, to guide you through different aspects of
 the application.
-If you are new to the :term:`Streamsheet` architecture, this guide offers a first quick start scenario to help you understand
-some of the basic principles of this application. The following step-by-step guide will help you build a :term:`Stream Machine`,
-that introduces the basis of the Streamsheet functionality. But even more experienced user might find some usful insights.
+If you are new to :term:`Streamsheet`\s, this guide offers a quick first introduction to
+some of the basic principles. The following step-by-step tutorials will help you build an :term:`App`,
+that shows the main Streamsheet functionality. But even more experienced user might find some usful insights, too.
 
 .. toctree::
    :maxdepth: 2

@@ -38,7 +38,7 @@ More information about us on our `website`_ or check out the `Streamsheets Forum
 Below you will find a list of all available topics of our documentation.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: User Documentation
 
    installation
@@ -50,6 +50,7 @@ Below you will find a list of all available topics of our documentation.
    others
    glossary
    releasenotes
-   Cedalo <http://www.cedalo.com>
+   Cedalo <http://www.cedalo.com> 
+   Forum <https://forum.cedalo.com/>
 
 

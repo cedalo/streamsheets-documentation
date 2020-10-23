@@ -1,3 +1,6 @@
+.. |TQ| image:: /images/TS/TQ.png
+.. |TQTRR| image:: /images/TS/TQTRR.png
+
 .. _timequery:
 
 TIMEQUERY
@@ -147,3 +150,7 @@ TRUE, if successful.
      - Queries the total for v1 and the maximum of v2 every 10 seconds
    * - =TIMEQUERY(C1, JSON(A8:B8),,D4:E14)
      - Simply writes all stored values to target range on each step
+
+
+| |TQ| |TQTRR|
+| *TIMEQUERY(F19,JSON(G21:H21),,A16:D39,) A query to gather all information (G21:H21) from the TIMESTORE function (F19) and display them in a Target Range (A16:D39). Left image shows the query, right image shows the Target Range.*

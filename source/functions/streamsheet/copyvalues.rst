@@ -5,6 +5,8 @@
 .. role:: red
 .. role:: blue
 
+.. _copyvalues:
+
 COPYVALUES
 -----------------------------
 

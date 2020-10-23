@@ -35,23 +35,31 @@
     :scale: 65 %  
 .. |StreamF| image:: /images/Streamfunction.png
     :scale: 75%
+.. |TI| image:: /images/TI.png
+    :scale: 50%
+.. |TSA| image:: /images/TSA.png
+    :scale: 50%
+.. |TSAVG| image:: /images/TSAVG.png
+    :scale: 50%
 
 
-Examples
-=========
+.. _createstream:
+
+Create & Use Streams
+=============================
+
+
 
 .. _resttutorial:
 
 HTTP/REST Request
 -----------------
 
-This tutorial covers two different kind of HTTP/REST Calls one is **POST** and the other is **GET**. (In older versions of Streamsheets we use the term REST, which is changed to HTTP starting v1.6)
+This tutorial covers two different kind of HTTP/REST Calls, one is **POST** and the other is **GET**. (In older versions of Streamsheets we use the term REST, which is changed to HTTP starting v1.6)
 The differences are that with a "POST" information is transmitted from the HTTP Client to a server and a "GET" transmits information to the HTTP Client from the server. 
-To add a HTTP function to a :term:`Streamsheet` you will need a :term:`Connector` and a :term:`Producer`, based on the HTTP Client Provider. Start by creating the Connector in the Connector Dashboard in the :ref:`Administration` Menu. You can leave all fields empty to be able to utilize this Connector for any URL. If you want to create specific Connectors for every webpage, type in the Base URL. Same goes for the Producer. Create a Producer based on the just created Connector and leave it empty.  We can now select the Producer within the :ref:`Function Wizard <functionwizard>`. 
+To add a HTTP function to a :term:`Streamsheet` you will need a :term:`Connector` and a :term:`Producer`, based on the HTTP Client Provider. Start by creating the Connector in the Stream Tab of your Dashboard. You can leave all fields empty to be able to utilize this Connector for any URL. If you want to create specific Connectors for every webpage, type in the Base URL. Same goes for the Producer. Create a Producer based on the just created Connector and leave it empty.  We can now select the Producer within the :ref:`Function Wizard <functionwizard>`. 
 
-|RCP| 
 
-*Creating Streams for HTTP/REST*
 
 **1. Method "Post":**
 As an example, for a HTTP Request with the method "POST", we will create an alert service for Slack.
@@ -59,12 +67,10 @@ Slack is a messenger, which offers the possibility to add self-made applications
 
 To begin create such an `App in Slack <https://api.slack.com/apps/>`_
 and add an Incoming `Webhook <https://api.slack.com/incoming-webhooks/>`_. This generates the HTTP.Request URL we will be posting information to. Choose a Channel on Slack to add your Application to. This is where we will post the information to. 
-Now we can start building an App in Streamsheets. Create a new :term:`Stream Machine` and create a :term:`JSON` Range with the key Value being “text” and the Value being any message you would like to send. 
-Create a HTTP Request function over the Function Wizard and select "POST" as the method. Add the created URL and select the JSON Range as the body. Choose a Target (e.g. a cell range) for  the response message of the server. Now with every new Step, the Stream Machine will send your message to Slack 😊 
+Now we can start building an App in Streamsheets. Create a new :term:`App` and create a :term:`JSON` Range with the key Value being “text” and the Value being any message you would like to send. 
+Create a HTTP Request function over the Function Wizard and select "POST" as the method. Add the created URL and select the JSON Range as the body. Choose a Target (e.g. a cell range) for  the response message of the server. Now with every new Step, the App will send your message to Slack 😊 
 
-| |RRP|
-| *HTTP Request with method "POST"*
-| *Note: In version 1.5 the icon for the stream functions was changed* |StreamF|
+
 
 **2. Method "GET":**
 The "GET" method is very similar to the "POST" method, but in this case we do not need to define any message, because we will be consuming messages. 
@@ -72,12 +78,10 @@ A good example is the “API of Ice and Fire” https://anapioficeandfire.com/. 
 Depending on the URL, different Information can be accessed and displayed. 
 Lets choose the following URL: https://anapioficeandfire.com/api/characters/583
 It displays all information regarding Jon Snow in a JSON-Object. 
-So lets again create a new Stream Machine. Add a HTTP Request Function with the help of the Function Wizard. Enter the URL, select "GET" as the method and chose the Target, where the information should be displayed (e.g. :ref:`INBOX <inboxf>`\ ()). Confirm your input by clicking “OK”.
-After starting the Stream Machine the requested information will now appear in the Target Range. 
+So lets again create a new App. Add a HTTP Request Function with the help of the Function Wizard. Enter the URL, select "GET" as the method and chose the Target, where the information should be displayed (e.g. :ref:`INBOX <inboxf>`\ ()). Confirm your input by clicking “OK”.
+After starting the App the requested information will now appear in the Target Range. 
 
-| |RRG1|
-| *HTTP Request with method "GET"*
-| *Note: In version 1.5 the icon for the stream functions was changed* |StreamF|
+
 
 
 
@@ -92,45 +96,34 @@ OPC UA
 This simple Tutorial shows how to read information of an :term:`OPC UA` Server.
 To begin with we have to create Streams, which are connected the OPC UA Server of our choice. 
 
-|OPCUACPC|
+.. |OPCUACPC|
 
-*Create Streams for OPC UA*
 
-Open up the Administration Menu and create a new OPC UA :term:`Connector`. Enter the URL of the Server you want to connect to. In this tutorial the OPC UA Server is in the local network. You will need your own OPC UA Server or go to http://opcuaserver.com/ where you can find a series of open OPC UA Server. 
+Open up the Stream Tab of your Dashboard and create a new OPC UA :term:`Connector`. Enter the URL of the Server you want to connect to. In this tutorial the OPC UA Server is in the local network. You will need your own OPC UA Server or go to http://opcuaserver.com/ where you can find a series of open OPC UA Server. 
 
-**OPC UA Consumer:**
-Open up the :term:`Consumer` Dashboard and create a new Consumer, based on the created Connector. Enter the Node ID you want receive and safe your changes (the polling interval defines the interval where the Consumer requests new data from the server). Switch to the :term:`Producer` Dashboard and create a Producer, again based on the newly created Connector. 
+.. note:: 
+     To connect to the Streamsheets internal OPC UA server use *streamsheets-service-opcua* as host name and *api/v1.0/OPCUA/cedalo/machineserver* as the resource path. 
 
-Now we are ready to receive and send messages. Create a new Stream Machine and select the newly created Consumer. Just start the machine and the Consumer will instantly forward messages into the Inbox.
+**OPC UA Consumer & Producer:**
+Create a new Consumer, based on the created Connector. Enter the Node ID you want receive and safe your changes (the polling interval defines the interval where the Consumer requests new data from the server). Create a Producer, again based on the newly created Connector. 
+
+Now we are ready to poll and send information to the specified server. Create a new App and select the newly created Consumer. Just start the App and the Consumer will instantly forward messages into the Inbox.
 
 **OPCUA.READ:**
 A second way to receive OPC UA Messages in a :term:`Streamsheet` is over the :ref:`OPCUA.READ <opcuaread>` function. Create a new Streamsheet by clicking the plus sign in the bottom right corner and select a cell. Open up the Function Wizard, select the :ref:`OPCUA.READ <opcuaread>` function and the created Producer. Enter the Node ID and the Target (e.g. :ref:`INBOX <inboxf>`\ ()) and confirm your input by clicking “OK”. 
 
 With every new calculation step an :ref:`OPCUA.READ <opcuaread>` will prompt a new message in the :ref:`Inbox`. 
 
-| |OPCUAGif|
-| *Note: In version 1.5 the icon for the stream functions was changed* |StreamF|
-| *Recieve OPC UA Data over Inbox Consumer and OPCUA.READ* 
+.. | |OPCUAGif|
+.. | *Note: In version 1.5 the icon for the stream functions was changed* |StreamF|
+.. | *Recieve OPC UA Data over Inbox Consumer and OPCUA.READ* 
 
 **OPCUA.WRITE:**
 It is also possible to update existing OPC UA Variables with the OPCUA.WRITE formular. Similiar to before, use the Function Wizard and select OPCUA.WRITE. Choose the right Producer, add the NODE Id and Target Range.
 
-| |OPCUAWrite|
-| *Note: In version 1.5 the icon for the stream functions was changed* |StreamF|
-| *Change a node value on a OPC UA server with OPCUA.WRITE*
-
-History
---------
-
-Often it is important to not only work with single real-time data points in the moment, but to build a history and work with a series of values. The following example shows how to create a short (stepwise) data history.
-
-    .. note:: Every :term:`sheet <Streamsheet>` is calculated from left to right and from top to bottom. Consequently, cell A1 is calculated first followed by B1, C1 etc. proceding in the next rows in the same manner. Thanks to this concept, we can use references to create a history of values.
-
-The cell at the very bottom references to the data input and the cells above the reference to the cell below. As higher cells are calculated first, they fetch the values of lower cells before these are calculated. In the end the last cells take the latest data input. Effectively it looks as if new values enter the history at the bottom and move up before leaving the series at the top.
-
-|history|
-
-*Create data history in a Streamsheet*
+.. | |OPCUAWrite|
+.. | *Note: In version 1.5 the icon for the stream functions was changed* |StreamF|
+.. | *Change a node value on a OPC UA server with OPCUA.WRITE*
 
  
 
@@ -139,7 +132,7 @@ MongoDB
 
 To store data and retrieve information Streamsheets are able to connect to a :term:`MongoDB<Mongo>`. :ref:`Here<mongodb>` you can learn how to add a MongoDB to your current Streamsheets installation. 
 
-Start connecting the MongoDB to your Streamsheets by setting up a MongoDB Connector in the :ref:`Administration<administration>`.Enter the URL (or if working with Mongo for Docker the container name) in the Host(s) field. All other settings are optional.
+Start connecting the MongoDB to your Streamsheets by setting up a MongoDB Connector. Enter the URL (or if working with Mongo for Docker the container name) in the Host(s) field. All other settings are optional.
 Streamsheets offers five Mongo specific functions within the :ref:`Function Wizard<functionwizard>`: :ref:`MONGO.STORE() <mongostore>`, :ref:`MONGO.COUNT() <mongocount>`, :ref:`MONGO.DELETE() <mongodelete>`, :ref:`MONGO.QUERY() <mongoquery>` and :ref:`MONGO.AGGREGATE() <mongoaggregate>`.
 Setup a Producer on top of the just created Connector and you are ready to go. 
 
@@ -316,6 +309,60 @@ To create a database it is sufficient to execute the REST.REQUEST once.
 
 Thats it! Now you receive the Data in your payload. It`s time to process the Data in this or another Streamsheet!
 
+
+
+TimescaleDB
+-------------
+
+|star|  This is a `Streamsheets Professional <https://cedalo.com/download/>`_ feature. 
+
+The TimescaleDB is a timeseries database based on PostgreSQL. To learn more check their `website <https://docs.timescale.com/latest/main>`_ .
+
+As of right now, the usage of the timescaledb is limited to the internal timescaledb of Streamsheets. We are working on allowing the creation of custom Streams. 
+Until then the creation of timescaledb Streams is dispensable. When using timescaledb functions simply leave the Stream parameter empty and Streamsheets takes care of the rest. 
+
+
+**TIMESCALE.INSERT():**
+
+*=TIMESCALE.INSERT(Stream, TableName, ValuesJSON, [Target, TableSchemaJSON])*
+
+|TI|
+
+To store information in the timescaledb add a TIMESCALE.INSERT function. 
+
+*Stream:* Leave empty for now. 
+
+*TableName:* Define the name of the table to store the data in.
+
+*ValuesJSON:* A JSON Range over all key value pairs to be stored. 
+
+*Target:* Optinal. To get feedback about the request status, define a target range or use INBOX().
+
+*TableSchemaJSON:* Optional. A JSON Range to setup a schema for the used table. If you have not already used setup your table via TIMESCALE.CREATE_TABLE() add the schema in this parameter to automatically create a table. 
+
+**TIMESCALE.SELECT():**
+
+*=TIMESCALE.SELECT(Stream, SelectJSON [, Target, XValue,])*
+
+| |TSA| 
+| *Select all from table "TimescaleDbTable", but limit response to 10.*
+
+| |TSAVG|
+| *Select the maximum time value and the average of the parameter "Cats" from the table "TimescaleDbTable".*
+
+To access stored information use the TIMESCALE.SELECT function. 
+
+*Stream:* Leave empty for now. 
+
+*SelectJSON:* JSON Range with a specified select statement. For every statement use another key value pair in the sheet. E.g. Select: x; from: y; where: z; group by: a; order by: b; limit: c
+
+*Target:* Optional. It is not necessary to select a target, if left empty the data is hold with the cell. This is convinient, if you are interested in displaying the data in a chart and don´t want to waste space on the Streamsheet. You can reference the select query as the chart source. 
+
+*XValue:* Optional. If you would like to use the data in a chart, set a key parameter as XValue to define the X axis. 
+
+
+
+
 MAIL.SEND 
 ----------
 
@@ -323,9 +370,8 @@ In This Tutorial we will send E-Mails to a Mail Account from our :term:`Streamsh
 
 First of all, create an SMTP_Connector. Therefore click on the :ref:`Administration<administration>` Menu and navigate to :term:`Connectors <Connector>` to create a new Connector, with a “SMTP Provider”. To be able to use the SMTP_Connector, the Host-address, the Port and the Security Protocoll of the Mail Service that is used, needs to be typed in. For example the host-address for Gmail is “smtp.gmail.com”, the Port is 465 and the Security is SSL/TLS. (This may differ from other Mail-Services, their access data can be find on the internet)
 
-|SMTP1|
+.. |SMTP1|
 
-*Create SMTP_Connector*
 
 For the next Step change to :term:`Producers<Producer>` and create a new Producer, using the previously created Connector. Now enter the sender mail address as User name and add the password below.
 
@@ -339,9 +385,4 @@ To prevent spam we recommend adding a condition to the MAIL.SEND function 😄
 | *Sending mail`s with a condition*
 | *Note: In version 1.5 the icon for the stream functions was changed* |StreamF|
 
-Forum 
-------
-
-To see even more possibilities of data histories (based on steps and based on time) take a look at our `Streamsheet Forum <https://forum.streamsheets.com/t/how-to-save-incoming-messages-in-a-history/28>`_.
-To access and work with larger series of data connecting to and using a database is usually the best approach.
 

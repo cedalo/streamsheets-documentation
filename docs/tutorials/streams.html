@@ -89,6 +89,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference external" href="http://www.cedalo.com">Cedalo</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://forum.cedalo.com/">Forum</a></li>
 </ul>
 
             
@@ -153,14 +154,14 @@
             
   <div class="section" id="working-with-streams">
 <h1>Working with Streams<a class="headerlink" href="#working-with-streams" title="Permalink to this headline">¶</a></h1>
-<p>Streams build the link to the outside wolrd for any data stream you want to build. Architectural we are working with Connectors, Consumer and Producer.</p>
+<p>Streams build the link to the outside wolrd for any data stream you want to build. Architectural we are working with Connectors, Consumer and Producer.
+To access or create your streams go to the apps dashboard and select the tab “streams”.</p>
 <div class="section" id="connector">
 <h2>Connector<a class="headerlink" href="#connector" title="Permalink to this headline">¶</a></h2>
 <p>A Connector is always the foundation of our communication architecture. Consumer and Producer reference to a Connector and define the details. The connector itself “connects” the Streamsheet to a provider, you can choose from a preconfigured list. Once a provider is choosen, there are a variety of settings, which can be applied to define the details of your data stream.</p>
 <div class="section" id="mqtt-connector">
 <h3>MQTT Connector<a class="headerlink" href="#mqtt-connector" title="Permalink to this headline">¶</a></h3>
 <p>The MQTT Connector has the following possible settings.</p>
-<p><a class="reference internal" href="../_images/ConnectorSettings.PNG"><img alt="CSettings" src="../_images/ConnectorSettings.PNG" style="width: 730.5px; height: 423.0px;" /></a></p>
 <ul class="simple">
 <li><p><strong>Name:</strong> The Name of your Connector</p></li>
 <li><p><strong>Provider:</strong> you can´t change the provider. You choose it while creating the connector.</p></li>
@@ -181,7 +182,6 @@ Once the Connector is choosen, there are some additional settings within the Pro
 <div class="section" id="mqtt-producer">
 <h3>MQTT Producer<a class="headerlink" href="#mqtt-producer" title="Permalink to this headline">¶</a></h3>
 <p>The MQTT Producer has the following possible settings:</p>
-<p><a class="reference internal" href="../_images/ProducerSettings.PNG"><img alt="PSettings" src="../_images/ProducerSettings.PNG" style="width: 730.5px; height: 296.0px;" /></a></p>
 <ul class="simple">
 <li><p><strong>Name:</strong> The Name of your Producer.</p></li>
 <li><p><strong>Connector:</strong> Choose the connected Connector.</p></li>
@@ -197,7 +197,6 @@ Once the Connector is choosen, there are some additional settings within the Pro
 <div class="section" id="mqtt-consumer">
 <h3>MQTT Consumer<a class="headerlink" href="#mqtt-consumer" title="Permalink to this headline">¶</a></h3>
 <p>The MQTT Consumer has the following Settings:</p>
-<p><a class="reference internal" href="../_images/ConsumerSettings.PNG"><img alt="ConSettings" src="../_images/ConsumerSettings.PNG" style="width: 731.0px; height: 332.5px;" /></a></p>
 <ul class="simple">
 <li><p><strong>Name:</strong> The Name of your Consumer.</p></li>
 <li><p><strong>Connector:</strong> Choose the connected Connector.</p></li>

@@ -1,11 +1,10 @@
 Working with Streams
 =========================
 Streams build the link to the outside wolrd for any data stream you want to build. Architectural we are working with Connectors, Consumer and Producer.
+To access or create your streams go to the apps dashboard and select the tab "streams". 
 
 Connector
 ---------
-.. |CSettings| image:: /images/ConnectorSettings.PNG
-    :scale: 50%
 
 A Connector is always the foundation of our communication architecture. Consumer and Producer reference to a Connector and define the details. The connector itself "connects" the Streamsheet to a provider, you can choose from a preconfigured list. Once a provider is choosen, there are a variety of settings, which can be applied to define the details of your data stream.
 
@@ -13,7 +12,6 @@ MQTT Connector
 ``````````````
 The MQTT Connector has the following possible settings.
 
-|CSettings|
 
 + **Name:** The Name of your Connector
 + **Provider:** you can´t change the provider. You choose it while creating the connector.
@@ -28,8 +26,6 @@ The MQTT Connector has the following possible settings.
 Producer
 --------
 
-.. |PSettings| image:: /images/ProducerSettings.PNG
-    :scale: 50%
 
 A Producer is used in a Function. It directs the data stream out of the Stream Sheet. The Function together with the Producer defines where your data will be heading. A Producer is always connected to a Connector, which serves as the foundation of a Producer.
 Once the Connector is choosen, there are some additional settings within the Producer.
@@ -38,7 +34,6 @@ MQTT Producer
 `````````````
 The MQTT Producer has the following possible settings:
 
-|PSettings|
 
 + **Name:** The Name of your Producer.
 + **Connector:** Choose the connected Connector.
@@ -49,8 +44,6 @@ The MQTT Producer has the following possible settings:
 Consumer
 --------
 
-.. |ConSettings| image:: /images/ConsumerSettings.PNG
-    :scale: 50%
 
 A Consumer is always connected to the Inbox of a Stream Sheet. It defines the details of the data stream comming into a Stream Sheet. A Consumer is always connected to a Connector. Once the Connector is choosen, there are some additional settings within the Consumer.
 
@@ -59,7 +52,6 @@ MQTT Consumer
 `````````````
 The MQTT Consumer has the following Settings:
 
-|ConSettings|
 
 + **Name:** The Name of your Consumer.
 + **Connector:** Choose the connected Connector.
