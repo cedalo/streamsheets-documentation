@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>TIMESCALE.SELECT &mdash; Streamsheets 2.0.0 documentation</title>
+  <title>TIMESCALE.CREATE_TABLE &mdash; Streamsheets 2.0.0 documentation</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="../../_static/theme_override.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="TIMESCALE.SHOW_TABLES" href="timescaleshow_tables.html" />
-    <link rel="prev" title="TIMESCALE.INSERT" href="timescaleinsert.html" /> 
+    <link rel="next" title="TIMESCALE.DROP_TABLE" href="timescaledrop_table.html" />
+    <link rel="prev" title="REST.RESPOND" href="restrespond.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -127,11 +127,11 @@
 <li class="toctree-l3"><a class="reference internal" href="respond.html">RESPOND</a></li>
 <li class="toctree-l3"><a class="reference internal" href="restrequest.html">REST.REQUEST</a></li>
 <li class="toctree-l3"><a class="reference internal" href="restrespond.html">REST.RESPOND</a></li>
-<li class="toctree-l3"><a class="reference internal" href="timescalecreate_table.html">TIMESCALE.CREATE_TABLE</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">TIMESCALE.CREATE_TABLE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="timescaledrop_table.html">TIMESCALE.DROP_TABLE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="timescaleexport.html">TIMESCALE.EXPORT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="timescaleinsert.html">TIMESCALE.INSERT</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">TIMESCALE.SELECT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timescaleselect.html">TIMESCALE.SELECT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="timescaleshow_tables.html">TIMESCALE.SHOW_TABLES</a></li>
 </ul>
 </li>
@@ -195,7 +195,7 @@
         
           <li><a href="../streams.html">Streams</a> &raquo;</li>
         
-      <li>TIMESCALE.SELECT</li>
+      <li>TIMESCALE.CREATE_TABLE</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -212,16 +212,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="timescale-select">
-<h1>TIMESCALE.SELECT<a class="headerlink" href="#timescale-select" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="timescale-create-table">
+<h1>TIMESCALE.CREATE_TABLE<a class="headerlink" href="#timescale-create-table" title="Permalink to this headline">¶</a></h1>
 <p><img alt="star" src="../../_images/star.svg" /> This is a <a class="reference external" href="https://cedalo.com/download/">Streamsheets Professional</a> feature.</p>
-<p>Performs a SELECT query on your timescale database.</p>
+<p>Creates a table in the timescaledb and sets up its schema.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>As of right now, the timescale functions work with the internal timescaledb. Leave the Producer parameter empty and the connection is setup. We are working on allowing further timescale connections.</p>
 </div>
 <p><strong>Syntax</strong></p>
-<p>=TIMESCALE.SELECT(Stream, SelectJSON [, Target, XValue,])</p>
+<p>=TIMESCALE.CREATE_TABLE(Stream, Type, Name [, Timeout])</p>
 <p><strong>Arguments</strong></p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -237,14 +237,11 @@
 <tr class="row-even"><td><p>Stream</p></td>
 <td><p>Stream to use for querying. The database name is configured in the affiliated <a class="reference internal" href="../../glossary.html#term-connector"><span class="xref std std-term">Connector</span></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p>SelectJSON</p></td>
-<td><p>Defines a query using a <a class="reference internal" href="../../glossary.html#term-json"><span class="xref std std-term">JSON</span></a> cell range, which contains all clauses to build the SELECT query.</p></td>
+<tr class="row-odd"><td><p>TableName</p></td>
+<td><p>Defines which table to create.</p></td>
 </tr>
-<tr class="row-even"><td><p>Target</p></td>
-<td><p>Optional. Defines a cell range to show the query result. Might not be necessary if result is visualized by a chart.</p></td>
-</tr>
-<tr class="row-odd"><td><p>XValue</p></td>
-<td><p>Optional. Name of the value which should be used for the x-axis if result is visualized by a chart. Defaults to “time”.</p></td>
+<tr class="row-even"><td><p>SchemaJSON</p></td>
+<td><p>The timescale enforces the usage of a schema. Enter a JSON Range to setup the schema. Supported schema values can be NUMERIC, TEXT, TIMESTAMP,, TIMESTAMPTZ, DATE, INTEGER etc.</p></td>
 </tr>
 </tbody>
 </table>
@@ -264,9 +261,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>=TIMESCALE.SELECT(“Producer”, <a class="reference internal" href="../streamsheet/json.html#json"><span class="std std-ref">JSON</span></a>(A1:B2), D1:F20)</p></td>
+<tr class="row-even"><td><p>=TIMESCALE.CREATE_TABLE(“Producer”, “Table1”,JSON(A1:B3))</p></td>
 <td><p>TRUE</p></td>
-<td><p>Assuming passed JSON looks like { select: ‘*’, from: ‘measures’ } this will return all values currently stored in measurement “measures” and writes them to cell range D1:F20.</p></td>
+<td><p>Creates the table “Table1”. In the Range A1:B3 the needed key value pairs should be entered. E.g. Value1: TEXT; Value2: NUMERIC; Value3: TIMESTAMP</p></td>
 </tr>
 </tbody>
 </table>
@@ -280,10 +277,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="timescaleshow_tables.html" class="btn btn-neutral float-right" title="TIMESCALE.SHOW_TABLES" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="timescaledrop_table.html" class="btn btn-neutral float-right" title="TIMESCALE.DROP_TABLE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="timescaleinsert.html" class="btn btn-neutral" title="TIMESCALE.INSERT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="restrespond.html" class="btn btn-neutral" title="REST.RESPOND" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

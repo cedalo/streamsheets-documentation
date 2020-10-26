@@ -240,12 +240,12 @@ Alphabetical
    date/time
    timeseries/timeaggregate
    timeseries/timestore
-   streams/timescalecreatetable
-   streams/timescaledroptable
+   streams/timescalecreate_table
+   streams/timescaledrop_table
    streams/timescaleexport
    streams/timescaleinsert
    streams/timescaleselect
-   streams/timescaleshowtables
+   streams/timescaleshow_tables
    timeseries/timequery
    date/timevalue
    streamsheet/triggerstep
