@@ -42,7 +42,7 @@
 .. |history| image:: /images/History.gif
     :scale: 65 %  
 
-Tools & Tricks
+Tools & Charts
 ===============
 
 There are multiple tools and elements in Streamsheets to help you build your Apps. 
