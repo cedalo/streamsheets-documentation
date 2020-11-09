@@ -83,7 +83,7 @@ After starting the App the requested information will now appear in the Target R
 
 
 
-
+.. _opcuafunctions:
 
 OPC UA
 -------
@@ -125,7 +125,7 @@ It is also possible to update existing OPC UA Variables with the OPCUA.WRITE for
 .. | *Note: In version 1.5 the icon for the stream functions was changed* |StreamF|
 .. | *Change a node value on a OPC UA server with OPCUA.WRITE*
 
- 
+.. _mongofunctions:
 
 MongoDB
 --------
@@ -309,7 +309,7 @@ To create a database it is sufficient to execute the REST.REQUEST once.
 
 Thats it! Now you receive the Data in your payload. It`s time to process the Data in this or another Streamsheet!
 
-
+.. _timescalefunctions:
 
 TimescaleDB
 -------------

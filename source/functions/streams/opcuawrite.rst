@@ -13,6 +13,7 @@ OPCUA.WRITE
 
 Sends a write request of a value to an :term:`OPC UA` Server. The Server will respond, if the write was successful or not.
 You can use the :ref:`Function Wizard <functionwizard>` for this function. 
+Click :ref:`here<opcuafunctions>` for a more detailed tutorial on opcua functions. 
 
 **Syntax**
 

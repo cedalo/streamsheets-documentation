@@ -4,7 +4,7 @@
         :scale: 65 %
 .. |IFCELL| image:: /images/IFCELL.gif
         :scale: 65 %
-.. |CHART| image:: /images/CHART.gif
+.. |CHART| image:: /images/ChartPictures/Charts.gif
         :scale: 65 %
 .. |StreamF| image:: /images/Streamfunction.png
     :scale: 75%

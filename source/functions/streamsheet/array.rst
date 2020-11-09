@@ -40,7 +40,7 @@ subarray) will be created. Note that if both nest and flat parameters are set to
    * - Nest
      - Optional. Direction on how to nest items, if range has more than one row or column. FALSE to nest by column and TRUE to nest by row. Default is TRUE.
    * - Flat
-     - Optional. If this Argument is supplied (any value works!) the returned Array is always nested, even if only one row or column is specified.  If Argument is missing than the returned array is only nested if their are more than one row or column.
+     - Optional. If this Argument is supplied (any value works!) the returned Array is always nested, even if only one row or column is specified.  If Argument is missing than the returned array is only nested if there are more than one row or column.
 
 
 
@@ -76,6 +76,9 @@ Comma separated list of array items.
      - |nestedout|
      - Example usage of the nested parameter. 
 
+
+.. tip::
+      If you want to create an Outbox array step by step, you can use "-1" as last outboxdata path to automatically add a new array element to the existing outbox message. =WRITE(OUTBOXDATA("Message";"data";-1);JSON(B1:C5);)
       
         
 

@@ -180,6 +180,7 @@ Alphabetical
    streams/opcuarespond
    streams/opcuavariables
    streams/opcuawrite
+   streamsheets/openurl
    logical/or
    streamsheet/outbox
    streamsheet/outboxdata
