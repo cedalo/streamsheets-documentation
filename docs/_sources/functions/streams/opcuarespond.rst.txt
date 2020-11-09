@@ -9,6 +9,7 @@ OPCUA.RESPOND
 Sends a response directly, i.e. without any Consumer, to an :term:`OPC UA` service. The data to be send can be either arbitrary 
 :term:`JSON` data or a message from the outbox or :ref:`inbox`. Usually this function is used to respond to a previously received
 *request*-message. 
+Click :ref:`here<opcuafunctions>` for a more detailed tutorial on opcua functions. 
 
 .. Note:: A *request*-message must provide a ``requestId`` property within its *Metadata* object.
 

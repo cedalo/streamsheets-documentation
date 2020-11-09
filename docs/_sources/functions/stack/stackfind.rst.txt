@@ -29,6 +29,7 @@ Optionally it deletes all found records after the extract operation (remaining r
      - | Range, where the stack range resides. The first row of the StackRange is a title range and remains unchanged.
    * - CriteriaRange
      - | The CriteriaRange has at least 2 rows, the first one is the labels row with labels also found in StackRange (not necessarily all and maybe not in the same order!), the second to nth row contain filter settings.
+       | Note: criteria values can start with a comparison-operator like, >, >=, <, <=, = or <>
        | Settings in the same row are combined using AND, multiple rows are OR.
    * - TargetRange
      - | Optional. If specified, TargetRange must have two rows minimum, the first row has labels also found in StackRange (not necessarily all and maybe not in the same order!). The result of the filter is copied to the matching columns in the TargetRange.
@@ -40,7 +41,7 @@ Optionally it deletes all found records after the extract operation (remaining r
 
 **Return Value**
 
-TRUE, if no error occurred, otherwise :ref:`error <error>` value.
+TRUE, if at least one matching value was found, otherwise FALSE. In case of an error the corresponding :ref:`error <error>` value is returned.
 
 **Example**
 

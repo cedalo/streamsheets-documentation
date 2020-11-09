@@ -7,6 +7,7 @@ TIMESCALE.CREATE_TABLE
 |star| This is a `Streamsheets Professional <https://cedalo.com/download/>`_ feature.
 
 Creates a table in the timescaledb and sets up its schema. 
+Click :ref:`here<timescalefunctions>` for a more detailed tutorial on timescaledb functions. 
 
 .. note::
     As of right now, the timescale functions work with the internal timescaledb. Leave the Producer parameter empty and the connection is setup. We are working on allowing further timescale connections.
@@ -47,3 +48,7 @@ TRUE, if successful.
    * - =TIMESCALE.CREATE_TABLE("Producer", "Table1",JSON(A1:B3))
      - TRUE
      - Creates the table "Table1". In the Range A1:B3 the needed key value pairs should be entered. E.g. Value1: TEXT; Value2: NUMERIC; Value3: TIMESTAMP
+
+
+
+

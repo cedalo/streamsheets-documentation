@@ -7,6 +7,7 @@ TIMESCALE.INSERT
 |star| This is a `Streamsheets Professional <https://cedalo.com/download/>`_ feature.
 
 Performs a STORE query on your Timescale database. 
+Click :ref:`here<timescalefunctions>` for a more detailed tutorial on timemescaledb functions. 
 
 .. note::
     As of right now, the timescale functions work with the internal timescaledb. Leave the Producer parameter empty and the connection is setup. We are working on allowing further timescale connections.

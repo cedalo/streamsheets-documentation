@@ -4,6 +4,7 @@ MONGO.REPLACE
 -----------------------------
 
 Replaces elements in a Mongo database. You can use the :ref:`Function Wizard <functionwizard>` for this function. Only replaces one entry at a time.  
+Click :ref:`here<mongofunctions>` for a more detailed tutorial on mongodb functions. 
 
 
 **Syntax**

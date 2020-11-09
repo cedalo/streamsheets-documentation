@@ -4,6 +4,7 @@ MONGO.AGGREGATE
 -----------------------------
 
 Gets aggregated data from your Mongo database. You can use the :ref:`Function Wizard <functionwizard>` for this function. 
+Click :ref:`here<mongofunctions>` for a more detailed tutorial on mongodb functions.  
 
 
 **Syntax**

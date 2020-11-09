@@ -7,7 +7,7 @@ TIMESCALE.EXPORT
 |star| This is a `Streamsheets Professional <https://cedalo.com/download/>`_ feature.
 
 Performs an EXPORT query on your Timescale database. This query works exactly like the queries from TIMESCALE.SELECT, but exports the result into a file. This file can be accessed in the side menu of your App under "App Files". 
-
+Click :ref:`here<timescalefunctions>` for a more detailed tutorial on timemescaledb functions. 
 .. note::
     As of right now, the timescale functions work with the internal timescaledb. Leave the Producer parameter empty and the connection is setup. We are working on allowing further timescale connections.
 

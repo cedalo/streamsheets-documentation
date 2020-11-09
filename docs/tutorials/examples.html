@@ -193,7 +193,7 @@ So lets again create a new App. Add a HTTP Request Function with the help of the
 After starting the App the requested information will now appear in the Target Range.</p>
 </div>
 <div class="section" id="opc-ua">
-<h2>OPC UA<a class="headerlink" href="#opc-ua" title="Permalink to this headline">¶</a></h2>
+<span id="opcuafunctions"></span><h2>OPC UA<a class="headerlink" href="#opc-ua" title="Permalink to this headline">¶</a></h2>
 <p><img alt="star" src="../_images/star.svg" /> This is a <a class="reference external" href="https://cedalo.com/download/">Streamsheets Professional</a> feature.</p>
 <p>This simple Tutorial shows how to read information of an <a class="reference internal" href="../glossary.html#term-opc-ua"><span class="xref std std-term">OPC UA</span></a> Server.
 To begin with we have to create Streams, which are connected the OPC UA Server of our choice.</p>
@@ -212,7 +212,7 @@ A second way to receive OPC UA Messages in a <a class="reference internal" href=
 It is also possible to update existing OPC UA Variables with the OPCUA.WRITE formular. Similiar to before, use the Function Wizard and select OPCUA.WRITE. Choose the right Producer, add the NODE Id and Target Range.</p>
 </div>
 <div class="section" id="mongodb">
-<h2>MongoDB<a class="headerlink" href="#mongodb" title="Permalink to this headline">¶</a></h2>
+<span id="mongofunctions"></span><h2>MongoDB<a class="headerlink" href="#mongodb" title="Permalink to this headline">¶</a></h2>
 <p>To store data and retrieve information Streamsheets are able to connect to a <a class="reference internal" href="../glossary.html#term-mongo"><span class="xref std std-term">MongoDB</span></a>. <a class="reference internal" href="addons.html#mongodb"><span class="std std-ref">Here</span></a> you can learn how to add a MongoDB to your current Streamsheets installation.</p>
 <p>Start connecting the MongoDB to your Streamsheets by setting up a MongoDB Connector. Enter the URL (or if working with Mongo for Docker the container name) in the Host(s) field. All other settings are optional.
 Streamsheets offers five Mongo specific functions within the <a class="reference internal" href="uielements.html#functionwizard"><span class="std std-ref">Function Wizard</span></a>: <a class="reference internal" href="../functions/streams/mongostore.html#mongostore"><span class="std std-ref">MONGO.STORE()</span></a>, <a class="reference internal" href="../functions/streams/mongocount.html#mongocount"><span class="std std-ref">MONGO.COUNT()</span></a>, <a class="reference internal" href="../functions/streams/mongodelete.html#mongodelete"><span class="std std-ref">MONGO.DELETE()</span></a>, <a class="reference internal" href="../functions/streams/mongoquery.html#mongoquery"><span class="std std-ref">MONGO.QUERY()</span></a> and <a class="reference internal" href="../functions/streams/mongoaggregate.html#mongoaggregate"><span class="std std-ref">MONGO.AGGREGATE()</span></a>.
@@ -346,7 +346,7 @@ TRUE or FALSE. Upsert decides, if, when a query can´t be found, the document is
 <p>Thats it! Now you receive the Data in your payload. It`s time to process the Data in this or another Streamsheet!</p>
 </div>
 <div class="section" id="timescaledb">
-<h2>TimescaleDB<a class="headerlink" href="#timescaledb" title="Permalink to this headline">¶</a></h2>
+<span id="timescalefunctions"></span><h2>TimescaleDB<a class="headerlink" href="#timescaledb" title="Permalink to this headline">¶</a></h2>
 <p><img alt="star" src="../_images/star.svg" />  This is a <a class="reference external" href="https://cedalo.com/download/">Streamsheets Professional</a> feature.</p>
 <p>The TimescaleDB is a timeseries database based on PostgreSQL. To learn more check their <a class="reference external" href="https://docs.timescale.com/latest/main">website</a> .</p>
 <p>As of right now, the usage of the timescaledb is limited to the internal timescaledb of Streamsheets. We are working on allowing the creation of custom Streams.

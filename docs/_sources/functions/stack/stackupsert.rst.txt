@@ -26,6 +26,7 @@ Updating is done either by replacing the cell value or by using a simple text ba
      - | Cell range, where the source data or update rules are taken from. Analog to StackRange the first row contains the cell labels and remains unchanged.
    * - CriteriaRange
      - | The CriteriaRange has at least 2 rows, the first one is the labels row with labels also found in StackRange and SourceRange (not necessarily all and maybe not in the same order!), the second to nth row contain filter settings.
+       | Note: criteria values can start with a comparison-operator like, >, >=, <, <=, = or <>
        | Settings in the same row are combined using AND, multiple rows are OR.
    * - AddIfNotFound
      - | Optional. If a matching source row is not found in StackRange it will be added. Specify FALSE to prevent this behaviour.
