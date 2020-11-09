@@ -13,6 +13,6 @@ that shows the main Streamsheet functionality. But even more experienced user mi
    tutorials/uielements
    tutorials/examples
    tutorials/addons
-   tutorials/settings
+   
 
 
