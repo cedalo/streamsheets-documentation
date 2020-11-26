@@ -25,7 +25,8 @@ parameters can be specified. Please refer to :ref:`JSON.VALUE` if only a single 
    * - TargetRange
      - A cell range to write JSON data to. If the range size covers only one cell, it will be automatically increased to match content of given JSON.
    * - Type
-     - Optional. A text which describes the function used for encoding. Either "ARRAY", "DICTIONARY", "JSON" or "RANGE".
+     - Optional. A text which describes the function used for encoding. Should be one of "ARRAY", "DICTIONARY", "JSON", "JSONFLAT" or "RANGE".
+       Note: the difference beteween "JSON" and "JSONFLAT" is that "JSONFLAT" traverses the complete JSON while "JSON" stops after first level.
        Defaults to "JSON".
    * - Direction
      - Optional. Specify TRUE to align keys vertically for ARRAY, JSON and RANGE type and horizontally for DICTIONARY type.
