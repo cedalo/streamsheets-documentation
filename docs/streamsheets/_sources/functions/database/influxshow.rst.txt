@@ -1,0 +1,50 @@
+INFLUX.SHOW
+---------------------------
+
+.. |star| image:: /../_images/star.svg
+        
+
+|star| This is a `Streamsheets Professional <https://cedalo.com/download/>`_ feature.
+
+Performs a SHOW query on your Influx database. You can use the :ref:`Function Wizard <functionwizard>` for this function. 
+
+
+**Syntax**
+
+=\ :term:`INFLUX`\ .SHOW(:term:`Producer`, Type, Target, [, Measurement, Timeout])
+
+**Arguments**
+
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
+
+   * - Name
+     - Description
+   * - Producer
+     - Producer to use for querying. The database name is configured in the affiliated :term:`Connector`.
+   * - Type
+     - Defines what to show. Must be one of following constants "Continuous Queries", "Measurements", "Series", "Retention Policies".
+   * - Target
+     - Defines a cell range to show the query result.
+   * - Measurement
+     - Optional. Only applies to type "Series". A fully qualified name of the measurement to show its series of.
+   * - Timeout
+     - Optional. Defines Timeout to perform query. 
+
+**Return Value**
+
+TRUE, if successful.
+
+**Examples**
+
+.. list-table::
+   :widths: 45 15 40
+   :header-rows: 1
+
+   * - Function
+     - Result
+     - Comment
+   * - =INFLUX.SHOW("Producer", "Retention Policies", D1:D10)
+     - TRUE
+     - Shows all existing retention policies.
