@@ -1,0 +1,36 @@
+RADIANS
+-----------------------------
+
+Converts the degrees value to radians.
+
+**Syntax**
+
+=RADIANS(Degrees)
+
+**Arguments**
+
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
+
+   * - Name
+     - Description
+   * - Degrees
+     - Degrees value to convert.
+
+**Return Value**
+
+Angle in radians.
+
+**Example**
+
+.. list-table::
+   :widths: 45 10
+   :header-rows: 1
+
+   * - Function
+     - Result
+   * - =RADIANS(180)
+     - 3.14159
+
+

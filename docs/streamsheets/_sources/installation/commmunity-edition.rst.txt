@@ -1,0 +1,26 @@
+.. |Git| image:: /../_images/Git.png 
+    :scale: 30%
+.. _Git: https://github.com/cedalo/streamsheets
+
+
+Community Installation
+===========================
+
+The Streamsheets community edition is open source & free to use. All code can be found in our GitHub repository.
+
+Check out our |Git|_ `GitHub <https://github.com/cedalo/streamsheets>`_.
+
+Community Edition:
+
+.. toctree::
+   :glob:
+   :titlesonly:
+
+   community-edition/system-requirements/*
+   community-edition/installing-on-linux/*
+   community-edition/installing-on-windows/*
+   community-edition/installing-on-macos/*
+   community-edition/installing-on-raspberry-pi/*
+   community-edition/installing-raspian/*
+
+

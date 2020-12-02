@@ -1,0 +1,87 @@
+.. _streammachine:
+
+App
+==============
+
+.. |CycleTime| image:: /../_images/CycleTime.png
+    
+.. |CycleTime2| image:: /../_images/CycleTime2.JPG
+    :scale: 25%
+.. |ETools| image:: /../_images/EditingTools.png
+   
+.. |Name| image:: /../_images/Name.png
+   
+.. |StartBig| image:: /../_images/StartBig.png
+    
+.. |SettingsMenu| image:: /../_images/SettingsMenu.png
+    
+.. |StreamF| image:: /../_images/Streamfunction.png
+    :scale: 75%
+
+| :term:`Streamsheet`\ s are bundled in one functional entity which processes data streams, an :term:`App`. The behaviour of an App and the way it processes data streams is defined through its Streamsheets. All Apps are listed in the “Dashboard”. You can access the Dashboard by opening the burger menu in the top-left corner and selecting "Apps" towards the end of the list. The Dashboard is also the start screen.
+| 
+| **App Characteristics** 
+
++ Apps contain one or up to four Streamsheets. 
++ Apps run on servers. Hence, once you start them, they keep running until they are being stopped or the server is shut down. That means you can close your web browser and the App is still running. It even means you can turn off the device you are using to access the Streamsheet platform, e.g. your computer, and the Apps keep running.
++ Apps have a cycle time. This serves as its general calculation speed and could be seen as its internal clock. 
++ Each App is a :term:`microservice`. 
+
+
+
+Menu & Settings 
+.......................................
+
+At the top of every App you find the menu bar containing its name, controls and cycle time. To access further App settings, click on the burger menu in the top left corner and then click on “Settings”. 
+
+|SettingsMenu|
+
+Name 
+.................
+
+To better organise all of your Apps you should think about a comprehensible name names (it can be more descriptive as in the example 😉 ). 
+|Name|
+
+App Control 
+...............
+
+|StartBig|
+
+With these 4 buttons an App`s state is controlled. An App can either be started, paused, stopped or calculated step-by-step. 
+
++ Stop: This button stops the App and sets its calculation-step-count to 0. Additionally, the step-counts and the inbox queues of its Streamsheets are reset.
++ Pause: This pauses the App. Step-counts are not reset. However, the biggest difference to “stop” is that messages are queued in the inboxes of the Streamsheets.
++ Play: This button starts an App if it is paused or stopped. Message streams are only processed or produced if an App is set to “play”.
++ Execute 1 step: Clicking this button triggers one App calculation step.
+
+.. _cycle time:
+
+Cycle Time 
+......................
+When an App is started, it recalculates continuously at the speed of its cycle time.
+
+|CycleTime|
+
+Depending on how fast an App is running, not every recalculation-step can be visualized in your browser. Thus, the system automatically balances itself by visualizing only every Xth step. In addition, this update interval can also be set to a higher value manually. In any case, this affects only the visualization in the browser as the App will always run with the defined cycle time on the server. 
+
+|CycleTime2|
+
+In the screenshot the cycle time is set to 1000 ms. Thus, the App performs one recalculation aka one step per second. The Update Interval is set to 10. Consequently, the visualization of the App and its Streamsheets is updated in your browser only every 10th step that is to say in this case every 10 seconds. The gauges show how many steps are calculated on the server and how many are visualized on the client (your browser).
+
+.. tip:: The Calculation Setting "On Message" in the Stream Sheet Settings ignores the cycle time and calculates on every incoming message.
+
+Tool bar
+...........
+| |ETools|
+
+
+| Here you find many tools to insert functions, shapes and charts as well as to format cells in the Streamsheet grid.
+| 
+| Tools especially worth mentioning are:
+
++ **Insert Stream Function:** This tool opens a wizard containing all functions you can use to save and send data, essentially to produce a data stream. Most of the functions serve the purpose of creating an outgoing data stream. However, some, such as :ref:`REST.REQUEST <restrequest>` or :ref:`MONGO.QUERY <mongoquery>`, can also be used to bring data into the Streamsheet. Simply choose a stream function and complete the arguments. The default option is called :ref:`MQTT.PUBLISH <mqttpublish>`. This is also the most common formula to send data from one App to another.
++ **Insert Drawing Shape:** This tool offers you a variety of shapes to use in your Streamsheets. Insert a shape and have a look at the formula bar. You will see that every shape is created by a DRAW formula. Link the position parameters to cells with changing numbers and the shape starts moving.
++ **Insert Chart:** Similarly to other Spreadsheet solutions, charts can be created by selecting a cell range and choosing a chart type. However, as Streamsheets are recalculated automatically, charts change dynamically according to their input.  
+
+
+
