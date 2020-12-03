@@ -6,7 +6,7 @@ Define a chart on a given drawing. The drawing must have been created before usi
 
 **Syntax**
 
-=DRAW.CHART(UnqiueId, Container, Name, X, Y, Width, Height, LineFormat, FillFormat, Attributes, Events, Angle, RotCenter, ChartType, DataRange[, FormatRange])
+=DRAW.CHART(UnqiueId, Container, Name, X, Y, Width, Height, LineFormat, FillFormat, Attributes, Events, RotCenter, ChartType, DataRange[, FormatRange])
 
 **Arguments**
 
@@ -46,20 +46,6 @@ Define a chart on a given drawing. The drawing must have been created before usi
      - Optional. JSON String created using :ref:`attributes`
    * - Events
      - Optional. JSON String created using :ref:`events`
-   * - Angle
-     - Optional. Angle in radians.
-   * - RotCenter
-     - | Optional. This defines, where the object rotates around:
-       |
-       | 0: Top left corner
-       | 1: Top center
-       | 2: Top right corner
-       | 3: Left center
-       | 4: Center (default)
-       | 5: Right center
-       | 6: Bottom left corner
-       | 7: Bottom center
-       | 8: Bottom right corner
    * - ChartType
      - Valid types are: "line", "column", ""bar", "radar", "polar", ""doughnut", "pie", "scatter", "scatterLine" and "bubble" .
    * - RotCenter

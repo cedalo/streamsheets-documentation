@@ -184,9 +184,9 @@
 <p>The Stream-resources <a class="reference internal" href="../glossary.html#term-consumer"><span class="xref std std-term">Consumer</span></a>s, <a class="reference internal" href="../glossary.html#term-producer"><span class="xref std std-term">Producer</span></a>s and <a class="reference internal" href="../glossary.html#term-connector"><span class="xref std std-term">Connector</span></a>s serve the purpose of defining data streams.
 There is a hierarchy to these resources in which Connectors form the foundation for Consumers and Producers. Hence, the definition of a data stream consists either of a Connector-Consumer pair or a Connector-Producer pair. Each Consumer and each Producer runs on exactly one connector. Connectors, on the other hand, can have many consumers and producers.</p>
 <ul class="simple">
-<li><p>As the name suggests, Connectors take information on overall connection parameters, such as addresses and authentication details. Especially if several message streams are on a broker, server or other “data space”, Connectors contain information which can be shared by Consumers and Producers. Consequently, shared information has to be defined only once in one place.</p></li>
-<li><p>Consumers are used to define the input message stream of Streamsheets. They are added to the Inbox of a Streamsheet</p></li>
-<li><p>Producers are used to define outgoing message streams. They are referenced in stream functions like MQTT.PUBLISH().</p></li>
+<li>As the name suggests, Connectors take information on overall connection parameters, such as addresses and authentication details. Especially if several message streams are on a broker, server or other “data space”, Connectors contain information which can be shared by Consumers and Producers. Consequently, shared information has to be defined only once in one place.</li>
+<li>Consumers are used to define the input message stream of Streamsheets. They are added to the Inbox of a Streamsheet</li>
+<li>Producers are used to define outgoing message streams. They are referenced in stream functions like MQTT.PUBLISH().</li>
 </ul>
 <p>In the following we will use MQTT as an example stream:</p>
 <div class="section" id="connector">
@@ -196,15 +196,15 @@ There is a hierarchy to these resources in which Connectors form the foundation 
 <h3>MQTT Connector<a class="headerlink" href="#mqtt-connector" title="Permalink to this headline">¶</a></h3>
 <p>The MQTT Connector has the following possible settings.</p>
 <ul class="simple">
-<li><p><strong>Name:</strong> The Name of your Connector</p></li>
-<li><p><strong>Provider:</strong> you can´t change the provider. You choose it while creating the connector.</p></li>
-<li><p><strong>URL:</strong> Choose the MQTT Broke you want to use. If you want to use our own broker, which is hosted by the Stream Sheet Server, type in <code class="docutils literal notranslate"><span class="pre">broker</span></code></p></li>
-<li><p><strong>Port:</strong> Choose the port you will be using to transfer the data.</p></li>
-<li><p><strong>User Name &amp; Password:</strong> If your URL needs identification, you can type in your credentials. For local usage not neccessary.</p></li>
-<li><p><strong>Base Topic:</strong> The Base topic describes where the connector will be connected to.</p></li>
-<li><p><strong>Retain Message:</strong></p></li>
-<li><p><strong>QoS:</strong> Stands for quality of service. You have the choice between: At most once, At least once, Exactly once.</p></li>
-<li><p><strong>Protocol Versio:</strong> MQTT Broker can run on different protocols.</p></li>
+<li><strong>Name:</strong> The Name of your Connector</li>
+<li><strong>Provider:</strong> you can´t change the provider. You choose it while creating the connector.</li>
+<li><strong>URL:</strong> Choose the MQTT Broke you want to use. If you want to use our own broker, which is hosted by the Stream Sheet Server, type in <code class="docutils literal notranslate"><span class="pre">broker</span></code></li>
+<li><strong>Port:</strong> Choose the port you will be using to transfer the data.</li>
+<li><strong>User Name &amp; Password:</strong> If your URL needs identification, you can type in your credentials. For local usage not neccessary.</li>
+<li><strong>Base Topic:</strong> The Base topic describes where the connector will be connected to.</li>
+<li><strong>Retain Message:</strong></li>
+<li><strong>QoS:</strong> Stands for quality of service. You have the choice between: At most once, At least once, Exactly once.</li>
+<li><strong>Protocol Versio:</strong> MQTT Broker can run on different protocols.</li>
 </ul>
 </div>
 </div>
@@ -216,12 +216,12 @@ Once the Connector is choosen, there are some additional settings within the Pro
 <h3>MQTT Producer<a class="headerlink" href="#mqtt-producer" title="Permalink to this headline">¶</a></h3>
 <p>The MQTT Producer has the following possible settings:</p>
 <ul class="simple">
-<li><p><strong>Name:</strong> The Name of your Producer.</p></li>
-<li><p><strong>Connector:</strong> Choose the connected Connector.</p></li>
-<li><p><strong>Data Format:</strong> Choose the Data Format a Producer will publish the Messages in.</p></li>
-<li><p><strong>Topic:</strong> Extend the Base Topic of the Connector. The Message will be sent to the full topic branch defined through Connector, Producer and Function (ConnectorTopic/ProducerTopic/FunctionTopic).</p></li>
-<li><p><strong>Clean:</strong> turn on clean session</p></li>
-<li><p><strong>Static Client ID:</strong> set a static client ID if needed</p></li>
+<li><strong>Name:</strong> The Name of your Producer.</li>
+<li><strong>Connector:</strong> Choose the connected Connector.</li>
+<li><strong>Data Format:</strong> Choose the Data Format a Producer will publish the Messages in.</li>
+<li><strong>Topic:</strong> Extend the Base Topic of the Connector. The Message will be sent to the full topic branch defined through Connector, Producer and Function (ConnectorTopic/ProducerTopic/FunctionTopic).</li>
+<li><strong>Clean:</strong> turn on clean session</li>
+<li><strong>Static Client ID:</strong> set a static client ID if needed</li>
 </ul>
 </div>
 </div>
@@ -232,11 +232,11 @@ Once the Connector is choosen, there are some additional settings within the Pro
 <h3>MQTT Consumer<a class="headerlink" href="#mqtt-consumer" title="Permalink to this headline">¶</a></h3>
 <p>The MQTT Consumer has the following Settings:</p>
 <ul class="simple">
-<li><p><strong>Name:</strong> The Name of your Consumer.</p></li>
-<li><p><strong>Data Format:</strong> Choose the Data Format you wish to accept in the Inbox.</p></li>
-<li><p><strong>Static Client ID:</strong> set a static client ID if needed</p></li>
-<li><p><strong>Topics:</strong> Choose one or more topics the Consumer will listen to. The topics always extend the Connector Base Topic.</p></li>
-<li><p><strong>Clean:</strong> turn on clean session</p></li>
+<li><strong>Name:</strong> The Name of your Consumer.</li>
+<li><strong>Data Format:</strong> Choose the Data Format you wish to accept in the Inbox.</li>
+<li><strong>Static Client ID:</strong> set a static client ID if needed</li>
+<li><strong>Topics:</strong> Choose one or more topics the Consumer will listen to. The topics always extend the Connector Base Topic.</li>
+<li><strong>Clean:</strong> turn on clean session</li>
 </ul>
 </div>
 </div>
@@ -282,13 +282,21 @@ Once the Connector is choosen, there are some additional settings within the Pro
   
 
 	
-		<script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+		<script type="text/javascript">
+			var DOCUMENTATION_OPTIONS = {
+				URL_ROOT:'../',
+				VERSION:'2.0.0',
+				LANGUAGE:'None',
+				COLLAPSE_INDEX:false,
+				FILE_SUFFIX:'.html',
+				HAS_SOURCE:  true,
+				SOURCELINK_SUFFIX: '.txt'
+			};
+		</script>
 			<script type="text/javascript" src="../_static/jquery.js"></script>
 			<script type="text/javascript" src="../_static/underscore.js"></script>
 			<script type="text/javascript" src="../_static/doctools.js"></script>
-			<script type="text/javascript" src="../_static/language_data.js"></script>
-			<script type="text/javascript" src="../_static/contentui.js"></script>
-		
+	
 
   
 

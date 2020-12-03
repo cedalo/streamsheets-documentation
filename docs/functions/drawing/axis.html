@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>AXIS &mdash; Streamsheets 2.0.0 documentation</title>
+  <title>AXIS &mdash; Streamsheets Documentation 1.0.0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="BAR" href="bar.html" />
-    <link rel="prev" title="AWAIT.ONE" href="../streamsheet/awaitone.html" /> 
+    <link rel="prev" title="AVERAGEIFS" href="../statistical/averageifs.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -49,7 +49,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> Streamsheets
+            <a href="../../index.html" class="icon icon-home"> Streamsheets Documentation
           
 
           
@@ -95,7 +95,6 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">AXIS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bar.html">BAR</a></li>
 <li class="toctree-l3"><a class="reference internal" href="classifypoint.html">CLASSIFYPOINT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="drawbezier.html">DRAW.BEZIER</a></li>
 <li class="toctree-l3"><a class="reference internal" href="drawbutton.html">DRAW.BUTTON</a></li>
 <li class="toctree-l3"><a class="reference internal" href="drawcheckbox.html">DRAW.CHECKBOX</a></li>
 <li class="toctree-l3"><a class="reference internal" href="drawellipse.html">DRAW.ELLIPSE</a></li>
@@ -152,7 +151,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Streamsheets</a>
+          <a href="../../index.html">Streamsheets Documentation</a>
         
       </nav>
 
@@ -210,56 +209,56 @@
 <p><strong>Syntax</strong></p>
 <p>=AXIS(Min, Max, Step, TimeStep, ZoomMin, ZoomMax)</p>
 <p><strong>Arguments</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
+<col width="20%" />
+<col width="80%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Description</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>Min</p></td>
-<td><p>Minumum axis Value.</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>Min</td>
+<td>Minumum axis Value.</td>
 </tr>
-<tr class="row-odd"><td><p>Max</p></td>
-<td><p>Maximum axis value</p></td>
+<tr class="row-odd"><td>Max</td>
+<td>Maximum axis value</td>
 </tr>
-<tr class="row-even"><td><p>Step</p></td>
-<td><p>Step for axis ticks or grid lines. For time axis the step will increment the time step.</p></td>
+<tr class="row-even"><td>Step</td>
+<td>Step for axis ticks or grid lines. For time axis the step will increment the time step.</td>
 </tr>
-<tr class="row-odd"><td><p>Time Step</p></td>
-<td><p>Step type for time units. Allow values are ‘year’, ‘quarter’, ‘month’, ‘day’, ‘hour’, ‘minute’, ‘second’ or ‘millisecond’.</p></td>
+<tr class="row-odd"><td>Time Step</td>
+<td>Step type for time units. Allow values are ‘year’, ‘quarter’, ‘month’, ‘day’, ‘hour’, ‘minute’, ‘second’ or ‘millisecond’.</td>
 </tr>
-<tr class="row-even"><td><p>ZoomMin</p></td>
-<td><p>Axis minumum to use, if chart is zoomed. This value will be filled automatically, if axis is zoomed using the mouse.</p></td>
+<tr class="row-even"><td>ZoomMin</td>
+<td>Axis minumum to use, if chart is zoomed. This value will be filled automatically, if axis is zoomed using the mouse.</td>
 </tr>
-<tr class="row-odd"><td><p>ZoomMax</p></td>
-<td><p>Axis maximum to use, if chart is zoomed. This value will be filled automatically, if axis is zoomed using the mouse.</p></td>
+<tr class="row-odd"><td>ZoomMax</td>
+<td>Axis maximum to use, if chart is zoomed. This value will be filled automatically, if axis is zoomed using the mouse.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
 <p>TRUE.</p>
 <p><strong>Example</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 73%" />
-<col style="width: 7%" />
-<col style="width: 20%" />
+<col width="73%" />
+<col width="7%" />
+<col width="20%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Function</p></th>
-<th class="head"><p>Result</p></th>
-<th class="head"><p>Comment</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Result</th>
+<th class="head">Comment</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>=AXIS(0, 200, 50)</p></td>
-<td><p>TRUE</p></td>
-<td><p>Scales the axis from 0 to 200 using a step of 50 units.</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>=AXIS(0, 200, 50)</td>
+<td>TRUE</td>
+<td>Scales the axis from 0 to 200 using a step of 50 units.</td>
 </tr>
 </tbody>
 </table>
@@ -276,7 +275,7 @@
         <a href="bar.html" class="btn btn-neutral float-right" title="BAR" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../streamsheet/awaitone.html" class="btn btn-neutral" title="AWAIT.ONE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../statistical/averageifs.html" class="btn btn-neutral" title="AVERAGEIFS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -305,13 +304,21 @@
   
 
 	
-		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+		<script type="text/javascript">
+			var DOCUMENTATION_OPTIONS = {
+				URL_ROOT:'../../',
+				VERSION:'1.0.0',
+				LANGUAGE:'None',
+				COLLAPSE_INDEX:false,
+				FILE_SUFFIX:'.html',
+				HAS_SOURCE:  true,
+				SOURCELINK_SUFFIX: '.txt'
+			};
+		</script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-			<script type="text/javascript" src="../../_static/language_data.js"></script>
-			<script type="text/javascript" src="../../_static/contentui.js"></script>
-		
+	
 
   
 

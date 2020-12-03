@@ -123,6 +123,7 @@
 <li class="toctree-l3"><a class="reference internal" href="inboxdata.html">INBOXDATA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inboxmetadata.html">INBOXMETADATA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="json.html">JSON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsontorange.html">JSON.TO.RANGE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="jsonvalue.html">JSON.VALUE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="loopcount.html">LOOPCOUNT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="loopindex.html">LOOPINDEX</a></li>
@@ -235,70 +236,70 @@ to restart counter if its value evaluates to TRUE.</p>
 <p><strong>Syntax</strong></p>
 <p>=COUNTER(Start, Step [, End, Reset])</p>
 <p><strong>Arguments</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
+<col width="20%" />
+<col width="80%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Description</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>Start</p></td>
-<td><p>A number to initialize the counter with.</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>Start</td>
+<td>A number to initialize the counter with.</td>
 </tr>
-<tr class="row-odd"><td><p>Step</p></td>
-<td><p>Number which specifies the increment (positive number) or decrement (negative number) steps.</p></td>
+<tr class="row-odd"><td>Step</td>
+<td>Number which specifies the increment (positive number) or decrement (negative number) steps.</td>
 </tr>
-<tr class="row-even"><td><p>End</p></td>
-<td><p>Optional. Number or Condition which defines upper or lower bound.</p></td>
+<tr class="row-even"><td>End</td>
+<td>Optional. Number or Condition which defines upper or lower bound.</td>
 </tr>
-<tr class="row-odd"><td><p>Reset</p></td>
-<td><p>Optional. If it evaluates to TRUE the counter is reset to Start. Defaults to FALSE. Since immediately resets if TRUE, mostly used as a condition or reference on a condition.</p></td>
+<tr class="row-odd"><td>Reset</td>
+<td>Optional. If it evaluates to TRUE the counter is reset to Start. Defaults to FALSE. Since immediately resets if TRUE, mostly used as a condition or reference on a condition.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
 <p>Number</p>
 <p><strong>Example</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 45%" />
-<col style="width: 10%" />
-<col style="width: 45%" />
+<col width="45%" />
+<col width="10%" />
+<col width="45%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Function</p></th>
-<th class="head"><p>Result</p></th>
-<th class="head"><p>Comment</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Result</th>
+<th class="head">Comment</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>=COUNTER(2, 2)</p></td>
-<td><p>2</p></td>
-<td><p>Will initialize counter with 2 and increment by 2 on each step, i.e.: 2, 4, 6,…</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>=COUNTER(2, 2)</td>
+<td>2</td>
+<td>Will initialize counter with 2 and increment by 2 on each step, i.e.: 2, 4, 6,…</td>
 </tr>
-<tr class="row-odd"><td><p>=COUNTER(10, -2)</p></td>
-<td><p>10</p></td>
-<td><p>Will initialize counter with 10 and decrement by -2 on each step, i.e.: 10, 8, 6,…</p></td>
+<tr class="row-odd"><td>=COUNTER(10, -2)</td>
+<td>10</td>
+<td>Will initialize counter with 10 and decrement by -2 on each step, i.e.: 10, 8, 6,…</td>
 </tr>
-<tr class="row-even"><td><p>=COUNTER(2, 1, ,<a class="reference internal" href="getstep.html#getstep"><span class="std std-ref">GETSTEP</span></a>() % 2 &lt;&gt; 0)</p></td>
-<td><p>2</p></td>
-<td><p>Will initialize counter with 2 and resets it on each even step count, i.e.: 2, 3, 2, 3,…</p></td>
+<tr class="row-even"><td>=COUNTER(2, 1, ,<a class="reference internal" href="getstep.html#getstep"><span class="std std-ref">GETSTEP</span></a>() % 2 &lt;&gt; 0)</td>
+<td>2</td>
+<td>Will initialize counter with 2 and resets it on each even step count, i.e.: 2, 3, 2, 3,…</td>
 </tr>
-<tr class="row-odd"><td><p>=COUNTER(2, 2, 10)</p></td>
-<td><p>2</p></td>
-<td><p>Will count from 2 to 10 in steps of 2, i.e. 2, 4, 6, 8, 10</p></td>
+<tr class="row-odd"><td>=COUNTER(2, 2, 10)</td>
+<td>2</td>
+<td>Will count from 2 to 10 in steps of 2, i.e. 2, 4, 6, 8, 10</td>
 </tr>
-<tr class="row-even"><td><p>=COUNTER(10, -2, 0)</p></td>
-<td><p>10</p></td>
-<td><p>Will count from 10 down to 0 in steps of -2, i.e. 10, 8, …, 0</p></td>
+<tr class="row-even"><td>=COUNTER(10, -2, 0)</td>
+<td>10</td>
+<td>Will count from 10 down to 0 in steps of -2, i.e. 10, 8, …, 0</td>
 </tr>
-<tr class="row-odd"><td><p>=COUNTER(10, -2, 26)</p></td>
-<td><p>10</p></td>
-<td><p>Will not decrement since lower bound is greater then start value.</p></td>
+<tr class="row-odd"><td>=COUNTER(10, -2, 26)</td>
+<td>10</td>
+<td>Will not decrement since lower bound is greater then start value.</td>
 </tr>
 </tbody>
 </table>
@@ -344,13 +345,21 @@ to restart counter if its value evaluates to TRUE.</p>
   
 
 	
-		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+		<script type="text/javascript">
+			var DOCUMENTATION_OPTIONS = {
+				URL_ROOT:'../../',
+				VERSION:'2.0.0',
+				LANGUAGE:'None',
+				COLLAPSE_INDEX:false,
+				FILE_SUFFIX:'.html',
+				HAS_SOURCE:  true,
+				SOURCELINK_SUFFIX: '.txt'
+			};
+		</script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-			<script type="text/javascript" src="../../_static/language_data.js"></script>
-			<script type="text/javascript" src="../../_static/contentui.js"></script>
-		
+	
 
   
 

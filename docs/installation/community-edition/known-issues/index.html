@@ -158,14 +158,14 @@
 The performance of the Streamsheets is dependend on the amount and speed of the running machines. You can increase the resources assigned to docker and/or install Streamsheets on a faster system to increase the performance.</p>
 <p><strong>Docker will prompt an Error message if:</strong></p>
 <ul class="simple">
-<li><p>The YML file has the wrong path to connect to the local directory. Change the directory for the “filefeeder” in the YML to an existing path.</p></li>
-<li><p>Docker has not set the option “Shared drives” in the docker settings menu to allow access to the used drive in the YML.</p></li>
-<li><p>Docker has no space left on device. Use: <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">image</span> <span class="pre">prune</span></code> or <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">volumne</span> <span class="pre">prune</span></code> to clear some space, or allow docker more disc space.</p></li>
-<li><p>You don´t have a valid license. There has to be a valid license in the folder “services/docker-compose/license”. (not for the Raspberry Pi)</p></li>
+<li>The YML file has the wrong path to connect to the local directory. Change the directory for the “filefeeder” in the YML to an existing path.</li>
+<li>Docker has not set the option “Shared drives” in the docker settings menu to allow access to the used drive in the YML.</li>
+<li>Docker has no space left on device. Use: <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">image</span> <span class="pre">prune</span></code> or <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">volumne</span> <span class="pre">prune</span></code> to clear some space, or allow docker more disc space.</li>
+<li>You don´t have a valid license. There has to be a valid license in the folder “services/docker-compose/license”. (not for the Raspberry Pi)</li>
 </ul>
 <p><strong>Streamsheets not reachable in local network:</strong></p>
 <ul class="simple">
-<li><p>Sometimes firewalls are blocking the network accessibility of the Streamsheets.</p></li>
+<li>Sometimes firewalls are blocking the network accessibility of the Streamsheets.</li>
 </ul>
 </div>
 
@@ -200,13 +200,21 @@ The performance of the Streamsheets is dependend on the amount and speed of the 
   
 
 	
-		<script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+		<script type="text/javascript">
+			var DOCUMENTATION_OPTIONS = {
+				URL_ROOT:'../../../',
+				VERSION:'2.0.0',
+				LANGUAGE:'None',
+				COLLAPSE_INDEX:false,
+				FILE_SUFFIX:'.html',
+				HAS_SOURCE:  true,
+				SOURCELINK_SUFFIX: '.txt'
+			};
+		</script>
 			<script type="text/javascript" src="../../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../../_static/doctools.js"></script>
-			<script type="text/javascript" src="../../../_static/language_data.js"></script>
-			<script type="text/javascript" src="../../../_static/contentui.js"></script>
-		
+	
 
   
 
