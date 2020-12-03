@@ -191,25 +191,25 @@ Optionally it deletes all found records after the extract operation (remaining r
 <p><strong>Syntax</strong></p>
 <p>=STACKSORT(StackRange, SortSettingsRange)</p>
 <p><strong>Arguments</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
+<col width="20%" />
+<col width="80%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Description</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>StackRange</p></td>
-<td><div class="line-block">
+<tbody valign="top">
+<tr class="row-even"><td>StackRange</td>
+<td><div class="first last line-block">
 <div class="line">Range, where the stack range resides. The first row of the StackRange is a title range and remains unchanged.</div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p>SortSettingsRange</p></td>
-<td><div class="line-block">
+<tr class="row-odd"><td>SortSettingsRange</td>
+<td><div class="first last line-block">
 <div class="line">The SortSettingsRange has two rows. In the first row you have all or part of the labels of the StackRange (may be in another order). The cells in the second row either contain TRUE or FALSE. TRUE is ascending, FALSE is descending.</div>
 <div class="line">If you have more than two rows in the SortSettingsRange then it is first sorted after the field name in the second row, then after the field name in the third row, etc.</div>
 </div>
@@ -220,24 +220,24 @@ Optionally it deletes all found records after the extract operation (remaining r
 <p><strong>Return Value</strong></p>
 <p>TRUE, if no error occurred, otherwise <a class="reference internal" href="../../others.html#error"><span class="std std-ref">error</span></a> value.</p>
 <p><strong>Example</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col width="50%" />
+<col width="50%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Function</p></th>
-<th class="head"><p>Result</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Result</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>=STACKSORT(<span class="blue">A5:D9</span>,<span class="red">A2:D3</span>)</p>
-<div class="line-block">
+<tbody valign="top">
+<tr class="row-even"><td><p class="first">=STACKSORT(<span class="blue">A5:D9</span>,<span class="red">A2:D3</span>)</p>
+<div class="last line-block">
 <div class="line"><a class="reference internal" href="../../_images/STACKSORT1.PNG"><img alt="STACKSORT1" src="../../_images/STACKSORT1.PNG" style="width: 376.5px; height: 201.9px;" /></a></div>
 </div>
 </td>
-<td><p>After calling STACKSORT</p>
-<div class="line-block">
+<td><p class="first">After calling STACKSORT</p>
+<div class="last line-block">
 <div class="line"><a class="reference internal" href="../../_images/STACKSORT2.PNG"><img alt="STACKSORT2" src="../../_images/STACKSORT2.PNG" style="width: 376.8px; height: 201.9px;" /></a></div>
 </div>
 </td>
@@ -286,13 +286,21 @@ Optionally it deletes all found records after the extract operation (remaining r
   
 
 	
-		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+		<script type="text/javascript">
+			var DOCUMENTATION_OPTIONS = {
+				URL_ROOT:'../../',
+				VERSION:'2.0.0',
+				LANGUAGE:'None',
+				COLLAPSE_INDEX:false,
+				FILE_SUFFIX:'.html',
+				HAS_SOURCE:  true,
+				SOURCELINK_SUFFIX: '.txt'
+			};
+		</script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-			<script type="text/javascript" src="../../_static/language_data.js"></script>
-			<script type="text/javascript" src="../../_static/contentui.js"></script>
-		
+	
 
   
 

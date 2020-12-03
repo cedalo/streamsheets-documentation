@@ -81,8 +81,8 @@
             
               <p class="caption"><span class="caption-text">User Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../maincomponents.html">Main Components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../gettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
@@ -172,6 +172,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../others.html">Other</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../releasenotes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://www.cedalo.com">Cedalo</a></li>
 </ul>
 
             
@@ -244,65 +245,65 @@
 <p><strong>Syntax</strong></p>
 <p>=<a class="reference internal" href="../../glossary.html#term-mongo"><span class="xref std std-term">MONGO</span></a>.QUERY(<a class="reference internal" href="../../glossary.html#term-producer"><span class="xref std std-term">Producer</span></a>, Collection, QueryJSON, Target[, ResultKeys, PageSize, Page, Sort, Timeout])</p>
 <p><strong>Arguments</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
+<col width="20%" />
+<col width="80%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Description</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>Producer</p></td>
-<td><p>Producer to use for deleting. The database name is configured in the affiliated <a class="reference internal" href="../../glossary.html#term-connector"><span class="xref std std-term">Connector</span></a>.</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>Producer</td>
+<td>Producer to use for deleting. The database name is configured in the affiliated <a class="reference internal" href="../../glossary.html#term-connector"><span class="xref std std-term">Connector</span></a>.</td>
 </tr>
-<tr class="row-odd"><td><p>Collection</p></td>
-<td><p>Choose an existing collection, where the item is stored.</p></td>
+<tr class="row-odd"><td>Collection</td>
+<td>Choose an existing collection, where the item is stored.</td>
 </tr>
-<tr class="row-even"><td><p>QueryJSON</p></td>
-<td><p>Define a query using a <a class="reference internal" href="../../glossary.html#term-json"><span class="xref std std-term">JSON</span></a> cell range, which defines the object(s) to searched for.</p></td>
+<tr class="row-even"><td>QueryJSON</td>
+<td>Define a query using a <a class="reference internal" href="../../glossary.html#term-json"><span class="xref std std-term">JSON</span></a> cell range, which defines the object(s) to searched for.</td>
 </tr>
-<tr class="row-odd"><td><p>Target</p></td>
-<td><p>Defines a place to show query result.</p></td>
+<tr class="row-odd"><td>Target</td>
+<td>Defines a place to show query result.</td>
 </tr>
-<tr class="row-even"><td><p>ResultKeys</p></td>
-<td><p>Optional. Filter the query result.</p></td>
+<tr class="row-even"><td>ResultKeys</td>
+<td>Optional. Filter the query result.</td>
 </tr>
-<tr class="row-odd"><td><p>PageSize</p></td>
-<td><p>Optional. Number of Documents to return per page.</p></td>
+<tr class="row-odd"><td>PageSize</td>
+<td>Optional. Number of Documents to return per page.</td>
 </tr>
-<tr class="row-even"><td><p>Page</p></td>
-<td><p>Optional. Index of page to return.</p></td>
+<tr class="row-even"><td>Page</td>
+<td>Optional. Index of page to return.</td>
 </tr>
-<tr class="row-odd"><td><p>Sort</p></td>
-<td><p>Optional. Sort query result ascending or descending. Use 1 and -1 to sort by creation time, or use a JSON cell range.</p></td>
+<tr class="row-odd"><td>Sort</td>
+<td>Optional. Sort query result ascending or descending. Use 1 and -1 to sort by creation time, or use a JSON cell range.</td>
 </tr>
-<tr class="row-even"><td><p>Timeout</p></td>
-<td><p>Optional. Define Timeout.</p></td>
+<tr class="row-even"><td>Timeout</td>
+<td>Optional. Define Timeout.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
 <p>TRUE, if successful.</p>
 <p><strong>Examples</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 45%" />
-<col style="width: 15%" />
-<col style="width: 40%" />
+<col width="45%" />
+<col width="15%" />
+<col width="40%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Function</p></th>
-<th class="head"><p>Result</p></th>
-<th class="head"><p>Comment</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Result</th>
+<th class="head">Comment</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>=MONGO.QUERY(“Producer”, “TestCollection”, <a class="reference internal" href="json.html#json"><span class="std std-ref">JSON</span></a>(A1:B4), <a class="reference internal" href="inbox.html#inboxf"><span class="std std-ref">INBOX</span></a>())</p></td>
-<td><p>TRUE</p></td>
-<td><p>All documents in the database with the values from A1:B4 using the “Producer” in the collection “TestCollection” will be shown in the <a class="reference internal" href="../../maincomponents/streamsheet.html#inbox"><span class="std std-ref">Inbox</span></a> of the current Streamsheet.</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>=MONGO.QUERY(“Producer”, “TestCollection”, <span class="xref std std-ref">JSON</span>(A1:B4), <a class="reference internal" href="inbox.html#inboxf"><span class="std std-ref">INBOX</span></a>())</td>
+<td>TRUE</td>
+<td>All documents in the database with the values from A1:B4 using the “Producer” in the collection “TestCollection” will be shown in the <a class="reference internal" href="../../maincomponents/streamsheet.html#inbox"><span class="std std-ref">Inbox</span></a> of the current Streamsheet.</td>
 </tr>
 </tbody>
 </table>
@@ -348,13 +349,21 @@
   
 
 	
-		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+		<script type="text/javascript">
+			var DOCUMENTATION_OPTIONS = {
+				URL_ROOT:'../../',
+				VERSION:'1.0.0',
+				LANGUAGE:'None',
+				COLLAPSE_INDEX:false,
+				FILE_SUFFIX:'.html',
+				HAS_SOURCE:  true,
+				SOURCELINK_SUFFIX: '.txt'
+			};
+		</script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-			<script type="text/javascript" src="../../_static/language_data.js"></script>
-			<script type="text/javascript" src="../../_static/contentui.js"></script>
-		
+	
 
   
 

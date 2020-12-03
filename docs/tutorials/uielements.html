@@ -288,8 +288,8 @@ The following solutions are perfectly helpful in situations, where permanent dat
 The following example shows how to create a short (stepwise) data history.</p>
 <blockquote>
 <div><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Every <a class="reference internal" href="../glossary.html#term-streamsheet"><span class="xref std std-term">sheet</span></a> is calculated from left to right and from top to bottom. Consequently, cell A1 is calculated first followed by B1, C1 etc. proceding in the next rows in the same manner. Thanks to this concept, we can use references to create a history of values.</p>
+<p class="first admonition-title">Note</p>
+<p class="last">Every <a class="reference internal" href="../glossary.html#term-streamsheet"><span class="xref std std-term">sheet</span></a> is calculated from left to right and from top to bottom. Consequently, cell A1 is calculated first followed by B1, C1 etc. proceding in the next rows in the same manner. Thanks to this concept, we can use references to create a history of values.</p>
 </div>
 </div></blockquote>
 <p>The cell at the very bottom references to the data input and the cells above the reference to the cell below. As higher cells are calculated first, they fetch the values of lower cells before these are calculated. In the end the last cells take the latest data input. Effectively it looks as if new values enter the history at the bottom and move up before leaving the series at the top.</p>
@@ -302,9 +302,9 @@ The following example shows how to create a short (stepwise) data history.</p>
 Tables cover a lot of space, which should be used for implementing your logic. This is where <a class="reference internal" href="../functions/timeseries.html#timeseries"><span class="std std-ref">Timeseries</span></a> functions come into play.</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><a class="reference internal" href="../functions/timeseries/timeaggregate.html#timeaggregate"><span class="std std-ref">TIMEAGGREGATE()</span></a></p></li>
-<li><p><a class="reference internal" href="../functions/timeseries/timestore.html#timestore"><span class="std std-ref">TIMESTORE()</span></a></p></li>
-<li><p><a class="reference internal" href="../functions/timeseries/timequery.html#timequery"><span class="std std-ref">TIMEQUERY()</span></a></p></li>
+<li><a class="reference internal" href="../functions/timeseries/timeaggregate.html#timeaggregate"><span class="std std-ref">TIMEAGGREGATE()</span></a></li>
+<li><a class="reference internal" href="../functions/timeseries/timestore.html#timestore"><span class="std std-ref">TIMESTORE()</span></a></li>
+<li><a class="reference internal" href="../functions/timeseries/timequery.html#timequery"><span class="std std-ref">TIMEQUERY()</span></a></li>
 </ul>
 </div></blockquote>
 <p>These functions track a cell and store the observed changes &amp; timestamps over a certain amount of time. They basically create an invisible table fitted into one cell. The result is, that now Charts can use one function as a data range instead of huge tables.
@@ -334,8 +334,8 @@ The TIMEAGGREAGATE function is the quick hack of TIMESTORE and TIMEQUERY. It mon
 </div>
 <blockquote>
 <div><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>#LIMIT appears, when the set limit of stored key value pairs is reached. This is not necessarily a problem, it only means that old stores will be overwritten by newer ones.</p>
+<p class="first admonition-title">Note</p>
+<p class="last">#LIMIT appears, when the set limit of stored key value pairs is reached. This is not necessarily a problem, it only means that old stores will be overwritten by newer ones.</p>
 </div>
 </div></blockquote>
 </div>
@@ -361,14 +361,14 @@ All shapes have a very similar function structure:</p>
 <p>If your use case does require direct user input, there are multiple ways to allow these in Streamsheets.
 Before we dive into details, here a short reminder:</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="first admonition-title">Note</p>
 <p>Always hide your logic from the end user. They will likely get confused and/or change it.</p>
-<ul>
-<li><div class="line-block">
+<ul class="last">
+<li><div class="first line-block">
 <div class="line">Only display the Streamsheet you want the end user to see. Open the App Settings and select it in the “Maximize Sheet on load” field</div>
 </div>
 </li>
-<li><div class="line-block">
+<li><div class="first line-block">
 <div class="line">Only share your App with end user over an URL that prohibits them from changing your logic.</div>
 </div>
 </li>
@@ -386,7 +386,7 @@ It allows the end user to select a value from a list of options. This selection 
 <h4>Interactive Shapes<a class="headerlink" href="#interactive-shapes" title="Permalink to this headline">¶</a></h4>
 <p>In the shape menu, in the controls category, you can find interactive elements. In a stopped or paused app, these elements can be adjusted as usual, by selecting the shape and changing the formula parameter. In a running app “control” shapes become interactive and are not selectable anymore.</p>
 <ul>
-<li><div class="line-block">
+<li><div class="first line-block">
 <div class="line"><strong>Checkboxes</strong> are very helpful in use cases, where switching between two states is necessary. They switch their value parameter depending on the user interaction to FALSE or TRUE. To work with these states use a cell reference in the value parameter. Now you only have to use the referenced cell in your sheet logic to react on state changes.</div>
 <div class="line-block">
 <div class="line">GIF</div>
@@ -394,7 +394,7 @@ It allows the end user to select a value from a list of options. This selection 
 <div class="line"><em>Example use case: You want to only show certain information, when a check box is selected. FALSE represents that the information will not be shown. If the information you would like to hide is represented in an e.g. rectangle shape you could use the attributes parameter of the DRAW:RECTANGLE() function to switch between visible and not visible. Find more about the attributes’ parameter here.</em></div>
 </div>
 </li>
-<li><div class="line-block">
+<li><div class="first line-block">
 <div class="line"><strong>Slider</strong> allow the selection of values between a given minimum and maximum. Again referencing the value parameter to a cell gives you the power to integrate the selected value into your sheet logic.</div>
 <div class="line-block">
 <div class="line">GIF</div>
@@ -402,11 +402,11 @@ It allows the end user to select a value from a list of options. This selection 
 <div class="line"><em>Example use case: An End User should be able to regulate a thermostat between the values of 15°C and 25°C. With the slider the user sets the wished temperature and the value gets set in the referenced cell of the value parameter. The value will be then published to the thermostat over e.g. an MQTT Stream. Now the user directly impacts the temperature by moving the slider.</em></div>
 </div>
 </li>
-<li><div class="line-block">
+<li><div class="first line-block">
 <div class="line">The <strong>Knob</strong> works exactly like the slider, but instead of sliding from left to right the end user animation is turning a knob.</div>
 </div>
 </li>
-<li><div class="line-block">
+<li><div class="first line-block">
 <div class="line"><strong>Button</strong>, like the checkboxes, set TRUE or FALSE values. The difference is, that they only set the value parameter to TRUE, as long as the user is pressing the button. After the release, the value turns back to FALSE. Again using a cell reference for the value parameter is the key to integrate the interaction in your sheet logic.  <em>Tip: Try to use EDGE.DETECT() if you only need a one time switch to TRUE.</em></div>
 <div class="line-block">
 <div class="line">GIF</div>
@@ -420,26 +420,26 @@ It allows the end user to select a value from a list of options. This selection 
 <h4>EVENTS()<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h4>
 <p>The EVENTS() function adds another layer to end user interactions. In every shape formula there is one parameter called “Events”, which can be filled with a number of event functions:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="../functions/events/onmousedown.html#onmousedown"><span class="std std-ref">ONMOUSEDOWN()</span></a></p></li>
-<li><p><a class="reference internal" href="../functions/events/onmouseup.html#onmouseup"><span class="std std-ref">ONMOUSEUP()</span></a></p></li>
-<li><p><a class="reference internal" href="../functions/events/onvaluechange.html#onvaluechange"><span class="std std-ref">ONVALUECHANGE()</span></a></p></li>
-<li><p><a class="reference internal" href="../functions/events/onclick.html#onclick"><span class="std std-ref">ONCLICK()</span></a></p></li>
-<li><p><a class="reference internal" href="../functions/events/ondoubleclick.html#ondoubleclick"><span class="std std-ref">ONDOUBLECLICK()</span></a></p></li>
+<li><a class="reference internal" href="../functions/events/onmousedown.html#onmousedown"><span class="std std-ref">ONMOUSEDOWN()</span></a></li>
+<li><a class="reference internal" href="../functions/events/onmouseup.html#onmouseup"><span class="std std-ref">ONMOUSEUP()</span></a></li>
+<li><a class="reference internal" href="../functions/events/onvaluechange.html#onvaluechange"><span class="std std-ref">ONVALUECHANGE()</span></a></li>
+<li><a class="reference internal" href="../functions/events/onclick.html#onclick"><span class="std std-ref">ONCLICK()</span></a></li>
+<li><a class="reference internal" href="../functions/events/ondoubleclick.html#ondoubleclick"><span class="std std-ref">ONDOUBLECLICK()</span></a></li>
 </ul>
 <p>Integrating one or more events in the EVENT() function, adds the possibility to define actions.
 For example: <em>EVENTS(ONCLICK(COPYVALUES(A1:B11,G10:H10))</em> triggers the COPYVALUE() function after an onclick action by the user.</p>
 <p>GIF</p>
 <p>Other functions which could be used in this context:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="../functions/streams/mqttpublish.html#mqttpublish"><span class="std std-ref">MQTT.PUBLISH()</span></a> (or any other <a class="reference internal" href="../functions/streams.html#streams"><span class="std std-ref">stream</span></a> function)</p></li>
-<li><p><a class="reference internal" href="../functions/streamsheet/setvalue.html#setvalue"><span class="std std-ref">SETVALUE()</span></a></p></li>
-<li><p><a class="reference internal" href="../functions/streamsheet/deletecells.html#deletecells"><span class="std std-ref">DELETECELLS()</span></a></p></li>
-<li><p><a class="reference internal" href="../functions/streamsheet/copyvalues.html#copyvalues"><span class="std std-ref">COPYVALUES()</span></a></p></li>
-<li><p><a class="reference internal" href="../functions/streamsheet/delete.html#delete"><span class="std std-ref">DELETE()</span></a></p></li>
-<li><p><a class="reference internal" href="../functions/streamsheet/execute.html#execute"><span class="std std-ref">EXECUTE()</span></a></p></li>
-<li><p><a class="reference internal" href="../functions/streamsheet/feedinbox.html#feedinbox"><span class="std std-ref">FEEDINBOX()</span></a></p></li>
-<li><p><a class="reference internal" href="../functions/stack/stackadd.html#stackadd"><span class="std std-ref">STACKADD()</span></a> (or any other <a class="reference internal" href="../functions/stack.html#stack"><span class="std std-ref">stack</span></a> function)</p></li>
-<li><p><a class="reference internal" href="../functions/streamsheet/write.html#write"><span class="std std-ref">WRITE()</span></a></p></li>
+<li><a class="reference internal" href="../functions/streams/mqttpublish.html#mqttpublish"><span class="std std-ref">MQTT.PUBLISH()</span></a> (or any other <a class="reference internal" href="../functions/streams.html#streams"><span class="std std-ref">stream</span></a> function)</li>
+<li><a class="reference internal" href="../functions/streamsheet/setvalue.html#setvalue"><span class="std std-ref">SETVALUE()</span></a></li>
+<li><a class="reference internal" href="../functions/streamsheet/deletecells.html#deletecells"><span class="std std-ref">DELETECELLS()</span></a></li>
+<li><a class="reference internal" href="../functions/streamsheet/copyvalues.html#copyvalues"><span class="std std-ref">COPYVALUES()</span></a></li>
+<li><a class="reference internal" href="../functions/streamsheet/delete.html#delete"><span class="std std-ref">DELETE()</span></a></li>
+<li><a class="reference internal" href="../functions/streamsheet/execute.html#execute"><span class="std std-ref">EXECUTE()</span></a></li>
+<li><a class="reference internal" href="../functions/streamsheet/feedinbox.html#feedinbox"><span class="std std-ref">FEEDINBOX()</span></a></li>
+<li><a class="reference internal" href="../functions/stack/stackadd.html#stackadd"><span class="std std-ref">STACKADD()</span></a> (or any other <a class="reference internal" href="../functions/stack.html#stack"><span class="std std-ref">stack</span></a> function)</li>
+<li><a class="reference internal" href="../functions/streamsheet/write.html#write"><span class="std std-ref">WRITE()</span></a></li>
 </ul>
 </div>
 </div>
@@ -528,13 +528,21 @@ Now you can start structuring your data using TAB and Shift+TAB to change the hi
   
 
 	
-		<script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+		<script type="text/javascript">
+			var DOCUMENTATION_OPTIONS = {
+				URL_ROOT:'../',
+				VERSION:'2.0.0',
+				LANGUAGE:'None',
+				COLLAPSE_INDEX:false,
+				FILE_SUFFIX:'.html',
+				HAS_SOURCE:  true,
+				SOURCELINK_SUFFIX: '.txt'
+			};
+		</script>
 			<script type="text/javascript" src="../_static/jquery.js"></script>
 			<script type="text/javascript" src="../_static/underscore.js"></script>
 			<script type="text/javascript" src="../_static/doctools.js"></script>
-			<script type="text/javascript" src="../_static/language_data.js"></script>
-			<script type="text/javascript" src="../_static/contentui.js"></script>
-		
+	
 
   
 

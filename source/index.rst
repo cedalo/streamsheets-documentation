@@ -11,6 +11,8 @@
 Welcome to the Streamsheets Application Help
 =============================================
 
+.. warning:: This documentation will soon be replaced by the new docmentation hosted under https://docs.cedalo.com/latest. 
+
 Streamsheets are a new spreadsheet technology specifically designed for the challenges and opportunities of
 digitization and the Industrial IoT.
 

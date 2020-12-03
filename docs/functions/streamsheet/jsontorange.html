@@ -1,0 +1,408 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>JSON.TO.RANGE &mdash; Streamsheets 2.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_override.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="JSON.VALUE" href="jsonvalue.html" />
+    <link rel="prev" title="JSON" href="json.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Streamsheets
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../maincomponents.html">Main Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../functions.html">Functions</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../chart.html">Chart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../date.html">Date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../engineering.html">Engineering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events.html">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../info.html">Info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logical.html">Logical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lookup.html">Lookup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../math.html">Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shape.html">Shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stack.html">Stack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../statistical.html">Statistical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../streams.html">Streams</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../streamsheet.html">Streamsheet</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="array.html">ARRAY</a></li>
+<li class="toctree-l3"><a class="reference internal" href="await.html">AWAIT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="awaitone.html">AWAIT.ONE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="calc.html">CALC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="colorconvert.html">COLOR.CONVERT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="continue.html">CONTINUE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="copyvalues.html">COPYVALUES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="counter.html">COUNTER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="delete.html">DELETE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="deletecells.html">DELETECELLS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dictionary.html">DICTIONARY</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edgedetect.html">EDGE.DETECT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="execute.html">EXECUTE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="feedinbox.html">FEEDINBOX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getcycle.html">GETCYCLE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getcycletime.html">GETCYCLETIME</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getexecutestep.html">GETEXECUTESTEP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getmachinestep.html">GETMACHINESTEP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getstep.html">GETSTEP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="inbox.html">INBOX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="inboxdata.html">INBOXDATA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="inboxmetadata.html">INBOXMETADATA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json.html">JSON</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">JSON.TO.RANGE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsonvalue.html">JSON.VALUE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="loopcount.html">LOOPCOUNT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="loopindex.html">LOOPINDEX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="movevalues.html">MOVEVALUES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openurl.html">OPENURL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="outbox.html">OUTBOX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="outboxdata.html">OUTBOXDATA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="outboxgetids.html">OUTBOX.GETIDS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="outboxmetadata.html">OUTBOXMETADATA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="range.html">RANGE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="read.html">READ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="repeatindex.html">REPEATINDEX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="return.html">RETURN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="select.html">SELECT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setcycletime.html">SETCYCLETIME</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setphase.html">SETPHASE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setvalue.html">SETVALUE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sleep.html">SLEEP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="subtree.html">SUBTREE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swapvalues.html">SWAPVALUES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tableget.html">TABLE.GET</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tableordercolumn.html">TABLE.ORDERCOLUMN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tableupdate.html">TABLE.UPDATE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="triggerstep.html">TRIGGERSTEP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="webpage.html">WEBPAGE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="write.html">WRITE</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../timeseries.html">Timeseries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../alpha.html">Alphabetical</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../others.html">Other</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../releasenotes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://www.cedalo.com">Cedalo</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://forum.cedalo.com/">Forum</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Streamsheets</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../functions.html">Functions</a> &raquo;</li>
+        
+          <li><a href="../streamsheet.html">Streamsheet</a> &raquo;</li>
+        
+      <li>JSON.TO.RANGE</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="json-to-range">
+<h1>JSON.TO.RANGE<a class="headerlink" href="#json-to-range" title="Permalink to this headline">¶</a></h1>
+<p>Writes the content of given JSON to a specified cell range. It is recommended, but not a mandatory, to encode passed JSON with either <span class="xref std std-ref">array</span>,
+<span class="xref std std-ref">dictionary</span>, <a class="reference internal" href="range.html#range"><span class="std std-ref">RANGE</span></a> or the <span class="xref std std-ref">json</span> function itself. For better results the encoding type and direction
+parameters can be specified. Please refer to <a class="reference internal" href="jsonvalue.html#json-value"><span class="std std-ref">JSON.VALUE</span></a> if only a single JSON value should be extracted.</p>
+<p><strong>Syntax</strong></p>
+<p>=JSON.TO.RANGE(JSON, TargetRange [, Type, Direction])</p>
+<p><strong>Arguments</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>JSON</td>
+<td>A JSON object which data will be writen to specified target range.</td>
+</tr>
+<tr class="row-odd"><td>TargetRange</td>
+<td>A cell range to write JSON data to. If the range size covers only one cell, it will be automatically increased to match content of given JSON.</td>
+</tr>
+<tr class="row-even"><td>Type</td>
+<td>Optional. A text which describes the function used for encoding. Should be one of “ARRAY”, “DICTIONARY”, “JSON”, “JSONFLAT” or “RANGE”.
+Note: the difference beteween “JSON” and “JSONFLAT” is that “JSONFLAT” traverses the complete JSON while “JSON” stops after first level.
+Defaults to “JSON”.</td>
+</tr>
+<tr class="row-odd"><td>Direction</td>
+<td>Optional. Specify TRUE to align keys vertically for ARRAY, JSON and RANGE type and horizontally for DICTIONARY type.
+Note that the result depends on the direction used to encode given JSON. Defaults to TRUE.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Return Value</strong></p>
+<p>TRUE, if no error occurred, otherwise an <a class="reference internal" href="../../others.html#error"><span class="std std-ref">error</span></a> value.</p>
+<p><strong>Example</strong>
+Below examples assumes following SourceRange:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="30%" />
+<col width="30%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">A</th>
+<th class="head">B</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>v1</td>
+<td>23</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>v2</td>
+<td>42</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Result</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>=JSON.TO.RANGE(ARRAY(A1:B2),A5:B6,”ARRAY”)</td>
+<td><div class="first last line-block">
+<div class="line">Results in:</div>
+<div class="line">A5=”v1”, B5=”23”</div>
+<div class="line">A6=”v1”, B6=”42”</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>=JSON.TO.RANGE(DICTIONARY(A1:B2),A5:B6,”DICTIONARY”,FALSE)</td>
+<td><div class="first last line-block">
+<div class="line">Results in:</div>
+<div class="line">A5=”v1”, B5=”23”</div>
+<div class="line">A6=”v1”, B6=”42”</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>=JSON.TO.RANGE(JSON(A1:B2),A5:B6,FALSE)</td>
+<td><div class="first last line-block">
+<div class="line">Results in:</div>
+<div class="line">A5=”v1”, B5=”v2”</div>
+<div class="line">A6=”23”, B6=”42”</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>=JSON.TO.RANGE(RANGE(A1:B2),A5:B6,”RANGE”,FALSE)</td>
+<td><div class="first last line-block">
+<div class="line">Results in:</div>
+<div class="line">A5=”v1”, B5=”v2”</div>
+<div class="line">A6=”23”, B6=”42”</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="jsonvalue.html" class="btn btn-neutral float-right" title="JSON.VALUE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="json.html" class="btn btn-neutral" title="JSON" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Cedalo AG, Streamsheet™ is a trademark of the Cedalo AG.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+	
+		<script type="text/javascript">
+			var DOCUMENTATION_OPTIONS = {
+				URL_ROOT:'../../',
+				VERSION:'2.0.0',
+				LANGUAGE:'None',
+				COLLAPSE_INDEX:false,
+				FILE_SUFFIX:'.html',
+				HAS_SOURCE:  true,
+				SOURCELINK_SUFFIX: '.txt'
+			};
+		</script>
+			<script type="text/javascript" src="../../_static/jquery.js"></script>
+			<script type="text/javascript" src="../../_static/underscore.js"></script>
+			<script type="text/javascript" src="../../_static/doctools.js"></script>
+	
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -197,101 +197,101 @@
 <p><strong>Syntax</strong></p>
 <p>=COUNTIFS(CriterionRange1, Criterion1, [CriterionRange2, Criterion2], …)</p>
 <p><strong>Arguments</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
+<col width="20%" />
+<col width="80%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Description</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>CriterionRange1</p></td>
-<td><p>The range of cells to count.</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>CriterionRange1</td>
+<td>The range of cells to count.</td>
 </tr>
-<tr class="row-odd"><td><p>Criterion1</p></td>
-<td><p>The criterion each cell of CriterionRange1 has to fulfill.</p></td>
+<tr class="row-odd"><td>Criterion1</td>
+<td>The criterion each cell of CriterionRange1 has to fulfill.</td>
 </tr>
-<tr class="row-even"><td><p>CriterionRange2,…</p></td>
-<td><p>Optional. Additional cell-range which is checked against next criterion.</p></td>
+<tr class="row-even"><td>CriterionRange2,…</td>
+<td>Optional. Additional cell-range which is checked against next criterion.</td>
 </tr>
-<tr class="row-odd"><td><p>Criterion2,…</p></td>
-<td><p>Optional. Additional criterion each cell of CriterionRange2 has to fulfill.</p></td>
+<tr class="row-odd"><td>Criterion2,…</td>
+<td>Optional. Additional criterion each cell of CriterionRange2 has to fulfill.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
 <p>The number of cells which meet all specified criteria.</p>
 <p><strong>Example</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 4%" />
-<col style="width: 24%" />
-<col style="width: 24%" />
-<col style="width: 24%" />
-<col style="width: 24%" />
+<col width="4%" />
+<col width="24%" />
+<col width="24%" />
+<col width="24%" />
+<col width="24%" />
 </colgroup>
-<tbody>
-<tr class="row-odd"><td></td>
-<td><p>A</p></td>
-<td><p>B</p></td>
-<td><p>C</p></td>
-<td><p>D</p></td>
+<tbody valign="top">
+<tr class="row-odd"><td>&#160;</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
 </tr>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>230000</p></td>
-<td><p>Freiburg</p></td>
-<td><p>3</p></td>
-<td><p>No</p></td>
+<tr class="row-even"><td>1</td>
+<td>230000</td>
+<td>Freiburg</td>
+<td>3</td>
+<td>No</td>
 </tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>197000</p></td>
-<td><p>Cologne</p></td>
-<td><p>2</p></td>
-<td><p>Yes</p></td>
+<tr class="row-odd"><td>2</td>
+<td>197000</td>
+<td>Cologne</td>
+<td>2</td>
+<td>Yes</td>
 </tr>
-<tr class="row-even"><td><p>3</p></td>
-<td><p>345678</p></td>
-<td><p>Cologne</p></td>
-<td><p>4</p></td>
-<td><p>Yes</p></td>
+<tr class="row-even"><td>3</td>
+<td>345678</td>
+<td>Cologne</td>
+<td>4</td>
+<td>Yes</td>
 </tr>
-<tr class="row-odd"><td><p>4</p></td>
-<td><p>321900</p></td>
-<td><p>Freiburg</p></td>
-<td><p>2</p></td>
-<td><p>Yes</p></td>
+<tr class="row-odd"><td>4</td>
+<td>321900</td>
+<td>Freiburg</td>
+<td>2</td>
+<td>Yes</td>
 </tr>
-<tr class="row-even"><td><p>5</p></td>
-<td><p>203000</p></td>
-<td><p>Cologne</p></td>
-<td><p>3</p></td>
-<td><p>No</p></td>
+<tr class="row-even"><td>5</td>
+<td>203000</td>
+<td>Cologne</td>
+<td>3</td>
+<td>No</td>
 </tr>
 </tbody>
 </table>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 45%" />
-<col style="width: 10%" />
-<col style="width: 45%" />
+<col width="45%" />
+<col width="10%" />
+<col width="45%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Function</p></th>
-<th class="head"><p>Result</p></th>
-<th class="head"><p>Comment</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Result</th>
+<th class="head">Comment</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>COUNTIFS(<span class="blue">C1:C4</span>, <span class="orange">“&gt;=3”</span>)</p></td>
-<td><p>3</p></td>
-<td><p>Counts all houses which have three or more rooms.</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>COUNTIFS(<span class="blue">C1:C4</span>, <span class="orange">“&gt;=3”</span>)</td>
+<td>3</td>
+<td>Counts all houses which have three or more rooms.</td>
 </tr>
-<tr class="row-odd"><td><p>COUNTIFS(<span class="blue">B1:B5</span>, <span class="orange">“Cologne”</span>, <span class="blue">D1:D5</span>, <span class="orange">“=Yes”</span>)</p></td>
-<td><p>2</p></td>
-<td><p>Counts all houses in Cologne which have a garage.</p></td>
+<tr class="row-odd"><td>COUNTIFS(<span class="blue">B1:B5</span>, <span class="orange">“Cologne”</span>, <span class="blue">D1:D5</span>, <span class="orange">“=Yes”</span>)</td>
+<td>2</td>
+<td>Counts all houses in Cologne which have a garage.</td>
 </tr>
 </tbody>
 </table>
@@ -337,13 +337,21 @@
   
 
 	
-		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+		<script type="text/javascript">
+			var DOCUMENTATION_OPTIONS = {
+				URL_ROOT:'../../',
+				VERSION:'2.0.0',
+				LANGUAGE:'None',
+				COLLAPSE_INDEX:false,
+				FILE_SUFFIX:'.html',
+				HAS_SOURCE:  true,
+				SOURCELINK_SUFFIX: '.txt'
+			};
+		</script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-			<script type="text/javascript" src="../../_static/language_data.js"></script>
-			<script type="text/javascript" src="../../_static/contentui.js"></script>
-		
+	
 
   
 

@@ -205,41 +205,41 @@ code 127, 129, 141, 143, 144 and 157 set the optional extended flag to true.</p>
 <p><strong>Syntax</strong></p>
 <p>=CLEAN(Text, [Extended])</p>
 <p><strong>Arguments</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
+<col width="20%" />
+<col width="80%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Description</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>Text</p></td>
-<td><p>A string for which to remove the nonprintable characters.</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>Text</td>
+<td>A string for which to remove the nonprintable characters.</td>
 </tr>
-<tr class="row-odd"><td><p>Extended</p></td>
-<td><p>Optional. A boolean flag which indicates that the characters which correspond to the ASCII codes 127, 129, 141, 143, 144 and 157 should be removed too. Default is false.</p></td>
+<tr class="row-odd"><td>Extended</td>
+<td>Optional. A boolean flag which indicates that the characters which correspond to the ASCII codes 127, 129, 141, 143, 144 and 157 should be removed too. Default is false.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
 <p>The text without nonprintable characters.</p>
 <p><strong>Example</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 70%" />
-<col style="width: 30%" />
+<col width="70%" />
+<col width="30%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Function</p></th>
-<th class="head"><p>Result</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Result</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>=CLEAN(<a class="reference internal" href="concat.html#concat"><span class="std std-ref">CONCAT</span></a>(<a class="reference internal" href="char.html#char"><span class="std std-ref">CHAR</span></a>(9), “Hello World”, CHAR(10), CHAR(33)))</p></td>
-<td><p>Hello World!</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>=CLEAN(<a class="reference internal" href="concat.html#concat"><span class="std std-ref">CONCAT</span></a>(<a class="reference internal" href="char.html#char"><span class="std std-ref">CHAR</span></a>(9), “Hello World”, CHAR(10), CHAR(33)))</td>
+<td>Hello World!</td>
 </tr>
 </tbody>
 </table>
@@ -285,13 +285,21 @@ code 127, 129, 141, 143, 144 and 157 set the optional extended flag to true.</p>
   
 
 	
-		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+		<script type="text/javascript">
+			var DOCUMENTATION_OPTIONS = {
+				URL_ROOT:'../../',
+				VERSION:'2.0.0',
+				LANGUAGE:'None',
+				COLLAPSE_INDEX:false,
+				FILE_SUFFIX:'.html',
+				HAS_SOURCE:  true,
+				SOURCELINK_SUFFIX: '.txt'
+			};
+		</script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-			<script type="text/javascript" src="../../_static/language_data.js"></script>
-			<script type="text/javascript" src="../../_static/contentui.js"></script>
-		
+	
 
   
 

@@ -123,6 +123,7 @@
 <li class="toctree-l3"><a class="reference internal" href="inboxdata.html">INBOXDATA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inboxmetadata.html">INBOXMETADATA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="json.html">JSON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsontorange.html">JSON.TO.RANGE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="jsonvalue.html">JSON.VALUE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="loopcount.html">LOOPCOUNT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="loopindex.html">LOOPINDEX</a></li>
@@ -237,93 +238,93 @@ for a column index which can be automatically added to the left or right.</p>
 <p><strong>Syntax</strong></p>
 <p>=TABLE.UPDATE(CellRange, Value [, RowIndex, ColumnIndex, PushRowAt, PushColumnAt, AggregationMethod])</p>
 <p><strong>Arguments</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
+<col width="20%" />
+<col width="80%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Description</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>CellRange</p></td>
-<td><p>Cell range to treat like a table. Its first row and its first column are used to reference table cells.</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>CellRange</td>
+<td>Cell range to treat like a table. Its first row and its first column are used to reference table cells.</td>
 </tr>
-<tr class="row-odd"><td><p>Value</p></td>
-<td><p>A value to set in referenced table cell.</p></td>
+<tr class="row-odd"><td>Value</td>
+<td>A value to set in referenced table cell.</td>
 </tr>
-<tr class="row-even"><td><p>RowIndex</p></td>
-<td><p>Optional. The row index of a table cell. If not defined no value is set. The PushRowAt parameter can be used to add the row index if the table has no equal index.</p></td>
+<tr class="row-even"><td>RowIndex</td>
+<td>Optional. The row index of a table cell. If not defined no value is set. The PushRowAt parameter can be used to add the row index if the table has no equal index.</td>
 </tr>
-<tr class="row-odd"><td><p>ColumnIndex</p></td>
-<td><p>Optional. The column index of a table cell. If not defined no value is set. The PushColumnAt parameter can be used to add the column index if the table has no equal index.</p></td>
+<tr class="row-odd"><td>ColumnIndex</td>
+<td>Optional. The column index of a table cell. If not defined no value is set. The PushColumnAt parameter can be used to add the column index if the table has no equal index.</td>
 </tr>
-<tr class="row-even"><td><p>PushRowAt</p></td>
-<td><p>Optional. Defines where to insert a new row index. Should be either 1, -1, or 0. To insert new row at the bottom specfiy 1, -1 will insert it at the top and 0 will not insert at all. Defaults to 0.</p></td>
+<tr class="row-even"><td>PushRowAt</td>
+<td>Optional. Defines where to insert a new row index. Should be either 1, -1, or 0. To insert new row at the bottom specfiy 1, -1 will insert it at the top and 0 will not insert at all. Defaults to 0.</td>
 </tr>
-<tr class="row-odd"><td><p>PushColumnAt</p></td>
-<td><p>Optional. Defines where to insert a new column index. Should be either 1, -1, or 0. To insert new column to the right specfiy 1, -1 will insert it to the left and 0 will not insert at all. Defaults to 0.</p></td>
+<tr class="row-odd"><td>PushColumnAt</td>
+<td>Optional. Defines where to insert a new column index. Should be either 1, -1, or 0. To insert new column to the right specfiy 1, -1 will insert it to the left and 0 will not insert at all. Defaults to 0.</td>
 </tr>
-<tr class="row-even"><td><p>AggregationMethod</p></td>
-<td><p>Optional. One of the predefined numbers which specifies the aggregation method to use for specified table cell. Defaults to 0.</p></td>
+<tr class="row-even"><td>AggregationMethod</td>
+<td>Optional. One of the predefined numbers which specifies the aggregation method to use for specified table cell. Defaults to 0.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Aggregation Methods</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 10%" />
-<col style="width: 15%" />
-<col style="width: 75%" />
+<col width="10%" />
+<col width="15%" />
+<col width="75%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Number</p></th>
-<th class="head"><p>Method</p></th>
-<th class="head"><p>Description</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Number</th>
+<th class="head">Method</th>
+<th class="head">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>0</p></td>
-<td><p>NONE</p></td>
-<td><p>No aggregation is performed and the last valid value is returned.</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>NONE</td>
+<td>No aggregation is performed and the last valid value is returned.</td>
 </tr>
-<tr class="row-odd"><td><p>1</p></td>
-<td><p>AVERAGE</p></td>
-<td><p>Calculates the average of all received values.</p></td>
+<tr class="row-odd"><td>1</td>
+<td>AVERAGE</td>
+<td>Calculates the average of all received values.</td>
 </tr>
-<tr class="row-even"><td><p>2</p></td>
-<td><p>COUNT</p></td>
-<td><p>Counts the number of received values.</p></td>
+<tr class="row-even"><td>2</td>
+<td>COUNT</td>
+<td>Counts the number of received values.</td>
 </tr>
-<tr class="row-odd"><td><p>3</p></td>
-<td><p>COUNTA</p></td>
-<td><p>Counts all values which are not zero.</p></td>
+<tr class="row-odd"><td>3</td>
+<td>COUNTA</td>
+<td>Counts all values which are not zero.</td>
 </tr>
-<tr class="row-even"><td><p>4</p></td>
-<td><p>MAX</p></td>
-<td><p>Determines the maximum of all received values.</p></td>
+<tr class="row-even"><td>4</td>
+<td>MAX</td>
+<td>Determines the maximum of all received values.</td>
 </tr>
-<tr class="row-odd"><td><p>5</p></td>
-<td><p>MIN</p></td>
-<td><p>Determines the minimum of all received values.</p></td>
+<tr class="row-odd"><td>5</td>
+<td>MIN</td>
+<td>Determines the minimum of all received values.</td>
 </tr>
-<tr class="row-even"><td><p>6</p></td>
-<td><p>PRODUCT</p></td>
-<td><p>Calculates the product of all received values.</p></td>
+<tr class="row-even"><td>6</td>
+<td>PRODUCT</td>
+<td>Calculates the product of all received values.</td>
 </tr>
-<tr class="row-odd"><td><p>7</p></td>
-<td><p>STDEV.S</p></td>
-<td><p>Calculates the standard deviation of all recieved values.</p></td>
+<tr class="row-odd"><td>7</td>
+<td>STDEV.S</td>
+<td>Calculates the standard deviation of all recieved values.</td>
 </tr>
-<tr class="row-even"><td><p>8</p></td>
-<td><p>STDEV.P</p></td>
-<td><p>Currently <strong>not available</strong>!!</p></td>
+<tr class="row-even"><td>8</td>
+<td>STDEV.P</td>
+<td>Currently <strong>not available</strong>!!</td>
 </tr>
-<tr class="row-odd"><td><p>9</p></td>
-<td><p>SUM</p></td>
-<td><p>Calculates the sum of all received values.</p></td>
+<tr class="row-odd"><td>9</td>
+<td>SUM</td>
+<td>Calculates the sum of all received values.</td>
 </tr>
 </tbody>
 </table>
@@ -331,51 +332,51 @@ for a column index which can be automatically added to the left or right.</p>
 <p>TRUE or an <a class="reference internal" href="../../others.html#error"><span class="std std-ref">error</span></a> value.</p>
 <p><strong>Example</strong>
 Below examples assumes following cells in range <strong>A3:D5</strong></p>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
 </colgroup>
-<tbody>
-<tr class="row-odd"><td><p>Time</p></td>
-<td><p>Turbine 1</p></td>
-<td><p>Turbine 2</p></td>
-<td><p>Turbine 3</p></td>
+<tbody valign="top">
+<tr class="row-odd"><td>Time</td>
+<td>Turbine 1</td>
+<td>Turbine 2</td>
+<td>Turbine 3</td>
 </tr>
-<tr class="row-even"><td><p>93370</p></td>
-<td><p>1000</p></td>
-<td><p>2000</p></td>
-<td><p>3000</p></td>
+<tr class="row-even"><td>93370</td>
+<td>1000</td>
+<td>2000</td>
+<td>3000</td>
 </tr>
-<tr class="row-odd"><td><p>93360</p></td>
-<td><p>1500</p></td>
-<td><p>2500</p></td>
-<td><p>3500</p></td>
+<tr class="row-odd"><td>93360</td>
+<td>1500</td>
+<td>2500</td>
+<td>3500</td>
 </tr>
 </tbody>
 </table>
-<table class="colwidths-given docutils align-default">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col style="width: 40%" />
-<col style="width: 10%" />
-<col style="width: 50%" />
+<col width="40%" />
+<col width="10%" />
+<col width="50%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Function</p></th>
-<th class="head"><p>Result</p></th>
-<th class="head"><p>Description</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Result</th>
+<th class="head">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>=TABLE.UPDATE(A3:D5, 42, 93360, “Turbine 1”)</p></td>
-<td><p>TRUE</p></td>
-<td><p>Sets value in table cell (93360, “Turbine 1”) to 42</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>=TABLE.UPDATE(A3:D5, 42, 93360, “Turbine 1”)</td>
+<td>TRUE</td>
+<td>Sets value in table cell (93360, “Turbine 1”) to 42</td>
 </tr>
-<tr class="row-odd"><td><p>=TABLE.UPDATE(A3:D5, 42, 93300, “Turbine 42”, 1, 1)</p></td>
-<td><p>TRUE</p></td>
-<td><p>Inserts new row and column indices to the bottom and right of the table and sets the corresponding table cell to 42. Note that the row with index 93370 and the column with index “Turbine 1” are moved out of the table.</p></td>
+<tr class="row-odd"><td>=TABLE.UPDATE(A3:D5, 42, 93300, “Turbine 42”, 1, 1)</td>
+<td>TRUE</td>
+<td>Inserts new row and column indices to the bottom and right of the table and sets the corresponding table cell to 42. Note that the row with index 93370 and the column with index “Turbine 1” are moved out of the table.</td>
 </tr>
 </tbody>
 </table>
@@ -421,13 +422,21 @@ Below examples assumes following cells in range <strong>A3:D5</strong></p>
   
 
 	
-		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+		<script type="text/javascript">
+			var DOCUMENTATION_OPTIONS = {
+				URL_ROOT:'../../',
+				VERSION:'2.0.0',
+				LANGUAGE:'None',
+				COLLAPSE_INDEX:false,
+				FILE_SUFFIX:'.html',
+				HAS_SOURCE:  true,
+				SOURCELINK_SUFFIX: '.txt'
+			};
+		</script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-			<script type="text/javascript" src="../../_static/language_data.js"></script>
-			<script type="text/javascript" src="../../_static/contentui.js"></script>
-		
+	
 
   
 

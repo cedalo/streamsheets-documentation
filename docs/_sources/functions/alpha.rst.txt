@@ -112,6 +112,7 @@ Alphabetical
    info/isodd
    streamsheet/json
    date/jsontime2excel
+   streamsheet/jsontorange
    streamsheet/jsonvalue
    streams/kafkacommand
    streams/kafkapublish
