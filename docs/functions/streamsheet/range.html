@@ -149,7 +149,6 @@
 <li class="toctree-l3"><a class="reference internal" href="tableupdate.html">TABLE.UPDATE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="triggerstep.html">TRIGGERSTEP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="webpage.html">WEBPAGE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="write.html">WRITE</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../text.html">Text</a></li>
@@ -230,53 +229,53 @@
             
   <div class="section" id="range">
 <span id="id1"></span><h1>RANGE<a class="headerlink" href="#range" title="Permalink to this headline">¶</a></h1>
-<p>Creates a nested <a class="reference internal" href="../../glossary.html#term-json"><span class="xref std std-term">JSON</span></a> array from specified cell range. Basically this is the same as using <span class="xref std std-ref">array</span> with nested and flat parameter set to true.</p>
+<p>Creates a nested <a class="reference internal" href="../../glossary.html#term-json"><span class="xref std std-term">JSON</span></a> array from specified cell range. Basically this is the same as using <a class="reference internal" href="array.html#array"><span class="std std-ref">ARRAY</span></a> with nested and flat parameter set to true.</p>
 <p><strong>Syntax</strong></p>
 <p>=RANGE(Cellrange)</p>
 <p><strong>Arguments</strong></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col style="width: 20%" />
+<col style="width: 80%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Name</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Cellrange</td>
-<td>Source Range to retrieve data from.</td>
+<tbody>
+<tr class="row-even"><td><p>Cellrange</p></td>
+<td><p>Source Range to retrieve data from.</p></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
 <p>A nested list of cell values.</p>
 <p><strong>Example</strong></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="45%" />
-<col width="10%" />
-<col width="45%" />
+<col style="width: 45%" />
+<col style="width: 10%" />
+<col style="width: 45%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Function</th>
-<th class="head">Result</th>
-<th class="head">Comment</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Result</p></th>
+<th class="head"><p>Comment</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>=RANGE(A1:A1)</td>
-<td>[[42]]</td>
-<td>Range defines only one cell, so returned list contains one list with one value.</td>
+<tbody>
+<tr class="row-even"><td><p>=RANGE(A1:A1)</p></td>
+<td><p>[[42]]</p></td>
+<td><p>Range defines only one cell, so returned list contains one list with one value.</p></td>
 </tr>
-<tr class="row-odd"><td>=RANGE(A1:C1)</td>
-<td>[[42, 23, 13]]</td>
-<td>Range defines 3 values over 1 row, so returned list contains a list with 3 values.</td>
+<tr class="row-odd"><td><p>=RANGE(A1:C1)</p></td>
+<td><p>[[42, 23, 13]]</p></td>
+<td><p>Range defines 3 values over 1 row, so returned list contains a list with 3 values.</p></td>
 </tr>
-<tr class="row-even"><td>=RANGE(A1:B2)</td>
-<td>[[42, 23], [13, 17]]</td>
-<td>Range defines 4 values over 2 rows, so returned list contains 2 lists with 2 values each.</td>
+<tr class="row-even"><td><p>=RANGE(A1:B2)</p></td>
+<td><p>[[42, 23], [13, 17]]</p></td>
+<td><p>Range defines 4 values over 2 rows, so returned list contains 2 lists with 2 values each.</p></td>
 </tr>
 </tbody>
 </table>
@@ -322,21 +321,13 @@
   
 
 	
-		<script type="text/javascript">
-			var DOCUMENTATION_OPTIONS = {
-				URL_ROOT:'../../',
-				VERSION:'2.0.0',
-				LANGUAGE:'None',
-				COLLAPSE_INDEX:false,
-				FILE_SUFFIX:'.html',
-				HAS_SOURCE:  true,
-				SOURCELINK_SUFFIX: '.txt'
-			};
-		</script>
+		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-	
+			<script type="text/javascript" src="../../_static/language_data.js"></script>
+			<script type="text/javascript" src="../../_static/contentui.js"></script>
+		
 
   
 

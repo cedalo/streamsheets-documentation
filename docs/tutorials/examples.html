@@ -199,8 +199,8 @@ After starting the App the requested information will now appear in the Target R
 To begin with we have to create Streams, which are connected the OPC UA Server of our choice.</p>
 <p>Open up the Stream Tab of your Dashboard and create a new OPC UA <a class="reference internal" href="../glossary.html#term-connector"><span class="xref std std-term">Connector</span></a>. Enter the URL of the Server you want to connect to. In this tutorial the OPC UA Server is in the local network. You will need your own OPC UA Server or go to <a class="reference external" href="http://opcuaserver.com/">http://opcuaserver.com/</a> where you can find a series of open OPC UA Server.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">To connect to the Streamsheets internal OPC UA server use <em>streamsheets-service-opcua</em> as host name and <em>api/v1.0/OPCUA/cedalo/machineserver</em> as the resource path.</p>
+<p class="admonition-title">Note</p>
+<p>To connect to the Streamsheets internal OPC UA server use <em>streamsheets-service-opcua</em> as host name and <em>api/v1.0/OPCUA/cedalo/machineserver</em> as the resource path.</p>
 </div>
 <p><strong>OPC UA Consumer &amp; Producer:</strong>
 Create a new Consumer, based on the created Connector. Enter the Node ID you want receive and safe your changes (the polling interval defines the interval where the Consumer requests new data from the server). Create a Producer, again based on the newly created Connector.</p>
@@ -335,7 +335,7 @@ TRUE or FALSE. Upsert decides, if, when a query can´t be found, the document is
 <p><em>Write Data in InfluxDB with the REQUEST function</em></p>
 <div class="line-block">
 <div class="line"><strong>Query Data:</strong></div>
-<div class="line">To Query Data we use the <span class="xref std std-ref">restrequest</span> function with the GET Method and write the <a class="reference internal" href="../glossary.html#term-query"><span class="xref std std-term">query</span></a> into the <a class="reference internal" href="../glossary.html#term-url"><span class="xref std std-term">URL</span></a>. There are plenty ways to query your Data. You can have a look at them <a class="reference external" href="https://docs.influxdata.com/influxdb/v1.7/query_language/data_exploration/">here</a>. In our simple example we query all data of the last minute from our h2o_feet measurement.</div>
+<div class="line">To Query Data we use the <a class="reference internal" href="../functions/streams/restrequest.html#restrequest"><span class="std std-ref">REST.REQUEST</span></a> function with the GET Method and write the <a class="reference internal" href="../glossary.html#term-query"><span class="xref std std-term">query</span></a> into the <a class="reference internal" href="../glossary.html#term-url"><span class="xref std std-term">URL</span></a>. There are plenty ways to query your Data. You can have a look at them <a class="reference external" href="https://docs.influxdata.com/influxdb/v1.7/query_language/data_exploration/">here</a>. In our simple example we query all data of the last minute from our h2o_feet measurement.</div>
 </div>
 <blockquote>
 <div><div class="line-block">
@@ -432,21 +432,13 @@ Until then the creation of timescaledb Streams is dispensable. When using timesc
   
 
 	
-		<script type="text/javascript">
-			var DOCUMENTATION_OPTIONS = {
-				URL_ROOT:'../',
-				VERSION:'2.0.0',
-				LANGUAGE:'None',
-				COLLAPSE_INDEX:false,
-				FILE_SUFFIX:'.html',
-				HAS_SOURCE:  true,
-				SOURCELINK_SUFFIX: '.txt'
-			};
-		</script>
+		<script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
 			<script type="text/javascript" src="../_static/jquery.js"></script>
 			<script type="text/javascript" src="../_static/underscore.js"></script>
 			<script type="text/javascript" src="../_static/doctools.js"></script>
-	
+			<script type="text/javascript" src="../_static/language_data.js"></script>
+			<script type="text/javascript" src="../_static/contentui.js"></script>
+		
 
   
 

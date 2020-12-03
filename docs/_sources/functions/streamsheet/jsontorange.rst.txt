@@ -2,9 +2,9 @@
 JSON.TO.RANGE
 -----------------------------
 
-Writes the content of given JSON to a specified cell range. It is recommended, but not a mandatory, to encode passed JSON with either :ref:`array`,
+Writes the content of given json to a specified cell range. It is recommended, but not a mandatory, to encode passed json with either :ref:`array`,
 :ref:`dictionary`, :ref:`range` or the :ref:`json` function itself. For better results the encoding type and direction 
-parameters can be specified. Please refer to :ref:`JSON.VALUE` if only a single JSON value should be extracted.
+parameters can be specified. Please refer to :ref:`JSON.VALUE` if only a single json value should be extracted.
 
 
 **Syntax**
@@ -21,16 +21,16 @@ parameters can be specified. Please refer to :ref:`JSON.VALUE` if only a single 
    * - Name
      - Description
    * - JSON
-     - A JSON object which data will be writen to specified target range.
+     - A json object which data will be writen to specified target range.
    * - TargetRange
-     - A cell range to write JSON data to. If the range size covers only one cell, it will be automatically increased to match content of given JSON.
+     - A cell range to write json data to. If the range size covers only one cell, it will be automatically increased to match content of given json.
    * - Type
-     - Optional. A text which describes the function used for encoding. Should be one of "ARRAY", "DICTIONARY", "JSON", "JSONFLAT" or "RANGE".
-       Note: the difference beteween "JSON" and "JSONFLAT" is that "JSONFLAT" traverses the complete JSON while "JSON" stops after first level.
-       Defaults to "JSON".
+     - Optional. A text which describes the function used for encoding. Should be one of ARRAY, DICTIONARY, JSON, JSONROOT or RANGE.
+       Note: the difference beteween JSON and JSONROOT is that JSON traverses the complete json while JSONROOT stops after first level.
+       Defaults to JSON.
    * - Direction
-     - Optional. Specify TRUE to align keys vertically for ARRAY, JSON and RANGE type and horizontally for DICTIONARY type.
-       Note that the result depends on the direction used to encode given JSON. Defaults to TRUE.
+     - Optional. Specify TRUE to align keys vertically for ARRAY, JSON, JSONROOT and RANGE type and horizontally for DICTIONARY type.
+       Note that the result depends on the direction used to encode given json. Defaults to TRUE.
 
 
 **Return Value**

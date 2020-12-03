@@ -149,7 +149,6 @@
 <li class="toctree-l3"><a class="reference internal" href="tableupdate.html">TABLE.UPDATE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="triggerstep.html">TRIGGERSTEP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="webpage.html">WEBPAGE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="write.html">WRITE</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../text.html">Text</a></li>
@@ -230,37 +229,37 @@
             
   <div class="section" id="json-to-range">
 <h1>JSON.TO.RANGE<a class="headerlink" href="#json-to-range" title="Permalink to this headline">¶</a></h1>
-<p>Writes the content of given JSON to a specified cell range. It is recommended, but not a mandatory, to encode passed JSON with either <span class="xref std std-ref">array</span>,
-<span class="xref std std-ref">dictionary</span>, <a class="reference internal" href="range.html#range"><span class="std std-ref">RANGE</span></a> or the <span class="xref std std-ref">json</span> function itself. For better results the encoding type and direction
-parameters can be specified. Please refer to <a class="reference internal" href="jsonvalue.html#json-value"><span class="std std-ref">JSON.VALUE</span></a> if only a single JSON value should be extracted.</p>
+<p>Writes the content of given json to a specified cell range. It is recommended, but not a mandatory, to encode passed json with either <a class="reference internal" href="array.html#array"><span class="std std-ref">ARRAY</span></a>,
+<a class="reference internal" href="dictionary.html#dictionary"><span class="std std-ref">DICTIONARY</span></a>, <a class="reference internal" href="range.html#range"><span class="std std-ref">RANGE</span></a> or the <a class="reference internal" href="json.html#json"><span class="std std-ref">JSON</span></a> function itself. For better results the encoding type and direction
+parameters can be specified. Please refer to <a class="reference internal" href="jsonvalue.html#json-value"><span class="std std-ref">JSON.VALUE</span></a> if only a single json value should be extracted.</p>
 <p><strong>Syntax</strong></p>
 <p>=JSON.TO.RANGE(JSON, TargetRange [, Type, Direction])</p>
 <p><strong>Arguments</strong></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col style="width: 20%" />
+<col style="width: 80%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Name</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>JSON</td>
-<td>A JSON object which data will be writen to specified target range.</td>
+<tbody>
+<tr class="row-even"><td><p>JSON</p></td>
+<td><p>A json object which data will be writen to specified target range.</p></td>
 </tr>
-<tr class="row-odd"><td>TargetRange</td>
-<td>A cell range to write JSON data to. If the range size covers only one cell, it will be automatically increased to match content of given JSON.</td>
+<tr class="row-odd"><td><p>TargetRange</p></td>
+<td><p>A cell range to write json data to. If the range size covers only one cell, it will be automatically increased to match content of given json.</p></td>
 </tr>
-<tr class="row-even"><td>Type</td>
-<td>Optional. A text which describes the function used for encoding. Should be one of “ARRAY”, “DICTIONARY”, “JSON”, “JSONFLAT” or “RANGE”.
-Note: the difference beteween “JSON” and “JSONFLAT” is that “JSONFLAT” traverses the complete JSON while “JSON” stops after first level.
-Defaults to “JSON”.</td>
+<tr class="row-even"><td><p>Type</p></td>
+<td><p>Optional. A text which describes the function used for encoding. Should be one of ARRAY, DICTIONARY, JSON, JSONROOT or RANGE.
+Note: the difference beteween JSON and JSONROOT is that JSON traverses the complete json while JSONROOT stops after first level.
+Defaults to JSON.</p></td>
 </tr>
-<tr class="row-odd"><td>Direction</td>
-<td>Optional. Specify TRUE to align keys vertically for ARRAY, JSON and RANGE type and horizontally for DICTIONARY type.
-Note that the result depends on the direction used to encode given JSON. Defaults to TRUE.</td>
+<tr class="row-odd"><td><p>Direction</p></td>
+<td><p>Optional. Specify TRUE to align keys vertically for ARRAY, JSON, JSONROOT and RANGE type and horizontally for DICTIONARY type.
+Note that the result depends on the direction used to encode given json. Defaults to TRUE.</p></td>
 </tr>
 </tbody>
 </table>
@@ -268,66 +267,66 @@ Note that the result depends on the direction used to encode given JSON. Default
 <p>TRUE, if no error occurred, otherwise an <a class="reference internal" href="../../others.html#error"><span class="std std-ref">error</span></a> value.</p>
 <p><strong>Example</strong>
 Below examples assumes following SourceRange:</p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="40%" />
-<col width="30%" />
-<col width="30%" />
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">&#160;</th>
-<th class="head">A</th>
-<th class="head">B</th>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>1</td>
-<td>v1</td>
-<td>23</td>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>v1</p></td>
+<td><p>23</p></td>
 </tr>
-<tr class="row-odd"><td>2</td>
-<td>v2</td>
-<td>42</td>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>v2</p></td>
+<td><p>42</p></td>
 </tr>
 </tbody>
 </table>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="30%" />
-<col width="70%" />
+<col style="width: 30%" />
+<col style="width: 70%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Function</th>
-<th class="head">Result</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Result</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>=JSON.TO.RANGE(ARRAY(A1:B2),A5:B6,”ARRAY”)</td>
-<td><div class="first last line-block">
+<tbody>
+<tr class="row-even"><td><p>=JSON.TO.RANGE(ARRAY(A1:B2),A5:B6,”ARRAY”)</p></td>
+<td><div class="line-block">
 <div class="line">Results in:</div>
 <div class="line">A5=”v1”, B5=”23”</div>
 <div class="line">A6=”v1”, B6=”42”</div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>=JSON.TO.RANGE(DICTIONARY(A1:B2),A5:B6,”DICTIONARY”,FALSE)</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p>=JSON.TO.RANGE(DICTIONARY(A1:B2),A5:B6,”DICTIONARY”,FALSE)</p></td>
+<td><div class="line-block">
 <div class="line">Results in:</div>
 <div class="line">A5=”v1”, B5=”23”</div>
 <div class="line">A6=”v1”, B6=”42”</div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>=JSON.TO.RANGE(JSON(A1:B2),A5:B6,FALSE)</td>
-<td><div class="first last line-block">
+<tr class="row-even"><td><p>=JSON.TO.RANGE(JSON(A1:B2),A5:B6,FALSE)</p></td>
+<td><div class="line-block">
 <div class="line">Results in:</div>
 <div class="line">A5=”v1”, B5=”v2”</div>
 <div class="line">A6=”23”, B6=”42”</div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td>=JSON.TO.RANGE(RANGE(A1:B2),A5:B6,”RANGE”,FALSE)</td>
-<td><div class="first last line-block">
+<tr class="row-odd"><td><p>=JSON.TO.RANGE(RANGE(A1:B2),A5:B6,”RANGE”,FALSE)</p></td>
+<td><div class="line-block">
 <div class="line">Results in:</div>
 <div class="line">A5=”v1”, B5=”v2”</div>
 <div class="line">A6=”23”, B6=”42”</div>
@@ -378,21 +377,13 @@ Below examples assumes following SourceRange:</p>
   
 
 	
-		<script type="text/javascript">
-			var DOCUMENTATION_OPTIONS = {
-				URL_ROOT:'../../',
-				VERSION:'2.0.0',
-				LANGUAGE:'None',
-				COLLAPSE_INDEX:false,
-				FILE_SUFFIX:'.html',
-				HAS_SOURCE:  true,
-				SOURCELINK_SUFFIX: '.txt'
-			};
-		</script>
+		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-	
+			<script type="text/javascript" src="../../_static/language_data.js"></script>
+			<script type="text/javascript" src="../../_static/contentui.js"></script>
+		
 
   
 

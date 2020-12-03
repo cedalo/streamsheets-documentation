@@ -25,7 +25,7 @@ Reads the values from a :term:`JSON` object using the given key. Mainly used to 
    * - TargetCell or Range
      - Optional. Target cell or range to write the resulting value into.
    * - Type
-     - Optional. Type of Value. Allowed types are String, Number, Boolean, Array, Dictionary, Json or Jsonflat. The type defines the color of the target cell.
+     - Optional. Type of Value. Allowed types are String, Number, Boolean, Array, Dictionary, Json or Jsonroot. The type defines the color of the target cell. Defaults to Json.
    * - Direction
      - Optional. Direction how data will be aligned, if a dictionary is read. FALSE aligns the keys
        vertically, TRUE aligns the keys horizontally. By default the function tries to conclude from the size of the

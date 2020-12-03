@@ -123,7 +123,6 @@
 <li class="toctree-l3"><a class="reference internal" href="inboxdata.html">INBOXDATA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inboxmetadata.html">INBOXMETADATA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="json.html">JSON</a></li>
-<li class="toctree-l3"><a class="reference internal" href="jsontorange.html">JSON.TO.RANGE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="jsonvalue.html">JSON.VALUE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="loopcount.html">LOOPCOUNT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="loopindex.html">LOOPINDEX</a></li>
@@ -228,70 +227,70 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <span class="target" id="outboxdata"></span><div class="section" id="id1">
-<h1>OUTBOXDATA<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="outboxdata">
+<span id="id1"></span><h1>OUTBOXDATA<a class="headerlink" href="#outboxdata" title="Permalink to this headline">¶</a></h1>
 <p>Creates a <a class="reference internal" href="../../glossary.html#term-json"><span class="xref std std-term">JSON</span></a> key from the given values or range to reference data from within a message. This function is
-normally used in the <span class="xref std std-ref">WRITE</span> function. OUTBOXDATA references values from the Data section of a message.</p>
+normally used in the <a class="reference internal" href="write.html#write"><span class="std std-ref">WRITE</span></a> function. OUTBOXDATA references values from the Data section of a message.</p>
 <p><strong>Syntax</strong></p>
 <p>=OUTBOXDATA(Message, ValuesOrRange)</p>
 <p><strong>Arguments</strong></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col style="width: 20%" />
+<col style="width: 80%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Name</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Message</td>
-<td>Message to reference data from.</td>
+<tbody>
+<tr class="row-even"><td><p>Message</p></td>
+<td><p>Message to reference data from.</p></td>
 </tr>
-<tr class="row-odd"><td>ValuesOrRange</td>
-<td>A list of values or a range of cells describing the path to the element path within a JSON structure.</td>
+<tr class="row-odd"><td><p>ValuesOrRange</p></td>
+<td><p>A list of values or a range of cells describing the path to the element path within a JSON structure.</p></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
 <p>A string key to provide a path within a message.</p>
 <p><strong>Example</strong></p>
-<table border="1" class="colwidths-given docutils">
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="32%" />
-<col width="36%" />
-<col width="32%" />
+<col style="width: 32%" />
+<col style="width: 36%" />
+<col style="width: 32%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Function</th>
-<th class="head">Result</th>
-<th class="head">Comment</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Result</p></th>
+<th class="head"><p>Comment</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>=OUTBOXDATA(“Message, “NewItem”)</td>
-<td>[Message][Newitem]</td>
-<td>Returns an identifier that can be used in other Streamsheet functions like WRITE.</td>
+<tbody>
+<tr class="row-even"><td><p>=OUTBOXDATA(“Message, “NewItem”)</p></td>
+<td><p>[Message][Newitem]</p></td>
+<td><p>Returns an identifier that can be used in other Streamsheet functions like WRITE.</p></td>
 </tr>
-<tr class="row-odd"><td>=OUTBOXDATA(“Message”, B1:B2)</td>
-<td>[Message][Customer][Name]</td>
-<td>Here the values within the cell range B1:B2 (“Customer”, “Name”) will be used to concatenate the JSON path.</td>
+<tr class="row-odd"><td><p>=OUTBOXDATA(“Message”, B1:B2)</p></td>
+<td><p>[Message][Customer][Name]</p></td>
+<td><p>Here the values within the cell range B1:B2 (“Customer”, “Name”) will be used to concatenate the JSON path.</p></td>
 </tr>
-<tr class="row-even"><td>=<span class="xref std std-ref">WRITE</span>(OUTBOXDATA(“Message”, “Customer”, “Name”), C7, “String”)</td>
-<td>Name</td>
-<td>The WRITE function returns the last part of the JSON Path. The value in C7 will be written into the Message
-at the given JSON Path.</td>
+<tr class="row-even"><td><p>=<a class="reference internal" href="write.html#write"><span class="std std-ref">WRITE</span></a>(OUTBOXDATA(“Message”, “Customer”, “Name”), C7, “String”)</p></td>
+<td><p>Name</p></td>
+<td><p>The WRITE function returns the last part of the JSON Path. The value in C7 will be written into the Message
+at the given JSON Path.</p></td>
 </tr>
-<tr class="row-odd"><td><div class="first last line-block">
+<tr class="row-odd"><td><div class="line-block">
 <div class="line">=WRITE(OUTBOXDATA(“Message”,”Output”,-1),JSON(J22:K24),)</div>
 </div>
 </td>
-<td><div class="first last line-block">
+<td><div class="line-block">
 <div class="line"><img alt="inc" src="../../_images/increment.PNG" /></div>
 </div>
 </td>
-<td><div class="first last line-block">
+<td><div class="line-block">
 <div class="line">Pro tipp: If you want to create an array in the Outbox, use -1 as the last OUTBOXDATA() parameter. This way the array will automatically increment starting from 0.</div>
 </div>
 </td>
@@ -340,21 +339,13 @@ at the given JSON Path.</td>
   
 
 	
-		<script type="text/javascript">
-			var DOCUMENTATION_OPTIONS = {
-				URL_ROOT:'../../',
-				VERSION:'2.0.0',
-				LANGUAGE:'None',
-				COLLAPSE_INDEX:false,
-				FILE_SUFFIX:'.html',
-				HAS_SOURCE:  true,
-				SOURCELINK_SUFFIX: '.txt'
-			};
-		</script>
+		<script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 			<script type="text/javascript" src="../../_static/jquery.js"></script>
 			<script type="text/javascript" src="../../_static/underscore.js"></script>
 			<script type="text/javascript" src="../../_static/doctools.js"></script>
-	
+			<script type="text/javascript" src="../../_static/language_data.js"></script>
+			<script type="text/javascript" src="../../_static/contentui.js"></script>
+		
 
   
 
