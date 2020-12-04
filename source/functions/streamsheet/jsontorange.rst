@@ -29,8 +29,8 @@ parameters can be specified. Please refer to :ref:`JSON.VALUE` if only a single 
        Note: the difference beteween JSON and JSONROOT is that JSON traverses the complete json while JSONROOT stops after first level.
        Defaults to JSON.
    * - Direction
-     - Optional. Specify TRUE to align keys vertically for ARRAY, JSON, JSONROOT and RANGE type and horizontally for DICTIONARY type.
-       Note that the result depends on the direction used to encode given json. Defaults to TRUE.
+     - Optional. Specify TRUE to align keys vertically for ARRAY, JSON and JSONROOT type and horizontally for DICTIONARY and RANGE type.
+       Note that the result might depends on the direction used to encode given json. Defaults to TRUE.
 
 
 **Return Value**
