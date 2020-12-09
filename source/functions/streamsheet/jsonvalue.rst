@@ -4,7 +4,7 @@ JSON.VALUE
 -----------------------------
 
 Returns a value from a JSON object. The value to return corresponds to the path specified by given keys. Please refer
-to :ref:`JSON.TO.RANGE <jsontorange>` for writing the complete data of a JSON object to the sheet.
+to :ref:`JSON.RANGE <jsonrange>` for writing the complete data of a JSON object to the sheet.
 
 **Syntax**
 
