@@ -27,9 +27,7 @@ Reads the values from a :term:`JSON` object using the given key. Mainly used to 
    * - Type
      - Optional. Type of Value. Allowed types are String, Number, Bool/Boolean, Array, Dictionary, Json or Jsonroot. The type defines the color of the target cell. Defaults to Json.
    * - Direction
-     - Optional. Direction how data will be aligned, if a dictionary is read. FALSE aligns the keys
-       vertically, TRUE aligns the keys horizontally. By default the function tries to conclude from the size of the
-       target range, which direction is used. So defining this is only necessary if rows and columns are equal.
+     - Optional. Specify TRUE to align keys vertically for type ARRAY, JSON or JSONROOT and horizontally for type DICTIONARY or RANGE. Defaults to TRUE.
    * - ErrorOnMissing
      - Optional. If this is set to TRUE #NA! will be returned if no data is available. If set to FALSE last read value
        will be returned or a default value if none was read before. Default is FALSE.

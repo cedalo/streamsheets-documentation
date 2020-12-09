@@ -1,5 +1,5 @@
-.. _jsontorange:
-JSON.TORANGE
+.. _jsonrange:
+JSON.RANGE
 -----------------------------
 
 Writes the content of given json to a specified cell range. It is recommended, but not a mandatory, to encode passed json with either :ref:`array`,
@@ -9,7 +9,7 @@ parameters can be specified. Please refer to :ref:`JSON.VALUE` if only a single 
 
 **Syntax**
 
-=JSON.TORANGE(JSON, TargetRange [, Type, Direction])
+=JSON.RANGE(JSON, TargetRange [, Type, Direction])
 
 
 **Arguments**
@@ -29,7 +29,7 @@ parameters can be specified. Please refer to :ref:`JSON.VALUE` if only a single 
        Note: the difference beteween JSON and JSONROOT is that JSON traverses the complete json while JSONROOT stops after first level.
        Defaults to JSON.
    * - Direction
-     - Optional. Specify TRUE to align keys vertically for ARRAY, JSON and JSONROOT type and horizontally for DICTIONARY and RANGE type.
+     - Optional. Specify TRUE to align keys vertically for type ARRAY, JSON or JSONROOT and horizontally for type DICTIONARY or RANGE.
        Note that the result might depends on the direction used to encode given json. Defaults to TRUE.
 
 
@@ -62,19 +62,19 @@ Below examples assumes following SourceRange:
 
    * - Function
      - Result
-   * - =JSON.TORANGE(ARRAY(A1:B2),A5:B6,"ARRAY")
+   * - =JSON.RANGE(ARRAY(A1:B2),A5:B6,"ARRAY")
      - | Results in:
        | A5="v1", B5="23"
        | A6="v1", B6="42"
-   * - =JSON.TORANGE(DICTIONARY(A1:B2),A5:B6,"DICTIONARY",FALSE)
+   * - =JSON.RANGE(DICTIONARY(A1:B2),A5:B6,"DICTIONARY",FALSE)
      - | Results in:
        | A5="v1", B5="23"
        | A6="v1", B6="42"
-   * - =JSON.TORANGE(JSON(A1:B2),A5:B6,FALSE)
+   * - =JSON.RANGE(JSON(A1:B2),A5:B6,FALSE)
      - | Results in:
        | A5="v1", B5="v2"
        | A6="23", B6="42"
-   * - =JSON.TORANGE(RANGE(A1:B2),A5:B6,"RANGE",FALSE)
+   * - =JSON.RANGE(RANGE(A1:B2),A5:B6,"RANGE",FALSE)
      - | Results in:
        | A5="v1", B5="v2"
        | A6="23", B6="42"
