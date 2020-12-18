@@ -123,7 +123,7 @@
 <li class="toctree-l3"><a class="reference internal" href="inboxdata.html">INBOXDATA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inboxmetadata.html">INBOXMETADATA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="json.html">JSON</a></li>
-<li class="toctree-l3"><a class="reference internal" href="jsontorange.html">JSON.TO.RANGE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsonrange.html">JSON.RANGE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="jsonvalue.html">JSON.VALUE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="loopcount.html">LOOPCOUNT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="loopindex.html">LOOPINDEX</a></li>
@@ -254,12 +254,10 @@ can retrieve data from different sources (e.g. Inbox or Outbox).</p></td>
 <td><p>Optional. Target cell or range to write the resulting value into.</p></td>
 </tr>
 <tr class="row-even"><td><p>Type</p></td>
-<td><p>Optional. Type of Value. Allowed types are String, Number, Boolean, Array, Dictionary, Json or Jsonroot. The type defines the color of the target cell. Defaults to Json.</p></td>
+<td><p>Optional. Type of Value. Allowed types are String, Number, Bool/Boolean, Array, Dictionary, Json or Jsonroot. The type defines the color of the target cell. Defaults to Json.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Direction</p></td>
-<td><p>Optional. Direction how data will be aligned, if a dictionary is read. FALSE aligns the keys
-vertically, TRUE aligns the keys horizontally. By default the function tries to conclude from the size of the
-target range, which direction is used. So defining this is only necessary if rows and columns are equal.</p></td>
+<td><p>Optional. Specify TRUE to align keys vertically for type ARRAY, JSON or JSONROOT and horizontally for type DICTIONARY or RANGE. Defaults to TRUE.</p></td>
 </tr>
 <tr class="row-even"><td><p>ErrorOnMissing</p></td>
 <td><p>Optional. If this is set to TRUE #NA! will be returned if no data is available. If set to FALSE last read value

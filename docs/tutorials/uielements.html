@@ -198,7 +198,22 @@
 <h3>Chart Wizard<a class="headerlink" href="#chart-wizard" title="Permalink to this headline">¶</a></h3>
 <p>There are two ways to adjust Charts in Streamsheets.
 One way is to simply select the parts of the Chart, which you want to change and edit the formular, which is displayed in the edit field and/or use the toolbar icons e.g. to adjust colors etc..</p>
-<p>A more convinient way is the use of the Chart Wizard. Double click the parts of the chart you wish to adjust and the Chart Wizard will appear.</p>
+<p>A more convinient way is the use of the Chart Wizard. Double click the chart you wish to adjust and the Chart Wizard will appear.</p>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="../_images/ChWiz.png"><img alt="ChWiz" src="../_images/ChWiz.png" style="width: 186.0px; height: 375.5px;" /></a></div>
+<div class="line"><em>example view on the Chart Wizard</em></div>
+</div>
+<p>There are many ways a chart can be individually adjusted. This also depends on the kind of chart you are using. Different charts different options. In general, the chart wizard consists out of the following categories:</p>
+<ul class="simple">
+<li><p><strong>Chart:</strong> define general settings</p></li>
+<li><p><strong>Plot:</strong> define what the data source is and how to interprete it.</p></li>
+<li><p><strong>Title:</strong> define title position. Change title in edit field and title format over toolbar.</p></li>
+<li><p><strong>Legend:</strong> define legend position. Change legend format in toolbar.</p></li>
+<li><p><strong>Series:</strong> define series settings. (multiple series possible)</p></li>
+<li><p><strong>Axis:</strong>  set X&amp;Y axis settings like zooming and position. Add other X axis, if needed.</p></li>
+<li><p><strong>Grid:</strong> show or hide grid for X&amp;Y axis. Change format with toolbar.</p></li>
+<li><p><strong>Data Point:</strong> only accessible over mouseclick. Select singular data point. Change appearance.</p></li>
+</ul>
 </div>
 <div class="section" id="chart-types">
 <h3>Chart Types<a class="headerlink" href="#chart-types" title="Permalink to this headline">¶</a></h3>
@@ -274,6 +289,16 @@ Using “;” in the color column you can add line color and a specified datalab
 <p><img alt="Heat" src="../_images/HeatCha.png" /> <img alt="Range3" src="../_images/Range3.PNG" /></p>
 <p>The Heatmap Chart visulizes intensity of points on a XY Chart. The closer together the hotter (red) the map gets.
 In this example picture we used timeseries functions for the data range. Click <a class="reference internal" href="#timeseriesfunctions"><span class="std std-ref">here</span></a> if you want to know more about timeseries functions.</p>
+<div class="section" id="boxplot-chart">
+<h5>Boxplot Chart<a class="headerlink" href="#boxplot-chart" title="Permalink to this headline">¶</a></h5>
+<p><a class="reference internal" href="../_images/BoxCha.png"><img alt="Box" src="../_images/BoxCha.png" style="width: 474.40000000000003px; height: 269.6px;" /></a> <a class="reference internal" href="../_images/RangeBoxCha.png"><img alt="RangeBox" src="../_images/RangeBoxCha.png" style="width: 241.60000000000002px; height: 217.60000000000002px;" /></a></p>
+<p>The Boxplot Chart can be used to graphically visualize the median, minimum, maximum and quartiels of a data set.</p>
+</div>
+<div class="section" id="waterfall-chart">
+<h5>Waterfall Chart<a class="headerlink" href="#waterfall-chart" title="Permalink to this headline">¶</a></h5>
+<p><a class="reference internal" href="../_images/WaterCha.png"><img alt="Water" src="../_images/WaterCha.png" style="width: 576.8000000000001px; height: 332.8px;" /></a> <a class="reference internal" href="../_images/RangeWaterCha.png"><img alt="RangeWater" src="../_images/RangeWaterCha.png" style="width: 468.0px; height: 65.60000000000001px;" /></a></p>
+<p>The Waterfall Chart displays processes and their changes over set categories looking for increases, decreases, with the possibility of adding the sum.</p>
+</div>
 </div>
 </div>
 </div>
@@ -332,6 +357,7 @@ The TIMEAGGREAGATE function is the quick hack of TIMESTORE and TIMEQUERY. It mon
 <div class="line"><img alt="TAM" src="../_images/TAM.PNG" /></div>
 <div class="line"><em>Now you can use the cell of the TIMEAGGREGATE() function to display the raw data chart and the reference cell for the aggregation.</em></div>
 </div>
+<p>To create a chart with more then one data series just use multiple TIMEAGGREGATE() or TIMEQUERY() functions as the soure range.</p>
 <blockquote>
 <div><div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -428,7 +454,6 @@ It allows the end user to select a value from a list of options. This selection 
 </ul>
 <p>Integrating one or more events in the EVENT() function, adds the possibility to define actions.
 For example: <em>EVENTS(ONCLICK(COPYVALUES(A1:B11,G10:H10))</em> triggers the COPYVALUE() function after an onclick action by the user.</p>
-<p>GIF</p>
 <p>Other functions which could be used in this context:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../functions/streams/mqttpublish.html#mqttpublish"><span class="std std-ref">MQTT.PUBLISH()</span></a> (or any other <a class="reference internal" href="../functions/streams.html#streams"><span class="std std-ref">stream</span></a> function)</p></li>
@@ -439,7 +464,9 @@ For example: <em>EVENTS(ONCLICK(COPYVALUES(A1:B11,G10:H10))</em> triggers the CO
 <li><p><a class="reference internal" href="../functions/streamsheet/execute.html#execute"><span class="std std-ref">EXECUTE()</span></a></p></li>
 <li><p><a class="reference internal" href="../functions/streamsheet/feedinbox.html#feedinbox"><span class="std std-ref">FEEDINBOX()</span></a></p></li>
 <li><p><a class="reference internal" href="../functions/stack/stackadd.html#stackadd"><span class="std std-ref">STACKADD()</span></a> (or any other <a class="reference internal" href="../functions/stack.html#stack"><span class="std std-ref">stack</span></a> function)</p></li>
-<li><p><a class="reference internal" href="../functions/streamsheet/write.html#write"><span class="std std-ref">WRITE()</span></a></p></li>
+<li><p><span class="xref std std-ref">WRITE()</span></p></li>
+<li><p><a class="reference internal" href="../functions/events/showvalues.html#showvalues"><span class="std std-ref">SHOWVALUES()</span></a></p></li>
+<li><p><a class="reference internal" href="../functions/events/showdialog.html#showdialog"><span class="std std-ref">SHOWDIALOG()</span></a></p></li>
 </ul>
 </div>
 </div>

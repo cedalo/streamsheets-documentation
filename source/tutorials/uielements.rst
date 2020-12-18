@@ -24,8 +24,17 @@
 .. |TQW| image:: /images/TS/TQW.PNG
 .. |TQA| image:: /images/TS/TGA.PNG
 .. |TAM| image:: /images/TS/TAM.PNG
+.. |Box| image:: /images/ChartPictures/BoxCha.png
+        :scale: 80%
+.. |RangeBox| image:: /images/ChartPictures/RangeBoxCha.png
+        :scale: 80%
+.. |Water| image:: /images/ChartPictures/WaterCha.png
+        :scale: 80%
+.. |RangeWater| image:: /images/ChartPictures/RangeWaterCha.png
+        :scale: 80%
 
-
+.. |ChWiz| image:: /images/ChartPictures/ChWiz.png
+        :scale: 50%
 .. |Range4| image:: /images/ChartPictures/Range4.PNG
 .. |Range3| image:: /images/ChartPictures/Range3.PNG
 .. |Range2| image:: /images/ChartPictures/Range2.PNG
@@ -67,8 +76,21 @@ Chart Wizard
 There are two ways to adjust Charts in Streamsheets. 
 One way is to simply select the parts of the Chart, which you want to change and edit the formular, which is displayed in the edit field and/or use the toolbar icons e.g. to adjust colors etc..
 
-A more convinient way is the use of the Chart Wizard. Double click the parts of the chart you wish to adjust and the Chart Wizard will appear. 
+A more convinient way is the use of the Chart Wizard. Double click the chart you wish to adjust and the Chart Wizard will appear. 
 
+| |ChWiz|
+| *example view on the Chart Wizard*
+
+There are many ways a chart can be individually adjusted. This also depends on the kind of chart you are using. Different charts different options. In general, the chart wizard consists out of the following categories:
+
++ **Chart:** define general settings 
++ **Plot:** define what the data source is and how to interprete it. 
++ **Title:** define title position. Change title in edit field and title format over toolbar. 
++ **Legend:** define legend position. Change legend format in toolbar.
++ **Series:** define series settings. (multiple series possible)
++ **Axis:**  set X&Y axis settings like zooming and position. Add other X axis, if needed.
++ **Grid:** show or hide grid for X&Y axis. Change format with toolbar.  
++ **Data Point:** only accessible over mouseclick. Select singular data point. Change appearance.  
 
 Chart Types
 ``````````````````
@@ -168,6 +190,22 @@ The Heatmap Chart visulizes intensity of points on a XY Chart. The closer togeth
 In this example picture we used timeseries functions for the data range. Click :ref:`here<timeseriesfunctions>` if you want to know more about timeseries functions. 
 
 
+Boxplot Chart
+.................
+
+|Box| |RangeBox|
+
+The Boxplot Chart can be used to graphically visualize the median, minimum, maximum and quartiels of a data set.
+
+Waterfall Chart
+..................
+
+|Water| |RangeWater|
+
+The Waterfall Chart displays processes and their changes over set categories looking for increases, decreases, with the possibility of adding the sum. 
+
+
+
 
 Timeseries data
 -------------------------------
@@ -232,6 +270,8 @@ The TIMEAGGREAGATE function is the quick hack of TIMESTORE and TIMEQUERY. It mon
 |
 | |TAM|
 | *Now you can use the cell of the TIMEAGGREGATE() function to display the raw data chart and the reference cell for the aggregation.*
+
+To create a chart with more then one data series just use multiple TIMEAGGREGATE() or TIMEQUERY() functions as the soure range. 
 
         .. note:: 
                 #LIMIT appears, when the set limit of stored key value pairs is reached. This is not necessarily a problem, it only means that old stores will be overwritten by newer ones.  
@@ -327,9 +367,6 @@ Integrating one or more events in the EVENT() function, adds the possibility to 
 For example: *EVENTS(ONCLICK(COPYVALUES(A1:B11,G10:H10))* triggers the COPYVALUE() function after an onclick action by the user. 
 
 
-GIF
-
-
 Other functions which could be used in this context: 
 
 + :ref:`MQTT.PUBLISH()<mqttpublish>` (or any other :ref:`stream<streams>` function)
@@ -341,6 +378,8 @@ Other functions which could be used in this context:
 + :ref:`FEEDINBOX()<feedinbox>`
 + :ref:`STACKADD()<stackadd>` (or any other :ref:`stack<stack>` function)
 + :ref:`WRITE()<write>`
++ :ref:`SHOWVALUES()<showvalues>`
++ :ref:`SHOWDIALOG()<showdialog>`
 
 
 

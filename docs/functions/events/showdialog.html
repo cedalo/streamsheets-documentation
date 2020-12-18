@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>JSON.VALUE &mdash; Streamsheets 2.0.0 documentation</title>
+  <title>SHOWDIALOG &mdash; Streamsheets 2.0.0 documentation</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="../../_static/theme_override.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="LOOPCOUNT" href="loopcount.html" />
-    <link rel="prev" title="JSON.RANGE" href="jsonrange.html" /> 
+    <link rel="next" title="SHOWVALUES" href="showvalues.html" />
+    <link rel="prev" title="ONVALUECHANGE" href="onvaluechange.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -90,7 +90,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../chart.html">Chart</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../date.html">Date</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../engineering.html">Engineering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../events.html">Events</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../events.html">Events</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="events.html">EVENTS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="onclick.html">ONCLICK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ondoubleclick.html">ONDOUBLECLICK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="onmousedown.html">ONMOUSEDOWN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="onmouseup.html">ONMOUSEUP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="onvaluechange.html">ONVALUECHANGE</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">SHOWDIALOG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="showvalues.html">SHOWVALUES</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../info.html">Info</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../logical.html">Logical</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lookup.html">Lookup</a></li>
@@ -99,58 +109,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../stack.html">Stack</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../statistical.html">Statistical</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../streams.html">Streams</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../streamsheet.html">Streamsheet</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="array.html">ARRAY</a></li>
-<li class="toctree-l3"><a class="reference internal" href="await.html">AWAIT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="awaitone.html">AWAIT.ONE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="calc.html">CALC</a></li>
-<li class="toctree-l3"><a class="reference internal" href="colorconvert.html">COLOR.CONVERT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="continue.html">CONTINUE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="copyvalues.html">COPYVALUES</a></li>
-<li class="toctree-l3"><a class="reference internal" href="counter.html">COUNTER</a></li>
-<li class="toctree-l3"><a class="reference internal" href="delete.html">DELETE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="deletecells.html">DELETECELLS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dictionary.html">DICTIONARY</a></li>
-<li class="toctree-l3"><a class="reference internal" href="edgedetect.html">EDGE.DETECT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="execute.html">EXECUTE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="feedinbox.html">FEEDINBOX</a></li>
-<li class="toctree-l3"><a class="reference internal" href="getcycle.html">GETCYCLE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="getcycletime.html">GETCYCLETIME</a></li>
-<li class="toctree-l3"><a class="reference internal" href="getexecutestep.html">GETEXECUTESTEP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="getmachinestep.html">GETMACHINESTEP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="getstep.html">GETSTEP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="inbox.html">INBOX</a></li>
-<li class="toctree-l3"><a class="reference internal" href="inboxdata.html">INBOXDATA</a></li>
-<li class="toctree-l3"><a class="reference internal" href="inboxmetadata.html">INBOXMETADATA</a></li>
-<li class="toctree-l3"><a class="reference internal" href="json.html">JSON</a></li>
-<li class="toctree-l3"><a class="reference internal" href="jsonrange.html">JSON.RANGE</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">JSON.VALUE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="loopcount.html">LOOPCOUNT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="loopindex.html">LOOPINDEX</a></li>
-<li class="toctree-l3"><a class="reference internal" href="movevalues.html">MOVEVALUES</a></li>
-<li class="toctree-l3"><a class="reference internal" href="openurl.html">OPENURL</a></li>
-<li class="toctree-l3"><a class="reference internal" href="outbox.html">OUTBOX</a></li>
-<li class="toctree-l3"><a class="reference internal" href="outboxdata.html">OUTBOXDATA</a></li>
-<li class="toctree-l3"><a class="reference internal" href="outboxgetids.html">OUTBOX.GETIDS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="outboxmetadata.html">OUTBOXMETADATA</a></li>
-<li class="toctree-l3"><a class="reference internal" href="range.html">RANGE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="read.html">READ</a></li>
-<li class="toctree-l3"><a class="reference internal" href="repeatindex.html">REPEATINDEX</a></li>
-<li class="toctree-l3"><a class="reference internal" href="return.html">RETURN</a></li>
-<li class="toctree-l3"><a class="reference internal" href="select.html">SELECT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="setcycletime.html">SETCYCLETIME</a></li>
-<li class="toctree-l3"><a class="reference internal" href="setphase.html">SETPHASE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="setvalue.html">SETVALUE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sleep.html">SLEEP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="subtree.html">SUBTREE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="swapvalues.html">SWAPVALUES</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tableget.html">TABLE.GET</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tableordercolumn.html">TABLE.ORDERCOLUMN</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tableupdate.html">TABLE.UPDATE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="triggerstep.html">TRIGGERSTEP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="webpage.html">WEBPAGE</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../streamsheet.html">Streamsheet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../text.html">Text</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../timeseries.html">Timeseries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../alpha.html">Alphabetical</a></li>
@@ -208,9 +167,9 @@
         
           <li><a href="../../functions.html">Functions</a> &raquo;</li>
         
-          <li><a href="../streamsheet.html">Streamsheet</a> &raquo;</li>
+          <li><a href="../events.html">Events</a> &raquo;</li>
         
-      <li>JSON.VALUE</li>
+      <li>SHOWDIALOG</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -227,12 +186,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="json-value">
-<span id="id1"></span><h1>JSON.VALUE<a class="headerlink" href="#json-value" title="Permalink to this headline">¶</a></h1>
-<p>Returns a value from a JSON object. The value to return corresponds to the path specified by given keys. Please refer
-to <a class="reference internal" href="jsonrange.html#jsonrange"><span class="std std-ref">JSON.RANGE</span></a> for writing the complete data of a JSON object to the sheet.</p>
+  <div class="section" id="showdialog">
+<span id="id1"></span><h1>SHOWDIALOG<a class="headerlink" href="#showdialog" title="Permalink to this headline">¶</a></h1>
+<p>It is possible to export data to the App Files of an App (e.g. TIMESCALE.EXPORT()). Usually it is possible to access the App FIles over the left side menu.
+This menu is not accessible, if you only want to allow your user to be able to access a build App via the “preview” or “share App” mode.
+The SHOWDIALOG() function allows opening the App Files via event on a shape or object.</p>
 <p><strong>Syntax</strong></p>
-<p>=JSON.VALUE(JSON, Key1, Key2, …)</p>
+<p>SHOWDIALOG()</p>
 <p><strong>Arguments</strong></p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -245,42 +205,27 @@ to <a class="reference internal" href="jsonrange.html#jsonrange"><span class="st
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>JSON</p></td>
-<td><p>A JSON object to read value from.</p></td>
-</tr>
-<tr class="row-odd"><td><p>Key1…KeyN</p></td>
-<td><p>A list of keys which build up a path within given JSON object.</p></td>
+<tr class="row-even"><td><p>No parameter</p></td>
+<td><p>There are no parameter inputs neccessary</p></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
-<p>The value at specified path or an error if no JSON object is passed or path is invalid.</p>
-<p><strong>Example</strong>
-Below examples assumes following text in A1: {“Customer”: {“Name”: “Peter”, “Kids”: [“Paul”, “Mary”]}}</p>
+<p>TRUE.</p>
+<p><strong>Example</strong></p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
-<col style="width: 40%" />
-<col style="width: 10%" />
-<col style="width: 50%" />
+<col style="width: 45%" />
+<col style="width: 55%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Function</p></th>
-<th class="head"><p>Result</p></th>
 <th class="head"><p>Comment</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>=JSON.VALUE(JSON(A1),”Customer”,”Name”)</p></td>
-<td><p>Peter</p></td>
-<td><p>Value at Customer.Name</p></td>
-</tr>
-<tr class="row-odd"><td><p>=JSON.VALUE(JSON(A1),”Customer”,”Kids”, 1)</p></td>
-<td><p>Mary</p></td>
-<td><p>Value at Customer.Kids[1]</p></td>
-</tr>
-<tr class="row-even"><td><p>=JSON.VALUE(JSON(A1),”Customer”,”Kids”, “Name”)</p></td>
-<td><p>#NA</p></td>
-<td><p>Invalid json path</p></td>
+<tr class="row-even"><td><p>DRAW.BUTTON(“100285020360”,,”Button1”,22066,9182,7250,5794,,,,EVENTS(ONCLICK(SHOWDIALOG())))),,,”Button”,,FALSE)</p></td>
+<td><p>If the user clicks on the button the App Files dialog will open.</p></td>
 </tr>
 </tbody>
 </table>
@@ -294,10 +239,10 @@ Below examples assumes following text in A1: {“Customer”: {“Name”: “Pe
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="loopcount.html" class="btn btn-neutral float-right" title="LOOPCOUNT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="showvalues.html" class="btn btn-neutral float-right" title="SHOWVALUES" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="jsonrange.html" class="btn btn-neutral" title="JSON.RANGE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="onvaluechange.html" class="btn btn-neutral" title="ONVALUECHANGE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

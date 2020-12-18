@@ -3,9 +3,8 @@
 EVENTS
 ------
 
-Assign a function, that will be executed, if an event occurs on the object The event handling is only active, if the
-process is running. The events to be handles and the resulting action are defined by using a set of functions provided
-to handle events as described below.
+Assign a function, that will be executed, if a selected event occurs on the object/shape. 
+Add the EVENTS() function to a shape in the "Events" parameter. 
 
 **Syntax**
 
