@@ -88,7 +88,7 @@ There are many ways a chart can be individually adjusted. This also depends on t
 + **Title:** define title position. Change title in edit field and title format over toolbar. 
 + **Legend:** define legend position. Change legend format in toolbar.
 + **Series:** define series settings. (multiple series possible)
-+ **Axis:**  set X&Y axis settings like zooming and position. Add other X axis, if needed.
++ **Axis:**  set X&Y axis settings like zooming and position. Add other axis, if needed.
 + **Grid:** show or hide grid for X&Y axis. Change format with toolbar.  
 + **Data Point:** only accessible over mouseclick. Select singular data point. Change appearance.  
 
@@ -100,6 +100,11 @@ Chart Types
 | If there is just one variable your perfectly fine using Line, Cloumn, Bar, Pie, Dounghnut, Area , Polar Area or Radar Charts. To show the relationship between two different variables we recommend Line (X/Y) or Scatter. A bubble chart is similar to a scatter plot, but you even can introduce a third variable. For more specific use cases there are State, Stock and Funnel Charts.
 |	
 | Depending on your selected data range, you will get a dynamic or a static chart (updating references or fix data input). 
+
+.. |star| image:: /images/star.svg
+    :scale: 50%
+
+|star| *= premium feature*
 
 
 Column & Bar Chart
@@ -144,20 +149,20 @@ Stock Chart
 
 |Stock| |Range5|
 
-Stock Charts contain information about the x&y values and further the changes of a value and historical highs and lows. They use boxes to visualize these parameters. Depending on the selected version of the Stock chart one either needs three, four or five data series. 
+Stock Charts contain information about the x&y values and further the changes of a value and historical highs and lows. They use boxes to visualize these parameters. Depending on the selected version of the Stock chart one either needs three, four or five data series. |star|
 
 Funnel Chart
 ''''''''''''''''''''''
 
 |Fun| |Range2|
 
-Funnel Charts are often used for visualizing linear processes with connected stages.
+Funnel Charts are often used for visualizing linear processes with connected stages. |star|
 
 State Chart
 ''''''''''''''''''''''
 State Charts visualize differnt states. Each state has a dedicated color. To display a state chart create three columns of data consisting of X axis, values and colors. 
 Depening on the State Chart type the X axis values use either categorie or timeseries data. To further use the information the values provide, uncheck the "100%" checkbox in the chart wizard. The size of the columne now represents the value. 
-Using ";" in the color column you can add line color and a specified datalable text. To see the text activate datalable and the "state" checkbox in the chart wizard. 
+Using ";" in the color column you can add line color and a specified datalable text. To see the text activate datalable and the "state" checkbox in the chart wizard.  |star|
 
 **State Chart Category:**
 
@@ -195,14 +200,14 @@ Boxplot Chart
 
 |Box| |RangeBox|
 
-The Boxplot Chart can be used to graphically visualize the median, minimum, maximum and quartiels of a data set.
+The Boxplot Chart can be used to graphically visualize the median, minimum, maximum and quartiels of a data set. |star|
 
 Waterfall Chart
 ..................
 
 |Water| |RangeWater|
 
-The Waterfall Chart displays processes and their changes over set categories looking for increases, decreases, with the possibility of adding the sum. 
+The Waterfall Chart displays processes and their changes over set categories looking for increases, decreases, with the possibility of adding the sum. |star|
 
 
 

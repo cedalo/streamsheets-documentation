@@ -2,7 +2,11 @@
 .. |DICTIONARY1| image:: /images/DICTIONARY1.PNG
         :scale: 50%
 .. |DICTIONARY2| image:: /images/DICTIONARY2.PNG
-        :scale: 50%       
+  
+.. |DICTIONARY3| image:: /images/DICTIONARY3.PNG
+  
+.. |DICTIONARY4| image:: /images/DICTIONARY4.PNG
+           
 .. role:: blue
 
 DICTIONARY
@@ -51,6 +55,13 @@ TRUE, if successful.
        
 
            | |DICTIONARY2|
+   * - | =\ :ref:`WRITE`\ (:ref:`OUTBOXDATA`\ ("Message", "NewItem"), DICTIONARY(:blue:`A2:B5`), "Dictionary"
+       |
+       | |DICTIONARY3|
+     - | Adding a table with the dictionary function to the outbox. 
+       |
+       | |DICTIONARY4|
+
 
 
 

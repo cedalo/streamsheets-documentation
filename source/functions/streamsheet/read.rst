@@ -1,5 +1,8 @@
 .. _read:
 
+.. |Read| image:: /images/Read.png
+
+
 READ
 -----------------------------
 
@@ -40,7 +43,7 @@ The last part of the key of the data value to be retrieved.
 **Example**
 
 .. list-table::
-   :widths: 45 15 40
+   :widths: 45 40 40
    :header-rows: 1
 
    * - Function
@@ -52,4 +55,8 @@ The last part of the key of the data value to be retrieved.
    * - =READ(:ref:`INBOXDATA`\ ("", "", "Customer", "Name"), C2, "String",,TRUE)
      - :ref:`#NA! <error>`
      - Returns error code if customer name is not available because last parameter is to TRUE.
+   * - =READ(:ref:`INBOXDATA`\ (,,"Products","0"),F19:J25,"Dictionary",,TRUE)
+     - | |Read|
+       | Read function with target range. 
+     - Example to read a whole table with the help of the DICTIONARY() function and a target range. 
 
