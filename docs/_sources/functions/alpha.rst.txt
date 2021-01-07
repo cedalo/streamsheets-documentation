@@ -24,6 +24,7 @@ Alphabetical
    engineering/bin2hex
    engineering/bin2oct
    streamsheet/calc
+   chart/cellchart
    text/char
    lookup/choose
    shape/classifypoint
