@@ -51,6 +51,11 @@
 .. |history| image:: /images/History.gif
     :scale: 65 %  
 
+.. |select| image:: /images/select.PNG
+.. |shapes| image:: /images/shapes.PNG
+        :scale: 50%
+
+
 Tools & Charts
 ===============
 
@@ -300,10 +305,10 @@ In some scenarios it is necessary, to not only control data streams and implemen
 In this tutorial we cover another very useful tool Streamsheets offers, which is adding shapes. Shapes can be found next to the Chart icon in the App toolbar. 
 
 
-PICTURE
+|shapes|
 
 There are a ton of different shapes, which can be colored and sized the way you want. 
-As everything else in Streamsheets, Shapes use functions as a base. This function can be used to add dynamic settings. For example, it is possible to dynamically set the size, coordinates or displayed information of a shape, just by referencing cells from a sheet. 
+As everything else in Streamsheets, Shapes use functions as a base. A function can be used to add dynamic settings. For example, it is possible to dynamically set the size, coordinates or displayed information of a shape, just by referencing cells from a sheet. 
 All shapes have a very similar function structure:
 
 
@@ -340,7 +345,7 @@ A very fast and easy way to allow user interaction is the SELECT() function.
 It allows the end user to select a value from a list of options. This selection then can be integrated in your sheet logic. 
 
 
-PICTURE
+|select|
 
 Example use case: A dashboard is created to gather information on different type of animals in a zoo. The user is allowed to select from a list of animals. Depending on which animal is selected, the represented information change. Select “tiger” and the amount of tigers, their names etc. will be displayed or  select “koala” to see all respective information about koalas. 
 

@@ -381,9 +381,9 @@ The TIMEAGGREAGATE function is the quick hack of TIMESTORE and TIMEQUERY. It mon
 <h3>Shapes<a class="headerlink" href="#shapes" title="Permalink to this headline">¶</a></h3>
 <p>In some scenarios it is necessary, to not only control data streams and implement certain logics, but create dashboards to present the data to an end user. Dashboards are popular visual displays of data, mostly comprising charts / graphs with striking attention seeking components. If you want to learn more about how to setup Charts in Streamsheets click <a class="reference internal" href="#charts"><span class="std std-ref">here</span></a>.
 In this tutorial we cover another very useful tool Streamsheets offers, which is adding shapes. Shapes can be found next to the Chart icon in the App toolbar.</p>
-<p>PICTURE</p>
+<p><a class="reference internal" href="../_images/shapes.PNG"><img alt="shapes" src="../_images/shapes.PNG" style="width: 195.0px; height: 366.5px;" /></a></p>
 <p>There are a ton of different shapes, which can be colored and sized the way you want.
-As everything else in Streamsheets, Shapes use functions as a base. This function can be used to add dynamic settings. For example, it is possible to dynamically set the size, coordinates or displayed information of a shape, just by referencing cells from a sheet.
+As everything else in Streamsheets, Shapes use functions as a base. A function can be used to add dynamic settings. For example, it is possible to dynamically set the size, coordinates or displayed information of a shape, just by referencing cells from a sheet.
 All shapes have a very similar function structure:</p>
 <p><em>=DRAW.RECTANGLE(UnqiueId, Container, Name, X, Y, Width, Height, LineFormat, FillFormat, Attributes, Events, Angle, RotCenter)</em></p>
 <p>Format changes can be done using simple inputs like hexadecimal codes for colors or more complex inputs using functions like FILLPATTERN() (add pictures via urls) FILLLINEGRADIANT()  FILLRADIALGRADIANT(), (add color transitions) LINEFORMAT().</p>
@@ -414,7 +414,7 @@ Before we dive into details, here a short reminder:</p>
 <h4>SELECT()<a class="headerlink" href="#select" title="Permalink to this headline">¶</a></h4>
 <p>A very fast and easy way to allow user interaction is the SELECT() function.
 It allows the end user to select a value from a list of options. This selection then can be integrated in your sheet logic.</p>
-<p>PICTURE</p>
+<p><img alt="select" src="../_images/select.PNG" /></p>
 <p>Example use case: A dashboard is created to gather information on different type of animals in a zoo. The user is allowed to select from a list of animals. Depending on which animal is selected, the represented information change. Select “tiger” and the amount of tigers, their names etc. will be displayed or  select “koala” to see all respective information about koalas.</p>
 </div>
 <div class="section" id="interactive-shapes">
