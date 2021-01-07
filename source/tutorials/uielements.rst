@@ -210,6 +210,13 @@ Waterfall Chart
 The Waterfall Chart displays processes and their changes over set categories looking for increases, decreases, with the possibility of adding the sum. |star|
 
 
+Data Source
+````````````
+Every chart needs a data source to be able to display data. The most known practice is to use a data range. As seen in the "chart type" section, the ranges differ from type to type. 
+Check out the examples above to get a better idea. 
+
+Besides using data ranges, the **XY chart** offers another option for data sources. Functions. Some functions hold data in their cell. These can either be timeseries functions or query functions (:ref:`TIMEAGGREGATE()<timeaggregate>`; :ref:`TIMESCALE.SELECT()<timescaleselect>`; ...). 
+Use a cell reference on one of these functions and you are able to create XY charts without creating huge data tables on your Streamsheet.
 
 
 Timeseries data

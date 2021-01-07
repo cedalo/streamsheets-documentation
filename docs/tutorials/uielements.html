@@ -90,6 +90,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#charts">Charts</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#chart-wizard">Chart Wizard</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#chart-types">Chart Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data-source">Data Source</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#timeseries-data">Timeseries data</a><ul>
@@ -302,6 +303,13 @@ In this example picture we used timeseries functions for the data range. Click <
 </div>
 </div>
 </div>
+<div class="section" id="data-source">
+<h3>Data Source<a class="headerlink" href="#data-source" title="Permalink to this headline">¶</a></h3>
+<p>Every chart needs a data source to be able to display data. The most known practice is to use a data range. As seen in the “chart type” section, the ranges differ from type to type.
+Check out the examples above to get a better idea.</p>
+<p>Besides using data ranges, the <strong>XY chart</strong> offers another option for data sources. Functions. Some functions hold data in their cell. These can either be timeseries functions or query functions (<a class="reference internal" href="../functions/timeseries/timeaggregate.html#timeaggregate"><span class="std std-ref">TIMEAGGREGATE()</span></a>; <a class="reference internal" href="../functions/streams/timescaleselect.html#timescaleselect"><span class="std std-ref">TIMESCALE.SELECT()</span></a>; …).
+Use a cell reference on one of these functions and you are able to create XY charts without creating huge data tables on your Streamsheet.</p>
+</div>
 </div>
 <div class="section" id="timeseries-data">
 <h2>Timeseries data<a class="headerlink" href="#timeseries-data" title="Permalink to this headline">¶</a></h2>
@@ -461,7 +469,7 @@ For example: <em>EVENTS(ONCLICK(COPYVALUES(A1:B11,G10:H10))</em> triggers the CO
 <li><p><a class="reference internal" href="../functions/streamsheet/setvalue.html#setvalue"><span class="std std-ref">SETVALUE()</span></a></p></li>
 <li><p><a class="reference internal" href="../functions/streamsheet/deletecells.html#deletecells"><span class="std std-ref">DELETECELLS()</span></a></p></li>
 <li><p><a class="reference internal" href="../functions/streamsheet/copyvalues.html#copyvalues"><span class="std std-ref">COPYVALUES()</span></a></p></li>
-<li><p><a class="reference internal" href="../functions/chart/cellchart.html#delete"><span class="std std-ref">DELETE()</span></a></p></li>
+<li><p><span class="xref std std-ref">DELETE()</span></p></li>
 <li><p><a class="reference internal" href="../functions/streamsheet/execute.html#execute"><span class="std std-ref">EXECUTE()</span></a></p></li>
 <li><p><a class="reference internal" href="../functions/streamsheet/feedinbox.html#feedinbox"><span class="std std-ref">FEEDINBOX()</span></a></p></li>
 <li><p><a class="reference internal" href="../functions/stack/stackadd.html#stackadd"><span class="std std-ref">STACKADD()</span></a> (or any other <a class="reference internal" href="../functions/stack.html#stack"><span class="std std-ref">stack</span></a> function)</p></li>
