@@ -26,9 +26,9 @@ Returns a cell range that is defined by specified number of rows and columns fro
    * - ColumnOffset
      - Column offset from top left position of Range, might be positive or negative.
    * - Height
-     - Optional. Number of rows for result range. If not given the height of specified base cell range is used.
+     - Optional. Number of rows for result range. Height must be greater than zero. If not given the height of specified base cell range is used.
    * - Width
-     - Optional. Number of columns for result range. If not given the width of specified base cell range is used.
+     - Optional. Number of columns for result range. Width must be greater than zero. If not given the width of specified base cell range is used.
 
 **Return Value**
 
