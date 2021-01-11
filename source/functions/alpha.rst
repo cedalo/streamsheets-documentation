@@ -124,6 +124,7 @@ Alphabetical
    math/log
    streamsheet/loopcount
    streamsheet/loopindex
+   text/lower
    streams/mailsend
    lookup/match
    statistical/max
@@ -255,6 +256,7 @@ Alphabetical
    math/trunc
    text/unichar
    text/unicode
+   text/upper
    lookup/vlookup
    date/weekday
    .. streamsheet/webpage
