@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>OFFSET &mdash; Streamsheets 2.0.0 documentation</title>
+  <title>LOWER &mdash; Streamsheets 2.0.0 documentation</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="../../_static/theme_override.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="VLOOKUP" href="vlookup.html" />
-    <link rel="prev" title="MATCH" href="match.html" /> 
+    <link rel="next" title="MID" href="mid.html" />
+    <link rel="prev" title="LEN" href="len.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -93,27 +93,37 @@
 <li class="toctree-l2"><a class="reference internal" href="../events.html">Events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../info.html">Info</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../logical.html">Logical</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../lookup.html">Lookup</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="choose.html">CHOOSE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="daverage.html">DAVERAGE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dcount.html">DCOUNT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dmax.html">DMAX</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dmin.html">DMIN</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dsum.html">DSUM</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html">INDEX</a></li>
-<li class="toctree-l3"><a class="reference internal" href="indirect.html">INDIRECT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="match.html">MATCH</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">OFFSET</a></li>
-<li class="toctree-l3"><a class="reference internal" href="vlookup.html">VLOOKUP</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../lookup.html">Lookup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../math.html">Math</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../shape.html">Shape</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../stack.html">Stack</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../statistical.html">Statistical</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../streams.html">Streams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../streamsheet.html">Streamsheet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../text.html">Text</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../text.html">Text</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="char.html">CHAR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clean.html">CLEAN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code.html">CODE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concat.html">CONCAT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="find.html">FIND</a></li>
+<li class="toctree-l3"><a class="reference internal" href="left.html">LEFT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="len.html">LEN</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">LOWER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mid.html">MID</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randid.html">RANDID</a></li>
+<li class="toctree-l3"><a class="reference internal" href="replace.html">REPLACE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rept.html">REPT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="right.html">RIGHT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="search.html">SEARCH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="split.html">SPLIT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="substitute.html">SUBSTITUTE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="text.html">TEXT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unichar.html">UNICHAR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unicode.html">UNICODE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="upper.html">UPPER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="value.html">VALUE</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../timeseries.html">Timeseries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../alpha.html">Alphabetical</a></li>
 </ul>
@@ -170,9 +180,9 @@
         
           <li><a href="../../functions.html">Functions</a> &raquo;</li>
         
-          <li><a href="../lookup.html">Lookup</a> &raquo;</li>
+          <li><a href="../text.html">Text</a> &raquo;</li>
         
-      <li>OFFSET</li>
+      <li>LOWER</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -189,11 +199,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="offset">
-<h1>OFFSET<a class="headerlink" href="#offset" title="Permalink to this headline">¶</a></h1>
-<p>Returns a cell range that is defined by specified number of rows and columns from an initial range.</p>
+  <div class="section" id="lower">
+<span id="id1"></span><h1>LOWER<a class="headerlink" href="#lower" title="Permalink to this headline">¶</a></h1>
+<p>Converts the letters of a given string to lowercase. To convert text to uppercase please refer to <a class="reference internal" href="upper.html#upper"><span class="std std-ref">UPPER</span></a>.</p>
 <p><strong>Syntax</strong></p>
-<p>=OFFSET(Range, RowOffset, ColumnOffset [, Height, Width])</p>
+<p>=LOWER(Text)</p>
 <p><strong>Arguments</strong></p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -206,28 +216,13 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Range</p></td>
-<td><p>A cell or cell range which defines the base of returned cell range.</p></td>
-</tr>
-<tr class="row-odd"><td><p>RowOffset</p></td>
-<td><p>Row offset from top left position of Range, might be positive or negative.</p></td>
-</tr>
-<tr class="row-even"><td><p>ColumnOffset</p></td>
-<td><p>Column offset from top left position of Range, might be positive or negative.</p></td>
-</tr>
-<tr class="row-odd"><td><p>Height</p></td>
-<td><p>Optional. Number of rows for result range. Height must be greater than zero. If not given the height of specified base cell range is used.</p></td>
-</tr>
-<tr class="row-even"><td><p>Width</p></td>
-<td><p>Optional. Number of columns for result range. Width must be greater than zero. If not given the width of specified base cell range is used.</p></td>
+<tr class="row-even"><td><p>Text</p></td>
+<td><p>A string to convert to lowercase</p></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return Value</strong></p>
-<div class="line-block">
-<div class="line">If height and width define a cell: Value of cell</div>
-<div class="line">If height and width define a cell range: #VALUE</div>
-</div>
+<p>Given text in lowercase.</p>
 <p><strong>Example</strong></p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -242,22 +237,13 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><div class="line-block">
-<div class="line"><strong>1.</strong> =OFFSET(<span class="blue">A2</span>, 2, 1, 1, 1)</div>
-<div class="line"><strong>2.</strong> =SUM(OFFSET(<span class="blue">A2</span>, 1, 1, 2, 1))</div>
-<div class="line"><a class="reference internal" href="../../_images/OFFSET.PNG"><img alt="OFFSET" src="../../_images/OFFSET.PNG" style="width: 372.59999999999997px; height: 175.2px;" /></a></div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line"><strong>1.</strong> 6</div>
-<div class="line"><strong>2.</strong> 10</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line"><strong>1.</strong> B4 has an offset of 2 rows and 1 column from A1. The cell value is 6.</div>
-<div class="line"><strong>2.</strong> B3 has an offset of 1 row and 1 column from A1. The SUM of the range defined through height and width is 10.</div>
-</div>
-</td>
+<tr class="row-even"><td><p>=LOWER(“HeLLo!”)</p></td>
+<td><p>hello!</p></td>
+<td><p>only affects letters in uppercase</p></td>
+</tr>
+<tr class="row-odd"><td><p>=LOWER(A1)</p></td>
+<td><p>hello world</p></td>
+<td><p>assumes cell A1 contains text “Hello WORLD”</p></td>
 </tr>
 </tbody>
 </table>
@@ -271,10 +257,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="vlookup.html" class="btn btn-neutral float-right" title="VLOOKUP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mid.html" class="btn btn-neutral float-right" title="MID" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="match.html" class="btn btn-neutral" title="MATCH" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="len.html" class="btn btn-neutral" title="LEN" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
