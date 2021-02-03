@@ -3,11 +3,12 @@
 RANDBETWEEN
 -----------------------------
 
-Creates a random value between min and max.
+Creates a random value between min and max. It is possible to create a series of increasing or decreasing values by
+specifying a delta range. The delta is randomly choosen within its range and applied to last returned value.
 
 **Syntax**
 
-=RANDBETWEEN(Min, Max)
+=RANDBETWEEN(Min, Max [, MinDelta, MaxDelta])
 
 **Arguments**
 
@@ -21,6 +22,10 @@ Creates a random value between min and max.
      - Minimum value to return.
    * - Max
      - Maximum value to return.
+   * - MinDelta
+     - Optional. Minimum value applied to last value in next step. If specified MaxDelta must also be set.
+   * - MaxDelta
+     - Optional. Maximum value applied to last value in next step. If specified MinDelta must also be set.
 
 **Return Value**
 
