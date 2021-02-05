@@ -8,7 +8,7 @@ specifying a delta range. The delta is randomly choosen within its range and app
 
 **Syntax**
 
-=RANDBETWEEN(Min, Max [, MinDelta, MaxDelta])
+=RANDBETWEEN(Min, Max [, MinDelta, MaxDelta, InitialValue])
 
 **Arguments**
 
@@ -26,6 +26,8 @@ specifying a delta range. The delta is randomly choosen within its range and app
      - Optional. Minimum value applied to last value in next step. If specified MaxDelta must also be set.
    * - MaxDelta
      - Optional. Maximum value applied to last value in next step. If specified MinDelta must also be set.
+   * - InitialValue
+     - Optional. Initial value to start with. Only used if MinDelta and MaxDelta are given. Note: delta will be applied to inital value.
 
 **Return Value**
 
@@ -43,4 +45,7 @@ Random number between minimum and maximum argument.
    * - =RANDBETWEEN(1, 10)
      - e.g.: 5
      - The return value can be any number between 1 and 10.
+   * - =RANDBETWEEN(10, 30, -1, 1, 15)
+     - e.g.: 16
+     - Initial value is 15 to which a random delta of -1, 0 or 1 is added. 1 in this case resulting in 16.
 

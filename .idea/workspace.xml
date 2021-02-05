@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2100e23-455d-41ab-9757-98c59aa2986d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/source/functions/drawing/drawbezier.rst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/functions/alpha.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/functions/alpha.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/functions/drawing/drawpolygon.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/functions/drawing/drawpolygon.rst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ElmWorkspace">
+    <elmProjects />
+    <settings elmCompilerPath="" elmFormatPath="" elmTestPath="" isElmFormatOnSaveEnabled="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,12 +39,14 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="$PROJECT_DIR$/../Program Files/nodejs/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\streamsheets-documentation\source\functions\drawing" />
     </key>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -68,6 +71,8 @@
       <workItem from="1589890094298" duration="127000" />
       <workItem from="1589969106386" duration="612000" />
       <workItem from="1590166629997" duration="371000" />
+      <workItem from="1598275051911" duration="334000" />
+      <workItem from="1599137293730" duration="456000" />
     </task>
     <task id="LOCAL-00001" summary="update close parameter default">
       <created>1574856348630</created>
@@ -139,11 +144,25 @@
       <option name="project" value="LOCAL" />
       <updated>1588500967130</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="add and adjust docs for new outboxmetadata() function">
+      <created>1598275146233</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1598275146233</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add doc for table.get() function">
+      <created>1598275181170</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1598275181170</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update close parameter default" />
@@ -154,28 +173,26 @@
     <MESSAGE value="update DRAW.CHARTSTATE docs" />
     <MESSAGE value="add scale font parameter for DRAW.CHARTSTATE" />
     <MESSAGE value="update function documentation for new chart implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="update function documentation for new chart implementation" />
+    <MESSAGE value="add and adjust docs for new outboxmetadata() function" />
+    <MESSAGE value="add doc for table.get() function" />
+    <option name="LAST_COMMIT_MESSAGE" value="add doc for table.get() function" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="691" y="154" key="CommitChangelistDialog2" timestamp="1588500966366">
-      <screen x="0" y="0" width="2133" height="1169" />
+    <state x="787" y="-1332" key="CommitChangelistDialog2" timestamp="1598275180887">
+      <screen x="-596" y="-1867" width="3360" height="1867" />
     </state>
-    <state x="691" y="154" key="CommitChangelistDialog2/0.0.2133.1169@0.0.2133.1169" timestamp="1588500966366" />
-    <state x="957" y="453" width="386" height="263" key="MultipleFileMergeDialog" timestamp="1588500909377">
-      <screen x="0" y="0" width="2133" height="1169" />
+    <state x="787" y="-1332" key="CommitChangelistDialog2/0.23.1680.1027/-596.-1867.3360.1867@-596.-1867.3360.1867" timestamp="1598275180887" />
+    <state x="453" y="-1481" width="1661" height="1124" key="DiffContextDialog" timestamp="1599137761218">
+      <screen x="-596" y="-1867" width="3360" height="1867" />
     </state>
-    <state x="957" y="453" width="386" height="263" key="MultipleFileMergeDialog/0.0.2133.1169@0.0.2133.1169" timestamp="1588500909377" />
-    <state x="660" y="318" key="Vcs.Push.Dialog.v2" timestamp="1588500970245">
-      <screen x="0" y="0" width="2133" height="1169" />
+    <state x="453" y="-1481" width="1661" height="1124" key="DiffContextDialog/0.23.1680.1027/-596.-1867.3360.1867@-596.-1867.3360.1867" timestamp="1599137761218" />
+    <state x="971" y="-1215" key="VCS.ChangeListViewerDialog" timestamp="1599137368434">
+      <screen x="-596" y="-1867" width="3360" height="1867" />
     </state>
-    <state x="660" y="318" key="Vcs.Push.Dialog.v2/0.0.2133.1169@0.0.2133.1169" timestamp="1588500970245" />
-    <state x="773" y="318" width="1029" height="733" key="find.popup" timestamp="1588422381522">
-      <screen x="0" y="0" width="2133" height="1169" />
+    <state x="971" y="-1215" key="VCS.ChangeListViewerDialog/0.23.1680.1027/-596.-1867.3360.1867@-596.-1867.3360.1867" timestamp="1599137368434" />
+    <state x="1143" y="-1271" width="670" height="676" key="search.everywhere.popup" timestamp="1599137776142">
+      <screen x="-596" y="-1867" width="3360" height="1867" />
     </state>
-    <state x="773" y="318" width="1029" height="733" key="find.popup/0.0.2133.1169@0.0.2133.1169" timestamp="1588422381522" />
-    <state x="730" y="258" width="672" height="678" key="search.everywhere.popup" timestamp="1588422185457">
-      <screen x="0" y="0" width="2133" height="1169" />
-    </state>
-    <state x="730" y="258" width="672" height="678" key="search.everywhere.popup/0.0.2133.1169@0.0.2133.1169" timestamp="1588422185457" />
+    <state x="1143" y="-1271" width="670" height="676" key="search.everywhere.popup/0.23.1680.1027/-596.-1867.3360.1867@-596.-1867.3360.1867" timestamp="1599137776142" />
   </component>
 </project>
