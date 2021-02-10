@@ -278,14 +278,14 @@ Indicates states over a time periode. From time point a to b.
 
 
 Boxplot Chart
-.................
+''''''''''''''''''''''
 
 |Box| |RangeBox|
 
 The Boxplot Chart can be used to graphically visualize the median, minimum, maximum and quartiels of a data set. |star|
 
 Waterfall Chart
-..................
+''''''''''''''''''''''
 
 |Water| |RangeWater|
 
