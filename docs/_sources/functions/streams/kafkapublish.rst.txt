@@ -3,10 +3,8 @@
 KAFKA.PUBLISH
 -----------------------------
 
-.. |star| image:: /images/star.svg
         
 
-|star| This is a `Streamsheets Professional <https://cedalo.com/download/>`_ feature.
 
 Publishes either a message or an arbitrary value using a specified :term:`Producer` and topic. To reference a message from the
 outbox use the :ref:`outbox` function and to reference a message from the inbox use :ref:`INBOX <inboxf>`. You can use the :ref:`Function Wizard <functionwizard>` for this function. 

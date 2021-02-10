@@ -4,7 +4,7 @@ TIMESCALE.CREATE_TABLE
 .. |star| image:: /images/star.svg
         
 
-|star| This is a `Streamsheets Professional <https://cedalo.com/download/>`_ feature.
+|star| This is a `Streamsheets Premium <https://cedalo.com/download/>`_ feature.
 
 Creates a table in the timescaledb and sets up its schema. 
 Click :ref:`here<timescalefunctions>` for a more detailed tutorial on timescaledb functions. 

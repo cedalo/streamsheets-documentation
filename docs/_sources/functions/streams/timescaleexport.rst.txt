@@ -4,7 +4,7 @@ TIMESCALE.EXPORT
 .. |star| image:: /images/star.svg
         
 
-|star| This is a `Streamsheets Professional <https://cedalo.com/download/>`_ feature.
+|star| This is a `Streamsheets Premium <https://cedalo.com/download/>`_ feature.
 
 Performs an EXPORT query on your Timescale database. This query works exactly like the queries from TIMESCALE.SELECT, but exports the result into a file. This file can be accessed in the side menu of your App under "App Files". 
 Click :ref:`here<timescalefunctions>` for a more detailed tutorial on timemescaledb functions. 

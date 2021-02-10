@@ -7,7 +7,7 @@ TIMESCALE.SELECT
 .. |star| image:: /images/star.svg
         
 
-|star| This is a `Streamsheets Professional <https://cedalo.com/download/>`_ feature.
+|star| This is a `Streamsheets Premium <https://cedalo.com/download/>`_ feature.
 
 Performs a SELECT query on your timescale database. 
 Click :ref:`here<timescalefunctions>` for a more detailed tutorial on timemescaledb functions. 

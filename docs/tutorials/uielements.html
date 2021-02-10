@@ -87,12 +87,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../gettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Tutorials</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Tools &amp; Charts</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#charts">Charts</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#chart-wizard">Chart Wizard</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#chart-types">Chart Types</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#data-source">Data Source</a></li>
-</ul>
-</li>
 <li class="toctree-l3"><a class="reference internal" href="#timeseries-data">Timeseries data</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#timeseries-data-table">Timeseries data table</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#timeseries-functions">Timeseries functions</a></li>
@@ -185,132 +179,6 @@
   <div class="section" id="tools-charts">
 <h1>Tools &amp; Charts<a class="headerlink" href="#tools-charts" title="Permalink to this headline">¶</a></h1>
 <p>There are multiple tools and elements in Streamsheets to help you build your Apps.</p>
-<div class="section" id="charts">
-<span id="id1"></span><h2>Charts<a class="headerlink" href="#charts" title="Permalink to this headline">¶</a></h2>
-<div class="line-block">
-<div class="line">Charts help people understand data quickly. Whether one wants to make a comparison, show a relationship or highlight a trend, they help the audience or even yourself to “see” what actually happens. Each of our 11 chart types has different features that make them better suited for specific tasks.</div>
-<div class="line">To create a Chart select the cell/range with the Data to be displayed and click in the top bar on the Insert Chart Icon. Choose the  Chart type and create the chart by clicking on the canvas.  There are two ways to adjust the chart settings. You can either directly adjust the chart functions or use the Chart Wizard. There are many different settings to play with: add a title, tooltipps and a legend, determine the length of the axis, allow zooming or use different colors for e.g. the columns or even the grid lines etc.. The best would be to just try everything out 😄.</div>
-</div>
-<div class="line-block">
-<div class="line"><a class="reference internal" href="../_images/Charts.gif"><img alt="CHART" src="../_images/Charts.gif" style="width: 832.0px; height: 468.0px;" /></a></div>
-<div class="line"><em>Creating a chart</em></div>
-</div>
-<div class="section" id="chart-wizard">
-<h3>Chart Wizard<a class="headerlink" href="#chart-wizard" title="Permalink to this headline">¶</a></h3>
-<p>There are two ways to adjust Charts in Streamsheets.
-One way is to simply select the parts of the Chart, which you want to change and edit the formular, which is displayed in the edit field and/or use the toolbar icons e.g. to adjust colors etc..</p>
-<p>A more convinient way is the use of the Chart Wizard. Double click the chart you wish to adjust and the Chart Wizard will appear.</p>
-<div class="line-block">
-<div class="line"><a class="reference internal" href="../_images/ChWiz.png"><img alt="ChWiz" src="../_images/ChWiz.png" style="width: 186.0px; height: 375.5px;" /></a></div>
-<div class="line"><em>example view on the Chart Wizard</em></div>
-</div>
-<p>There are many ways a chart can be individually adjusted. This also depends on the kind of chart you are using. Different charts different options. In general, the chart wizard consists out of the following categories:</p>
-<ul class="simple">
-<li><p><strong>Chart:</strong> define general settings</p></li>
-<li><p><strong>Plot:</strong> define what the data source is and how to interprete it.</p></li>
-<li><p><strong>Title:</strong> define title position. Change title in edit field and title format over toolbar.</p></li>
-<li><p><strong>Legend:</strong> define legend position. Change legend format in toolbar.</p></li>
-<li><p><strong>Series:</strong> define series settings. (multiple series possible)</p></li>
-<li><p><strong>Axis:</strong>  set X&amp;Y axis settings like zooming and position. Add other axis, if needed.</p></li>
-<li><p><strong>Grid:</strong> show or hide grid for X&amp;Y axis. Change format with toolbar.</p></li>
-<li><p><strong>Data Point:</strong> only accessible over mouseclick. Select singular data point. Change appearance.</p></li>
-</ul>
-</div>
-<div class="section" id="chart-types">
-<h3>Chart Types<a class="headerlink" href="#chart-types" title="Permalink to this headline">¶</a></h3>
-<div class="line-block">
-<div class="line">The Chart Type you choose depends on what kind of information you want to present. Displaying the current machine temperature requires a different chart than showing the relationship between the temperature and time. It depends on how many variables need to be shown.</div>
-<div class="line"><br /></div>
-<div class="line">If there is just one variable your perfectly fine using Line, Cloumn, Bar, Pie, Dounghnut, Area , Polar Area or Radar Charts. To show the relationship between two different variables we recommend Line (X/Y) or Scatter. A bubble chart is similar to a scatter plot, but you even can introduce a third variable. For more specific use cases there are State, Stock and Funnel Charts.</div>
-<div class="line"><br /></div>
-<div class="line">Depending on your selected data range, you will get a dynamic or a static chart (updating references or fix data input).</div>
-</div>
-<p><a class="reference internal" href="../_images/star.svg"><img alt="star" src="../_images/star.svg" /></a> <em>= premium feature</em></p>
-<div class="section" id="column-bar-chart">
-<h4>Column &amp; Bar Chart<a class="headerlink" href="#column-bar-chart" title="Permalink to this headline">¶</a></h4>
-<p><img alt="Col" src="../_images/ColCha.png" />  <img alt="Bar" src="../_images/BarCha.png" />  <img alt="Range1" src="../_images/Range1.PNG" /></p>
-<p>Column &amp; Bar Charts are used to show differences between diferent data series categories. The height or length of a column/bar visualizes the value of a category. At least one data series is needed.</p>
-</div>
-<div class="section" id="line-chart">
-<h4>Line Chart<a class="headerlink" href="#line-chart" title="Permalink to this headline">¶</a></h4>
-<p><img alt="Line" src="../_images/LineCha.png" /> <img alt="Range4" src="../_images/Range4.PNG" /></p>
-<p>Line Charts are often used to describe values measured over time.
-But careful: They only connect datapoints over categories, so the distance between the categories does not claim to be accurate. This can be done via the X/Y Chart.</p>
-</div>
-<div class="section" id="xy-chart">
-<h4>XY Chart<a class="headerlink" href="#xy-chart" title="Permalink to this headline">¶</a></h4>
-<p><img alt="XY" src="../_images/XYCha.png" /> <img alt="Range6" src="../_images/Range6.PNG" /></p>
-<p>The XY Chart shows the relationship of data sets. In many use cases it is used for time series data, to show accurate time/value relations.</p>
-</div>
-<div class="section" id="area-chart">
-<h4>Area Chart<a class="headerlink" href="#area-chart" title="Permalink to this headline">¶</a></h4>
-<p><img alt="Area" src="../_images/AreaCha.png" />  <img alt="Range4" src="../_images/Range4.PNG" /></p>
-<p>The Area Chart is similar to a line graph. Area charts are different from line graphs, however, because the area between the x axis and the line is filled in with color or shading. Area charts are a good choice to use when you want to show a trend over time, but aren’t as concerned with showing exact values. At least one data series is needed.</p>
-</div>
-<div class="section" id="pie-doughnut-chart">
-<h4>Pie &amp; Doughnut Chart<a class="headerlink" href="#pie-doughnut-chart" title="Permalink to this headline">¶</a></h4>
-<p><img alt="Pie" src="../_images/PieCha.png" /> <img alt="Range4" src="../_images/Range4.PNG" /></p>
-<p>Pie &amp; Doughnut Charts help to visualize parts of a whole and their respective size. Each segment of the pie represents its size in comparison to the other segments. One data series is needed.</p>
-</div>
-<div class="section" id="stock-chart">
-<h4>Stock Chart<a class="headerlink" href="#stock-chart" title="Permalink to this headline">¶</a></h4>
-<p><img alt="Stock" src="../_images/StockCha.png" /> <img alt="Range5" src="../_images/Range5.PNG" /></p>
-<p>Stock Charts contain information about the x&amp;y values and further the changes of a value and historical highs and lows. They use boxes to visualize these parameters. Depending on the selected version of the Stock chart one either needs three, four or five data series. <a class="reference internal" href="../_images/star.svg"><img alt="star" src="../_images/star.svg" /></a></p>
-</div>
-<div class="section" id="funnel-chart">
-<h4>Funnel Chart<a class="headerlink" href="#funnel-chart" title="Permalink to this headline">¶</a></h4>
-<p><img alt="Fun" src="../_images/FunCha.png" /> <img alt="Range2" src="../_images/Range2.PNG" /></p>
-<p>Funnel Charts are often used for visualizing linear processes with connected stages. <a class="reference internal" href="../_images/star.svg"><img alt="star" src="../_images/star.svg" /></a></p>
-</div>
-<div class="section" id="state-chart">
-<h4>State Chart<a class="headerlink" href="#state-chart" title="Permalink to this headline">¶</a></h4>
-<p>State Charts visualize differnt states. Each state has a dedicated color. To display a state chart create three columns of data consisting of X axis, values and colors.
-Depening on the State Chart type the X axis values use either categorie or timeseries data. To further use the information the values provide, uncheck the “100%” checkbox in the chart wizard. The size of the columne now represents the value.
-Using “;” in the color column you can add line color and a specified datalable text. To see the text activate datalable and the “state” checkbox in the chart wizard.  <a class="reference internal" href="../_images/star.svg"><img alt="star" src="../_images/star.svg" /></a></p>
-<p><strong>State Chart Category:</strong></p>
-<p>Indicates different states of different categories.</p>
-<div class="line-block">
-<div class="line"><img alt="StChCa" src="../_images/StChCa.png" /> <img alt="RangeSTC1" src="../_images/RangeSTC1.PNG" /></div>
-<div class="line"><em>example with “100%” setting unchecked. Find it in the Chart Wizard categorie “Chart”</em></div>
-</div>
-<p><strong>State Chart Time:</strong></p>
-<p>Indicates states at certain time points.</p>
-<div class="line-block">
-<div class="line"><img alt="STChT" src="../_images/STChT.png" /> <img alt="RangeSTCT" src="../_images/RangeSTT.PNG" /></div>
-<div class="line"><em>example with extra settings in the color column</em></div>
-</div>
-<p><strong>State Chart Periode:</strong></p>
-<p>Indicates states over a time periode. From time point a to b.</p>
-<div class="line-block">
-<div class="line"><img alt="STChP" src="../_images/STChP.png" /> <img alt="RangeSTCTP" src="../_images/RangeSTTP.PNG" /></div>
-<div class="line"><em>example of the default setup</em></div>
-</div>
-</div>
-<div class="section" id="heatmap-chart">
-<h4>Heatmap Chart<a class="headerlink" href="#heatmap-chart" title="Permalink to this headline">¶</a></h4>
-<p><img alt="Heat" src="../_images/HeatCha.png" /> <img alt="Range3" src="../_images/Range3.PNG" /></p>
-<p>The Heatmap Chart visulizes intensity of points on a XY Chart. The closer together the hotter (red) the map gets.
-In this example picture we used timeseries functions for the data range. Click <a class="reference internal" href="#timeseriesfunctions"><span class="std std-ref">here</span></a> if you want to know more about timeseries functions.</p>
-<div class="section" id="boxplot-chart">
-<h5>Boxplot Chart<a class="headerlink" href="#boxplot-chart" title="Permalink to this headline">¶</a></h5>
-<p><a class="reference internal" href="../_images/BoxCha.png"><img alt="Box" src="../_images/BoxCha.png" style="width: 474.40000000000003px; height: 269.6px;" /></a> <a class="reference internal" href="../_images/RangeBoxCha.png"><img alt="RangeBox" src="../_images/RangeBoxCha.png" style="width: 241.60000000000002px; height: 217.60000000000002px;" /></a></p>
-<p>The Boxplot Chart can be used to graphically visualize the median, minimum, maximum and quartiels of a data set. <a class="reference internal" href="../_images/star.svg"><img alt="star" src="../_images/star.svg" /></a></p>
-</div>
-<div class="section" id="waterfall-chart">
-<h5>Waterfall Chart<a class="headerlink" href="#waterfall-chart" title="Permalink to this headline">¶</a></h5>
-<p><a class="reference internal" href="../_images/WaterCha.png"><img alt="Water" src="../_images/WaterCha.png" style="width: 576.8000000000001px; height: 332.8px;" /></a> <a class="reference internal" href="../_images/RangeWaterCha.png"><img alt="RangeWater" src="../_images/RangeWaterCha.png" style="width: 468.0px; height: 65.60000000000001px;" /></a></p>
-<p>The Waterfall Chart displays processes and their changes over set categories looking for increases, decreases, with the possibility of adding the sum. <a class="reference internal" href="../_images/star.svg"><img alt="star" src="../_images/star.svg" /></a></p>
-</div>
-</div>
-</div>
-<div class="section" id="data-source">
-<h3>Data Source<a class="headerlink" href="#data-source" title="Permalink to this headline">¶</a></h3>
-<p>Every chart needs a data source to be able to display data. The most known practice is to use a data range. As seen in the “chart type” section, the ranges differ from type to type.
-Check out the examples above to get a better idea.</p>
-<p>Besides using data ranges, the <strong>XY chart</strong> offers another option for data sources. Functions. Some functions hold data in their cell. These can either be timeseries functions or query functions (<a class="reference internal" href="../functions/timeseries/timeaggregate.html#timeaggregate"><span class="std std-ref">TIMEAGGREGATE()</span></a>; <a class="reference internal" href="../functions/streams/timescaleselect.html#timescaleselect"><span class="std std-ref">TIMESCALE.SELECT()</span></a>; …).
-Use a cell reference on one of these functions and you are able to create XY charts without creating huge data tables on your Streamsheet.</p>
-</div>
-</div>
 <div class="section" id="timeseries-data">
 <h2>Timeseries data<a class="headerlink" href="#timeseries-data" title="Permalink to this headline">¶</a></h2>
 <p>Often it is important to not only work with single real-time data points in the moment, but to build a history and work with a series of values.
@@ -379,7 +247,7 @@ The TIMEAGGREAGATE function is the quick hack of TIMESTORE and TIMEQUERY. It mon
 <h2>Create Dashboards<a class="headerlink" href="#create-dashboards" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="shapes">
 <h3>Shapes<a class="headerlink" href="#shapes" title="Permalink to this headline">¶</a></h3>
-<p>In some scenarios it is necessary, to not only control data streams and implement certain logics, but create dashboards to present the data to an end user. Dashboards are popular visual displays of data, mostly comprising charts / graphs with striking attention seeking components. If you want to learn more about how to setup Charts in Streamsheets click <a class="reference internal" href="#charts"><span class="std std-ref">here</span></a>.
+<p>In some scenarios it is necessary, to not only control data streams and implement certain logics, but create dashboards to present the data to an end user. Dashboards are popular visual displays of data, mostly comprising charts / graphs with striking attention seeking components. If you want to learn more about how to setup Charts in Streamsheets click <a class="reference internal" href="../maincomponents/app.html#id2"><span class="std std-ref">here</span></a>.
 In this tutorial we cover another very useful tool Streamsheets offers, which is adding shapes. Shapes can be found next to the Chart icon in the App toolbar.</p>
 <p><a class="reference internal" href="../_images/shapes.PNG"><img alt="shapes" src="../_images/shapes.PNG" style="width: 195.0px; height: 366.5px;" /></a></p>
 <p>There are a ton of different shapes, which can be colored and sized the way you want.
@@ -423,17 +291,13 @@ It allows the end user to select a value from a list of options. This selection 
 <ul>
 <li><div class="line-block">
 <div class="line"><strong>Checkboxes</strong> are very helpful in use cases, where switching between two states is necessary. They switch their value parameter depending on the user interaction to FALSE or TRUE. To work with these states use a cell reference in the value parameter. Now you only have to use the referenced cell in your sheet logic to react on state changes.</div>
-<div class="line-block">
-<div class="line">GIF</div>
-</div>
+<div class="line"><br /></div>
 <div class="line"><em>Example use case: You want to only show certain information, when a check box is selected. FALSE represents that the information will not be shown. If the information you would like to hide is represented in an e.g. rectangle shape you could use the attributes parameter of the DRAW:RECTANGLE() function to switch between visible and not visible. Find more about the attributes’ parameter here.</em></div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line"><strong>Slider</strong> allow the selection of values between a given minimum and maximum. Again referencing the value parameter to a cell gives you the power to integrate the selected value into your sheet logic.</div>
-<div class="line-block">
-<div class="line">GIF</div>
-</div>
+<div class="line"><br /></div>
 <div class="line"><em>Example use case: An End User should be able to regulate a thermostat between the values of 15°C and 25°C. With the slider the user sets the wished temperature and the value gets set in the referenced cell of the value parameter. The value will be then published to the thermostat over e.g. an MQTT Stream. Now the user directly impacts the temperature by moving the slider.</em></div>
 </div>
 </li>
@@ -443,9 +307,7 @@ It allows the end user to select a value from a list of options. This selection 
 </li>
 <li><div class="line-block">
 <div class="line"><strong>Button</strong>, like the checkboxes, set TRUE or FALSE values. The difference is, that they only set the value parameter to TRUE, as long as the user is pressing the button. After the release, the value turns back to FALSE. Again using a cell reference for the value parameter is the key to integrate the interaction in your sheet logic.  <em>Tip: Try to use EDGE.DETECT() if you only need a one time switch to TRUE.</em></div>
-<div class="line-block">
-<div class="line">GIF</div>
-</div>
+<div class="line"><br /></div>
 <div class="line"><em>Example use case: An end user should be able to open a valve by pushing a button on the screen. The valve only knows two states “open” and “close” and is connected to a MQTT broker. The payload of the message will now change dynamically and depending on the state of the button either “open” or “close” will be published.</em></div>
 </div>
 </li>
@@ -473,7 +335,7 @@ For example: <em>EVENTS(ONCLICK(COPYVALUES(A1:B11,G10:H10))</em> triggers the CO
 <li><p><a class="reference internal" href="../functions/streamsheet/execute.html#execute"><span class="std std-ref">EXECUTE()</span></a></p></li>
 <li><p><a class="reference internal" href="../functions/streamsheet/feedinbox.html#feedinbox"><span class="std std-ref">FEEDINBOX()</span></a></p></li>
 <li><p><a class="reference internal" href="../functions/stack/stackadd.html#stackadd"><span class="std std-ref">STACKADD()</span></a> (or any other <a class="reference internal" href="../functions/stack.html#stack"><span class="std std-ref">stack</span></a> function)</p></li>
-<li><p><span class="xref std std-ref">WRITE()</span></p></li>
+<li><p><a class="reference internal" href="../functions/streamsheet/write.html#write"><span class="std std-ref">WRITE()</span></a></p></li>
 <li><p><a class="reference internal" href="../functions/events/showvalues.html#showvalues"><span class="std std-ref">SHOWVALUES()</span></a></p></li>
 <li><p><a class="reference internal" href="../functions/events/showdialog.html#showdialog"><span class="std std-ref">SHOWDIALOG()</span></a></p></li>
 </ul>
@@ -544,7 +406,7 @@ Now you can start structuring your data using TAB and Shift+TAB to change the hi
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, Cedalo AG, Streamsheet™ is a trademark of the Cedalo AG.
+        &copy; Copyright 2021, Cedalo AG, Streamsheet™ is a trademark of the Cedalo AG.
 
     </p>
   </div>

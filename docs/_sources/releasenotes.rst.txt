@@ -11,6 +11,23 @@ We will never stop improving our :term:`Streamsheet`\ s. Stay up to date with ou
 
 .. _currently: 
 
+2.2
+------
+
+| **Changes:**
+| + **Bug fixes**
+| + **Performance improvements**
+
+
+| **Features:**
+| + **New Charts:** Added further chart types. (Boxplot, Waterfall) |star|
+| + **New Functions:** :ref:`OPENURL`\ (); :ref:`TABLEGET`\ (); :ref:`TABLEUPDATE`\ ();
+
+
+
+
+
+
 2.0-milestone
 ---------------
 
@@ -29,8 +46,7 @@ We will never stop improving our :term:`Streamsheet`\ s. Stay up to date with ou
 | + **Stream Wizard:** Streams can now be added/adjusted without leaving the Streamsheet
 | + **New Functions:** :ref:`JSON.VALUE`\ (); :ref:`AWAIT`\ (); :ref:`SLEEP`\ (); :ref:`OUTBOX.GETIDS`\ ()
 | + **New Charts:** Added stock, funnel and combination charts |star|
-| + **Colors:** Opacity now supported
-| + **Outbox:** Time-to-live for WRITE() now supported
+
 
 1.6-milestone
 ---------------
@@ -51,14 +67,12 @@ First milestone for Eclipse release.
 
 
 | **Features:**
-| + **User Roles:** Users can be assigned admin, developer and viewer roles; Admins can manage users and their roles; Admins & Developers can create, modify and delete stream machines and streams; Viewers can view but not edit stream machines. |star|
+| + **User Roles:** Users can be assigned admin, developer and viewer roles; Admins can manage users and their roles; Admins & Developers can create, modify and delete stream machines and streams; Viewers can by default view and interact with stream machines but not edit them. For viewer interaction specific elements can be defined in the sheet by an admin or developer. |star|
 | + **Workspaces:** Added Workspaces; Each user can be assigned to several Workspace as well as given a roles within these Workspaces;  |star|
 | + **InfluxDB Support:** Connect to influx databases and store/query data using the new functions: INFLUX.STORE() and INFLUX.SELECT() |star|
 | + **InfluxDB Export:** Selcet data from an influx database and save to disk. This data can then also be downloaded as a csv file via the export button of the machine toolbar. |star|
 | + **PDF Generation (basic):** Take a screenshot of the current stream machine and download it as pdf. |star|
-| + **Sending of SMS:** With SMS.SEND() a streamsheet can send a notification via an SMS. |star|
 | + **Chart Module Refactoring:** New Chart Module.
-| + **Sending of emails without connector:** With EMAIL.SEND() a streamsheet can send a notification via an email (without the need to previously create an E-Mail connector). |star|
 | + **Sharing machines via link:** The toolbar got a new button to share a machine with others. With this link any user can open and view, but not edit, the machine. The link can also be an expiration date. |star|
 | + **Custom User Function:** Implement your own Streamsheets functions in JavaScript and Node.js. |star|
 | + **Custom Machine Tile Images:** Give your stream machines custom images to represent them in the tile view in the dashboard.

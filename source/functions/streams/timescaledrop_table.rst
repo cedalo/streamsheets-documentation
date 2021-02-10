@@ -4,7 +4,7 @@ TIMESCALE.DROP_TABLE
 .. |star| image:: /images/star.svg
         
 
-|star| This is a `Streamsheets Professional <https://cedalo.com/download/>`_ feature.
+|star| This is a `Streamsheets Premium <https://cedalo.com/download/>`_ feature.
 
 Drops a table from the timescaledb. 
 Click :ref:`here<timescalefunctions>` for a more detailed tutorial on timemescaledb functions. 

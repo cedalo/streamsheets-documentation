@@ -6,7 +6,7 @@ OPCUA.READ
 .. |star| image:: /images/star.svg
         
 
-|star| This is a `Streamsheets Professional <https://cedalo.com/download/>`_ feature. 
+|star| This is a `Streamsheets Premium <https://cedalo.com/download/>`_ feature.
 
 Reads a value from an :term:`OPC UA` Server.You can use the :ref:`Function Wizard <functionwizard>` for this function. 
 Click :ref:`here<opcuafunctions>` for a more detailed tutorial on opcua functions. 

@@ -1,10 +1,7 @@
 KAFKA.COMMAND
 -----------------------------
 
-.. |star| image:: /images/star.svg
         
-
-|star| This is a `Streamsheets Professional <https://cedalo.com/download/>`_ feature.
 
 Allows KSQL commands to be used. You can use the :ref:`Function Wizard <functionwizard>` for this function. 
 

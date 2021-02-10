@@ -62,6 +62,14 @@ The executed Sheet will only be executed if Streamsheet settings of executed She
        | **2.** no return value is generated
        |
        | To get a return the executed sheet needs to calculate a\ =\ :ref:`RETURN`\ () function.
+.. list-table::
+   :widths: 100
+   :header-rows: 1
+
+   * - Return #INVALID_PARAM_1.
+   * - | **IF executed Sheet:**
+       | is not set to calculcate on execute.
+
 
 **NOTE:**  if the execution of the triggered StreamSheet is stopped via the :ref:`return` function, its result is returned instead.
 

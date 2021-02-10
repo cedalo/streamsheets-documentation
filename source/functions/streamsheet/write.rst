@@ -31,7 +31,7 @@ Adds the key and value to a :term:`JSON` object in the outbox. The path to the k
    * - Type
      - Optional. Type of Value. Allowed types are String, Number, Boolean, Array, Dictionary. The type defines the color of the cell.
    * - TTL
-     - Optional. The "time to live" period in seconds. If the specified period expires the corresponding message will be removed from the outbox.
+     - Optional. The "time to live" period in seconds. If the specified period expires the corresponding message will be removed from the outbox. Default is indefinit.
 
 **Return Value**
 

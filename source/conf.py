@@ -20,7 +20,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Streamsheets'
-copyright = '2019, Cedalo AG, Streamsheet™ is a trademark of the Cedalo AG.'
+copyright = '2021, Cedalo AG, Streamsheet™ is a trademark of the Cedalo AG.'
 author = 'Cedalo AG'
 
 # The short X.Y version

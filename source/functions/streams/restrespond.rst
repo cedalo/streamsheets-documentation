@@ -3,8 +3,15 @@
         :scale: 60%
 .. role:: blue
 
+
+.. |star| image:: /images/star.svg
+    :scale: 50%
+
 REST.RESPOND
 -----------------------------
+
+|star| This is a `Streamsheets Premium <https://cedalo.com/download/>`_ feature.
+This is a leagacy function and was replaced by :ref:`HTTPRESPOND`\ ()
 
 Sends either arbitrary :term:`JSON` data or a message from the outbox to specified :term:`Producer`. Usually this function is used to
 respond to a previously received *request*-message. You can use the :ref:`Function Wizard <functionwizard>` for this function. 

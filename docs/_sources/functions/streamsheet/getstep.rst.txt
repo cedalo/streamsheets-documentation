@@ -13,11 +13,19 @@ triggered by :ref:`execute` refer to :ref:`repeatindex`.
 
 **Syntax**
 
-=GETSTEP()
+=GETSTEP([:term:`Streamsheet`])
 
 **Arguments**
 
-None.
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
+
+   * - Name
+     - Description
+   * - Streamsheet
+     - Optional. Define the Streamsheet to retrieve step count from. If not specified affiliated Streamsheet is used.
+
 
 **Return Value**
 
@@ -33,5 +41,7 @@ Current Streamsheet step.
      - Result
 
    * - =GETSTEP()
+     - 1
+   * - =GETSTEP("S2")
      - 1
 

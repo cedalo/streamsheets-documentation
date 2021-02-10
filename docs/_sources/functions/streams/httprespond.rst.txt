@@ -3,8 +3,14 @@
         :scale: 60%
 .. role:: blue
 
+.. |star| image:: /images/star.svg
+    :scale: 50%
+
+
 HTTP.RESPOND
 -----------------------------
+
+|star| This is a `Streamsheets Premium <https://cedalo.com/download/>`_ feature.
 
 Sends either arbitrary :term:`JSON` data or a message from the outbox to specified :term:`Producer`. Usually this function is used to
 respond to a previously received *request*-message. You can use the :ref:`Function Wizard <functionwizard>` for this function. 

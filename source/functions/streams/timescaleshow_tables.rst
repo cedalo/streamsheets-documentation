@@ -4,7 +4,7 @@ TIMESCALE.SHOW_TABLES
 .. |star| image:: /images/star.svg
         
 
-|star| This is a `Streamsheets Professional <https://cedalo.com/download/>`_ feature.
+|star| This is a `Streamsheets Premium <https://cedalo.com/download/>`_ feature.
 
 Shows all table in the timescaledb. 
 Click :ref:`here<timescalefunctions>` for a more detailed tutorial on timemescaledb functions. 

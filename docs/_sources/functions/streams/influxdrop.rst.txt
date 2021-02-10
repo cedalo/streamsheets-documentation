@@ -4,7 +4,7 @@ INFLUX.DROP
 .. |star| image:: /images/star.svg
         
 
-|star| This is a `Streamsheets Professional <https://cedalo.com/download/>`_ feature.
+|star| This is a `Streamsheets Premium <https://cedalo.com/download/>`_ feature.
 
 Performs a DROP query on your Influx database. You can use the :ref:`Function Wizard <functionwizard>` for this function. 
 

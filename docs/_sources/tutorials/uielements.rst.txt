@@ -9,18 +9,6 @@
 .. |StreamF| image:: /images/Streamfunction.png
     :scale: 75%
 
-.. |Area| image:: /images/ChartPictures/AreaCha.png
-.. |XY| image:: /images/ChartPictures/XYCha.png
-.. |Col| image:: /images/ChartPictures/ColCha.png
-.. |Bar| image:: /images/ChartPictures/BarCha.png
-.. |Line| image:: /images/ChartPictures/LineCha.png
-.. |Pie| image:: /images/ChartPictures/PieCha.png
-.. |Fun| image:: /images/ChartPictures/FunCha.png
-.. |Heat| image:: /images/ChartPictures/HeatCha.png
-.. |Stock| image:: /images/ChartPictures/StockCha.png
-.. |StChCa| image:: /images/ChartPictures/StChCa.png
-.. |STChT| image:: /images/ChartPictures/STChT.png
-.. |STChP| image:: /images/ChartPictures/STChP.png
 .. |TQW| image:: /images/TS/TQW.PNG
 .. |TQA| image:: /images/TS/TGA.PNG
 .. |TAM| image:: /images/TS/TAM.PNG
@@ -61,167 +49,6 @@ Tools & Charts
 
 There are multiple tools and elements in Streamsheets to help you build your Apps. 
 
-
-.. _charts:
-
-
-Charts
--------
-
-| Charts help people understand data quickly. Whether one wants to make a comparison, show a relationship or highlight a trend, they help the audience or even yourself to “see” what actually happens. Each of our 11 chart types has different features that make them better suited for specific tasks.
-| To create a Chart select the cell/range with the Data to be displayed and click in the top bar on the Insert Chart Icon. Choose the  Chart type and create the chart by clicking on the canvas.  There are two ways to adjust the chart settings. You can either directly adjust the chart functions or use the Chart Wizard. There are many different settings to play with: add a title, tooltipps and a legend, determine the length of the axis, allow zooming or use different colors for e.g. the columns or even the grid lines etc.. The best would be to just try everything out 😄.
-
-| |CHART| 
-| *Creating a chart*
-
-
-Chart Wizard
-``````````````
-
-There are two ways to adjust Charts in Streamsheets. 
-One way is to simply select the parts of the Chart, which you want to change and edit the formular, which is displayed in the edit field and/or use the toolbar icons e.g. to adjust colors etc..
-
-A more convinient way is the use of the Chart Wizard. Double click the chart you wish to adjust and the Chart Wizard will appear. 
-
-| |ChWiz|
-| *example view on the Chart Wizard*
-
-There are many ways a chart can be individually adjusted. This also depends on the kind of chart you are using. Different charts different options. In general, the chart wizard consists out of the following categories:
-
-+ **Chart:** define general settings 
-+ **Plot:** define what the data source is and how to interprete it. 
-+ **Title:** define title position. Change title in edit field and title format over toolbar. 
-+ **Legend:** define legend position. Change legend format in toolbar.
-+ **Series:** define series settings. (multiple series possible)
-+ **Axis:**  set X&Y axis settings like zooming and position. Add other axis, if needed.
-+ **Grid:** show or hide grid for X&Y axis. Change format with toolbar.  
-+ **Data Point:** only accessible over mouseclick. Select singular data point. Change appearance.  
-
-Chart Types
-``````````````````
-
-| The Chart Type you choose depends on what kind of information you want to present. Displaying the current machine temperature requires a different chart than showing the relationship between the temperature and time. It depends on how many variables need to be shown. 
-| 
-| If there is just one variable your perfectly fine using Line, Cloumn, Bar, Pie, Dounghnut, Area , Polar Area or Radar Charts. To show the relationship between two different variables we recommend Line (X/Y) or Scatter. A bubble chart is similar to a scatter plot, but you even can introduce a third variable. For more specific use cases there are State, Stock and Funnel Charts.
-|	
-| Depending on your selected data range, you will get a dynamic or a static chart (updating references or fix data input). 
-
-.. |star| image:: /images/star.svg
-    :scale: 50%
-
-|star| *= premium feature*
-
-
-Column & Bar Chart
-''''''''''''''''''''''
-
-|Col|  |Bar|  |Range1| 
-
-Column & Bar Charts are used to show differences between diferent data series categories. The height or length of a column/bar visualizes the value of a category. At least one data series is needed. 
-
-Line Chart
-''''''''''''''''''''''
-
-|Line| |Range4|
-
-Line Charts are often used to describe values measured over time.
-But careful: They only connect datapoints over categories, so the distance between the categories does not claim to be accurate. This can be done via the X/Y Chart. 
-
-XY Chart
-''''''''''''''''''''''
-
-|XY| |Range6|
-
-The XY Chart shows the relationship of data sets. In many use cases it is used for time series data, to show accurate time/value relations. 
-
-Area Chart
-''''''''''''''''''''''
-
-|Area|  |Range4|
-
-The Area Chart is similar to a line graph. Area charts are different from line graphs, however, because the area between the x axis and the line is filled in with color or shading. Area charts are a good choice to use when you want to show a trend over time, but aren't as concerned with showing exact values. At least one data series is needed.
-
-
-Pie & Doughnut Chart
-''''''''''''''''''''''
-
-|Pie| |Range4|
-
-Pie & Doughnut Charts help to visualize parts of a whole and their respective size. Each segment of the pie represents its size in comparison to the other segments. One data series is needed.  
-
-Stock Chart
-''''''''''''''''''''''
-
-|Stock| |Range5|
-
-Stock Charts contain information about the x&y values and further the changes of a value and historical highs and lows. They use boxes to visualize these parameters. Depending on the selected version of the Stock chart one either needs three, four or five data series. |star|
-
-Funnel Chart
-''''''''''''''''''''''
-
-|Fun| |Range2|
-
-Funnel Charts are often used for visualizing linear processes with connected stages. |star|
-
-State Chart
-''''''''''''''''''''''
-State Charts visualize differnt states. Each state has a dedicated color. To display a state chart create three columns of data consisting of X axis, values and colors. 
-Depening on the State Chart type the X axis values use either categorie or timeseries data. To further use the information the values provide, uncheck the "100%" checkbox in the chart wizard. The size of the columne now represents the value. 
-Using ";" in the color column you can add line color and a specified datalable text. To see the text activate datalable and the "state" checkbox in the chart wizard.  |star|
-
-**State Chart Category:**
-
-Indicates different states of different categories. 
-
-| |StChCa| |RangeSTC1|
-| *example with "100%" setting unchecked. Find it in the Chart Wizard categorie "Chart"*
-
-
-**State Chart Time:**
-
-Indicates states at certain time points. 
-
-| |STChT| |RangeSTCT|
-| *example with extra settings in the color column*
-
-**State Chart Periode:**
-
-Indicates states over a time periode. From time point a to b.
-
-| |STChP| |RangeSTCTP|
-| *example of the default setup* 
-
-Heatmap Chart
-''''''''''''''''''''''
-
-|Heat| |Range3|
-
-The Heatmap Chart visulizes intensity of points on a XY Chart. The closer together the hotter (red) the map gets. 
-In this example picture we used timeseries functions for the data range. Click :ref:`here<timeseriesfunctions>` if you want to know more about timeseries functions. 
-
-
-Boxplot Chart
-.................
-
-|Box| |RangeBox|
-
-The Boxplot Chart can be used to graphically visualize the median, minimum, maximum and quartiels of a data set. |star|
-
-Waterfall Chart
-..................
-
-|Water| |RangeWater|
-
-The Waterfall Chart displays processes and their changes over set categories looking for increases, decreases, with the possibility of adding the sum. |star|
-
-
-Data Source
-````````````
-Every chart needs a data source to be able to display data. The most known practice is to use a data range. As seen in the "chart type" section, the ranges differ from type to type. 
-Check out the examples above to get a better idea. 
-
-Besides using data ranges, the **XY chart** offers another option for data sources. Functions. Some functions hold data in their cell. These can either be timeseries functions or query functions (:ref:`TIMEAGGREGATE()<timeaggregate>`; :ref:`TIMESCALE.SELECT()<timescaleselect>`; ...). 
-Use a cell reference on one of these functions and you are able to create XY charts without creating huge data tables on your Streamsheet.
 
 
 Timeseries data
@@ -355,18 +182,18 @@ Interactive Shapes
 In the shape menu, in the controls category, you can find interactive elements. In a stopped or paused app, these elements can be adjusted as usual, by selecting the shape and changing the formula parameter. In a running app "control" shapes become interactive and are not selectable anymore. 
 
 + | **Checkboxes** are very helpful in use cases, where switching between two states is necessary. They switch their value parameter depending on the user interaction to FALSE or TRUE. To work with these states use a cell reference in the value parameter. Now you only have to use the referenced cell in your sheet logic to react on state changes.
-  |  GIF
+  |  
   | *Example use case: You want to only show certain information, when a check box is selected. FALSE represents that the information will not be shown. If the information you would like to hide is represented in an e.g. rectangle shape you could use the attributes parameter of the DRAW:RECTANGLE() function to switch between visible and not visible. Find more about the attributes' parameter here.*
 + | **Slider** allow the selection of values between a given minimum and maximum. Again referencing the value parameter to a cell gives you the power to integrate the selected value into your sheet logic. 
-  |  GIF
+  |  
   | *Example use case: An End User should be able to regulate a thermostat between the values of 15°C and 25°C. With the slider the user sets the wished temperature and the value gets set in the referenced cell of the value parameter. The value will be then published to the thermostat over e.g. an MQTT Stream. Now the user directly impacts the temperature by moving the slider.*
 + | The **Knob** works exactly like the slider, but instead of sliding from left to right the end user animation is turning a knob. 
 + | **Button**, like the checkboxes, set TRUE or FALSE values. The difference is, that they only set the value parameter to TRUE, as long as the user is pressing the button. After the release, the value turns back to FALSE. Again using a cell reference for the value parameter is the key to integrate the interaction in your sheet logic.  *Tip: Try to use EDGE.DETECT() if you only need a one time switch to TRUE.* 
-  |  GIF
+  |  
   | *Example use case: An end user should be able to open a valve by pushing a button on the screen. The valve only knows two states “open” and “close” and is connected to a MQTT broker. The payload of the message will now change dynamically and depending on the state of the button either “open” or “close” will be published.*
 
 
-.. TBD: Container categorie. Sobald klar ist wie das aussieht
+
 
 
 EVENTS()
