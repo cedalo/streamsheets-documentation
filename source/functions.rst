@@ -8,6 +8,7 @@ Functions
    :maxdepth: 1
    
    functions/chart
+   functions/crypto
    functions/date
    functions/engineering
    functions/events
