@@ -44,7 +44,7 @@
         :scale: 50%
 
 
-Tools & Charts
+App building
 ===============
 
 There are multiple tools and elements in Streamsheets to help you build your Apps. 

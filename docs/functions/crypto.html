@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Shape &mdash; Streamsheets 2.0.0 documentation</title>
+  <title>Crypto &mdash; Streamsheets 2.0.0 documentation</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ATTRIBUTES" href="shape/attributes.html" />
-    <link rel="prev" title="TRUNC" href="math/trunc.html" /> 
+    <link rel="next" title="CRYPTO.HASH" href="crypto/cryptohash.html" />
+    <link rel="prev" title="SERIESTIME" href="chart/seriestime.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -88,7 +88,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../functions.html">Functions</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="chart.html">Chart</a></li>
-<li class="toctree-l2"><a class="reference internal" href="crypto.html">Crypto</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Crypto</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="crypto/cryptohash.html">CRYPTO.HASH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="crypto/cryptohmac.html">CRYPTO.HMAC</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="date.html">Date</a></li>
 <li class="toctree-l2"><a class="reference internal" href="engineering.html">Engineering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="events.html">Events</a></li>
@@ -96,28 +100,7 @@
 <li class="toctree-l2"><a class="reference internal" href="logical.html">Logical</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lookup.html">Lookup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="math.html">Math</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Shape</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="shape/attributes.html">ATTRIBUTES</a></li>
-<li class="toctree-l3"><a class="reference internal" href="shape/bar.html">BAR</a></li>
-<li class="toctree-l3"><a class="reference internal" href="shape/classifypoint.html">CLASSIFYPOINT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="shape/drawbezier.html">DRAW.BEZIER</a></li>
-<li class="toctree-l3"><a class="reference internal" href="shape/drawbutton.html">DRAW.BUTTON</a></li>
-<li class="toctree-l3"><a class="reference internal" href="shape/drawcheckbox.html">DRAW.CHECKBOX</a></li>
-<li class="toctree-l3"><a class="reference internal" href="shape/drawellipse.html">DRAW.ELLIPSE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="shape/drawknob.html">DRAW.KNOB</a></li>
-<li class="toctree-l3"><a class="reference internal" href="shape/drawlabel.html">DRAW.LABEL</a></li>
-<li class="toctree-l3"><a class="reference internal" href="shape/drawline.html">DRAW.LINE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="shape/drawpolygon.html">DRAW.POLYGON</a></li>
-<li class="toctree-l3"><a class="reference internal" href="shape/drawrectangle.html">DRAW.RECTANGLE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="shape/drawslider.html">DRAW.SLIDER</a></li>
-<li class="toctree-l3"><a class="reference internal" href="shape/filllineargradient.html">FILLLINEARGRADIENT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="shape/fillpattern.html">FILLPATTERN</a></li>
-<li class="toctree-l3"><a class="reference internal" href="shape/fillradialgradient.html">FILLRADIALGRADIENT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="shape/fontformat.html">FONTFORMAT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="shape/lineformat.html">LINEFORMAT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="shape/qrcode.html">QRCODE</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="shape.html">Shape</a></li>
 <li class="toctree-l2"><a class="reference internal" href="stack.html">Stack</a></li>
 <li class="toctree-l2"><a class="reference internal" href="statistical.html">Statistical</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html">Streams</a></li>
@@ -179,7 +162,7 @@
         
           <li><a href="../functions.html">Functions</a> &raquo;</li>
         
-      <li>Shape</li>
+      <li>Crypto</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -196,29 +179,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="shape">
-<span id="id1"></span><h1>Shape<a class="headerlink" href="#shape" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="crypto">
+<h1>Crypto<a class="headerlink" href="#crypto" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="shape/attributes.html">ATTRIBUTES</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shape/bar.html">BAR</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shape/classifypoint.html">CLASSIFYPOINT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shape/drawbezier.html">DRAW.BEZIER</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shape/drawbutton.html">DRAW.BUTTON</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shape/drawcheckbox.html">DRAW.CHECKBOX</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shape/drawellipse.html">DRAW.ELLIPSE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shape/drawknob.html">DRAW.KNOB</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shape/drawlabel.html">DRAW.LABEL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shape/drawline.html">DRAW.LINE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shape/drawpolygon.html">DRAW.POLYGON</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shape/drawrectangle.html">DRAW.RECTANGLE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shape/drawslider.html">DRAW.SLIDER</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shape/filllineargradient.html">FILLLINEARGRADIENT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shape/fillpattern.html">FILLPATTERN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shape/fillradialgradient.html">FILLRADIALGRADIENT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shape/fontformat.html">FONTFORMAT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shape/lineformat.html">LINEFORMAT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shape/qrcode.html">QRCODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crypto/cryptohash.html">CRYPTO.HASH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crypto/cryptohmac.html">CRYPTO.HMAC</a></li>
 </ul>
 </div>
 </div>
@@ -231,10 +197,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="shape/attributes.html" class="btn btn-neutral float-right" title="ATTRIBUTES" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="crypto/cryptohash.html" class="btn btn-neutral float-right" title="CRYPTO.HASH" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="math/trunc.html" class="btn btn-neutral" title="TRUNC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="chart/seriestime.html" class="btn btn-neutral" title="SERIESTIME" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

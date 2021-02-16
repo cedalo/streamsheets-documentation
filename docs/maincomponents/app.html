@@ -286,7 +286,7 @@ One way is to simply select the parts of the Chart, which you want to change and
 </div>
 <div class="section" id="line-chart">
 <h4>Line Chart<a class="headerlink" href="#line-chart" title="Permalink to this headline">¶</a></h4>
-<p><img alt="Line" src="../_images/LineCha.png" /> <img alt="Range4" src="../_images/Range4.PNG" /></p>
+<p><img alt="Line" src="../_images/LineCha.png" /> <a class="reference internal" href="../_images/Range4.PNG"><img alt="Range4" src="../_images/Range4.PNG" style="width: 287.09999999999997px; height: 88.5px;" /></a></p>
 <p>Line Charts are often used to describe values measured over time.
 But careful: They only connect datapoints over categories, so the distance between the categories does not claim to be accurate. This can be done via the X/Y Chart.</p>
 </div>
@@ -302,12 +302,12 @@ But careful: They only connect datapoints over categories, so the distance betwe
 </div>
 <div class="section" id="area-chart">
 <h4>Area Chart<a class="headerlink" href="#area-chart" title="Permalink to this headline">¶</a></h4>
-<p><img alt="Area" src="../_images/AreaCha.png" />  <img alt="Range4" src="../_images/Range4.PNG" /></p>
+<p><img alt="Area" src="../_images/AreaCha.png" />  <a class="reference internal" href="../_images/Range4.PNG"><img alt="Range4" src="../_images/Range4.PNG" style="width: 287.09999999999997px; height: 88.5px;" /></a></p>
 <p>The Area Chart is similar to a line graph. Area charts are different from line graphs, however, because the area between the x axis and the line is filled in with color or shading. Area charts are a good choice to use when you want to show a trend over time, but aren’t as concerned with showing exact values. At least one data series is needed.</p>
 </div>
 <div class="section" id="pie-doughnut-chart">
 <h4>Pie &amp; Doughnut Chart<a class="headerlink" href="#pie-doughnut-chart" title="Permalink to this headline">¶</a></h4>
-<p><img alt="Pie" src="../_images/PieCha.png" /> <img alt="Range4" src="../_images/Range4.PNG" /></p>
+<p><a class="reference internal" href="../_images/PieCha.png"><img alt="Pie" src="../_images/PieCha.png" style="width: 396.0px; height: 277.5px;" /></a> <a class="reference internal" href="../_images/Range4.PNG"><img alt="Range4" src="../_images/Range4.PNG" style="width: 287.09999999999997px; height: 88.5px;" /></a></p>
 <p>Pie &amp; Doughnut Charts help to visualize parts of a whole and their respective size. Each segment of the pie represents its size in comparison to the other segments. One data series is needed.</p>
 </div>
 <div class="section" id="heatmap-chart">
@@ -316,10 +316,11 @@ But careful: They only connect datapoints over categories, so the distance betwe
 <p>The Heatmap Chart visulizes intensity of points on a XY Chart. The closer together the hotter (red) the map gets.
 In this example picture we used timeseries functions for the data range. Click <a class="reference internal" href="../tutorials/uielements.html#timeseriesfunctions"><span class="std std-ref">here</span></a> if you want to know more about timeseries functions.</p>
 </div>
-<div class="section" id="stock-chart">
-<h4>Stock Chart<a class="headerlink" href="#stock-chart" title="Permalink to this headline">¶</a></h4>
-<p><img alt="Stock" src="../_images/StockCha.png" /> <img alt="Range5" src="../_images/Range5.PNG" /></p>
-<p>Stock Charts contain information about the x&amp;y values and further the changes of a value and historical highs and lows. They use boxes to visualize these parameters. Depending on the selected version of the Stock chart one either needs three, four or five data series. <a class="reference internal" href="../_images/star.svg"><img alt="star" src="../_images/star.svg" /></a></p>
+<div class="section" id="stock-candelstick-chart">
+<h4>Stock/Candelstick Chart<a class="headerlink" href="#stock-candelstick-chart" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference internal" href="../_images/StockCha.png"><img alt="Stock" src="../_images/StockCha.png" style="width: 552.0px; height: 314.8px;" /></a> <img alt="Range5" src="../_images/Range5.PNG" /></p>
+<p>The Candelstick/Stock Chart are a style of financial chart used to describe price movements of a security, derivative, or currency. Each “candlestick” typically shows one day, thus a one-month chart may show the 20 trading days as 20 candlesticks. Candlestick charts can also be built using intervals shorter or longer than one day.
+It is similar to a bar chart in that each candlestick represents all four important pieces of information for that day: open and close in the thick body; high and low in the “candle wick”. Being densely packed with information, it tends to represent trading patterns over short periods of time, often a few days or a few trading sessions. Depending on the selected version of the Stock chart one either needs three, four or five data series. <a class="reference internal" href="../_images/star.svg"><img alt="star" src="../_images/star.svg" /></a></p>
 </div>
 <div class="section" id="funnel-chart">
 <h4>Funnel Chart<a class="headerlink" href="#funnel-chart" title="Permalink to this headline">¶</a></h4>
@@ -364,7 +365,8 @@ Using “;” in the color column you can add line color and a specified datalab
 <div class="section" id="data-source">
 <h3>Data Source<a class="headerlink" href="#data-source" title="Permalink to this headline">¶</a></h3>
 <p>Every chart needs a data source to be able to display data. The most known practice is to use a data range. As seen in the “chart type” section, the ranges differ from type to type.
-Check out the examples above to get a better idea.</p>
+Check out the examples above to get a better idea. To change the interpretation of the given range, or to allow not coherent data ranges, select the chart wizard and navigate to “Plot”.</p>
+<p><img alt="Plot" src="../_images/Plot.png" /></p>
 <p>Besides using data ranges, the <strong>XY chart</strong> offers another option for data sources. Functions. Some functions hold data in their cell. These can either be timeseries functions or query functions (<a class="reference internal" href="../functions/timeseries/timeaggregate.html#timeaggregate"><span class="std std-ref">TIMEAGGREGATE()</span></a>; <a class="reference internal" href="../functions/streams/timescaleselect.html#timescaleselect"><span class="std std-ref">TIMESCALE.SELECT()</span></a>; …).
 Use a cell reference on one of these functions and you are able to create XY charts without creating huge data tables on your Streamsheet. Check out our <a class="reference internal" href="../tutorials/uielements.html#timeseriesfunctions"><span class="std std-ref">Timeseries functions</span></a> tutorial for more information.</p>
 </div>

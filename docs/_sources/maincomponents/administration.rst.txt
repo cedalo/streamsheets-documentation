@@ -1,3 +1,6 @@
+.. |Workspace| image:: /images/Workspace.png
+    :scale: 30%
+
 .. _administration:
 
 
@@ -23,7 +26,12 @@ Workspaces
 .. |star| image:: /images/star.svg
 
 
-Workspaces help to visually divide one Streamsheets installation in multiple instances. Every Workspace oversees their own Dashboard with Apps and Streams. This offers the opportunity to divide projects over different Workspaces and easily adjust user access to certain Workspaces. Workspaces are a premium feature and not part of the open source version. |star|
+Workspaces help to visually divide one Streamsheets installation in multiple instances. Every Workspace oversees their own Dashboard with Apps and Streams. This offers the opportunity to divide projects over different Workspaces and easily adjust user access to certain. 
+To organize your workspaces navigate to the administration menu. 
+
+|Workspace|
+
+Workspaces are a premium feature and not part of the open source version. |star|
 
 
 .. _Database:

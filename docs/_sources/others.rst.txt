@@ -143,3 +143,72 @@ Error Codes
    * - #VALUE!
      - Invalid value
 
+.. _hashes:
+
+Hash Algorithms
+-----------------------------------
+
+.. list-table::
+   :widths: 100
+   :header-rows: 1
+
+   * - Currently Supported Algorithms
+   * - blake2b512
+   * - blake2s256
+   * - id-rsassa-pkcs1-v1_5-with-sha3-224
+   * - id-rsassa-pkcs1-v1_5-with-sha3-256
+   * - id-rsassa-pkcs1-v1_5-with-sha3-384
+   * - id-rsassa-pkcs1-v1_5-with-sha3-512
+   * - md4
+   * - md4withrsaencryption
+   * - md5
+   * - md5-sha1
+   * - md5withrsaencryption
+   * - mdc2
+   * - mdc2withrsa
+   * - ripemd
+   * - ripemd160
+   * - ripemd160withrsa
+   * - rmd160
+   * - rsa-md4
+   * - rsa-md5
+   * - rsa-mdc2
+   * - rsa-ripemd160
+   * - rsa-sha1
+   * - rsa-sha1-2
+   * - rsa-sha224
+   * - rsa-sha256
+   * - rsa-sha3-224
+   * - rsa-sha3-256
+   * - rsa-sha3-384
+   * - rsa-sha3-512
+   * - rsa-sha384
+   * - rsa-sha512
+   * - rsa-sha512/224
+   * - rsa-sha512/256
+   * - rsa-sm3
+   * - sha1
+   * - sha1withrsaencryption
+   * - sha224
+   * - sha224withrsaencryption
+   * - sha256
+   * - sha256withrsaencryption
+   * - sha3-224
+   * - sha3-256
+   * - sha3-384
+   * - sha3-512
+   * - sha384
+   * - sha384withrsaencryption
+   * - sha512
+   * - sha512-224
+   * - sha512-224withrsaencryption
+   * - sha512-256
+   * - sha512-256withrsaencryption
+   * - sha512withrsaencryption
+   * - shake128
+   * - shake256
+   * - sm3
+   * - sm3withrsaencryption
+   * - ssl3-md5
+   * - ssl3-sha1
+   * - whirlpool

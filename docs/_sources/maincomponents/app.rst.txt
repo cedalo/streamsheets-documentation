@@ -26,9 +26,11 @@ App
 .. |combinationwiz| image:: /images/ChartPictures/combinationwiz.png
 .. |combinationcha| image:: /images/ChartPictures/combinationcha.png
 .. |Pie| image:: /images/ChartPictures/PieCha.png
+        :scale: 30%
 .. |Fun| image:: /images/ChartPictures/FunCha.png
 .. |Heat| image:: /images/ChartPictures/HeatCha.png
 .. |Stock| image:: /images/ChartPictures/StockCha.png
+        :scale: 40%
 .. |StChCa| image:: /images/ChartPictures/StChCa.png
 .. |STChT| image:: /images/ChartPictures/STChT.png
 .. |STChP| image:: /images/ChartPictures/STChP.png
@@ -46,7 +48,10 @@ App
 
 .. |ChWiz| image:: /images/ChartPictures/ChWiz.png
         :scale: 50%
+.. |Range7| image:: /images/ChartPictures/Range7.PNG
+        :scale: 40%
 .. |Range4| image:: /images/ChartPictures/Range4.PNG
+        :scale: 30%
 .. |Range3| image:: /images/ChartPictures/Range3.PNG
 .. |Range2| image:: /images/ChartPictures/Range2.PNG
 .. |Range1| image:: /images/ChartPictures/Range1.PNG
@@ -60,6 +65,7 @@ App
 .. |RTAM| image:: /images/TS/RTAM.PNG
 .. |CHART| image:: /images/ChartPictures/Charts.gif
         :scale: 65 %
+.. |Plot| image:: /images/Plot.png
 
 | :term:`Streamsheet`\ s are bundled in one functional entity which processes data streams, an :term:`App`. The behaviour of an App and the way it processes data streams is defined through its Streamsheets. All Apps are listed in the “Dashboard”. You can access the Dashboard by opening the burger menu in the top-left corner and selecting "Apps" towards the end of the list. The Dashboard is also the start screen.
 | 
@@ -233,12 +239,13 @@ Heatmap Chart
 The Heatmap Chart visulizes intensity of points on a XY Chart. The closer together the hotter (red) the map gets. 
 In this example picture we used timeseries functions for the data range. Click :ref:`here<timeseriesfunctions>` if you want to know more about timeseries functions. 
 
-Stock Chart
-''''''''''''''''''''''
+Stock/Candelstick Chart 
+'''''''''''''''''''''''''
 
 |Stock| |Range5|
 
-Stock Charts contain information about the x&y values and further the changes of a value and historical highs and lows. They use boxes to visualize these parameters. Depending on the selected version of the Stock chart one either needs three, four or five data series. |star|
+The Candelstick/Stock Chart are a style of financial chart used to describe price movements of a security, derivative, or currency. Each "candlestick" typically shows one day, thus a one-month chart may show the 20 trading days as 20 candlesticks. Candlestick charts can also be built using intervals shorter or longer than one day.
+It is similar to a bar chart in that each candlestick represents all four important pieces of information for that day: open and close in the thick body; high and low in the “candle wick”. Being densely packed with information, it tends to represent trading patterns over short periods of time, often a few days or a few trading sessions. Depending on the selected version of the Stock chart one either needs three, four or five data series. |star|
 
 Funnel Chart
 ''''''''''''''''''''''
@@ -295,7 +302,9 @@ The Waterfall Chart displays processes and their changes over set categories loo
 Data Source
 ````````````
 Every chart needs a data source to be able to display data. The most known practice is to use a data range. As seen in the "chart type" section, the ranges differ from type to type. 
-Check out the examples above to get a better idea. 
+Check out the examples above to get a better idea. To change the interpretation of the given range, or to allow not coherent data ranges, select the chart wizard and navigate to "Plot".
+
+|Plot|
 
 Besides using data ranges, the **XY chart** offers another option for data sources. Functions. Some functions hold data in their cell. These can either be timeseries functions or query functions (:ref:`TIMEAGGREGATE()<timeaggregate>`; :ref:`TIMESCALE.SELECT()<timescaleselect>`; ...). 
 Use a cell reference on one of these functions and you are able to create XY charts without creating huge data tables on your Streamsheet. Check out our :ref:`timeseriesfunctions` tutorial for more information.

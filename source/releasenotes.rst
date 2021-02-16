@@ -11,8 +11,8 @@ We will never stop improving our :term:`Streamsheet`\ s. Stay up to date with ou
 
 .. _currently: 
 
-2.2
-------
+2.2-milestone
+-----------------
 
 | **Changes:**
 | + **Bug fixes**

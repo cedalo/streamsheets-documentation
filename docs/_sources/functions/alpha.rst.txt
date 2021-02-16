@@ -40,6 +40,8 @@ Alphabetical
    statistical/countif
    statistical/countifs
    streamsheet/counter
+   crypto/cryptohash
+   crypto/cryptohmac
    date/date
    date/datevalue
    lookup/daverage
