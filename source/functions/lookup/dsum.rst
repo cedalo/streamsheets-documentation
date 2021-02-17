@@ -45,9 +45,9 @@ The sum of all values of the matching column.
    * - Function
      - Result
      - Comment
-   * - | =DSUM(:blue:`A5:C9`,2,\ :red:`A2:C3`)
-       |
-       | |DSUM|
+   * -  =DSUM(:blue:`A5:C9`,2,\ :red:`A2:C3`)
+       
+        |DSUM|
 
       
       

@@ -38,11 +38,11 @@ We assume that the used REST feeder provides following base URL: ``https://dev.c
    * - Function
      - Result
      - Comment
-   * - | =WEBPAGE("test1/test2",
-       | "<html><body>
-       | <h1>HELLO</h1>
-       | </body></html>", 5)
+   * -  =WEBPAGE("test1/test2",
+        "<html><body>
+        <h1>HELLO</h1>
+        </body></html>", 5)
      - TRUE
-     - | Creates a webpage with a single *HELLO* title.
-       | The webpage is accessable at: ``https://dev.cedalo.com/rest/v1.0/webpages/test1/test2``
+     -  Creates a webpage with a single *HELLO* title.
+        The webpage is accessable at: ``https://dev.cedalo.com/rest/v1.0/webpages/test1/test2``
 

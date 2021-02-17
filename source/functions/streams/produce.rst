@@ -49,7 +49,7 @@ TRUE, if successful.
      - This publishes the string value "A Message" using the "MQTT Producer" under the topic "cedalo/test".
    * - =PRODUCE("File Producer", :ref:`JSON`\ (:blue:`A2:B3`))
 
-       | |PRODUCE|
+        |PRODUCE|
 
      - TRUE
      - This appends "Message" to the file "file.txt" using the "File Producer"

@@ -56,8 +56,8 @@ to check the state of the request.
    * - Function
      - Result
      - Comment
-   * - | =OPCUA.WRITE("OPCUA Producer","/Objects/1:Machines/
-       | 1:H1mrblX0X/name",JSON(\ :blue:`A2:B3`\ ), :ref:`INBOX <inboxf>`\ ())
-       | |OPCUA.WRITE|
+   * -  =OPCUA.WRITE("OPCUA Producer","/Objects/1:Machines/
+        1:H1mrblX0X/name",JSON(\ :blue:`A2:B3`\ ), :ref:`INBOX <inboxf>`\ ())
+        |OPCUA.WRITE|
      - The request ID
      - This sets the name of the machine with the id "H1mrblX0X" to "New Name". The result of the operation, either confirmation or any error is placed into the :ref:`INBOX`.

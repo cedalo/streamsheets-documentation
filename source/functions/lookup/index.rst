@@ -40,9 +40,9 @@ Cell value of the cell within the range with an offset of row and column.
    * - Function
      - Result
      - Comment
-   * - | =INDEX(:blue:`A2:B4`, 2, 1)
-       |
-       | |INDEX|
+   * -  =INDEX(:blue:`A2:B4`, 2, 1)
+       
+        |INDEX|
 
 
      - 8

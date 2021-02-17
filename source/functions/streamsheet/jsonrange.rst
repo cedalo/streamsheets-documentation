@@ -63,18 +63,18 @@ Below examples assumes following SourceRange:
    * - Function
      - Result
    * - =JSON.RANGE(ARRAY(A1:B2),A5:B6,"ARRAY")
-     - | Results in:
-       | A5="v1", B5="23"
-       | A6="v1", B6="42"
+     -  Results in:
+        A5="v1", B5="23"
+        A6="v1", B6="42"
    * - =JSON.RANGE(DICTIONARY(A1:B2),A5:B6,"DICTIONARY",FALSE)
-     - | Results in:
-       | A5="v1", B5="23"
-       | A6="v1", B6="42"
+     -  Results in:
+        A5="v1", B5="23"
+        A6="v1", B6="42"
    * - =JSON.RANGE(JSON(A1:B2),A5:B6,FALSE)
-     - | Results in:
-       | A5="v1", B5="v2"
-       | A6="23", B6="42"
+     -  Results in:
+        A5="v1", B5="v2"
+        A6="23", B6="42"
    * - =JSON.RANGE(RANGE(A1:B2),A5:B6,"RANGE",FALSE)
-     - | Results in:
-       | A5="v1", B5="v2"
-       | A6="23", B6="42"
+     -  Results in:
+        A5="v1", B5="v2"
+        A6="23", B6="42"

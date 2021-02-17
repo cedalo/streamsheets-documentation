@@ -46,12 +46,12 @@ TRUE, if successful.
 
    * - Function
      - Comment
-   * - | =FEEDINBOX(:ref:`DICTIONARY`\ (:blue:`A2:B5`), "S1")
-       |
-       | |FEEDINBOX1|
+   * -  =FEEDINBOX(:ref:`DICTIONARY`\ (:blue:`A2:B5`), "S1")
+       
+        |FEEDINBOX1|
        
 
      - Appending an object to a message. The message content will look as follows
 
-       | |FEEDINBOX2|
+        |FEEDINBOX2|
 

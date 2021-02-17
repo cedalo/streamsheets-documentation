@@ -57,7 +57,7 @@ TRUE, if successful.
      - Send a mail with the content "Message" and the subject "Subject" to all mail addresses in the A1:B2 range and with "user2@example.org" in CC and "user3@example.org" in BCC using the "Mail Producer".
    * - =MAIL.SEND("Mail Prodcuer", "Message", "Subject", "user@example.org", , , :blue:`A3:D4`)
        
-       | |MAIL.SEND|
+        |MAIL.SEND|
 
      - TRUE
      - Send a mail with two attachments. The first attachment is text file name "file.txt" with "A text" as content. The second attachment is an image named "image.jpeg" with the base64 value of the image as content.

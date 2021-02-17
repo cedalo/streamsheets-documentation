@@ -26,10 +26,10 @@ Click :ref:`here<opcuafunctions>` for a more detailed tutorial on opcua function
    * - Name
      - Description
    * - Range
-     - | An OPCUA.\ :term:`JSON` range covering the variables and folders, which should be hosted by the OPCUA Server.
-       | OPCUA Variables have the following parameters (2 optional): key, value, [datatype, typedefinition].
-       | Datatype example: "String", "Int32" etc.
-       | Typedefinition example: "folder" "variable" etc.
+     -  An OPCUA.\ :term:`JSON` range covering the variables and folders, which should be hosted by the OPCUA Server.
+        OPCUA Variables have the following parameters (2 optional): key, value, [datatype, typedefinition].
+        Datatype example: "String", "Int32" etc.
+        Typedefinition example: "folder" "variable" etc.
 
 
    

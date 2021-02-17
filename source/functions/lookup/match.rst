@@ -26,11 +26,11 @@ Returns a relative position number of a matching cell inside a specified cell ra
    * - SearchRange
      - A cell range to search in.
    * - Type
-     - | Optional. Search type with the following options:
-       |
-       | 1: (Default) Find the largest value in cell range which is less than or equal to specified value. Table must be in ascending order.
-       | 0: Find the first value which match exactly specified value. Here the wildcards ? and * are supported.
-       | -1: Find the smallest value in cell range which is greater or equal to specified value. Table must be in descending order.
+     -  Optional. Search type with the following options:
+       
+        1: (Default) Find the largest value in cell range which is less than or equal to specified value. Table must be in ascending order.
+        0: Find the first value which match exactly specified value. Here the wildcards ? and * are supported.
+        -1: Find the smallest value in cell range which is greater or equal to specified value. Table must be in descending order.
 
 **Return Value**
 
@@ -45,13 +45,13 @@ Returns relative position of in cell-range for given value or :ref:`#NA <error>`
    * - Function
      - Result
      - Comment
-   * - | 1. =MATCH(4,\ :red:`B2:B4`, 0)
-       | 2. =MATCH(2,\ :blue:`A2:B2`, 0)
-       |
-       | |MATCH|
+   * -  1. =MATCH(4,\ :red:`B2:B4`, 0)
+        2. =MATCH(2,\ :blue:`A2:B2`, 0)
+       
+        |MATCH|
 
    
-     - | 1. --> 2
-       | 2. --> 1
+     -  1. --> 2
+        2. --> 1
      - The index of the cell with the searched value is returned.
 

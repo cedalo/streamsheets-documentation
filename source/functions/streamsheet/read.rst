@@ -56,7 +56,7 @@ The last part of the key of the data value to be retrieved.
      - :ref:`#NA! <error>`
      - Returns error code if customer name is not available because last parameter is to TRUE.
    * - =READ(:ref:`INBOXDATA`\ (,,"Products","0"),F19:J25,"Dictionary",,TRUE)
-     - | |Read|
-       | Read function with target range. 
+     -  |Read|
+        Read function with target range. 
      - Example to read a whole table with the help of the DICTIONARY() function and a target range. 
 

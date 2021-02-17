@@ -41,9 +41,9 @@ The minimum value of the matching column.
    * - Function
      - Result
      - Comment
-   * - | =DMIN(:blue:`A5:C9`,2,\ :red:`A2:C3`)
-       |
-       | |DSUM|
+   * -  =DMIN(:blue:`A5:C9`,2,\ :red:`A2:C3`)
+       
+        |DSUM|
 
      - 19
      - Evaluates the minimum age in "Berlin".

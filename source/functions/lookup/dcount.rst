@@ -41,9 +41,9 @@ The counted amount of cells within the given parameters.
    * - Function
      - Result
      - Comment
-   * - | =DCOUNT(:blue:`A5:C9`,2,\ :red:`A2:C3`)
-       |
-       | |DSUM|
+   * - =DCOUNT(:blue:`A5:C9`,2,\ :red:`A2:C3`)
+       
+        |DSUM|
 
      
 

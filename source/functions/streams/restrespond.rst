@@ -62,7 +62,7 @@ the :ref:`read` function as follows: ``READ(INBOXMETADATA(,,"requestId"), B1, "S
      - Sends the JSON data provided by the :ref:`dictionary` function to the Consumer named *Rest* using the *requestId* in B1
    * - =REST.RESPOND("Rest", B1, "Not Found", 404,\ :blue:`A2:B2`)
 
-       | |REST.RESPOND|
+        |REST.RESPOND|
 
      - TRUE
      - Responds to the request corresponding to *requestId* with the body "Not Found", status code "404" and the header "Content-Type: text/plain".

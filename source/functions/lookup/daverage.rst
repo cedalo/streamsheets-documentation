@@ -41,9 +41,9 @@ The average of the matching column.
    * - Function
      - Result
      - Comment
-   * - | =DAVERAGE(:blue:`A5:C9`,2,\ :red:`A2:C3`)
-       |
-       | |DSUM|
+   * -  =DAVERAGE(:blue:`A5:C9`,2,\ :red:`A2:C3`)
+       
+        |DSUM|
       
       
 

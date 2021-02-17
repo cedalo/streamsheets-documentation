@@ -31,17 +31,17 @@ Define a graphical slider on a given drawing.
    * - Height
      - Height in 1/100th mm
    * - LineFormat
-     - | Optional. Options:
-       |
-       | - "None" for no line
-       | - Hexadecimal color value ("#FF0000" for Red)
-       | - JSON String created using :ref:`lineformat`
+     -  Optional. Options:
+       
+        - "None" for no line
+        - Hexadecimal color value ("#FF0000" for Red)
+        - JSON String created using :ref:`lineformat`
    * - FillFormat
-     - | Optional. Options:
-       |
-       | - "None" for no fill.
-       | - Hexadecimal color value ("#FF0000" for Red)
-       | - JSON String created using :ref:`fillpattern`, :ref:`filllineargradient`, :ref:`fillradialgradient`
+     -  Optional. Options:
+       
+        - "None" for no fill.
+        - Hexadecimal color value ("#FF0000" for Red)
+        - JSON String created using :ref:`fillpattern`, :ref:`filllineargradient`, :ref:`fillradialgradient`
    * - Attributes
      - Optional. JSON String created using :ref:`attributes`
    * - Events
@@ -49,17 +49,17 @@ Define a graphical slider on a given drawing.
    * - Angle
      - Optional. Angle in radians.
    * - RotCenter
-     - | Optional. This defines, where the object rotates around:
-       |
-       | 0: Top left corner
-       | 1: Top center
-       | 2: Top right corner
-       | 3: Left center
-       | 4: Center (default)
-       | 5: Right center
-       | 6: Bottom left corner
-       | 7: Bottom center
-       | 8: Bottom right corner
+     -  Optional. This defines, where the object rotates around:
+       
+        0: Top left corner
+        1: Top center
+        2: Top right corner
+        3: Left center
+        4: Center (default)
+        5: Right center
+        6: Bottom left corner
+        7: Bottom center
+        8: Bottom right corner
    * - Label
      - Optional. Label to display above slider.
    * - LabelFont
@@ -76,16 +76,16 @@ Define a graphical slider on a given drawing.
    * - ScaleFont
      - Optional. Font to use for the slider scale. JSON String created using :ref:`fontformat`
    * - Marker
-     - | Optional. Marker style to indicate the current value. Allowed values are:
-       | 'none'
-       | 'square'
-       | 'rect'
-       | 'arrowtop'
-       | 'arrowbottom'
-       | 'arrowbottom'
-       | 'circlesmall'
-       |
-       | Default is a large circle.
+     -  Optional. Marker style to indicate the current value. Allowed values are:
+        'none'
+        'square'
+        'rect'
+        'arrowtop'
+        'arrowbottom'
+        'arrowbottom'
+        'circlesmall'
+       
+        Default is a large circle.
    * - FormatRange
      - Optional. Cell range to provide additional scale information. It must be a range with 3 columns. The values in the first column
        provides a scale value. The value in the second column provides a label, that is displayed instead of the scale value. This is optional.

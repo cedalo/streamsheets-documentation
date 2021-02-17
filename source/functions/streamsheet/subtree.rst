@@ -35,8 +35,8 @@ The return value contains the :term:`JSON` Object and is only usable within othe
    * - Function
      - Result
      - Comment
-   * - | =\ :ref:`WRITE`\ (:ref:`OUTBOXDATA`\ ("Message","Kundenname"),
-       | SUBTREE(:ref:`INBOXDATA`\ (,,"Kundenname")),"Dictionary")
+   * -  =\ :ref:`WRITE`\ (:ref:`OUTBOXDATA`\ ("Message","Kundenname"),
+        SUBTREE(:ref:`INBOXDATA`\ (,,"Kundenname")),"Dictionary")
      - Kundenname
      - Excerpts the items below "Kundenname" from the :ref:`inbox` and copies them to a message in the outbox. All child elements
        are copied as well.

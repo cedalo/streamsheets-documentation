@@ -31,11 +31,11 @@ Define a graphical line.
    * - Y2
      - Y2 End Y-Coordinate in 1/100th mm.
    * - LineFormat
-     - | Optional. Options:
-       |
-       | - "None" for no line
-       | - Hexadecimal color value ("#FF0000" for Red)
-       | - JSON String created using :ref:`lineformat`
+     -  Optional. Options:
+       
+        - "None" for no line
+        - Hexadecimal color value ("#FF0000" for Red)
+        - JSON String created using :ref:`lineformat`
 
 **Return Value**
 

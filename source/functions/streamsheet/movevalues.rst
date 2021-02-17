@@ -39,15 +39,15 @@ TRUE, if no error.
 
    * - Function
      - Result
-   * - | =MOVEVALUES(:blue:`A2:B2`,\ :red:`A4:B4`)
-       |
-       | |MOVEVALUES1|
+   * -  =MOVEVALUES(:blue:`A2:B2`,\ :red:`A4:B4`)
+       
+        |MOVEVALUES1|
 
        
 
-     - | After MOVEVALUES
-       |
-       | |MOVEVALUES2|
+     -  After MOVEVALUES
+       
+        |MOVEVALUES2|
 
      
 .. warning:: Only the values will be moved. Formulas will be removed.

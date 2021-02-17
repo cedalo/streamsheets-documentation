@@ -27,8 +27,8 @@ DICTIONARY(Range[, Horizontal])
    * - Name
      - Description
    * - Range
-     - | Range providing the source data, that will be used for the JSON.
-       | The left or top cells will feed the keys and the bottom or right the values.
+     -  Range providing the source data, that will be used for the JSON.
+        The left or top cells will feed the keys and the bottom or right the values.
    * - Horizontal
      - Optional. FALSE, if keys are aligned vertical (Default), TRUE if horizontal.
 
@@ -44,9 +44,9 @@ TRUE, if successful.
 
    * - Function
      - Result
-   * - | =\ :ref:`WRITE`\ (:ref:`OUTBOXDATA`\ ("Message", "NewItem"), DICTIONARY(:blue:`A2:B5`), "Dictionary")
-       |
-       | |DICTIONARY1|
+   * -  =\ :ref:`WRITE`\ (:ref:`OUTBOXDATA`\ ("Message", "NewItem"), DICTIONARY(:blue:`A2:B5`), "Dictionary")
+       
+        |DICTIONARY1|
 
        
 
@@ -54,13 +54,13 @@ TRUE, if successful.
 
        
 
-           | |DICTIONARY2|
-   * - | =\ :ref:`WRITE`\ (:ref:`OUTBOXDATA`\ ("Message", "NewItem"), DICTIONARY(:blue:`A2:B5`), "Dictionary"
-       |
-       | |DICTIONARY3|
-     - | Adding a table with the dictionary function to the outbox. 
-       |
-       | |DICTIONARY4|
+            |DICTIONARY2|
+   * -  =\ :ref:`WRITE`\ (:ref:`OUTBOXDATA`\ ("Message", "NewItem"), DICTIONARY(:blue:`A2:B5`), "Dictionary"
+       
+        |DICTIONARY3|
+     -  Adding a table with the dictionary function to the outbox. 
+       
+        |DICTIONARY4|
 
 
 

@@ -43,15 +43,15 @@ TRUE, if successful.
 
    * - Function
      - Result
-   * - | =COPYVALUES(:blue:`A2:B2`,\ :red:`A4:B4`)
-       |
-       | |COPYVALUES1|
+   * -  =COPYVALUES(:blue:`A2:B2`,\ :red:`A4:B4`)
+       
+        |COPYVALUES1|
 
        
 
-     - |
-       |
-       | |COPYVALUES2|
+     - 
+       
+        |COPYVALUES2|
 
        
 

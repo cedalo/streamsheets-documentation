@@ -52,7 +52,7 @@ TRUE, if successful.
      - Write the text "Message" to the file located at "{rootDirectory}/directory/file.csv" using the "File Producer"
    * - =FILE.WRITE("File Producer", A2:C3, "file.csv", ,"create", ";")
 
-       | |FILE.WRITE|
+        |FILE.WRITE|
        
      - TRUE
      - Writes the content of the range A2:C3 to the fiel located at "{rootDirectory}/file.csv" using ";" as separator and replacing an already existing file with the same name.

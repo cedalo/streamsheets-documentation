@@ -31,17 +31,17 @@ Define a graphical polygon.
    * - Height
      - Height in 1/100th mm
    * - LineFormat
-     - | Optional. Options:
-       |
-       | - "None" for no line
-       | - Hexadecimal color value ("#FF0000" for Red)
-       | - JSON String created using :ref:`lineformat`
+     -  Optional. Options:
+       
+        - "None" for no line
+        - Hexadecimal color value ("#FF0000" for Red)
+        - JSON String created using :ref:`lineformat`
    * - FillFormat
-     - | Optional. Options:
-       |
-       | - "None" for no fill.
-       | - Hexadecimal color value ("#FF0000" for Red)
-       | - JSON String created using :ref:`fillpattern`, :ref:`filllineargradient`, :ref:`fillradialgradient`
+     -  Optional. Options:
+       
+        - "None" for no fill.
+        - Hexadecimal color value ("#FF0000" for Red)
+        - JSON String created using :ref:`fillpattern`, :ref:`filllineargradient`, :ref:`fillradialgradient`
    * - Attributes
      - Optional. JSON String created using :ref:`attributes`
    * - Events
@@ -49,17 +49,17 @@ Define a graphical polygon.
    * - Angle
      - Optional. Angle in radians.
    * - RotCenter
-     - | Optional. This defines, where the object rotates around:
-       |
-       | 0: Top left corner
-       | 1: Top center
-       | 2: Top right corner
-       | 3: Left center
-       | 4: Center (default)
-       | 5: Right center
-       | 6: Bottom left corner
-       | 7: Bottom center
-       | 8: Bottom right corner
+     -  Optional. This defines, where the object rotates around:
+       
+        0: Top left corner
+        1: Top center
+        2: Top right corner
+        3: Left center
+        4: Center (default)
+        5: Right center
+        6: Bottom left corner
+        7: Bottom center
+        8: Bottom right corner
    * - PointRange
      - Optional. Cell Range with coordinates. A coordinate is defined by a fraction of the width and height of the polygon ranging
        from 0 to 1. 1 would place the coordinate at the bottom or right corner of the object. The range must have 2 columns. The

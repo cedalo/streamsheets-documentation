@@ -47,8 +47,8 @@ A string key to provide a path within a message.
      - Name
      - The WRITE function returns the last part of the JSON Path. The value in C7 will be written into the Message
        at the given JSON Path.
-   * - | =WRITE(OUTBOXDATA("Message","Output",-1),JSON(J22:K24),)
-     - | |inc|
-     - | Pro tipp: If you want to create an array in the Outbox, use -1 as the last OUTBOXDATA() parameter. This way the array will automatically increment starting from 0.
+   * -  =WRITE(OUTBOXDATA("Message","Output",-1),JSON(J22:K24),)
+     -  |inc|
+     -  Pro tipp: If you want to create an array in the Outbox, use -1 as the last OUTBOXDATA() parameter. This way the array will automatically increment starting from 0.
 
 

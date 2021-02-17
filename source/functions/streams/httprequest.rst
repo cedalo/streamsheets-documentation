@@ -59,7 +59,7 @@ the service is called.
      - This makes a GET request to "${baseURL}/path" and writes the result to the :ref:`inbox`.
    * - =HTTP.REQUEST("Rest", "/path", "POST", :ref:`INBOX <inboxf>`\ ("S2"),, "hello",\ :blue:`A2:B3`)
 
-       | |REST.REQUEST|
+        |REST.REQUEST|
 
      - generated Request id
      - This makes a POST request to "${baseURL}/path" with "hello" as body and "Content-Type: text/plain" and "Custom-Header: example" as headers.

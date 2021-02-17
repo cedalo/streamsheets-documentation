@@ -31,10 +31,10 @@ defined by the points given.
 
 **Return Value**
 
-| -1: Point is outside of polygon
-| 0: Point is on polygon border
-| 1: Point is inside polygon
-|
+ -1: Point is outside of polygon
+ 0: Point is on polygon border
+ 1: Point is inside polygon
+
 
 **Example**
 
@@ -47,8 +47,8 @@ defined by the points given.
      - Comment
    * - =CLASSIFYPOINT(500, 500, :blue:`A2:B5`\ )
      - 1
-     - | Where A2:B5 looks as follows:
-       |
-       | |CLASSIFYPOINT|
+     -  Where A2:B5 looks as follows:
+       
+        |CLASSIFYPOINT|
 
 

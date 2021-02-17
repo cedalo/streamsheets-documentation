@@ -37,10 +37,10 @@ Amount of number values.
    * - Function
      - Result
      - Comment
-   * - | =COUNT(:blue:`A2:B4`)
-       |
+   * -  =COUNT(:blue:`A2:B4`)
+       
 
-       | |COUNT|
+        |COUNT|
      - 3
      - Empty cells are not counted.
 

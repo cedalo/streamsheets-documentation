@@ -46,19 +46,19 @@ The last part of the key of the data value to write.
    * - Function
      - Result
      - Comment
-   * - | =WRITE(:ref:`OUTBOXDATA`\ ("Message","Customer", "Name"), "Maier", "String")
-     - | Outbox Message:
-       | |WRITE|
-     - | Example to write a value to a JSON object in the outbox. 
-   * - | =WRITE(:ref:`OUTBOXDATA`\ ("Message","Units"),READ(INBOXDATA(,,"Units")))
-       | Inbox Message: 
-       | |ArrayIn|
-     - | Outbox Message: 
-       | |ArrayOut|
+   * -  =WRITE(:ref:`OUTBOXDATA`\ ("Message","Customer", "Name"), "Maier", "String")
+     -  Outbox Message:
+        |WRITE|
+     -  Example to write a value to a JSON object in the outbox. 
+   * -  =WRITE(:ref:`OUTBOXDATA`\ ("Message","Units"),READ(INBOXDATA(,,"Units")))
+        Inbox Message: 
+        |ArrayIn|
+     -  Outbox Message: 
+        |ArrayOut|
      -  You can also direct data from the Inbox into the Outbox. In this example the "Units" array from the Inbox is automatically transfered to the Outbox.
-   * - | =WRITE(OUTBOXDATA("Message","Output",-1),JSON(J22:K24),)
-     - | |inc|
-     - | Pro tipp: If you want to automatically create an array, use -1 as the last OUTBOXDATA() parameter. This way the array will increment starting from 0. 
+   * -  =WRITE(OUTBOXDATA("Message","Output",-1),JSON(J22:K24),)
+     -  |inc|
+     -  Pro tipp: If you want to automatically create an array, use -1 as the last OUTBOXDATA() parameter. This way the array will increment starting from 0. 
 
 
 

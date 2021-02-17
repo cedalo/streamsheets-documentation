@@ -58,20 +58,20 @@ Comma separated list of array items.
    * - Function
      - Outbox Result
      - Comment
-   * - | =\ :ref:`WRITE`\ (:ref:`OUTBOXDATA`\ ("Message", "NewItem"),ARRAY(:blue:`A2:B5`, FALSE), "Array")
-       | with the following cell content:
+   * -  =\ :ref:`WRITE`\ (:ref:`OUTBOXDATA`\ ("Message", "NewItem"),ARRAY(:blue:`A2:B5`, FALSE), "Array")
+        with the following cell content:
 
-       | |ARRAY1|
+        |ARRAY1|
 
-     - | |ARRAY2|
+     -  |ARRAY2|
 
-     - | Appending an array to a message. Since Nest is set to FALSE, the array
+     -  Appending an array to a message. Since Nest is set to FALSE, the array
         items are created by columns leading to two array entries. The two
         entries contain the elements from the rows top to bottom. The message content will look as follows
-   * - | =\ :ref:`WRITE`\ (:ref:`OUTBOXDATA`\ ("Message","NewItem"),ARRAY(:blue:`A2:A5`,FALSE),"Array")
-       | =\ :ref:`WRITE`\ (:ref:`OUTBOXDATA`\ ("Message","NewItem2"),ARRAY(:red:`B2:B5`,FALSE,TRUE),"Array")
+   * -  =\ :ref:`WRITE`\ (:ref:`OUTBOXDATA`\ ("Message","NewItem"),ARRAY(:blue:`A2:A5`,FALSE),"Array")
+        =\ :ref:`WRITE`\ (:ref:`OUTBOXDATA`\ ("Message","NewItem2"),ARRAY(:red:`B2:B5`,FALSE,TRUE),"Array")
 
-       | |nested|
+        |nested|
 
      - |nestedout|
      - Example usage of the nested parameter. 

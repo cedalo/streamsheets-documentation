@@ -20,12 +20,12 @@ Draw a bar within a cell . A bar is only drawn in the cell, if it is the outer f
      - Size of bar covering the cell, that the function contains. The size is
        given as a factor of the height or width between 0 and 1, where 1 will cover the complete cell. Negative vales are allowed.
    * - Direction
-     - | Optional. 0 is default.
-       |
-       | Options:
-       |
-       | 0 : Display horizontal bar
-       | 1 : Display vertical bar
+     -  Optional. 0 is default.
+       
+        Options:
+       
+       0 : Display horizontal bar
+       1 : Display vertical bar
    * - FillColor
      - Optional. Fill color value. The default value is '#00FF00'.
    * - LineColor

@@ -42,9 +42,9 @@ The maximum value of the matching column.
    * - Function
      - Result
      - Comment
-   * - | =DMAX(:blue:`A5:C9`,2,\ :red:`A2:C3`)
-       |
-       | |DSUM|
+   * -  =DMAX(:blue:`A5:C9`,2,\ :red:`A2:C3`)
+       
+        |DSUM|
 
       
 

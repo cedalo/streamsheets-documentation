@@ -26,14 +26,14 @@ Optionally it deletes all found records after the extract operation (remaining r
    * - Name
      - Description
    * - StackRange
-     - | Range, where the stack range resides. The first row of the StackRange is a title range and remains unchanged.
+     -  Range, where the stack range resides. The first row of the StackRange is a title range and remains unchanged.
    * - CriteriaRange
-     - | The CriteriaRange has at least 2 rows, the first one is the labels row with labels also found in StackRange (not necessarily all and maybe not in the same order!), the second to nth row contain filter settings.
-       | Note: criteria values can start with a comparison-operator like, >, >=, <, <=, = or <>
-       | Settings in the same row are combined using AND, multiple rows are OR.
+     -  The CriteriaRange has at least 2 rows, the first one is the labels row with labels also found in StackRange (not necessarily all and maybe not in the same order!), the second to nth row contain filter settings.
+        Note: criteria values can start with a comparison-operator like, >, >=, <, <=, = or <>
+        Settings in the same row are combined using AND, multiple rows are OR.
    * - TargetRange
-     - | Optional. If specified, TargetRange must have two rows minimum, the first row has labels also found in StackRange (not necessarily all and maybe not in the same order!). The result of the filter is copied to the matching columns in the TargetRange.
-       | Note: TargetRange can have more than 2 rows. If it has more than 2 rows the additional rows can take the additional hits of the the filter extract.
+     -  Optional. If specified, TargetRange must have two rows minimum, the first row has labels also found in StackRange (not necessarily all and maybe not in the same order!). The result of the filter is copied to the matching columns in the TargetRange.
+        Note: TargetRange can have more than 2 rows. If it has more than 2 rows the additional rows can take the additional hits of the the filter extract.
    * - Drop
      - Optional. If set to TRUE it drops the selected rows from the stack. Drop defaults to FALSE.
    * - Unique
@@ -53,11 +53,11 @@ TRUE, if at least one matching value was found, otherwise FALSE. In case of an e
      - Result
    * - =STACKFIND(:blue:`A5:D9`,\ :red:`A2:D3`,\ :green:`A11:B13`)
 
-       | |STACKFIND1|
+        |STACKFIND1|
 
      - After calling STACKFIND
 
-       | |STACKFIND2|
+        |STACKFIND2|
 
 
 

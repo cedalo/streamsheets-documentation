@@ -26,17 +26,17 @@ by the direction parameter and the new cells will be added to the list. Values a
    * - Name
      - Description
    * - StackRange
-     - | Range, where the source range items are added to. The first row of the StackRange is a title range and remains unchanged.
+     -  Range, where the source range items are added to. The first row of the StackRange is a title range and remains unchanged.
    * - SourceRange
-     - | Range, where the source data is taken from and copied into the StackRange.The first row of the StackRange is a title range and remains unchanged.
+     -  Range, where the source data is taken from and copied into the StackRange.The first row of the StackRange is a title range and remains unchanged.
    * - Direction
-     - | Optional. If you set Direction to TRUE the new data is added behind the last empty row on the SourceRange.
-       | If the StackRange is full, the first row (after the columns row) is dropped from the stack and all rows move up to make room for the new data in the last row. Analog, if Direction is set to FALSE rows are added at top of the stack and dropped from the bottom. By default Direction is TRUE.
+     -  Optional. If you set Direction to TRUE the new data is added behind the last empty row on the SourceRange.
+        If the StackRange is full, the first row (after the columns row) is dropped from the stack and all rows move up to make room for the new data in the last row. Analog, if Direction is set to FALSE rows are added at top of the stack and dropped from the bottom. By default Direction is TRUE.
    * - TargetRange
-     - | Optional. If TargetRange is specified and if a row has to be dropped, the row is copied to the TargetRange.
-       | TargetRange must have two rows, the first row has labels also found in Stackrange (not necessarily all and maybe not in the same order!). The dropped values are copied to the matching columns in the TargetRange.
-       | If no row is dropped, the values in the second row of TargetRange are blanked out.
-       | **Important:** Before copying to the TargetRange all existing values in TargetRange are deleted (not the labels row!)
+     -  Optional. If TargetRange is specified and if a row has to be dropped, the row is copied to the TargetRange.
+        TargetRange must have two rows, the first row has labels also found in Stackrange (not necessarily all and maybe not in the same order!). The dropped values are copied to the matching columns in the TargetRange.
+        If no row is dropped, the values in the second row of TargetRange are blanked out.
+        **Important:** Before copying to the TargetRange all existing values in TargetRange are deleted (not the labels row!)
 
 **Return Value**
 
@@ -52,9 +52,9 @@ TRUE, if no error occurred, otherwise :ref:`error <error>` value.
      - Result
    * - =STACKADD(:blue:`A5:D9`,\ :red:`A2:D3`,TRUE)
 
-       | |STACKADD1|
+        |STACKADD1|
 
      - After calling STACKADD the first time
 
-       | |STACKADD2|
+        |STACKADD2|
 
