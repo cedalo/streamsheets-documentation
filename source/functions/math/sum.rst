@@ -40,9 +40,7 @@ Sum of all given arguments.
      -
    * - =SUM(:blue:`A2:A4`)
      - 50
-     -   Sample Sheet
-        
-         |SUM|
+     -   Sample Sheet                 |SUM|
 
       
         

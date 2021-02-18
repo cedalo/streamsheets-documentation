@@ -2,8 +2,6 @@
         :scale: 50%
 .. |COPYVALUES2| image:: /images/COPYVALUES2.PNG
         :scale: 50%
-.. role:: red
-.. role:: blue
 
 .. _copyvalues:
 
@@ -43,15 +41,8 @@ TRUE, if successful.
 
    * - Function
      - Result
-   * -  =COPYVALUES(:blue:`A2:B2`,\ :red:`A4:B4`)
-       
-        |COPYVALUES1|
-
-       
-
-     - 
-       
-        |COPYVALUES2|
+   * -  =COPYVALUES(A2:B2,A4:B4)             |COPYVALUES1|  
+     - |COPYVALUES2|
 
        
 

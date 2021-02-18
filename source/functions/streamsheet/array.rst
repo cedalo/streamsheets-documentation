@@ -10,8 +10,6 @@
 .. |nestedout| image:: /images/nestedout.PNG 
 
 
-.. role:: blue 
-.. role:: red
 
 ARRAY
 -----------------------------
@@ -21,7 +19,7 @@ array items to a message.
 Creates a :term:`JSON` array entry using the given keys and values. If the range
 has one row or column, one array entry for each cell is created. If
 there are two columns or rows, a nested array (array containing a
-subarray) will be created. Note that if both nest and flat parameters are set to true one can use :ref:`range` instead.
+subarray) will be created. Note that if both nest and flat parameters are set to true one can use range instead.
 
 **Syntax**
 
@@ -58,21 +56,10 @@ Comma separated list of array items.
    * - Function
      - Outbox Result
      - Comment
-   * -  =\ :ref:`WRITE`\ (:ref:`OUTBOXDATA`\ ("Message", "NewItem"),ARRAY(:blue:`A2:B5`, FALSE), "Array")
-        with the following cell content:
-
-        |ARRAY1|
-
+   * -  =WRITE(OUTBOXDATA("Message", "NewItem"),ARRAY(A2:B5, FALSE), "Array")        with the following cell content:        |ARRAY1|    
      -  |ARRAY2|
-
-     -  Appending an array to a message. Since Nest is set to FALSE, the array
-        items are created by columns leading to two array entries. The two
-        entries contain the elements from the rows top to bottom. The message content will look as follows
-   * -  =\ :ref:`WRITE`\ (:ref:`OUTBOXDATA`\ ("Message","NewItem"),ARRAY(:blue:`A2:A5`,FALSE),"Array")
-        =\ :ref:`WRITE`\ (:ref:`OUTBOXDATA`\ ("Message","NewItem2"),ARRAY(:red:`B2:B5`,FALSE,TRUE),"Array")
-
-        |nested|
-
+     -  Appending an array to a message. Since Nest is set to FALSE, the array items are created by columns leading to two array entries. The two entries contain the elements from the rows top to bottom. The message content will look as follows
+   * -  =WRITE(OUTBOXDATA("Message","NewItem"),ARRAY(A2:A5,FALSE),"Array")        =WRITE(OUTBOXDATA("Message","NewItem2"),ARRAY(B2:B5,FALSE,TRUE),"Array")        |nested|
      - |nestedout|
      - Example usage of the nested parameter. 
 

@@ -26,8 +26,7 @@ defined by the points given.
    * - Y
      - Y coordinate of the point to test
    * - PolygonPointsRange
-     - A vertical range with 2 columns and N rows where the first column contains the X and the second column
-       contains the Y coordinates of a (closed) Polygon
+     - A vertical range with 2 columns and N rows where the first column contains the X and the second column contains the Y coordinates of a (closed) Polygon
 
 **Return Value**
 
@@ -45,10 +44,8 @@ defined by the points given.
    * - Function
      - Result
      - Comment
-   * - =CLASSIFYPOINT(500, 500, :blue:`A2:B5`\ )
+   * - =CLASSIFYPOINT(500, 500, A2:B5)
      - 1
-     -  Where A2:B5 looks as follows:
-       
-        |CLASSIFYPOINT|
+     -  Where A2:B5 looks as follows:               |CLASSIFYPOINT|
 
 

@@ -45,11 +45,6 @@ Returns a cell range that is defined by specified number of rows and columns fro
    * - Function
      - Result
      - Comment
-   * -  **1.** =OFFSET(:blue:`A2`, 2, 1, 1, 1)
-        **2.** =SUM(OFFSET(:blue:`A2`, 1, 1, 2, 1))
-        |OFFSET|
-
-     -  **1.** 6
-        **2.** 10
-     -  **1.** B4 has an offset of 2 rows and 1 column from A1. The cell value is 6. 
-        **2.** B3 has an offset of 1 row and 1 column from A1. The SUM of the range defined through height and width is 10.
+   * -  **1.** =OFFSET(A2, 2, 1, 1, 1)        **2.** =SUM(OFFSET(A2, 1, 1, 2, 1))        |OFFSET|
+     -  **1.** 6        **2.** 10
+     -  **1.** B4 has an offset of 2 rows and 1 column from A1. The cell value is 6.         **2.** B3 has an offset of 1 row and 1 column from A1. The SUM of the range defined through height and width is 10.

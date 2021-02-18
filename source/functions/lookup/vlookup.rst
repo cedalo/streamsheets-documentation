@@ -43,12 +43,7 @@ Value of cell within the given range and index or offset, if a row with the valu
    * - Function
      - Result
      - Comment
-   * -  =VLOOKUP("Test3",\ :blue:`A2:B4`, 2)
-       
-        |VLOOKUP|
-
-       
-
+   * -  =VLOOKUP("Test3",\ A2:B4, 2)               |VLOOKUP|       
      - 3
      - The value of cell B3 within the given range is returned.
 

@@ -45,13 +45,7 @@ Returns relative position of in cell-range for given value or :ref:`#NA <error>`
    * - Function
      - Result
      - Comment
-   * -  1. =MATCH(4,\ :red:`B2:B4`, 0)
-        2. =MATCH(2,\ :blue:`A2:B2`, 0)
-       
-        |MATCH|
-
-   
-     -  1. --> 2
-        2. --> 1
+   * -  1. =MATCH(4,B2:B4, 0)        2. =MATCH(2,A2:B2, 0)               |MATCH|   
+     -  1. --> 2        2. --> 1
      - The index of the cell with the searched value is returned.
 

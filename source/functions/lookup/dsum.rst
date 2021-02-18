@@ -45,12 +45,7 @@ The sum of all values of the matching column.
    * - Function
      - Result
      - Comment
-   * -  =DSUM(:blue:`A5:C9`,2,\ :red:`A2:C3`)
-       
-        |DSUM|
-
-      
-      
+   * -  =DSUM(A5:C9,2,\ A2:C3)               |DSUM|            
      - 43
      - Evaluates the sum of all ages in "Berlin".
 

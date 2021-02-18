@@ -2,8 +2,7 @@
         :scale: 70%
 .. |MOVEVALUES2| image:: /images/MOVEVALUES2.PNG
         :scale: 70%
-.. role:: red
-.. role:: blue
+
 
 MOVEVALUES
 -----------------------------
@@ -39,15 +38,8 @@ TRUE, if no error.
 
    * - Function
      - Result
-   * -  =MOVEVALUES(:blue:`A2:B2`,\ :red:`A4:B4`)
-       
-        |MOVEVALUES1|
-
-       
-
-     -  After MOVEVALUES
-       
-        |MOVEVALUES2|
+   * -  =MOVEVALUES(A2:B2,A4:B4)               |MOVEVALUES1|      
+     -  After MOVEVALUES             |MOVEVALUES2|
 
      
 .. warning:: Only the values will be moved. Formulas will be removed.

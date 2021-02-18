@@ -42,12 +42,7 @@ The maximum value of the matching column.
    * - Function
      - Result
      - Comment
-   * -  =DMAX(:blue:`A5:C9`,2,\ :red:`A2:C3`)
-       
-        |DSUM|
-
-      
-
+   * -  =DMAX(A5:C9,2,\ A2:C3)              |DSUM|      
      - 24
      - Evaluates the maximum age in "Berlin".
 

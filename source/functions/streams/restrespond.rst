@@ -11,15 +11,15 @@ REST.RESPOND
 -----------------------------
 
 |star| This is a `Streamsheets Premium <https://cedalo.com/download/>`_ feature.
-This is a leagacy function and was replaced by :ref:`HTTPRESPOND`\ ()
+This is a leagacy function and was replaced by HTTPRESPOND()
 
 Sends either arbitrary :term:`JSON` data or a message from the outbox to specified :term:`Producer`. Usually this function is used to
-respond to a previously received *request*-message. You can use the :ref:`Function Wizard <functionwizard>` for this function. 
+respond to a previously received *request*-message. You can use the Function Wizard for this function. 
 
 
 **Syntax**
 
-=\ :term:`REST`\ .RESPOND(:term:`Consumer`, RequestId, Body, [StatusCode, Headers])
+=REST.RESPOND(Consumer, RequestId, Body, [StatusCode, Headers])
 
 **Arguments**
 
@@ -43,12 +43,12 @@ respond to a previously received *request*-message. You can use the :ref:`Functi
 
 **Return Value**
 
-TRUE on success or :ref:`error code <error>` otherwise.
+TRUE on success or error code.
 
 **Example**
 
 We assume that a *request*-message was received and that it provides a *requestId* which we store to cell B1 by using
-the :ref:`read` function as follows: ``READ(INBOXMETADATA(,,"requestId"), B1, "String")``
+the read function as follows: ``READ(INBOXMETADATA(,,"requestId"), B1, "String")``
 
 .. list-table::
    :widths: 50 10 40
@@ -57,13 +57,10 @@ the :ref:`read` function as follows: ``READ(INBOXMETADATA(,,"requestId"), B1, "S
    * - Function
      - Result
      - Comment
-   * - =REST.RESPOND("Rest", B1, :ref:`DICTIONARY`\ (A3:C5))
+   * - =REST.RESPOND("Rest", B1, DICTIONARY(A3:C5))
      - TRUE
-     - Sends the JSON data provided by the :ref:`dictionary` function to the Consumer named *Rest* using the *requestId* in B1
-   * - =REST.RESPOND("Rest", B1, "Not Found", 404,\ :blue:`A2:B2`)
-
-        |REST.RESPOND|
-
+     - Sends the JSON data provided by the dictionary function to the Consumer named *Rest* using the *requestId* in B1
+   * - =REST.RESPOND("Rest", B1, "Not Found", 404,A2:B2)        |REST.RESPOND|
      - TRUE
      - Responds to the request corresponding to *requestId* with the body "Not Found", status code "404" and the header "Content-Type: text/plain".
 

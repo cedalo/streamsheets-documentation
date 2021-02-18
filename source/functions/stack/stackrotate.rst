@@ -2,7 +2,6 @@
         :scale: 30%
 .. |STACKROTATE2| image:: /images/STACKROTATE2.PNG
         :scale: 30%
-.. role:: blue
 
 STACKROTATE
 -----------------------------
@@ -34,7 +33,7 @@ This function rotates the complete stack by Pos positions up or down.
 
 **Return Value**
 
-TRUE, if no error occurred, otherwise :ref:`error <error>` value.
+TRUE, if no error occurred, otherwise error value.
 
 **Example**
 
@@ -44,11 +43,6 @@ TRUE, if no error occurred, otherwise :ref:`error <error>` value.
 
    * - Function
      - Result
-   * - =STACKROTATE(:blue:`A2:D6`, 1)
-
-        |STACKROTATE1|
-
-     - After calling STACKROTATE
-
-        |STACKROTATE2|
+   * - =STACKROTATE(A2:D6, 1)        |STACKROTATE1|
+     - After calling STACKROTATE     |STACKROTATE2|
 

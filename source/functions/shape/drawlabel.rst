@@ -35,17 +35,17 @@ Define a graphical text object.
        
        - "None" for no line
        - Hexadecimal color value ("#FF0000" for Red)
-       - JSON String created using :ref:`lineformat`
+       - JSON String created using lineformat
    * - FillFormat
      -  Optional. Options:
        
         - "None" for no fill.
         - Hexadecimal color value ("#FF0000" for Red)
-        - JSON String created using :ref:`fillpattern`, :ref:`filllineargradient`, :ref:`fillradialgradient`
+        - JSON String created using fillpattern, filllineargradient, fillradialgradient
    * - Attributes
-     - Optional. JSON String created using :ref:`attributes`
+     - Optional. JSON String created using attributes
    * - Events
-     - Optional. JSON String created using :ref:`events`
+     - Optional. JSON String created using events
    * - Angle
      - Optional. Angle in radians.
    * - RotCenter
@@ -63,7 +63,7 @@ Define a graphical text object.
    * - Text
      - Text to display.
    * - Font
-     - Optional. JSON String created using :ref:`fontformat`
+     - Optional. JSON String created using fontformat
 
 **Return Value**
 

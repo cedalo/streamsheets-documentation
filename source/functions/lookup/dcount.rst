@@ -1,7 +1,5 @@
 .. |DSUM| image:: /images/DSUM.PNG
         :scale: 30%
-.. role:: red
-.. role:: blue
 
 DCOUNT
 -------
@@ -25,8 +23,7 @@ Counts all cells that contain a number within a cell range.
    * - ColumnIndex
      - Column label or index to count values in.
    * - CriteriaRange
-     - Specifies the conditions a row in cell range must fulfill.
-       Must define at least one column with a label and a cell below which specifies the condition.
+     - Specifies the conditions a row in cell range must fulfill. Must define at least one column with a label and a cell below which specifies the condition.
 
 **Return Value**
 
@@ -41,12 +38,7 @@ The counted amount of cells within the given parameters.
    * - Function
      - Result
      - Comment
-   * - =DCOUNT(:blue:`A5:C9`,2,\ :red:`A2:C3`)
-       
-        |DSUM|
-
-     
-
+   * - =DCOUNT(A5:C9,2,\ A2:C3)        |DSUM|    
      - 2
      - Evaluates the number of valid age entries in "Berlin".
 

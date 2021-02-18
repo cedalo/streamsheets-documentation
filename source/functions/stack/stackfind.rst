@@ -3,9 +3,7 @@
         :scale: 30%
 .. |STACKFIND2| image:: /images/STACKFIND2.PNG
         :scale: 30%
-.. role:: red
-.. role:: blue
-.. role:: green
+
 
 STACKFIND
 -----------------------------
@@ -41,7 +39,7 @@ Optionally it deletes all found records after the extract operation (remaining r
 
 **Return Value**
 
-TRUE, if at least one matching value was found, otherwise FALSE. In case of an error the corresponding :ref:`error <error>` value is returned.
+TRUE, if at least one matching value was found, otherwise FALSE. In case of an error the corresponding error value is returned.
 
 **Example**
 
@@ -51,13 +49,8 @@ TRUE, if at least one matching value was found, otherwise FALSE. In case of an e
 
    * - Function
      - Result
-   * - =STACKFIND(:blue:`A5:D9`,\ :red:`A2:D3`,\ :green:`A11:B13`)
-
-        |STACKFIND1|
-
-     - After calling STACKFIND
-
-        |STACKFIND2|
+   * - =STACKFIND(A5:D9,\ A2:D3,A11:B13)        |STACKFIND1|
+     - After calling STACKFIND        |STACKFIND2|
 
 
 

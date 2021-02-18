@@ -4,12 +4,12 @@ MQTT.PUBLISH
 -----------------------------
 
 Publishes either a message or an arbitrary value using a specified :term:`Producer` and topic. To reference a message from the
-outbox use the :ref:`outbox` function and to reference a message from the :ref:`inbox` use :ref:`INBOX <inboxf>`. You can use the :ref:`Function Wizard <functionwizard>` for this function. 
+outbox use the outbox function and to reference a message from the inbox use INBOX. You can use the Function Wizard for this function. 
 
 
 **Syntax**
 
-=\ :term:`MQTT`\ .PUBLISH(Producer, MessageOrValue, Topic [, QoS, User Properties])
+=MQTT.PUBLISH(Producer, MessageOrValue, Topic [, QoS, User Properties])
 
 **Arguments**
 
@@ -24,7 +24,7 @@ outbox use the :ref:`outbox` function and to reference a message from the :ref:`
    * - MessageOrValue
      - Either an existing message from the outbox or a value to publish.
    * - Topic
-     - Topic that is appended to the base topic defined in the :term:`Connector`.
+     - Topic that is appended to the base topic defined in the Connector.
    * - QoS
      - Optional. Quality of Service. This option defines the reliability of the publish operation. It depends on
        the used protocol.
@@ -49,9 +49,9 @@ All examples assume a base topic with the value "/cedalo" in the connector.
    * - =MQTT.PUBLISH("MQTT Producer", "Message", "test")
      - TRUE
      - This publishes the string value "Message" using the "MQTT Producer" under the topic "cedalo/test"
-   * - =MQTT.PUBLISH("MQTT Producer", :ref:`OUTBOX`\ ("Message"), "test")
+   * - =MQTT.PUBLISH("MQTT Producer", OUTBOX ("Message"), "test")
      - TRUE
      - This publishes the outbox message with id "Message" using the "MQTT Producer" and topic "cedalo/test"
-   * - =MQTT.PUBLISH("MQTT Producer", :ref:`JSON`\ (A1:C2), "test")
+   * - =MQTT.PUBLISH("MQTT Producer", JSON(A1:C2), "test")
      - TRUE
-     - This publishes a :term:`JSON` object created by the json function using the "MQTT Producer" and topic "cedalo/test"
+     - This publishes a JSON object created by the json function using the "MQTT Producer" and topic "cedalo/test"

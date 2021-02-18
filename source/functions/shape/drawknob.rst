@@ -35,17 +35,17 @@ Define a graphical knob on a given drawing.
        
         - "None" for no line
         - Hexadecimal color value ("#FF0000" for Red)
-        - JSON String created using :ref:`lineformat`
+        - JSON String created using lineformat
    * - FillFormat
      -  Optional. Options:
        
         - "None" for no fill.
         - Hexadecimal color value ("#FF0000" for Red)
-        - JSON String created using :ref:`fillpattern`, :ref:`filllineargradient`, :ref:`fillradialgradient`
+        - JSON String created using fillpattern, filllineargradient, fillradialgradient
    * - Attributes
-     - Optional. JSON String created using :ref:`attributes`
+     - Optional. JSON String created using attributes
    * - Events
-     - Optional. JSON String created using :ref:`events`
+     - Optional. JSON String created using events
    * - Angle
      - Optional. Angle in radians.
    * - RotCenter
@@ -63,7 +63,7 @@ Define a graphical knob on a given drawing.
    * - Label
      - Optional. Label to display below knob.
    * - LabelFont
-     - Optional. Font to use for label. JSON String created using :ref:`fontformat`
+     - Optional. Font to use for label. JSON String created using fontformat
    * - Value
      - Current value of the knob. Must be with the given interval. If a cell reference is used, a value change from user
        interaction will be pushed into that cell.
@@ -74,7 +74,7 @@ Define a graphical knob on a given drawing.
    * - Step
      - Step to use for interaction while changing the knob value.
    * - ScaleFont
-     - Optional. Font to use for the knob scale. JSON String created using :ref:`fontformat`
+     - Optional. Font to use for the knob scale. JSON String created using fontformat
    * - Marker
      -  Optional. Marker style to indicate the current value. Allowed values are:
         'none'

@@ -6,13 +6,13 @@ KAFKA.PUBLISH
         
 
 
-Publishes either a message or an arbitrary value using a specified :term:`Producer` and topic. To reference a message from the
-outbox use the :ref:`outbox` function and to reference a message from the inbox use :ref:`INBOX <inboxf>`. You can use the :ref:`Function Wizard <functionwizard>` for this function. 
+Publishes either a message or an arbitrary value using a specifiedbProducer and topic. To reference a message from the
+outbox use the outbox function and to reference a message from the inbox use INBOX. You can use the Function Wizard for this function. 
 
 
 **Syntax**
 
-=\ :term:`KAFKA`\ .PUBLISH(Producer, Message, Topic)
+=KAFKA.PUBLISH(Producer, Message, Topic)
 
 **Arguments**
 

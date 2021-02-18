@@ -36,10 +36,10 @@ The executed Sheet will only be executed if Streamsheet settings of executed She
 
    * - Return FALSE
    * -   **IF executed Sheet:**
-         **1.** Streamsheetsettings "Repeat calculation endlessly until =\ :ref:`RETURN`\ () is executed" is not checked and 
-         **2.** There is no new message in the :ref:`INBOX`.
+         **1.** Streamsheetsettings "Repeat calculation endlessly until =RETURN() is executed" is not checked and 
+         **2.** There is no new message in the INBOX.
    * -   **IF executed Sheet:**
-         **1.** Streamsheetsettings "Repeat calculation endlessly until =\ :ref:`RETURN`\ () is executed" is checked and 
+         **1.** Streamsheetsettings "Repeat calculation endlessly until =RETURN() is executed" is checked and 
          **2.** RETURN(FALSE) was calculated in executed Sheet.
 .. list-table::
    :widths: 80
@@ -47,21 +47,16 @@ The executed Sheet will only be executed if Streamsheet settings of executed She
 
    * - Return TRUE
    * -   **IF executed Sheet:**
-         **1.** Streamsheetsettings "Repeat calculation endlessly until =\ :ref:`RETURN`\ () is executed" is not checked.
-         **2.** There is a new message in the INBOX. 
-   * -   **IF executed Sheet:**
-         **1.** Streamsheetsettings "Repeat calculation endlessly until =\ :ref:`RETURN`\ () is executed" is checked and
+         **1.** Streamsheetsettings "Repeat calculation endlessly until =RETURN() is executed" is not checked.         **2.** There is a new message in the INBOX.    * -   **IF executed Sheet:**
+         **1.** Streamsheetsettings "Repeat calculation endlessly until =RETURN() is executed" is checked and
          **2.** RETURN(TRUE) was calculated in executed Sheet.
 .. list-table::
    :widths: 80
    :header-rows: 1
 
    * - Return #NA. The Stream Sheet is paused until a value is returned.
-   * -  **IF executed Sheet:**
-        **1.** Streamsheetsettings "Repeat calculation endlessly until =\ :ref:`RETURN`\ () is executed" is checked.
-        **2.** no return value is generated
-       
-        To get a return the executed sheet needs to calculate a\ =\ :ref:`RETURN`\ () function.
+   * -  **IF executed Sheet:**        **1.** Streamsheetsettings "Repeat calculation endlessly until =RETURN()) is executed" is checked.        **2.** no return value is generated               To get a return the executed sheet needs to calculate a\ =RETURN() function.
+
 .. list-table::
    :widths: 100
    :header-rows: 1
@@ -71,7 +66,7 @@ The executed Sheet will only be executed if Streamsheet settings of executed She
         is not set to calculcate on execute.
 
 
-**NOTE:**  if the execution of the triggered StreamSheet is stopped via the :ref:`return` function, its result is returned instead.
+**NOTE:**  if the execution of the triggered StreamSheet is stopped via the return function, its result is returned instead.
 
 **Example**
 

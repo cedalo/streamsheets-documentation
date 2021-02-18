@@ -39,17 +39,9 @@ TRUE, if successful.
    * - Function
      - Result
      - Comment
-   * - =PRODUCE("\ :term:`MQTT Producer`\ ", A1)
-       
-       Content of A1::
-
-         { "message": "A Message", "topic": "cedalo/test"}
-
+   * - =PRODUCE("MQTT Producer", A1)       Content of A1::        { "message": "A Message", "topic": "cedalo/test"}
      - TRUE
      - This publishes the string value "A Message" using the "MQTT Producer" under the topic "cedalo/test".
-   * - =PRODUCE("File Producer", :ref:`JSON`\ (:blue:`A2:B3`))
-
-        |PRODUCE|
-
+   * - =PRODUCE("File Producer", JSON(A2:B3))        |PRODUCE|
      - TRUE
      - This appends "Message" to the file "file.txt" using the "File Producer"

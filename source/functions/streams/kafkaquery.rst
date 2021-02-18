@@ -24,8 +24,7 @@ Allows KSQL queries to be used. You can use the :ref:`Function Wizard <functionw
    * - Query
      - Any query allowed on a KSQL table. 
    * - Target
-     - Target to show the result of the query operation. 
-       Can be either :ref:`INBOX <inboxf>`\ (), :ref:`OUTBOX`\ () or a cell range.
+     - Target to show the result of the query operation.  Can be either INBOX(), OUTBOX() or a cell range.
        
    * - Timeout
      - Optional. The time to wait for an answer. When left empty a 20 second timeout is being used.
@@ -43,7 +42,7 @@ TRUE, if successful.
    * - Function
      - Result
      - Comment
-   * - =KAFKA.Query("Kafka Producer", "select * from ksqltable200", :ref:`INBOX <inboxf>`\ ())
+   * - =KAFKA.Query("Kafka Producer", "select * from ksqltable200", INBOX())
      - TRUE
-     - The complete data from ksqltable200 will be shown in the :ref:`inbox`.
+     - The complete data from ksqltable200 will be shown in the inbox.
   

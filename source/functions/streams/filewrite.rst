@@ -5,13 +5,13 @@
 FILE.WRITE
 -----------------------------
 
-Write a given range as comma separeted values to a file. You can use the :ref:`Function Wizard <functionwizard>` for this function. 
+Write a given range as comma separeted values to a file. You can use the Function Wizard for this function. 
 The mounted root path is set in the .YML file. E.g.: `C:\ \\rootfolder:/filefeeder` Add /filefeeder to the "Root Directory" field in the Connector to connect it to the root folder. 
  
 
 **Syntax**
 
-=FILE.WRITE(:term:`Producer`, Range, Filename, [Directory, Mode, Separator])
+=FILE.WRITE(Producer, Range, Filename, [Directory, Mode, Separator])
 
 **Arguments**
 
@@ -50,16 +50,8 @@ TRUE, if successful.
    * - =FILE.WRITE("File Producer", "Message", "file.csv", "directory")
      - TRUE
      - Write the text "Message" to the file located at "{rootDirectory}/directory/file.csv" using the "File Producer"
-   * - =FILE.WRITE("File Producer", A2:C3, "file.csv", ,"create", ";")
-
-        |FILE.WRITE|
-       
+   * - =FILE.WRITE("File Producer", A2:C3, "file.csv", ,"create", ";")        |FILE.WRITE|       
      - TRUE
-     - Writes the content of the range A2:C3 to the fiel located at "{rootDirectory}/file.csv" using ";" as separator and replacing an already existing file with the same name.
-       The resulting content of the file is::
-       
-          Example1;Example2;Example3
-          Example4;Example5;Example6
-
+     - Writes the content of the range A2:C3 to the fiel located at "{rootDirectory}/file.csv" using ";" as separator and replacing an already existing file with the same name. The resulting content of the file is:                Example1;Example2;Example3        Example4;Example5;Example6
 
 

@@ -24,7 +24,7 @@ added to the :ref:`inbox` of the given target :term:`sheet <Streamsheet>`.
    * - ParameterJSON
      - Message with :term:`JSON` Structure defining the request parameters.
    * - Target
-     - :ref:`INBOX <inboxf>`\ (), :ref:`OUTBOX`\ ("MsgID") or a cell range where the result will be placed.
+     - INBOX(), OUTBOX("MsgID") or a cell range where the result will be placed.
    * - ResultKeys
      - Optional. Limit the result to the specified JSON Keys 
    * - Timeout
@@ -45,9 +45,8 @@ the service is called.
    * - Function
      - Result
      - Comment
-   * - =REQUEST("Rest", :ref:`OUTBOX`\ ("Message"), :ref:`INBOX <inboxf>`\ ("S2"))
+   * - =REQUEST("Rest", OUTBOX("Message"), INBOX("S2"))
      - generated Request id
-     - The message must exist before calling REQUEST. It is created like a normal message, which
-       you would like to publish, using the :ref:`WRITE` formula.
+     - The message must exist before calling REQUEST. It is created like a normal message, which you would like to publish, using the WRITE formula.
 
 

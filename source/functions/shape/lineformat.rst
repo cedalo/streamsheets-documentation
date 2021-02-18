@@ -20,8 +20,7 @@ LINEFORMAT(Color [, Style, Width, ArrowStart, ArrowEnd])
    * - Color
      - Hexadecimal color value.
    * - Style
-     -  Optional. Style Code:
-       
+     -  Optional. Style Code:       
         -1: Hairline (does not zoom)
         0: None
         1: Solid

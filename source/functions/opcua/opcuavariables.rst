@@ -36,7 +36,7 @@ Click :ref:`here<opcuafunctions>` for a more detailed tutorial on opcua function
 
 **Return Value**
 
-The OPCUA.VARIABLES function always switch to blue, if the inserted range is accepted. Otherwise to red with an :ref:`error code <error>`.
+The OPCUA.VARIABLES function always switch to blue, if the inserted range is accepted. Otherwise to red with an error code.
 
 **Examples**
 

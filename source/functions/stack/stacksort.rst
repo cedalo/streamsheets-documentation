@@ -2,8 +2,7 @@
         :scale: 30%
 .. |STACKSORT2| image:: /images/STACKSORT2.PNG
         :scale: 30%
-.. role:: red
-.. role:: blue
+
 
 STACKSORT
 -----------------------------
@@ -26,12 +25,11 @@ Optionally it deletes all found records after the extract operation (remaining r
    * - StackRange
      -  Range, where the stack range resides. The first row of the StackRange is a title range and remains unchanged.
    * - SortSettingsRange
-     -  The SortSettingsRange has two rows. In the first row you have all or part of the labels of the StackRange (may be in another order). The cells in the second row either contain TRUE or FALSE. TRUE is ascending, FALSE is descending.
-        If you have more than two rows in the SortSettingsRange then it is first sorted after the field name in the second row, then after the field name in the third row, etc.
+     -  The SortSettingsRange has two rows. In the first row you have all or part of the labels of the StackRange (may be in another order). The cells in the second row either contain TRUE or FALSE. TRUE is ascending, FALSE is descending.        If you have more than two rows in the SortSettingsRange then it is first sorted after the field name in the second row, then after the field name in the third row, etc.
 
 **Return Value**
 
-TRUE, if no error occurred, otherwise :ref:`error <error>` value.
+TRUE, if no error occurred, otherwise error value.
 
 **Example**
 
@@ -41,13 +39,8 @@ TRUE, if no error occurred, otherwise :ref:`error <error>` value.
 
    * - Function
      - Result
-   * - =STACKSORT(:blue:`A5:D9`,\ :red:`A2:D3`)
-
-        |STACKSORT1|
-
-     - After calling STACKSORT
-
-        |STACKSORT2|
+   * - =STACKSORT(A5:D9, A2:D3)        |STACKSORT1|
+     - After calling STACKSORT        |STACKSORT2|
 
 
 

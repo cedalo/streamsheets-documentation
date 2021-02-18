@@ -46,9 +46,9 @@ the :ref:`read` function as follows: ``READ(INBOXMETADATA(,,"requestId"), B1, "S
    * - Function
      - Result
      - Comment
-   * - =OPCUA.RESPOND(B1, :ref:`OUTBOX`\ ("Message"))
+   * - =OPCUA.RESPOND(B1, OUTBOX("Message"))
      - TRUE
      - Sends the message with id *Message* from the outbox to an OPCUA Service using the *requestId* in B1
-   * - =OPCUA.RESPOND(B1, :ref:`DICTIONARY`\ (A3:C5))
+   * - =OPCUA.RESPOND(B1, DICTIONARY(A3:C5))
      - TRUE
      - Sends the JSON data provided by the Dictionary function to an OPCUA Service using the *requestId* in B1

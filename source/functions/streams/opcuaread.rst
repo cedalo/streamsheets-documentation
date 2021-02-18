@@ -29,9 +29,9 @@ Click :ref:`here<opcuafunctions>` for a more detailed tutorial on opcua function
      - Path of the node to read or node id.
    * - Target
      - Target of the result of the write operation. 
-       Can be either :ref:`INBOX <inboxf>`\ (), :ref:`OUTBOX`\ ("MsgID") or a cell range.
+       Can be either INBOX(), OUTBOX("MsgID") or a cell range.
    * - ResultKeys
-     - Optional. Limit the result to the specified :term:`JSON` Keys.
+     - Optional. Limit the result to the specified JSON Keys.
    * - Timeout
      - Optional. The time to wait for an answer. When left empty a 20 second timeout is being used.
 
@@ -49,6 +49,6 @@ to check the state of the request.
    * - Function
      - Result
      - Comment
-   * - =OPCUA.READ("OPCUA Producer", "/Objects/1:Machines/1:H1mrblX0X/name",\ :ref:`INBOX <inboxf>`\ ())
+   * - =OPCUA.READ("OPCUA Producer", "/Objects/1:Machines/1:H1mrblX0X/name",\ INBOX ())
      - The request ID
-     - This reads the name of the machine with the id "H1mrblX0X" and places the result into the :ref:`inbox`.
+     - This reads the name of the machine with the id "H1mrblX0X" and places the result into the inbox.

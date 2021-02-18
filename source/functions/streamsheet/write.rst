@@ -24,8 +24,7 @@ Adds the key and value to a :term:`JSON` object in the outbox. The path to the k
    * - Name
      - Description
    * - Key
-     - A key to a data item, that should be written. The key is usually created by using the :ref:`OUTBOXMETADATA` or :ref:`OUTBOXDATA` utility functions. 
-       The key consists of the path to the item within the JSON object. 
+     - A key to a data item, that should be written. The key is usually created by using the OUTBOXMETADATA or OUTBOXDATA utility functions.  The key consists of the path to the item within the JSON object. 
    * - Value
      - Value to assign to key.
    * - Type
@@ -46,15 +45,11 @@ The last part of the key of the data value to write.
    * - Function
      - Result
      - Comment
-   * -  =WRITE(:ref:`OUTBOXDATA`\ ("Message","Customer", "Name"), "Maier", "String")
-     -  Outbox Message:
-        |WRITE|
+   * -  =WRITE(OUTBOXDATA("Message","Customer", "Name"), "Maier", "String")
+     -  Outbox Message:        |WRITE|
      -  Example to write a value to a JSON object in the outbox. 
-   * -  =WRITE(:ref:`OUTBOXDATA`\ ("Message","Units"),READ(INBOXDATA(,,"Units")))
-        Inbox Message: 
-        |ArrayIn|
-     -  Outbox Message: 
-        |ArrayOut|
+   * -  =WRITE(OUTBOXDATA("Message","Units"),READ(INBOXDATA(,,"Units")))        Inbox Message:         |ArrayIn|
+     -  Outbox Message:         |ArrayOut|
      -  You can also direct data from the Inbox into the Outbox. In this example the "Units" array from the Inbox is automatically transfered to the Outbox.
    * -  =WRITE(OUTBOXDATA("Message","Output",-1),JSON(J22:K24),)
      -  |inc|

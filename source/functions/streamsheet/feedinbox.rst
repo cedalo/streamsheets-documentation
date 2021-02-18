@@ -2,7 +2,7 @@
         :scale: 50%
 .. |FEEDINBOX2| image:: /images/FEEDINBOX2.PNG
         :scale: 60%
-.. role:: blue
+
 
 
 
@@ -11,11 +11,11 @@
 FEEDINBOX
 -----------------------------
 
-This function feeds the :ref:`inbox` of a :term:`Streamsheet` within the same :term:`App`.
+This function feeds the inbox of a Streamsheet within the same App.
 The Streamsheet Settings must be set to "On Data Arrival", to trigger the calculation.
 This way a dependent Streamsheet can be triggered in two different ways. Either using the FEEDINBOX() function, which
 leads to an "asynchronous" call, since the message is just added to the inbox and waits for the next step.
-Or using :ref:`EXECUTE`\ (), which will lead to a direct execution (synchronous).
+Or using EXECUTE(), which will lead to a direct execution (synchronous).
 
 **Syntax**
 
@@ -30,7 +30,7 @@ Or using :ref:`EXECUTE`\ (), which will lead to a direct execution (synchronous)
    * - Name
      - Description
    * - JSON
-     - A key to a json object, defined by :ref:`JSON`, :ref:`DICTIONARY`, :ref:`READ`, :ref:`SUBTREE`\ , :ref:`INBOX <inboxf>` or :ref:`OUTBOX`.
+     - A key to a json object, defined by JSON, DICTIONARY, READ, SUBTREE , INBOX or OUTBOX.
    * - Target
      - A location sheet name where the JSON will be placed in the inbox.
 
@@ -46,12 +46,6 @@ TRUE, if successful.
 
    * - Function
      - Comment
-   * -  =FEEDINBOX(:ref:`DICTIONARY`\ (:blue:`A2:B5`), "S1")
-       
-        |FEEDINBOX1|
-       
-
-     - Appending an object to a message. The message content will look as follows
-
-        |FEEDINBOX2|
+   * -  =FEEDINBOX(DICTIONARY(A2:B5), "S1")             |FEEDINBOX1|      
+     - Appending an object to a message. The message content will look as follows        |FEEDINBOX2|
 

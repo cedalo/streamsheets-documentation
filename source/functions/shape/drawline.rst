@@ -35,7 +35,7 @@ Define a graphical line.
        
         - "None" for no line
         - Hexadecimal color value ("#FF0000" for Red)
-        - JSON String created using :ref:`lineformat`
+        - JSON String created using lineformat
 
 **Return Value**
 

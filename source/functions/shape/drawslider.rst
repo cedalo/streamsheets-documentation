@@ -35,22 +35,21 @@ Define a graphical slider on a given drawing.
        
         - "None" for no line
         - Hexadecimal color value ("#FF0000" for Red)
-        - JSON String created using :ref:`lineformat`
+        - JSON String created using lineformat
    * - FillFormat
      -  Optional. Options:
        
         - "None" for no fill.
         - Hexadecimal color value ("#FF0000" for Red)
-        - JSON String created using :ref:`fillpattern`, :ref:`filllineargradient`, :ref:`fillradialgradient`
+        - JSON String created using fillpattern, filllineargradient, fillradialgradient
    * - Attributes
-     - Optional. JSON String created using :ref:`attributes`
+     - Optional. JSON String created using attributes
    * - Events
-     - Optional. JSON String created using :ref:`events`
+     - Optional. JSON String created using events
    * - Angle
      - Optional. Angle in radians.
    * - RotCenter
-     -  Optional. This defines, where the object rotates around:
-       
+     -  Optional. This defines, where the object rotates around:       
         0: Top left corner
         1: Top center
         2: Top right corner
@@ -63,7 +62,7 @@ Define a graphical slider on a given drawing.
    * - Label
      - Optional. Label to display above slider.
    * - LabelFont
-     - Optional. Font to use for label. JSON String created using :ref:`fontformat`
+     - Optional. Font to use for label. JSON String created using FONFORMAT()
    * - Value
      - Current value of the slider. Must be with the given interval. If a cell reference is used, a value change from user
        interaction will be pushed into that cell.
@@ -74,7 +73,7 @@ Define a graphical slider on a given drawing.
    * - Step
      - Step to use for interaction while changing the slider value.
    * - ScaleFont
-     - Optional. Font to use for the slider scale. JSON String created using :ref:`fontformat`
+     - Optional. Font to use for the slider scale. JSON String created using fontformat
    * - Marker
      -  Optional. Marker style to indicate the current value. Allowed values are:
         'none'

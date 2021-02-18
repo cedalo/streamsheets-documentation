@@ -2,8 +2,7 @@
         :scale: 30%
 .. |STACKDROP2| image:: /images/STACKDROP2.PNG
         :scale: 30%
-.. role:: red
-.. role:: blue
+
 
 STACKDROP
 -----------------------------
@@ -39,7 +38,7 @@ This function removes one row from the Stack. All rows below move one row up.
 
 **Return Value**
 
-TRUE, if no error occurred, otherwise :ref:`error <error>` value.
+TRUE, if no error occurred, otherwise error value.
 
 **Example**
 
@@ -49,11 +48,6 @@ TRUE, if no error occurred, otherwise :ref:`error <error>` value.
 
    * - Function
      - Result
-   * - =STACKDROP(:blue:`A2:D3`, 1)
-
-        |STACKDROP1|
-
-     - After calling STACKDROP
-
-        |STACKDROP2|
+   * - =STACKDROP(A2:D3, 1)        |STACKDROP1|
+     - After calling STACKDROP        |STACKDROP2|
 

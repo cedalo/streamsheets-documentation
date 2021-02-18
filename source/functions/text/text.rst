@@ -20,8 +20,7 @@ Formats a number and converts it to text.
    * - Number
      - A number value to format and convert.
    * - FormatString
-     -  A format string. Example format strings are:
-       
+     -  A format string. Example format strings are:   
         "$#,##.00" currency with a thousands separator and 2 decimals
         "MM/DD/YY" Date in format month/day/year, like 03/14/18
         "DDDD" Day of week, like Monday
@@ -32,8 +31,7 @@ Formats a number and converts it to text.
         "0000000" add leading zeros, like 0001234  
 
    * - Locale
-     -  Optional. An locale code. Currently only “en” and “de” are supported. 
-        Defaults to current App locale.
+     -  Optional. An locale code. Currently only “en” and “de” are supported.  Defaults to current App locale.
 
   
   

@@ -41,15 +41,8 @@ TRUE, if successful.
 
    * - Function
      - Result
-   * -  =SWAPVALUES(:blue:`A2:B2`,\ :red:`A4:B4`)
-       
-        |SWAPVALUES1|
-
-       
-
-     -  After call of SWAPVALUES
-       
-        |SWAPVALUES2|
+   * -  =SWAPVALUES(A2:B2,A4:B4)       |SWAPVALUES1|      
+     -  After call of SWAPVALUES               |SWAPVALUES2|
 
      
 .. warning:: Only the values will be moved. Formulas will be removed.

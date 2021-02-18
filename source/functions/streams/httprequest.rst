@@ -7,12 +7,12 @@ HTTP.REQUEST
 -----------------------------
 
 Create an https request. The result, of the request, if any, will be
-added to the :ref:`inbox` of the given target :term:`sheet <Streamsheet>`. You can use the :ref:`Function Wizard <functionwizard>` for this function. 
+added to the inbox of the given target sheet. You can use the Function Wizard for this function. 
 
 
 **Syntax**
 
-=HTTP.REQUEST(:term:`Producer`, Path, Method, Target, [ResultKeys], [Body], [Headers], [Timeout])
+=HTTP.REQUEST(Producer, Path, Method, Target, [ResultKeys], [Body], [Headers], [Timeout])
 
 **Arguments**
 
@@ -54,15 +54,11 @@ the service is called.
    * - Function
      - Result
      - Comment
-   * - =HTTP.REQUEST("Rest", "/path", "GET", :ref:`INBOX <inboxf>`\ ())
+   * - =HTTP.REQUEST("Rest", "/path", "GET", INBOX())
      - generated Request id
-     - This makes a GET request to "${baseURL}/path" and writes the result to the :ref:`inbox`.
-   * - =HTTP.REQUEST("Rest", "/path", "POST", :ref:`INBOX <inboxf>`\ ("S2"),, "hello",\ :blue:`A2:B3`)
-
-        |REST.REQUEST|
-
+     - This makes a GET request to "${baseURL}/path" and writes the result to the inbox.
+   * - =HTTP.REQUEST("Rest", "/path", "POST", INBOX("S2"),, "hello",A2:B3)        |REST.REQUEST|
      - generated Request id
-     - This makes a POST request to "${baseURL}/path" with "hello" as body and "Content-Type: text/plain" and "Custom-Header: example" as headers.
-       The response is placed in the :ref:`inbox` of S2.
+     - This makes a POST request to "${baseURL}/path" with "hello" as body and "Content-Type: text/plain" and "Custom-Header: example" as headers.       The response is placed in the inbox of S2.
 
 
