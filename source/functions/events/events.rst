@@ -19,6 +19,7 @@ Add the EVENTS() function to a shape in the "Events" parameter.
    * - Name
      - Description
    * - EventHandler1..N
+<<<<<<< Updated upstream
      - | Eventhandler defining the event and the action to be executed. Valid handlers are:
        |
        | :ref:`onclick`
@@ -26,6 +27,17 @@ Add the EVENTS() function to a shape in the "Events" parameter.
        | :ref:`onmousedown`
        | :ref:`onmouseup`
        | :ref:`onvaluechange`
+=======
+     - Eventhandler defining the event and the action to be executed. Valid handlers are:
+		:ref:`onclick`
+        :ref:`ondoubleclick`
+        :ref:`onmousedown`
+        :ref:`onmouseup`
+        :ref:`onvaluechange`
+>>>>>>> Stashed changes
+
+
+:ref:`ondoubleclick`
 
 **Return Value**
 

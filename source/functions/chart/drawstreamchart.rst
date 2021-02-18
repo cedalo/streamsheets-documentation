@@ -31,6 +31,7 @@ Define a chart on a given drawing.
    * - Height
      - Height in 1/100th mm
    * - LineFormat
+<<<<<<< Updated upstream
      - | Optional. Options:
        |
        | - "None" for no line
@@ -42,6 +43,17 @@ Define a chart on a given drawing.
        | - "None" for no fill.
        | - Hexadecimal color value ("#FF0000" for Red)
        | - JSON String created using :ref:`fillpattern`, :ref:`filllineargradient`, :ref:`fillradialgradient`
+=======
+     -  Optional. Options:
+        - "None" for no line
+        - Hexadecimal color value ("#FF0000" for Red)
+        - JSON String created using :ref:`lineformat`
+   * - FillFormat
+     -  Optional. Options:
+        - "None" for no fill.
+        - Hexadecimal color value ("#FF0000" for Red)
+        - JSON String created using :ref:`fillpattern`, :ref:`filllineargradient`, :ref:`fillradialgradient`
+>>>>>>> Stashed changes
    * - Attributes
      - Optional. JSON String created using :ref:`attributes`
    * - Events
@@ -49,6 +61,7 @@ Define a chart on a given drawing.
    * - Angle
      - Optional. Angle in radians.
    * - RotCenter
+<<<<<<< Updated upstream
      - | Optional. This defines, where the object rotates around:
        |
        | 0: Top left corner
@@ -60,6 +73,18 @@ Define a chart on a given drawing.
        | 6: Bottom left corner
        | 7: Bottom center
        | 8: Bottom right corner
+=======
+     -  Optional. This defines, where the object rotates around:
+        0: Top left corner
+        1: Top center
+        2: Top right corner
+        3: Left center
+        4: Center (default)
+        5: Right center
+        6: Bottom left corner
+        7: Bottom center
+        8: Bottom right corner
+>>>>>>> Stashed changes
 
 
 **Return Value**
