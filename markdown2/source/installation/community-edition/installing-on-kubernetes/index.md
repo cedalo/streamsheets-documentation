@@ -1,3 +1,0 @@
-Installing on Kubernetes ============
-
-TBD
