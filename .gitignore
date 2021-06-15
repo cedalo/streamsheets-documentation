@@ -61,3 +61,5 @@ source/_build
 
 # WebStorm IDE
 .idea
+.DS_Store
+docs/.DS_Store
