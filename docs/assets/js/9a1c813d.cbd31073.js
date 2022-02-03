@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkstreamsheets=self.webpackChunkstreamsheets||[]).push([[17901],{36188:function(e){e.exports=JSON.parse('{"specUrl":"/api/management-center/2/dynamic-security.yaml","type":"url","content":"/api/management-center/2/dynamic-security.yaml"}')}}]);
