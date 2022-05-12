@@ -4,8 +4,8 @@
   <ShortName>Cedalo Platform</ShortName>
   <Description>Search Cedalo Platform</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://docs.cedalo.com/new/img/favicon-32x32.png</Image>
-  <Url type="text/html" method="get" template="https://docs.cedalo.com/new/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://docs.cedalo.com/new/opensearch.xml" />
-  <moz:SearchForm>https://docs.cedalo.com/new/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://docs.cedalo.com/img/favicon-32x32.png</Image>
+  <Url type="text/html" method="get" template="https://docs.cedalo.com/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://docs.cedalo.com/opensearch.xml" />
+  <moz:SearchForm>https://docs.cedalo.com/</moz:SearchForm>
 </OpenSearchDescription>
