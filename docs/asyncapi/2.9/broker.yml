@@ -1,0 +1,271 @@
+asyncapi: 2.6.0
+info:
+  title: Broker Control
+  version: 2.9.1
+  description: |
+    The broker control API gives information about listeners and plugins using
+    the `listListeners` or `listPlugins`command.
+    A broker API request can be published to `$CONTROL/broker/v1` and the related
+    response message will be published to `$CONTROL/broker/v1/response`.
+
+    To enable this API add `enable_control_api true` to your mosquitto.conf.
+
+defaultContentType: application/json
+channels:
+  $CONTROL/broker/v1:
+    publish:
+      message:
+        $ref: '#/components/messages/ControlRequest'
+  $CONTROL/broker/v1/response:
+    subscribe:
+      message:
+        $ref: '#/components/messages/ControlResponse'
+components:
+  messages:
+    ControlRequest:
+      name: controlRequest
+      title: Request including the commands to be executed
+      payload:
+        $ref: '#/components/schemas/controlRequestPayload'
+      examples:
+        - name: listListeners
+          payload:
+            commands:
+              - command: listListeners
+                correlationData: 716cc776-d044-4772-b991-d9b55e2e034c
+        - name: listPlugins
+          payload:
+            commands:
+              - command: listPlugins
+                correlationData: 716cc776-d044-4772-b991-d9b55e2e034c
+
+    ControlResponse:
+      name: controlResponse
+      title: Response including the responses of the command requests
+      payload:
+        $ref: '#/components/schemas/controlResponsePayload'
+      examples:
+        - name: listListeners
+          payload:
+            responses:
+              - command: listListeners
+                data:
+                  listeners:
+                    - id: 1
+                      port: 1883
+                      protocol: mqtt
+                      tls: false
+                    - id: 2
+                      port: 8883
+                      protocol: mqtt
+                      tls: true
+                      require-certificate: true
+                    - id: 3
+                      port: 8090
+                      protocol: mqtt+websockets
+                      tls: true
+                      require-certificate: true
+                correlationData: 716cc776-d044-4772-b991-d9b55e2e034c
+        - name: listPlugins
+          payload:
+            responses:
+              - command: listPlugins
+                data:
+                  plugins:
+                    - name: dynamic-security
+                      control-endpoints:
+                        - $CONTROL/dynamic-security/v1
+                    - name: inspect
+                      version: "1.0"
+                      control-endpoints:
+                        - $CONTROL/cedalo/inspect/v1
+                    - name: client-control
+                      control-endpoints:
+                        - $CONTROL/cedalo/client-control/v1
+                    - name: certificate-management
+                      control-endpoints:
+                        - $CONTROL/certificate-management/v1
+                correlationData: 716cc776-d044-4772-b991-d9b55e2e034c
+
+        - name: error
+          summary: Example of an error response message.
+          payload:
+            responses:
+              - command: listListeners
+                error: Error message
+                correlationData: 716cc776-d044-4772-b991-d9b55e2e034c
+
+  schemas:
+    controlRequestPayload:
+      type:
+        - object
+      properties:
+        commands:
+          type: array
+          items:
+            type:
+              - object
+            anyOf:
+              - description: listListeners request
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - listListeners
+                      - listPlugins
+                    description: |
+                      Command describing the action the broker should process.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+      additionalProperties: false
+    controlResponsePayload:
+      type:
+        - object
+      properties:
+        responses:
+          type: array
+          items:
+            type:
+              - object
+            anyOf:
+              - description: listListeners response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - listListeners
+                    description: >-
+                      Command which describes the action processed by the plugin.
+                  data:
+                    type: object
+                    description: Specified if request has been processed successfully
+                    properties:
+                      listeners:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              description: Numeric identifier of the listener.
+                            port:
+                              type: integer
+                              description: Port the listener is bound to.
+                            protocol:
+                              type: string
+                              enum:
+                                - mqtt
+                                - mqtt+websockets
+                              description: |
+                                Describes whether the listener accepts pure mqtt or mqtt over websocket connections.
+                            bind-address:
+                              type: string
+                              description: |
+                                IP address the listener might be bound to. If the listener
+                                is not bound to an address this field is not set and the
+                                broker is bound to all interfaces.
+                            socket-path:
+                              type: string
+                              description: |
+                                File path to a UNIX socket the listener is bound to.
+                            tls:
+                              type: boolean
+                              describtion: |
+                                Whether the listener uses certificate based TLS enrcyption
+                                or not.
+                            require-certificate:
+                              type: boolean
+                              description: |
+                                If this is set to `true`, the listener requires client certificate for authentication.
+                          required:
+                            - id
+                            - port
+                            - protocol
+                    required:
+                      - listeners
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+              - description: listPlugins response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - listPlugins
+                    description: >-
+                      Command which describes the action processed by the plugin.
+                  data:
+                    type: object
+                    description: Specified if request has been processed successfully
+                    properties:
+                      plugins:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                              description: |
+                                Name of the plugin, used when loaded by the broker.
+                            version:
+                              type: string
+                              description: |
+                                Version of the plugin. Provided if specified during the plugin
+                                initialization.
+                            port:
+                              type: integer
+                              description: |
+                                Port of the listener a plugin might use.
+                            control-endpoints:
+                              type: array
+                              description: |
+                                List of `$CONTROL` topics the plugin handles.
+                              items:
+                                type: string
+                                description: Control topics handling plugin specific commands.
+                                examples:
+                                  - $CONTROL/dynamic-security/v1
+                          require:
+                            - name
+                            - control-endpoints
+                    required:
+                      - plugins
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+              - description: error response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - listListeners
+                    description: >-
+                      Command which describes the action processed by the plugin.
+                  error:
+                    type: string
+                    examples:
+                      - Unknown command
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - error
+      additionalProperties: false
+    correlationData:
+      type: string
+      description: |
+        This is an optional value to be able to identify the relation
+        between request and response. The plugin will add the provided
+        value in the response message.
+      examples:
+        - 716cc776-d044-4772-b991-d9b55e2e034c

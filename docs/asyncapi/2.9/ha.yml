@@ -1,0 +1,546 @@
+asyncapi: 2.6.0
+info:
+  title: High Availability Cluster
+  version: 2.9.1
+  description: |
+    This document describes the topic based mechanism for controlling high
+    availability clusters in Mosquitto.
+
+    JSON commands are published to the topic $CONTROL/cedalo/ha/v1. Responses
+    will be published to  $CONTROL/cedalo/ha/v1/response.
+
+    The HA plugin also integrates the Dynamic Security plugin for access control.
+
+defaultContentType: application/json
+channels:
+  $CONTROL/cedalo/ha/v1:
+    publish:
+      message:
+        $ref: '#/components/messages/ControlRequest'
+  $CONTROL/cedalo/ha/v1/response:
+    subscribe:
+      message:
+        $ref: '#/components/messages/ControlResponse'
+components:
+  messages:
+    ControlRequest:
+      name: controlRequest
+      title: Request to execute commands on the control API
+      payload:
+        $ref: '#/components/schemas/controlRequestPayload'
+      examples:
+        - name: createCluster request
+          payload:
+            commands:
+              - command: createCluster
+                clustername: name
+                nodes:
+                  - address: 192.168.1.1
+                    port: 7000
+                    nodeid: 1
+                    mynode: true
+                  - address: 192.168.1.2
+                    port: 7000
+                    nodeid: 2
+                  - address: 192.168.1.3
+                    port: 7000
+                    nodeid: 3
+        - name: joinCluster request
+          payload:
+            commands:
+              - command: joinCluster
+                clustername: name
+                nodes:
+                  - address: 192.168.1.1
+                    port: 7000
+                    nodeid: 1
+                    mynode: true
+                  - address: 192.168.1.2
+                    port: 7000
+                    nodeid: 2
+                  - address: 192.168.1.3
+                    port: 7000
+                    nodeid: 3
+        - name: addNode request
+          payload:
+            commands:
+              - command: addNode
+                clustername: test
+                address: 192.168.1.4
+                port: 7000
+                nodeid: 4
+        - name: removeNode request
+          payload:
+            commands:
+              - command: removeNode
+                clustername: test
+                address: 192.168.1.4
+                port: 7000
+                nodeid: 4
+        - name: leaveCluster request
+          payload:
+            commands:
+              - command: leaveCluster
+                clustername: test
+                address: 192.168.1.4
+                port: 7000
+                nodeid: 4
+        - name: deleteCluster request
+          payload:
+            commands:
+              - command: deleteCluster
+                clustername: test
+        - name: getCluster request
+          payload:
+            commands:
+              - command: getCluster
+        - name: getRaftStatus request
+          payload:
+            commands:
+              - command: getRaftStatus
+        - name: isLeader request
+          payload:
+            commands:
+              - command: isLeader
+        - name: setLeader request
+          payload:
+            commands:
+              - command: setLeader
+                clustername: test
+                nodeid: 4
+
+    ControlResponse:
+      name: controlResponse
+      title: Response to processed control commands
+      payload:
+        $ref: '#/components/schemas/controlResponsePayload'
+      examples:
+        - name: successful createCluster response
+          payload:
+            responses:
+              - command: createCluster
+                correlationData: 1234-request
+        - name: error response
+          payload:
+            responses:
+              - command: removeNode
+                error: This broker is not the cluster leader.
+                correlationData: 1234-request
+  schemas:
+    controlRequestPayload:
+      type:
+        - object
+      properties:
+        commands:
+          type: array
+          items:
+            anyOf:
+              - description: createCluster request. Create a cluster.
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - createCluster
+                    description: |
+                      Configure the first node in a cluster, possibly with extra nodes.
+
+                      The dynamic security credentials stored on the current node will
+                      be propagated to other nodes.
+                  clustername:
+                    $ref: '#/components/schemas/clustername'
+                  nodes:
+                    $ref: '#/components/schemas/nodes'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - clustername
+                  - nodes
+              - description: joinCluster request. Join a cluster.
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - joinCluster
+                    description: |
+                      Join a node to an existing cluster.
+
+                      The dynamic security credentials stored on the current node will
+                      be propagated to other nodes.
+                  clustername:
+                    $ref: '#/components/schemas/clustername'
+                  nodes:
+                    $ref: '#/components/schemas/nodes'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - clustername
+                  - nodes
+              - description: addNode request. Inform the cluster about a new node.
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - addNode
+                    description: |
+                      `joinCluster` tells a node to become part of a cluster, `addNode`
+                      tells the cluster a new node is joining. Both should be used
+                      when a new node is added. It does not matter in which order
+                      they are carried out.
+                  clustername:
+                    $ref: '#/components/schemas/clustername'
+                  address:
+                    $ref: '#/components/schemas/address'
+                  port:
+                    $ref: '#/components/schemas/port'
+                  nodeid:
+                    $ref: '#/components/schemas/nodeid'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - clustername
+                  - address
+                  - port
+                  - nodeid
+              - description: removeNode request. Remove a node from the cluster.
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - removeNode
+                    description: |
+                      Remove a node from an existing cluster. This should be
+                      sent to the cluster leader and will remove the node from
+                      the cluster configuration, and inform the node that it
+                      is no longer part of the cluster. It is the preferred
+                      method of removing a node.
+                  clustername:
+                    $ref: '#/components/schemas/clustername'
+                  address:
+                    $ref: '#/components/schemas/address'
+                  port:
+                    $ref: '#/components/schemas/port'
+                  nodeid:
+                    $ref: '#/components/schemas/nodeid'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - clustername
+                  - address
+                  - port
+                  - nodeid
+              - description: leaveCluster request. Leave a cluster.
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - leaveCluster
+                    description: |
+                      Remove a node from an existing cluster. This is a fallback
+                      command for a node that has been removed from the cluster,
+                      but is not aware that it has been removed. This could happen
+                      if the node was offline when it was removed, for example.
+                      The command should be sent to the node that is to leave the
+                      cluster, not the cluster leader.
+                  clustername:
+                    $ref: '#/components/schemas/clustername'
+                  address:
+                    $ref: '#/components/schemas/address'
+                  port:
+                    $ref: '#/components/schemas/port'
+                  nodeid:
+                    $ref: '#/components/schemas/nodeid'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - clustername
+                  - address
+                  - port
+                  - nodeid
+              - description: deleteCluster request. Delete the cluster.
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - deleteCluster
+                    description: |
+                      Removes cluster configuration from all nodes.
+                  clustername:
+                    $ref: '#/components/schemas/clustername'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - clustername
+              - description: getCluster request. Get information about the current cluster.
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getCluster
+                    description: |
+                      Get information about the current cluster configuration.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+              - description: getRaftStatus request. Get information about the current cluster status.
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getRaftStatus
+                    description: |
+                      Get information about the current cluster status, like synchronization
+                      and leader/follower state.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+              - description: isLeader request. Ask the current node if he is the cluster leader.
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - isLeader
+                    description: |
+                      Command to request if the current cluster node is the current cluster leader.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+              - description: setLeader request. Promote a specific node to be the cluster leader.
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - setLeader
+                    description: |
+                      Promote a node to be the cluster leader. This should be
+                      sent to the cluster leader.
+                  clustername:
+                    $ref: '#/components/schemas/clustername'
+                  nodeid:
+                    $ref: '#/components/schemas/nodeid'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - clustername
+                  - nodeid
+      additionalProperties: false
+    controlResponsePayload:
+      type:
+        - object
+      properties:
+        responses:
+          type: array
+          items:
+            type:
+              - object
+            oneOf:
+              - description: Successfull command execution response
+                properties:
+                  command:
+                    $ref: '#/components/schemas/command'
+                  data:
+                    type: object
+                    oneOf:
+                      - description: getRaftStatus response
+                        properties:
+                          nodes:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                address:
+                                  type: string
+                                  description: IP Address of the cluster node
+                                id:
+                                  $ref: '#/components/schemas/nodeid'
+                                role:
+                                  type: integer
+                                  enum:
+                                    - 0
+                                    - 1
+                                    - 2
+                                  description: |
+                                    `0` RAFT_STANDBY: Replicate log, does not participate in quorum.
+                                    `1` RAFT_VOTER: Replicate log, does participate in quorum.
+                                    `2` RAFT_SPARE: Does not replicate log, or participate in quorum.
+                          commit_index:
+                            type: integer
+                            description: Highest consensus log entry known to be committed.
+                          last_applied:
+                            type: integer
+                            description: |
+                              Highest consensus log entry applied to the internal
+                              finite-state machine.
+                          last_stored:
+                            type: integer
+                            description: Highest consensus log entry persisted on disk.
+                          current_term:
+                            type: integer
+                            description: Latest term server has seen.
+                          state:
+                            type: integer
+                            enum:
+                              - 0
+                              - 1
+                              - 2
+                              - 3
+                            description: |
+                              Possible values are
+                              _Unavailable_ `0` (typically not part of a cluster),
+                              _Follower_ `1` (received updates by the leader),
+                              _Candidate_ `2` (state during the election/voting process),
+                              _Leader_ `3` (cluster leader syncing current followers).
+                          errmsg:
+                            type: string
+                          base_msg:
+                            type: integer
+                          client:
+                            type: integer
+                          client_msg:
+                            type: integer
+                          retain_msg:
+                            type: integer
+                          subscription:
+                            type: integer
+                          syncmode:
+                            type: string
+                            enum:
+                              - full
+                              - dynsec
+                            description: |
+                              Cluster sync mode. `dynsec` is an active/active high availability cluster.
+                          cluster_status:
+                            type: string
+                            enum:
+                              - stable
+                              - degraded
+                              - offline
+                              - undefined
+                            description: |
+                              Current cluster status. Only valid from a leader, a follower will return `undefined`.
+                              `stable` means that the cluster has sufficient voting nodes in contact with the leader
+                              to be able to suffer the loss of at least one node without issue.
+                              `degraded` means that the cluster has the minimum number of voting nodes in contact
+                              with the leader, and hence is at risk of going offline if a single node disconnects.
+                              `offline` means that the cluster does not have a majority and is offline.
+
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+              - description: Error response
+                properties:
+                  command:
+                    $ref: '#/components/schemas/command'
+                  error:
+                    type: string
+                    examples:
+                      - This broker is already part of a cluster.
+                      - This broker is not the cluster leader.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - error
+      additionalProperties: false
+    command:
+      type: string
+      enum:
+        - createCluster
+        - addNode
+        - removeNode
+        - joinCluster
+        - leaveCluster
+        - deleteCluster
+        - getCluster
+        - getRaftStatus
+        - isLeader
+        - setLeader
+      description: |
+        Command which describes the action processed by the plugin.
+    clustername:
+      type: string
+      description: |
+        `clustername` currently has no purpose other than being a human
+        friendly identifier.
+    nodes:
+      type: array
+      minItems: 3
+      items:
+        type: object
+        properties:
+          address:
+            $ref: '#/components/schemas/address'
+          port:
+            $ref: '#/components/schemas/port'
+          nodeid:
+            $ref: '#/components/schemas/nodeid'
+          mynode:
+            type: boolean
+            default: false
+            description: |
+              Tells the node receiving this command, which address
+              he is assigned to.
+        required:
+          - address
+          - port
+          - nodeid
+    address:
+      type: string
+      description: IP address or hostname of the cluster node.
+    port:
+      type: integer
+      description: Port used for the cluster communication, typically 7000.
+    nodeid:
+      type: integer
+      description: Unique identifier of the cluster node.
+      minimum: 1
+    correlationData:
+      type: string
+      description: |
+        This is an optional value to be able to identify the relation
+        between request and response. The plugin will add the provided value in the
+        response message.
+      examples:
+        - 1234-request

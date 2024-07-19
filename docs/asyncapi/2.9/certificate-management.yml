@@ -1,0 +1,206 @@
+asyncapi: 2.6.0
+info:
+  title: Certificate Management
+  version: 2.9.1
+  description: |
+    Manage Certificate Authorities (CAs) used for client certificate based
+    authentication. The topic of the plugins control API is
+    `$CONTROL/certificate-management/v1`.
+
+    Currently supported commands offered by the API are `insertCACertificate`,
+    which can be used to extend the known Certificate Authorities (CAs). To
+    delete an existing CA the `deleteCACertificate` command can be used.
+
+defaultContentType: application/json
+channels:
+  $CONTROL/certificate-management/v1:
+    publish:
+      message:
+        $ref: '#/components/messages/ControlRequest'
+  $CONTROL/certificate-management/v1/response:
+    subscribe:
+      message:
+        $ref: '#/components/messages/ControlResponse'
+components:
+  messages:
+    ControlRequest:
+      name: controlRequest
+      title: Request to execute insert/delete CA certificates
+      payload:
+        $ref: '#/components/schemas/controlRequestPayload'
+      examples:
+        - name: insertCACertificate request
+          payload:
+            commands:
+            - command: insertCACertificate
+              listener_id: 2
+              file_name: client_ca.pem
+              ca_cert_pem: "-----BEGIN CERTIFICATE-----\nMII...EyQ==\n-----END CERTIFICATE-----\n"
+        - name: deleteCACertificate request
+          payload:
+            commands:
+              - command: deleteCACertificate
+                listener_id: 2
+                file_name: client_ca.pem
+    ControlResponse:
+      name: controlResponse
+      title: Response to an executed insert/delete CA certificates request
+      payload:
+        $ref: '#/components/schemas/controlResponsePayload'
+      examples:
+        - name: successful insertCACertificate response
+          payload:
+            responses:
+              - command: insertCACertificate
+                data:
+                  response: SUCCESS
+                correlationData: 1234-request
+        - name: successful deleteCACertificate response
+          payload:
+            responses:
+              - command: deleteCACertificate
+                data:
+                  response: SUCCESS
+                correlationData: 1234-request
+        - name: error response
+          payload:
+            responses:
+              - command: insertCACertificate
+                error: File already exists
+                correlationData: 1234-request
+  schemas:
+    controlRequestPayload:
+      type:
+        - object
+      properties:
+        commands:
+          type: array
+          items:
+            anyOf:
+              - description: insertCACertificate request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - insertCACertificate
+                    description: |
+                      Command which describes the action to be executed by the
+                      plugin. Currently only inserting and deleting custom CAs is
+                      supported.
+                  listener_id:
+                    $ref: '#/components/schemas/listener_id'
+                  file_name:
+                    $ref: '#/components/schemas/file_name'
+                  ca_cert_pem:
+                    type: string
+                    description: |
+                      CA certificate in PEM format (note: only required for `insertCACertificate`).
+                    examples:
+                      - "-----BEGIN CERTIFICATE-----\nMII...EyQ==\n-----END CERTIFICATE-----\n"
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - file_name
+                  - listener_id
+                  - ca_cert_pem
+              - description: deleteCACertificate request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - deleteCACertificate
+                    description: |
+                      Command which describes the action to be executed by the
+                      plugin. Currently only inserting and deleting custom CAs is
+                      supported.
+                  listener_id:
+                    $ref: '#/components/schemas/listener_id'
+                  file_name:
+                    $ref: '#/components/schemas/file_name'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - file_name
+                  - listener_id
+      additionalProperties: false
+    controlResponsePayload:
+      type:
+        - object
+      properties:
+        responses:
+          type: array
+          items:
+            type:
+              - object
+            oneOf:
+              - properties:
+                  command:
+                    $ref: '#/components/schemas/command'
+                  data:
+                    type: object
+                    description: Specified if request has been processed successfully
+                    properties:
+                      response:
+                        type: string
+                        enum:
+                          - SUCCESS
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+              - properties:
+                  command:
+                    $ref: '#/components/schemas/command'
+                  error:
+                    type: string
+                    examples:
+                      - File already exists
+                      - File does not exist
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - error
+      additionalProperties: false
+    command:
+      type: string
+      enum:
+        - insertCACertificate
+        - deleteCACertificate
+      description: >-
+        Command which describes the action processed by the plugin.
+        Currently only inserting and deleting custom CAs is supported.
+    listener_id:
+      type: integer
+      minimum: 1
+      description: |
+        Specifies the listener the CA certificate should be applied to.
+        Available listeners can be determined using the `listListeners`
+        broker control API command.
+    file_name:
+      type: string
+      maxLength: 255
+      description: |
+        Name of CA certificate file stored in the configured `capath`.
+        Must follow the Linux file naming conventions.
+      examples:
+        - client_ca.pem
+    correlationData:
+      type: string
+      description: |
+        This is an optional value to be able to identify the relation
+        between request and response. The plugin will add the provided value in the
+        response message.
+      examples:
+        - 1234-request

@@ -1,0 +1,530 @@
+asyncapi: 2.6.0
+info:
+  title: Topic Tree
+  version: 2.9.1
+  description: |
+    This plugin provides information on currently in use topics on the broker,
+    from both published messages and from subscriptions.
+
+    The topic of the plugins control API is `$CONTROL/cedalo/topictree/v1`.
+
+    Currently supported commands offered by the API are `topicCount` to get a
+    count of publish and subscribe topics, `listTopics` to get the list of
+    in-use topics, `setTtl` to set the number of seconds until a a topic is
+    considered unused, `addFilter` to add a filter so that only certain topics
+    are considered, `removeFilter` to remove a filter, `clearFilters` to remove
+    all filters, and `listFilters` to retrieve the currently configured
+    filters.
+
+defaultContentType: application/json
+channels:
+  $CONTROL/cedalo/topictree/v1:
+    publish:
+      message:
+        $ref: '#/components/messages/ControlRequest'
+  $CONTROL/cedalo/topictree/v1/response:
+    subscribe:
+      message:
+        $ref: '#/components/messages/ControlResponse'
+components:
+  messages:
+    ControlRequest:
+      name: controlRequest
+      title: Request to execute topicCount/listTopics/getTtl/setTtl/addFilter/removeFilter/clearFilters/listFilters
+      payload:
+        $ref: '#/components/schemas/controlRequestPayload'
+      examples:
+        - name: topicCount
+          summary: Example of a topicCount message.
+          payload:
+            commands:
+              - command: topicCount
+        - name: listTopics
+          summary: Example of a listTopics message.
+          payload:
+            commands:
+              - command: listTopics
+                count: 10
+                offset: 0
+        - name: getTtl
+          summary: Example of a getTtl message.
+          payload:
+            commands:
+              - command: getTtl
+        - name: setTtl
+          summary: Example of a setTtl message.
+          payload:
+            commands:
+              - command: setTtl
+                ttl: 60
+        - name: addFilter
+          summary: Example of an addFilter message.
+          payload:
+            commands:
+              - command: addFilter
+                filter: "+/temperature"
+        - name: removeFilter
+          summary: Example of a removeFilter message.
+          payload:
+            commands:
+              - command: removeFilter
+                filter: "+/temperature"
+        - name: clearFilters
+          summary: Example of a clearFilters message.
+          payload:
+            commands:
+              - command: clearFilters
+        - name: listFilters
+          summary: Example of a listFilters message.
+          payload:
+            commands:
+              - command: listFilters
+
+    ControlResponse:
+      name: controlResponse
+      title: Response to an executed topicCount/listTopics/getTtl/setTtl/addFilter/removeFilter/clearFilters/listFilters request
+      payload:
+        $ref: '#/components/schemas/controlResponsePayload'
+      examples:
+        - name: topicCount
+          summary: successful topicCount response message.
+          payload:
+            responses:
+              - command: topicCount
+                data:
+                  publishCount: 15
+                  subscribeCount: 96
+                correlationData: 37a6e977-2b4f-4431-83f7-5bd93b35c152
+        - name: listTopics
+          summary: successful listTopics response message.
+          payload:
+            responses:
+                - command: listTopics
+                  data:
+                    publishTopics:
+                      count: 2
+                      topics:
+                      - "sensor1/temperature"
+                      - "sensor2/temperature"
+                    subscribeTopics:
+                      count: 1
+                      topics:
+                       - "sensor2/#"
+                  correlationData: 37a6e977-2b4f-4431-83f7-5bd93b35c152
+        - name: getTtl
+          summary: successful getTtl response message.
+          payload:
+            responses:
+                - command: getTtl
+                  data:
+                    ttl: 60
+                  correlationData: 37a6e977-2b4f-4431-83f7-5bd93b35c152
+        - name: setTtl
+          summary: successful setTtl response message.
+          payload:
+            responses:
+                - command: setTtl
+                  correlationData: 37a6e977-2b4f-4431-83f7-5bd93b35c152
+        - name: addFilter
+          summary: successful addFilter response message.
+          payload:
+            responses:
+                - command: addFilter
+                  correlationData: 37a6e977-2b4f-4431-83f7-5bd93b35c152
+        - name: removeFilter
+          summary: successful removeFilter response message.
+          payload:
+            responses:
+                - command: removeFilter
+                  correlationData: 37a6e977-2b4f-4431-83f7-5bd93b35c152
+        - name: clearFilters
+          summary: successful clearFilters response message.
+          payload:
+            responses:
+                - command: clearFilters
+                  correlationData: 37a6e977-2b4f-4431-83f7-5bd93b35c152
+        - name: listFilters
+          summary: successful listFilters response message.
+          payload:
+            responses:
+                - command: listFilters
+                  data:
+                    filters:
+                    - "+/temperature"
+                    - "+/humidity"
+                  correlationData: 37a6e977-2b4f-4431-83f7-5bd93b35c152
+        - name: error
+          summary: Example of an error response message.
+          payload:
+            responses:
+              - command: removeFilter
+                error: Filter not found
+                correlationData: 37a6e977-2b4f-4431-83f7-5bd93b35c152
+
+  schemas:
+    controlRequestPayload:
+      type:
+        - object
+      properties:
+        commands:
+          type: array
+          items:
+            type:
+              - object
+            anyOf:
+              - description: topicCount request
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - topicCount
+                    description: |
+                      Command to request the plugin to return the count of
+                      publish and subscribe topics in use.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+              - description: listTopics request
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - listTopics
+                    description: |
+                      Command to request the plugin to return the list of
+                      publish and subscribe topics in use.
+                  count:
+                    type: integer
+                    default: -1
+                    description: |
+                      Number of client entries which should be returned. Set `-1`
+                      for all entries.
+                  offset:
+                    type: integer
+                    default: 0
+                    description: |
+                      References a specific location in the list where start
+                      returning values from. Set to `0` to start at the beginning.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+              - description: getTtl request
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getTtl
+                    description: |
+                      Command to get the TTL after which expired topics will be
+                      removed from the list.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+              - description: setTtl request
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - setTtl
+                    description: |
+                      Command to set the TTL after which expired topics will be
+                      removed from the list.
+                  ttl:
+                    type: integer
+                    default: 60
+                    description: |
+                      Number of seconds to set for the TTL.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+              - description: addFilter request
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - addFilter
+                    description: |
+                      Command to request the plugin to add a new filter to the
+                      list of topic filters. If no filters are defined, then
+                      all topics are added to the publish and subscribe lists.
+                      If any filters are defined, then only topics matching the
+                      filter lists will be added to the publish and susbcribe
+                      lists.
+                  filter:
+                    type: string
+                    description: |
+                      Topic filter to use, in MQTT topic filter format with `+`
+                      and `#` wildcards if required.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - filter
+              - description: removeFilter request
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - removeFilter
+                    description: |
+                      Command to request the plugin to remove a filter from the
+                      list of topic filters.
+                  filter:
+                    type: string
+                    description: |
+                      Topic filter to use, in MQTT topic filter format with `+`
+                      and `#` wildcards if required.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - filter
+              - description: clearFilters request
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - clearFilters
+                    description: |
+                      Command to request the plugin to clear all filters.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+              - description: listFilters request
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - listFilters
+                    description: |
+                      Command to request the plugin to return the list of
+                      topic filters.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+      additionalProperties: false
+    controlResponsePayload:
+      type:
+        - object
+      properties:
+        responses:
+          type: array
+          items:
+            type:
+              - object
+            anyOf:
+              - description: topicCount response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - topicCount
+                    description: >-
+                      Command which describes the action processed by the plugin.
+                  data:
+                    type: object
+                    description: Specified if request has been processed successfully
+                    properties:
+                      publishCount:
+                        type: integer
+                        description: Count of publish topics in use
+                      subscribeCount:
+                        type: integer
+                        description: Count of subscribe topics in use
+                    additionalProperties: false
+                    required:
+                      - publishCount
+                      - subscribeCount
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+              - description: listTopics response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - listTopics
+                    description: >-
+                      Command which describes the action processed by the plugin.
+                  data:
+                    type: object
+                    description: Specified if request has been processed successfully
+                    properties:
+                      publishTopics:
+                        type: object
+                        properties:
+                          count:
+                            type: integer
+                            description: Count of publish topics.
+                          topics:
+                            type: array
+                            description: Publish topics
+                            items:
+                              type: string
+                      subscribeTopics:
+                        type: object
+                        properties:
+                          count:
+                            type: integer
+                            description: Count of publish topics.
+                          topics:
+                            type: array
+                            description: Publish topics
+                            items:
+                              type: string
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+              - description: getTtl response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getTtl
+                    description: >-
+                      Command which describes the action processed by the plugin.
+                  data:
+                    type: object
+                    description: Specified if request has been processed successfully
+                    properties:
+                      ttl:
+                        type: integer
+                        description: Topic TTL currently in use
+                    additionalProperties: false
+                    required:
+                      - ttl
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+              - description: setTtl response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - setTtl
+                    description: >-
+                      Command which describes the action processed by the plugin.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+              - description: addFilter response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - addFilter
+                    description: >-
+                      Command which describes the action processed by the plugin.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+              - description: removeFilter response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - removeFilter
+                    description: >-
+                      Command which describes the action processed by the plugin.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+              - description: clearFilters response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - clearFilters
+                    description: >-
+                      Command which describes the action processed by the plugin.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+              - description: listFilters response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - listFilters
+                    description: >-
+                      Command which describes the action processed by the plugin.
+                  data:
+                    type: object
+                    description: Specified if request has been processed successfully
+                    properties:
+                      filters:
+                        type: array
+                        description: Topic filters
+                        items:
+                          type: string
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+              - description: error response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - topicCount
+                      - listTopics
+                      - getTtl
+                      - setTtl
+                      - addFilter
+                      - removeFilter
+                      - clearFilters
+                      - listFilters
+                    description: >-
+                      Command which describes the action processed by the plugin.
+                  error:
+                    type: string
+                    examples:
+                      - Filter not found
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - error
+      additionalProperties: false
+    correlationData:
+      type: string
+      description: |
+        This is an optional value to be able to identify the relation
+        between request and response. The plugin will add the provided
+        value in the response message.
+      examples:
+        - 37a6e977-2b4f-4431-83f7-5bd93b35c152
