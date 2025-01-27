@@ -1,0 +1,2086 @@
+asyncapi: 2.6.0
+info:
+  title: Dynamic Security
+  version: 3.0.1
+  description: |
+
+    Manage Certificate Authorities (CAs) used for client certificate based
+    authentication. The topic of the plugins control API is
+    `$CONTROL/dynamic-security/v1`.
+
+defaultContentType: application/json
+channels:
+  $CONTROL/dynamic-security/v1:
+    publish:
+      message:
+        $ref: '#/components/messages/ControlRequest'
+  $CONTROL/dynamic-security/v1/response:
+    subscribe:
+      message:
+        $ref: '#/components/messages/ControlResponse'
+components:
+  messages:
+    ControlRequest:
+      name: controlRequest
+      title: Request to execute commands on the control API
+      payload:
+        $ref: '#/components/schemas/controlRequestPayload'
+      examples:
+        - name: addClientRole
+          payload:
+            commands:
+            - command: "addClientRole"
+              username: "username"
+              rolename: "rolename"
+              priority: -1
+
+        - name: addGroupClient
+          payload:
+            commands:
+            - command: "addGroupClient"
+              groupname: "groupname"
+              username: "username"
+              priority: -1
+
+        - name: addGroupRole
+          payload:
+            commands:
+            - command: "addGroupRole"
+              groupname: "groupname"
+              rolename: "rolename"
+              priority: -1
+
+        - name: addRoleACL
+          payload:
+            commands:
+            - command: "addRoleACL"
+              rolename: "rolename"
+              acltype: "subscribePattern"
+              topic: "topic"
+              priority: -1
+              allow: true
+
+        - name: createClient
+          payload:
+            commands:
+            - command: "createClient"
+              username: "username"
+              password: "password"
+              clientid: "clientid"
+              textname: "text name"
+              textdescription: "text description"
+              roles:
+                - rolename: "rolename"
+                  priority: -1
+              groups:
+                - groupname: "groupname"
+                  priority: -1
+
+        - name: createGroup
+          payload:
+            commands:
+            - command: "createGroup"
+              groupname: "groupname"
+              textname: "text name"
+              textdescription: "text description"
+              roles:
+                - rolename: "rolename"
+                  priority: -1
+
+        - name: createRole
+          payload:
+            commands:
+            - command: "createRole"
+              rolename: "rolename"
+              textname: "text name"
+              textdescription: "text description"
+              allowwildcardsubs: true
+              acls:
+              - acltype: "subscriptionPattern"
+                topic: "topic"
+                priority: -1
+                allow: true
+
+        - name: deleteClient
+          payload:
+            commands:
+            - command: "deleteClient"
+              username: "username"
+
+        - name: deleteGroup
+          payload:
+            commands:
+            - command: "deleteGroup"
+              groupname: "groupname"
+
+        - name: deleteRole
+          payload:
+            commands:
+            - command: "deleteRole"
+              rolename: "rolename"
+
+        - name: disableClient
+          payload:
+            commands:
+            - command: "disableClient"
+              username: "username"
+
+        - name: enableClient
+          payload:
+            commands:
+            - command: "enableClient"
+              username: "username"
+
+        - name: getAnonymousGroup
+          payload:
+            commands:
+            - command: "getAnonymousGroup"
+
+        - name: getClient
+          payload:
+            commands:
+            - command: "getClient"
+              username: "username"
+
+        - name: getDefaultACLAccess
+          payload:
+            commands:
+            - command: "getDefaultACLAccess"
+
+        - name: getGroup
+          payload:
+            commands:
+            - command: "getGroup"
+              groupname: "groupname"
+
+        - name: getRole
+          payload:
+            commands:
+            - command: "getRole"
+              rolename: "rolename"
+
+        - name: listClients
+          payload:
+            commands:
+            - command: "listClients"
+              verbose: true
+              count: -1
+              offset: 0
+
+        - name: listGroups
+          payload:
+            commands:
+            - command: "listGroups"
+              verbose: true
+              count: -1
+              offset: 0
+
+        - name: listRoles
+          payload:
+            commands:
+            - command: "listRoles"
+              verbose: true
+              count: -1
+              offset: 0
+
+        - name: modifyClient
+          payload:
+            commands:
+            - command: "modifyClient"
+              username: "username"
+              clientid: "clientid"
+              password: "password"
+              textname: "text name"
+              textdescription: "text description"
+              roles:
+              - rolename: "rolename"
+                priority: -1
+              groups:
+              - groupname: "groupname"
+                priority: -1
+
+        - name: modifyGroup
+          payload:
+            commands:
+            - command: "modifyGroup"
+              groupname: "groupname"
+              textname: "text name"
+              textdescription: "text description"
+              roles:
+              - rolename: "rolename"
+                priority: -1
+              clients:
+              - "username1"
+              - "username2"
+
+        - name: modifyRole
+          payload:
+            commands:
+            - command: "modifyRole"
+              rolename: "rolename"
+              textname: "text name"
+              textdescription: "text description"
+              allowwildcardsubs: true
+              acls:
+              - acltype: "subscriptionPattern"
+                topic: "topic"
+                priority: -1
+                allow: true
+
+        - name: reloadConfig
+          payload:
+            commands:
+            - command: "reloadConfig"
+
+        - name: removeClientRole
+          payload:
+            commands:
+            - command: "removeClientRole"
+              username: "username"
+              rolename: "rolename"
+
+        - name: removeGroupClient
+          payload:
+            commands:
+            - command: "removeGroupClient"
+              groupname: "groupname"
+              username: "username"
+
+        - name: removeGroupRole
+          payload:
+            commands:
+            - command: "removeGroupRole"
+              groupname: "groupname"
+              rolename: "rolename"
+
+        - name: removeRoleACL
+          payload:
+            commands:
+            - command: "removeRoleACL"
+              rolename: "rolename"
+              acltype: "subscribePattern"
+              topic: "topic"
+
+        - name: setAnonymousGroup
+          payload:
+            commands:
+            - command: "setAnonymousGroup"
+              groupname: "groupname"
+
+        - name: setClientId
+          payload:
+            commands:
+            - command: "setClientId"
+              username: "username"
+              clientid: "clientid"
+
+        - name: setClientPassword
+          payload:
+            commands:
+            - command: "setClientPassword"
+              username: "username"
+              password: "password"
+
+        - name: setDefaultACLAccess
+          payload:
+            commands:
+            - command: "setDefaultACLAccess"
+              acls:
+              - acltype: "publishClientReceive"
+                allow: true
+              - acltype: "publishClientSend"
+                allow: false
+              - acltype: "subscribe"
+                allow: false
+              - acltype: "unsubscribe"
+                allow: true
+    ControlResponse:
+      name: controlResponse
+      title: Response to an executed control API request
+      payload:
+        $ref: '#/components/schemas/controlResponsePayload'
+      examples:
+        - name: successful addClientRole
+          payload:
+            responses:
+              - command: "addClientRole"
+                correlationData: 1234-request
+
+        - name: successful addGroupClient response
+          payload:
+            responses:
+              - command: "addGroupClient"
+                correlationData: 1234-request
+
+        - name: successful addGroupRole response
+          payload:
+            responses:
+              - command: "addGroupRole"
+                correlationData: 1234-request
+
+        - name: successful addRoleACL response
+          payload:
+            responses:
+              - command: "addRoleACL"
+                correlationData: 1234-request
+
+        - name: successful createClient response
+          payload:
+            responses:
+              - command: "createClient"
+                correlationData: 1234-request
+
+        - name: successful createGroup response
+          payload:
+            responses:
+              - command: "createGroup"
+                correlationData: 1234-request
+
+        - name: successful createRole response
+          payload:
+            responses:
+              - command: "createRole"
+                correlationData: 1234-request
+
+        - name: successful deleteClient response
+          payload:
+            responses:
+              - command: "deleteClient"
+                correlationData: 1234-request
+
+        - name: successful deleteGroup response
+          payload:
+            responses:
+              - command: "deleteGroup"
+                correlationData: 1234-request
+
+        - name: successful deleteRole response
+          payload:
+            responses:
+              - command: "deleteRole"
+                correlationData: 1234-request
+
+        - name: successful disableClient response
+          payload:
+            responses:
+              - command: "disableClient"
+                correlationData: 1234-request
+
+        - name: successful enableClient response
+          payload:
+            responses:
+              - command: "enableClient"
+                correlationData: 1234-request
+
+        - name: successful getAnonymousGroup response
+          payload:
+            responses:
+              - command: "getAnonymousGroup"
+                data:
+                  group:
+                    groupname: "anonymous"
+                correlationData: 1234-request
+
+        - name: successful getClient response
+          payload:
+            responses:
+              - command: "getClient"
+                data:
+                  client:
+                    username: "username"
+                    clientid: "clientid"
+                    textname: "text name"
+                    textdescription: "text description"
+                    disabled: false
+                    connections:
+                      - address: "127.0.0.1"
+                    roles:
+                      - rolename: "rolename"
+                        priority: -1
+                    groups:
+                      - groupname: "groupname"
+                        priority: -1
+                correlationData: 1234-request
+
+        - name: successful getDefaultACLAccess response
+          payload:
+            responses:
+              - command: "getDefaultACLAccess"
+                data:
+                  acls:
+                    - acltype: "publishClientReceive"
+                      allow: true
+                    - acltype: "publishClientSend"
+                      allow: false
+                    - acltype: "subscribe"
+                      allow: false
+                    - acltype: "unsubscribe"
+                      allow: true
+                correlationData: 1234-request
+
+        - name: successful getGroup response
+          payload:
+            responses:
+              - command: "getGroup"
+                data:
+                  group:
+                    groupname: "groupname"
+                    textname: "text name"
+                    textdescription: "text description"
+                    clients:
+                      - username: "username1"
+                      - username: "username2"
+                    roles:
+                      - rolename: "rolename"
+                        priority: -1
+                correlationData: 1234-request
+
+        - name: successful getRole response
+          payload:
+            responses:
+              - command: "getRole"
+                data:
+                  role:
+                    rolename: "rolename"
+                    textname: "text name"
+                    textdescription: "text description"
+                    allowwildcardsubs: true
+                    acls:
+                      - acltype: "subscribeLiteral"
+                        topic: "topic"
+                        priority: -1
+                        allow: true
+                correlationData: 1234-request
+
+        - name: successful non-verbose listClients response
+          payload:
+            responses:
+              - command: "listClients"
+                data:
+                  totalCount: 2
+                  clients:
+                    - "username1"
+                    - "username2"
+                correlationData: 1234-request
+
+        - name: successful verbose listClients response
+          payload:
+            responses:
+              - command: "listClients"
+                data:
+                  totalCount: 2
+                  clients:
+                    - username: "username1"
+                      clientid: "clientid"
+                      textname: "text name"
+                      textdescription: "text description"
+                      disabled: false
+                      connections:
+                        - address: "127.0.0.1"
+                      roles:
+                        - rolename: "rolename"
+                          priority: -1
+                      groups:
+                        - groupname: "groupname"
+                          priority: -1
+                    - username: "username2"
+                      textname: "text name"
+                      textdescription: "text description"
+                      disabled: false
+                      roles:
+                        - rolename: "rolename"
+                          priority: -1
+                      groups:
+                        - groupname: "groupname"
+                          priority: -1
+                correlationData: 1234-request
+
+        - name: successful non-verbose listGroups response
+          payload:
+            responses:
+              - command: "listGroups"
+                data:
+                  totalCount: 2
+                  groups:
+                    - "groupname1"
+                    - "groupname2"
+                correlationData: 1234-request
+
+        - name: successful verbose listGroups response
+          payload:
+            responses:
+              - command: "listGroups"
+                data:
+                  totalCount: 2
+                  groups:
+                    - groupname: "groupname1"
+                      textname: "text name"
+                      textdescription: "text description"
+                      clients:
+                        - username: "username1"
+                        - username: "username2"
+                      roles:
+                        - rolename: "rolename"
+                          priority: -1
+                    - groupname: "groupname2"
+                      clients:
+                        - username: "username1"
+                        - username: "username2"
+                      roles:
+                        - rolename: "rolename"
+                          priority: -1
+                correlationData: 1234-request
+
+        - name: successful non-verbose listRoles response
+          payload:
+            responses:
+              - command: "listRoles"
+                data:
+                  totalCount: 2
+                  roles:
+                    - "rolename1"
+                    - "rolename2"
+                correlationData: 1234-request
+
+        - name: successful verbose listRoles response
+          payload:
+            responses:
+              - command: "listRoles"
+                data:
+                  totalCount: 2
+                  roles:
+                    - rolename: "rolename1"
+                      textname: "text name"
+                      textdescription: "text description"
+                      allowwildcardsubs: true
+                      acls:
+                        - acltype: "subscribeLiteral"
+                          topic: "topic"
+                          priority: -1
+                          allow: true
+                    - rolename: "rolename2"
+                      textname: "text name"
+                      textdescription: "text description"
+                      allowwildcardsubs: true
+                      acls:
+                        - acltype: "subscribeLiteral"
+                          topic: "topic"
+                          priority: -1
+                          allow: true
+                correlationData: 1234-request
+
+        - name: successful modifyClient response
+          payload:
+            responses:
+              - command: "modifyClient"
+                correlationData: 1234-request
+
+        - name: successful modifyGroup response
+          payload:
+            responses:
+              - command: "modifyGroup"
+                correlationData: 1234-request
+
+        - name: successful modifyRole response
+          payload:
+            responses:
+              - command: "modifyRole"
+                correlationData: 1234-request
+
+        - name: successful reloadConfig response
+          payload:
+            responses:
+              - command: "reloadConfig"
+                correlationData: 1234-request
+
+        - name: successful removeClientRole response
+          payload:
+            responses:
+              - command: "removeClientRole"
+                correlationData: 1234-request
+
+        - name: successful removeGroupClient response
+          payload:
+            responses:
+              - command: "removeGroupClient"
+                correlationData: 1234-request
+
+        - name: successful removeGroupRole response
+          payload:
+            responses:
+              - command: "removeGroupRole"
+                correlationData: 1234-request
+
+        - name: successful removeRoleACL response
+          payload:
+            responses:
+              - command: "removeRoleACL"
+                correlationData: 1234-request
+
+        - name: successful setAnonymousGroup response
+          payload:
+            responses:
+              - command: "setAnonymousGroup"
+                correlationData: 1234-request
+
+        - name: successful setClientId response
+          payload:
+            responses:
+              - command: "setClientId"
+                correlationData: 1234-request
+
+        - name: successful setClientPassword response
+          payload:
+            responses:
+              - command: "setClientPassword"
+                correlationData: 1234-request
+
+        - name: successful setDefaultACLAccess response
+          payload:
+            responses:
+              - command: "setDefaultACLAccess"
+                correlationData: 1234-request
+
+        - name: error response
+          payload:
+            responses:
+              - command: "addClientRole"
+                error: "Client not found"
+                correlationData: 1234-request
+  schemas:
+    controlRequestPayload:
+      type:
+        - object
+      properties:
+        commands:
+          type: array
+          items:
+            anyOf:
+              - description: addClientRole request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - addClientRole
+                    description: |
+                      Add a role to a client.
+                  username:
+                    $ref: '#/components/schemas/username'
+                  rolename:
+                    $ref: '#/components/schemas/rolename'
+                  priority:
+                    $ref: '#/components/schemas/priority'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - username
+                  - rolename
+
+              - description: addGroupClient request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - addGroupClient
+                    description: |
+                      Add a client to a group.
+                  groupname:
+                    $ref: '#/components/schemas/groupname'
+                  username:
+                    $ref: '#/components/schemas/username'
+                  priority:
+                    $ref: '#/components/schemas/priority'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - groupname
+                  - username
+
+              - description: addGroupRole request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - addGroupRole
+                    description: |
+                      Add a role to a group.
+                  groupname:
+                    $ref: '#/components/schemas/groupname'
+                  rolename:
+                    $ref: '#/components/schemas/rolename'
+                  priority:
+                    $ref: '#/components/schemas/priority'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - groupname
+                  - rolename
+
+              - description: addRoleACL request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - addRoleACL
+                    description: |
+                      Add an ACL to a role.
+                  rolename:
+                    $ref: '#/components/schemas/rolename'
+                  acltype:
+                    $ref: '#/components/schemas/aclchecktype'
+                  topic:
+                    $ref: '#/components/schemas/topicfilter'
+                  priority:
+                    $ref: '#/components/schemas/priority'
+                  allow:
+                    $ref: '#/components/schemas/aclallow'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - rolename
+                  - acltype
+                  - allow
+
+              - description: createClient request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - createClient
+                    description: |
+                      Create a new client
+                  username:
+                    $ref: '#/components/schemas/username'
+                  password:
+                    $ref: '#/components/schemas/password'
+                  clientid:
+                    $ref: '#/components/schemas/clientid'
+                  textname:
+                    $ref: '#/components/schemas/textname'
+                  textdescription:
+                    $ref: '#/components/schemas/textdescription'
+                  roles:
+                    type: array
+                    description: |
+                      An optional list of roles to attach to the client.
+                    properties:
+                      rolename:
+                        $ref: '#/components/schemas/rolename'
+                      priority:
+                        $ref: '#/components/schemas/priority'
+                    additionalProperties: false
+                    required:
+                      - rolename
+                  groups:
+                    type: array
+                    description: |
+                      An optional list of groups to add the client to.
+                    properties:
+                      groupname:
+                        $ref: '#/components/schemas/groupname'
+                      priority:
+                        $ref: '#/components/schemas/priority'
+                    additionalProperties: false
+                    required:
+                      - groupname
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - username
+
+              - description: createGroup request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - createGroup
+                    description: |
+                      Create a new group
+                  groupname:
+                    $ref: '#/components/schemas/groupname'
+                  textname:
+                    $ref: '#/components/schemas/textname'
+                  textdescription:
+                    $ref: '#/components/schemas/textdescription'
+                  roles:
+                    description: |
+                      An optional list of roles to attach to the group.
+                    properties:
+                      rolename:
+                        $ref: '#/components/schemas/rolename'
+                      priority:
+                        $ref: '#/components/schemas/priority'
+                    additionalProperties: false
+                    required:
+                      - rolename
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - groupname
+
+              - description: createRole request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - createRole
+                    description: |
+                      Create a new role
+                  rolename:
+                    $ref: '#/components/schemas/rolename'
+                  textname:
+                    $ref: '#/components/schemas/textname'
+                  textdescription:
+                    $ref: '#/components/schemas/textdescription'
+                  allowwildcardsubs:
+                    $ref: '#/components/schemas/allowwildcardsubs'
+                  acls:
+                    acltype:
+                      $ref: '#/components/schemas/aclchecktype'
+                    topic:
+                      $ref: '#/components/schemas/topicfilter'
+                    priority:
+                      $ref: '#/components/schemas/priority'
+                    allow:
+                      $ref: '#/components/schemas/aclallow'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - rolename
+
+              - description: deleteClient request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - deleteClient
+                    description: |
+                      Delete an existing client
+                  username:
+                    $ref: '#/components/schemas/username'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - username
+
+              - description: deleteGroup request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - deleteGroup
+                    description: |
+                      Delete an existing group
+                  groupname:
+                    $ref: '#/components/schemas/groupname'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - groupname
+
+              - description: deleteRole request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - deleteRole
+                    description: |
+                      Delete an existing role
+                  rolename:
+                    $ref: '#/components/schemas/rolename'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - rolename
+
+              - description: disableClient request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - disableClient
+                    description: |
+                      Disable an existing client. Disabled clients will
+                      be logged out and unable to log in again.
+                  username:
+                    $ref: '#/components/schemas/username'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - username
+
+              - description: enableClient request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - enableClient
+                    description: |
+                      Enable a disabled client. Once disabled a client will
+                      be logged out and unable to log in again.
+                  username:
+                    $ref: '#/components/schemas/username'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - username
+
+              - description: getAnonymousGroup request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getAnonymousGroup
+                    description: |
+                      Get the current anonymous group.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+
+              - description: getClient request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getClient
+                    description: |
+                      Get information on a client.
+                  username:
+                    $ref: '#/components/schemas/username'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - username
+
+              - description: getDefaultACLAccess request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getDefaultACLAccess
+                    description: |
+                      Get the default ACL behaviour.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+
+              - description: getGroup request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getGroup
+                    description: |
+                      Get information on a group.
+                  groupname:
+                    $ref: '#/components/schemas/groupname'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - groupname
+
+              - description: getRole request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getRole
+                    description: |
+                      Get information on a role.
+                  rolename:
+                    $ref: '#/components/schemas/rolename'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - rolename
+
+              - description: listClients request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - listClients
+                    description: |
+                      List all clients.
+                  verbose:
+                    type: boolean
+                    description: |
+                      If set to false, return a list of usernames. If set to
+                      true, return a list of clients with the same format as
+                      getClient.
+                  count:
+                    type: integer
+                    description: |
+                      The maximum number of clients to return in the response.
+                  offset:
+                    type: integer
+                    description: |
+                      Offset the list by this amount.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+
+              - description: listGroups request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - listGroups
+                    description: |
+                      List all groups.
+                  verbose:
+                    type: boolean
+                    description: |
+                      If set to false, return a list of group names. If set to
+                      true, return a list of groups with the same format as
+                      getGroup.
+                  count:
+                    type: integer
+                    description: |
+                      The maximum number of groups to return in the response.
+                  offset:
+                    type: integer
+                    description: |
+                      Offset the list by this amount.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+
+              - description: listRoles request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - listRoles
+                    description: |
+                      List all roles.
+                  verbose:
+                    type: boolean
+                    description: |
+                      If set to false, return a list of roles names. If set to
+                      true, return a list of roles with the same format as
+                      getRole.
+                  count:
+                    type: integer
+                    description: |
+                      The maximum number of roles to return in the response.
+                  offset:
+                    type: integer
+                    description: |
+                      Offset the list by this amount.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+
+              - description: modifyClient request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - modifyClient
+                    description: |
+                      Modify an existing client. Only properties that are
+                      included in the request will be modified.
+                  username:
+                    $ref: '#/components/schemas/username'
+                  clientid:
+                    $ref: '#/components/schemas/clientid'
+                  password:
+                    $ref: '#/components/schemas/password'
+                  textname:
+                    $ref: '#/components/schemas/textname'
+                  textdescription:
+                    $ref: '#/components/schemas/textdescription'
+                  roles:
+                    type: array
+                    description: |
+                      An optional list of roles to attach to the client.
+                    properties:
+                      rolename:
+                        $ref: '#/components/schemas/rolename'
+                      priority:
+                        $ref: '#/components/schemas/priority'
+                    additionalProperties: false
+                    required:
+                      - rolename
+                  groups:
+                    type: array
+                    description: |
+                      An optional list of groups to add the client to.
+                    properties:
+                      groupname:
+                        $ref: '#/components/schemas/groupname'
+                      priority:
+                        $ref: '#/components/schemas/priority'
+                    additionalProperties: false
+                    required:
+                      - groupname
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - username
+
+              - description: modifyGroup request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - modifyGroup
+                    description: |
+                      Modify an existing group. Only properties that are
+                      included in the request will be modified.
+                  groupname:
+                    $ref: '#/components/schemas/groupname'
+                  textname:
+                    $ref: '#/components/schemas/textname'
+                  textdescription:
+                    $ref: '#/components/schemas/textdescription'
+                  roles:
+                    type: array
+                    description: |
+                      An optional list of roles to attach to the group.
+                    properties:
+                      rolename:
+                        $ref: '#/components/schemas/rolename'
+                      priority:
+                        $ref: '#/components/schemas/priority'
+                    additionalProperties: false
+                    required:
+                      - rolename
+                  clients:
+                    type: array
+                    description: |
+                      An optional list of clients to add to the group.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - groupname
+
+              - description: modifyRole request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - modifyRole
+                    description: |
+                      Modify an existing role. Only properties that are
+                      included in the request will be modified.
+                  rolename:
+                    $ref: '#/components/schemas/rolename'
+                  textname:
+                    $ref: '#/components/schemas/textname'
+                  textdescription:
+                    $ref: '#/components/schemas/textdescription'
+                  allowwildcardsubs:
+                    $ref: '#/components/schemas/allowwildcardsubs'
+                  acls:
+                    acltype:
+                      $ref: '#/components/schemas/aclchecktype'
+                    topic:
+                      $ref: '#/components/schemas/topicfilter'
+                    priority:
+                      $ref: '#/components/schemas/priority'
+                    allow:
+                      $ref: '#/components/schemas/aclallow'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - rolename
+
+              - description: reloadConfig request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - reloadConfig
+                    description: |
+                      Reload and apply configuration from disk.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+
+              - description: removeClientRole request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - removeClientRole
+                    description: |
+                      Remove a role from a client. Affected clients will be
+                      logged out.
+                  username:
+                    $ref: '#/components/schemas/username'
+                  rolename:
+                    $ref: '#/components/schemas/rolename'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - username
+                  - rolename
+
+              - description: removeGroupClient request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - removeGroupClient
+                    description: |
+                      Remove a client from a group. Affected clients will be
+                      logged out.
+                  groupname:
+                    $ref: '#/components/schemas/groupname'
+                  username:
+                    $ref: '#/components/schemas/username'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - groupname
+                  - username
+
+              - description: removeGroupRole request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - removeGroupRole
+                    description: |
+                      Remove a role from a client. Affected clients will be
+                      logged out.
+                  groupname:
+                    $ref: '#/components/schemas/groupname'
+                  rolename:
+                    $ref: '#/components/schemas/rolename'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - groupname
+                  - rolename
+
+              - description: removeRoleACL request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - removeRoleACL
+                    description: |
+                      Remove an ACL from a role. Affected clients will be
+                      logged out.
+                  rolename:
+                    $ref: '#/components/schemas/rolename'
+                  acltype:
+                    $ref: '#/components/schemas/aclchecktype'
+                  topic:
+                    $ref: '#/components/schemas/topicfilter'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - rolename
+                  - acltype
+                  - topic
+
+              - description: setAnonymousGroup request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - setAnonymousGroup
+                    description: |
+                      Set the automatic group for anonymous/unauthenticated clients.
+                  groupname:
+                    $ref: '#/components/schemas/groupname'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - groupname
+
+              - description: setClientId request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - setClientId
+                    description: |
+                      Set the clientid for a client. Omitting the clientid
+                      property will remove the clientid from the client.
+                  username:
+                    $ref: '#/components/schemas/username'
+                  clientid:
+                    $ref: '#/components/schemas/clientid'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - username
+
+              - description: setClientPassword request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - setClientPassword
+                    description: |
+                      Set the password for a client.
+                  username:
+                    $ref: '#/components/schemas/username'
+                  password:
+                    $ref: '#/components/schemas/password'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - username
+                  - password
+
+              - description: setDefaultACLAccess request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - setDefaultACLAccess
+                    description: |
+                      Set default behaviour for different ACL types.
+                  acls:
+                    type: array
+                    description: |
+                      The list of ACL types and the default behaviour.
+                    properties:
+                      acltype:
+                        $ref: '#/components/schemas/acltype'
+                      allow:
+                        $ref: '#/components/schemas/aclallow'
+                    additionalProperties: false
+                    required:
+                      - acltype
+                      - allow
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - acls
+      additionalProperties: false
+    controlResponsePayload:
+      type:
+        - object
+      properties:
+        responses:
+          type: array
+          items:
+            type:
+              - object
+            oneOf:
+              - description: Successful response from commands that do not return information.
+                properties:
+                  command:
+                    type: string
+                    enum:
+                    - "addClientRole"
+                    - "addGroupClient"
+                    - "addGroupRole"
+                    - "addRoleACL"
+                    - "createClient"
+                    - "createGroup"
+                    - "createRole"
+                    - "deleteClient"
+                    - "deleteGroup"
+                    - "deleteRole"
+                    - "disableClient"
+                    - "enableClient"
+                    - "modifyClient"
+                    - "modifyGroup"
+                    - "modifyRole"
+                    - "reloadConfig"
+                    - "removeClientRole"
+                    - "removeGroupClient"
+                    - "removeGroupRole"
+                    - "removeRoleACL"
+                    - "setAnonymousGroup"
+                    - "setClientId"
+                    - "setClientPassword"
+                    - "setDefaultACLAccess"
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+
+              - description: getAnonymousGroup response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getAnonymousGroup
+                  data:
+                    group:
+                      groupname:
+                        type: string
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+
+              - description: getClient response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getClient
+                  data:
+                    type: object
+                    properties:
+                      client:
+                        $ref: '#/components/schemas/client'
+                    required:
+                      - client
+                    additionalProperties: false
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+
+              - description: getDefaultACLAccess response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getDefaultACLAccess
+                  data:
+                    type: object
+                    properties:
+                      acls:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            acltype:
+                              $ref: '#/components/schemas/acltype'
+                            allow:
+                              $ref: '#/components/schemas/aclallow'
+                          required:
+                            - acltype
+                            - allow
+                          additionalProperties: false
+                    required:
+                      - acls
+                    additionalProperties: false
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+
+              - description: getGroup response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getGroup
+                  data:
+                    type: object
+                    properties:
+                      group:
+                        $ref: '#/components/schemas/group'
+                    required:
+                      - group
+                    additionalProperties: false
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+
+              - description: getRole response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getRole
+                  data:
+                    type: object
+                    properties:
+                      role:
+                        $ref: '#/components/schemas/role'
+                    required:
+                      - role
+                    additionalProperties: false
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+
+              - description: listClients response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - listClients
+                  data:
+                    type: object
+                    oneOf:
+                      - description: Verbose listClients response
+                        properties:
+                          clients:
+                            type: array
+                            items:
+                              $ref: '#/components/schemas/client'
+                          totalCount:
+                            type: integer
+                        required:
+                          - clients
+                          - totalCount
+                        additionalProperties: false
+
+                      - description: Non-verbose listClients response
+                        properties:
+                          clients:
+                            type: array
+                            items:
+                              type: string
+                          totalCount:
+                            type: integer
+                        required:
+                          - clients
+                          - totalCount
+                        additionalProperties: false
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                required:
+                  - command
+                  - data
+                additionalProperties: false
+
+              - description: listGroups response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - listGroups
+                  data:
+                    type: object
+                    oneOf:
+                      - description: Verbose listGroups response
+                        properties:
+                          groups:
+                            type: array
+                            items:
+                              $ref: '#/components/schemas/group'
+                          totalCount:
+                            type: integer
+                        required:
+                          - groups
+                          - totalCount
+                        additionalProperties: false
+
+                      - description: Non-verbose listGroups response
+                        properties:
+                          groups:
+                            type: array
+                            items:
+                              type: string
+                          totalCount:
+                            type: integer
+                        required:
+                          - groups
+                          - totalCount
+                        additionalProperties: false
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                required:
+                  - command
+                  - data
+                additionalProperties: false
+
+              - description: listRoles response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - listRoles
+                  data:
+                    type: object
+                    oneOf:
+                      - description: Verbose listRoles response
+                        properties:
+                          roles:
+                            type: array
+                            items:
+                              $ref: '#/components/schemas/role'
+                          totalCount:
+                            type: integer
+                        required:
+                          - roles
+                          - totalCount
+                        additionalProperties: false
+
+                      - description: Non-verbose listRoles response
+                        properties:
+                          roles:
+                            type: array
+                            items:
+                              type: string
+                          totalCount:
+                            type: integer
+                        required:
+                          - roles
+                          - totalCount
+                        additionalProperties: false
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                required:
+                  - command
+                  - data
+                additionalProperties: false
+
+              - description: Error response
+                properties:
+                  command:
+                    $ref: '#/components/schemas/command'
+                  error:
+                    type: string
+                    examples:
+                      - Client already exists
+                      - Client does not exist
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - error
+      additionalProperties: false
+    command:
+      type: string
+      enum:
+        - addClientRole
+        - addGroupClient
+        - addGroupRole
+        - addRoleACL
+        - createClient
+        - createGroup
+        - createRole
+        - deleteClient
+        - deleteGroup
+        - deleteRole
+        - disableClient
+        - enableClient
+        - getAnonymousGroup
+        - getClient
+        - getDefaultACLAccess
+        - getGroup
+        - getRole
+        - listClients
+        - listGroups
+        - listRoles
+        - modifyClient
+        - modifyGroup
+        - modifyRole
+        - reloadConfig
+        - removeClientRole
+        - removeGroupClient
+        - removeGroupRole
+        - removeRoleACL
+        - setAnonymousGroup
+        - setClientId
+        - setClientPassword
+        - setDefaultACLAccess
+      description: >-
+        Command which describes the action processed by the plugin.
+    username:
+      type: string
+      maxLength: 65535
+      description: |
+        Specifies a UTF-8 encoded string which uniquely identifies a client.
+    groupname:
+      type: string
+      maxLength: 65535
+      description: |
+        Specifies a UTF-8 encoded string which uniquely identifies a group.
+    rolename:
+      type: string
+      maxLength: 65535
+      description: |
+        Specifies a UTF-8 encoded string which uniquely identifies a role.
+    clientid:
+      type: string
+      maxLength: 65535
+      description: |
+        Specifies an optional UTF-8 encoded clientid. If a client is specified
+        with a clientid, then it must provide the correct triplet of username,
+        clientid, and password to be able to authenticate.
+    password:
+      type: string
+      maxLength: 65535
+      description: |
+        Specifies a UTF-8 encoded password.
+    priority:
+      type: integer
+      description: |
+        Can be used to help specify which order ACL checks are made.
+        Each client group has a priority, each client role and group role has a
+        priority, and each ACL within a role has a priority.
+
+        If not set explicitly, priorities will default to -1. Priority has a
+        maximum of 100000.
+
+        For each of the group, role, and ACL objects, checks are made in
+        priority order from the highest numerical value to the lowest numerical
+        value. If two objects of the same type have the same priority, then
+        they will be checked in lexographical order according to the
+        username/groupname/rolename, but it is advised to use unique priorities
+        per object type.
+
+        When an event occurs that needs an ACL check, the ACLs for that ACL
+        type are checked in order until there is a matching ACL for the topic
+        in question.
+
+        Within each role that is checked, the ACLs are checked in priority
+        order. If ACLs have identical priority, they are evaluated in the order
+        shown in the `getRole` command.
+
+        The roles assigned to a client are checked first, in priority order.
+        Each client group is checked in priority order, with all of the roles
+        in a group being checked in priority order before the next group is
+        checked.
+    aclallow:
+      type: boolean
+      description: |
+        Outcome of an ACL check if there is a match.
+    acltype:
+      type: string
+      enum:
+        - publishClientReceive
+        - publishClientSend
+        - subscribe
+        - unsubscribe
+      description: |
+        Specifies the default ACL types.
+    aclchecktype:
+      type: string
+      enum:
+        - publishClientReceive
+        - publishClientSend
+        - subscribeLiteral
+        - subscribePattern
+        - unsubscribeLiteral
+        - unsubscribePattern
+      description: |
+        Specifies the different type of ACL checks that can happen.
+
+        `publishClientReceive` - this happens after the broker has queued a
+        publish message for delivery for a client, but before it is sent to the
+        client. Typically this ACL type is not required and is allowed by
+        default. It is better to prevent messages being delivered to clients by
+        controlling what they subscribe to. This can be used to deny access to
+        topics within a wildcard subscription, for example.
+
+        `publishClientSend` - this happens when a client has sent a message to
+        the broker, but before it is accepted by the broker. This is the main
+        check that should be used to decide whether a client is allowed to
+        publish to a given topic.
+
+        `subscribeLiteral` - this happens when a client makes a subscription
+        request. A check will be made comparing the literal string of the
+        subscription request with the string of the ACL.
+
+        `subscribePattern` - this happens when a client makes a subscription
+        request. A check will be made comparing the subscription request with
+        the ACL, with the ACL acting as a wildcard pattern.
+
+        `unsubscribeLiteral` - this happens when a client makes an unsubscription
+        request. This is typically not required. A check will be made comparing
+        the literal string of the unsubscription request with the string of the
+        ACL.
+
+        `unsubscribePattern` - this happens when a client makes an unsubscription
+        request. A check will be made comparing the unsubscription request with
+        the ACL, with the ACL acting as a wildcard pattern.
+    topicfilter:
+      type: string
+      maxLength: 65535
+      description: |
+        An MQTT topic filter encoded as a UTF-8 string, used to define an ACL.
+        If the incoming topic being checked matches this topic filter, the
+        associated ACL is triggered and the outcome from the `allow` property
+        is used.
+    textname:
+      type: string
+      maxLength: 65535
+      description: |
+        A free text field which can be used for any application purpose.
+        Notionally a name/title for the corresponding object.
+    textdescription:
+      type: string
+      maxLength: 65535
+      description: |
+        A free text field which can be used for any application purpose.
+        Notionally a description of the corresponding object.
+    allowwildcardsubs:
+      type: boolean
+      description: |
+        Whether MQTT wildcards are allowed for subscriptions in this role.
+    address:
+      type: string
+      description: |
+        IP address of connected client sessions.
+    correlationData:
+      type: string
+      description: |
+        This is an optional value to be able to identify the relation
+        between request and response. The plugin will add the provided value in the
+        response message.
+      examples:
+        - 1234-request
+    client:
+      type: object
+      properties:
+        username:
+          $ref: '#/components/schemas/username'
+        clientid:
+          $ref: '#/components/schemas/clientid'
+        textname:
+          $ref: '#/components/schemas/textname'
+        textdescription:
+          $ref: '#/components/schemas/textdescription'
+        disabled:
+          type: boolean
+        connections:
+          type: array
+          items:
+            type: object
+            properties:
+              address:
+                $ref: '#/components/schemas/address'
+            required:
+              - address
+            additionalProperties: false
+        roles:
+          type: array
+          items:
+            type: object
+            properties:
+              rolename:
+                $ref: '#/components/schemas/rolename'
+              priority:
+                $ref: '#/components/schemas/priority'
+            required:
+              - rolename
+              - priority
+            additionalProperties: false
+        groups:
+          type: array
+          items:
+            type: object
+            properties:
+              groupname:
+                $ref: '#/components/schemas/groupname'
+              priority:
+                $ref: '#/components/schemas/priority'
+            required:
+              - groupname
+              - priority
+            additionalProperties: false
+      required:
+        - username
+      additionalProperties: false
+
+    group:
+      type: object
+      properties:
+        groupname:
+          $ref: '#/components/schemas/groupname'
+        textname:
+          $ref: '#/components/schemas/textname'
+        textdescription:
+          $ref: '#/components/schemas/textdescription'
+        roles:
+          type: array
+          items:
+            type: object
+            properties:
+              rolename:
+                $ref: '#/components/schemas/rolename'
+              priority:
+                $ref: '#/components/schemas/priority'
+            required:
+              - rolename
+              - priority
+            additionalProperties: false
+        clients:
+          type: array
+          items:
+            type: object
+            properties:
+              username:
+                $ref: '#/components/schemas/username'
+            required:
+              - username
+            additionalProperties: false
+      required:
+        - groupname
+      additionalProperties: false
+
+    role:
+      type: object
+      properties:
+        rolename:
+          $ref: '#/components/schemas/rolename'
+        allowwildcardsubs:
+          $ref: '#/components/schemas/allowwildcardsubs'
+        textname:
+          $ref: '#/components/schemas/textname'
+        textdescription:
+          $ref: '#/components/schemas/textdescription'
+        acls:
+          type: array
+          items:
+            type: object
+            properties:
+              acltype:
+                $ref: '#/components/schemas/aclchecktype'
+              topic:
+                $ref: '#/components/schemas/topicfilter'
+              priority:
+                $ref: '#/components/schemas/priority'
+              allow:
+                $ref: '#/components/schemas/aclallow'
+            required:
+              - acltype
+              - topic
+              - priority
+              - allow
+            additionalProperties: false
+      required:
+        - rolename
+        - acls
+      additionalProperties: false
