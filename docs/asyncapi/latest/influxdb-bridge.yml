@@ -1,0 +1,539 @@
+asyncapi: 2.6.0
+info:
+  title: InfluxDB-Bridge
+  version: 1.0.0
+  description: |
+    The following commands are currently offered by the API:
+    - `getStatus` to fetch information about the current bridge status
+    - `getSchema` to retrieve the schemata used to validate the configuration JSON
+    - `getConfig` to retrieve the current configuration as a JSON object
+    - `updateConfig` to update the whole configuration of the InfluxDB-Bridge
+
+defaultContentType: application/json
+channels:
+  $CONTROL/cedalo/influxdb-bridge/v1:
+    publish:
+      message:
+        $ref: '#/components/messages/ControlRequest'
+  $CONTROL/cedalo/influxdb-bridge/v1/response:
+    subscribe:
+      message:
+        $ref: '#/components/messages/ControlResponse'
+components:
+  messages:
+    ControlRequest:
+      name: controlRequest
+      title: Request to execute commands on the control API
+      payload:
+        $ref: '#/components/schemas/controlRequestPayload'
+      examples:
+        - name: getStatus request
+          payload:
+            commands:
+              - command: getStatus
+                correlationData: "1234"
+        - name: getConfig request
+          payload:
+            commands:
+              - command: getConfig
+                correlationData: "1234"
+        - name: getSchema request
+          payload:
+            commands:
+              - command: getSchema
+                correlationData: "1234"
+        - name: updateConfig request
+          payload:
+            commands:
+              - command: updateConfig
+                configChange:
+                  version: 1
+                  connections:
+                    - name: influxdb-connection-1
+                      connection:
+                        driver: influxdbv2
+                        hostname: influxdbv2
+                        port: 8086
+                        database: fishbucket
+                        organization: marines
+                        credentials:
+                          token: "U7KeSEEiRjVxME9FbfZs3cIcvdREaF8SHnHXYcP5NxuKLzXE_etjc9vsev0-lyKADHLq5tXj4MuQqlDOaGCjvw=="
+                        ssl:
+                          caPath: /mosquitto/data/certs/ca-influx.crt
+                          rejectUnauthorized: false
+                        lazyConnect: false
+                      options:
+                        bufferSize: 10000
+                        batchSize: 1000
+                        timeoutMs: 4000
+                        queueMaxSize: 10000
+                        maxRetries: 15
+                        retryDelayMs: 1000
+                      topicMappings:
+                        - name: topic-mapping-to-influxdb-1
+                          schemaMapping: schema-mapping-1
+                          target: ""
+                          mqttTopics:
+                            - "db/qa/#"
+                            - "db2/dev/influx"
+                  schemaMappings:
+                    - name: schema-mapping-1
+                      mapping:
+                        - source: "[payload]"
+                          target: ""
+                          targetType: lineProtocol
+                correlationData: "1234"
+    ControlResponse:
+      name: controlResponse
+      title: Response to an executed control request
+      payload:
+        $ref: '#/components/schemas/controlResponsePayload'
+      examples:
+        - name: successful getStatus response
+          payload:
+            responses:
+              - command: getStatus
+                data:
+                  - name: influxdb-connection-1
+                    numberOfQueues: 2
+                    queueMaxSize: 10000
+                    queuedBuffers: [0, 0]
+                    droppedBuffers: [0, 0]
+                    droppedMessages: [0, 0]
+                    numberOfBuffers: 2
+                    bufferMaxSize: 10000
+                    bufferedMessages: [0, 0]
+                    targets: ["fish_metrics", "fish_metrics2"]
+                    topics: ["db/qa/#", "db2/dev/influx", "db2/dev/influx2"]
+                    isConnected: true
+                correlationData: "1234"
+        - name: successful getConfig response
+          payload:
+            responses:
+              - command: getConfig
+                data:
+                  version: 1
+                  connections:
+                    - name: influxdb-connection-1
+                      connection:
+                        driver: influxdbv2
+                        hostname: influxdbv2
+                        port: 8086
+                        database: fishbucket
+                        organization: marines
+                        credentials:
+                          token: "U7KeSEEiRjVxME9FbfZs3cIcvdREaF8SHnHXYcP5NxuKLzXE_etjc9vsev0-lyKADHLq5tXj4MuQqlDOaGCjvw=="
+                        ssl:
+                          caPath: /mosquitto/data/certs/ca-influx.crt
+                          rejectUnauthorized: false
+                        lazyConnect: false
+                      options:
+                        bufferSize: 10000
+                        batchSize: 1000
+                        timeoutMs: 4000
+                        queueMaxSize: 10000
+                        maxRetries: 15
+                        retryDelayMs: 1000
+                      topicMappings:
+                        - name: topic-mapping-to-influxdb-1
+                          schemaMapping: schema-mapping-1
+                          target: ""
+                          mqttTopics:
+                            - "db/qa/#"
+                            - "db2/dev/influx"
+                  schemaMappings:
+                    - name: schema-mapping-1
+                      mapping:
+                        - source: "[payload]"
+                          target: ""
+                          targetType: lineProtocol
+                correlationData: "1234"
+        - name: successful getSchema response
+          payload:
+            responses:
+              - command: getSchema
+                data:
+                  version: 1
+                  connections: []
+                  schemaMappings:
+                    - name: schema-mapping-1
+                      mapping:
+                        - source: "[payload]"
+                          target: ""
+                          targetType: lineProtocol
+                correlationData: "1234"
+        - name: successful updateConfig response
+          payload:
+            responses:
+              - command: updateConfig
+                data:
+                  response: SUCCESS
+                correlationData: "1234"
+        - name: error response
+          payload:
+            responses:
+              - command: errored-command
+                error: "error-message"
+                correlationData: "1234"
+  schemas:
+    controlRequestPayload:
+      type: object
+      properties:
+        commands:
+          type: array
+          items:
+            anyOf:
+              - description: getStatus request
+                type: object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getStatus
+                    description: Get status information about the bridge
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                required:
+                  - command
+              - description: getConfig request
+                type: object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getConfig
+                    description: Retrieve the current bridge configuration
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                required:
+                  - command
+              - description: getSchema request
+                type: object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getSchema
+                    description: Get the schemata to validate the configuration JSON
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                required:
+                  - command
+              - description: updateConfig request
+                type: object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - updateConfig
+                    description: Update the current bridge configuration
+                  configChange:
+                    $ref: '#/components/schemas/bridgeConfig'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                required:
+                  - command
+                  - configChange
+      additionalProperties: false
+    controlResponsePayload:
+      type: object
+      properties:
+        responses:
+          type: array
+          items:
+            oneOf:
+              - description: successful updateConfig response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - updateConfig
+                  data:
+                    type: object
+                    description: Indicates that the request was processed successfully
+                    properties:
+                      response:
+                        type: string
+                        enum:
+                          - SUCCESS
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+              - description: successful getSchema response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getSchema
+                  data:
+                    $ref: '#/components/schemas/bridgeConfig'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+              - description: successful getConfig response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getConfig
+                  data:
+                    $ref: '#/components/schemas/bridgeConfig'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+              - description: successful getStatus response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getStatus
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/influxStatus'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+              - description: error response
+                properties:
+                  command:
+                    type: string
+                    description: The command that was attempted; can be any string for error responses.
+                  error:
+                    type: string
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - error
+      additionalProperties: false
+    command:
+      type: string
+      enum:
+        - updateConfig
+        - getConfig
+        - getStatus
+        - getSchema
+      description: Command which describes the action processed by the bridge.
+    correlationData:
+      type: string
+      description: |
+        Optional value to correlate request and response.
+      examples:
+        - "1234"
+    bridgeConfig:
+      description: A JSON representing the InfluxDB-Bridge configuration.
+      type: object
+      properties:
+        version:
+          type: integer
+          description: Configuration version
+        connections:
+          type: array
+          items:
+            $ref: '#/components/schemas/connection'
+        schemaMappings:
+          type: array
+          items:
+            $ref: '#/components/schemas/schemaMapping'
+      required:
+        - version
+        - connections
+        - schemaMappings
+    connection:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Unique name for the InfluxDB connection
+        connection:
+          type: object
+          properties:
+            driver:
+              type: string
+              enum:
+                - influxdbv2
+              description: InfluxDB driver
+            hostname:
+              type: string
+            port:
+              type: number
+            database:
+              type: string
+            organization:
+              type: string
+            credentials:
+              type: object
+              properties:
+                token:
+                  type: string
+              required:
+                - token
+            ssl:
+              type: object
+              properties:
+                caPath:
+                  type: string
+                rejectUnauthorized:
+                  type: boolean
+              required:
+                - caPath
+                - rejectUnauthorized
+            lazyConnect:
+              type: boolean
+          required:
+            - driver
+            - hostname
+            - port
+            - database
+            - organization
+            - credentials
+            - ssl
+            - lazyConnect
+        options:
+          type: object
+          properties:
+            bufferSize:
+              type: number
+            batchSize:
+              type: number
+            timeoutMs:
+              type: number
+            queueMaxSize:
+              type: number
+            maxRetries:
+              type: number
+            retryDelayMs:
+              type: number
+          required:
+            - bufferSize
+            - batchSize
+            - timeoutMs
+            - queueMaxSize
+            - maxRetries
+            - retryDelayMs
+        topicMappings:
+          type: array
+          items:
+            $ref: '#/components/schemas/topicMapping'
+      required:
+        - name
+        - connection
+        - options
+        - topicMappings
+    topicMapping:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Unique name for the topic mapping
+        schemaMapping:
+          type: string
+          description: Name of the schema mapping to use
+        target:
+          type: string
+          description: Target field for the mapping
+        mqttTopics:
+          type: array
+          items:
+            type: string
+      required:
+        - name
+        - schemaMapping
+        - mqttTopics
+    schemaMapping:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Unique name for the schema mapping
+        mapping:
+          type: array
+          items:
+            $ref: '#/components/schemas/mapping'
+      required:
+        - name
+        - mapping
+    mapping:
+      type: object
+      properties:
+        source:
+          type: string
+          description: JSON path to extract data from the message payload. Use "[payload]" for the full payload.
+        target:
+          type: string
+          description: Target field for the mapping
+        targetType:
+          type: string
+          enum:
+            - lineProtocol
+          description: Type of target mapping, e.g. InfluxDB line protocol.
+      required:
+        - source
+        - targetType
+    influxStatus:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Unique name of the InfluxDB connection.
+        numberOfQueues:
+          type: number
+        queueMaxSize:
+          type: number
+        queuedBuffers:
+          type: array
+          items:
+            type: number
+        droppedBuffers:
+          type: array
+          items:
+            type: number
+        droppedMessages:
+          type: array
+          items:
+            type: number
+        numberOfBuffers:
+          type: number
+        bufferMaxSize:
+          type: number
+        bufferedMessages:
+          type: array
+          items:
+            type: number
+        targets:
+          type: array
+          items:
+            type: string
+        topics:
+          type: array
+          items:
+            type: string
+        isConnected:
+          type: boolean
+      required:
+        - name
+        - numberOfQueues
+        - queueMaxSize
+        - queuedBuffers
+        - droppedBuffers
+        - droppedMessages
+        - numberOfBuffers
+        - bufferMaxSize
+        - bufferedMessages
+        - targets
+        - topics
+        - isConnected

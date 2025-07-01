@@ -1,0 +1,361 @@
+asyncapi: 2.6.0
+info:
+  title: Data-Validation Plugin
+  version: 3.1.0
+  description: |
+    The following commands are currently offered by the API:
+    - `getStatus` to fetch information about current plugin status
+    - `getSchema` to get the JSON schema used to validate the plugin configuration
+    - `getConfig` to retrieve the current plugin configuration as a JSON object
+    - `updateConfig` to update the complete configuration of the Data-Validation plugin
+
+defaultContentType: application/json
+channels:
+  $CONTROL/cedalo/data-validation/v1:
+    publish:
+      message:
+        $ref: "#/components/messages/ControlRequest"
+  $CONTROL/cedalo/data-validation/v1/response:
+    subscribe:
+      message:
+        $ref: "#/components/messages/ControlResponse"
+components:
+  messages:
+    ControlRequest:
+      name: controlRequest
+      title: Request to execute commands on the control API
+      payload:
+        $ref: "#/components/schemas/controlRequestPayload"
+      examples:
+        - name: getStatus request
+          payload:
+            commands:
+              - command: getStatus
+                correlationData: 1234-request
+        - name: getConfig request
+          payload:
+            commands:
+              - command: getConfig
+                correlationData: 1234-request
+        - name: getSchema request
+          payload:
+            commands:
+              - command: getSchema
+                correlationData: 1234-request
+        - name: updateConfig request
+          payload:
+            commands:
+              - command: updateConfig
+                configChange:
+                  topicMappings:
+                    - name: mapping1
+                      schema: schema1
+                      topics: [topicA, topicB]
+                  schemas:
+                    - name: schema1
+                      schema:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                        required: [name]
+                correlationData: 1234-request
+    ControlResponse:
+      name: controlResponse
+      title: Response to an executed control request
+      payload:
+        $ref: "#/components/schemas/controlResponsePayload"
+      examples:
+        - name: successful getStatus response
+          payload:
+            responses:
+              - command: getStatus
+                data:
+                  state: ok
+                correlationData: 1234-request
+        - name: successful getConfig response
+          payload:
+            responses:
+              - command: getConfig
+                data:
+                  topicMappings:
+                    - name: mapping1
+                      schema: schema1
+                      topics: [topicA, topicB]
+                  schemas:
+                    - name: schema1
+                      schema:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                        required: [name]
+                correlationData: 1234-request
+        # - name: successful getSchema response
+        #   payload:
+        #     responses:
+        #       - command: getSchema
+        #         data:
+        #           $ref: '#/components/schemas/pluginConfig'
+        #         correlationData: 1234-request
+        - name: successful updateConfig response
+          payload:
+            responses:
+              - command: updateConfig
+                data:
+                  response: SUCCESS
+                correlationData: 1234-request
+        - name: error response
+          payload:
+            responses:
+              - command: updateConfig
+                error: error-message
+                correlationData: 1234-request
+  schemas:
+    controlRequestPayload:
+      type: object
+      properties:
+        commands:
+          type: array
+          items:
+            anyOf:
+              - description: getStatus request
+                type: object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getStatus
+                    description: Get status information about the plugin
+                  correlationData:
+                    $ref: "#/components/schemas/correlationData"
+                required:
+                  - command
+              - description: getConfig request
+                type: object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getConfig
+                    description: Fetch current plugin configuration
+                  correlationData:
+                    $ref: "#/components/schemas/correlationData"
+                required:
+                  - command
+              - description: getSchema request
+                type: object
+                properties:
+                  command:
+                    type: string
+                    description: Get the JSON schema used to validate plugin configuration
+                    enum:
+                      - getSchema
+                  correlationData:
+                    $ref: "#/components/schemas/correlationData"
+                required:
+                  - command
+              - description: updateConfig request
+                type: object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - updateConfig
+                    description: Update the current plugin configuration
+                  configChange:
+                    $ref: "#/components/schemas/pluginConfig"
+                  correlationData:
+                    $ref: "#/components/schemas/correlationData"
+                required:
+                  - command
+                  - configChange
+      additionalProperties: false
+    controlResponsePayload:
+      type:
+        - object
+      properties:
+        responses:
+          type: array
+          items:
+            type: object
+            oneOf:
+              - description: successful updateConfig response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - updateConfig
+                  data:
+                    type: object
+                    description: Specified if request has been processed successfully
+                    properties:
+                      response:
+                        type: string
+                        enum:
+                          - SUCCESS
+                  correlationData:
+                    $ref: "#/components/schemas/correlationData"
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+              - description: successful getConfig response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getConfig
+                  data:
+                    $ref: "#/components/schemas/pluginConfig"
+                  correlationData:
+                    $ref: "#/components/schemas/correlationData"
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+              - description: successful getSchema response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getSchema
+                  data:
+                    $ref: "#/components/schemas/pluginConfig"
+                  correlationData:
+                    $ref: "#/components/schemas/correlationData"
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+              - description: successful getStatus response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getStatus
+                  data:
+                    $ref: "#/components/schemas/statusResponse"
+                  correlationData:
+                    $ref: "#/components/schemas/correlationData"
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+              - description: error response
+                properties:
+                  command:
+                    $ref: "#/components/schemas/command"
+                  error:
+                    type: string
+                    examples:
+                      - No valid config in payload!
+                  correlationData:
+                    $ref: "#/components/schemas/correlationData"
+                additionalProperties: false
+                required:
+                  - command
+                  - error
+      additionalProperties: false
+    command:
+      type: string
+      enum:
+        - updateConfig
+        - getConfig
+        - getSchema
+        - getStatus
+      description: Command which describes the action processed by the plugin
+    pluginConfig:
+      type: object
+      description: The configuration of the Data-Validation plugin
+      properties:
+        topicMappings:
+          $ref: "#/components/schemas/topicMappings"
+        schemas:
+          $ref: "#/components/schemas/schemas"
+      required:
+        - schemas
+        - topicMappings
+    topicMappings:
+      type: array
+      description: Specifies how received MQTT messages are mapped to defined schemas for validation
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+            description: An arbitrary name for this mapping
+          schema:
+            type: string
+            description: Name of the schema to use for message validation
+          topics:
+            type: array
+            description: List of MQTT topics to map
+            items:
+              type: string
+              description: A topic. Wildcards like `#` and `+` are allowed.
+        required:
+          - name
+          - schema
+          - topics
+    schemas:
+      type: array
+      description: Defines the schemas to use for message validation
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+            description: Unique name for this schema
+          schema:
+            type: object
+            description: A valid JSON schema definition
+        required:
+          - name
+          - schema
+    statusResponse:
+      type: object
+      description: Information about current plugin status
+      properties:
+        state:
+          $ref: "#/components/schemas/statusState"
+        error:
+          description: Optional error description
+          $ref: "#/components/schemas/statusInfo"
+        infos:
+          description: Resource dependent info descriptions
+          type: array
+          items:
+            $ref: "#/components/schemas/statusInfo"
+      required:
+        - state
+    statusState:
+      type: string
+      description: Current plugin state
+      # ok - everything is fine
+      # warn - something is not working as expected
+      # error - resource has an error
+      enum:
+        - ok
+        - warn
+        - error
+    statusInfo:
+      type: object
+      properties:
+        title:
+          type: string
+          description: Title of info
+        description:
+          type: string
+          description: Description of info
+      required:
+        - title
+        - description
+    correlationData:
+      type: string
+      description: |
+        This is an optional value to be able to identify the relation
+        between request and response. The plugin will add the provided value in the
+        response message.
+      examples:
+        - 1234-request

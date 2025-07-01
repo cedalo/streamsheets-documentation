@@ -1,0 +1,608 @@
+asyncapi: 2.6.0
+info:
+  title: Azure-EventHubs-Bridge
+  version: 3.1.0
+  description: |
+    The following commands are currently offered by the API:
+    - `getStatus` to fetch information about current bridge status
+    - `getSchema` to get the schemata used to validate the config JSON
+    - `getConfig` to retrieve the current config as a JSON object
+    - `updateConfig` to update the whole config of the Azure-EventHubs-Bridge
+
+defaultContentType: application/json
+channels:
+  $CONTROL/cedalo/azure-eventhubs-bridge/v1:
+    publish:
+      message:
+        $ref: '#/components/messages/ControlRequest'
+  $CONTROL/cedalo/azure-eventhubs-bridge/v1/response:
+    subscribe:
+      message:
+        $ref: '#/components/messages/ControlResponse'
+components:
+  messages:
+    ControlRequest:
+      name: controlRequest
+      title: Request to execute commands on the control API
+      payload:
+        $ref: '#/components/schemas/controlRequestPayload'
+      examples:
+        - name: getStatus request
+          payload:
+            commands:
+              - command: getStatus
+                correlationData: 1234-request
+        - name: getConfig request
+          payload:
+            commands:
+              - command: getConfig
+                correlationData: 1234-request
+        - name: getSchema request
+          payload:
+            commands:
+              - command: getSchema
+                correlationData: 1234-request
+        - name: updateConfig request
+          payload:
+            commands:
+              - command: updateConfig
+                configChange:
+                  eventhubs:
+                    - name: azure-namespace-of-eventhubs-resource
+                      auth:
+                        sas:
+                          key: shared-access-signature-key
+                  producers:
+                    - name: producer-unique-name
+                      hub: azure-hub-name
+                      eventhub: name-of-eventhub-to-use
+                      retryOptions:
+                        maxRetries: 10
+                  topicMappings:
+                    - mqttTopics: [topic1-to-map, topic2-to-map]
+                      tarrget: producer-name-to-map-to
+                correlationData: 1234-request
+    ControlResponse:
+      name: controlResponse
+      title: Response to an executed control request
+      payload:
+        $ref: '#/components/schemas/controlResponsePayload'
+        examples:
+          - name: successful getStatus response
+            payload:
+              responses:
+                - command: getStatus
+                  data:
+                    state: ok
+                    resources:
+                      - name: resource-name
+                        type: producer
+                        state: ok
+                  correlationData: 1234-request
+          - name: successful getConfig response
+            payload:
+              responses:
+                - command: getConfig
+                  data:
+                    eventhubs:
+                      - name: azure-namespace-of-eventhubs-resource
+                        auth:
+                          sas:
+                            key: shared-access-signature-key
+                    producers:
+                      - name: producer-unique-name
+                        hub: azure-hub-name
+                        eventhub: name-of-eventhub-to-use
+                        retryOptions:
+                          maxRetries: 10
+                    topicMappings:
+                      - mqttTopics: [topic1-to-map, topic2-to-map]
+                        tarrget: producer-name-to-map-to
+                  correlationData: 1234-request
+          - name: successful updateConfig response
+            payload:
+              responses:
+                - command: updateConfig
+                  data:
+                    response: SUCCESS
+                  correlationData: 1234-request
+          - name: error response
+            payload:
+              responses:
+                - command: errored-command
+                  error: error-message
+                  correlationData: 1234-request
+  schemas:
+    controlRequestPayload:
+      type: object
+      properties:
+        commands:
+          type: array
+          items:
+            anyOf:
+              - description: getStatus request
+                type: object
+                properties:
+                  command:
+                    type: string
+                    # enum:
+                    #     - getStatus
+                    description: Get status information about the bridge
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                required:
+                  - command
+              - description: getConfig request
+                type: object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getConfig
+                    description: Retrieve the current bridge configuration
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                required:
+                  - command
+              - description: getSchema request
+                type: object
+                properties:
+                  command:
+                    type: string
+                    description: Get the schemata to validate the configuration JSON
+                    enum:
+                      - getSchema
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                required:
+                  - command
+              - description: updateConfig request
+                type: object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - updateConfig
+                    description: Update the current bridge configuration
+                  configChange:
+                    $ref: '#/components/schemas/bridgeConfig'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                required:
+                  - command
+                  - configChange
+      additionalProperties: false
+    controlResponsePayload:
+      type: object
+      properties:
+        responses:
+          type: array
+          items:
+            type: object
+            oneOf:
+              - description: successful updateConfig response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - updateConfig
+                  data:
+                    type: object
+                    description: Specified if request has been processed successfully
+                    properties:
+                      response:
+                        type: string
+                        enum:
+                          - SUCCESS
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+              - description: successful getSchema response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getSchema
+                  data:
+                    $ref: '#/components/schemas/bridgeConfig'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+
+              - description: successful getConfig response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getConfig
+                  data:
+                    $ref: '#/components/schemas/bridgeConfig'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+              - description: successful getStatus response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getStatus
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/statusResponse'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+              - description: error response
+                properties:
+                  command:
+                    $ref: '#/components/schemas/command'
+                  error:
+                    type: string
+                    examples:
+                      - No valid config in payload!
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - error
+      additionalProperties: false
+    command:
+      type: string
+      enum:
+        - updateConfig
+        - getConfig
+        - getStatus
+        - getSchema
+      description: Command which describes the action processed by the plugin.
+    auth:
+      type: object
+      description: EventHubs specific authentication. Either specify a Shared Access Signature (SAS) key or use Role Based Access Control (RBAC) but not both
+      properties:
+        sas:
+          type: object
+          description: Properties for SAS based authentication
+          properties:
+            key:
+              type: string
+              minLength: 1
+          required:
+            - key
+        rbac:
+          type: object
+          description: Properties for RBAC based authentication
+          properties:
+            tenantId:
+              type: string
+              minLength: 1
+            clientId:
+              type: string
+              minLength: 1
+            clientSecret:
+              type: string
+              minLength: 1
+            fullyQualifiedNamespace:
+              description: Full namespace qualifier. If not specified `<namespace>.servicebus.windows.net` will be used
+              type: string
+              minLength: 1
+          required:
+            - tenantId
+            - clientId
+            - clientSecret
+      oneOf:
+        - required:
+            - sas
+        - required:
+            - rbac
+    partialAuth:
+      type: object
+      properties:
+        sas:
+          type: object
+          properties:
+            key:
+              type: string
+              minLength: 1
+          required:
+            - key
+        rbac:
+          type: object
+          properties:
+            tenantId:
+              type: string
+              minLength: 1
+            clientId:
+              type: string
+              minLength: 1
+            clientSecret:
+              type: string
+              minLength: 1
+            fullyQualifiedNamespace:
+              description: Full namespace qualifier. If not specified `<namespace>.servicebus.windows.ne` will be used
+              type: string
+              minLength: 1
+      # oneOf:
+      #     - required:
+      #           - sas
+      #     - required:
+      #           - rbac
+    payloadField:
+      type: object
+      properties:
+        field:
+          description: JSON-path wich specifies a field within message payload. To use a fix value specify default only.
+          type: string
+        default:
+          description: Either used as default if field could not be resolved or as fix value if no field is specified
+    eventhub:
+      type: object
+      description: An Azure EventHubs resource
+      properties:
+        name:
+          type: string
+          description: Unique namespace identifier of an EventHubs
+          minLength: 1
+        auth:
+          $ref: '#/components/schemas/auth'
+      required:
+        - name
+        - auth
+    eventhubs:
+      type: array
+      description: List of Azure Event-Hubs
+      items:
+        $ref: '#/components/schemas/eventhub'
+    producer:
+      description: Producer settings for each event hub within an EventHubs resource
+      type: object
+      properties:
+        name:
+          description: Unique name for this producer to use and identify it in mappings
+          type: string
+          minLength: 1
+        type:
+          description: Use a batch producer for direct message passing or a buffered producer to collect several messages before sending to eventhub
+          type: string
+          enum:
+            - batch
+            - buffered
+          default: batch
+        hub:
+          description: Name of the hub to send messages to
+          type: string
+          minLength: 1
+        eventhub:
+          description: Namespace of the EventHubs to use
+          type: string
+          minLength: 1
+        auth:
+          $ref: '#/components/schemas/partialAuth'
+          description: Producer specific authentication. Specify only if differ from EventHubs auth
+        options:
+          description: General producer options
+          type: object
+          properties:
+            messageId:
+              description: Custom, may be useful for tracking event source
+              type: string
+            correlationId:
+              description: Custom, may be useful for debuging or tracking events
+              type: string
+            partitionId:
+              description: |
+                Partition id like "0", "1",...
+                `NOTE:` This enables an ordered event process on same partition.
+                Either specify this or partitionKey but not both!
+              type: string
+            partitionKey:
+              description: |
+                A fix or dynamic value.
+                `NOTE:` This enables an ordered event process on same partition.
+                Either specify this or partitionId, but not both!
+              $ref: '#/components/schemas/payloadField'
+        retryOptions:
+          type: object
+          properties:
+            mode:
+              type: string
+              enum:
+                - fix
+                - exponential
+            delayInMs:
+              description: Period in milliseconds to wait until next retry
+              type: number
+            maxDelayInMs:
+              description: Max. delay in milliseconds to wait before next retry. Only useful if mode is exponential
+              type: number
+            maxRetries:
+              description: Max. number of retries
+              type: number
+            timeoutInMs:
+              description: Milliseconds to wait before declaring current request as timed out
+              type: number
+        batch:
+          description: Options to apply for batch producer only
+          type: object
+          properties:
+            maxSizeInBytes:
+              description: Max. batch size
+              type: number
+            maxOpenBatches:
+              description: Max. number of batches sending or retrying at the same time. Default is 10
+              type: number
+        buffer:
+          description: Options for buffered producer only
+          type: object
+          properties:
+            maxWaitTimeInMs:
+              description: Milliseconds to wait for next message. If none is received during this period the buffered producer sends all of its messages.
+              type: number
+            maxEventBufferLengthPerPartitions:
+              description: Max. buffer length. If this limit is reached the buffer sends all of its messages.
+              type: number
+      required:
+        - name
+        - hub
+        - eventhub
+    producers:
+      description: List of producers to use
+      type: array
+      items:
+        $ref: '#/components/schemas/producer'
+    topicMappings:
+      description: Descriptions for how to map MQTT topics to azure event hubs
+      type: array
+      items:
+        type: object
+        properties:
+          mqttTopics:
+            description: MQTT topics to map
+            type: array
+            items:
+              type: string
+              minLength: 1
+          target:
+            description: Name of defined producer to send message to
+            type: string
+            minLength: 1
+        required:
+          - mqttTopics
+          - target
+    bridgeConfig:
+      description: A JSON representing the Azure-EventHubs-Bridge configuration.
+      type: object
+      properties:
+        eventhubs:
+          $ref: '#/components/schemas/eventhubs'
+        producers:
+          $ref: '#/components/schemas/producers'
+        topicMappings:
+          $ref: '#/components/schemas/topicMappings'
+      required:
+        - eventhubs
+        - producers
+    statusInfo:
+      type: object
+      properties:
+        title:
+          type: string
+          description: Title of info
+        description:
+          type: string
+          description: Description of info
+      required: ['title', 'description']
+    statusState:
+      type: string
+      description: Current resource state
+      # ok - everything is fine
+      # warn - something is not working as expected
+      # error - resource has an error
+      enum:
+        - ok
+        - warn
+        - error
+    statusStatistics:
+      type: array
+      description: Resource dependent statistics
+      items:
+        type: object
+        properties:
+          label:
+            type: string
+            description: Label to display for measure
+          value:
+            description: Current value for a statistical measure
+          min:
+            type: number
+            description: Current min value for a statistical measure
+          max:
+            type: number
+            description: Current max value for a statistical measure
+        required:
+          - label
+          - value
+    statusResource:
+      type: object
+      description: Describes current status of a resource'
+      # properties: &statusResource_properties
+      properties:
+        state:
+          $ref: '#/components/schemas/statusState'
+        error:
+          description: Optional error description
+          $ref: '#/components/schemas/statusInfo'
+        infos:
+          description: Resource dependent info descriptions
+          type: array
+          items:
+            $ref: '#/components/schemas/statusInfo'
+        statistics:
+          $ref: '#/components/schemas/statusStatistics'
+      required:
+        - state
+    statusResponse:
+      type: object
+      description: Information about current bridge status
+      properties:
+        # *statusResource_properties
+        # $ref: '#/components/schemas/statusResource'
+        state:
+          $ref: '#/components/schemas/statusState'
+        error:
+          description: Optional error description
+          $ref: '#/components/schemas/statusInfo'
+        infos:
+          description: Resource dependent info descriptions
+          type: array
+          items:
+            $ref: '#/components/schemas/statusInfo'
+        statistics:
+          $ref: '#/components/schemas/statusStatistics'
+        resources:
+          type: array
+          description: Statuses of each used resource, e.g. a producer
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              type:
+                type: string
+              # *statusResource_properties
+              # $ref: '#/components/schemas/statusResource'
+              state:
+                $ref: '#/components/schemas/statusState'
+              error:
+                description: Optional error description
+                $ref: '#/components/schemas/statusInfo'
+              infos:
+                description: Resource dependent info descriptions
+                type: array
+                items:
+                  $ref: '#/components/schemas/statusInfo'
+              statistics:
+                $ref: '#/components/schemas/statusStatistics'
+            required:
+              - name
+              - type
+              - state
+      required:
+        - state
+        - resources
+    correlationData:
+      type: string
+      description: |
+        This is an optional value to be able to identify the relation
+        between request and response. The plugin will add the provided value in the
+        response message.
+      examples:
+        - 1234-request

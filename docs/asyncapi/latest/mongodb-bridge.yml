@@ -1,0 +1,608 @@
+asyncapi: 2.6.0
+info:
+  title: MongoDB-Bridge
+  version: 3.1.0
+  description: |
+    Manage the configuration and get key status metrics of the MongoDB-Bridge.
+
+    Currently supported commands offered by the API are `updateConfig` to
+    update the whole JSON config of the MongoDB-Bridge. To retrieve the current
+    config as a JSON object the command `getConfig` can be used. For status
+    information of the bridge the command `getStatus` exists.
+
+defaultContentType: application/json
+channels:
+  $CONTROL/cedalo/mongodb-bridge/v1:
+    publish:
+      message:
+        $ref: "#/components/messages/ControlRequest"
+  $CONTROL/cedalo/mongodb-bridge/v1/response:
+    subscribe:
+      message:
+        $ref: "#/components/messages/ControlResponse"
+components:
+  messages:
+    ControlRequest:
+      name: controlRequest
+      title: Request to execute commands on the control API
+      payload:
+        $ref: "#/components/schemas/controlRequestPayload"
+      examples:
+        - name: updateConfig request
+          payload:
+            commands:
+              - command: updateConfig
+                configChange:
+                  version: v1
+                  connections:
+                    - name: connection-to-db1
+                      connection:
+                        connectionParams:
+                          hostname: mongodb
+                          port: 27017
+                          database: db1
+                          credentials:
+                            username: user1
+                            password: secret123
+                      options:
+                        maxQueuedMessages: 100000
+                        retryInsertMinDelay: 5
+                        retryInsertMaxDelay: 25000
+                      topicMappings:
+                        - name: topic-mapping
+                          target: sensorData
+                          schemaMapping: reduced-mapping
+                          mqttTopics:
+                            - sensor_data/#
+                  schemaMappings:
+                    - name: reduced-mapping,
+                      mapping:
+                        - source: payload
+                          target: data
+                        - source: hostname
+                          target: nodeId
+                correlationData: 1234-request
+        - name: getConfig request
+          payload:
+            commands:
+              - command: getConfig
+                correlationData: 1234-request
+        - name: getStatus request
+          payload:
+            commands:
+              - command: getStatus
+                correlationData: 1234-request
+        - name: testConnection request
+          payload:
+            commands:
+              - command: testConnection
+                correlationData: 1234-request
+                connection:
+                  connectionParams:
+                    hostname: mongodb
+                    port: 27017
+                    database: db1
+                    credentials:
+                      username: user1
+                      password: secret123
+                collections:
+                  - collection1
+
+    ControlResponse:
+      name: controlResponse
+      title: Response to an executed insert/delete CA certificates request
+      payload:
+        $ref: "#/components/schemas/controlResponsePayload"
+      examples:
+        - name: successful updateConfig response
+          payload:
+            responses:
+              - command: updateConfig
+                data:
+                  response: SUCCESS
+                correlationData: 1234-request
+        - name: successful getConfig response
+          payload:
+            responses:
+              - command: getConfig
+                data:
+                  version: v1
+                  connections:
+                    - name: connection-to-db1
+                      connection:
+                        connectionParams:
+                          hostname: mongodb
+                          port: 27017
+                          database: db1
+                          credentials:
+                            username: user1
+                            password: secret123
+                      options:
+                        maxQueuedMessages: 100000
+                        retryInsertMinDelay: 5
+                        retryInsertMaxDelay: 25000
+                      topicMappings:
+                        - name: topic-mapping
+                          target: sensorData
+                          schemaMapping: reduced-mapping
+                          mqttTopics:
+                            - sensor_data/#
+                  schemaMappings:
+                    - name: reduced-mapping,
+                      mapping:
+                        - source: payload
+                          target: data
+                        - source: hostname
+                          target: nodeId
+                correlationData: 1234-request
+        - name: successful getStatus response
+          payload:
+            responses:
+              - command: getStatus
+                data:
+                  - connectionName: my-connection
+                    queuedMessages: 42
+                    isConnected: true
+                correlationData: 1234-request
+        - name: successful testConnection response
+          payload:
+            responses:
+              - command: testConnection
+                data:
+                  response: SUCCESS
+                correlationData: 1234-request
+        - name: error response of updateConfig
+          payload:
+            responses:
+              - command: updateConfig
+                error: Identical configChange is already queued
+                correlationData: 1234-request
+        - name: error response of testConnection (DB does not exist)
+          payload:
+            responses:
+              - command: testConnection
+                error: Database 'myDb' does not exist
+                correlationData: 1234-leel-request
+        - name: error response of testConnection (Collections do not exist)
+          payload:
+            responses:
+              - command: testConnection
+                error: "The following collections do not exist: db1.collection13, db1.collection42"
+                correlationData: 1234-leel-request
+  schemas:
+    controlRequestPayload:
+      type:
+        - object
+      properties:
+        commands:
+          type: array
+          items:
+            anyOf:
+              - description: updateConfig request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - updateConfig
+                    description: |
+                      Command to update the current MongoDB-Bridge configuration.
+                  configChange:
+                    $ref: "#/components/schemas/bridgeConfig"
+                  correlationData:
+                    $ref: "#/components/schemas/correlationData"
+                additionalProperties: false
+                required:
+                  - command
+                  - configChange
+              - description: getConfig request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getConfig
+                    description: |
+                      Retrieve the current MongoDB-Bridge configuration.
+                  correlationData:
+                    $ref: "#/components/schemas/correlationData"
+                additionalProperties: false
+                required:
+                  - command
+              - description: getStatus request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getStatus
+                    description: |
+                      Get status information about the bridge.
+                      Namely: Connection status, queue utilization and
+                      connection error message, if the connection could not
+                      be established or got interrupted.
+                  correlationData:
+                    $ref: "#/components/schemas/correlationData"
+                additionalProperties: false
+                required:
+                  - command
+              - description: testConnection request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - testConnection
+                    description: |
+                      Tries to establish a connection to the specified MongoDB server/cluster
+                      and checks, if the provided database and collections exist.
+                  connection:
+                    $ref: "#/components/schemas/connection"
+                  collections:
+                    $ref: "#/components/schemas/collections"
+                  correlationData:
+                    $ref: "#/components/schemas/correlationData"
+      additionalProperties: false
+    controlResponsePayload:
+      type:
+        - object
+      properties:
+        responses:
+          type: array
+          items:
+            type: object
+            oneOf:
+              - description: successful updateConfig or testConnection response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - updateConfig
+                      - testConnection
+                  data:
+                    type: object
+                    description: Specified if request has been processed successfully
+                    properties:
+                      response:
+                        type: string
+                        enum:
+                          - SUCCESS
+                  correlationData:
+                    $ref: "#/components/schemas/correlationData"
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+              - description: successful getConfig response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getConfig
+                  data:
+                    $ref: "#/components/schemas/bridgeConfig"
+                  correlationData:
+                    $ref: "#/components/schemas/correlationData"
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+              - description: successful getStatus response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getStatus
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/statusResponse"
+                  correlationData:
+                    $ref: "#/components/schemas/correlationData"
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+              - description: error response
+                properties:
+                  command:
+                    $ref: "#/components/schemas/command"
+                  error:
+                    type: string
+                    examples:
+                      - Identical configChange is already queued
+                  correlationData:
+                    $ref: "#/components/schemas/correlationData"
+                additionalProperties: false
+                required:
+                  - command
+                  - error
+      additionalProperties: false
+    command:
+      type: string
+      enum:
+        - updateConfig
+        - getConfig
+        - getStatus
+        - testConnection
+      description: |
+        Command which describes the action processed by the plugin.
+    version:
+      type: string
+      description: |
+        Version of the config file.
+    name:
+      type: string
+      description: |
+        Textual unique identifier.
+    connectionURI:
+      type: string
+      description: |
+        MongoDB connection string that contains protocol, hostname, port,
+        database name, optional credentials and options.
+    hostname:
+      type: string
+      description: |
+        Hostname or IP address of the MongoDB server.
+    port:
+      type: integer
+      description: |
+        Port the MongoDB server is listening on.
+    database:
+      type: string
+      description: |
+        Name of the database, the data should be inserted to.
+    username:
+      type: string
+      description: |
+        Username with which the bridge logs into the MongoDB database.
+    password:
+      type: string
+      description: |
+        Password with which the bridge logs into the MongoDB database.
+    credentials:
+      type: object
+      properties:
+        username:
+          $ref: "#/components/schemas/username"
+        password:
+          $ref: "#/components/schemas/password"
+      required:
+        - username
+        - password
+      description: |
+        Basic authentication configuration.
+    connectionParams:
+      type: object
+      properties:
+        hostname:
+          $ref: "#/components/schemas/hostname"
+        port:
+          $ref: "#/components/schemas/port"
+        database:
+          $ref: "#/components/schemas/database"
+        credentials:
+          $ref: "#/components/schemas/credentials"
+      required:
+        - hostname
+        - port
+        - database
+      description: |
+        Connection parameters to connect to a MongoDB server.
+    connection:
+      oneOf:
+        - type: object
+          properties:
+            connectionURI:
+              $ref: "#/components/schemas/connectionURI"
+          required:
+            - connectionURI
+        - type: object
+          properties:
+            connectionParams:
+              $ref: "#/components/schemas/connectionParams"
+          required:
+            - connectionParams
+      description: |
+        MongoDB server specific connection fields.
+    maxQueuedMessages:
+      type: integer
+      minimum: 1
+      description: |
+        Specifies the limit of not-yet-processed/inserted MQTT messages,
+        before the plugin starts to drop them.
+    retryMinInsertDelay:
+      type: integer
+      default: 0
+      description: |
+        Initial delay in milliseconds before the plugin tries to insert
+        a message again, once the server returned an error or was not available.
+        The increment follows a pattern of double growth, where each increase
+        is doubled compared to the previous increment. If not specified, the plugin
+        won't try to resend messages again after the first try.
+    retryMaxInsertDelay:
+      type: integer
+      default: 0
+      description: |
+        Maximum delay in milliseconds before the plugin tries to insert a message again,
+        once the server returned an error or was not available. If not specified,
+        the plugin won't try to resend messages again after the first try.
+    options:
+      type: object
+      properties:
+        maxQueuedMessages:
+          $ref: "#/components/schemas/maxQueuedMessages"
+        retryMinInsertDelay:
+          $ref: "#/components/schemas/retryMinInsertDelay"
+        retryMaxInsertDelay:
+          $ref: "#/components/schemas/retryMaxInsertDelay"
+      required:
+        - maxQueuedMessages
+      description: |
+        Options to configure queueing and publish retry mechanism.
+    target:
+      type: string
+      description: |
+        Name of the collection, the MQTT data should inserted to
+        or column of a collection which is mapped against a MQTT
+        message property.
+    schemaMapping:
+      type: string
+      description: |
+        Name of a schema mapping, which should be applied to this topic mapping.
+        If not specified the default schema mapping including all fields will be used.
+    mqttTopics:
+      type: array
+      minItems: 1
+      items:
+        type: string
+      description: |
+        List of topic filters the plugin forwards messages from.
+    topicMappings:
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            $ref: "#/components/schemas/name"
+          target:
+            $ref: "#/components/schemas/target"
+          schemaMapping:
+            $ref: "#/components/schemas/schemaMapping"
+          mqttTopics:
+            $ref: "#/components/schemas/mqttTopics"
+        required:
+          - name
+          - target
+          - mqttTopics
+      description: |
+        Array of mapped mqtt topics and MongoDB collections.
+    connections:
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            $ref: "#/components/schemas/name"
+          connection:
+            $ref: "#/components/schemas/connection"
+          options:
+            $ref: "#/components/schemas/options"
+          topicMappings:
+            $ref: "#/components/schemas/topicMappings"
+        required:
+          - name
+          - connection
+          - options
+          - topicMappings
+      description: |
+        Array of sub-configurations per MongoDB connection/database.
+    source:
+      type: string
+      enum:
+        - hostname
+        - payload
+        - jsonPayload
+        - topic
+        - qos
+        - client_id
+        - retain
+        - timestamp
+      description: |
+        MQTT message property.
+    mapping:
+      type: array
+      minitems: 1
+      items:
+        type: object
+        properties:
+          source:
+            $ref: "#/components/schemas/source"
+          target:
+            $ref: "#/components/schemas/target"
+        required:
+          - source
+          - target
+      description: |
+        Array of mapped MQTT message properties.
+    schemaMappings:
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            $ref: "#/components/schemas/name"
+          mapping:
+            $ref: "#/components/schemas/mapping"
+      description: |
+        Array of mapped schemas.
+    bridgeConfig:
+      type: object
+      properties:
+        version:
+          $ref: "#/components/schemas/version"
+        connections:
+          $ref: "#/components/schemas/connections"
+        schemaMappings:
+          $ref: "#/components/schemas/schemaMappings"
+      required:
+        - connections
+        - schemaMappings
+      description: |
+        Config object representing the MongoDB-Bridge configuration.
+    connectionName:
+      type: string
+      description: |
+        Name of the connection specified in the MongoDB-Bridge config file.
+    queuedMessages:
+      type: integer
+      minimum: 0
+      description: |
+        Amount of messages which are currently stored in the MongoDB
+        client's queue.
+    isConnected:
+      type: boolean
+      description: |
+        Set to true, if the MongoDB-Bridge has successfully established
+        a connection to the MongoDB database; false otherwise.
+    connectionError:
+      type: string
+      description: |
+        Error message of the MongoDB client, if an error happened
+        at the initial connection establishment or during message insertion.
+    statusResponse:
+      type: object
+      properties:
+        connectionName:
+          $ref: "#/components/schemas/connectionName"
+        queuedMessages:
+          $ref: "#/components/schemas/queuedMessages"
+        isConnected:
+          $ref: "#/components/schemas/isConnected"
+        connectionError:
+          $ref: "#/components/schemas/connectionError"
+      required:
+        - connectionName
+        - queuedMessages
+        - isConnected
+      description: |
+        Object that contains key metrics about the MongoDB-Bridge's
+        condition per connection to a database collection.
+    collections:
+      type: array
+      items:
+        type: string
+      description: |
+        Array of MongoDB collection names.
+    correlationData:
+      type: string
+      description: |
+        This is an optional value to be able to identify the relation
+        between request and response. The plugin will add the provided value in the
+        response message.
+      examples:
+        - 1234-request
