@@ -6,7 +6,7 @@ info:
     This plugin provides information on currently in use topics on the broker,
     from both published messages and from subscriptions.
 
-    The topic of the plugins control API is `$CONTROL/cedalo/topictree/v1`.
+    The topic of the plugin's control API is `$CONTROL/cedalo/topictree/v1`.
 
     Currently supported commands offered by the API are `topicCount` to get a
     count of publish and subscribe topics, `listTopics` to get the list of

@@ -4,7 +4,7 @@ info:
   version: 3.0.0
   description: |
     This plugin provides information about clients connected to the broker.
-    The topic of the plugins control API is `$CONTROL/cedalo/inspect/v1`.
+    The topic of the plugin's control API is `$CONTROL/cedalo/inspect/v1`.
 
     Currently supported commands offered by the API are `listClients` for an
     overview which clients are connected and the `getClient` command to get

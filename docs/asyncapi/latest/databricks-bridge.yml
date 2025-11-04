@@ -1,0 +1,619 @@
+asyncapi: 2.6.0
+info:
+  title: Databricks-Bridge
+  version: 3.2.0
+  description: |
+    The following commands are currently offered by the API:
+    - `getStatus` to fetch information about the current bridge status
+    - `getSchema` to retrieve the schemata used to validate the configuration JSON
+    - `getConfig` to retrieve the current configuration as a JSON object
+    - `updateConfig` to update the whole configuration of the Databricks-Bridge
+
+defaultContentType: application/json
+channels:
+  $CONTROL/cedalo/databricks-bridge/v1:
+    publish:
+      message:
+        $ref: '#/components/messages/ControlRequest'
+  $CONTROL/cedalo/databricks-bridge/v1/response:
+    subscribe:
+      message:
+        $ref: '#/components/messages/ControlResponse'
+
+components:
+  messages:
+    ControlRequest:
+      name: controlRequest
+      title: Request to execute commands on the control API
+      payload:
+        $ref: '#/components/schemas/controlRequestPayload'
+      examples:
+        - name: getStatus request
+          payload:
+            commands:
+              - command: getStatus
+                correlationData: "oC6iHwUAeq86tP2_S6DPq"
+        - name: getConfig request
+          payload:
+            commands:
+              - command: getConfig
+                correlationData: "oC6iHwUAeq86tP2_S6DPq"
+        - name: getSchema request
+          payload:
+            commands:
+              - command: getSchema
+                correlationData: "oC6iHwUAeq86tP2_S6DPq"
+        - name: updateConfig request
+          payload:
+            commands:
+              - command: updateConfig
+                configChange:
+                  version: "1"
+                  connections:
+                    - name: databricks-connection-1
+                      connection:
+                        hostname: databricks.test.com
+                        path: /warehouse
+                        credentials:
+                          token: "******"
+                        catalog: target_catalog
+                      options:
+                        bufferSize: 10000
+                        batchSize: 1000
+                        timeoutMs: 4000
+                        queueMaxSize: 10000
+                        maxRetries: 15
+                        retryDelayMs: 1000
+                      topicMappings:
+                        - name: topic-mapping-to-databricks-1
+                          schemaMapping: schema-mapping-1
+                          target: target_table
+                          options:
+                            schema: target_schema
+                          mqttTopics:
+                            - "db/qa/#"
+                            - "db2/dev/databricks"
+                        - name: topic-mapping-to-databricks-2
+                          schemaMapping: schema-mapping-1
+                          target: target_table_2
+                          options:
+                            schema: target_schema
+                          mqttTopics:
+                            - "db/qa/#"
+                            - "db2/dev/databricks"
+                  schemaMappings:
+                    - name: schema-mapping-1
+                      mapping:
+                        - source: "[topic]"
+                          target: "topic_in"
+                        - source: "[payload][label]"
+                          target: "label"
+                        - source: "plant1"
+                          target: "building_id"
+                          options:
+                            isConst: true
+                        - source: "[client_id]"
+                          target: "client_id"
+                        - source: "[payload][temperature][avg]"
+                          target: "temperature"
+                          type: number
+                        - source: "[timestamp]"
+                          target: "dt"
+                correlationData: "oC6iHwUAeq86tP2_S6DPq"
+
+    ControlResponse:
+      name: controlResponse
+      title: Response to an executed control request
+      payload:
+        $ref: '#/components/schemas/controlResponsePayload'
+      examples:
+        - name: successful getStatus response
+          payload:
+            responses:
+              - command: getStatus
+                data:
+                  state: ok
+                  statistics:
+                    - label: number of queues
+                      value: 2
+                    - label: number of topics
+                      value: 3
+                    - label: number of connections
+                      value: 1
+                  resources:
+                    - name: target_table target
+                      type: queue
+                      state: ok
+                      statistics:
+                        - label: number of buffered records
+                          value: 0
+                          min: 0
+                          max: 10000
+                        - label: number of queued record buffers
+                          value: 0
+                          min: 0
+                          max: 10000
+                        - label: number of dropped record buffers
+                          value: 0
+                        - label: number of dropped records
+                          value: 0
+                        - label: is connected
+                          value: true
+                        - label: target name
+                          value: target_schema.target_table
+                        - label: target catalog
+                          value: target_catalog
+                        - label: topic name
+                          value: "db/qa/#"
+                        - label: topic name
+                          value: db2/dev/databricks
+                    - name: target_table_2 target
+                      type: queue
+                      state: ok
+                      statistics:
+                        - label: number of buffered records
+                          value: 0
+                          min: 0
+                          max: 10000
+                        - label: number of queued record buffers
+                          value: 0
+                          min: 0
+                          max: 10000
+                        - label: number of dropped record buffers
+                          value: 0
+                        - label: number of dropped records
+                          value: 0
+                        - label: is connected
+                          value: true
+                        - label: target name
+                          value: target_schema.target_table_2
+                        - label: target catalog
+                          value: target_catalog
+                        - label: topic name
+                          value: "db/qa/#"
+                        - label: topic name
+                          value: db2/dev/databricks2
+                correlationData: oC6iHwUAeq86tP2_S6DPq
+
+        - name: successful getConfig response
+          payload:
+            responses:
+              - command: getConfig
+                data:
+                  version: "1"
+                  connections:
+                    - name: databricks-connection-1
+                      connection:
+                        hostname: databricks.test.com
+                        path: /warehouse
+                        credentials:
+                          token: "******"
+                        catalog: target_catalog
+                      options:
+                        bufferSize: 10000
+                        batchSize: 1000
+                        timeoutMs: 4000
+                        queueMaxSize: 10000
+                        maxRetries: 15
+                        retryDelayMs: 1000
+                      topicMappings:
+                        - name: topic-mapping-to-databricks-1
+                          schemaMapping: schema-mapping-1
+                          target: target_table
+                          options:
+                            schema: target_schema
+                          mqttTopics:
+                            - "db/qa/#"
+                            - "db2/dev/databricks"
+                        - name: topic-mapping-to-databricks-2
+                          schemaMapping: schema-mapping-1
+                          target: target_table_2
+                          options:
+                            schema: target_schema
+                          mqttTopics:
+                            - "db/qa/#"
+                            - "db2/dev/databricks"
+                  schemaMappings:
+                    - name: schema-mapping-1
+                      mapping:
+                        - source: "[topic]"
+                          target: "topic_in"
+                        - source: "[payload][label]"
+                          target: "label"
+                        - source: "plant1"
+                          target: "building_id"
+                          options:
+                            isConst: true
+                        - source: "[client_id]"
+                          target: "client_id"
+                        - source: "[payload][temperature][avg]"
+                          target: "temperature"
+                          type: number
+                        - source: "[timestamp]"
+                          target: "dt"
+                correlationData: "oC6iHwUAeq86tP2_S6DPq"
+
+        - name: successful getSchema response
+          payload:
+            responses:
+              - command: getSchema
+                data:
+                  title: "Databricks-Bridge Plugin Config"
+                  type: "object"
+                  properties:
+                    version:
+                      type:
+                        - 'string'
+                        - 'integer'
+                      nullable: true
+                      description: 'Version of the configuration file'
+                    connections: "<JSON schema for connections>"
+                    schemaMappings: "<JSON schema for schemaMappings>"
+                correlationData: "oC6iHwUAeq86tP2_S6DPq"
+
+        - name: successful updateConfig response
+          payload:
+            responses:
+              - command: updateConfig
+                data:
+                  response: SUCCESS
+                correlationData: "oC6iHwUAeq86tP2_S6DPq"
+
+        - name: error response
+          payload:
+            responses:
+              - command: <errored-command>
+                error: "<error-message>"
+                correlationData: "oC6iHwUAeq86tP2_S6DPq"
+
+  schemas:
+    anyObject:
+      type: object
+      additionalProperties: true
+
+    controlRequestPayload:
+      type: object
+      properties:
+        commands:
+          type: array
+          items:
+            anyOf:
+              - description: getStatus request
+                type: object
+                properties:
+                  command:
+                    type: string
+                    enum: [getStatus]
+                    description: Get status information about the bridge
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                required: [command]
+              - description: getConfig request
+                type: object
+                properties:
+                  command:
+                    type: string
+                    enum: [getConfig]
+                    description: Retrieve the current bridge configuration
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                required: [command]
+              - description: getSchema request
+                type: object
+                properties:
+                  command:
+                    type: string
+                    enum: [getSchema]
+                    description: Get the schemata to validate the configuration JSON
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                required: [command]
+              - description: updateConfig request
+                type: object
+                properties:
+                  command:
+                    type: string
+                    enum: [updateConfig]
+                    description: Update the current bridge configuration
+                  configChange:
+                    $ref: '#/components/schemas/bridgeConfig'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                required: [command, configChange]
+      additionalProperties: false
+
+    controlResponsePayload:
+      type: object
+      properties:
+        responses:
+          type: array
+          items:
+            oneOf:
+              - description: successful updateConfig response
+                properties:
+                  command:
+                    type: string
+                    enum: [updateConfig]
+                  data:
+                    type: object
+                    description: Indicates that the request was processed successfully
+                    properties:
+                      response:
+                        type: string
+                        enum: [SUCCESS]
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required: [command, data]
+              - description: successful getSchema response
+                properties:
+                  command:
+                    type: string
+                    enum: [getSchema]
+                  data:
+                    $ref: '#/components/schemas/anyObject'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required: [command, data]
+              - description: successful getConfig response
+                properties:
+                  command:
+                    type: string
+                    enum: [getConfig]
+                  data:
+                    $ref: '#/components/schemas/bridgeConfig'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required: [command, data]
+              - description: successful getStatus response
+                properties:
+                  command:
+                    type: string
+                    enum: [getStatus]
+                  data:
+                    $ref: '#/components/schemas/databricksStatus'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required: [command, data]
+              - description: error response
+                properties:
+                  command:
+                    type: string
+                    description: The command that was attempted; can be any string for error responses.
+                  error:
+                    type: string
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required: [command, error]
+      additionalProperties: false
+
+    command:
+      type: string
+      enum:
+        - updateConfig
+        - getConfig
+        - getStatus
+        - getSchema
+      description: Command which describes the action processed by the bridge.
+
+    correlationData:
+      type: string
+      description: |
+        Optional value to correlate request and response.
+      examples:
+        - "oC6iHwUAeq86tP2_S6DPq"
+
+    bridgeConfig:
+      description: A JSON representing the Databricks-Bridge configuration.
+      type: object
+      properties:
+        version:
+          type: string
+          description: Configuration version
+        connections:
+          type: array
+          items:
+            $ref: '#/components/schemas/connection'
+        schemaMappings:
+          type: array
+          items:
+            $ref: '#/components/schemas/schemaMapping'
+      required: [version, connections, schemaMappings]
+
+    connection:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Unique name for the Databricks connection
+        connection:
+          type: object
+          properties:
+            hostname:
+              type: string
+            path:
+              type: string
+              description: Base path for the SQL Warehouse endpoint (e.g., /warehouse)
+            credentials:
+              type: object
+              properties:
+                token:
+                  type: string
+              required: [token]
+            catalog:
+              type: string
+              description: Default Unity Catalog catalog to use
+          required:
+            - hostname
+            - path
+            - credentials
+            - catalog
+        options:
+          type: object
+          properties:
+            bufferSize:
+              type: number
+            batchSize:
+              type: number
+            timeoutMs:
+              type: number
+            queueMaxSize:
+              type: number
+            maxRetries:
+              type: number
+            retryDelayMs:
+              type: number
+          required:
+            - bufferSize
+            - batchSize
+            - timeoutMs
+            - queueMaxSize
+            - maxRetries
+            - retryDelayMs
+        topicMappings:
+          type: array
+          items:
+            $ref: '#/components/schemas/topicMapping'
+      required: [name, connection, options, topicMappings]
+
+    topicMapping:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Unique name for the topic mapping
+        schemaMapping:
+          type: string
+          description: Name of the schema mapping to use
+        target:
+          type: string
+          description: Target table name (without schema)
+        options:
+          type: object
+          properties:
+            schema:
+              type: string
+              description: Target schema name
+          required: [schema]
+        mqttTopics:
+          type: array
+          items:
+            type: string
+      required: [name, schemaMapping, target, options, mqttTopics]
+
+    schemaMapping:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Unique name for the schema mapping
+        mapping:
+          type: array
+          items:
+            $ref: '#/components/schemas/mapping'
+      required: [name, mapping]
+
+    mapping:
+      type: object
+      properties:
+        source:
+          type: string
+          description: |
+            JSON path to extract data from the message. Use "[payload]" for full payload,
+            "[topic]" for topic, "[client_id]" for client id, "[timestamp]" for message timestamp, etc.
+            If options.isConst is true, treat source as literal value.
+        target:
+          type: string
+          description: Target column name in Databricks table
+        type:
+          type: string
+          description: Optional type hint for the destination column
+          enum: [string, number, integer, boolean]
+        options:
+          type: object
+          properties:
+            isConst:
+              type: boolean
+              description: If true, the source is a literal constant value
+      required: [source, target]
+
+    statusInfo:
+      type: object
+      properties:
+        title:
+          type: string
+          description: Title of info
+        description:
+          type: string
+          description: Description of info
+      required: ['title', 'description']
+
+    statusState:
+      type: string
+      description: Current resource state
+      enum: [ok, warn, error]
+
+    statusStatistics:
+      type: array
+      description: Resource dependent statistics
+      items:
+        type: object
+        properties:
+          label:
+            type: string
+            description: Label to display for measure
+          value:
+            description: Current value for a statistical measure
+          min:
+            type: number
+            description: Current min value for a statistical measure
+          max:
+            type: number
+            description: Current max value for a statistical measure
+        required: [label, value]
+
+    databricksStatus:
+      type: object
+      description: Information about current bridge status
+      properties:
+        state:
+          $ref: '#/components/schemas/statusState'
+        error:
+          description: Optional error description
+          $ref: '#/components/schemas/statusInfo'
+        infos:
+          description: Resource dependent info descriptions
+          type: array
+          items:
+            $ref: '#/components/schemas/statusInfo'
+        statistics:
+          $ref: '#/components/schemas/statusStatistics'
+        resources:
+          type: array
+          description: Statuses of each used resource, e.g. a per-target queue
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              type:
+                type: string
+              state:
+                $ref: '#/components/schemas/statusState'
+              error:
+                description: Optional error description
+                $ref: '#/components/schemas/statusInfo'
+              infos:
+                description: Resource dependent info descriptions
+                type: array
+                items:
+                  $ref: '#/components/schemas/statusInfo'
+              statistics:
+                $ref: '#/components/schemas/statusStatistics'
+            required: [name, type, state]
+      required: [state, resources]
+

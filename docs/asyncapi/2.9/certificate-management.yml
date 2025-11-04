@@ -4,7 +4,7 @@ info:
   version: 2.9.1
   description: |
     Manage Certificate Authorities (CAs) used for client certificate based
-    authentication. The topic of the plugins control API is
+    authentication. The topic of the plugin's control API is
     `$CONTROL/certificate-management/v1`.
 
     Currently supported commands offered by the API are `insertCACertificate`,

@@ -5,7 +5,7 @@ info:
   description: |
     The client control API gives the user the ability to apply different commands
     to connected clients (e.g. disconnect a client). These commands can be requested
-    via the plugins control API. A controlling client can publish requests to
+    via the plugin's control API. A controlling client can publish requests to
     `$CONTROL/cedalo/client-control/v1` and the related response message will be published
     by the plugin on `$CONTROL/cedalo/client-control/v1/response`.
 

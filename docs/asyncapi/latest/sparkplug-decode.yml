@@ -1,0 +1,288 @@
+asyncapi: 2.6.0
+info:
+  title: Sparkplug Decode
+  version: 3.2.0
+  description: |
+    This plugin decodes incoming Sparkplug protobuf messages and republishes
+    them.
+
+    The topic of the plugins control API is `$CONTROL/cedalo/sparkplug-decode/v1`.
+
+    Currently supported commands offered by the API are
+    `getDecodeMode`/`setDecodeMode` to get/set the mode of operation.
+    `getTopicPrefix`/`setTopicPrefix` to get/set the topic prefix used when
+    publishing.
+
+defaultContentType: application/json
+channels:
+  $CONTROL/cedalo/topictree/v1:
+    publish:
+      message:
+        $ref: '#/components/messages/ControlRequest'
+  $CONTROL/cedalo/topictree/v1/response:
+    subscribe:
+      message:
+        $ref: '#/components/messages/ControlResponse'
+components:
+  messages:
+    ControlRequest:
+      name: controlRequest
+      title: Request to execute getDecodeMode/setDecodeMode/getTopicPrefix/setTopicPrefix
+      payload:
+        $ref: '#/components/schemas/controlRequestPayload'
+      examples:
+        - name: getDecodeMode
+          summary: Example of a getDecodeMode message.
+          payload:
+            commands:
+              - command: getDecodeMode
+        - name: setDecodeMode
+          summary: Example of a setDecodeMode message.
+          payload:
+            commands:
+              - command: setDecodeMode
+                mode: "basic"
+        - name: getTopicPrefix
+          summary: Example of a getTopicPrefix message.
+          payload:
+            commands:
+              - command: getTopicPrefix
+        - name: setTopicPrefix
+          summary: Example of a setTopicPrefix message.
+          payload:
+            commands:
+              - command: setTopicPrefix
+                topicPrefix: "plant/line"
+
+    ControlResponse:
+      name: controlResponse
+      title: Response to an executed getDecodeMode/setDecodeMode/getTopicPrefix/setTopicPrefix request
+      payload:
+        $ref: '#/components/schemas/controlResponsePayload'
+      examples:
+        - name: getDecodeMode
+          summary: successful getDecodeMode response message.
+          payload:
+            responses:
+                - command: getDecodeMode
+                  data:
+                    mode: basic
+                  correlationData: 37a6e977-2b4f-4431-83f7-5bd93b35c152
+        - name: setDecodeMode
+          summary: successful setDecodeMode response message.
+          payload:
+            responses:
+                - command: setDecodeMode
+                  correlationData: 37a6e977-2b4f-4431-83f7-5bd93b35c152
+        - name: getTopicPrefix
+          summary: successful getTopicPrefix response message.
+          payload:
+            responses:
+                - command: getTopicPrefix
+                  data:
+                    topicPrefix: plant/line
+                  correlationData: 37a6e977-2b4f-4431-83f7-5bd93b35c152
+        - name: setDecodeMode
+          summary: successful setTopicPrefix response message.
+          payload:
+            responses:
+                - command: setTopicPrefix
+                  correlationData: 37a6e977-2b4f-4431-83f7-5bd93b35c152
+        - name: error
+          summary: Example of an error response message.
+          payload:
+            responses:
+              - command: setDecodeMode
+                error: Invalid mode
+                correlationData: 37a6e977-2b4f-4431-83f7-5bd93b35c152
+
+  schemas:
+    controlRequestPayload:
+      type:
+        - object
+      properties:
+        commands:
+          type: array
+          items:
+            type:
+              - object
+            anyOf:
+              - description: getDecodeMode request
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getDecodeMode
+                    description: |
+                      Command to get the decode mode.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+              - description: setDecodeMode request
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - setDecodeMode
+                    description: |
+                      Command to set the decode mode.
+                  mode:
+                    type: string
+                    default: "basic"
+                    description: |
+                      Decode mode. Set to none to disable decoding, or basic for
+                      straightforward protobuf to JSON decoding, or enhanced for
+                      individual metric decoding and republishing.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - mode
+              - description: getTopicPrefix request
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getTopicPrefix
+                    description: |
+                      Command to get the topic prefix.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+              - description: setTopicPrefix request
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - setTopicPrefix
+                    description: |
+                      Command to set the topic prefix.
+                  topicPrefix:
+                    type: string
+                    default: ""
+                    description: |
+                      Set to an empty string to use the default prefix of
+                      `spBv1.0/<group_id>/<cmd>/<edge_node_id>/<device_id>/metrics/`,
+                      or set to a custom topic string to use that as the
+                      prefix.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - topicPrefix
+      additionalProperties: false
+    controlResponsePayload:
+      type:
+        - object
+      properties:
+        responses:
+          type: array
+          items:
+            type:
+              - object
+            anyOf:
+              - description: getDecodeMode response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getDecodeMode
+                    description: >-
+                      Get the decode mode.
+                  data:
+                    type: object
+                    properties:
+                      mode:
+                        type: string
+                        enum:
+                          - none
+                          - basic
+                          - enhanced
+                        description: |
+                          Decode mode
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                required:
+                  - command
+                  - data
+              - description: setDecodeMode response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - setDecodeMode
+                    description: >-
+                      Set the decode mode.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                required:
+                  - command
+              - description: getTopicPrefix response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getTopicPrefix
+                    description: >-
+                      Get the topic prefix.
+                  data:
+                    type: object
+                    properties:
+                      topicPrefix:
+                        type: string
+                        description: |
+                          Decode mode
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                required:
+                  - command
+                  - data
+              - description: setTopicPrefix response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - setTopicPrefix
+                    description: >-
+                      Set the topic prefix.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                required:
+                  - command
+              - description: error response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getDecodeMode
+                      - setDecodeMode
+                      - getTopicPrefix
+                      - setTopicPrefix
+                    description: >-
+                      Command which describes the action processed by the plugin.
+                  error:
+                    type: string
+                    examples:
+                      - Filter not found
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - error
+      additionalProperties: false
+    correlationData:
+      type: string
+      description: |
+        This is an optional value to be able to identify the relation
+        between request and response. The plugin will add the provided
+        value in the response message.
+      examples:
+        - 37a6e977-2b4f-4431-83f7-5bd93b35c152
+

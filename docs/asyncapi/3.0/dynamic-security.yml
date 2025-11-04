@@ -4,8 +4,7 @@ info:
   version: 3.0.1
   description: |
 
-    Manage Certificate Authorities (CAs) used for client certificate based
-    authentication. The topic of the plugins control API is
+    Manage client accounts, groups, and roles used to authenticate and isolate your MQTT clients. The topic of the plugin's control API is
     `$CONTROL/dynamic-security/v1`.
 
 defaultContentType: application/json
