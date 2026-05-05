@@ -1,0 +1,299 @@
+asyncapi: 2.6.0
+info:
+    title: License Control
+    version: 1.0.0
+    description: |
+        This MQTT Control API provides endpoints to install a new license on the broker and
+        retrieve information about the current installed one. The request topic of the
+        control API is `$CONTROL/cedalo/license/v1`.
+
+defaultContentType: application/json
+channels:
+    $CONTROL/cedalo/license/v1:
+        publish:
+            message:
+                $ref: '#/components/messages/ControlRequest'
+    $CONTROL/cedalo/license/v1/response:
+        subscribe:
+            message:
+                $ref: '#/components/messages/ControlResponse'
+components:
+    messages:
+        ControlRequest:
+            name: controlRequest
+            title: Request to execute commands on the license control API
+            payload:
+                $ref: '#/components/schemas/controlRequestPayload'
+            examples:
+                - name: installLicense
+                  payload:
+                      commands:
+                          - command: 'installLicense'
+                            license: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...'
+                            correlationData: 'install-1234'
+
+                - name: getLicenseInformation
+                  payload:
+                      commands:
+                          - command: 'getLicenseInformation'
+                            correlationData: 'get-license-5678'
+
+        ControlResponse:
+            name: controlResponse
+            title: Response to an executed license control API request
+            payload:
+                $ref: '#/components/schemas/controlResponsePayload'
+            examples:
+                - name: successful installLicense response
+                  payload:
+                      responses:
+                          - command: 'installLicense'
+                            correlationData: 'install-1234'
+
+                - name: error installLicense response
+                  payload:
+                      responses:
+                          - command: 'installLicense'
+                            error: 'Missing/invalid license data.'
+                            correlationData: 'install-1234'
+
+                - name: successful getLicenseInformation response
+                  payload:
+                      responses:
+                          - command: 'getLicenseInformation'
+                            data:
+                                edition: 'pro'
+                                comment: 'ENTERPRISE-Plan license'
+                                issuedBy: 'Cedalo GmbH'
+                                issuedTo: 'mosquitto@example.com'
+                                validSince: 1767222000000
+                                validUntil: 1798757999000
+                                serial: 'ABC-123-DEF-456'
+                                version: 'v3'
+                                plan: 'enterprise'
+                                features: []
+                            correlationData: 'get-license-5678'
+
+                - name: error getLicenseInformation response
+                  payload:
+                      responses:
+                          - command: 'getLicenseInformation'
+                            error: 'Internal error'
+                            correlationData: 'get-license-5678'
+
+    schemas:
+        controlRequestPayload:
+            type: object
+            properties:
+                commands:
+                    type: array
+                    items:
+                        anyOf:
+                            - description: |
+                                  installLicense request.
+                                  Note: This endpoint is only available when used with a license file (e.g., license.lic) persisted on disk.
+                              type: object
+                              properties:
+                                  command:
+                                      type: string
+                                      enum:
+                                          - installLicense
+                                      description: |
+                                          Install a new license on the broker.
+                                  license:
+                                      $ref: '#/components/schemas/license'
+                                  correlationData:
+                                      $ref: '#/components/schemas/correlationData'
+                              additionalProperties: false
+                              required:
+                                  - command
+                                  - license
+
+                            - description: getLicenseInformation request
+                              type: object
+                              properties:
+                                  command:
+                                      type: string
+                                      enum:
+                                          - getLicenseInformation
+                                      description: |
+                                          Retrieve the current license information of the broker.
+                                  correlationData:
+                                      $ref: '#/components/schemas/correlationData'
+                              additionalProperties: false
+                              required:
+                                  - command
+            additionalProperties: false
+
+        controlResponsePayload:
+            type: object
+            properties:
+                responses:
+                    type: array
+                    items:
+                        type: object
+                        oneOf:
+                            - description: Successful installLicense response
+                              properties:
+                                  command:
+                                      type: string
+                                      enum:
+                                          - installLicense
+                                  correlationData:
+                                      $ref: '#/components/schemas/correlationData'
+                              additionalProperties: false
+                              required:
+                                  - command
+
+                            - description: Successful getLicenseInformation response
+                              properties:
+                                  command:
+                                      type: string
+                                      enum:
+                                          - getLicenseInformation
+                                  data:
+                                      $ref: '#/components/schemas/licenseInformation'
+                                  correlationData:
+                                      $ref: '#/components/schemas/correlationData'
+                              additionalProperties: false
+                              required:
+                                  - command
+                                  - data
+
+                            - description: Error response
+                              properties:
+                                  command:
+                                      $ref: '#/components/schemas/command'
+                                  error:
+                                      type: string
+                                      description: |
+                                          String that provides information about the error that occurred during the handling of the command.
+                                      examples:
+                                          - Missing/invalid license data.
+                                          - Unable to open license file.
+                                  correlationData:
+                                      $ref: '#/components/schemas/correlationData'
+                              additionalProperties: false
+                              required:
+                                  - command
+                                  - error
+            additionalProperties: false
+
+        command:
+            type: string
+            enum:
+                - installLicense
+                - getLicenseInformation
+            description: |
+                Command which describes the action processed by the license plugin.
+
+        license:
+            type: string
+            description: |
+                String that contains the Mosquitto license.
+
+        correlationData:
+            type: string
+            description: |
+                This is an optional value to be able to identify the relation
+                between request and response. The plugin will add the provided value in the
+                response message.
+            examples:
+                - 1234-request
+
+        licenseInformation:
+            type: object
+            description: |
+                Object that contains the current broker license.
+            properties:
+                edition:
+                    type: string
+                    enum:
+                        - pro
+                    description: |
+                        The edition of the license.
+                comment:
+                    type: string
+                    description: |
+                        Comment associated with the license.
+                issuedBy:
+                    type: string
+                    description: |
+                        The issuer of the license.
+                issuedTo:
+                    type: string
+                    description: |
+                        The entity the license is issued to.
+                validSince:
+                    type: number
+                    description: |
+                        Date (timestamp) from which the license is considered valid.
+                validUntil:
+                    type: number
+                    description: |
+                        Date (timestamp) until which the license is valid.
+                serial:
+                    type: string
+                    description: |
+                        Unique identifier of the license.
+                version:
+                    type: string
+                    enum:
+                        - v1
+                        - v2
+                        - v3
+                    description: |
+                        Version of the license schema.
+                plan:
+                    type: string
+                    description: |
+                        License plan defining the features of the license, e.g. 'XL'.
+                features:
+                    type: array
+                    description: |
+                        List of features included in the license.
+                    items:
+                        $ref: '#/components/schemas/feature'
+            required:
+                - edition
+                - comment
+                - issuedBy
+                - issuedTo
+                - validSince
+                - validUntil
+                - serial
+                - features
+            additionalProperties: false
+
+        feature:
+            type: object
+            description: |
+                A feature included in the license.
+            properties:
+                name:
+                    type: string
+                    description: |
+                        Feature name.
+                version:
+                    type: string
+                    description: |
+                        Feature version.
+                validSince:
+                    type: number
+                    description: |
+                        Date (timestamp) from which the feature is considered valid.
+                validUntil:
+                    type: number
+                    description: |
+                        Date (timestamp) until which the feature is valid.
+                count:
+                    type: number
+                    description: |
+                        Some limitation for usage of the feature. E.g., count for feature **mosquitto-clients**
+                        specifies the maximum amount of client connections the broker will accept.
+            required:
+                - name
+                - version
+                - validSince
+                - validUntil
+            additionalProperties: false
