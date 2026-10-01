@@ -1,11 +1,12 @@
 asyncapi: 2.6.0
 info:
   title: Dynamic Security
-  version: 3.0.1
+  version: 3.3.0
   description: |
 
-    Manage client accounts, groups, and roles used to authenticate and isolate your MQTT clients. The topic of the plugin's control API is
-    `$CONTROL/dynamic-security/v1`.
+    Manage Dynamic Security clients, roles, groups and default ACL(s)
+    used for client authentication and authorization.
+    The topic of the plugins control API is `$CONTROL/dynamic-security/v1`.
 
 defaultContentType: application/json
 channels:
@@ -158,6 +159,12 @@ components:
             - command: "getRole"
               rolename: "rolename"
 
+        - name: getRolePublishRateLimit
+          payload:
+            commands:
+              - command: "getRolePublishRateLimit"
+                rolename: "rolename"
+
         - name: listClients
           payload:
             commands:
@@ -165,6 +172,15 @@ components:
               verbose: true
               count: -1
               offset: 0
+
+        - name: listClients
+          payload:
+            commands:
+            - command: "listClients"
+              verbose: true
+              filterValue: "myid"
+              filterMode: "contains"
+              filterTarget: "clientid"
 
         - name: listGroups
           payload:
@@ -293,6 +309,17 @@ components:
                 allow: false
               - acltype: "unsubscribe"
                 allow: true
+
+        - name: setRolePublishRateLimit
+          payload:
+            commands:
+              - command: "setRolePublishRateLimit"
+                rolename: "rolename"
+                incoming_rate_limit: 42
+                outgoing_rate_limit: 42
+                incoming_time_frame: "1s"
+                outgoing_time_frame: "1s"
+
     ControlResponse:
       name: controlResponse
       title: Response to an executed control API request
@@ -449,6 +476,18 @@ components:
                         topic: "topic"
                         priority: -1
                         allow: true
+                correlationData: 1234-request
+
+        - name: successful getRolePublishRateLimit response
+          payload:
+            responses:
+              - command: "getRolePublishRateLimit"
+                data:
+                    rolename: "rolename"
+                    incoming_rate_limit: 42
+                    outgoing_rate_limit: 42
+                    incoming_time_frame: "1s"
+                    outgoing_time_frame: "1s"
                 correlationData: 1234-request
 
         - name: successful non-verbose listClients response
@@ -638,6 +677,12 @@ components:
           payload:
             responses:
               - command: "setDefaultACLAccess"
+                correlationData: 1234-request
+
+        - name: successful setRolePublishRateLimit
+          payload:
+            responses:
+              - command: "setRolePublishRateLimit"
                 correlationData: 1234-request
 
         - name: error response
@@ -1061,6 +1106,25 @@ components:
                   - command
                   - rolename
 
+              - description: getRolePublishRateLimit request
+                type:
+                  - object
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getRolePublishRateLimit
+                    description: |
+                      Get the rate limits and time frames for a role.
+                  rolename:
+                    $ref: '#/components/schemas/rolename'
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - rolename
+
               - description: listClients request
                 type:
                   - object
@@ -1085,6 +1149,23 @@ components:
                     type: integer
                     description: |
                       Offset the list by this amount.
+                  filterValue:
+                    type: string
+                    description: |
+                      Apply a filter to the list of clients and return a
+                      subset. This is the string that will be searched for.
+                  filterMode:
+                    $ref: '#/components/schemas/filterMode'
+                  filterTarget:
+                    type: string
+                    enum:
+                      - username
+                      - clientid
+                      - textname
+                      - textdescription
+                    description: |
+                      Set the client parameter to apply the filterValue on.
+                      Optional, defaults to username.
                   correlationData:
                     $ref: '#/components/schemas/correlationData'
                 additionalProperties: false
@@ -1115,6 +1196,22 @@ components:
                     type: integer
                     description: |
                       Offset the list by this amount.
+                  filterValue:
+                    type: string
+                    description: |
+                      Apply a filter to the list of groups and return a
+                      subset. This is the string that will be searched for.
+                  filterMode:
+                    $ref: '#/components/schemas/filterMode'
+                  filterTarget:
+                    type: string
+                    enum:
+                      - groupname
+                      - textname
+                      - textdescription
+                    description: |
+                      Set the groups parameter to apply the filterValue on.
+                      Optional, defaults to groupname.
                   correlationData:
                     $ref: '#/components/schemas/correlationData'
                 additionalProperties: false
@@ -1145,6 +1242,22 @@ components:
                     type: integer
                     description: |
                       Offset the list by this amount.
+                  filterValue:
+                    type: string
+                    description: |
+                      Apply a filter to the list of roles and return a
+                      subset. This is the string that will be searched for.
+                  filterMode:
+                    $ref: '#/components/schemas/filterMode'
+                  filterTarget:
+                    type: string
+                    enum:
+                      - rolename
+                      - textname
+                      - textdescription
+                    description: |
+                      Set the roles parameter to apply the filterValue on.
+                      Optional, defaults to rolename.
                   correlationData:
                     $ref: '#/components/schemas/correlationData'
                 additionalProperties: false
@@ -1481,6 +1594,33 @@ components:
                 required:
                   - command
                   - acls
+
+              - description: setRolePublishRateLimit request
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - setRolePublishRateLimit
+                  data:
+                    type: object
+                    properties:
+                      rolename:
+                        $ref: '#/components/schemas/rolename'
+                      incoming_rate_limit:
+                        $ref: '#/components/schemas/ratelimit'
+                      outgoing_rate_limit:
+                        $ref: '#/components/schemas/ratelimit'
+                      incoming_time_frame:
+                        $ref: '#/components/schemas/timeframe'
+                      outgoing_time_frame:
+                        $ref: '#/components/schemas/timeframe'
+                    additionalProperties: false
+                    required:
+                      - rolename
+                      - incoming_rate_limit
+                      - outgoing_rate_limit
+                      - incoming_time_frame
+                      - outgoing_time_frame
       additionalProperties: false
     controlResponsePayload:
       type:
@@ -1521,6 +1661,7 @@ components:
                     - "setClientId"
                     - "setClientPassword"
                     - "setDefaultACLAccess"
+                    - "setRolePublishRateLimit"
                   correlationData:
                     $ref: '#/components/schemas/correlationData'
                 additionalProperties: false
@@ -1632,6 +1773,39 @@ components:
                     required:
                       - role
                     additionalProperties: false
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+
+              - description: getRolePublishRateLimit response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getRolePublishRateLimit
+                  data:
+                    type: object
+                    properties:
+                      rolename:
+                        $ref: '#/components/schemas/rolename'
+                      incoming_rate_limit:
+                        $ref: '#/components/schemas/ratelimit'
+                      outgoing_rate_limit:
+                        $ref: '#/components/schemas/ratelimit'
+                      incoming_time_frame:
+                        $ref: '#/components/schemas/timeframe'
+                      outgoing_time_frame:
+                        $ref: '#/components/schemas/timeframe'
+                    additionalProperties: false
+                    required:
+                      - rolename
+                      - incoming_rate_limit
+                      - outgoing_rate_limit
+                      - incoming_time_frame
+                      - outgoing_time_frame
                   correlationData:
                     $ref: '#/components/schemas/correlationData'
                 additionalProperties: false
@@ -1798,6 +1972,7 @@ components:
         - getDefaultACLAccess
         - getGroup
         - getRole
+        - getRolePublishRateLimit
         - listClients
         - listGroups
         - listRoles
@@ -1813,6 +1988,7 @@ components:
         - setClientId
         - setClientPassword
         - setDefaultACLAccess
+        - setRolePublishRateLimit
       description: >-
         Command which describes the action processed by the plugin.
     username:
@@ -1948,6 +2124,24 @@ components:
       type: boolean
       description: |
         Whether MQTT wildcards are allowed for subscriptions in this role.
+    ratelimit:
+      type: integer
+      maximum: 4294967295
+      description: |
+        The value that indicates the rate limit for a role,
+        interpreted as messages per the configured time frame.
+        Defaults to -1, meaning no rate limit will be applied.
+        Set to a positive integer to apply that rate limit to the role.
+        A value of 0 means unlimited.
+    timeframe:
+      type: string
+      description: |
+        The value that indicates the time frame that a ratelimit for a role applies over.
+        For example ratelimit=10 and timeframe="1s" means 10 messages are allowed every 1 second.
+        The value must consist of a positive integer and a character indicating the time unit.
+        Acceptable time units are s for seconds, h for hours, d for days, w for weeks, m for months and y for years.
+        The timeframe only has an effect if a rate limit is configured for the role,
+        or if one is configured globally via mosquitto.conf.
     address:
       type: string
       description: |
@@ -2079,7 +2273,40 @@ components:
               - priority
               - allow
             additionalProperties: false
+        incoming_rate_limit:
+          type: integer
+          description: |
+            Integer value to set the incoming rate limit. Default value is -1 which means no rate limit is specified.
+            For an unlimited message rate set the value to 0.
+        outgoing_rate_limit:
+          type: integer
+          description: |
+            Integer value to set the outgoing rate limit. Default value is -1 which means no rate limit is specified.
+            For an unlimited message rate set the value to 0.
+
+        incoming_time_frame:
+          type: string
+          description: |
+            String value to set the incoming time frame. The string consistst of at least two characters. One or more characters
+            representing the numerical value followed by the value for the time unit.
+
+        outgoing_time_frame:
+          type: string
+          description: |
+            String value to set the outgoing time frame. The string consistst of at least two characters. One or more characters
+            representing the numerical value followed by the value for the time unit.
       required:
         - rolename
         - acls
       additionalProperties: false
+    filterMode:
+      type: string
+      enum:
+        - contains
+        - startsWith
+        - endsWith
+        - exact
+      description: |
+        The filterMode sets the type of string search to carry
+        out when using filterValue. Optional, defaults to
+        contains.

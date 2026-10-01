@@ -1,11 +1,11 @@
 asyncapi: 2.6.0
 info:
   title: Client Control
-  version: 3.0.0
+  version: 3.2.6
   description: |
     The client control API gives the user the ability to apply different commands
     to connected clients (e.g. disconnect a client). These commands can be requested
-    via the plugin's control API. A controlling client can publish requests to
+    via the plugins control API. A controlling client can publish requests to
     `$CONTROL/cedalo/client-control/v1` and the related response message will be published
     by the plugin on `$CONTROL/cedalo/client-control/v1/response`.
 
@@ -35,6 +35,13 @@ components:
           payload:
             commands:
               - command: disconnectClient
+                clientid: my-client
+                correlationData: 716cc776-d044-4772-b991-d9b55e2e034c
+        - name: deleteClient
+          summary: Example of a deleteClient request.
+          payload:
+            commands:
+              - command: deleteClient
                 clientid: my-client
                 correlationData: 716cc776-d044-4772-b991-d9b55e2e034c
         - name: subscribeClient
@@ -69,6 +76,12 @@ components:
           payload:
             responses:
               - command: disconnectClient
+                data: {}
+                correlationData: 716cc776-d044-4772-b991-d9b55e2e034c
+        - name: deleteClient
+          payload:
+            responses:
+              - command: deleteClient
                 data: {}
                 correlationData: 716cc776-d044-4772-b991-d9b55e2e034c
         - name: subscribeClient
@@ -114,6 +127,37 @@ components:
                     type: string
                     description: |
                       Identifier of the connected client, we want to disconnect.
+                  with_will:
+                    type: boolean
+                    description: |
+                      Optional. If set to `true`, the client's will message will be
+                      published upon disconnection. Defaults to `false`.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - clientid
+              - description: deleteClient request
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - deleteClient
+                    description: |
+                      Disconnects a client and deletes its session from the broker
+                      by `clientid`. This is primarily useful for persistent sessions
+                      (clean_session=false / clean_start=false), as non-persistent
+                      sessions are deleted on disconnect automatically.
+                  clientid:
+                    type: string
+                    description: |
+                      Identifier of the connected client, we want to delete.
+                  with_will:
+                    type: boolean
+                    description: |
+                      Optional. If set to `true`, the client's will message will be
+                      published upon deletion. Defaults to `false`.
                   correlationData:
                     $ref: '#/components/schemas/correlationData'
                 additionalProperties: false
@@ -227,12 +271,13 @@ components:
             type:
               - object
             anyOf:
-              - description: disconnectClient response
+              - description: successful response
                 properties:
                   command:
                     type: string
                     enum:
                       - disconnectClient
+                      - deleteClient
                       - subscribeClient
                       - unsubscribeClient
                     description: >-
@@ -252,6 +297,9 @@ components:
                     type: string
                     enum:
                       - disconnectClient
+                      - deleteClient
+                      - subscribeClient
+                      - unsubscribeClient
                     description: >-
                       Command which describes the action processed by the plugin.
                   error:

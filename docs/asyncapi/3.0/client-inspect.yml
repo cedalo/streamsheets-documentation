@@ -1,14 +1,15 @@
 asyncapi: 2.6.0
 info:
   title: Client Inspection
-  version: 3.0.0
+  version: 3.2.5
   description: |
     This plugin provides information about clients connected to the broker.
-    The topic of the plugin's control API is `$CONTROL/cedalo/inspect/v1`.
+    The topic of the plugins control API is `$CONTROL/cedalo/inspect/v1`.
 
     Currently supported commands offered by the API are `listClients` for an
-    overview which clients are connected and the `getClient` command to get
-    detailed information about a specific client.
+    overview which clients are connected, the `getClient` command to get
+    detailed information about a specific client, and the `getConfig` command
+    to retrieve the current plugin configuration.
 
 defaultContentType: application/json
 channels:
@@ -37,6 +38,18 @@ components:
                 count: 10
                 offset: 100
                 correlationData: 12345-list-req
+        - name: listClients
+          summary: Example of an listClients message with filtering for network address.
+          payload:
+            commands:
+              - command: listClients
+                verbose: true
+                count: 10
+                offset: 100
+                filterValue: 192.168.
+                filterMode: startsWith
+                filterTarget: address
+                correlationData: 12345-list-req
         - name: getClient
           summary: Example of an getClient message.
           payload:
@@ -44,10 +57,16 @@ components:
               - command: getClient
                 clientid: monitoring-client
                 correlationData: 12345-get-req
+        - name: getConfig
+          summary: Example of a getConfig message.
+          payload:
+            commands:
+              - command: getConfig
+                correlationData: 12345-config-req
 
     ControlResponse:
       name: controlResponse
-      title: Response to an executed listClients/getClient request
+      title: Response to an executed listClients/getClient/getConfig request
       payload:
         $ref: '#/components/schemas/controlResponsePayload'
       examples:
@@ -125,26 +144,23 @@ components:
                       - clientid: admin-connect
                         username: admin
                         address: 127.0.0.1
-                        protocol: MQTT
                         protocolVersion: v3.1.1
                         connected: true
                         lastConnect: 1668005037000
-                        lastDisconnect:
+                        expiryInterval: 0
+                        expiryTime:
+                        nodeid: 0
                         queues:
-                          bytesOut: 0
-                          bytesMax: 0
                           messagesOut: 0
                           messagesMax: 1000
-                          pagedMessagesOut: 0
-                          pagedMessagesMax: 1000
                       - clientid: auto-97E83DDF-6255-D78B-C776-4E02664C3E4C
                         username: demo
                         address: 127.0.0.1
-                        protocol: MQTT
                         protocolVersion: v5
                         connected: false
                         lastConnect: 1668005032144
-                        lastDisconnect: 1668005045311
+                        expiryInterval: 3600
+                        expiryTime: 1668008632144
                     totalCount: 2
                   correlationData: 37a6e977-2b4f-4431-83f7-5bd93b35c152
         - name: listClients with `verbose=false``
@@ -157,6 +173,14 @@ components:
                   - admin-connect
                   - auto-97E83DDF-6255-D78B-C776-4E02664C3E4C
                   totalCount: 2
+        - name: getConfig
+          summary: successful getConfig response message.
+          payload:
+            responses:
+              - command: getConfig
+                data:
+                  disconnectedClientsTTL: 300
+                correlationData: 12345-config-req
         - name: error
           summary: Example of an error response message.
           payload:
@@ -202,6 +226,32 @@ components:
                     description: |
                       References a specific location in the list where start
                       returning values from. Set to `0` to start at the beginning.
+                  filterValue:
+                    type: string
+                    description: |
+                      Apply a filter to the list of clients and return a
+                      subset. This is the string that will be searched for in
+                      the filterTarget.
+                  filterMode:
+                    type: string
+                    enum:
+                      - contains
+                      - startsWith
+                      - endsWith
+                      - exact
+                    description: |
+                      The filterMode sets the type of string search to carry
+                      out when using filterValue. Optional, defaults to
+                      contains.
+                  filterTarget:
+                    type: string
+                    enum:
+                      - clientid
+                      - username
+                      - address
+                    description: |
+                      The filterTarget specifies on which entity the string
+                      search will be performed.
                   correlationData:
                     $ref: '#/components/schemas/correlationData'
                 additionalProperties: false
@@ -226,6 +276,20 @@ components:
                 required:
                   - command
                   - clientid
+              - description: getConfig request
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getConfig
+                    description: |
+                      Command to request the plugin to return the current
+                      plugin configuration.
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                required:
+                  - command
+
       additionalProperties: false
     controlResponsePayload:
       type:
@@ -260,13 +324,6 @@ components:
                           address:
                             type: string
                             description: IP address of the client as a string. [free]
-                          protocol:
-                            type: string
-                            enum:
-                              - MQTT
-                              - MQTT-SN
-                              - MQTT-WS
-                            description: Protocol used to connect to the broker. [free]
                           protocolVersion:
                             type: string
                             enum:
@@ -283,35 +340,35 @@ components:
                             type: integer
                             description: |
                               Epoch in milliseconds when the client connected to broker. [premium]
-                          lastDisconnect:
+                          expiryInterval:
                             type: integer
                             description: |
-                              Epoch in milliseconds when the client disconnected from broker.
-                              `null` if never disconnected before. [premium]
+                              Session expiry interval in seconds. `0` means the session
+                              expires when the connection is closed. [premium]
+                          expiryTime:
+                            type:
+                              - integer
+                              - "null"
+                            description: |
+                              Epoch in milliseconds when the session will expire.
+                              `null` if not applicable. [premium]
+                          nodeid:
+                            type: integer
+                            description: |
+                              Node identifier in a cluster setup. Only present for
+                              connected clients. [premium]
                           queues:
                             type: object
                             description: |
-                              Metrics helping to analyze the current load on the message queues
-                              of the broker for this client. [premium]
+                              Summary queue metrics for this client. Only present for
+                              connected clients. [premium]
                             properties:
-                              bytesOut:
-                                type: integer
-                                description: Outgoing queued message bytes. [premium]
-                              bytesMax:
-                                type: integer
-                                description: Maximum bytes queued. [premium]
                               messagesOut:
                                 type: integer
                                 description: Outgoing queued message count. [premium]
                               messagesMax:
                                 type: integer
                                 description: Queued message count upper limit. [premium]
-                              pagedMessagesOut:
-                                type: integer
-                                description: Outgoing queued messages paged to disk count. [premium]
-                              pagedMessagesMax:
-                                type: integer
-                                description: Outgoing queued messages paged to disk upper count limit. [premium]
                             additionalProperties: false
                       totalCount:
                         type: integer
@@ -529,11 +586,39 @@ components:
                 required:
                   - command
                   - data
+              - description: getConfig response
+                properties:
+                  command:
+                    type: string
+                    enum:
+                      - getConfig
+                  data:
+                    type: object
+                    description: Config data of the Inspect Plugin.
+                    properties:
+                      disconnectedClientsTTL:
+                        type: integer
+                        description: |
+                          Time in seconds for which data about clients will be stored after the session has been deleted.
+                          For non-persistent clients starts after disconnect, while for persistent clients it
+                          starts after the session is expired (time of disconnect + session_expiry_interval).
+                          Once TTL is expired no data about the client will be set in the responses of listClients
+                          and getClient.
+                    required:
+                      - disconnectedClientsTTL
+                  correlationData:
+                    $ref: '#/components/schemas/correlationData'
+                additionalProperties: false
+                required:
+                  - command
+                  - data
+
               - description: error response
                 properties:
                   command:
                     type: string
                     enum:
+                      - getConfig
                       - listClients
                       - getClient
                     description: >-
