@@ -1,0 +1,8 @@
+# Cedalo GmbH - security contact for Pro Mosquitto and the Cedalo MQTT Platform
+# Vulnerabilities in open-source Eclipse Mosquitto: please use the
+# Eclipse Foundation process, see https://www.eclipse.org/security/
+
+Contact: mailto:security@cedalo.com
+Expires: 2027-09-30T22:00:00.000Z
+Preferred-Languages: en, de
+Canonical: https://docs.cedalo.com/.well-known/security.txt
