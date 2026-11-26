@@ -446,7 +446,7 @@ components:
             maxWaitTimeInMs:
               description: Milliseconds to wait for next message. If none is received during this period the buffered producer sends all of its messages.
               type: number
-            maxEventBufferLengthPerPartitions:
+            maxEventBufferLengthPerPartition:
               description: Max. buffer length. If this limit is reached the buffer sends all of its messages.
               type: number
       required:
